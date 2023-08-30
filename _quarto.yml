@@ -24,7 +24,7 @@ website:
     collapse-level: 1
 
     contents:
-      - section: "Course information ℹ️"
+      - section: "Course information"
         contents:
           - href: course-overview.qmd
             text: Overview
