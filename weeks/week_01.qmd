@@ -1,0 +1,57 @@
+---
+title: "Week 1"
+order: 1
+subtitle: "Getting started with spatial data using `{sf}` and the tidyverse"
+date: 2023-08-30
+---
+
+## Overview
+
+-   Welcome to GES668!
+-   Introduction to R for spatial data
+-   Introduction to reproducible data analysis
+
+::: {.callout-note appearance="minimal" icon="true"}
+
+### Key Objectives
+
+-   Explore key functions from the `{sf}` package and `{tidyverse}` family of packages
+-   Create a self-contained project in RStudio
+-   Practice creating files with a consistent naming convention
+
+:::
+
+::: {.callout-tip appearance="minimal" icon="true"}
+
+### Questions
+
+-   How does R support reproducible spatial data analysis?
+-   Why use R for working with spatial data?
+
+:::
+
+## Prepare
+
+📖 Read the [syllabus](/course-syllabus.html)
+
+### Required readings
+
+-   [Ch. 1 Introduction](https://geocompr.robinlovelace.net/intro.html) in @lovelaceGeocomputation2022
+-   [Ch. 2 Geographic data in R](https://geocompr.robinlovelace.net/spatial-class.html) in @lovelaceGeocomputation2022
+-   @brunsdonOpeningPracticeSupporting2021
+-   @bryanHowNameFiles2015 (or more recent [How to name files talk](https://www.youtube.com/watch?v=ES1LTlnpLMk) for NormConf 2022)
+
+### Optional readings
+
+-   [Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/index.html) (Data Carpentry)
+-   [Introduction to R for Geospatial Data](https://datacarpentry.org/r-intro-geospatial/) (Data Carpentry)
+-   [Ch. 3 Geometries](https://r-spatial.org/book/03-Geometries.html) in @pebesmaSpatialDataScience2023
+-   @wilsonGoodEnoughPractices2017
+
+## Participate
+
+🖥️ [Introduction to Spatial Data with R](/slides/01_spatial-data.html)
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

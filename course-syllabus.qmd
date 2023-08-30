@@ -1,0 +1,246 @@
+---
+title: "GES 668: Course Syllabus"
+date-modified: last-modified
+---
+
+Date 📅
+
+:   {{< var course.dates >}}
+
+Time ⏰
+
+:   {{< var course.days >}}, {{< var course.time >}}
+
+Location 📍
+
+:   {{< var course.location >}}
+
+Instructor
+
+:   {{< var instructor.name >}} \| {{< var instructor.email >}}
+
+::: {.callout-note appearance="simple"}
+Last updated: {{< meta date-modified >}}
+:::
+
+## Learning objectives
+
+By the end of the semester, you will be able to:
+
+-   read and write spatial data from a wide range of file formats and web services
+-   tidy, transform, and visualize spatial data to understand the spatial and non-spatial distribution of attributes
+-   measure the spatial attributes or relationships between features and transform feature geometry
+-   use Quarto to create presentations and reproducible reports and use GitHub for version control and collaboration.
+
+## Communication
+
+This class uses a dedicated Discord channel to share announcements and make it easy for students to share and discuss questions during and outside of in-person class sessions.
+
+## Accessibility
+
+Accommodations for students with disabilities are provided for all students with a qualified disability under the Americans with Disabilities Act (ADA & ADAAA) and Section 504 of the Rehabilitation Act who request and are eligible for accommodations. The [Office of Student Disability Services](https://sds.umbc.edu/) (SDS) coordinates accommodations to create equal access for students when barriers to participation exist in University courses, programs, or activities.
+
+If you will be using SDS approved accommodations in this class, please let me know so we can make those accommodations. Students should contact the SDS at disAbility\@umbc.edu or (410) 455-2459 to request or update accommodations as needed.
+
+::: {.callout-tip icon="false"}
+### Software Accessibility
+
+R is required software for this course. Please visit [RStudio Accessibility Features](https://support.posit.co/hc/en-us/articles/360044226673-RStudio-Accessibility-Features) for information about the program's accessibility.
+
+Using GitHub is also required. Find [more information on managing accessibility settings](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-accessibility-settings) for the GitHub website.
+:::
+
+## Respect
+
+Students in this class are encouraged to speak up and participate during class sessions. Because the class will include a diversity of individual beliefs, backgrounds, and experiences, every person participating in this class must show respect for every other participant both in person *and* when communicating online.
+
+## Readings
+
+Most of the reading for this class will come from these three books:
+
+-   [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garret Grolemund
+-   [Geocomputation with R](https://r.geocompx.org/) by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow
+-   [All Data Are Local: Thinking Critically in a Data-Driven Society](https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data) by Yanni Alexander Loukissas
+
+All three books are available for free online or available for purchase. Additional readings are listed on the page for each week's session.
+
+## Assessment
+
+Assessment for this course includes three parts:
+
+-   **weekly check-ins**,
+
+-   **practice exercises**,
+
+-   and a **final project**
+
+### Weekly check-ins
+
+Each week students are expected to submit a brief written check-in based on the assigned readings and exercises. Your check-in should answer three questions:
+
+-   What did you find most interesting this week?
+-   What did you find most difficult this week?
+-   What is one question you have about the readings or exercise?
+
+Your check-in response should be submitted via Google Forms before the start of each class session. You are also encouraged but not required to post your question to the class Discord where other students are able to reply. Partial credit will be awarded for incomplete check-in responses.
+
+Students are expected to **submit at least 10 weekly check-in responses** during the term so may skip up to 5 check-in responses without penalty. Weekly check-in assignments must be submitted before 11:59 am on the day *before* each class session. No late responses will be accepted for the weekly check-in.
+
+### Practice exercises
+
+These exercises give you an opportunity to practice the application of concepts and code introduced in the readings and lectures. You may discuss lab assignments with other students; however, labs should be completed and submitted individually.
+
+Exercises are graded based on completion---so an effort to attempt all parts of the exercise will be awarded full credit. Some assignments may also include a bonus objective. An assignment with less than 80% of questions attempted will be considered incomplete. Incomplete assignments can be revised and resubmitted for full credit within a week of a student receiving my feedback.
+
+-   3: Assignment is submitted, complete, and includes a complete bonus objective
+-   2: Assignment is submitted and complete
+-   1: Assignment is submitted but incomplete
+-   0: Assignment not submitted
+
+Students are expected to **submit at least 10 exercises** during the term so may skip up to 2 exercises without penalty. Practice exercises are due the Monday before each class session. For example, the first exercise is introduced on Wednesday, August 30 and should be completed by 11:59 PM on Monday, September 4.
+
+### Final project
+
+All students will participate in a final project that can be completed independently or in collaboration with other students in the class. The project must use data from:
+
+-   OpenStreetMap (accessed with the `{osmdata}` package),
+-   American Community Survey data (accessed with the `{tidycensus}` package),
+-   or a combination of these and other sources.
+
+The final project is an opportunity for students to focus on the "models of local practice" described in All Data Are Local---with a special focus on how we can "make place part of data presentation." Typically, the final project should fit into one of two categories:
+
+-   A data visualization or interactive that uses the data to tell a story or prompt reflection
+
+-   An exploratory data analysis that uses the data to ask or answer questions
+
+### Key dates and deliverables
+
+The assessment of the project is based on four parts:
+
+-   A **project proposal** (1-2 pages in length) must be submitted by **November 7**.
+-   **Peer feedback** on two other proposals completed by **November 14**.
+-   An **project presentation** delivered in-class on **December 6**.
+-   A **project GitHub repository** completed by **December 14**.
+
+Evaluation of the final project will be based on both self-assessment by the individual student or group and an instructor assessment. The instructor can also offer bonus points in recognition of exceptional work or, if necessary, adjust points awarded through the student self-assessment.
+
+### Grading
+
+Assessment in this course is intended to help you focus on completing assignments and keeping up with the material---not getting everything perfect along the way.
+
+You can earn up to a total of 100 points in this class by submitting at least 10 weekly check-ins (30 points), completing 10 exercises (20 points), and completing all four parts of the final project (50 points).
+
+| Assessment                             | Points |
+|----------------------------------------|--------|
+| Weekly questions                       | 30     |
+| Practice exercises                     | 20     |
+| *Final project*                        |        |
+| Project proposal                       | 10     |
+| Peer feedback on two project proposals | 10     |
+| Presentation                           | 10     |
+| Project repository                     | 20     |
+
+# **Policies & Resources**
+
+## **Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination**
+
+[UMBC Policy](https://ecr.umbc.edu/gender-discrimination-sexual-misconduct/) and Federal law (Title IX) prohibit discrimination and harassment on the basis of sex, sexual orientation, and gender identity in University programs and activities. Any student who is impacted by sexual harassment, sexual assault, domestic violence, dating violence, stalking, sexual exploitation, gender discrimination, pregnancy discrimination, gender-based harassment or retaliation should contact the University's Title IX Coordinator to make a report and/or access support and resources:
+
+-   Jackie Moran, Title IX Coordinator and Interim Director
+-   410-455-1717, [jmoran5\@umbc.edu](mailto:jmoran5@umbc.edu)
+
+*You can access support and resources even if you do not want to take any further action.* You will not be forced to file a formal complaint or police report. Please be aware that the University may take action on its own if essential to protect the safety of the community.
+
+If you are interested in or thinking about making a report, please use the [Online Reporting/Referral Form](https://umbc-advocate.symplicity.com/titleix_report/index.php/pid364290?). Please note that, if you report anonymously,  the University's ability to respond will be limited.
+
+::: {.callout-important appearance="minimal"}
+### **Faculty are Responsible Employees with Mandatory Reporting Obligations**
+
+All faculty members are considered *Responsible Employees*, per [UMBC's Policy on Sexual Misconduct, Sexual Harassment, and Gender Discrimination.](https://ecr.umbc.edu/policy-on-sexual-misconduct-sexual-harassment-and-gender-discrimination/) Faculty are therefore required to report any/ all available information regarding conduct falling under the Policy and violations of the Policy to the Title IX Coordinator, even if a student discloses an experience that occurred before attending UMBC and/or an incident that only involves people not affiliated with UMBC.  Reports are required regardless of the amount of detail provided and even in instances where support has already been offered or received.
+
+While faculty members want encourage you to share information related to your life experiences through discussion and written work, students should understand that faculty are required to report *past and present* sexual assault, domestic and interpersonal violence, stalking, and gender discrimination that is shared with them to the Title IX Coordinator so that the University can inform students of their [rights, resources and support](https://ecr.umbc.edu/rights-and-resources/).  While you are encouraged to do so, you are not obligated to respond to outreach conducted as a result of a report to the Title IX Coordinator.
+
+If you need to speak with someone in confidence, who does not have an obligation to report to the Title IX Coordinator, UMBC has a number of [Confidential Resources](https://ecr.umbc.edu/policy-on-sexual-misconduct-sexual-harassment-and-gender-discrimination/#confidential-resources) available to support you:
+
+-   [Retriever Integrated Health](https://health.umbc.edu/) (Main Campus): [410-455-2472](tel:410-455-2472) \[Monday -- Friday; 8:30 a.m. -- 5 p.m.\] / After-Hours Support [410-455-3230](tel:410-455-3230)
+
+-   [Center for Counseling and Consultation](https://shadygrove.umd.edu/student-services/center-for-counseling-and-consultation) (Shady Grove Campus): [301-738-6273](tel:301-738-6273) (Messages checked hourly)  [Online Appointment Request Form](https://shadygrove.titaniumhwc.com/)
+
+-   Pastoral Counseling via [Interfaith Center](https://i3b.umbc.edu/spaces/the-interfaith-center-ifc/): [410-455-3657](tel:410-455-3657); [interfaith\@umbc.edu](mailto:interfaith@umbc.edu) \[7 days a week; Fall and Spring 7 a.m. -- 11 p.m.; Summer and Winter 8 a.m. -- 8 p.m.\]
+
+Other Resources:
+
+-   [Women's Center](https://womenscenter.umbc.edu/) (for students of all genders): [410-455-2714](tel:410-455-2714); [womenscenter\@umbc.edu](mailto:womenscenter@umbc.edu). \[Monday -- Thursday 10:00am-5:30pm and Friday 10:00am-4pm\]
+
+-   [Shady Grove Student Resources](https://ecr.umbc.edu/shady-grove-title-ix-resources/),[Maryland Resources](https://ecr.umbc.edu/maryland-resources/),[National Resources](https://ecr.umbc.edu/national-resources/).
+:::
+
+::: {.callout-important appearance="minimal"}
+### [**Child Abuse and Neglect**](https://oei.umbc.edu/child-protection/)
+
+Please note that Maryland law and [UMBC policy](https://oei.umbc.edu/child-protection/) require that faculty report all disclosures or suspicions of child abuse or neglect to the Department of Social Services and/or the police even if the person who experienced the abuse or neglect is now over 18.
+:::
+
+::: {.callout-important appearance="minimal"}
+### [Parenting and Pregnant Students](https://www2.ed.gov/about/offices/list/ocr/docs/pregnancy.html)
+
+UMBC's [Policy on Sexual Misconduct, Sexual Harassment and Gender Discrimination](https://ecr.umbc.edu/policy-on-sexual-misconduct-sexual-harassment-and-gender-discrimination/) expressly prohibits all forms of Discrimination and Harassment on the basis of sex, including pregnancy.[Resources for pregnant, parenting and breastfeeding students](https://ecr.umbc.edu/students/) are available through the University's Office of Equity and Civil Rights.  Pregnant and parenting students are encouraged to contact the Title IX Coordinator to discuss plans and ensure ongoing access to their academic program with respect to a leave of absence or return following leave related to pregnancy, delivery, adoption, breastfeeding and/or the early months of parenting.
+
+Pregnant students and students in the early months of parenting may be entitled to accommodations under Title IX through the Office of Equity and Civil Rights.
+
+In addition, students who are pregnant and have an impairment related to their pregnancy that qualifies as disability under the ADA may be entitled to accommodations through the [Student Disability Service Office](https://sds.umbc.edu/accommodations/registering-with-sds/).
+:::
+
+## **Religious Observances & Accommodations**
+
+[UMBC Policy](https://provost.umbc.edu/wp-content/uploads/sites/46/2022/08/Religious-Observance-Academic-Policy-2022_2023.pdf) provides that students should not be penalized because of observances of their religious beliefs, and that students shall be given an opportunity, whenever feasible, to make up within a reasonable time any academic assignment that is missed due to individual participation in religious observances. It is the responsibility of the student to inform the instructor of any intended absences or requested modifications for religious observances in advance, and as early as possible.
+
+For questions or guidance regarding religious observance accommodations, please contact the Office of Equity and Civil Rights at [ecr\@umbc.edu](mailto:ecr@umbc.edu).
+
+## **Plagiarism**
+
+Copying or using another's work in written or oral form---partial or complete---without giving credit to the other person is a serious academic offense and is taken very seriously in this class, by the Department and by the University of Maryland, Baltimore County. UMBC specifically defines plagiarism as anyone who "knowingly, or by carelessness or negligence, representing as one's own in any academic exercise the words, ideas, works of art or computer-generated information and images of someone else."
+
+Any student who plagiarizes will be referred to the Department Chair and will be subject to the policies of the university. In general, the consequences of plagiarism include failing an assignment, receiving a lower course grade, and even failing a course. Examples of plagiarism include:
+
+-   Submit someone else's work as your own.
+-   Buy a paper from a paper-mill, website or other source.
+-   Copy sentences, phrases, paragraphs, or ideas from someone else's work, published or unpublished, without giving the original author credit.
+-   Replace select words from a passage without giving the original author credit.
+-   Copy any type of graphics, tables, graphs, maps, or charts from someone else's work without giving the original author credit.
+-   Piece together phrases, ideas, and sentences from a variety of sources to write an essay.
+-   Build on someone else's idea or phrase without giving the original author credit.
+
+Details about avoiding [plagiarism, examples, and disciplinary policies](http://aok.lib.umbc.edu/informationliteracy/plagiarism.php) should be reviewed to gain a clear understanding prior to working on an assignment or exam.
+
+## **Hate, Bias, Discrimination and Harassment**
+
+UMBC values safety, cultural and ethnic diversity, social responsibility, lifelong learning, equity, and civic engagement.
+
+Consistent with these principles, [UMBC Policy](https://ecr.umbc.edu/discrimination-and-bias/) prohibits discrimination and harassment in its educational programs and activities or with respect to employment terms and conditions based on race, creed, color, religion, sex, gender, pregnancy, ancestry, age, gender identity or expression, national origin, veterans status, marital status, sexual orientation, physical or mental disability, or genetic information.
+
+Students (and faculty and staff) who experience discrimination, harassment, hate or bias or who have such matters reported to them should use the[online reporting/referral form](https://umbc-advocate.symplicity.com/titleix_report/index.php/pid066642?) to report discrimination, hate or bias incidents. You may report incidents that happen to you anonymously*.* Please note that, if you report anonymously, the University's ability to respond will be limited.
+
+## **COVID-19 Safety Protocols**
+
+UMBC encourages all members of our community to take personal safety measures. This includes remaining up to date on your vaccinations and following CDC guidelines if you are recovering from COVID-19. See the [**Retriever Ready: COVID-19 Response**](https://covid19.umbc.edu/) page for UMBC's curent COVID-19 policies and answers to frequently asked questions.
+
+For the health of all in our community, please remember to **Stay Home if You Are Sick.**
+
+## Retriever Essentials
+
+[Retriever Essentials](https://retrieveressentials.umbc.edu/) is a faculty, staff, and student-led partnership that promotes food access in the UMBC community. Retriever Essentials offers *free* groceries, toiletries, baby items, and meal swipes, and have opportunities to engage and volunteer:
+
+-   Pick up items from our free store [The Essential Space](https://retrieveressentials.umbc.edu/campus-food-zones/the-food-pantry/) located in RAC 235 
+-   Receive fresh food every Thursday 2:15-2:45pm \@ the Library (email or see IG for exact location)
+-   Stop by one of our [Food Zones](https://retrieveressentials.umbc.edu/campus-food-zones/distribution-centers-2/) to pick up a pre-assembled bag of non-perishable food items and personal care products
+-   Pick up snacks and food from our [Free Corner Stores](https://retrieveressentials.umbc.edu/mini-pantries/) at the Campus Police Station or Library Atrium
+-   Email us at [retrieveressentials\@umbc.edu](mailto:retrieveressentials@umbc.edu) if you need free meal swipes
+-   To donate food, see instructions [here](https://retrieveressentials.umbc.edu/services/donate-items/)!
+
+Email Retriever Essentials if you would like to join our team or [volunteer](https://retrieveressentials.umbc.edu/volunteer/).
+
+# Notes
+
+-   The respect statement is adapted from [California State University Chico's Office of Diversity and Inclusion](https://www.csuchico.edu/diversity/office/index.shtml).
+-   This course website is based in part on the [website for STA 210 at Duke University](https://github.com/sta210-s22/website). Check out the [repository on GitHub](https://github.com/bldgspatialdata/website) for more information about the site.

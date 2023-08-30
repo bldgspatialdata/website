@@ -1,0 +1,6 @@
+---
+title: "About"
+suppress-bibliography: true
+footnotes-hover: false
+link-citations: false
+---

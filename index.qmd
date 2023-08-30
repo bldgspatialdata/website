@@ -1,0 +1,50 @@
+---
+title: "GES 668: Building Spatial Datasets (Fall 2023)"
+---
+
+```{r}
+#| echo: false
+tbl <- tibble::tribble(
+                              ~Week,        ~Date,                                                                            ~Topic,                                      ~Slides,                         ~Exercise,
+          "[1](weeks/week_01.html)", "2023-08-30",                    "Getting started with spatial data using sf and the tidyverse",           "[📖](slides/01_spatial-data.html)", "[📝](exercises/exercise_01.html)",
+          "[2](weeks/week_02.html)", "2023-09-06",                                           "Visualizing spatial data with ggplot2",     "[📖](slides/02_data-visualization.html)", "[📝](exercises/exercise_02.html)",
+          "[3](weeks/week_03.html)", "2023-09-13",                                                    "Transforming data with dplyr",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_03.html)",
+          "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_04.html)",
+          "[5](weeks/week_05.html)", "2023-09-27",              "Applying spatial transformations and geometric operations using sf", "[📖](slides/05_spatial-transformation.html)", "[📝](exercises/exercise_05.html)",
+          "[6](weeks/week_06.html)", "2023-10-04",                                                "Tidying and joining spatial data",              "[📖](slides/06_tidy-data.html)", "[📝](exercises/exercise_06.html)",
+          "[7](weeks/week_07.html)", "2023-10-11",                    "Building functions in R and literate programming with Quarto",            "[📖](slides/07_r-functions.html)", "[📝](exercises/exercise_07.html)",
+          "[8](weeks/week_08.html)", "2023-10-18",               "Developing an exploratory data analysis with sf and the tidyverse",      "[📖](slides/exploratory-analysis.html)", "[📝](exercises/exercise_08.html)",
+          "[9](weeks/week_09.html)", "2023-10-25", "Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package",           "[📖](slides/open-street-map.html)", "[📝](exercises/exercise_09.html)",
+         "[10](weeks/week_10.html)", "2023-11-01",            "Exploring American Community Survey data with the tidycensus package",                "[📖](slides/tidycensus.html)", "[📝](exercises/exercise_10.html)",
+         "[11](weeks/week_11.html)", "2023-11-08",                             "Reading and writing spatial data files and services",           "[📖](slides/spatial-data-io.html)", "[📝](exercises/exercise_11.html)",
+         "[12](weeks/week_12.html)", "2023-11-01",                                          "Creating and managing spatial metadata",          "[📖](slides/spatial-metadata.html)", "[📝](exercises/exercise_12.html)",
+         "[13](weeks/week_13.html)", "2023-11-08",                                            "Project check-in meetings (no class)",                                           NA,                                NA,
+         "[14](weeks/week_14.html)", "2023-11-15",                                                         "Review and work session",                                           NA,                                NA,
+         "[15](weeks/week_15.html)", "2023-11-22",                                                     "Final project presentations",                                           NA,                                NA,
+                                 NA, "2023-11-29",                                                   "Due: Final project repository",                                           NA,                                NA
+         )
+
+
+
+tbl |> 
+  gt::gt() |> 
+  gt::fmt_url(
+    columns = "Week"
+  ) |> 
+  gt::cols_align(
+    "center",
+    columns = c("Week", "Date", "Slides", "Exercise")
+  ) |> 
+  gt::fmt_date(
+    columns = "Date",
+    date_style = "MMMEd"
+  ) |> 
+  gt::cols_width(
+    "Date" ~ "120px"
+  ) |> 
+  gt::fmt_url(
+    columns = c("Slides", "Exercise"),
+    show_underline = FALSE
+  ) |> 
+  gt::sub_missing()
+```

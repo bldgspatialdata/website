@@ -1,0 +1,10 @@
+---
+title: "Week 14"
+order: 14
+subtitle: "Special topics and project work session"
+date: 2023-11-29
+---
+
+::: {.callout-important appearance="simple"}
+Reminder! Your **final project presentation** is due on {{< var dates.project.presentation >}}
+:::

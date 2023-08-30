@@ -1,0 +1,21 @@
+---
+title: "Week 13"
+order: 13
+subtitle: "Project check-in meetings"
+date: 2023-11-22
+---
+
+::: {.callout-important appearance="simple"}
+Reminder! We have no in-person class on November 22.
+:::
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 6 Models of Local Practice](https://direct.mit.edu/books/oa-monograph/4323/chapter/181053/MODELS-OF-LOCAL-PRACTICE) in @loukissasAllDataAre2019
+-   [Ch. 7 Local Ends](https://direct.mit.edu/books/oa-monograph/4323/chapter/181054/LOCAL-ENDS) in @loukissasAllDataAre2019
+
+## Practice
+
+There are no more practice exercises!

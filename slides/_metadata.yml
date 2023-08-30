@@ -1,0 +1,18 @@
+date: last-modified
+format:
+  revealjs:
+    theme: files/clean.scss
+    echo: true
+    message: false
+    scrollable: true
+    center: false
+    progress: true
+    layout-valign: "top"
+    slide-level: 4
+    slide-number: true
+    number-sections: true
+    number-depth: 2
+    sc-sb-title: true
+editor: visual
+execute:
+  freeze: auto

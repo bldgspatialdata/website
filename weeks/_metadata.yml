@@ -1,0 +1,13 @@
+categories: "weeks"
+toc: true
+website:
+  page-navigation: true
+
+bibliography: files/readings.bib
+csl: files/chicago-syllabus.csl
+
+suppress-bibliography: true
+footnotes-hover: false
+link-citations: false
+
+# include-after-body: files/after-body.html

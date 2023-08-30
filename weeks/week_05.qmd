@@ -1,0 +1,27 @@
+---
+title: "Week 5"
+order: 5
+subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
+date: 2023-09-27
+---
+
+## Overview
+
+-   Using geometry operations for buffering or simplifying features
+-   Using geometric operations like union, intersection, and difference
+-   Using related functions including spatial joins and filters
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 4 Spatial data operations](https://geocompr.robinlovelace.net/spatial-operations.html) in @lovelaceGeocomputation2022
+-   [Ch. 5 Geometry operations](https://geocompr.robinlovelace.net/geometric-operations.html) in @lovelaceGeocomputation2022
+
+### Optional readings
+
+-   @pebesmaManipulatingSimpleFeature2016
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)

@@ -1,0 +1,38 @@
+---
+title: "Week 6"
+order: 6
+subtitle: "Tidying and joining spatial data"
+unit: "Getting started"
+date: 2023-10-04
+---
+
+## Overview
+
+-   Joining tables by attribute with `{dplyr}`
+
+```{=html}
+<!-- -->
+```
+-   Using [{stringr}](https://stringr.tidyverse.org/) functions to tidy messy address data
+
+-   Recoding categorical attribute data with [{forcats}](https://forcats.tidyverse.org/)
+
+-   Converting between wide and long data formats with `dplyr::pivot_longer()` and `dplyr::pivot_wider()`
+
+-   Working with date-time attributes using [{lubridate}](https://lubridate.tidyverse.org/)
+
+## Prepare
+
+### Required reading
+
+-   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in @wickhamDataScienceImport2023
+-   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in @wickhamDataScienceImport2023
+-   @bromanDataOrganizationSpreadsheets2018
+
+### Optional reading
+
+-   @QuartzGuideBad2022
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)

@@ -1,0 +1,11 @@
+---
+title: "Schedule overview"
+listing:
+  contents:
+    - "weeks"
+  type: default
+  fields: [title, subtitle, date]
+  sort: "order"
+  field-display-names:
+    date: "Date"
+---

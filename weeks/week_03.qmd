@@ -1,0 +1,22 @@
+---
+title: "Week 3"
+order: 3
+subtitle: "Transforming data with `{dplyr}`"
+date: 2023-09-13
+---
+
+## Overview
+
+-   Filtering data with `dplyr::filter()`
+-   Creating new variables with `dplyr::mutate()`
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 5 Data transformation](https://r4ds.hadley.nz/data-transform) in @wickhamDataScienceImport2023
+-   [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA) in @loukissasAllDataAre2019
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

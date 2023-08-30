@@ -1,0 +1,84 @@
+project:
+  type: website
+
+logo: "images/logo.png"
+
+website:
+  page-navigation: true
+  title: "GES 668 - Fall 2023"
+  description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023."
+  site-url: "https://bldgspatialdata.github.io/website/"
+
+  repo-url: https://github.com/bldgspatialdata/website
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  sidebar:
+    background: "#d9e3e4"
+    logo: "images/logo.png"
+    pinned: true
+    align: center
+    style: "docked"
+    search: true
+    collapse-level: 1
+
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-overview.qmd
+            text: Overview
+          - href: course-syllabus.qmd
+            text: Syllabus
+      - section: "Weeks"
+        contents:
+          - course-schedule.qmd
+          - href: weeks/week_01.qmd
+          - href: weeks/week_02.qmd
+          - href: weeks/week_03.qmd
+          - href: weeks/week_04.qmd
+          - href: weeks/week_05.qmd
+          - href: weeks/week_06.qmd
+          - href: weeks/week_07.qmd
+          - href: weeks/week_08.qmd
+          - href: weeks/week_09.qmd
+          - href: weeks/week_10.qmd
+          - href: weeks/week_11.qmd
+          - href: weeks/week_12.qmd
+          - href: weeks/week_13.qmd
+          - href: weeks/week_14.qmd
+          - href: weeks/week_15.qmd
+      - section: "Exercises"
+        contents:
+          - href: exercises/exercise_01.qmd
+          - href: exercises/exercise_02.qmd
+          - href: exercises/exercise_03.qmd
+          - href: exercises/exercise_04.qmd
+          - href: exercises/exercise_05.qmd
+          - href: exercises/exercise_06.qmd
+          - href: exercises/exercise_07.qmd
+          - href: exercises/exercise_08.qmd
+          - href: exercises/exercise_09.qmd
+          - href: exercises/exercise_10.qmd
+          - href: exercises/exercise_11.qmd
+          - href: exercises/exercise_12.qmd
+
+format:
+  html:
+    theme:
+      light: [zephyr, theme.scss]
+      dark:  [zephyr, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    monofont: "Fira Code"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    highlight-style: a11y
+    df-print: tibble
+
+
+freeze: auto
+
+editor: visual
+
+csl: files/csl/chicago-author-date.csl

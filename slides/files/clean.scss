@@ -1,0 +1,314 @@
+/*-- scss:defaults --*/
+
+// color palette
+// https://personal.sron.nl/~pault/#fig:scheme_light
+$tol-light-light-blue: #77AADD;
+$tol-light-orange: #EE8866;
+$tol-light-light-yellow: #EEDD88;
+$tol-light-pink: #FFAABB;
+$tol-light-light-cyan: #99DDFF;
+$tol-light-mint-green: #44BB99;
+$tol-light-pear: #BBCC33;
+$tol-light-olive: #AAAA00;
+$tol-light-pale-grey:#DDDDDD;
+
+$tol-medium-white: #FFFFFF;
+$tol-medium-light-blue: #6699CC;
+$tol-medium-dark-blue: #004488;
+$tol-medium-light-yellow: #EECC66;
+$tol-medium-dark-yellow: #997700;
+$tol-medium-dark-red: #994455;
+$tol-medium-light-red: #EE99AA;
+$tol-medium-black: #000000;
+
+$tol-dark-white: #FFFFFF;
+$tol-dark-blue: #222255;
+$tol-dark-cyan: #225555;
+$tol-dark-green: #225522;
+$tol-dark-yellow: #666633;
+$tol-dark-red: #663333;
+$tol-dark-grey: #555555;
+
+// color variables
+
+$dark-color: #131516;
+$accent1: $tol-dark-blue; //$tol-medium-dark-blue; //$tol-light-mint-green;
+$accent1-light: $tol-dark-cyan; //$tol-medium-light-blue; //$tol-light-mint-green;
+$accent2: $tol-dark-green; //$tol-medium-dark-red;
+
+// text colors
+
+//$body-bg: #f0f1eb !default;
+$body-color: $dark-color !default;
+$link-color: $accent1 !default;
+$selection-bg: mix($tol-medium-dark-yellow, black, 60%) !default;
+
+$fg-color: var(--col, $dark-color);
+$bg-color: var(--col, #fff);
+
+$ul-color1: mix($accent1, white, 80%);
+$ul-color2: mix($dark-color, white, 60%);
+
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+// fonts
+// @import url(https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i);
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300&family=Public+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif !default;
+$presentation-font-size-root: 36px;
+$font-family-emoji: "Noto Color Emoji";
+
+// Font weights
+$light: 400; // $light: 300;
+$regular: 400; // $regular: 300;
+$semibold: 700; // $semibold: 500; // $semibold: 350;
+$bold: 700; // $bold: 400;
+// $black: 700;
+
+// Heading sizes, colors, and weights
+$large-heading: 1.4em;
+$medium-heading: 1.25em;
+$small-heading: 0.95em;
+$button-font-size: 0.5em;
+
+$presentation-heading-font: $font-family-sans-serif !default;
+$presentation-heading-color: $dark-color !default;
+$presentation-heading-font-weight: $light;
+// $presentation-heading-line-height: 2;
+// $presentation-block-margin: 28px;
+
+//code
+$code-color: $dark-color !default;
+$font-family-monospace: 'Fira Code', monospace  !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  font-weight: $regular;
+  margin-top: 1.25em;
+}
+
+// title and headings
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $body-color;
+    font-size: $large-heading;
+    font-weight: $semibold;
+  }
+
+  .subtitle {
+    color: $accent1;
+    font-style: italic;
+    margin-top: 0em;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+    // font-size: 80%;
+    // color: #7F7F7F;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $body-color;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+
+}
+
+
+.reveal h2 {
+  font-weight: $semibold;
+  font-size: $large-heading;
+}
+
+.reveal h3 {
+  color: $accent1;
+  font-style: italic;
+  font-weight: $semibold;
+  font-size: $small-heading;
+}
+
+.reveal h4 {
+  color: $accent2;
+  font-weight: $semibold;
+  margin-top: 1.25em;
+}
+
+// alerts etc.
+
+.alert {
+  color: $accent2;
+}
+
+.fg {
+  color: $fg-color;
+}
+
+.bg {
+  background-color: $bg-color;
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+// emoji
+
+.noto-emoji {
+  font-family: $font-family-emoji;
+}
+
+// lists
+
+// Unordered lists
+.reveal ul {
+  font-weight: $regular;
+  padding-left: 16px;
+
+  li::marker {
+    color: $ul-color1;
+  }
+}
+
+.reveal ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: $ul-color2;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+  }
+}
+
+// Ordered lists
+
+.reveal ol {
+  font-weight: $regular;
+  padding-left: 16px;
+
+  li::marker {
+    color: $accent1;
+  }
+}
+
+
+// Slide numbers to the bottom-left
+
+.reveal.footer {
+    width: 75%;
+}
+
+
+// Move "hamburger" menu button to top right
+// /*--
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 30px;
+  right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+// --*/
+
+// Shift slide numbers down to avoid conflict with "hamburger" menu
+ /*--
+.slide-number {
+  top: 30px !important;
+}
+ --*/
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+// Same for chalkboard buttons (with an offset)
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+// Beamer-style button link environment
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: $button-font-size;
+  font-weight: $bold;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent1;
+  border: 1px solid $accent1;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: mix($accent1, white, 60%);
+  border-color: $accent1;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+// Special catch for etable environment to ensure these table images
+// don't overflow the slide.
+// See: https://lrberge.github.io/fixest/articles/etable_new_features.html
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em); /* Adjust 3em based on the height of your header, if necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}

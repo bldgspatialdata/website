@@ -1,0 +1,22 @@
+---
+title: "Week 9"
+order: 9
+subtitle: "Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`"
+date: 2023-10-25
+---
+
+## Prepare
+
+### Required readings
+
+-   @padghamOsmdata2023
+-   @mcconchieOpenStreetMapPastsOpenStreetMap2016
+
+### Optional readings
+
+-   @boeingRightToolsJob2020
+-   @arribas-belGeographyComputersPresent2018
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

@@ -1,0 +1,431 @@
+---
+title: "01: Getting started with spatial data using sf and the tidyverse"
+---
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(sf)
+library(mapview)
+library(units)
+library(mapboxapi)
+library(tidygeocoder)
+library(tidycensus)
+library(getACS)
+library(gt)
+library(osmdata)
+options("tigris_use_cache" = TRUE)
+```
+
+## Overview
+
+-   What is R?
+-   How does R work with spatial data?
+-   Take a look at `{sf}` and tidyverse in action
+
+## What is R?
+
+::: columns
+::: {.column width="70%"}
+R is best known for as a *statistical* programming language often used in data science and research.
+
+Like Python or C++, R is an **object-oriented, functional programming language** where the base set of features can be extended through open-source packages or libraries.
+:::
+
+::: {.column width="30%"}
+![](images/R_logo.png)
+:::
+:::
+
+::: notes
+> A package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).
+
+From [BasicBasics 2](https://rladiessydney.org/courses/ryouwithme/01-basicbasics-2/) (R-Ladies Sydney)
+:::
+
+### R has been around a while 📜
+
+::: columns
+::: {.column width="40%"}
+R turns 30 years old this month 🎂
+
+R is based an S---a language created at Bell Labs in 1976 to support exploratory data analysis.
+:::
+
+::: {.column width="60%"}
+![Digital Equipment Corporation VAX 11/780 mainframe computer. Source: Boston Public Library [Copyright Spencer Grant](https://www.digitalcommonwealth.org/search/commonwealth:sn00b088z)](images/14085834343_552d1d3197_h.jpg)
+:::
+:::
+
+::: footer
+S ran on VAX 11/780 computers like the mainframe above.
+:::
+
+::: notes
+R turns 30 years old this month and is based on a language called S first created at Bell Labs in 1976. S ran on machines like this one.
+
+R has included support for a variety of spatial data analysis tasks since 2000.
+
+The sf package (short for simple features) was first published to CRAN in 2016.
+:::
+
+### R doesn't use a graphical interface 🤖
+
+![](images/rstudio-ide-screenshot.png)
+
+::: footer
+[RStudio](https://posit.co/products/open-source/rstudio/) is the most popular IDE for R but some people use [VS Code](https://code.visualstudio.com/docs/languages/r), [radian](https://github.com/randy3k/radian), or a simple text editor.
+:::
+
+::: notes
+Unlike a desktop GIS application, you use it by writing code in a text file---not clicking around a graphical interface. I use an Integrated Development Environment or IDE known as RStudio to write R scripts, develop R packages, and even create presentations like this one.
+
+> With the advent of 'modern' GIS software, most people want to point and click their way through life. That's good, but there is a tremendous amount of flexibility and power waiting for you with the command line.
+
+Gary E. Sherman, founder of the Quantum GIS project, explains in Desktop GIS: Mapping the Planet with Open Source Tools
+:::
+
+### R is growing in popularity 📈
+
+```{r}
+#| echo: false
+#| eval: false
+```
+
+### R is growing in popularity 📈
+
+The average number of monthly downloads for `{sf}` (the most popular package for working with spatial data in R) has grown from just 1,300 in June 2018 to **over 58,000 in June 2023**.
+
+::: notes
+Over the past five years, average number of monthly downloads for sf, the most popular package for working with spatial data in R has grown from just 1,300 in June 2018 to over 58,000 in June 2023.
+
+It helps that R and RStudio are both free, most packages are open-source, and there are ample free online books and trainings.
+:::
+
+### R is flexible 🛠️
+
+::: columns
+::: {.column width="60%"}
+There can't be packages for everything---but sometimes it feels that way.
+
+Packages let you work with everything from Microsoft Word documents to 3D renderings of digital elevation data to Google Drive to Google Earth Engine.
+:::
+
+::: {.column width="40%"}
+![Created with `{rayshader}`](https://www.rayshader.com/reference/figures/smallhobart.gif){fig-alt="Animated loop showing a mountain with lighting from different directions."}
+:::
+:::
+
+::: footer
+If a package doesn't exist already, there are also packages like `{usethis}` or `{devtools}` that help *you* build it.
+:::
+
+## How does R work with spatial data?
+
+::: columns
+::: {.column width="65%"}
+The `{sf}` package, first published in 2016, is the most popular R package for spatial data.
+
+::: {style="font-size: 80%;"}
+Extension packages include:
+
+-   [lwgeom](https://github.com/r-spatial/lwgeom/) for selected liblwgeom/PostGIS functions
+-   [stars](https://github.com/r-spatial/stars/) for raster data, and raster or vector data cubes (spatial time series)
+-   [sfnetworks](https://luukvdmeer.github.io/sfnetworks/) for geospatial network data
+:::
+:::
+
+::: {.column width="35%"}
+![](https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif){fig-alt="sf package logo" fig-align="center"}
+
+![](https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png){fig-alt="sfnetworks package logo" fig-align="center" width="200"}
+:::
+:::
+
+### `{sf}` is built on open source libraries
+
+::: columns
+::: {.column width="65%"}
+Like QGIS, `{sf}` rests on a foundation of open source libraries:
+
+::: {style="font-size: 80%;"}
+-   [SQLite](https://www.sqlite.org/index.html) (a C library that implements a SQL database engine),
+-   [GDAL](https://gdal.org/index.html) (the Geospatial Data Abstraction Library),
+-   [PROJ](https://proj.org/en/9.2/index.html) (a coordinate transformation software library),
+-   and [GEOS](https://libgeos.org/) (a C/C++ library for computational geometry).
+:::
+:::
+
+::: {.column width="35%"}
+![](images/GDALLogoColor.svg){fig-alt="GDAL logo"}
+:::
+:::
+
+### How are `sf` objects organized
+
+::: columns
+::: {.column width="40%"}
+`sf` objects are an implementation of the simple feature standard.
+
+Simple feature objects are a data frame attached to a "sticky" geometry column (known as a `sfc` list-column).
+:::
+
+::: {.column width="60%"}
+![Illustration (c) 2018 by [Allison Horst](https://twitter.com/allison_horst/status/1071456081308614656)](images/allison-horst_sf-illustration.jpeg)
+:::
+:::
+
+::: footer
+The geometry for a `sf` data frame is known as a simple feature collection (`sfc`) object. A `sfc` object is made up of `sfg` objects.
+:::
+
+------------------------------------------------------------------------
+
+-   `sf`, the table (data.frame) with feature attributes and "sticky" feature geometries, which **contains**
+-   `sfc`, the list-column with the geometries for each feature (record), which is **composed of**
+
+From [Simple Feature for R](https://r-spatial.github.io/sf/articles/sf1.html#how-simple-features-in-r-are-organized)
+
+------------------------------------------------------------------------
+
+```{r}
+nc <- st_read(system.file("shape/nc.shp", package="sf"))
+
+nc
+```
+
+::: footer
+`<-` and `=` both work as **assignment operators** that *assign* an object or the output from a function into a new object.
+:::
+
+------------------------------------------------------------------------
+
+You can take a look at the geometry (the `sfc` list-column) using `st_geometry()`:
+
+```{r}
+#| message: true
+st_geometry(nc)
+```
+
+------------------------------------------------------------------------
+
+`sfc` objects have attributes for the coordinate reference system (`crs`), bounding box (`bbox`), precision, and number of empty geometries (`n_empty`).
+
+```{r}
+attributes(st_geometry(nc))
+```
+
+------------------------------------------------------------------------
+
+`sfc` objects are composed of `sfg` objects. Each object hold the feature geometry of an individual simple feature.
+
+```{r}
+st_geometry(nc)[[1]]
+```
+
+------------------------------------------------------------------------
+
+The `{sf}` package also includes functions that allow you to build feature geometry from scratch using `st_point()`, `st_linestring()`, and other functions:
+
+```{r}
+st_point(c(0, 1))
+
+st_linestring(matrix(c(0, 0, 1, 1), , 2))
+```
+
+------------------------------------------------------------------------
+
+## Take a look at `{sf}` and the tidyverse in action
+
+Packages are simple to install:
+
+```{r}
+#| eval: false
+install.packages(c("sf", "ggplot2", "dplyr"))
+```
+
+And to load:
+
+```{r}
+#| eval: false
+library(sf)
+library(ggplot2)
+library(dplyr)
+```
+
+------------------------------------------------------------------------
+
+### tidyverse packages are used for everyday data analyses
+
+![Courtesy [R for Data Science](https://r4ds.hadley.nz/whole-game.html#fig-ds-whole-game)](images/whole-game.png)
+
+------------------------------------------------------------------------
+
+### Import spatial data from a file
+
+Using the `{sf}` package, you can use `st_read()` to read data into R from a local file, URL, or database:
+
+```{r}
+#| name: st_read
+#| message: true
+md <- st_read("files/md_counties.gpkg")
+```
+
+------------------------------------------------------------------------
+
+Or, if you drop the geometry, a `sf` object is just like a spreadsheet:
+
+```{r}
+st_drop_geometry(md)
+```
+
+------------------------------------------------------------------------
+
+You can plot data with R's built-in `plot()` function:
+
+```{r}
+plot(md[, 2])
+```
+
+::: footer
+Square brackets (`[]`) are an easy way to subset rows and columns.
+:::
+
+------------------------------------------------------------------------
+
+You can summarize data using the `summary()` function:
+
+```{r}
+#| name: summary
+summary(md)
+```
+
+::: footer
+The `sf` package adds S3 methods for the base `plot()` and `summary()` functions. Learn more about [S3 methods in *Advanced R*](https://adv-r.hadley.nz/s3.html).
+:::
+
+### Using `{sf}` with tidyverse packages
+
+::: columns
+::: {.column width="65%"}
+The [tidyverse](https://www.tidyverse.org/) family of R packages developed by [Posit](https://posit.co) (formerly known as RStudio) including:
+
+::: {style="font-size: 80%;"}
+-   [ggplot2](https://ggplot2.tidyverse.org/) for making graphics and data visualizations from bar charts to box plots to maps
+-   [dplyr](https://dplyr.tidyverse.org/) for common data manipulation challenges, such as filtering, re-arranging, or summarizing data
+-   [readr](https://readr.tidyverse.org/) for reading rectangular data in a fast and friendly way
+:::
+:::
+
+::: {.column width="35%"}
+![](images/tidyverse-packages.png){fig-alt="Tidyverse packages"}
+:::
+:::
+
+::: notes
+Notably, the development of these packages is supported by Posit---but they are fully open-source and include contributions from quite literally *hundreds* of individual developers (291 for ggplot2 and 260 for dplyr).
+
+sf works well with tidyverse packages and I use them extensively in my own work.
+:::
+
+------------------------------------------------------------------------
+
+### Transform and visualize
+
+tidyverse packages work well with `{sf}` for transforming and visualizing spatial data.
+
+------------------------------------------------------------------------
+
+For example, we can use `geom_sf()` from `{ggplot2}` to make a simple map:
+
+```{r}
+#| name: geom_sf
+#| output-location: slide
+md_map <- ggplot(data = md) +
+  geom_sf() +
+  theme_minimal()
+
+md_map
+```
+
+------------------------------------------------------------------------
+
+Take a peek at the values of the data with the `glimpse()` function from `{dplyr}`:
+
+```{r}
+#| name: glimpse
+glimpse(md)
+```
+
+------------------------------------------------------------------------
+
+#### Using `{sf}` for spatial transformations
+
+::: columns
+::: {.column width="60%"}
+`{sf}` includes a range of spatial transformation functions with names matching the spatial functions of [PostGIS](https://postgis.net/).
+
+To show how this works, we can get the center of Baltimore City, buffer by 25 miles, and filter intersecting counties.
+:::
+
+::: {.column width="40%"}
+![ST_intersects relationships with different geometry types](images/st_intersects_postgis-intro.png)
+:::
+:::
+
+::: notes
+that you might usually do [geoprocessing tools from ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm) or the [QGIS Processing Toolbox](https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html) at included with the `{sf}`, `{lwgeom}`, or another R package.
+
+-   Get a center point for Baltimore City with `st_centroid()`
+-   Apply a 25 mile buffer using `st_buffer()` and `as_units()` from the `{units}` package
+-   Filter our original data on Maryland counties with `st_filter()`
+-   Now we can combine our earlier map with the transformed data
+:::
+
+#### Using `{sf}` for spatial transformations {auto-animate="true"}
+
+```{r}
+balt_center <- st_centroid(md[3, ])
+
+balt_center
+```
+
+#### Using `{sf}` for spatial transformations {auto-animate="true"}
+
+```{r}
+balt_center <- st_centroid(md[3, ])
+
+balt_area <- st_buffer(balt_center, dist = as_units(25, "mi"))
+
+balt_area
+```
+
+#### Using `{sf}` for spatial transformations {auto-animate="true"}
+
+```{r}
+balt_center <- st_centroid(md[3, ])
+
+balt_area <- st_buffer(balt_center, dist = as_units(25, "mi"))
+
+balt_area_counties <- st_filter(md, balt_area, .predicate = st_intersects)
+
+balt_area_counties
+```
+
+#### Using `{sf}` for spatial transformations
+
+```{r}
+#| output-location: slide
+ggplot(data = md) +
+  geom_sf() +
+  geom_sf(data = balt_area_counties, fill = "darkorange", alpha = 0.4) +
+  geom_sf(data = balt_area, color = "orange", fill = NA, linewidth = 1) +
+  theme_void()
+```
+
+::: notes
+Visual checks remain an important part of a workflow even when using a non-graphical interface. Map the data to see the results.
+:::
+
+------------------------------------------------------------------------

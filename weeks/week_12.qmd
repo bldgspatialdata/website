@@ -1,0 +1,33 @@
+---
+title: "Week 12"
+order: 12
+subtitle: "Creating and managing spatial metadata"
+date: 2023-11-15
+---
+
+::: {.callout-important appearance="simple"}
+Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
+:::
+
+## Overview
+
+-   Introduction to metadata and spatial metadata standards
+-   Writing metadata, READMEs, and documentation for projects, workflows, and data
+-   Working with data dictionaries and the [{labelled}](https://larmarange.github.io/labelled/) package
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 7 Show Your Work](https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3) in @dignazioDataFeminism2020
+-   @pileggiCaseVariableLabels2022
+-   @Dataprimers2019
+
+### Optional readngs
+
+-   @GuideWritingReadme
+-   @riedererColumnNamesContracts2020
+
+## Practice
+
+🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)

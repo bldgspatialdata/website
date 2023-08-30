@@ -1,0 +1,9 @@
+---
+title: "GES668: Building Spatial Datasets"
+---
+
+In this course, students learn how to access and understand spatial data using the R programming language and the [sf](https://r-spatial.github.io/sf/) and [tidyverse family](https://www.tidyverse.org/) of R packages. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data.
+
+Readings and practical exercise prepare students to build and maintain data sets about local places and navigate critical issues including data ownership, accuracy, and privacy considerations.
+
+![](images/background_course-overview.png){fig-alt="A series of six, generic data visualizations: a scatterplot, a density plot, a contour plot, a line plot, a box plot, and another scatterplot." width="700"}

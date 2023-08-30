@@ -1,0 +1,25 @@
+---
+title: "Week 4"
+order: 4
+subtitle: "Transforming spatial data attributes"
+date: 2023-09-20
+---
+
+## Overview
+
+-   Summarizing features with `dplyr::summarize()`
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 3 Attribute data operations](https://geocompr.robinlovelace.net/attr.html) in @lovelaceGeocomputation2022
+-   [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019
+
+### Optional readings
+
+-   [Ch. 5 Attributes and Support](https://r-spatial.org/book/05-Attributes.html) in @pebesmaSpatialDataScience2023
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)

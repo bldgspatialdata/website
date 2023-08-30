@@ -1,0 +1,22 @@
+---
+title: "Week 8"
+order: 8
+subtitle: "Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`"
+date: 2023-10-18
+---
+
+## Prepare
+
+### Required readings
+
+-   [Ch. 5 Market, Place, Interface](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019
+-   [Ch. 11 Exploratory Data Analysis](https://r4ds.hadley.nz/eda) in @wickhamDataScienceImport2023
+-   @mazotteWorkingOpenlyData2021
+
+### Optional readings
+
+-   [Ch. 12 Communication](https://r4ds.hadley.nz/communication) in @wickhamDataScienceImport2023
+
+## Practice
+
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

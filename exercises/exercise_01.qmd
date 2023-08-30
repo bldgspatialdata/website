@@ -1,0 +1,218 @@
+---
+title: "Exercise 01"
+order: 1
+date-due: 2023-09-04
+date-modified: last-modified
+---
+
+::: {.callout-important appearance="minimal" icon="true"}
+Exercise due on {{< meta date-due >}}
+:::
+
+ℹ️ See [week {{< meta order >}}](../weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html) for related slides and readings
+
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+## Practice these skills
+
+-   Confirm that you understand some coding basics
+-   Use the `?` operator to access function and package documentation
+-   Use `class()`, `names()`, or `summary()` functions to get information about objects in R
+-   Use the base `plot()` or `ggplot2::geom_sf()` function to visualize a sf object
+-   Bonus: use the `mapview::mapview()` function to look at data using an interactive map
+:::
+
+::: {.callout-note collapse="false" appearance="default" icon="true"}
+## Think about these questions
+
+-   What are parts of a simple feature object? What are the benefits and the limitations of this format?
+-   What are some advantages or disadvantages of using R for reproducible data analysis compared to a desktop GIS?
+:::
+
+----
+
+## Setup
+
+To complete this exercise, you need two libraries:
+
+```{r}
+library(sf)
+library(ggplot2)
+```
+
+You also need data included with the `{sf}` package:
+
+```{r}
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+```
+
+You are also need the `{mapview}` and `{spData}` packages but don't load them yet.
+
+## Exercises
+
+### Coding basics
+
+*The exercises in this section are from [Ch. 3 Workflow: basics](https://r4ds.hadley.nz/workflow-basics.html) in R for Data Science (2e). If you have any trouble with the next couple exercises, please review the chapter before continuing to the next section.*
+
+Why does this code not work?
+
+```{r}
+my_variable <- 10
+my_varıable
+```
+
+------------------------------------------------------------------------
+
+Tweak each of the following R commands so that they run correctly:
+
+```{r}
+libary(todyverse)
+
+ggplot(dTA = mpg) + 
+  geom_point(maping = aes(x = displ y = hwy)) +
+  geom_smooth(method = "lm)
+```
+
+------------------------------------------------------------------------
+
+Press <kbd>⌥ + ⇧ + K</kbd> or <kbd>⎇ + ⇧ + K</kbd>. What happens? How can you get to the same place using the menus?
+
+------------------------------------------------------------------------
+
+### Look up documentation
+
+The `?` is a function for accessing documentation on a function, dataset, or other topic. For example, executing the code: `?sf::st_read` will pull up the documentation on functions to read simple features or layers from file or database.
+
+Use `?` to access the documentation on `sf::st_geometry()` then look for the "Value" heading that provides information about the value returned by the function.
+
+What type of object does `sf::st_geometry()` return? Fill in the blank or paraphrase the description.
+
+`sf::st_geometry()` returns a \_\_\_\_ object.
+
+What is one *other* function documented on the same page? \_\_\_\_
+
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+Review [Ch. 9 Workflow: getting help](https://r4ds.hadley.nz/workflow-help) in R for Data Science (2e) for more information about getting help when you struggle with a package, function, or project.
+:::
+
+### Access object classes, names, and attributes
+
+The `class()` and `names()` functions return basic information about an object in R.
+
+Use `class()` to check the class of the output from `st_geometry()`:
+
+```{r}
+nc_geometry <- st_geometry(nc)
+```
+
+----
+
+Get the `names()` for the `nc` object and the `nc_geometry` object:
+
+```{r}
+names(____)
+
+names(____)
+```
+
+Can you explain the difference between the two results?
+
+----
+
+`summary()` can help get more information about an object.
+
+Use `summary()` on `nc_geometry`:
+
+```{r}
+summary(____)
+```
+
+Review the results and try to answer the following:
+
+-   What is the geometry type? \_\_\_\_
+-   What is the coordinate reference system? \_\_\_\_
+-   How many features? \_\_\_\_
+
+### Plot a `sf` object
+
+Some packages come with data we can use as soon as the package is loaded.
+
+Load the `{spData}` packages using `library()` then make a plot of the `us_states` data:
+
+```{r}
+library(____)
+
+plot(____)
+```
+
+Can you update the plot of `us_states` to show a map of states by region?
+
+```{r}
+plot(____)
+```
+
+Can you make a map of `us_states` using `ggplot()` and `geom_sf()`?
+
+```{r}
+ggplot(data = ____) +
+  geom_sf()
+```
+
+Can you update the map of `us_states` you made with `geom_sf()` so states are color-coded by total population in 2015? Take a look at the documentation for `ggplot2::geom_sf()` for examples.
+
+```{r}
+ggplot(data = ____) +
+  geom_sf()
+```
+
+If you get stuck, try using `names()` or `summary()` to take a look at `us_states` to find out the column names for region or total population in 2015.
+
+## Bonus exercise
+
+### Interactive mapping
+
+We should first get a URL for the [Baltimore County Maintained Roads data](https://data.imap.maryland.gov/datasets/maryland::baltimore-county-maintained-roads/explore) from Maryland iMap a path to the GeoPackage file in your repository.
+
+I already pulled the URL to use for this exercise and prepped it for reading with a ["vsicurl" prefix](https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access) that allows us to use the [virtual file systems](https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl) built into the [Geospatial Data Abstraction Library](https://gdal.org/user/virtual_file_systems.html) or GDAL.
+
+```{r}
+url <- "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/Baltimore_County_Maintained_Roads/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+
+url <- paste0("/vsicurl/" , url)
+```
+
+
+::: {.callout-note collapse="true" appearance="default" icon="true"}
+### About GDAL and other sf dependencies
+GDAL is one of the major open source projects that "powers" the `{sf}` package along with GEOS, PROJ, and udunits2. Geocomputation with R [explains these dependencies](https://r.geocompx.org/spatial-class#vector-data):
+
+-   [GDAL](https://gdal.org/), for reading, writing and manipulating a wide range of geographic data formats,
+
+-   [PROJ](https://proj.org/), a powerful library for coordinate system transformations
+
+-   [GEOS](https://libgeos.org/), a planar geometry engine for operations such as calculating buffers and centroids on data with a projected CRS
+
+-   [S2](https://s2geometry.io/), a spherical geometry engine written in C++ developed by Google
+:::
+
+---
+
+Next, use `st_read()` and the assignment operator `<-` to load the file into a `sf` object named \`roads\`\`:
+
+```{r}
+roads <- ____
+```
+
+---
+
+Load the `{mapview}` library and then use the `mapview()` function to create an interactive map of the `roads` object:
+
+```{r}
+_____
+_____
+```
+
+Explore the setting for `mapview()` and create a custom map using `roads` or other data from this exercise:
+
+```{r}
+_____
+```
