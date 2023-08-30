@@ -11,8 +11,13 @@ $tol-dark-grey: #555555;
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300&family=Public+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
 $font-family: "Atkinson Hyperlegible", sans-serif;
+$font-family-emoji: "Noto Color Emoji";
 
 /*-- scss:rules --*/
+
+.noto-emoji {
+  font-family: $font-family-emoji;
+}
 
 .render-commit-push {
   padding: 0.5em 0.5em 0em 3em;
