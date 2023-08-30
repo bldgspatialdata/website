@@ -1,12 +1,216 @@
 ---
 title: "Exercise 02"
 order: 2
+status: WIP
 date-due: 2023-09-11
 date-modified: last-modified
 ---
+
+::: {.callout-note appearance="minimal" icon="true"}
+#### {{< meta status >}}
+This exercise is a work-in-progress. Please wait for this status message to be removed before getting started.
+:::
 
 ::: {.callout-important appearance="minimal" icon="true"}
 Exercise due on {{< meta date-due >}}
 :::
 
 ℹ️ See [week {{< meta order >}}](../weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html) for related slides and readings
+
+## Overview
+
+## Setup
+
+```{r}
+library(ggplot2)
+library(sf)
+```
+
+One advantage of using `{ggplot2}` over a map-making focused package like `{tmap}` is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with `{ggplot2}`.
+
+For this exercise, we are going to use the following packages:
+
+```{r}
+#| eval: false
+pak::pkg_install(c("ggrepel", "cols4all", "patchwork", "ggtext", "spDataLarge"))
+```
+
+We are also going to demonstrate a few advanced features. You won't need to do anything with these packages but you need them installed to see the results:
+
+```{r}
+#| eval: false
+pak::pkg_install(c("ggdist", "geomtextpath", "plotly", "smoothr"))
+```
+
+## Exercises
+
+### Visualizing one variable
+
+Working with `geom_bar()` with one discrete variable:
+
+```{r}
+ggplot() +
+  geom_bar(aes(x = ____))
+```
+
+Working with `geom_dotplot()` with one continuous variable:
+
+```{r}
+ggplot(data = ____) +
+  geom_dotplot()
+```
+
+Working with `geom_sf()` with one continuous variable:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(aes(size = ____))
+```
+
+Working with `geom_sf()` with one discrete variable:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(aes(color = ____))
+```
+
+### Visualizing two variables
+
+Using `geom_col()` with one discrete and one continuous variable:
+
+```{r}
+ggplot(data = ____) +
+  geom_col(aes(____))
+```
+
+Using `geom_sf()` and `facet_wrap()` with one discrete and one continuous variable:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(aes(fill = ____)) +
+  facet_wrap(~ ____)
+```
+
+### Using scales and colors
+
+Using the viridis scales for a dot plot:
+
+```{r}
+ggplot(data = ____) +
+  geom_dotplot() +
+  scale_color_viridis_c()
+```
+
+Using the [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) scales with color:
+
+```{r}
+ggplot() +
+  geom_sf(aes(color = ____)) +
+  scale_color_brewer()
+```
+
+The same with fill:
+
+```{r}
+ggplot() +
+  geom_sf(aes(fill = ____)) +
+  scale_fill_brewer()
+```
+
+The same with a continuous variable:
+
+```{r}
+ggplot() +
+  geom_sf(aes(fill = ____)) +
+  scale_fill_distiller()
+```
+
+### Adding labels, legends, and themes
+
+Using the `labs()` function:
+
+```{r}
+ggplot() +
+  geom_sf(aes(fill = ____)) +
+  labs(
+    title = ____,
+    caption = ____,
+    fill = ____
+  )
+```
+
+### Map making with `{ggplot2}`
+
+Hiding graticules with `theme_void()`:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA) +
+  theme_void()
+```
+
+Hiding [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)) with `theme()`:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA) +
+  theme(
+    panel.grid = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    )
+```
+
+"Zooming" into an area with `coord_sf()`
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA) +
+  coord_sf()
+```
+
+Adding inset maps with `{patchwork}`
+
+```{r}
+area_map <- ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA)
+
+inset_map <- ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA) +
+  coord_sf()
+
+area_map +
+  patchwork::inset_element(
+    inset_map,
+    left = ____,
+    bottom = ____,
+    top = ____,
+    right = ____
+  )
+```
+
+Smoothing features with `{smoothr}`
+
+```{r}
+data <- ____
+smooth_data <- smoothr::smooth(data, method = "ksmooth", smoothness = ____)
+
+ggplot() +
+  geom_sf(
+    data = data,
+    color = "red"
+    ) +
+  geom_sf(
+    data = smooth_data,
+    color = "blue"
+  ) +
+  theme_void()
+```
+
+## Bonus exercise
+
+### Creating maps with `{tmap}`
+
+```{r}
+
+```
