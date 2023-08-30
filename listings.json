@@ -1,5 +1,22 @@
 [
   {
+    "listing": "/course-exercises.html",
+    "items": [
+      "/exercises/exercise_01.html",
+      "/exercises/exercise_02.html",
+      "/exercises/exercise_03.html",
+      "/exercises/exercise_04.html",
+      "/exercises/exercise_05.html",
+      "/exercises/exercise_06.html",
+      "/exercises/exercise_07.html",
+      "/exercises/exercise_08.html",
+      "/exercises/exercise_09.html",
+      "/exercises/exercise_10.html",
+      "/exercises/exercise_11.html",
+      "/exercises/exercise_12.html"
+    ]
+  },
+  {
     "listing": "/course-schedule.html",
     "items": [
       "/weeks/week_01.html",
@@ -17,23 +34,6 @@
       "/weeks/week_13.html",
       "/weeks/week_14.html",
       "/weeks/week_15.html"
-    ]
-  },
-  {
-    "listing": "/course-exercises.html",
-    "items": [
-      "/exercises/exercise_01.html",
-      "/exercises/exercise_02.html",
-      "/exercises/exercise_03.html",
-      "/exercises/exercise_04.html",
-      "/exercises/exercise_05.html",
-      "/exercises/exercise_06.html",
-      "/exercises/exercise_07.html",
-      "/exercises/exercise_08.html",
-      "/exercises/exercise_09.html",
-      "/exercises/exercise_10.html",
-      "/exercises/exercise_11.html",
-      "/exercises/exercise_12.html"
     ]
   }
 ]
