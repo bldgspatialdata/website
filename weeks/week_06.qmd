@@ -9,16 +9,9 @@ date: 2023-10-04
 ## Overview
 
 -   Joining tables by attribute with `{dplyr}`
-
-```{=html}
-<!-- -->
-```
 -   Using [{stringr}](https://stringr.tidyverse.org/) functions to tidy messy address data
-
 -   Recoding categorical attribute data with [{forcats}](https://forcats.tidyverse.org/)
-
 -   Converting between wide and long data formats with `dplyr::pivot_longer()` and `dplyr::pivot_wider()`
-
 -   Working with date-time attributes using [{lubridate}](https://lubridate.tidyverse.org/)
 
 ## Prepare
