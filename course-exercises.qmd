@@ -1,0 +1,12 @@
+---
+title: "Exercise overview"
+listing:
+  contents:
+    - "exercises"
+  type: grid
+  fields: [title, date-modified, status]
+  sort: "order"
+  field-display-names:
+    date-modified: "Last updated"
+    status: "Status"
+---
