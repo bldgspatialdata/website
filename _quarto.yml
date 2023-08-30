@@ -24,13 +24,13 @@ website:
     collapse-level: 1
 
     contents:
-      - section: "Course information"
+      - section: "Course information ℹ️"
         contents:
           - href: course-overview.qmd
             text: Overview
           - href: course-syllabus.qmd
             text: Syllabus
-      - section: "Weeks"
+      - section: "Weeks 🗓️"
         contents:
           - course-schedule.qmd
           - href: weeks/week_01.qmd
@@ -48,7 +48,7 @@ website:
           - href: weeks/week_13.qmd
           - href: weeks/week_14.qmd
           - href: weeks/week_15.qmd
-      - section: "Exercises"
+      - section: "Exercises 🛠️"
         contents:
           - href: exercises/exercise_01.qmd
           - href: exercises/exercise_02.qmd
@@ -78,7 +78,5 @@ format:
 
 
 freeze: auto
-
-editor: visual
 
 csl: files/csl/chicago-author-date.csl
