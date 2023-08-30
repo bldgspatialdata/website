@@ -24,7 +24,7 @@ tbl <- tibble::tribble(
                                  NA, "2023-11-29",                                                   "Due: Final project repository",                                           NA,                                NA
          )
 
-
+library(gt)
 
 tbl |> 
   gt::gt() |> 
@@ -46,5 +46,17 @@ tbl |>
     columns = c("Slides", "Exercise"),
     show_underline = FALSE
   ) |> 
-  gt::sub_missing()
+  gt::sub_missing() |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Noto Color Emoji")),
+    location = cells_body(all_of(c("Slides", "Exercise")))
+  ) |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
+    location = cells_body(all_of(c("Week", "Date", "Topic")))
+  ) |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
+    location = cells_column_labels()
+  )
 ```
