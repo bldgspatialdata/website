@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GES 668 - Fall 2023 - GES 668: Building Spatial Datasets (Fall 2023)</title>
+<title>GES 668 - Fall 2023 - Exercise overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,9 +62,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<meta property="og:title" content="GES 668 - Fall 2023 - GES 668: Building Spatial Datasets (Fall 2023)">
+    const options = {
+      valueNames: ['listing-title','listing-date-modified','listing-status',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="GES 668 - Fall 2023 - Exercise overview">
 <meta property="og:site-name" content="GES 668 - Fall 2023">
 </head>
 
@@ -75,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">GES 668: Building Spatial Datasets (Fall 2023)</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exercise overview</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -329,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GES 668: Building Spatial Datasets (Fall 2023)</h1>
+<h1 class="title">Exercise overview</h1>
 </div>
 
 
@@ -344,562 +377,377 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell">
-<div class="cell-output-display">
 
-<div id="eqgxrlrfuq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#eqgxrlrfuq table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-#eqgxrlrfuq thead, #eqgxrlrfuq tbody, #eqgxrlrfuq tfoot, #eqgxrlrfuq tr, #eqgxrlrfuq td, #eqgxrlrfuq th {
-  border-style: none;
-}
 
-#eqgxrlrfuq p {
-  margin: 0;
-  padding: 0;
-}
 
-#eqgxrlrfuq .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="5">
+<a href="./exercises/exercise_01.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 01
+</h5>
 
-#eqgxrlrfuq .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+Available
+</td>
+</tr>
 
-#eqgxrlrfuq .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#eqgxrlrfuq .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#eqgxrlrfuq .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#eqgxrlrfuq .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#eqgxrlrfuq .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#eqgxrlrfuq .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#eqgxrlrfuq .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#eqgxrlrfuq .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#eqgxrlrfuq .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#eqgxrlrfuq .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#eqgxrlrfuq .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#eqgxrlrfuq .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#eqgxrlrfuq .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#eqgxrlrfuq .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#eqgxrlrfuq .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#eqgxrlrfuq .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#eqgxrlrfuq .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#eqgxrlrfuq .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#eqgxrlrfuq .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#eqgxrlrfuq .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#eqgxrlrfuq .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#eqgxrlrfuq .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#eqgxrlrfuq .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#eqgxrlrfuq .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#eqgxrlrfuq .gt_left {
-  text-align: left;
-}
-
-#eqgxrlrfuq .gt_center {
-  text-align: center;
-}
-
-#eqgxrlrfuq .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#eqgxrlrfuq .gt_font_normal {
-  font-weight: normal;
-}
-
-#eqgxrlrfuq .gt_font_bold {
-  font-weight: bold;
-}
-
-#eqgxrlrfuq .gt_font_italic {
-  font-style: italic;
-}
-
-#eqgxrlrfuq .gt_super {
-  font-size: 65%;
-}
-
-#eqgxrlrfuq .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#eqgxrlrfuq .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#eqgxrlrfuq .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#eqgxrlrfuq .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#eqgxrlrfuq .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#eqgxrlrfuq .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#eqgxrlrfuq .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" style="table-layout: fixed;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <colgroup>
-    <col>
-    <col style="width:120px;">
-    <col>
-    <col>
-    <col>
-  </colgroup>
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Week">Week</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Date">Date</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Topic">Topic</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Slides">Slides</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Exercise">Exercise</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_01.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">1</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Aug 30</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Getting started with spatial data using sf and the tidyverse</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-data.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_01.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_02.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">2</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 6</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Visualizing spatial data with ggplot2</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/data-visualization.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_02.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_03.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">3</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 13</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Transforming data with dplyr</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/03_data-transformation.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_03.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_04.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">4</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 20</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Transforming spatial data attributes</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/03_data-transformation.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_04.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_05.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">5</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 27</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Applying spatial transformations and geometric operations using sf</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/05_spatial-transformation.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_05.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_06.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">6</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 4</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Tidying and joining spatial data</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/06_tidy-data.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_06.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_07.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">7</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 11</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Building functions in R and literate programming with Quarto</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/07_r-functions.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_07.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_08.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">8</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 18</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Developing an exploratory data analysis with sf and the tidyverse</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/exploratory-analysis.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_08.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_09.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">9</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 25</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/open-street-map.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_09.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_10.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">10</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 1</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Exploring American Community Survey data with the tidycensus package</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/tidycensus.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_10.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_11.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">11</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 8</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Reading and writing spatial data files and services</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-data-io.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_11.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_12.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">12</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 1</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Creating and managing spatial metadata</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-metadata.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_12.html" target="_blank" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_13.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">13</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 8</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Project check-in meetings (no class)</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_14.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">14</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 15</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Review and work session</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_15.html" target="_blank" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">15</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 22</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Final project presentations</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">—</td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 29</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Due: Final project repository</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-  </tbody>
-  
-  
-</table>
+</tbody></table>
 </div>
 </div>
+</a>
 </div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="3">
+<a href="./exercises/exercise_02.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 02
+</h5>
 
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
 
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_03.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 03
+</h5>
 
-</main> <!-- /main -->
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_04.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 04
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_05.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 05
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_06.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 06
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_07.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 07
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_08.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 08
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_09.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 09
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_10.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 10
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_11.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 11
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1693409514004" data-listing-reading-time-sort="1">
+<a href="./exercises/exercise_12.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exercise 12
+</h5>
+
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Last updated
+</td>
+<td class="date-modified">
+</td>
+</tr>
+<tr>
+<td>
+Status
+</td>
+<td class="status">
+WIP
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1252,4 +1100,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bldgspatialdata/website/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bldgspatialdata/website/edit/main/course-exercises.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>

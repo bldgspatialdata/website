@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "slides/spatial-data.html#overview",
+    "href": "slides/spatial-data.html#overview",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "1 Overview",
+    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
+  },
+  {
+    "objectID": "slides/spatial-data.html#what-is-r",
+    "href": "slides/spatial-data.html#what-is-r",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "2 What is R?",
+    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
+  },
+  {
+    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "3 How does R work with spatial data?",
+    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
+  },
+  {
+    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "4 Take a look at {sf} and the tidyverse in action",
+    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
+  },
+  {
     "objectID": "course-overview.html",
     "href": "course-overview.html",
     "title": "GES668: Building Spatial Datasets",
@@ -130,7 +158,7 @@
     "href": "weeks/week_01.html#prepare",
     "title": "Week 1",
     "section": "Prepare",
-    "text": "Prepare\n📖 Read the syllabus\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2.\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or more recent How to name files talk for NormConf 2022)\n\n\n\nOptional readings\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\nGreg Wilson et al. “Good Enough Practices in Scientific Computing,” PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510, doi:10.1371/journal.pcbi.1005510."
+    "text": "Prepare\n\nGetting ready for the first class\n\nInstall R and RStudio on your computer. Review these instructions if needed.\nIf you don’t already have a GitHub account, register for a GitHub user account. Review these instructions if needed.\nInstall the GitHub Desktop application (the installer will also install Git on your computer).\nUse this Google form to share your GitHub username (and a little background)\nJoin the class Discord.\nBring a computer to class (if you can).\n📖 Read the syllabus\n\n\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2.\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or more recent How to name files talk for NormConf 2022)\n\n\n\nOptional readings\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\nGreg Wilson et al. “Good Enough Practices in Scientific Computing,” PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510, doi:10.1371/journal.pcbi.1005510."
   },
   {
     "objectID": "weeks/week_01.html#participate",
@@ -207,7 +235,35 @@
     "href": "exercises/exercise_02.html",
     "title": "Exercise 02",
     "section": "",
-    "text": "Exercise due on 2023-09-11\n\n\n\nℹ️ See week 2 for related slides and readings"
+    "text": "WIP\n\n\n\nThis exercise is a work-in-progress. Please wait for this status message to be removed before getting started.\nℹ️ See week 2 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#overview",
+    "href": "exercises/exercise_02.html#overview",
+    "title": "Exercise 02",
+    "section": "1 Overview",
+    "text": "1 Overview"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#setup",
+    "href": "exercises/exercise_02.html#setup",
+    "title": "Exercise 02",
+    "section": "2 Setup",
+    "text": "2 Setup\n\nlibrary(ggplot2)\nlibrary(sf)\n\nOne advantage of using {ggplot2} over a map-making focused package like {tmap} is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with {ggplot2}.\nFor this exercise, we are going to use the following packages:\n\npak::pkg_install(c(\"ggrepel\", \"cols4all\", \"patchwork\", \"ggtext\", \"spDataLarge\"))\n\nWe are also going to demonstrate a few advanced features. You won’t need to do anything with these packages but you need them installed to see the results:\n\npak::pkg_install(c(\"ggdist\", \"geomtextpath\", \"plotly\", \"smoothr\"))"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#exercises",
+    "href": "exercises/exercise_02.html#exercises",
+    "title": "Exercise 02",
+    "section": "3 Exercises",
+    "text": "3 Exercises\n\n3.1 Visualizing one variable\nWorking with geom_bar() with one discrete variable:\n\nggplot() +\n  geom_bar(aes(x = ____))\n\nWorking with geom_dotplot() with one continuous variable:\n\nggplot(data = ____) +\n  geom_dotplot()\n\nWorking with geom_sf() with one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(size = ____))\n\nWorking with geom_sf() with one discrete variable:\n\nggplot(data = ____) +\n  geom_sf(aes(color = ____))\n\n\n\n3.2 Visualizing two variables\nUsing geom_col() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_col(aes(____))\n\nUsing geom_sf() and facet_wrap() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(fill = ____)) +\n  facet_wrap(~ ____)\n\n\n\n3.3 Using scales and colors\nUsing the viridis scales for a dot plot:\n\nggplot(data = ____) +\n  geom_dotplot() +\n  scale_color_viridis_c()\n\nUsing the ColorBrewer scales with color:\n\nggplot() +\n  geom_sf(aes(color = ____)) +\n  scale_color_brewer()\n\nThe same with fill:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_brewer()\n\nThe same with a continuous variable:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_distiller()\n\n\n\n3.4 Adding labels, legends, and themes\nUsing the labs() function:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  labs(\n    title = ____,\n    caption = ____,\n    fill = ____\n  )\n\n\n\n3.5 Map making with {ggplot2}\nHiding graticules with theme_void():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme_void()\n\nHiding graticules with theme():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme(\n    panel.grid = element_blank(),\n    panel.grid.major = element_blank(),\n    panel.grid.minor = element_blank()\n    )\n\n“Zooming” into an area with coord_sf()\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\nAdding inset maps with {patchwork}\n\narea_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA)\n\ninset_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\narea_map +\n  patchwork::inset_element(\n    inset_map,\n    left = ____,\n    bottom = ____,\n    top = ____,\n    right = ____\n  )\n\nSmoothing features with {smoothr}\n\ndata &lt;- ____\nsmooth_data &lt;- smoothr::smooth(data, method = \"ksmooth\", smoothness = ____)\n\nggplot() +\n  geom_sf(\n    data = data,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = smooth_data,\n    color = \"blue\"\n  ) +\n  theme_void()"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#bonus-exercise",
+    "href": "exercises/exercise_02.html#bonus-exercise",
+    "title": "Exercise 02",
+    "section": "4 Bonus exercise",
+    "text": "4 Bonus exercise\n\n4.1 Creating maps with {tmap}"
   },
   {
     "objectID": "exercises/exercise_03.html",
@@ -224,39 +280,11 @@
     "text": "Exercise due on 2023-11-06\n\n\n\nℹ️ See week 10 for related slides and readings"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GES 668: Building Spatial Datasets (Fall 2023)",
+    "objectID": "course-exercises.html",
+    "href": "course-exercises.html",
+    "title": "Exercise overview",
     "section": "",
-    "text": "Week\n      Date\n      Topic\n      Slides\n      Exercise\n    \n  \n  \n    1\nWed, Aug 30\nGetting started with spatial data using sf and the tidyverse\n📖\n📝\n    2\nWed, Sep 6\nVisualizing spatial data with ggplot2\n📖\n📝\n    3\nWed, Sep 13\nTransforming data with dplyr\n📖\n📝\n    4\nWed, Sep 20\nTransforming spatial data attributes\n📖\n📝\n    5\nWed, Sep 27\nApplying spatial transformations and geometric operations using sf\n📖\n📝\n    6\nWed, Oct 4\nTidying and joining spatial data\n📖\n📝\n    7\nWed, Oct 11\nBuilding functions in R and literate programming with Quarto\n📖\n📝\n    8\nWed, Oct 18\nDeveloping an exploratory data analysis with sf and the tidyverse\n📖\n📝\n    9\nWed, Oct 25\nEditing OpenStreetMap and exploring OpenStreetMap data with the osmdata package\n📖\n📝\n    10\nWed, Nov 1\nExploring American Community Survey data with the tidycensus package\n📖\n📝\n    11\nWed, Nov 8\nReading and writing spatial data files and services\n📖\n📝\n    12\nWed, Nov 1\nCreating and managing spatial metadata\n📖\n📝\n    13\nWed, Nov 8\nProject check-in meetings (no class)\n—\n—\n    14\nWed, Nov 15\nReview and work session\n—\n—\n    15\nWed, Nov 22\nFinal project presentations\n—\n—\n    —\nWed, Nov 29\nDue: Final project repository\n—\n—"
-  },
-  {
-    "objectID": "project-description.html",
-    "href": "project-description.html",
-    "title": "Project description",
-    "section": "",
-    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
-  },
-  {
-    "objectID": "project-description.html#timeline",
-    "href": "project-description.html#timeline",
-    "title": "Project description",
-    "section": "",
-    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
-  },
-  {
-    "objectID": "project-description.html#introduction",
-    "href": "project-description.html#introduction",
-    "title": "Project description",
-    "section": "Introduction",
-    "text": "Introduction\nTL;DR: Create an exploratory analysis based on OpenStreetMap or American Community Survey data. That is your final project.\nThe goal of the final project is for you to create an exploratory analysis using real world data. Students are encourages to use:\n\nOpenStreetMap data (using the {osmdata} package),\nAmerican Community Survey data (using the {tidycensus} package),\nor a combination of both sources.\n\nBoth data sources include varied types and topics so you can choose based on your interests or work you have done in other courses or research projects.\nThe goal of this project is for you to demonstrate your understanding of the skills we covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\nAll analyses must be done in RStudio, and all components of the project must be reproducible.\n\nLogistics\nYou will work on the project with your lab groups.\nThe four primary deliverables for the final project are\n\nA written, reproducible report detailing your analysis\nA GitHub repository corresponding to your report\nSlides + a video presentation\nFormal peer review on another team’s project"
-  },
-  {
-    "objectID": "course-schedule.html",
-    "href": "course-schedule.html",
-    "title": "Schedule overview",
-    "section": "",
-    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Exercise 01\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nAvailable\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 02\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 03\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 04\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 05\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 06\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 07\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 08\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 09\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 10\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 11\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 12\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "course-syllabus.html",
@@ -312,7 +340,7 @@
     "href": "course-syllabus.html#sexual-assault-sexual-harassment-and-gender-based-violence-and-discrimination",
     "title": "GES 668: Course Syllabus",
     "section": "Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination",
-    "text": "Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination\nUMBC Policy and Federal law (Title IX) prohibit discrimination and harassment on the basis of sex, sexual orientation, and gender identity in University programs and activities. Any student who is impacted by sexual harassment, sexual assault, domestic violence, dating violence, stalking, sexual exploitation, gender discrimination, pregnancy discrimination, gender-based harassment or retaliation should contact the University’s Title IX Coordinator to make a report and/or access support and resources:\n\nJackie Moran, Title IX Coordinator and Interim Director\n410-455-1717, jmoran5@umbc.edu\n\nYou can access support and resources even if you do not want to take any further action. You will not be forced to file a formal complaint or police report. Please be aware that the University may take action on its own if essential to protect the safety of the community.\nIf you are interested in or thinking about making a report, please use the Online Reporting/Referral Form. Please note that, if you report anonymously,  the University’s ability to respond will be limited.\n\n\n\n\n\n\nFaculty are Responsible Employees with Mandatory Reporting Obligations\n\n\n\nAll faculty members are considered Responsible Employees, per UMBC’s Policy on Sexual Misconduct, Sexual Harassment, and Gender Discrimination. Faculty are therefore required to report any/ all available information regarding conduct falling under the Policy and violations of the Policy to the Title IX Coordinator, even if a student discloses an experience that occurred before attending UMBC and/or an incident that only involves people not affiliated with UMBC.  Reports are required regardless of the amount of detail provided and even in instances where support has already been offered or received.\nWhile faculty members want encourage you to share information related to your life experiences through discussion and written work, students should understand that faculty are required to report past and present sexual assault, domestic and interpersonal violence, stalking, and gender discrimination that is shared with them to the Title IX Coordinator so that the University can inform students of their rights, resources and support.  While you are encouraged to do so, you are not obligated to respond to outreach conducted as a result of a report to the Title IX Coordinator.\nIf you need to speak with someone in confidence, who does not have an obligation to report to the Title IX Coordinator, UMBC has a number of Confidential Resources available to support you:\n\nRetriever Integrated Health (Main Campus): 410-455-2472 [Monday – Friday; 8:30 a.m. – 5 p.m.] / After-Hours Support 410-455-3230\nCenter for Counseling and Consultation (Shady Grove Campus): 301-738-6273 (Messages checked hourly)  Online Appointment Request Form\nPastoral Counseling via Interfaith Center: 410-455-3657; interfaith@umbc.edu [7 days a week; Fall and Spring 7 a.m. – 11 p.m.; Summer and Winter 8 a.m. – 8 p.m.]\n\nOther Resources:\n\nWomen’s Center (for students of all genders): 410-455-2714; womenscenter@umbc.edu. [Monday – Thursday 10:00am-5:30pm and Friday 10:00am-4pm]\nShady Grove Student Resources,Maryland Resources,National Resources.\n\n\n\n\n\n\n\n\n\nChild Abuse and Neglect\n\n\n\nPlease note that Maryland law and UMBC policy require that faculty report all disclosures or suspicions of child abuse or neglect to the Department of Social Services and/or the police even if the person who experienced the abuse or neglect is now over 18.\n\n\n\n\n\n\n\n\nParenting and Pregnant Students\n\n\n\nUMBC’s Policy on Sexual Misconduct, Sexual Harassment and Gender Discrimination expressly prohibits all forms of Discrimination and Harassment on the basis of sex, including pregnancy.Resources for pregnant, parenting and breastfeeding students are available through the University’s Office of Equity and Civil Rights.  Pregnant and parenting students are encouraged to contact the Title IX Coordinator to discuss plans and ensure ongoing access to their academic program with respect to a leave of absence or return following leave related to pregnancy, delivery, adoption, breastfeeding and/or the early months of parenting.\nPregnant students and students in the early months of parenting may be entitled to accommodations under Title IX through the Office of Equity and Civil Rights.\nIn addition, students who are pregnant and have an impairment related to their pregnancy that qualifies as disability under the ADA may be entitled to accommodations through the Student Disability Service Office."
+    "text": "Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination\nUMBC Policy and Federal law (Title IX) prohibit discrimination and harassment on the basis of sex, sexual orientation, and gender identity in University programs and activities. Any student who is impacted by sexual harassment, sexual assault, domestic violence, dating violence, stalking, sexual exploitation, gender discrimination, pregnancy discrimination, gender-based harassment or retaliation should contact the University’s Title IX Coordinator to make a report and/or access support and resources:\n\nJackie Moran, Title IX Coordinator and Interim Director\n410-455-1717, jmoran5@umbc.edu\n\nYou can access support and resources even if you do not want to take any further action. You will not be forced to file a formal complaint or police report. Please be aware that the University may take action on its own if essential to protect the safety of the community.\nIf you are interested in or thinking about making a report, please use the Online Reporting/Referral Form. Please note that, if you report anonymously, the University’s ability to respond will be limited.\n\n\n\n\n\n\nFaculty are Responsible Employees with Mandatory Reporting Obligations\n\n\n\nAll faculty members are considered Responsible Employees, per UMBC’s Policy on Sexual Misconduct, Sexual Harassment, and Gender Discrimination. Faculty are therefore required to report any/ all available information regarding conduct falling under the Policy and violations of the Policy to the Title IX Coordinator, even if a student discloses an experience that occurred before attending UMBC and/or an incident that only involves people not affiliated with UMBC. Reports are required regardless of the amount of detail provided and even in instances where support has already been offered or received.\nWhile faculty members want encourage you to share information related to your life experiences through discussion and written work, students should understand that faculty are required to report past and present sexual assault, domestic and interpersonal violence, stalking, and gender discrimination that is shared with them to the Title IX Coordinator so that the University can inform students of their rights, resources and support. While you are encouraged to do so, you are not obligated to respond to outreach conducted as a result of a report to the Title IX Coordinator.\nIf you need to speak with someone in confidence, who does not have an obligation to report to the Title IX Coordinator, UMBC has a number of Confidential Resources available to support you:\n\nRetriever Integrated Health (Main Campus): 410-455-2472 [Monday – Friday; 8:30 a.m. – 5 p.m.] / After-Hours Support 410-455-3230\nCenter for Counseling and Consultation (Shady Grove Campus): 301-738-6273 (Messages checked hourly)  Online Appointment Request Form\nPastoral Counseling via Interfaith Center: 410-455-3657; interfaith@umbc.edu [7 days a week; Fall and Spring 7 a.m. – 11 p.m.; Summer and Winter 8 a.m. – 8 p.m.]\n\nOther Resources:\n\nWomen’s Center (for students of all genders): 410-455-2714; womenscenter@umbc.edu. [Monday – Thursday 10:00am-5:30pm and Friday 10:00am-4pm]\nShady Grove Student Resources,Maryland Resources,National Resources.\n\n\n\n\n\n\n\n\n\nChild Abuse and Neglect\n\n\n\nPlease note that Maryland law and UMBC policy require that faculty report all disclosures or suspicions of child abuse or neglect to the Department of Social Services and/or the police even if the person who experienced the abuse or neglect is now over 18.\n\n\n\n\n\n\n\n\nParenting and Pregnant Students\n\n\n\nUMBC’s Policy on Sexual Misconduct, Sexual Harassment and Gender Discrimination expressly prohibits all forms of Discrimination and Harassment on the basis of sex, including pregnancy.Resources for pregnant, parenting and breastfeeding students are available through the University’s Office of Equity and Civil Rights.  Pregnant and parenting students are encouraged to contact the Title IX Coordinator to discuss plans and ensure ongoing access to their academic program with respect to a leave of absence or return following leave related to pregnancy, delivery, adoption, breastfeeding and/or the early months of parenting.\nPregnant students and students in the early months of parenting may be entitled to accommodations under Title IX through the Office of Equity and Civil Rights.\nIn addition, students who are pregnant and have an impairment related to their pregnancy that qualifies as disability under the ADA may be entitled to accommodations through the Student Disability Service Office."
   },
   {
     "objectID": "course-syllabus.html#religious-observances-accommodations",
@@ -348,6 +376,41 @@
     "title": "GES 668: Course Syllabus",
     "section": "Retriever Essentials",
     "text": "Retriever Essentials\nRetriever Essentials is a faculty, staff, and student-led partnership that promotes food access in the UMBC community. Retriever Essentials offers free groceries, toiletries, baby items, and meal swipes, and have opportunities to engage and volunteer:\n\nPick up items from our free store The Essential Space located in RAC 235 \nReceive fresh food every Thursday 2:15-2:45pm @ the Library (email or see IG for exact location)\nStop by one of our Food Zones to pick up a pre-assembled bag of non-perishable food items and personal care products\nPick up snacks and food from our Free Corner Stores at the Campus Police Station or Library Atrium\nEmail us at retrieveressentials@umbc.edu if you need free meal swipes\nTo donate food, see instructions here!\n\nEmail Retriever Essentials if you would like to join our team or volunteer."
+  },
+  {
+    "objectID": "course-schedule.html",
+    "href": "course-schedule.html",
+    "title": "Schedule overview",
+    "section": "",
+    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project-description.html",
+    "href": "project-description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
+  },
+  {
+    "objectID": "project-description.html#timeline",
+    "href": "project-description.html#timeline",
+    "title": "Project description",
+    "section": "",
+    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
+  },
+  {
+    "objectID": "project-description.html#introduction",
+    "href": "project-description.html#introduction",
+    "title": "Project description",
+    "section": "Introduction",
+    "text": "Introduction\nTL;DR: Create an exploratory analysis based on OpenStreetMap or American Community Survey data. That is your final project.\nThe goal of the final project is for you to create an exploratory analysis using real world data. Students are encourages to use:\n\nOpenStreetMap data (using the {osmdata} package),\nAmerican Community Survey data (using the {tidycensus} package),\nor a combination of both sources.\n\nBoth data sources include varied types and topics so you can choose based on your interests or work you have done in other courses or research projects.\nThe goal of this project is for you to demonstrate your understanding of the skills we covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\nAll analyses must be done in RStudio, and all components of the project must be reproducible.\n\nLogistics\nYou will work on the project with your lab groups.\nThe four primary deliverables for the final project are\n\nA written, reproducible report detailing your analysis\nA GitHub repository corresponding to your report\nSlides + a video presentation\nFormal peer review on another team’s project"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GES 668: Building Spatial Datasets (Fall 2023)",
+    "section": "",
+    "text": "Week\n      Date\n      Topic\n      Slides\n      Exercise\n    \n  \n  \n    1\nWed, Aug 30\nGetting started with spatial data using sf and the tidyverse\n📖\n📝\n    2\nWed, Sep 6\nVisualizing spatial data with ggplot2\n📖\n📝\n    3\nWed, Sep 13\nTransforming data with dplyr\n📖\n📝\n    4\nWed, Sep 20\nTransforming spatial data attributes\n📖\n📝\n    5\nWed, Sep 27\nApplying spatial transformations and geometric operations using sf\n📖\n📝\n    6\nWed, Oct 4\nTidying and joining spatial data\n📖\n📝\n    7\nWed, Oct 11\nBuilding functions in R and literate programming with Quarto\n📖\n📝\n    8\nWed, Oct 18\nDeveloping an exploratory data analysis with sf and the tidyverse\n📖\n📝\n    9\nWed, Oct 25\nEditing OpenStreetMap and exploring OpenStreetMap data with the osmdata package\n📖\n📝\n    10\nWed, Nov 1\nExploring American Community Survey data with the tidycensus package\n📖\n📝\n    11\nWed, Nov 8\nReading and writing spatial data files and services\n📖\n📝\n    12\nWed, Nov 1\nCreating and managing spatial metadata\n📖\n📝\n    13\nWed, Nov 8\nProject check-in meetings (no class)\n—\n—\n    14\nWed, Nov 15\nReview and work session\n—\n—\n    15\nWed, Nov 22\nFinal project presentations\n—\n—\n    —\nWed, Nov 29\nDue: Final project repository\n—\n—"
   },
   {
     "objectID": "exercises/exercise_08.html",
@@ -466,14 +529,14 @@
     "href": "weeks/week_06.html",
     "title": "Week 6",
     "section": "",
-    "text": "Joining tables by attribute with {dplyr}\n\n\n\nUsing {stringr} functions to tidy messy address data\nRecoding categorical attribute data with {forcats}\nConverting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nWorking with date-time attributes using {lubridate}"
+    "text": "Joining tables by attribute with {dplyr}\nUsing {stringr} functions to tidy messy address data\nRecoding categorical attribute data with {forcats}\nConverting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nWorking with date-time attributes using {lubridate}"
   },
   {
     "objectID": "weeks/week_06.html#overview",
     "href": "weeks/week_06.html#overview",
     "title": "Week 6",
     "section": "",
-    "text": "Joining tables by attribute with {dplyr}\n\n\n\nUsing {stringr} functions to tidy messy address data\nRecoding categorical attribute data with {forcats}\nConverting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nWorking with date-time attributes using {lubridate}"
+    "text": "Joining tables by attribute with {dplyr}\nUsing {stringr} functions to tidy messy address data\nRecoding categorical attribute data with {forcats}\nConverting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nWorking with date-time attributes using {lubridate}"
   },
   {
     "objectID": "weeks/week_06.html#prepare",
@@ -586,33 +649,5 @@
     "title": "Week 11",
     "section": "Practice",
     "text": "Practice\n🛠️️ Exercise 11"
-  },
-  {
-    "objectID": "slides/01_spatial-data.html#overview",
-    "href": "slides/01_spatial-data.html#overview",
-    "title": "01: Getting started with spatial data using sf and the tidyverse",
-    "section": "1 Overview",
-    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
-  },
-  {
-    "objectID": "slides/01_spatial-data.html#what-is-r",
-    "href": "slides/01_spatial-data.html#what-is-r",
-    "title": "01: Getting started with spatial data using sf and the tidyverse",
-    "section": "2 What is R?",
-    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
-  },
-  {
-    "objectID": "slides/01_spatial-data.html#how-does-r-work-with-spatial-data",
-    "href": "slides/01_spatial-data.html#how-does-r-work-with-spatial-data",
-    "title": "01: Getting started with spatial data using sf and the tidyverse",
-    "section": "3 How does R work with spatial data?",
-    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
-  },
-  {
-    "objectID": "slides/01_spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "href": "slides/01_spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "title": "01: Getting started with spatial data using sf and the tidyverse",
-    "section": "4 Take a look at {sf} and the tidyverse in action",
-    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
   }
 ]
