@@ -1,5 +1,6 @@
 categories: "weeks"
 toc: true
+
 website:
   page-navigation: true
 
@@ -10,4 +11,4 @@ suppress-bibliography: true
 footnotes-hover: false
 link-citations: false
 
-# include-after-body: files/after-body.html
+include-after-body: files/after-body.html
