@@ -1,292 +1,5 @@
 [
   {
-    "objectID": "slides/spatial-data.html#overview",
-    "href": "slides/spatial-data.html#overview",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "1 Overview",
-    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
-  },
-  {
-    "objectID": "slides/spatial-data.html#what-is-r",
-    "href": "slides/spatial-data.html#what-is-r",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "2 What is R?",
-    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
-  },
-  {
-    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "3 How does R work with spatial data?",
-    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
-  },
-  {
-    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "4 Take a look at {sf} and the tidyverse in action",
-    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "GES668: Building Spatial Datasets",
-    "section": "",
-    "text": "In this course, students learn how to access and understand spatial data using the R programming language and the sf and tidyverse family of R packages. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data.\nReadings and practical exercise prepare students to build and maintain data sets about local places and navigate critical issues including data ownership, accuracy, and privacy considerations."
-  },
-  {
-    "objectID": "weeks/week_07.html",
-    "href": "weeks/week_07.html",
-    "title": "Week 7",
-    "section": "",
-    "text": "Ch. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4."
-  },
-  {
-    "objectID": "weeks/week_07.html#prepare",
-    "href": "weeks/week_07.html#prepare",
-    "title": "Week 7",
-    "section": "",
-    "text": "Ch. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4."
-  },
-  {
-    "objectID": "weeks/week_07.html#practice",
-    "href": "weeks/week_07.html#practice",
-    "title": "Week 7",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 07"
-  },
-  {
-    "objectID": "weeks/week_12.html",
-    "href": "weeks/week_12.html",
-    "title": "Week 12",
-    "section": "",
-    "text": "Reminder! Peer feedback on project proposals is due by 2023-11-14."
-  },
-  {
-    "objectID": "weeks/week_12.html#overview",
-    "href": "weeks/week_12.html#overview",
-    "title": "Week 12",
-    "section": "Overview",
-    "text": "Overview\n\nIntroduction to metadata and spatial metadata standards\nWriting metadata, READMEs, and documentation for projects, workflows, and data\nWorking with data dictionaries and the {labelled} package"
-  },
-  {
-    "objectID": "weeks/week_12.html#prepare",
-    "href": "weeks/week_12.html#prepare",
-    "title": "Week 12",
-    "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 7 Show Your Work in Catherine D’Ignazio and Lauren F. Klein Data Feminism (The MIT Press, 2020), https://data-feminism.mitpress.mit.edu/.\nShannon Pileggi “The Case for Variable Labels in R” (Piping Hot Data, September 13, 2022), https://www.pipinghotdata.com/posts/2022-09-13-the-case-for-variable-labels-in-r/.\n“Data-Primers” (DataCurationNetwork, 2019), https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3.\n\n\n\nOptional readngs\n\n“Guide to Writing \"Readme\" Style Metadata” (Research Data Management Service Group), accessed August 27, 2022, https://data.research.cornell.edu/content/readme.\nEmily Riederer “Column Names as Contracts” (Emily Riederer, September 6, 2020), https://emilyriederer.netlify.app/post/column-name-contracts/."
-  },
-  {
-    "objectID": "weeks/week_12.html#practice",
-    "href": "weeks/week_12.html#practice",
-    "title": "Week 12",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 12"
-  },
-  {
-    "objectID": "weeks/week_03.html",
-    "href": "weeks/week_03.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Filtering data with dplyr::filter()\nCreating new variables with dplyr::mutate()"
-  },
-  {
-    "objectID": "weeks/week_03.html#overview",
-    "href": "weeks/week_03.html#overview",
-    "title": "Week 3",
-    "section": "",
-    "text": "Filtering data with dplyr::filter()\nCreating new variables with dplyr::mutate()"
-  },
-  {
-    "objectID": "weeks/week_03.html#prepare",
-    "href": "weeks/week_03.html#prepare",
-    "title": "Week 3",
-    "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 5 Data transformation in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 2 A Place for Plant Data in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001."
-  },
-  {
-    "objectID": "weeks/week_03.html#practice",
-    "href": "weeks/week_03.html#practice",
-    "title": "Week 3",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 03"
-  },
-  {
-    "objectID": "weeks/week_04.html",
-    "href": "weeks/week_04.html",
-    "title": "Week 4",
-    "section": "",
-    "text": "Summarizing features with dplyr::summarize()"
-  },
-  {
-    "objectID": "weeks/week_04.html#overview",
-    "href": "weeks/week_04.html#overview",
-    "title": "Week 4",
-    "section": "",
-    "text": "Summarizing features with dplyr::summarize()"
-  },
-  {
-    "objectID": "weeks/week_04.html#prepare",
-    "href": "weeks/week_04.html#prepare",
-    "title": "Week 4",
-    "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 3 Attribute data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 3 Collecting Infrastructures in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/."
-  },
-  {
-    "objectID": "weeks/week_04.html#practice",
-    "href": "weeks/week_04.html#practice",
-    "title": "Week 4",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 04"
-  },
-  {
-    "objectID": "weeks/week_01.html",
-    "href": "weeks/week_01.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to GES668!\nIntroduction to R for spatial data\nIntroduction to reproducible data analysis\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore key functions from the {sf} package and {tidyverse} family of packages\nCreate a self-contained project in RStudio\nPractice creating files with a consistent naming convention\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\nHow does R support reproducible spatial data analysis?\nWhy use R for working with spatial data?"
-  },
-  {
-    "objectID": "weeks/week_01.html#overview",
-    "href": "weeks/week_01.html#overview",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to GES668!\nIntroduction to R for spatial data\nIntroduction to reproducible data analysis\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore key functions from the {sf} package and {tidyverse} family of packages\nCreate a self-contained project in RStudio\nPractice creating files with a consistent naming convention\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\nHow does R support reproducible spatial data analysis?\nWhy use R for working with spatial data?"
-  },
-  {
-    "objectID": "weeks/week_01.html#prepare",
-    "href": "weeks/week_01.html#prepare",
-    "title": "Week 1",
-    "section": "Prepare",
-    "text": "Prepare\n\nGetting ready for the first class\n\nInstall R and RStudio on your computer. Review these instructions if needed.\nIf you don’t already have a GitHub account, register for a GitHub user account. Review these instructions if needed.\nInstall the GitHub Desktop application (the installer will also install Git on your computer).\nUse this Google form to share your GitHub username (and a little background)\nJoin the class Discord.\nBring a computer to class (if you can).\n📖 Read the syllabus\n\n\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2.\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or more recent How to name files talk for NormConf 2022)\n\n\n\nOptional readings\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\nGreg Wilson et al. “Good Enough Practices in Scientific Computing,” PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510, doi:10.1371/journal.pcbi.1005510."
-  },
-  {
-    "objectID": "weeks/week_01.html#participate",
-    "href": "weeks/week_01.html#participate",
-    "title": "Week 1",
-    "section": "Participate",
-    "text": "Participate\n🖥️ Introduction to Spatial Data with R"
-  },
-  {
-    "objectID": "weeks/week_01.html#practice",
-    "href": "weeks/week_01.html#practice",
-    "title": "Week 1",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 01"
-  },
-  {
-    "objectID": "weeks/week_09.html",
-    "href": "weeks/week_09.html",
-    "title": "Week 9",
-    "section": "",
-    "text": "Mark Padgham and Robin Lovelace “1. Osmdata” (osmdata, August 15, 2023), https://docs.ropensci.org/osmdata/articles/osmdata.html.\nAlan McConchie “OpenStreetMap Pasts, OpenStreetMap Futures,” July 27, 2016, https://www.youtube.com/watch?v=KNTSZGnQVRw.\n\n\n\n\n\nGeoff Boeing “The Right Tools for the Job: The Case for Spatial Science Tool-Building,” Transactions in GIS 24, no. 5 (October 2020): 1299–1314, doi:10.1111/tgis.12678.\nDani Arribas-Bel and Jon Reades “Geography and Computers: Past, Present, and Future,” Geography Compass 12, no. 10 (2018): e12403, doi:10.1111/gec3.12403."
-  },
-  {
-    "objectID": "weeks/week_09.html#prepare",
-    "href": "weeks/week_09.html#prepare",
-    "title": "Week 9",
-    "section": "",
-    "text": "Mark Padgham and Robin Lovelace “1. Osmdata” (osmdata, August 15, 2023), https://docs.ropensci.org/osmdata/articles/osmdata.html.\nAlan McConchie “OpenStreetMap Pasts, OpenStreetMap Futures,” July 27, 2016, https://www.youtube.com/watch?v=KNTSZGnQVRw.\n\n\n\n\n\nGeoff Boeing “The Right Tools for the Job: The Case for Spatial Science Tool-Building,” Transactions in GIS 24, no. 5 (October 2020): 1299–1314, doi:10.1111/tgis.12678.\nDani Arribas-Bel and Jon Reades “Geography and Computers: Past, Present, and Future,” Geography Compass 12, no. 10 (2018): e12403, doi:10.1111/gec3.12403."
-  },
-  {
-    "objectID": "weeks/week_09.html#practice",
-    "href": "weeks/week_09.html#practice",
-    "title": "Week 9",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 09"
-  },
-  {
-    "objectID": "weeks/week_15.html",
-    "href": "weeks/week_15.html",
-    "title": "Week 15",
-    "section": "",
-    "text": "Reminder! Your final project repository is due on 2023-12-14"
-  },
-  {
-    "objectID": "weeks/week_14.html",
-    "href": "weeks/week_14.html",
-    "title": "Week 14",
-    "section": "",
-    "text": "Reminder! Your final project presentation is due on 2023-12-06"
-  },
-  {
-    "objectID": "exercises/exercise_11.html",
-    "href": "exercises/exercise_11.html",
-    "title": "Exercise 11",
-    "section": "",
-    "text": "Exercise due on 2023-11-13\n\n\n\nℹ️ See week 11 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_09.html",
-    "href": "exercises/exercise_09.html",
-    "title": "Exercise 09",
-    "section": "",
-    "text": "Exercise due on 2023-10-30\n\n\n\nℹ️ See week 9 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_07.html",
-    "href": "exercises/exercise_07.html",
-    "title": "Exercise 07",
-    "section": "",
-    "text": "Exercise due on 2023-10-16\n\n\n\nℹ️ See week 7 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_02.html",
-    "href": "exercises/exercise_02.html",
-    "title": "Exercise 02",
-    "section": "",
-    "text": "WIP\n\n\n\nThis exercise is a work-in-progress. Please wait for this status message to be removed before getting started.\nℹ️ See week 2 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_02.html#overview",
-    "href": "exercises/exercise_02.html#overview",
-    "title": "Exercise 02",
-    "section": "1 Overview",
-    "text": "1 Overview"
-  },
-  {
-    "objectID": "exercises/exercise_02.html#setup",
-    "href": "exercises/exercise_02.html#setup",
-    "title": "Exercise 02",
-    "section": "2 Setup",
-    "text": "2 Setup\n\nlibrary(ggplot2)\nlibrary(sf)\n\nOne advantage of using {ggplot2} over a map-making focused package like {tmap} is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with {ggplot2}.\nFor this exercise, we are going to use the following packages:\n\npak::pkg_install(c(\"ggrepel\", \"cols4all\", \"patchwork\", \"ggtext\", \"spDataLarge\"))\n\nWe are also going to demonstrate a few advanced features. You won’t need to do anything with these packages but you need them installed to see the results:\n\npak::pkg_install(c(\"ggdist\", \"geomtextpath\", \"plotly\", \"smoothr\"))"
-  },
-  {
-    "objectID": "exercises/exercise_02.html#exercises",
-    "href": "exercises/exercise_02.html#exercises",
-    "title": "Exercise 02",
-    "section": "3 Exercises",
-    "text": "3 Exercises\n\n3.1 Visualizing one variable\nWorking with geom_bar() with one discrete variable:\n\nggplot() +\n  geom_bar(aes(x = ____))\n\nWorking with geom_dotplot() with one continuous variable:\n\nggplot(data = ____) +\n  geom_dotplot()\n\nWorking with geom_sf() with one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(size = ____))\n\nWorking with geom_sf() with one discrete variable:\n\nggplot(data = ____) +\n  geom_sf(aes(color = ____))\n\n\n\n3.2 Visualizing two variables\nUsing geom_col() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_col(aes(____))\n\nUsing geom_sf() and facet_wrap() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(fill = ____)) +\n  facet_wrap(~ ____)\n\n\n\n3.3 Using scales and colors\nUsing the viridis scales for a dot plot:\n\nggplot(data = ____) +\n  geom_dotplot() +\n  scale_color_viridis_c()\n\nUsing the ColorBrewer scales with color:\n\nggplot() +\n  geom_sf(aes(color = ____)) +\n  scale_color_brewer()\n\nThe same with fill:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_brewer()\n\nThe same with a continuous variable:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_distiller()\n\n\n\n3.4 Adding labels, legends, and themes\nUsing the labs() function:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  labs(\n    title = ____,\n    caption = ____,\n    fill = ____\n  )\n\n\n\n3.5 Map making with {ggplot2}\nHiding graticules with theme_void():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme_void()\n\nHiding graticules with theme():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme(\n    panel.grid = element_blank(),\n    panel.grid.major = element_blank(),\n    panel.grid.minor = element_blank()\n    )\n\n“Zooming” into an area with coord_sf()\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\nAdding inset maps with {patchwork}\n\narea_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA)\n\ninset_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\narea_map +\n  patchwork::inset_element(\n    inset_map,\n    left = ____,\n    bottom = ____,\n    top = ____,\n    right = ____\n  )\n\nSmoothing features with {smoothr}\n\ndata &lt;- ____\nsmooth_data &lt;- smoothr::smooth(data, method = \"ksmooth\", smoothness = ____)\n\nggplot() +\n  geom_sf(\n    data = data,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = smooth_data,\n    color = \"blue\"\n  ) +\n  theme_void()"
-  },
-  {
-    "objectID": "exercises/exercise_02.html#bonus-exercise",
-    "href": "exercises/exercise_02.html#bonus-exercise",
-    "title": "Exercise 02",
-    "section": "4 Bonus exercise",
-    "text": "4 Bonus exercise\n\n4.1 Creating maps with {tmap}"
-  },
-  {
-    "objectID": "exercises/exercise_03.html",
-    "href": "exercises/exercise_03.html",
-    "title": "Exercise 03",
-    "section": "",
-    "text": "Exercise due on 2023-09-18\n\n\n\nℹ️ See week 3 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_10.html",
-    "href": "exercises/exercise_10.html",
-    "title": "Exercise 10",
-    "section": "",
-    "text": "Exercise due on 2023-11-06\n\n\n\nℹ️ See week 10 for related slides and readings"
-  },
-  {
-    "objectID": "course-exercises.html",
-    "href": "course-exercises.html",
-    "title": "Exercise overview",
-    "section": "",
-    "text": "Exercise 01\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nAvailable\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 02\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 03\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 04\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 05\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 06\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 07\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 08\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 09\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 10\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 11\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 12\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "course-syllabus.html",
     "href": "course-syllabus.html",
     "title": "GES 668: Course Syllabus",
@@ -378,67 +91,11 @@
     "text": "Retriever Essentials\nRetriever Essentials is a faculty, staff, and student-led partnership that promotes food access in the UMBC community. Retriever Essentials offers free groceries, toiletries, baby items, and meal swipes, and have opportunities to engage and volunteer:\n\nPick up items from our free store The Essential Space located in RAC 235 \nReceive fresh food every Thursday 2:15-2:45pm @ the Library (email or see IG for exact location)\nStop by one of our Food Zones to pick up a pre-assembled bag of non-perishable food items and personal care products\nPick up snacks and food from our Free Corner Stores at the Campus Police Station or Library Atrium\nEmail us at retrieveressentials@umbc.edu if you need free meal swipes\nTo donate food, see instructions here!\n\nEmail Retriever Essentials if you would like to join our team or volunteer."
   },
   {
-    "objectID": "course-schedule.html",
-    "href": "course-schedule.html",
-    "title": "Schedule overview",
-    "section": "",
-    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project-description.html",
-    "href": "project-description.html",
-    "title": "Project description",
-    "section": "",
-    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
-  },
-  {
-    "objectID": "project-description.html#timeline",
-    "href": "project-description.html#timeline",
-    "title": "Project description",
-    "section": "",
-    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
-  },
-  {
-    "objectID": "project-description.html#introduction",
-    "href": "project-description.html#introduction",
-    "title": "Project description",
-    "section": "Introduction",
-    "text": "Introduction\nTL;DR: Create an exploratory analysis based on OpenStreetMap or American Community Survey data. That is your final project.\nThe goal of the final project is for you to create an exploratory analysis using real world data. Students are encourages to use:\n\nOpenStreetMap data (using the {osmdata} package),\nAmerican Community Survey data (using the {tidycensus} package),\nor a combination of both sources.\n\nBoth data sources include varied types and topics so you can choose based on your interests or work you have done in other courses or research projects.\nThe goal of this project is for you to demonstrate your understanding of the skills we covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\nAll analyses must be done in RStudio, and all components of the project must be reproducible.\n\nLogistics\nYou will work on the project with your lab groups.\nThe four primary deliverables for the final project are\n\nA written, reproducible report detailing your analysis\nA GitHub repository corresponding to your report\nSlides + a video presentation\nFormal peer review on another team’s project"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GES 668: Building Spatial Datasets (Fall 2023)",
-    "section": "",
-    "text": "Week\n      Date\n      Topic\n      Slides\n      Exercise\n    \n  \n  \n    1\nWed, Aug 30\nGetting started with spatial data using sf and the tidyverse\n📖\n📝\n    2\nWed, Sep 6\nVisualizing spatial data with ggplot2\n📖\n📝\n    3\nWed, Sep 13\nTransforming data with dplyr\n📖\n📝\n    4\nWed, Sep 20\nTransforming spatial data attributes\n📖\n📝\n    5\nWed, Sep 27\nApplying spatial transformations and geometric operations using sf\n📖\n📝\n    6\nWed, Oct 4\nTidying and joining spatial data\n📖\n📝\n    7\nWed, Oct 11\nBuilding functions in R and literate programming with Quarto\n📖\n📝\n    8\nWed, Oct 18\nDeveloping an exploratory data analysis with sf and the tidyverse\n📖\n📝\n    9\nWed, Oct 25\nEditing OpenStreetMap and exploring OpenStreetMap data with the osmdata package\n📖\n📝\n    10\nWed, Nov 1\nExploring American Community Survey data with the tidycensus package\n📖\n📝\n    11\nWed, Nov 8\nReading and writing spatial data files and services\n📖\n📝\n    12\nWed, Nov 15\nCreating and managing spatial metadata\n📖\n📝\n    13\nWed, Nov 22\nProject check-in meetings (no class)\n—\n—\n    14\nWed, Nov 29\nReview and work session\n—\n—\n    15\nWed, Dec 6\nFinal project presentations\n—\n—\n    —\nThu, Dec 14\nDue: Final project repository\n—\n—"
-  },
-  {
     "objectID": "exercises/exercise_08.html",
     "href": "exercises/exercise_08.html",
     "title": "Exercise 08",
     "section": "",
     "text": "Exercise due on 2023-10-23\n\n\n\nℹ️ See week 8 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_06.html",
-    "href": "exercises/exercise_06.html",
-    "title": "Exercise 06",
-    "section": "",
-    "text": "Exercise due on 2023-10-09\n\n\n\nℹ️ See week 6 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_05.html",
-    "href": "exercises/exercise_05.html",
-    "title": "Exercise 05",
-    "section": "",
-    "text": "Exercise due on 2023-10-02\n\n\n\nℹ️ See week 5 for related slides and readings"
-  },
-  {
-    "objectID": "exercises/exercise_12.html",
-    "href": "exercises/exercise_12.html",
-    "title": "Exercise 12",
-    "section": "",
-    "text": "Exercise due on 2023-11-20\n\n\n\nℹ️ See week 12 for related slides and readings"
   },
   {
     "objectID": "exercises/exercise_04.html",
@@ -448,81 +105,123 @@
     "text": "Exercise due on 2023-09-25\n\n\n\nℹ️ See week 4 for related slides and readings"
   },
   {
-    "objectID": "exercises/exercise_01.html",
-    "href": "exercises/exercise_01.html",
-    "title": "Exercise 01",
+    "objectID": "exercises/exercise_11.html",
+    "href": "exercises/exercise_11.html",
+    "title": "Exercise 11",
     "section": "",
-    "text": "Exercise due on 2023-09-04\nℹ️ See week 1 for related slides and readings"
+    "text": "Exercise due on 2023-11-13\n\n\n\nℹ️ See week 11 for related slides and readings"
   },
   {
-    "objectID": "exercises/exercise_01.html#setup",
-    "href": "exercises/exercise_01.html#setup",
-    "title": "Exercise 01",
-    "section": "1 Setup",
-    "text": "1 Setup\nTo complete this exercise, you need two libraries:\n\nlibrary(sf)\nlibrary(ggplot2)\n\nYou also need data included with the {sf} package:\n\nnc &lt;- st_read(system.file(\"shape/nc.shp\", package = \"sf\"))\n\nYou are also need the {mapview} and {spData} packages but don’t load them yet."
-  },
-  {
-    "objectID": "exercises/exercise_01.html#exercises",
-    "href": "exercises/exercise_01.html#exercises",
-    "title": "Exercise 01",
-    "section": "2 Exercises",
-    "text": "2 Exercises\n\n2.1 Coding basics\nThe exercises in this section are from Ch. 3 Workflow: basics in R for Data Science (2e). If you have any trouble with the next couple exercises, please review the chapter before continuing to the next section.\nWhy does this code not work?\n\nmy_variable &lt;- 10\nmy_varıable\n\n\nTweak each of the following R commands so that they run correctly:\n\nlibary(todyverse)\n\nggplot(dTA = mpg) + \n  geom_point(maping = aes(x = displ y = hwy)) +\n  geom_smooth(method = \"lm)\n\n\nPress ⌥ + ⇧ + K or ⎇ + ⇧ + K. What happens? How can you get to the same place using the menus?\n\n\n\n2.2 Look up documentation\nThe ? is a function for accessing documentation on a function, dataset, or other topic. For example, executing the code: ?sf::st_read will pull up the documentation on functions to read simple features or layers from file or database.\nUse ? to access the documentation on sf::st_geometry() then look for the “Value” heading that provides information about the value returned by the function.\nWhat type of object does sf::st_geometry() return? Fill in the blank or paraphrase the description.\nsf::st_geometry() returns a ____ object.\nWhat is one other function documented on the same page? ____\n\n\n\n\n\n\nTip\n\n\n\n\n\nReview Ch. 9 Workflow: getting help in R for Data Science (2e) for more information about getting help when you struggle with a package, function, or project.\n\n\n\n\n\n2.3 Access object classes, names, and attributes\nThe class() and names() functions return basic information about an object in R.\nUse class() to check the class of the output from st_geometry():\n\nnc_geometry &lt;- st_geometry(nc)\n\n\nGet the names() for the nc object and the nc_geometry object:\n\nnames(____)\n\nnames(____)\n\nCan you explain the difference between the two results?\n\nsummary() can help get more information about an object.\nUse summary() on nc_geometry:\n\nsummary(____)\n\nReview the results and try to answer the following:\n\nWhat is the geometry type? ____\nWhat is the coordinate reference system? ____\nHow many features? ____\n\n\n\n2.4 Plot a sf object\nSome packages come with data we can use as soon as the package is loaded.\nLoad the {spData} packages using library() then make a plot of the us_states data:\n\nlibrary(____)\n\nplot(____)\n\nCan you update the plot of us_states to show a map of states by region?\n\nplot(____)\n\nCan you make a map of us_states using ggplot() and geom_sf()?\n\nggplot(data = ____) +\n  geom_sf()\n\nCan you update the map of us_states you made with geom_sf() so states are color-coded by total population in 2015? Take a look at the documentation for ggplot2::geom_sf() for examples.\n\nggplot(data = ____) +\n  geom_sf()\n\nIf you get stuck, try using names() or summary() to take a look at us_states to find out the column names for region or total population in 2015."
-  },
-  {
-    "objectID": "exercises/exercise_01.html#bonus-exercise",
-    "href": "exercises/exercise_01.html#bonus-exercise",
-    "title": "Exercise 01",
-    "section": "3 Bonus exercise",
-    "text": "3 Bonus exercise\n\n3.1 Interactive mapping\nWe should first get a URL for the Baltimore County Maintained Roads data from Maryland iMap a path to the GeoPackage file in your repository.\nI already pulled the URL to use for this exercise and prepped it for reading with a “vsicurl” prefix that allows us to use the virtual file systems built into the Geospatial Data Abstraction Library or GDAL.\n\nurl &lt;- \"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/Baltimore_County_Maintained_Roads/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\n\nurl &lt;- paste0(\"/vsicurl/\" , url)\n\n\n\n\n\n\n\nAbout GDAL and other sf dependencies\n\n\n\n\n\nGDAL is one of the major open source projects that “powers” the {sf} package along with GEOS, PROJ, and udunits2. Geocomputation with R explains these dependencies:\n\nGDAL, for reading, writing and manipulating a wide range of geographic data formats,\nPROJ, a powerful library for coordinate system transformations\nGEOS, a planar geometry engine for operations such as calculating buffers and centroids on data with a projected CRS\nS2, a spherical geometry engine written in C++ developed by Google\n\n\n\n\n\nNext, use st_read() and the assignment operator &lt;- to load the file into a sf object named `roads``:\n\nroads &lt;- ____\n\n\nLoad the {mapview} library and then use the mapview() function to create an interactive map of the roads object:\n\n_____\n_____\n\nExplore the setting for mapview() and create a custom map using roads or other data from this exercise:\n\n_____"
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "MIT License",
+    "objectID": "exercises/exercise_07.html",
+    "href": "exercises/exercise_07.html",
+    "title": "Exercise 07",
     "section": "",
-    "text": "MIT License\nCopyright (c) 2023 Eli Pousson\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    "text": "Exercise due on 2023-10-16\n\n\n\nℹ️ See week 7 for related slides and readings"
   },
   {
-    "objectID": "weeks/week_13.html",
-    "href": "weeks/week_13.html",
-    "title": "Week 13",
+    "objectID": "exercises/exercise_12.html",
+    "href": "exercises/exercise_12.html",
+    "title": "Exercise 12",
     "section": "",
-    "text": "Reminder! We have no in-person class on November 22."
+    "text": "Exercise due on 2023-11-20\n\n\n\nℹ️ See week 12 for related slides and readings"
   },
   {
-    "objectID": "weeks/week_13.html#prepare",
-    "href": "weeks/week_13.html#prepare",
-    "title": "Week 13",
+    "objectID": "exercises/exercise_03.html",
+    "href": "exercises/exercise_03.html",
+    "title": "Exercise 03",
+    "section": "",
+    "text": "Exercise due on 2023-09-18\n\n\n\nℹ️ See week 3 for related slides and readings"
+  },
+  {
+    "objectID": "course-schedule.html",
+    "href": "course-schedule.html",
+    "title": "Schedule overview",
+    "section": "",
+    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GES 668: Building Spatial Datasets (Fall 2023)",
+    "section": "",
+    "text": "Week\n      Date\n      Topic\n      Slides\n      Exercise\n    \n  \n  \n    1\nWed, Aug 30\nGetting started with spatial data using sf and the tidyverse\n📖\n📝\n    2\nWed, Sep 6\nVisualizing spatial data with ggplot2\n📖\n📝\n    3\nWed, Sep 13\nTransforming data with dplyr\n📖\n📝\n    4\nWed, Sep 20\nTransforming spatial data attributes\n📖\n📝\n    5\nWed, Sep 27\nApplying spatial transformations and geometric operations using sf\n📖\n📝\n    6\nWed, Oct 4\nTidying and joining spatial data\n📖\n📝\n    7\nWed, Oct 11\nBuilding functions in R and literate programming with Quarto\n📖\n📝\n    8\nWed, Oct 18\nDeveloping an exploratory data analysis with sf and the tidyverse\n📖\n📝\n    9\nWed, Oct 25\nEditing OpenStreetMap and exploring OpenStreetMap data with the osmdata package\n📖\n📝\n    10\nWed, Nov 1\nExploring American Community Survey data with the tidycensus package\n📖\n📝\n    11\nWed, Nov 8\nReading and writing spatial data files and services\n📖\n📝\n    12\nWed, Nov 15\nCreating and managing spatial metadata\n📖\n📝\n    13\nWed, Nov 22\nProject check-in meetings (no class)\n—\n—\n    14\nWed, Nov 29\nReview and work session\n—\n—\n    15\nWed, Dec 6\nFinal project presentations\n—\n—\n    —\nThu, Dec 14\nDue: Final project repository\n—\n—"
+  },
+  {
+    "objectID": "weeks/week_09.html",
+    "href": "weeks/week_09.html",
+    "title": "Week 9",
+    "section": "",
+    "text": "Mark Padgham and Robin Lovelace “1. Osmdata” (osmdata, August 15, 2023), https://docs.ropensci.org/osmdata/articles/osmdata.html.\nAlan McConchie “OpenStreetMap Pasts, OpenStreetMap Futures,” July 27, 2016, https://www.youtube.com/watch?v=KNTSZGnQVRw.\n\n\n\n\n\nGeoff Boeing “The Right Tools for the Job: The Case for Spatial Science Tool-Building,” Transactions in GIS 24, no. 5 (October 2020): 1299–1314, doi:10.1111/tgis.12678.\nDani Arribas-Bel and Jon Reades “Geography and Computers: Past, Present, and Future,” Geography Compass 12, no. 10 (2018): e12403, doi:10.1111/gec3.12403."
+  },
+  {
+    "objectID": "weeks/week_09.html#prepare",
+    "href": "weeks/week_09.html#prepare",
+    "title": "Week 9",
+    "section": "",
+    "text": "Mark Padgham and Robin Lovelace “1. Osmdata” (osmdata, August 15, 2023), https://docs.ropensci.org/osmdata/articles/osmdata.html.\nAlan McConchie “OpenStreetMap Pasts, OpenStreetMap Futures,” July 27, 2016, https://www.youtube.com/watch?v=KNTSZGnQVRw.\n\n\n\n\n\nGeoff Boeing “The Right Tools for the Job: The Case for Spatial Science Tool-Building,” Transactions in GIS 24, no. 5 (October 2020): 1299–1314, doi:10.1111/tgis.12678.\nDani Arribas-Bel and Jon Reades “Geography and Computers: Past, Present, and Future,” Geography Compass 12, no. 10 (2018): e12403, doi:10.1111/gec3.12403."
+  },
+  {
+    "objectID": "weeks/week_09.html#practice",
+    "href": "weeks/week_09.html#practice",
+    "title": "Week 9",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 09"
+  },
+  {
+    "objectID": "weeks/week_11.html",
+    "href": "weeks/week_11.html",
+    "title": "Week 11",
+    "section": "",
+    "text": "Reminder! Your project proposal is due by 2023-11-07."
+  },
+  {
+    "objectID": "weeks/week_11.html#overview",
+    "href": "weeks/week_11.html#overview",
+    "title": "Week 11",
+    "section": "Overview",
+    "text": "Overview\n\nReview uses of common data file formats and web services\nDownloading data from Socrata open data portals with {RSocrata}"
+  },
+  {
+    "objectID": "weeks/week_11.html#prepare",
+    "href": "weeks/week_11.html#prepare",
+    "title": "Week 11",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 6 Models of Local Practice in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\nCh. 7 Local Ends in Loukissas All Data Are Local."
+    "text": "Prepare\n\nRequired readings\n\nCh. 8 Geographic data I/O in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 21 Spreadsheets in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\n\n\n\nOptional readings\n\nTom MacWright “More Than You Ever Wanted to Know about GeoJSON” (Tom MacWright, March 23, 2015), https://macwright.com/2015/03/23/geojson-second-bite.html.\nOpenGeoLabs “Switch from Shapefile,” October 5, 2017, http://switchfromshapefile.org/.\nSpatial Data on the Web Working Group “Spatial Data on the Web Best Practices,” September 28, 2017, https://www.w3.org/TR/sdw-bp/."
   },
   {
-    "objectID": "weeks/week_13.html#practice",
-    "href": "weeks/week_13.html#practice",
-    "title": "Week 13",
+    "objectID": "weeks/week_11.html#practice",
+    "href": "weeks/week_11.html#practice",
+    "title": "Week 11",
     "section": "Practice",
-    "text": "Practice\nThere are no more practice exercises!"
+    "text": "Practice\n🛠️️ Exercise 11"
   },
   {
-    "objectID": "weeks/week_02.html",
-    "href": "weeks/week_02.html",
-    "title": "Week 2",
+    "objectID": "weeks/week_04.html",
+    "href": "weeks/week_04.html",
+    "title": "Week 4",
     "section": "",
-    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+    "text": "Summarizing features with dplyr::summarize()"
   },
   {
-    "objectID": "weeks/week_02.html#prepare",
-    "href": "weeks/week_02.html#prepare",
-    "title": "Week 2",
+    "objectID": "weeks/week_04.html#overview",
+    "href": "weeks/week_04.html#overview",
+    "title": "Week 4",
     "section": "",
-    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+    "text": "Summarizing features with dplyr::summarize()"
   },
   {
-    "objectID": "weeks/week_02.html#practice",
-    "href": "weeks/week_02.html#practice",
-    "title": "Week 2",
+    "objectID": "weeks/week_04.html#prepare",
+    "href": "weeks/week_04.html#prepare",
+    "title": "Week 4",
+    "section": "Prepare",
+    "text": "Prepare\n\nRequired readings\n\nCh. 3 Attribute data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 3 Collecting Infrastructures in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/."
+  },
+  {
+    "objectID": "weeks/week_04.html#practice",
+    "href": "weeks/week_04.html#practice",
+    "title": "Week 4",
     "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 02"
+    "text": "Practice\n🛠️️ Exercise 04"
   },
   {
     "objectID": "weeks/week_06.html",
@@ -551,6 +250,188 @@
     "title": "Week 6",
     "section": "Practice",
     "text": "Practice\n🛠️️ Exercise 06"
+  },
+  {
+    "objectID": "weeks/week_13.html",
+    "href": "weeks/week_13.html",
+    "title": "Week 13",
+    "section": "",
+    "text": "Reminder! We have no in-person class on November 22."
+  },
+  {
+    "objectID": "weeks/week_13.html#prepare",
+    "href": "weeks/week_13.html#prepare",
+    "title": "Week 13",
+    "section": "Prepare",
+    "text": "Prepare\n\nRequired readings\n\nCh. 6 Models of Local Practice in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\nCh. 7 Local Ends in Loukissas All Data Are Local."
+  },
+  {
+    "objectID": "weeks/week_13.html#practice",
+    "href": "weeks/week_13.html#practice",
+    "title": "Week 13",
+    "section": "Practice",
+    "text": "Practice\nThere are no more practice exercises!"
+  },
+  {
+    "objectID": "weeks/week_03.html",
+    "href": "weeks/week_03.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Filtering data with dplyr::filter()\nCreating new variables with dplyr::mutate()"
+  },
+  {
+    "objectID": "weeks/week_03.html#overview",
+    "href": "weeks/week_03.html#overview",
+    "title": "Week 3",
+    "section": "",
+    "text": "Filtering data with dplyr::filter()\nCreating new variables with dplyr::mutate()"
+  },
+  {
+    "objectID": "weeks/week_03.html#prepare",
+    "href": "weeks/week_03.html#prepare",
+    "title": "Week 3",
+    "section": "Prepare",
+    "text": "Prepare\n\nRequired readings\n\nCh. 5 Data transformation in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 2 A Place for Plant Data in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001."
+  },
+  {
+    "objectID": "weeks/week_03.html#practice",
+    "href": "weeks/week_03.html#practice",
+    "title": "Week 3",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 03"
+  },
+  {
+    "objectID": "weeks/week_14.html",
+    "href": "weeks/week_14.html",
+    "title": "Week 14",
+    "section": "",
+    "text": "Reminder! Your final project presentation is due on 2023-12-06"
+  },
+  {
+    "objectID": "weeks/week_15.html",
+    "href": "weeks/week_15.html",
+    "title": "Week 15",
+    "section": "",
+    "text": "Reminder! Your final project repository is due on 2023-12-14"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "MIT License",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2023 Eli Pousson\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "course-exercises.html",
+    "href": "course-exercises.html",
+    "title": "Exercise overview",
+    "section": "",
+    "text": "Exercise 01\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nAvailable\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 02\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 03\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 04\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 05\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 06\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 07\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 08\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 09\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 10\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 11\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 12\n\n\n\n\n\nLast updated\n\n\n\n\n\n\nStatus\n\n\nWIP\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "weeks/week_01.html",
+    "href": "weeks/week_01.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to GES668!\nIntroduction to R for spatial data\nIntroduction to reproducible data analysis\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore key functions from the {sf} package and {tidyverse} family of packages\nCreate a self-contained project in RStudio\nPractice creating files with a consistent naming convention\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\nHow does R support reproducible spatial data analysis?\nWhy use R for working with spatial data?"
+  },
+  {
+    "objectID": "weeks/week_01.html#overview",
+    "href": "weeks/week_01.html#overview",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to GES668!\nIntroduction to R for spatial data\nIntroduction to reproducible data analysis\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore key functions from the {sf} package and {tidyverse} family of packages\nCreate a self-contained project in RStudio\nPractice creating files with a consistent naming convention\n\n\n\n\n\n\n\n\n\nQuestions\n\n\n\n\nHow does R support reproducible spatial data analysis?\nWhy use R for working with spatial data?"
+  },
+  {
+    "objectID": "weeks/week_01.html#prepare",
+    "href": "weeks/week_01.html#prepare",
+    "title": "Week 1",
+    "section": "Prepare",
+    "text": "Prepare\n\nGetting ready for the first class\n\nInstall R and RStudio on your computer. Review these instructions if needed.\nIf you don’t already have a GitHub account, register for a GitHub user account. Review these instructions if needed.\nInstall the GitHub Desktop application (the installer will also install Git on your computer).\nUse this Google form to share your GitHub username (and a little background)\nJoin the class Discord.\nBring a computer to class (if you can).\n📖 Read the syllabus\n\n\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2.\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or more recent How to name files talk for NormConf 2022)\n\n\n\nOptional readings\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\nGreg Wilson et al. “Good Enough Practices in Scientific Computing,” PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510, doi:10.1371/journal.pcbi.1005510."
+  },
+  {
+    "objectID": "weeks/week_01.html#participate",
+    "href": "weeks/week_01.html#participate",
+    "title": "Week 1",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Introduction to Spatial Data with R"
+  },
+  {
+    "objectID": "weeks/week_01.html#practice",
+    "href": "weeks/week_01.html#practice",
+    "title": "Week 1",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 01"
+  },
+  {
+    "objectID": "weeks/week_02.html",
+    "href": "weeks/week_02.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+  },
+  {
+    "objectID": "weeks/week_02.html#prepare",
+    "href": "weeks/week_02.html#prepare",
+    "title": "Week 2",
+    "section": "",
+    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+  },
+  {
+    "objectID": "weeks/week_02.html#practice",
+    "href": "weeks/week_02.html#practice",
+    "title": "Week 2",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 02"
+  },
+  {
+    "objectID": "weeks/week_07.html",
+    "href": "weeks/week_07.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "Ch. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4."
+  },
+  {
+    "objectID": "weeks/week_07.html#prepare",
+    "href": "weeks/week_07.html#prepare",
+    "title": "Week 7",
+    "section": "",
+    "text": "Ch. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4."
+  },
+  {
+    "objectID": "weeks/week_07.html#practice",
+    "href": "weeks/week_07.html#practice",
+    "title": "Week 7",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 07"
+  },
+  {
+    "objectID": "weeks/week_12.html",
+    "href": "weeks/week_12.html",
+    "title": "Week 12",
+    "section": "",
+    "text": "Reminder! Peer feedback on project proposals is due by 2023-11-14."
+  },
+  {
+    "objectID": "weeks/week_12.html#overview",
+    "href": "weeks/week_12.html#overview",
+    "title": "Week 12",
+    "section": "Overview",
+    "text": "Overview\n\nIntroduction to metadata and spatial metadata standards\nWriting metadata, READMEs, and documentation for projects, workflows, and data\nWorking with data dictionaries and the {labelled} package"
+  },
+  {
+    "objectID": "weeks/week_12.html#prepare",
+    "href": "weeks/week_12.html#prepare",
+    "title": "Week 12",
+    "section": "Prepare",
+    "text": "Prepare\n\nRequired readings\n\nCh. 7 Show Your Work in Catherine D’Ignazio and Lauren F. Klein Data Feminism (The MIT Press, 2020), https://data-feminism.mitpress.mit.edu/.\nShannon Pileggi “The Case for Variable Labels in R” (Piping Hot Data, September 13, 2022), https://www.pipinghotdata.com/posts/2022-09-13-the-case-for-variable-labels-in-r/.\n“Data-Primers” (DataCurationNetwork, 2019), https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3.\n\n\n\nOptional readngs\n\n“Guide to Writing \"Readme\" Style Metadata” (Research Data Management Service Group), accessed August 27, 2022, https://data.research.cornell.edu/content/readme.\nEmily Riederer “Column Names as Contracts” (Emily Riederer, September 6, 2020), https://emilyriederer.netlify.app/post/column-name-contracts/."
+  },
+  {
+    "objectID": "weeks/week_12.html#practice",
+    "href": "weeks/week_12.html#practice",
+    "title": "Week 12",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 12"
   },
   {
     "objectID": "weeks/week_10.html",
@@ -623,31 +504,150 @@
     "text": "Practice\n🛠️️ Exercise 08"
   },
   {
-    "objectID": "weeks/week_11.html",
-    "href": "weeks/week_11.html",
-    "title": "Week 11",
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "GES668: Building Spatial Datasets",
     "section": "",
-    "text": "Reminder! Your project proposal is due by 2023-11-07."
+    "text": "In this course, students learn how to access and understand spatial data using the R programming language and the sf and tidyverse family of R packages. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data.\nReadings and practical exercise prepare students to build and maintain data sets about local places and navigate critical issues including data ownership, accuracy, and privacy considerations."
   },
   {
-    "objectID": "weeks/week_11.html#overview",
-    "href": "weeks/week_11.html#overview",
-    "title": "Week 11",
-    "section": "Overview",
-    "text": "Overview\n\nReview uses of common data file formats and web services\nDownloading data from Socrata open data portals with {RSocrata}"
+    "objectID": "slides/spatial-data.html#overview",
+    "href": "slides/spatial-data.html#overview",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "1 Overview",
+    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
   },
   {
-    "objectID": "weeks/week_11.html#prepare",
-    "href": "weeks/week_11.html#prepare",
-    "title": "Week 11",
-    "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 8 Geographic data I/O in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd (WIP)., 2022, https://geocompr.robinlovelace.net/.\nCh. 21 Spreadsheets in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\n\n\n\nOptional readings\n\nTom MacWright “More Than You Ever Wanted to Know about GeoJSON” (Tom MacWright, March 23, 2015), https://macwright.com/2015/03/23/geojson-second-bite.html.\nOpenGeoLabs “Switch from Shapefile,” October 5, 2017, http://switchfromshapefile.org/.\nSpatial Data on the Web Working Group “Spatial Data on the Web Best Practices,” September 28, 2017, https://www.w3.org/TR/sdw-bp/."
+    "objectID": "slides/spatial-data.html#what-is-r",
+    "href": "slides/spatial-data.html#what-is-r",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "2 What is R?",
+    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
   },
   {
-    "objectID": "weeks/week_11.html#practice",
-    "href": "weeks/week_11.html#practice",
-    "title": "Week 11",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 11"
+    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "3 How does R work with spatial data?",
+    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
+  },
+  {
+    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "4 Take a look at {sf} and the tidyverse in action",
+    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
+  },
+  {
+    "objectID": "exercises/exercise_01.html",
+    "href": "exercises/exercise_01.html",
+    "title": "Exercise 01",
+    "section": "",
+    "text": "Exercise due on 2023-09-04\nℹ️ See week 1 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_01.html#setup",
+    "href": "exercises/exercise_01.html#setup",
+    "title": "Exercise 01",
+    "section": "1 Setup",
+    "text": "1 Setup\nTo complete this exercise, you need two libraries:\n\nlibrary(sf)\nlibrary(ggplot2)\n\nYou also need data included with the {sf} package:\n\nnc &lt;- st_read(system.file(\"shape/nc.shp\", package = \"sf\"))\n\nYou are also need the {mapview} and {spData} packages but don’t load them yet."
+  },
+  {
+    "objectID": "exercises/exercise_01.html#exercises",
+    "href": "exercises/exercise_01.html#exercises",
+    "title": "Exercise 01",
+    "section": "2 Exercises",
+    "text": "2 Exercises\n\n2.1 Coding basics\nThe exercises in this section are from Ch. 3 Workflow: basics in R for Data Science (2e). If you have any trouble with the next couple exercises, please review the chapter before continuing to the next section.\nWhy does this code not work?\n\nmy_variable &lt;- 10\nmy_varıable\n\n\nTweak each of the following R commands so that they run correctly:\n\nlibary(todyverse)\n\nggplot(dTA = mpg) + \n  geom_point(maping = aes(x = displ y = hwy)) +\n  geom_smooth(method = \"lm)\n\n\nPress ⌥ + ⇧ + K or ⎇ + ⇧ + K. What happens? How can you get to the same place using the menus?\n\n\n\n2.2 Look up documentation\nThe ? is a function for accessing documentation on a function, dataset, or other topic. For example, executing the code: ?sf::st_read will pull up the documentation on functions to read simple features or layers from file or database.\nUse ? to access the documentation on sf::st_geometry() then look for the “Value” heading that provides information about the value returned by the function.\nWhat type of object does sf::st_geometry() return? Fill in the blank or paraphrase the description.\nsf::st_geometry() returns a ____ object.\nWhat is one other function documented on the same page? ____\n\n\n\n\n\n\nTip\n\n\n\n\n\nReview Ch. 9 Workflow: getting help in R for Data Science (2e) for more information about getting help when you struggle with a package, function, or project.\n\n\n\n\n\n2.3 Access object classes, names, and attributes\nThe class() and names() functions return basic information about an object in R.\nUse class() to check the class of the output from st_geometry():\n\nnc_geometry &lt;- st_geometry(nc)\n\n\nGet the names() for the nc object and the nc_geometry object:\n\nnames(____)\n\nnames(____)\n\nCan you explain the difference between the two results?\n\nsummary() can help get more information about an object.\nUse summary() on nc_geometry:\n\nsummary(____)\n\nReview the results and try to answer the following:\n\nWhat is the geometry type? ____\nWhat is the coordinate reference system? ____\nHow many features? ____\n\n\n\n2.4 Plot a sf object\nSome packages come with data we can use as soon as the package is loaded.\nLoad the {spData} packages using library() then make a plot of the us_states data:\n\nlibrary(____)\n\nplot(____)\n\nCan you update the plot of us_states to show a map of states by region?\n\nplot(____)\n\nCan you make a map of us_states using ggplot() and geom_sf()?\n\nggplot(data = ____) +\n  geom_sf()\n\nCan you update the map of us_states you made with geom_sf() so states are color-coded by total population in 2015? Take a look at the documentation for ggplot2::geom_sf() for examples.\n\nggplot(data = ____) +\n  geom_sf()\n\nIf you get stuck, try using names() or summary() to take a look at us_states to find out the column names for region or total population in 2015."
+  },
+  {
+    "objectID": "exercises/exercise_01.html#bonus-exercise",
+    "href": "exercises/exercise_01.html#bonus-exercise",
+    "title": "Exercise 01",
+    "section": "3 Bonus exercise",
+    "text": "3 Bonus exercise\n\n3.1 Interactive mapping\nWe should first get a URL for the Baltimore County Maintained Roads data from Maryland iMap a path to the GeoPackage file in your repository.\nI already pulled the URL to use for this exercise and prepped it for reading with a “vsicurl” prefix that allows us to use the virtual file systems built into the Geospatial Data Abstraction Library or GDAL.\n\nurl &lt;- \"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/Baltimore_County_Maintained_Roads/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\"\n\nurl &lt;- paste0(\"/vsicurl/\" , url)\n\n\n\n\n\n\n\nAbout GDAL and other sf dependencies\n\n\n\n\n\nGDAL is one of the major open source projects that “powers” the {sf} package along with GEOS, PROJ, and udunits2. Geocomputation with R explains these dependencies:\n\nGDAL, for reading, writing and manipulating a wide range of geographic data formats,\nPROJ, a powerful library for coordinate system transformations\nGEOS, a planar geometry engine for operations such as calculating buffers and centroids on data with a projected CRS\nS2, a spherical geometry engine written in C++ developed by Google\n\n\n\n\n\nNext, use st_read() and the assignment operator &lt;- to load the file into a sf object named `roads``:\n\nroads &lt;- ____\n\n\nLoad the {mapview} library and then use the mapview() function to create an interactive map of the roads object:\n\n_____\n_____\n\nExplore the setting for mapview() and create a custom map using roads or other data from this exercise:\n\n_____"
+  },
+  {
+    "objectID": "exercises/exercise_02.html",
+    "href": "exercises/exercise_02.html",
+    "title": "Exercise 02",
+    "section": "",
+    "text": "WIP\n\n\n\nThis exercise is a work-in-progress. Please wait for this status message to be removed before getting started.\nℹ️ See week 2 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#overview",
+    "href": "exercises/exercise_02.html#overview",
+    "title": "Exercise 02",
+    "section": "1 Overview",
+    "text": "1 Overview"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#setup",
+    "href": "exercises/exercise_02.html#setup",
+    "title": "Exercise 02",
+    "section": "2 Setup",
+    "text": "2 Setup\n\nlibrary(ggplot2)\nlibrary(sf)\n\nOne advantage of using {ggplot2} over a map-making focused package like {tmap} is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with {ggplot2}.\nFor this exercise, we are going to use the following packages:\n\npak::pkg_install(c(\"ggrepel\", \"cols4all\", \"patchwork\", \"ggtext\", \"spDataLarge\"))\n\nWe are also going to demonstrate a few advanced features. You won’t need to do anything with these packages but you need them installed to see the results:\n\npak::pkg_install(c(\"ggdist\", \"geomtextpath\", \"plotly\", \"smoothr\"))"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#exercises",
+    "href": "exercises/exercise_02.html#exercises",
+    "title": "Exercise 02",
+    "section": "3 Exercises",
+    "text": "3 Exercises\n\n3.1 Visualizing one variable\nWorking with geom_bar() with one discrete variable:\n\nggplot() +\n  geom_bar(aes(x = ____))\n\nWorking with geom_dotplot() with one continuous variable:\n\nggplot(data = ____) +\n  geom_dotplot()\n\nWorking with geom_sf() with one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(size = ____))\n\nWorking with geom_sf() with one discrete variable:\n\nggplot(data = ____) +\n  geom_sf(aes(color = ____))\n\n\n\n3.2 Visualizing two variables\nUsing geom_col() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_col(aes(____))\n\nUsing geom_sf() and facet_wrap() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(fill = ____)) +\n  facet_wrap(~ ____)\n\n\n\n3.3 Using scales and colors\nUsing the viridis scales for a dot plot:\n\nggplot(data = ____) +\n  geom_dotplot() +\n  scale_color_viridis_c()\n\nUsing the ColorBrewer scales with color:\n\nggplot() +\n  geom_sf(aes(color = ____)) +\n  scale_color_brewer()\n\nThe same with fill:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_brewer()\n\nThe same with a continuous variable:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_distiller()\n\n\n\n3.4 Adding labels, legends, and themes\nUsing the labs() function:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  labs(\n    title = ____,\n    caption = ____,\n    fill = ____\n  )\n\n\n\n3.5 Map making with {ggplot2}\nHiding graticules with theme_void():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme_void()\n\nHiding graticules with theme():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme(\n    panel.grid = element_blank(),\n    panel.grid.major = element_blank(),\n    panel.grid.minor = element_blank()\n    )\n\n“Zooming” into an area with coord_sf()\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\nAdding inset maps with {patchwork}\n\narea_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA)\n\ninset_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\narea_map +\n  patchwork::inset_element(\n    inset_map,\n    left = ____,\n    bottom = ____,\n    top = ____,\n    right = ____\n  )\n\nSmoothing features with {smoothr}\n\ndata &lt;- ____\nsmooth_data &lt;- smoothr::smooth(data, method = \"ksmooth\", smoothness = ____)\n\nggplot() +\n  geom_sf(\n    data = data,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = smooth_data,\n    color = \"blue\"\n  ) +\n  theme_void()"
+  },
+  {
+    "objectID": "exercises/exercise_02.html#bonus-exercise",
+    "href": "exercises/exercise_02.html#bonus-exercise",
+    "title": "Exercise 02",
+    "section": "4 Bonus exercise",
+    "text": "4 Bonus exercise\n\n4.1 Creating maps with {tmap}"
+  },
+  {
+    "objectID": "exercises/exercise_06.html",
+    "href": "exercises/exercise_06.html",
+    "title": "Exercise 06",
+    "section": "",
+    "text": "Exercise due on 2023-10-09\n\n\n\nℹ️ See week 6 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_05.html",
+    "href": "exercises/exercise_05.html",
+    "title": "Exercise 05",
+    "section": "",
+    "text": "Exercise due on 2023-10-02\n\n\n\nℹ️ See week 5 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_10.html",
+    "href": "exercises/exercise_10.html",
+    "title": "Exercise 10",
+    "section": "",
+    "text": "Exercise due on 2023-11-06\n\n\n\nℹ️ See week 10 for related slides and readings"
+  },
+  {
+    "objectID": "exercises/exercise_09.html",
+    "href": "exercises/exercise_09.html",
+    "title": "Exercise 09",
+    "section": "",
+    "text": "Exercise due on 2023-10-30\n\n\n\nℹ️ See week 9 for related slides and readings"
+  },
+  {
+    "objectID": "project-description.html",
+    "href": "project-description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
+  },
+  {
+    "objectID": "project-description.html#timeline",
+    "href": "project-description.html#timeline",
+    "title": "Project description",
+    "section": "",
+    "text": "Topic ideas due Fri, Feb 18\nProposal due Fri, Mar 18\nDraft report due Fri, Apr 8\nPeer review due Fri, Apr 15\nFinal report due Mon, Apr 25\npresentation + slides and final GitHub repo due Thu, Apr 28\nPresentation comments due Sat, Apr 30"
+  },
+  {
+    "objectID": "project-description.html#introduction",
+    "href": "project-description.html#introduction",
+    "title": "Project description",
+    "section": "Introduction",
+    "text": "Introduction\nTL;DR: Create an exploratory analysis based on OpenStreetMap or American Community Survey data. That is your final project.\nThe goal of the final project is for you to create an exploratory analysis using real world data. Students are encourages to use:\n\nOpenStreetMap data (using the {osmdata} package),\nAmerican Community Survey data (using the {tidycensus} package),\nor a combination of both sources.\n\nBoth data sources include varied types and topics so you can choose based on your interests or work you have done in other courses or research projects.\nThe goal of this project is for you to demonstrate your understanding of the skills we covered in this class (and beyond, if you like!) and apply them to a data set to analyze it in a meaningful way.\nAll analyses must be done in RStudio, and all components of the project must be reproducible.\n\nLogistics\nYou will work on the project with your lab groups.\nThe four primary deliverables for the final project are\n\nA written, reproducible report detailing your analysis\nA GitHub repository corresponding to your report\nSlides + a video presentation\nFormal peer review on another team’s project"
   }
 ]
