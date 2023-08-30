@@ -1,5 +1,6 @@
 ---
-title: "01: Getting started with spatial data using sf and the tidyverse"
+title: "Session {{< meta order >}}: Getting started with spatial data using sf and the tidyverse"
+order: 1
 ---
 
 ```{r}

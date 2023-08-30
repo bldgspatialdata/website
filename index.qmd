@@ -6,8 +6,8 @@ title: "GES 668: Building Spatial Datasets (Fall 2023)"
 #| echo: false
 tbl <- tibble::tribble(
                               ~Week,        ~Date,                                                                            ~Topic,                                      ~Slides,                         ~Exercise,
-          "[1](weeks/week_01.html)", "2023-08-30",                    "Getting started with spatial data using sf and the tidyverse",           "[📖](slides/01_spatial-data.html)", "[📝](exercises/exercise_01.html)",
-          "[2](weeks/week_02.html)", "2023-09-06",                                           "Visualizing spatial data with ggplot2",     "[📖](slides/02_data-visualization.html)", "[📝](exercises/exercise_02.html)",
+          "[1](weeks/week_01.html)", "2023-08-30",                    "Getting started with spatial data using sf and the tidyverse",           "[📖](slides/spatial-data.html)", "[📝](exercises/exercise_01.html)",
+          "[2](weeks/week_02.html)", "2023-09-06",                                           "Visualizing spatial data with ggplot2",     "[📖](slides/data-visualization.html)", "[📝](exercises/exercise_02.html)",
           "[3](weeks/week_03.html)", "2023-09-13",                                                    "Transforming data with dplyr",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_03.html)",
           "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_04.html)",
           "[5](weeks/week_05.html)", "2023-09-27",              "Applying spatial transformations and geometric operations using sf", "[📖](slides/05_spatial-transformation.html)", "[📝](exercises/exercise_05.html)",
