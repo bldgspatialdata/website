@@ -4,7 +4,6 @@ date-modified: last-modified
 format: 
   html: default
   pdf:
-    latex-output-dir: files
     output-file: "GES668_Fall-2023_Syllabus.pdf"
 ---
 
