@@ -1,0 +1,23 @@
+Title: website
+Version: 0.0.0.9000
+Authors@R: 
+    person("Eli", "Pousson", , "eli.pousson@gmail.com", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0001-8280-1706"))
+Description: Course website for GES668
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports:
+  dplyr,
+  forcats,
+  ggplot2,
+  gt,
+  tidyr,
+  sf,
+  stringr
+Suggests:
+  ggrepel,
+  ggtext,
+  patchwork,
+  smoothr,
+  spData
