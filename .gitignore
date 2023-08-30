@@ -3,5 +3,5 @@
 .RData
 .Ruserdata
 .obsidian
-_freeze
+_site
 /.quarto/
