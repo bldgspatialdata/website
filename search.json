@@ -140,6 +140,34 @@
     "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "slides/spatial-data.html#overview",
+    "href": "slides/spatial-data.html#overview",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "1 Overview",
+    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
+  },
+  {
+    "objectID": "slides/spatial-data.html#what-is-r",
+    "href": "slides/spatial-data.html#what-is-r",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "2 What is R?",
+    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
+  },
+  {
+    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "3 How does R work with spatial data?",
+    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
+  },
+  {
+    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "4 Take a look at {sf} and the tidyverse in action",
+    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "GES 668: Building Spatial Datasets (Fall 2023)",
@@ -511,32 +539,109 @@
     "text": "In this course, students learn how to access and understand spatial data using the R programming language and the sf and tidyverse family of R packages. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data.\nReadings and practical exercise prepare students to build and maintain data sets about local places and navigate critical issues including data ownership, accuracy, and privacy considerations."
   },
   {
-    "objectID": "slides/spatial-data.html#overview",
-    "href": "slides/spatial-data.html#overview",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "1 Overview",
-    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
+    "objectID": "slides/welcome.html#what-is-this-class-about",
+    "href": "slides/welcome.html#what-is-this-class-about",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?"
   },
   {
-    "objectID": "slides/spatial-data.html#what-is-r",
-    "href": "slides/spatial-data.html#what-is-r",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "2 What is R?",
-    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
+    "objectID": "slides/welcome.html#what-is-this-class-about-1",
+    "href": "slides/welcome.html#what-is-this-class-about-1",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data using R"
   },
   {
-    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "3 How does R work with spatial data?",
-    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
+    "objectID": "slides/welcome.html#what-is-this-class-about-2",
+    "href": "slides/welcome.html#what-is-this-class-about-2",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data spatial data using R"
   },
   {
-    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "4 Take a look at {sf} and the tidyverse in action",
-    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
+    "objectID": "slides/welcome.html#what-is-this-class-about-3",
+    "href": "slides/welcome.html#what-is-this-class-about-3",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about places"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-4",
+    "href": "slides/welcome.html#what-is-this-class-about-4",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about people and places"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-5",
+    "href": "slides/welcome.html#what-is-this-class-about-5",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
+  },
+  {
+    "objectID": "slides/welcome.html#why-are-you-here",
+    "href": "slides/welcome.html#why-are-you-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why are you here?",
+    "text": "Why are you here?"
+  },
+  {
+    "objectID": "slides/welcome.html#how-did-you-get-here",
+    "href": "slides/welcome.html#how-did-you-get-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "How did you get here?",
+    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
+  },
+  {
+    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What experiences do you bring with you today?",
+    "text": "What experiences do you bring with you today?"
+  },
+  {
+    "objectID": "slides/welcome.html#why-am-i-here",
+    "href": "slides/welcome.html#why-am-i-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why am I here?",
+    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
+  },
+  {
+    "objectID": "slides/welcome.html#communication",
+    "href": "slides/welcome.html#communication",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Communication 📬",
+    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
+  },
+  {
+    "objectID": "slides/welcome.html#assignments",
+    "href": "slides/welcome.html#assignments",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Assignments",
+    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
+  },
+  {
+    "objectID": "slides/welcome.html#readings",
+    "href": "slides/welcome.html#readings",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Readings 📚",
+    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
+  },
+  {
+    "objectID": "slides/welcome.html#miscellaneous",
+    "href": "slides/welcome.html#miscellaneous",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous"
+  },
+  {
+    "objectID": "slides/welcome.html#welcome-again",
+    "href": "slides/welcome.html#welcome-again",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Welcome again!",
+    "text": "Welcome again!"
   },
   {
     "objectID": "exercises/exercise_01.html",
