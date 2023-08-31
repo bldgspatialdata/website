@@ -89,14 +89,11 @@ Gary E. Sherman, founder of the Quantum GIS project, explains in Desktop GIS: Ma
 
 ### R is growing in popularity 📈
 
-```{r}
-#| echo: false
-#| eval: false
-```
+![](images/pkg-downloads_08-2018_07-2023.png)
 
 ### R is growing in popularity 📈
 
-The average number of monthly downloads for `{sf}` (the most popular package for working with spatial data in R) has grown from just 1,300 in June 2018 to **over 58,000 in June 2023**.
+The average *daily* downloads for `{sf}` (the most popular package for working with spatial data in R) has grown from just 1,300 in June 2018 to **over 58,000 in June 2023**.
 
 ::: notes
 Over the past five years, average number of monthly downloads for sf, the most popular package for working with spatial data in R has grown from just 1,300 in June 2018 to over 58,000 in June 2023.
@@ -429,4 +426,7 @@ ggplot(data = md) +
 Visual checks remain an important part of a workflow even when using a non-graphical interface. Map the data to see the results.
 :::
 
-------------------------------------------------------------------------
+## Related resources
+
+-   Week 1 [Required readings](https://bldgspatialdata.github.io/website/weeks/week_01.html#required-readings) and [Optional readings](https://bldgspatialdata.github.io/website/weeks/week_01.html#optional-readings)
+-   [Exercise 1](https://bldgspatialdata.github.io/website/exercises/exercise_01.html)

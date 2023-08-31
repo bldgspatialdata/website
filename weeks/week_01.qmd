@@ -7,12 +7,14 @@ date: 2023-08-30
 
 ## Overview
 
+### Agenda
+
 -   Welcome to GES668!
 -   Introduction to R for spatial data
 -   Introduction to reproducible data analysis
 
 ::: {.callout-note appearance="minimal" icon="true"}
-### Key Objectives
+#### Key Objectives
 
 -   Explore key functions from the `{sf}` package and `{tidyverse}` family of packages
 -   Create a self-contained project in RStudio
@@ -20,19 +22,38 @@ date: 2023-08-30
 :::
 
 ::: {.callout-tip appearance="minimal" icon="true"}
-### Questions
+#### Questions
 
 -   How does R support reproducible spatial data analysis?
 -   Why use R for working with spatial data?
 :::
 
+### What we covered
+
+#### Skills
+
+-   Installing packages with `install.packages()`
+-   Loading packages with `library()`
+-   Using the `?` operator to look up function documentation
+-   Using `st_read()` to read a `sf` object from a file path
+-   Using an assignment operator (`<-` or `=`) to save function output in a new object
+-   Using `View()` and `mapview()` to interactively explore spatial data
+
+#### Concepts
+
+-   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane
+-   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
+-   How `sf` objects are structured around attributes and geometries
+- How R code is executed within a development environment where packages or objects are loaded
+-   How and when to restart an R session and reset the environment
+
 ## Prepare
 
 ### Getting ready for the first class
 
--   Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. Review [these instructions if needed](#0).
+-   Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. Review [these instructions if needed](https://happygitwithr.com/install-r-rstudio).
 -   If you don't already have a GitHub account, [register for a GitHub user account](https://github.com/signup). Review [these instructions if needed](https://happygitwithr.com/github-acct).
--   Install the [GitHub Desktop application](https://desktop.github.com/) (the installer will also install Git on your computer). 
+-   Install the [GitHub Desktop application](https://desktop.github.com/) (the installer will also install Git on your computer).
 -   Use [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf_J0u7FX3cqGCBzw_MED7hFWlpsUXYsclvAAvvRf9ve8MEmw/viewform?usp=sf_link) to share your GitHub username (and a little background)
 -   Join the [class Discord](https://discord.gg/K9un5cXy).
 -   Bring a computer to class (if you can).
@@ -54,8 +75,10 @@ date: 2023-08-30
 
 ## Participate
 
-🖥️ [Introduction to Spatial Data with R](/slides/01_spatial-data.html)
+🖥️ [Welcome to GES 668](/slides/welcome.html)
+
+🖥️ [Introduction to Spatial Data with R](/slides/spatial-data.html)
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)

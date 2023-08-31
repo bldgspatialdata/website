@@ -1,12 +1,119 @@
 ---
-title: "Exercise overview"
-listing:
-  contents:
-    - "exercises"
-  type: grid
-  fields: [title, date-modified, status]
-  sort: "order"
-  field-display-names:
-    date-modified: "Last updated"
-    status: "Status"
+title: "Completing and submitting practice exercises"
+editor: visual
+toc: true
+number-sections: true
 ---
+
+## Access your exercise repository
+
+-   You must [sign up for a GitHub user account](https://github.com/signup) and share your GitHub username with me before I can create an exercise repository for you.
+-  Note that you must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and [installed GitHub Desktop](https://desktop.github.com/) to submit exercises.
+-   Open RStudio and configure your Git user name and email using the `{usethis}` package:
+ 
+```{r}
+# Install usethis if needed:
+# install.packages("usethis")
+
+library(usethis)
+use_git_config(user.name = "<your name>", user.email = "<your GitHub account email>")
+```
+
+-   After I create the repository, you should expect an email inviting you to be a collaborator for practice exercise repository on GitHub.
+-   This is a repository just for *your* exercise assignments so the repository will be named: "2023_exercises\_\<your GitHub username\>" and can be accessed at: https://github.com/bldgspatialdata/2023_exercises\_\<your GitHub username\>
+
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+### What is a repository?
+
+A repository is a collection of files where changes can be tracked and managed using a version control system. Git is a version control system. GitHub is a web service that makes it easier to manage version-controlled repositories and collaborate with others. For more background, read [Ch. 1 Why Git? Why GitHub?](https://happygitwithr.com/big-picture) from Happy Git and GitHub for the useR by Jenny Bryan.
+:::
+
+## Download or update your exercise repository
+
+### Downloading (a.k.a "cloning") your exercise repository
+
+-   Clone the repository to your computer using GitHub Desktop or using the GitHub website. Review the GitHub documentation on [cloning a repository with GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) or [the GitHub website](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) for more detailed instructions.
+-   Find and open folder where you downloaded the local copy of the exercise repository. By default, this folder should have the same name as the repository itself.
+-   As long as you keep this folder on your computer, you should do not need to clone the repository again. If you delete your local files or switch computers, you need to repeat this step.
+
+### Updating (a.k.a "syncing") your exercise repository {#update-repo}
+
+-   I will be adding new exercises to your repository each week using GitHub. You should "sync" the changes to the GitHub repository with your local copy of the project each week. Read the GitHub documentation on [Syncing your branch in GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch-in-github-desktop) for more detailed instructions.
+
+## Complete the week's exercise
+
+The process for completing and submitting each exercise will be the same for each week of the class:
+
+-   Open the `.RProj` file to open the project in RStudio. Review the documentation on [managing projects in RStudio](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) or the R for Data Science [chapter on working with projects](https://r4ds.hadley.nz/workflow-scripts#projects) for more background on why projects are useful.
+-   Using the "Files" pane, locate the `exercise_01.qmd` file (or the exercise file for this week) and open it. The file extension (`.qmd`) is short for Quarto Markdown document.
+
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+### What is a Quarto document?
+
+A Quarto document is a format that lets you mix "chunks" of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (`.Rmd`). [Quarto](https://quarto.org/) comes installed with RStudio but it is a separate command line application that can turn a `qmd` document into a standalone website, a formatted PDF, a presentation, and more. For your convenience, RStudio allows you to switch between a "Source" and "Visual" editor when working with a `.qmd` or `.Rmd` file.
+
+The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html) is a great place to learn how to render Quarto documents, run code chunks interactively, and format text using the markdown syntax.
+:::
+
+-   If you can't find this week's exercise file, you may have forgotten to update the repository. Go back and review this section: @update-repo
+
+-   Complete the project by filling in the blank spaces, fixing any "broken" code in the document, or adding new code in the "code chunks" that look like this:
+
+```{r}
+1 + 1 # example code
+```
+
+-   Try executing the code in each chunk as you work through the practice exercise. Any error messages you see can be helpful in figuring out what is missing or mixed up.
+
+-   When you are done with the exercise, there should be no more blank spaces like this `____` and all empty code chunks should have new code inside them.
+
+-   If all of your code chunks run smoothly, you should be able to "render" the `.qmd` document to create a new HTML document. When I review completed assignments, checking if the document renders will be my first step.
+
+-   Remember, you don't need to get everything right and it is OK if your document won't render. Just try your best with each part of the exercise.
+
+## Committing your completed exercise to the repository
+
+You may have saved your updated document to your computer but the last step is to save or "commit" those changes to the exercise repository.
+
+"Committing" your changes and syncing the changes with the remote version of your repository on GitHub allows me to see your completed exercise and share feedback on your work.
+
+### Commit changes with GitHub Desktop
+
+The first and easiest way to commit changes is using GitHub Desktop.
+
+- Review the GitHub documentation on [Committing and reviewing changes to your project in GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) for more detailed instructions.
+
+### Commit changes with RStudio
+
+The second way to commit changes is using the Git tab within RStudio. The interface for Git within RStudio is a little less friendly but is a convenient option since you don't need to leave RStudio to commit your changes.
+
+Here is the step-by-step process (adapted from [Connect RStudio to Git and GitHub](https://happygitwithr.com/rstudio-git-github) in Happy Git and GitHub for the useR):
+
+-   Click the "Git" tab in upper right pane.
+-   Check "Staged" box for `exercise_01.qmd`.
+-   If you're not already in the Git pop-up, click "Commit".
+-   Type a message in "Commit message", such as "Commit from RStudio".
+-   Click "Commit".
+-   Finally, click the green "Push" button to send your local changes to GitHub.
+
+:::{.callout-note collapse="false" appearance="default" icon="true"}
+### When should you commit your changes?
+
+You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise.
+
+If you take this approach, make sure your *last* commit message includes a confirmation that the assignment is complete and ready for evaluation.
+
+I will typically evaluate the last week's exercises on the Tuesday before each class session.
+:::
+
+## Trouble-shooting
+
+Check that Git and GitHub are set up correctly for your exercise repository. Within RStudio, run the `usethis::git_sitrep()` function and read any warnings or errors:
+
+```{r}
+#| message: false
+library(usethis)
+
+git_sitrep("git")
+```
+
