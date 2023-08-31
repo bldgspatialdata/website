@@ -63,8 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./course-schedule.html" rel="next">
-<link href="./course-syllabus.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./course-exercises.html">Exercise How-to</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Completing and submitting practice exercises</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -147,13 +145,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
@@ -164,12 +162,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./course-exercises.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercise How-to</span></a>
   </div>
 </li>
       </ul>
@@ -388,12 +380,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#trouble-shooting" id="toc-trouble-shooting" class="nav-link" data-scroll-target="#trouble-shooting"><span class="header-section-number">5</span> Trouble-shooting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/course-exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercise-submission.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./course-exercises.html">Exercise How-to</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Completing and submitting practice exercises</h1>
 </div>
@@ -427,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <ul>
 <li>After I create the repository, you should expect an email inviting you to be a collaborator for practice exercise repository on GitHub.</li>
-<li>This is a repository just for <em>your</em> exercise assignments so the repository will be named: “<strong>2023_exercises_&lt;your GitHub username&gt;</strong>” and can be accessed at: <strong>https://github.com/bldgspatialdata/2023_exercises_&lt;your GitHub username&gt;</strong></li>
+<li>This is a repository just for <em>your</em> exercise assignments so the repository will be named: “2023_exercises_&lt;your GitHub username&gt;” and can be accessed at: https://github.com/bldgspatialdata/2023_exercises_&lt;your GitHub username&gt;</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -482,7 +474,7 @@ What is a Quarto document?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>A Quarto document is a format that lets you mix “chunks” of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone website, a formatted PDF, a presentation, and more. The top of each document has a section for <a href="https://quarto.org/docs/authoring/front-matter.html">front matter</a> that controls the format, appearance, and content of the rendered document. For your convenience, RStudio allows you to switch between a “Source” and “Visual” editor when working with a <code>.qmd</code> or <code>.Rmd</code> file.</p>
+<p>A Quarto document is a format that lets you mix “chunks” of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone website, a formatted PDF, a presentation, and more. For your convenience, RStudio allows you to switch between a “Source” and “Visual” editor when working with a <code>.qmd</code> or <code>.Rmd</code> file.</p>
 <p>The <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello, Quarto tutorial</a> is a great place to learn how to render Quarto documents, run code chunks interactively, and format text using the markdown syntax.</p>
 </div>
 </div>
@@ -539,7 +531,9 @@ When should you commit your changes?
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>You don’t need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the “status” for the exercise from “Available” to “Complete” when your exercise is complete and ready for evaluation. I will typically evaluate the last week’s exercises on the Tuesday before each class session.</p>
+<p>You don’t need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise.</p>
+<p>If you take this approach, make sure your <em>last</em> commit message includes a confirmation that the assignment is complete and ready for evaluation.</p>
+<p>I will typically evaluate the last week’s exercises on the Tuesday before each class session.</p>
 </div>
 </div>
 </div>
@@ -1046,18 +1040,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-syllabus.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-schedule.html" class="pagination-link">
-        <span class="nav-page-text">Schedule overview</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
