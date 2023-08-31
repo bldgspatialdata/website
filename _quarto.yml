@@ -30,6 +30,8 @@ website:
             text: Overview
           - href: course-syllabus.qmd
             text: Syllabus
+          - href: course-exercises.qmd
+            text: Exercise How-to
       - section: "Weeks 🗓️"
         contents:
           - course-schedule.qmd
