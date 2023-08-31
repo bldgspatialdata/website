@@ -30,4 +30,4 @@ Reminder! **Peer feedback on project proposals** is due by {{< var dates.project
 
 ## Practice
 
-🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_{{< meta order >}}.html)

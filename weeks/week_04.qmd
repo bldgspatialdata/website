@@ -22,4 +22,4 @@ date: 2023-09-20
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

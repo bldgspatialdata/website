@@ -6,7 +6,7 @@ date: 2023-11-08
 ---
 
 ::: {.callout-important appearance="simple"}
-**Reminder!** Your project proposal is due by {{< var dates.project.proposal >}}.
+Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}.
 :::
 
 ## Overview
@@ -29,4 +29,4 @@ date: 2023-11-08
 
 ## Practice
 
-🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_{{< meta order >}}.html)

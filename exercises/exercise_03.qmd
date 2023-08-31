@@ -9,4 +9,4 @@ date-modified	: last-modified
 Exercise due on {{< meta date-due >}}
 :::
 
-ℹ️ See [week {{< meta order >}}](../weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html) for related slides and readings
+ℹ️ See [week {{< meta order >}}](../weeks/week_0{{< meta order >}}.html) for related slides and readings

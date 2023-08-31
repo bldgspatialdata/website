@@ -28,25 +28,6 @@ date: 2023-08-30
 -   Why use R for working with spatial data?
 :::
 
-### What we covered
-
-#### Skills
-
--   Installing packages with `install.packages()`
--   Loading packages with `library()`
--   Using the `?` operator to look up function documentation
--   Using `st_read()` to read a `sf` object from a file path
--   Using an assignment operator (`<-` or `=`) to save function output in a new object
--   Using `View()` and `mapview()` to interactively explore spatial data
-
-#### Concepts
-
--   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane
--   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
--   How `sf` objects are structured around attributes and geometries
-- How R code is executed within a development environment where packages or objects are loaded
--   How and when to restart an R session and reset the environment
-
 ## Prepare
 
 ### Getting ready for the first class
@@ -81,4 +62,23 @@ date: 2023-08-30
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0{{< meta order >}}.html)
+
+## Notes
+
+### What skills did we introduce this week
+
+-   Installing packages with `install.packages()`
+-   Loading packages with `library()`
+-   Using the `?` operator to look up function documentation
+-   Using `sf::st_read()` to read a `sf` object from a file path
+-   Using an assignment operator (`<-` or `=`) to save function output in a new object
+-   Using `View()` and `mapview::mapview()` to interactively explore spatial data
+
+### What concepts did we discuss this week
+
+-   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane (check out the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf) for a quick reference)
+-   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
+-   How `sf` objects are structured around attributes and geometries
+- How R code is executed within a development environment where packages or objects are loaded
+-   How and when to restart an R session to reset the environment
