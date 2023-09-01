@@ -38,6 +38,7 @@ To complete this exercise, you need to load two libraries that we already instal
 
 ```{r}
 #| eval: true
+#| message: false
 library(sf)
 library(ggplot2)
 ```
@@ -45,6 +46,7 @@ library(ggplot2)
 You also need data from the `{sf}` package:
 
 ```{r}
+#| eval: true
 nc <- st_read(system.file("shape/nc.shp", package = "sf"), as_tibble = TRUE)
 ```
 
@@ -113,41 +115,52 @@ Review [Ch. 9 Workflow: getting help](https://r4ds.hadley.nz/workflow-help) in R
 Every object in R has at least one class:
 
 ```{r}
+#| eval: true
 class(1)
 class("A")
+class(TRUE)
 ```
 
 Vectors, lists, data frames, and other objects can also have names and attributes. This is a named character vector:
 
 ```{r}
+#| eval: true
 names(c("A" = "apple"))
 ```
 
 A `sf` object is a `data.frame` but it also has a special `sf` class that is [designed to implement the formal simple features](https://r-spatial.github.io/sf/articles/sf1.html) standard in R:
 
 ```{r}
+#| eval: true
 class(nc)
 ```
 
 As a data frame, a `sf` object has column names (which you can access with `names()` or `colnames()`):
 
 ```{r}
+#| eval: true
 colnames(nc)
 ```
 
 ------------------------------------------------------------------------
 
-Next, use `class()` to check the class of the output from `st_geometry()`:
+Next, we should run `st_geometry()` on `nc`:
 
 ```{r}
+#| eval: true
 nc_geometry <- st_geometry(nc)
+```
 
+Now, use `class()` to find out what type of object `st_geometry()` returned:
+
+```{r}
 ____
 ```
 
 This object is a special type of list. You can subset one or more items from a list using a single or double set of square brackets like this:
 
 ```{r}
+#| eval: true
 nc_geometry[1]
 
 nc_geometry[[1]]
@@ -222,6 +235,7 @@ For the bonus exercise, we are using [Maryland Transit Administration Bus Stops]
 I went ahead and pulled the URL to use for this exercise and got it ready to read with sf by pasting on a ["vsicurl" prefix](https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access). This prefix tells [GDAL](https://gdal.org/user/virtual_file_systems.html) (the Geospatial Data Abstraction Library) to use a [virtual file system](https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl) that allows sf to use a URL for a spatial data file as a data source.
 
 ```{r}
+#| eval: true
 dsn <- "https://geodata.md.gov/imap/rest/services/Transportation/MD_Transit/FeatureServer/9/query?outFields=*&where=1%3D1&f=geojson"
 
 dsn <- paste0("/vsicurl/" , dsn)
@@ -240,7 +254,7 @@ GDAL is one of the major open source projects that "powers" the `{sf}` package a
 
 ---
 
-Combine `st_read()` and the assignment operator `<-` to read the URL and create a new `sf` object:
+Combine `st_read()` and the assignment operator `<-` to read the URL from `dsn` and create a new `sf` object:
 
 ```{r}
 bus_stops ____ ____
