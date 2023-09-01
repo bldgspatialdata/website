@@ -8,19 +8,9 @@ number-sections: true
 ## Access your exercise repository
 
 -   You must [sign up for a GitHub user account](https://github.com/signup) and share your GitHub username with me before I can create an exercise repository for you.
--  Note that you must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and [installed GitHub Desktop](https://desktop.github.com/) to submit exercises.
--   Open RStudio and configure your Git user name and email using the `{usethis}` package:
- 
-```{r}
-# Install usethis if needed:
-# install.packages("usethis")
-
-library(usethis)
-use_git_config(user.name = "<your name>", user.email = "<your GitHub account email>")
-```
-
--   After I create the repository, you should expect an email inviting you to be a collaborator for practice exercise repository on GitHub.
--   This is a repository just for *your* exercise assignments so the repository will be named: "**2023_exercises\_\<your GitHub username\>**" and can be accessed at: **https://github.com/bldgspatialdata/2023_exercises\_\<your GitHub username\>**
+-   Note that you must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and [installed GitHub Desktop](https://desktop.github.com/) to submit exercises.
+-   Soon after I get your username, you should expect an email asking you to accept an invitation to the "2023_Students" Team in the class [GitHub organization](https://github.com/bldgspatialdata).
+-   This is a private repository just for *your* exercise assignments so the repository will be named: "**\<your first name\>\_\<your last name\>**" and can be accessed at: **https://github.com/bldgspatialdata/\<your first name\>\_\<your last name\>**.
 
 ::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ### What is a repository?
@@ -44,8 +34,9 @@ A repository is a collection of files where changes can be tracked and managed u
 
 The process for completing and submitting each exercise will be the same for each week of the class:
 
--   Open the `.RProj` file to open the project in RStudio. Review the documentation on [managing projects in RStudio](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) or the R for Data Science [chapter on working with projects](https://r4ds.hadley.nz/workflow-scripts#projects) for more background on why projects are useful.
--   Using the "Files" pane, locate the `exercise_01.qmd` file (or the exercise file for this week) and open it. The file extension (`.qmd`) is short for Quarto Markdown document.
+-   Locate the "<your first name>_<your last name>/exercises" folder on your computer.
+-   Open the `exercises.RProj` file in RStudio. Review the documentation on [managing projects in RStudio](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) or the R for Data Science [chapter on working with projects](https://r4ds.hadley.nz/workflow-scripts#projects) for more background on why projects are useful.
+-   Using the "Files" tab pane, locate the `exercise_01.qmd` file (or the number exercise file for this week) and open it. The file extension (`.qmd`) is short for Quarto Markdown document.
 
 ::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ### What is a Quarto document?
@@ -70,6 +61,13 @@ The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.h
 -   If all of your code chunks run smoothly, you should be able to "render" the `.qmd` document to create a new HTML document. When I review completed assignments, checking if the document renders will be my first step.
 
 -   Remember, you don't need to get everything right and it is OK if your document won't render. Just try your best with each part of the exercise.
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## Tips for completing exercises
+- Complete this exercise from top to bottom. Some later chunks of code may depend on an earlier chunk so avoid skipping around.
+- If you get an error message, read it. If it doesn't make sense, try looking it up. R for Data Science reminds readers that [Google is your friend](https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend).
+- Read the documentation!
+:::
 
 ## Committing your completed exercise to the repository
 
@@ -96,11 +94,10 @@ Here is the step-by-step process (adapted from [Connect RStudio to Git and GitHu
 -   Click "Commit".
 -   Finally, click the green "Push" button to send your local changes to GitHub.
 
-:::{.callout-note collapse="false" appearance="default" icon="true"}
+::: {.callout-note collapse="false" appearance="default" icon="true"}
 ### When should you commit your changes?
 
-You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise.
-Please make sure to change the "status" for the exercise from "Available" to "Complete" when your exercise is complete and ready for evaluation. I will typically evaluate the last week's exercises on the Tuesday before each class session.
+You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the "status" for the exercise from "Available" to "Complete" when your exercise is complete and ready for evaluation. I will typically evaluate the last week's exercises on the Tuesday before each class session.
 :::
 
 ## Trouble-shooting
@@ -113,4 +110,3 @@ library(usethis)
 
 git_sitrep("git")
 ```
-

@@ -57,11 +57,7 @@ Copy the following lines (without the `#` character) into the console to install
 # pak::pkg_install(c("mapview", "spData"))
 ```
 
-This week's exercise is mostly "fill in the blank" questions and coding exercises. You can expect fewer hints and more freedom to experiment in future exercises! Here are a few tips to keep in mind:
-
-- Complete this exercise from top to bottom. Some later chunks of code may depend on an earlier chunk so avoid skipping around.
-- If you get an error message, read it. If it doesn't make sense, try looking it up. R for Data Science reminds readers that [Google is your friend](https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend).
-- Use the documentation!
+This week's exercise is mostly "fill in the blank" questions and coding exercises. You can expect fewer hints and more freedom to experiment in future exercises!
 
 ## Exercises
 
