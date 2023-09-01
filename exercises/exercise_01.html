@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="GES 668 - Fall 2023 - Exercise 01">
-<meta property="og:description" content="Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023.">
+<meta property="og:description" content="Coding basics and exploring sf objects">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 
@@ -379,8 +379,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#coding-basics" id="toc-coding-basics" class="nav-link" data-scroll-target="#coding-basics"><span class="header-section-number">2.1</span> Coding basics</a></li>
   <li><a href="#look-up-documentation" id="toc-look-up-documentation" class="nav-link" data-scroll-target="#look-up-documentation"><span class="header-section-number">2.2</span> Look up documentation</a></li>
-  <li><a href="#access-object-classes-names-and-attributes" id="toc-access-object-classes-names-and-attributes" class="nav-link" data-scroll-target="#access-object-classes-names-and-attributes"><span class="header-section-number">2.3</span> Access object classes, names, and attributes</a></li>
-  <li><a href="#plot-a-sf-object" id="toc-plot-a-sf-object" class="nav-link" data-scroll-target="#plot-a-sf-object"><span class="header-section-number">2.4</span> Plot a <code>sf</code> object</a></li>
+  <li><a href="#explore-sf-and-sfc-objects" id="toc-explore-sf-and-sfc-objects" class="nav-link" data-scroll-target="#explore-sf-and-sfc-objects"><span class="header-section-number">2.3</span> Explore <code>sf</code> and <code>sfc</code> objects</a></li>
+  <li><a href="#visualize-sf-objects" id="toc-visualize-sf-objects" class="nav-link" data-scroll-target="#visualize-sf-objects"><span class="header-section-number">2.4</span> Visualize <code>sf</code> objects</a></li>
   </ul></li>
   <li><a href="#bonus-exercise" id="toc-bonus-exercise" class="nav-link" data-scroll-target="#bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</a>
   <ul class="collapse">
@@ -395,6 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exercises/exercise_01.html">Exercises 🛠️</a></li><li class="breadcrumb-item"><a href="../exercises/exercise_01.html">Exercise 01</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercise 01</h1>
+<p class="subtitle lead">Coding basics and exploring <code>sf</code> objects</p>
 </div>
 
 
@@ -406,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 30, 2023</p>
+      <p class="date-modified">September 1, 2023</p>
     </div>
   </div>
     
@@ -426,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>ℹ️ See <a href="../weeks/week_0{{< meta order >}}.html">week 1</a> for related slides and readings</p>
+<p>ℹ️ See <a href="https://bldgspatialdata.github.io/website/weeks/week_01.html">week 1</a> for related slides and readings</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -442,8 +443,8 @@ Practice these skills
 <ul>
 <li>Confirm that you understand some coding basics</li>
 <li>Use the <code>?</code> operator to access function and package documentation</li>
-<li>Use <code>class()</code>, <code>names()</code>, or <code>summary()</code> functions to get information about objects in R</li>
-<li>Use the base <code>plot()</code> or <code>ggplot2::geom_sf()</code> function to visualize a sf object</li>
+<li>Use <code>class()</code>, <code>names()</code>, <code>attributes()</code>, and <code>summary()</code> functions to explore <code>sf</code> and <code>sfc</code> objects</li>
+<li>Use the base <code>plot()</code> or <code>ggplot2::geom_sf()</code> function to visualize a <code>sf</code> object</li>
 <li>Bonus: use the <code>mapview::mapview()</code> function to look at data using an interactive map</li>
 </ul>
 </div>
@@ -462,8 +463,8 @@ Think about these questions
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li>What are parts of a simple feature object? What are the benefits and the limitations of this format?</li>
-<li>What are some advantages or disadvantages of using R for reproducible data analysis compared to a desktop GIS?</li>
+<li>What are parts of a simple feature object? What may be some benefits or limitations of this data structure?</li>
+<li>What about using R helps with “reproducibility” compared to a desktop GIS?</li>
 </ul>
 </div>
 </div>
@@ -471,46 +472,56 @@ Think about these questions
 <hr>
 <section id="setup" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1</span> Setup</h2>
-<p>To complete this exercise, you need two libraries:</p>
+<p>To complete this exercise, you need to load two libraries that we already installed in class:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
 </div>
-<p>You also need data included with the <code>{sf}</code> package:</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You also need data from the <code>{sf}</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>), <span class="at">as_tibble =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You are also need the <code>{mapview}</code> and <code>{spData}</code> packages but don’t load them yet.</p>
+<p>You <em>will</em> need the <code>{mapview}</code> and <code>{spData}</code> packages but don’t load them yet. If they aren’t installed, install them now using <code>{pak}</code> (a faster option than <code>install.packages()</code>).</p>
+<p>Copy the following lines (without the <code>#</code> character) into the console to install all three packages (don’t forget to restart your session afterwards):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pak")</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pkg_install(c("mapview", "spData"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This week’s exercise is mostly “fill in the blank” questions and coding exercises. You can expect fewer hints and more freedom to experiment in future exercises!</p>
 </section>
 <section id="exercises" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2</span> Exercises</h2>
 <section id="coding-basics" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="coding-basics"><span class="header-section-number">2.1</span> Coding basics</h3>
 <p><em>The exercises in this section are from <a href="https://r4ds.hadley.nz/workflow-basics.html">Ch. 3 Workflow: basics</a> in R for Data Science (2e). If you have any trouble with the next couple exercises, please review the chapter before continuing to the next section.</em></p>
-<p>Why does this code not work?</p>
+<p>Why does this code not work? ____</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_varıable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_variable <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_varıable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>Tweak each of the following R commands so that they run correctly:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">libary</span>(todyverse)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dTA =</span> mpg) <span class="sc">+</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">maping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">libary</span>(todyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dTA =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">maping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p>Press <kbd>⌥ + ⇧ + K</kbd> or <kbd>⎇ + ⇧ + K</kbd>. What happens? How can you get to the same place using the menus?</p>
+<p>Press <kbd>⌥ + ⇧ + K</kbd> or <kbd>⎇ + ⇧ + K</kbd>.</p>
+<p>What happens? ____</p>
+<p>How can you get to the same place using the menus? ____</p>
 <hr>
 </section>
 <section id="look-up-documentation" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="look-up-documentation"><span class="header-section-number">2.2</span> Look up documentation</h3>
-<p>The <code>?</code> is a function for accessing documentation on a function, dataset, or other topic. For example, executing the code: <code>?sf::st_read</code> will pull up the documentation on functions to read simple features or layers from file or database.</p>
+<p><code>?</code> is an operator that you can use to pull up documentation on a function, dataset, or other topic in the Help tab pane of the <a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html">RStudio IDE</a>. For example, running the code: <code>?sf::st_read</code> will pull up the documentation on a set of functions for read simple features or layers from a file or database.</p>
 <p>Use <code>?</code> to access the documentation on <code>sf::st_geometry()</code> then look for the “Value” heading that provides information about the value returned by the function.</p>
-<p>What type of object does <code>sf::st_geometry()</code> return? Fill in the blank or paraphrase the description.</p>
-<p><code>sf::st_geometry()</code> returns a ____ object.</p>
+<p>What type of object does <code>sf::st_geometry()</code> return? ____</p>
 <p>What is one <em>other</em> function documented on the same page? ____</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
@@ -529,26 +540,50 @@ Tip
 </div>
 </div>
 </section>
-<section id="access-object-classes-names-and-attributes" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="access-object-classes-names-and-attributes"><span class="header-section-number">2.3</span> Access object classes, names, and attributes</h3>
-<p>The <code>class()</code> and <code>names()</code> functions return basic information about an object in R.</p>
-<p>Use <code>class()</code> to check the class of the output from <code>st_geometry()</code>:</p>
+<section id="explore-sf-and-sfc-objects" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="explore-sf-and-sfc-objects"><span class="header-section-number">2.3</span> Explore <code>sf</code> and <code>sfc</code> objects</h3>
+<p>Every object in R has at least one class:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>nc_geometry <span class="ot">&lt;-</span> <span class="fu">st_geometry</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="st">"A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vectors, lists, data frames, and other objects can also have names and attributes. This is a named character vector:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">c</span>(<span class="st">"A"</span> <span class="ot">=</span> <span class="st">"apple"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A <code>sf</code> object is a <code>data.frame</code> but it also has a special <code>sf</code> class that is <a href="https://r-spatial.github.io/sf/articles/sf1.html">designed to implement the formal simple features</a> standard in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As a data frame, a <code>sf</code> object has column names (which you can access with <code>names()</code> or <code>colnames()</code>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p>Get the <code>names()</code> for the <code>nc</code> object and the <code>nc_geometry</code> object:</p>
+<p>Next, use <code>class()</code> to check the class of the output from <code>st_geometry()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(____)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nc_geometry <span class="ot">&lt;-</span> <span class="fu">st_geometry</span>(nc)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Can you explain the difference between the two results?</p>
-<hr>
-<p><code>summary()</code> can help get more information about an object.</p>
-<p>Use <code>summary()</code> on <code>nc_geometry</code>:</p>
+<p>This object is a special type of list. You can subset one or more items from a list using a single or double set of square brackets like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nc_geometry[<span class="dv">1</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>nc_geometry[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Take a look at the attributes for this list using <code>attributes()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">____</span>(nc_geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, use <code>class()</code> one more time to find out what type of objects make up <code>nc_geometry</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">____</span>(nc_geometry[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><code>summary()</code> is another way to get information about names and attributes all at once. Try using <code>summary()</code> on <code>nc_geometry</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Review the results and try to answer the following:</p>
 <ul>
@@ -557,42 +592,42 @@ Tip
 <li>How many features? ____</li>
 </ul>
 </section>
-<section id="plot-a-sf-object" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="plot-a-sf-object"><span class="header-section-number">2.4</span> Plot a <code>sf</code> object</h3>
+<section id="visualize-sf-objects" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="visualize-sf-objects"><span class="header-section-number">2.4</span> Visualize <code>sf</code> objects</h3>
 <p>Some packages come with data we can use as soon as the package is loaded.</p>
 <p>Load the <code>{spData}</code> packages using <code>library()</code> then make a plot of the <code>us_states</code> data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(____)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(____)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Can you update the plot of <code>us_states</code> to show a map of states by region?</p>
+<p>Can you use <code>plot()</code> to make a map of states color-coded by region?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(____)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Can you make a map of <code>us_states</code> using <code>ggplot()</code> and <code>geom_sf()</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Can you update the map of <code>us_states</code> you made with <code>geom_sf()</code> so states are color-coded by total population in 2015? Take a look at the documentation for <code>ggplot2::geom_sf()</code> for examples.</p>
+<p>Can you make a map <code>us_states</code> you made with <code>geom_sf()</code> and have states are color-coded by total population in 2015?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you get stuck, try using <code>names()</code> or <code>summary()</code> to take a look at <code>us_states</code> to find out the column names for region or total population in 2015.</p>
+<p>Take a look at the documentation for <code>ggplot2::geom_sf()</code> for examples if you get stuck. You can also use <code>names()</code> or <code>summary()</code> with <code>us_states</code> to find out the column names of the different attributes.</p>
 </section>
 </section>
 <section id="bonus-exercise" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</h2>
 <section id="interactive-mapping" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="interactive-mapping"><span class="header-section-number">3.1</span> Interactive mapping</h3>
-<p>We should first get a URL for the <a href="https://data.imap.maryland.gov/datasets/maryland::baltimore-county-maintained-roads/explore">Baltimore County Maintained Roads data</a> from Maryland iMap a path to the GeoPackage file in your repository.</p>
-<p>I already pulled the URL to use for this exercise and prepped it for reading with a <a href="https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access">“vsicurl” prefix</a> that allows us to use the <a href="https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl">virtual file systems</a> built into the <a href="https://gdal.org/user/virtual_file_systems.html">Geospatial Data Abstraction Library</a> or GDAL.</p>
+<p>For the bonus exercise, we are using <a href="https://data.imap.maryland.gov/datasets/maryland::baltimore-county-maintained-roads/explore">Maryland Transit Administration Bus Stops</a> data from Maryland iMap portal. The data is published as an ArcGIS Feature Layer (a type of <a href="https://en.wikipedia.org/wiki/Web_Map_Service">Web Map Service</a> or WMS). The service allows us to access the data in a few different formats including as a <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON file</a>.</p>
+<p>I went ahead and pulled the URL to use for this exercise and got it ready to read with sf by pasting on a <a href="https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access">“vsicurl” prefix</a>. This prefix tells <a href="https://gdal.org/user/virtual_file_systems.html">GDAL</a> (the Geospatial Data Abstraction Library) to use a <a href="https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl">virtual file system</a> that allows sf to use a URL for a spatial data file as a data source.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/Baltimore_County_Maintained_Roads/FeatureServer/0/query?outFields=*&amp;where=1%3D1&amp;f=geojson"</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"/vsicurl/"</span> , url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>dsn <span class="ot">&lt;-</span> <span class="st">"https://geodata.md.gov/imap/rest/services/Transportation/MD_Transit/FeatureServer/9/query?outFields=*&amp;where=1%3D1&amp;f=geojson"</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>dsn <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"/vsicurl/"</span> , dsn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -608,28 +643,31 @@ About GDAL and other sf dependencies
 <div class="callout-body-container callout-body">
 <p>GDAL is one of the major open source projects that “powers” the <code>{sf}</code> package along with GEOS, PROJ, and udunits2. Geocomputation with R <a href="https://r.geocompx.org/spatial-class#vector-data">explains these dependencies</a>:</p>
 <ul>
-<li><p><a href="https://gdal.org/">GDAL</a>, for reading, writing and manipulating a wide range of geographic data formats,</p></li>
-<li><p><a href="https://proj.org/">PROJ</a>, a powerful library for coordinate system transformations</p></li>
-<li><p><a href="https://libgeos.org/">GEOS</a>, a planar geometry engine for operations such as calculating buffers and centroids on data with a projected CRS</p></li>
-<li><p><a href="https://s2geometry.io/">S2</a>, a spherical geometry engine written in C++ developed by Google</p></li>
+<li><a href="https://gdal.org/">GDAL</a>, for reading, writing and manipulating a wide range of geographic data formats,</li>
+<li><a href="https://proj.org/">PROJ</a>, a powerful library for coordinate system transformations</li>
+<li><a href="https://libgeos.org/">GEOS</a>, a planar geometry engine for operations such as calculating buffers and centroids on data with a projected CRS</li>
+<li><a href="https://s2geometry.io/">S2</a>, a spherical geometry engine written in C++ developed by Google</li>
 </ul>
 </div>
 </div>
 </div>
 <hr>
-<p>Next, use <code>st_read()</code> and the assignment operator <code>&lt;-</code> to load the file into a <code>sf</code> object named `roads``:</p>
+<p>Combine <code>st_read()</code> and the assignment operator <code>&lt;-</code> to read the URL and create a new <code>sf</code> object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>roads <span class="ot">&lt;-</span> ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>bus_stops ____ ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p>Load the <code>{mapview}</code> library and then use the <code>mapview()</code> function to create an interactive map of the <code>roads</code> object:</p>
+<p>Load the <code>{mapview}</code> library and then use the <code>mapview()</code> function to create an interactive map of the new <code>bus_stops</code> object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>_____</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>_____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>____</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Explore the setting for <code>mapview()</code> and create a custom map using <code>roads</code> or other data from this exercise:</p>
+<p>Explore the documentation for <code>mapview()</code> by running <code>?mapview::mapview</code> in your console. Read the help page to see how you can customize your interactive map.</p>
+<p>If you want a guided tour of the package, check out this <a href="https://www.youtube.com/watch?v=hUzVvGezwo8">recorded 2020 tutorial on YouTube</a> with Tim Appelhans (who created mapview in 2016 with <a href="https://www.r-consortium.org/all-projects/awarded-projects/2016-group-2">grant support from the R Consortium</a>).</p>
+<p>Can you create another interactive map that is color-coded by one of the attributes in <code>bus_stops</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>_____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>_____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

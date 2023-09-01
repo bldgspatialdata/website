@@ -416,18 +416,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>You must <a href="https://github.com/signup">sign up for a GitHub user account</a> and share your GitHub username with me before I can create an exercise repository for you.</li>
 <li>Note that you must have <a href="https://posit.co/download/rstudio-desktop/">installed R and RStudio</a> to complete exercises and <a href="https://desktop.github.com/">installed GitHub Desktop</a> to submit exercises.</li>
-<li>Open RStudio and configure your Git user name and email using the <code>{usethis}</code> package:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install usethis if needed:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("usethis")</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"&lt;your name&gt;"</span>, <span class="at">user.email =</span> <span class="st">"&lt;your GitHub account email&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>After I create the repository, you should expect an email inviting you to be a collaborator for practice exercise repository on GitHub.</li>
-<li>This is a repository just for <em>your</em> exercise assignments so the repository will be named: “<strong>2023_exercises_&lt;your GitHub username&gt;</strong>” and can be accessed at: <strong>https://github.com/bldgspatialdata/2023_exercises_&lt;your GitHub username&gt;</strong></li>
+<li>Soon after I get your username, you should expect an email asking you to accept an invitation to the “2023_Students” Team in the class <a href="https://github.com/bldgspatialdata">GitHub organization</a>.</li>
+<li>This is a private repository just for <em>your</em> exercise assignments so the repository will be named: “<strong>&lt;your first name&gt;_&lt;your last name&gt;</strong>” and can be accessed at: <strong>https://github.com/bldgspatialdata/&lt;your first name&gt;_&lt;your last name&gt;</strong>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -467,8 +457,9 @@ What is a repository?
 <h2 data-number="3" class="anchored" data-anchor-id="complete-the-weeks-exercise"><span class="header-section-number">3</span> Complete the week’s exercise</h2>
 <p>The process for completing and submitting each exercise will be the same for each week of the class:</p>
 <ul>
-<li>Open the <code>.RProj</code> file to open the project in RStudio. Review the documentation on <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">managing projects in RStudio</a> or the R for Data Science <a href="https://r4ds.hadley.nz/workflow-scripts#projects">chapter on working with projects</a> for more background on why projects are useful.</li>
-<li>Using the “Files” pane, locate the <code>exercise_01.qmd</code> file (or the exercise file for this week) and open it. The file extension (<code>.qmd</code>) is short for Quarto Markdown document.</li>
+<li>Locate the “<your first="" name="">_<your last="" name="">/exercises” folder on your computer.</your></your></li>
+<li>Open the <code>exercises.RProj</code> file in RStudio. Review the documentation on <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">managing projects in RStudio</a> or the R for Data Science <a href="https://r4ds.hadley.nz/workflow-scripts#projects">chapter on working with projects</a> for more background on why projects are useful.</li>
+<li>Using the “Files” tab pane, locate the <code>exercise_01.qmd</code> file (or the number exercise file for this week) and open it. The file extension (<code>.qmd</code>) is short for Quarto Markdown document.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
@@ -492,7 +483,7 @@ What is a Quarto document?
 <li><p>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the “code chunks” that look like this:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -503,6 +494,26 @@ What is a Quarto document?
 <li><p>If all of your code chunks run smoothly, you should be able to “render” the <code>.qmd</code> document to create a new HTML document. When I review completed assignments, checking if the document renders will be my first step.</p></li>
 <li><p>Remember, you don’t need to get everything right and it is OK if your document won’t render. Just try your best with each part of the exercise.</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips for completing exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Complete this exercise from top to bottom. Some later chunks of code may depend on an earlier chunk so avoid skipping around.</li>
+<li>If you get an error message, read it. If it doesn’t make sense, try looking it up. R for Data Science reminds readers that <a href="https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend">Google is your friend</a>.</li>
+<li>Read the documentation!</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="committing-your-completed-exercise-to-the-repository" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="committing-your-completed-exercise-to-the-repository"><span class="header-section-number">4</span> Committing your completed exercise to the repository</h2>
@@ -528,7 +539,7 @@ What is a Quarto document?
 <li>Finally, click the green “Push” button to send your local changes to GitHub.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -537,7 +548,7 @@ When should you commit your changes?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>You don’t need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the “status” for the exercise from “Available” to “Complete” when your exercise is complete and ready for evaluation. I will typically evaluate the last week’s exercises on the Tuesday before each class session.</p>
 </div>
@@ -549,9 +560,9 @@ When should you commit your changes?
 <h2 data-number="5" class="anchored" data-anchor-id="trouble-shooting"><span class="header-section-number">5</span> Trouble-shooting</h2>
 <p>Check that Git and GitHub are set up correctly for your exercise repository. Within RStudio, run the <code>usethis::git_sitrep()</code> function and read any warnings or errors:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git_sitrep</span>(<span class="st">"git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git_sitrep</span>(<span class="st">"git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

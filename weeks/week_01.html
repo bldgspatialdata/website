@@ -344,7 +344,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
-  <li><a href="#what-we-covered" id="toc-what-we-covered" class="nav-link" data-scroll-target="#what-we-covered">What we covered</a></li>
   </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
@@ -354,6 +353,11 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
+  <ul class="collapse">
+  <li><a href="#what-skills-did-we-introduce-this-week" id="toc-what-skills-did-we-introduce-this-week" class="nav-link" data-scroll-target="#what-skills-did-we-introduce-this-week">What skills did we introduce this week</a></li>
+  <li><a href="#what-concepts-did-we-discuss-this-week" id="toc-what-concepts-did-we-discuss-this-week" class="nav-link" data-scroll-target="#what-concepts-did-we-discuss-this-week">What concepts did we discuss this week</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -431,30 +435,6 @@ Questions
 </div>
 </div>
 </section>
-<section id="what-we-covered" class="level3">
-<h3 class="anchored" data-anchor-id="what-we-covered">What we covered</h3>
-<section id="skills" class="level4">
-<h4 class="anchored" data-anchor-id="skills">Skills</h4>
-<ul>
-<li>Installing packages with <code>install.packages()</code></li>
-<li>Loading packages with <code>library()</code></li>
-<li>Using the <code>?</code> operator to look up function documentation</li>
-<li>Using <code>st_read()</code> to read a <code>sf</code> object from a file path</li>
-<li>Using an assignment operator (<code>&lt;-</code> or <code>=</code>) to save function output in a new object</li>
-<li>Using <code>View()</code> and <code>mapview()</code> to interactively explore spatial data</li>
-</ul>
-</section>
-<section id="concepts" class="level4">
-<h4 class="anchored" data-anchor-id="concepts">Concepts</h4>
-<ul>
-<li>How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane</li>
-<li>How functions start with inputs (also known as arguments or parameters), produce side effects (e.g.&nbsp;informational messages), and return outputs (e.g.&nbsp;a character string or a <code>sf</code> object)</li>
-<li>How <code>sf</code> objects are structured around attributes and geometries</li>
-<li>How R code is executed within a development environment where packages or objects are loaded</li>
-<li>How and when to restart an R session and reset the environment</li>
-</ul>
-</section>
-</section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
@@ -496,9 +476,33 @@ Questions
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>🛠️️ <a href="../exercises/exercise_0{{< meta order >}}.html">Exercise 01</a></p>
+<p>🛠️️ <a href="../exercises/exercise_01.html">Exercise 01</a></p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<section id="what-skills-did-we-introduce-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="what-skills-did-we-introduce-this-week">What skills did we introduce this week</h3>
+<ul>
+<li>Installing packages with <code>install.packages()</code></li>
+<li>Loading packages with <code>library()</code></li>
+<li>Using the <code>?</code> operator to look up function documentation</li>
+<li>Using <code>sf::st_read()</code> to read a <code>sf</code> object from a file path</li>
+<li>Using an assignment operator (<code>&lt;-</code> or <code>=</code>) to save function output in a new object</li>
+<li>Using <code>View()</code> and <code>mapview::mapview()</code> to interactively explore spatial data</li>
+</ul>
+</section>
+<section id="what-concepts-did-we-discuss-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="what-concepts-did-we-discuss-this-week">What concepts did we discuss this week</h3>
+<ul>
+<li>How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane (check out the <a href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf">RStudio IDE Cheatsheet</a> for a quick reference)</li>
+<li>How functions start with inputs (also known as arguments or parameters), produce side effects (e.g.&nbsp;informational messages), and return outputs (e.g.&nbsp;a character string or a <code>sf</code> object)</li>
+<li>How <code>sf</code> objects are structured around attributes and geometries</li>
+<li>How R code is executed within a development environment where packages or objects are loaded</li>
+<li>How and when to restart an R session to reset the environment</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
