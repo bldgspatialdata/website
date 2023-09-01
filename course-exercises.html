@@ -374,19 +374,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#access-your-exercise-repository" id="toc-access-your-exercise-repository" class="nav-link active" data-scroll-target="#access-your-exercise-repository"><span class="header-section-number">1</span> Access your exercise repository</a></li>
+  <li><a href="#access-your-exercise-repository" id="toc-access-your-exercise-repository" class="nav-link active" data-scroll-target="#access-your-exercise-repository"><span class="header-section-number">1</span> Access your exercise repository</a>
+  <ul class="collapse">
+  <li><a href="#register-for-an-account-and-join-the-student-team" id="toc-register-for-an-account-and-join-the-student-team" class="nav-link" data-scroll-target="#register-for-an-account-and-join-the-student-team"><span class="header-section-number">1.1</span> Register for an account and join the student team</a></li>
+  <li><a href="#set-up-github-credentials-in-rstudio" id="toc-set-up-github-credentials-in-rstudio" class="nav-link" data-scroll-target="#set-up-github-credentials-in-rstudio"><span class="header-section-number">1.2</span> Set up GitHub credentials in RStudio</a></li>
+  </ul></li>
   <li><a href="#download-or-update-your-exercise-repository" id="toc-download-or-update-your-exercise-repository" class="nav-link" data-scroll-target="#download-or-update-your-exercise-repository"><span class="header-section-number">2</span> Download or update your exercise repository</a>
   <ul class="collapse">
   <li><a href="#downloading-a.k.a-cloning-your-exercise-repository" id="toc-downloading-a.k.a-cloning-your-exercise-repository" class="nav-link" data-scroll-target="#downloading-a.k.a-cloning-your-exercise-repository"><span class="header-section-number">2.1</span> Downloading (a.k.a “cloning”) your exercise repository</a></li>
-  <li><a href="#update-repo" id="toc-update-repo" class="nav-link" data-scroll-target="#update-repo"><span class="header-section-number">2.2</span> Updating (a.k.a “syncing”) your exercise repository</a></li>
+  <li><a href="#sec-update-repo" id="toc-sec-update-repo" class="nav-link" data-scroll-target="#sec-update-repo"><span class="header-section-number">2.2</span> Updating (a.k.a “syncing”) your exercise repository</a></li>
   </ul></li>
-  <li><a href="#complete-the-weeks-exercise" id="toc-complete-the-weeks-exercise" class="nav-link" data-scroll-target="#complete-the-weeks-exercise"><span class="header-section-number">3</span> Complete the week’s exercise</a></li>
+  <li><a href="#complete-the-weeks-exercise" id="toc-complete-the-weeks-exercise" class="nav-link" data-scroll-target="#complete-the-weeks-exercise"><span class="header-section-number">3</span> Complete the week’s exercise</a>
+  <ul class="collapse">
+  <li><a href="#locating-the-weeks-exericse-file" id="toc-locating-the-weeks-exericse-file" class="nav-link" data-scroll-target="#locating-the-weeks-exericse-file"><span class="header-section-number">3.1</span> Locating the week’s exericse file</a></li>
+  <li><a href="#running-code-and-writing-responses-to-the-exercise-prompts" id="toc-running-code-and-writing-responses-to-the-exercise-prompts" class="nav-link" data-scroll-target="#running-code-and-writing-responses-to-the-exercise-prompts"><span class="header-section-number">3.2</span> Running code and writing responses to the exercise prompts</a></li>
+  </ul></li>
   <li><a href="#committing-your-completed-exercise-to-the-repository" id="toc-committing-your-completed-exercise-to-the-repository" class="nav-link" data-scroll-target="#committing-your-completed-exercise-to-the-repository"><span class="header-section-number">4</span> Committing your completed exercise to the repository</a>
   <ul class="collapse">
   <li><a href="#commit-changes-with-github-desktop" id="toc-commit-changes-with-github-desktop" class="nav-link" data-scroll-target="#commit-changes-with-github-desktop"><span class="header-section-number">4.1</span> Commit changes with GitHub Desktop</a></li>
   <li><a href="#commit-changes-with-rstudio" id="toc-commit-changes-with-rstudio" class="nav-link" data-scroll-target="#commit-changes-with-rstudio"><span class="header-section-number">4.2</span> Commit changes with RStudio</a></li>
   </ul></li>
-  <li><a href="#trouble-shooting" id="toc-trouble-shooting" class="nav-link" data-scroll-target="#trouble-shooting"><span class="header-section-number">5</span> Trouble-shooting</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/course-exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -413,6 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="access-your-exercise-repository" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="access-your-exercise-repository"><span class="header-section-number">1</span> Access your exercise repository</h2>
+<section id="register-for-an-account-and-join-the-student-team" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="register-for-an-account-and-join-the-student-team"><span class="header-section-number">1.1</span> Register for an account and join the student team</h3>
 <ul>
 <li>You must <a href="https://github.com/signup">sign up for a GitHub user account</a> and share your GitHub username with me before I can create an exercise repository for you.</li>
 <li>Note that you must have <a href="https://posit.co/download/rstudio-desktop/">installed R and RStudio</a> to complete exercises and <a href="https://desktop.github.com/">installed GitHub Desktop</a> to submit exercises.</li>
@@ -436,6 +445,23 @@ What is a repository?
 </div>
 </div>
 </section>
+<section id="set-up-github-credentials-in-rstudio" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="set-up-github-credentials-in-rstudio"><span class="header-section-number">1.2</span> Set up GitHub credentials in RStudio</h3>
+<p>If you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your repositories. You</p>
+<p>The <code>{usethis}</code> documentation <a href="https://usethis.r-lib.org/articles/git-credentials.html">includes detailed article on connecting GitHub and R</a> but it is more detail than you may need. First, install the <code>{usethis}</code> package (if you don’t have it installed already):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pkg_install("usethis")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, there are four steps (the first step is optional):</p>
+<ol type="1">
+<li><p><a href="https://usethis.r-lib.org/articles/git-credentials.html#turn-on-two-factor-authentication">Set up two-factor authentication</a>. This is optional but recommended.</p></li>
+<li><p>Run <code>usethis::create_github_token()</code> to <a href="https://usethis.r-lib.org/articles/git-credentials.html#get-a-personal-access-token-pat">get a personal access token</a> and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won’t need to refresh the token until after the end of this course.</p></li>
+<li><p>Run <code>gitcreds::gitcreds_set()</code> to <a href="https://usethis.r-lib.org/articles/git-credentials.html#put-your-pat-into-the-local-git-credential-store">put your PAT in your Git credential store</a></p></li>
+<li><p><strong>Restart your session</strong> and run <code>usethis::gh_token_help()</code> to double-check that the token is saved in the right place.</p></li>
+</ol>
+<p>If you run into any trouble, you can also run <code>usethis::git_sitrep()</code> for more feedback on what is set up correctly and what (if anything) might need to be fixed.</p>
+</section>
+</section>
 <section id="download-or-update-your-exercise-repository" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="download-or-update-your-exercise-repository"><span class="header-section-number">2</span> Download or update your exercise repository</h2>
 <section id="downloading-a.k.a-cloning-your-exercise-repository" class="level3" data-number="2.1">
@@ -446,8 +472,8 @@ What is a repository?
 <li>As long as you keep this folder on your computer, you should do not need to clone the repository again. If you delete your local files or switch computers, you need to repeat this step.</li>
 </ul>
 </section>
-<section id="update-repo" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="update-repo"><span class="header-section-number">2.2</span> Updating (a.k.a “syncing”) your exercise repository</h3>
+<section id="sec-update-repo" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="sec-update-repo"><span class="header-section-number">2.2</span> Updating (a.k.a “syncing”) your exercise repository</h3>
 <ul>
 <li>I will be adding new exercises to your repository each week using GitHub. You should “sync” the changes to the GitHub repository with your local copy of the project each week. Read the GitHub documentation on <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch-in-github-desktop">Syncing your branch in GitHub Desktop</a> for more detailed instructions.</li>
 </ul>
@@ -455,11 +481,14 @@ What is a repository?
 </section>
 <section id="complete-the-weeks-exercise" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="complete-the-weeks-exercise"><span class="header-section-number">3</span> Complete the week’s exercise</h2>
-<p>The process for completing and submitting each exercise will be the same for each week of the class:</p>
+<p>The process for completing will be mostly the same for each week of the class.</p>
+<section id="locating-the-weeks-exericse-file" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="locating-the-weeks-exericse-file"><span class="header-section-number">3.1</span> Locating the week’s exericse file</h3>
 <ul>
 <li>Locate the “<your first="" name="">_<your last="" name="">/exercises” folder on your computer.</your></your></li>
 <li>Open the <code>exercises.RProj</code> file in RStudio. Review the documentation on <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">managing projects in RStudio</a> or the R for Data Science <a href="https://r4ds.hadley.nz/workflow-scripts#projects">chapter on working with projects</a> for more background on why projects are useful.</li>
 <li>Using the “Files” tab pane, locate the <code>exercise_01.qmd</code> file (or the number exercise file for this week) and open it. The file extension (<code>.qmd</code>) is short for Quarto Markdown document.</li>
+<li>If you can’t find this week’s exercise file, you may have forgotten to update the repository. Go back and check <a href="#sec-update-repo" class="quarto-xref">Section&nbsp;2.2</a></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
@@ -473,25 +502,28 @@ What is a Quarto document?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>A Quarto document is a format that lets you mix “chunks” of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone website, a formatted PDF, a presentation, and more. The top of each document has a section for <a href="https://quarto.org/docs/authoring/front-matter.html">front matter</a> that controls the format, appearance, and content of the rendered document. For your convenience, RStudio allows you to switch between a “Source” and “Visual” editor when working with a <code>.qmd</code> or <code>.Rmd</code> file.</p>
+<p>A Quarto document is a format that lets you mix “chunks” of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone <a href="https://quarto.org/docs/websites/">website</a>, a <a href="https://quarto.org/docs/output-formats/pdf-basics.html">formatted PDF</a>, a <a href="https://quarto.org/docs/presentations/">presentation</a>, and more. This course website, for example, is built with Quarto.</p>
+<p>You can see that a <a href="https://quarto.org/docs/authoring/front-matter.html">front matter</a> section at the top of each document. This front matter (also known as <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>) controls the format, appearance, and content of the rendered document.</p>
 <p>The <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello, Quarto tutorial</a> is a great place to learn how to render Quarto documents, run code chunks interactively, and format text using the markdown syntax.</p>
 </div>
 </div>
 </div>
 <ul>
-<li><p>If you can’t find this week’s exercise file, you may have forgotten to update the repository. Go back and review this section: <span class="citation" data-cites="update-repo">@update-repo</span></p></li>
-<li><p>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the “code chunks” that look like this:</p></li>
+<li>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the “code chunks” that look like this:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
+</section>
+<section id="running-code-and-writing-responses-to-the-exercise-prompts" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="running-code-and-writing-responses-to-the-exercise-prompts"><span class="header-section-number">3.2</span> Running code and writing responses to the exercise prompts</h3>
 <ul>
-<li><p>Try executing the code in each chunk as you work through the practice exercise. Any error messages you see can be helpful in figuring out what is missing or mixed up.</p></li>
-<li><p>When you are done with the exercise, there should be no more blank spaces like this <code>____</code> and all empty code chunks should have new code inside them.</p></li>
-<li><p>If all of your code chunks run smoothly, you should be able to “render” the <code>.qmd</code> document to create a new HTML document. When I review completed assignments, checking if the document renders will be my first step.</p></li>
+<li><p>Try executing the code in each chunk as you work through the practice exercise. The results from the code appear right below the chunk. If you get an error or a warning, try to use that information as a clue to figure out what you need to change.</p></li>
+<li><p>When you are done with the exercise, there should be no more blank spaces like this one: <code>____</code>. The bonus exercises are optional but otherwise any code chunk that started empty should now have code inside. Some questions require short written responses which should be included above or below the code chunks—not inside!</p></li>
+<li><p>If all of your code chunks run smoothly, you should be able to “render” the <code>.qmd</code> document to create a new HTML document. When I review completed assignments, trying to render the document will always be my first step.</p></li>
 <li><p>Remember, you don’t need to get everything right and it is OK if your document won’t render. Just try your best with each part of the exercise.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -514,6 +546,7 @@ Tips for completing exercises
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="committing-your-completed-exercise-to-the-repository" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="committing-your-completed-exercise-to-the-repository"><span class="header-section-number">4</span> Committing your completed exercise to the repository</h2>
@@ -554,18 +587,9 @@ When should you commit your changes?
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="trouble-shooting" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="trouble-shooting"><span class="header-section-number">5</span> Trouble-shooting</h2>
-<p>Check that Git and GitHub are set up correctly for your exercise repository. Within RStudio, run the <code>usethis::git_sitrep()</code> function and read any warnings or errors:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git_sitrep</span>(<span class="st">"git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
