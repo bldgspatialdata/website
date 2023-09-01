@@ -12,7 +12,7 @@ number-sections: true
 -   You must [sign up for a GitHub user account](https://github.com/signup) and share your GitHub username with me before I can create an exercise repository for you.
 -   Note that you must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and [installed GitHub Desktop](https://desktop.github.com/) to submit exercises.
 -   Soon after I get your username, you should expect an email asking you to accept an invitation to the "2023_Students" Team in the class [GitHub organization](https://github.com/bldgspatialdata).
--   This is a private repository just for *your* exercise assignments so the repository will be named: **\<your first name\>\_\<your last name\>** and can be accessed at: **https://github.com/bldgspatialdata/\<your first name\>\_\<your last name\>**.
+-   This is a private repository just for *your* exercise assignments so the repository will be named: **\<your first name\>\_\<your last name\>** and can be accessed at: **https://github.com/bldgspatialdata/\<your first name\>\_\<your last name\>**. Don't forget to replace the placeholder with your first and last name in lower case. You can also go to [the course repository list](https://github.com/orgs/bldgspatialdata/repositories) and, if you are logged in and have access, you should find your repository there. 
 
 ::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ### What is a repository?
