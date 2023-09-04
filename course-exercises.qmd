@@ -69,14 +69,14 @@ The process for completing will be mostly the same for each week of the class.
 ::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ### What is a Quarto document?
 
-A Quarto document is a format that lets you mix "chunks" of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (`.Rmd`). [Quarto](https://quarto.org/) comes installed with RStudio but it is a separate command line application that can turn a `qmd` document into a standalone [website](https://quarto.org/docs/websites/), a [formatted PDF](https://quarto.org/docs/output-formats/pdf-basics.html), a [presentation](https://quarto.org/docs/presentations/), and more. This course website, for example, is built with Quarto.
+A Quarto document is a format that lets you mix blocks (also known as "chunks") of R code with sections of text formatted using [Markdown formatting](https://quarto.org/docs/authoring/markdown-basics.html). This format is similar to an older format known as RMarkdown (`.Rmd`). [Quarto](https://quarto.org/) comes installed with RStudio but it is a separate command line application that can turn a `qmd` document into a standalone [website](https://quarto.org/docs/websites/), a [formatted PDF](https://quarto.org/docs/output-formats/pdf-basics.html), a [presentation](https://quarto.org/docs/presentations/), and more. This course website, for example, is built with Quarto.
 
 You can see that a [front matter](https://quarto.org/docs/authoring/front-matter.html) section at the top of each document. This front matter (also known as [YAML](https://en.wikipedia.org/wiki/YAML)) controls the format, appearance, and content of the rendered document.
 
-The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html) is a great place to learn how to render Quarto documents, run code chunks interactively, and format text using the markdown syntax.
+The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html) is a great place to learn how to render Quarto documents, run code blocks interactively, and format text using the markdown syntax.
 :::
 
--   Complete the project by filling in the blank spaces, fixing any "broken" code in the document, or adding new code in the "code chunks" that look like this:
+-   Complete the project by filling in the blank spaces, fixing any "broken" code in the document, or adding new code in the [code blocks](https://quarto.org/docs/computations/r.html#code-blocks) that look like this:
 
 ```{r}
 1 + 1 # example code
@@ -84,17 +84,21 @@ The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.h
 
 ### Running code and writing responses to the exercise prompts
 
--   Try executing the code in each chunk as you work through the practice exercise. The results from the code appear right below the chunk. If you get an error or a warning, try to use that information as a clue to figure out what you need to change.
+-   Try executing the code in each block as you work through the practice exercise. The results from the code appear right below the block. If you get an error or a warning, try to use that information as a clue to figure out what you need to change.
 
--   When you are done with the exercise, there should be no more blank spaces like this one: `____`. The bonus exercises are optional but otherwise any code chunk that started empty should now have code inside. Some questions require short written responses which should be included above or below the code chunks—not inside!
+-   When you are done with the exercise, there should be no more blank spaces like this one: `____`. The bonus exercises are optional but otherwise any code block that started empty should now have code inside.
 
--   If all of your code chunks run smoothly, you should be able to "render" the `.qmd` document to create a new HTML document. When I review completed assignments, trying to render the document will always be my first step.
+-   Some questions require short written responses which should be completed as Markdown formatted text above or below the related code block—not as a comment inside the code block!
+
+-   If all of your code blocks run smoothly, you should be able to "render" the `.qmd` document to create a new HTML document. When I review completed assignments, trying to render the document will always be my first step.
+
+-   When you done with the exercise, please change the front matter for the document from `status: Available` to `status: Complete`.
 
 -   Remember, you don't need to get everything right and it is OK if your document won't render. Just try your best with each part of the exercise.
 
 :::{.callout-tip collapse=false appearance='default' icon=true}
 ## Tips for completing exercises
-- Complete this exercise from top to bottom. Some later chunks of code may depend on an earlier chunk so avoid skipping around.
+- Complete this exercise from top to bottom. Blocks of code at the end of the document may depend on blocks from the beginning or middle so avoid skipping around.
 - If you get an error message, read it. If it doesn't make sense, try looking it up. R for Data Science reminds readers that [Google is your friend](https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend).
 - Read the documentation!
 :::
@@ -127,5 +131,5 @@ Here is the step-by-step process (adapted from [Connect RStudio to Git and GitHu
 ::: {.callout-note collapse="false" appearance="default" icon="true"}
 ### When should you commit your changes?
 
-You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the "status" for the exercise from "Available" to "Complete" when your exercise is complete and ready for evaluation. I will typically evaluate the last week's exercises on the Tuesday before each class session.
+You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the "status" for the exercise from "Available" to "Complete" when your exercise is complete and ready for evaluation. I will typically evaluate the last week's exercises on the Tuesday before each class session. Committing changes as you go can also avoid conflicts if I need to make corrections or additions to some part of the assignment after you started working on it.
 :::
