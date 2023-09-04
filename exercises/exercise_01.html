@@ -407,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 1, 2023</p>
+      <p class="date-modified">September 4, 2023</p>
     </div>
   </div>
     
@@ -423,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Exercise due on 2023-09-04</p>
+<p>Exercise due on 2023-09-06</p>
 </div>
 </div>
 </div>
@@ -665,11 +665,9 @@ Geodetic CRS:  NAD27</code></pre>
 <section id="interactive-mapping" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="interactive-mapping"><span class="header-section-number">3.1</span> Interactive mapping</h3>
 <p>For the bonus exercise, we are using <a href="https://data.imap.maryland.gov/datasets/maryland::baltimore-county-maintained-roads/explore">Maryland Transit Administration Bus Stops</a> data from Maryland iMap portal. The data is published as an ArcGIS Feature Layer (a type of <a href="https://en.wikipedia.org/wiki/Web_Map_Service">Web Map Service</a> or WMS). The service allows us to access the data in a few different formats including as a <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON file</a>.</p>
-<p>I went ahead and pulled the URL to use for this exercise and got it ready to read with sf by pasting on a <a href="https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access">“vsicurl” prefix</a>. This prefix tells <a href="https://gdal.org/user/virtual_file_systems.html">GDAL</a> (the Geospatial Data Abstraction Library) to use a <a href="https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl">virtual file system</a> that allows sf to use a URL for a spatial data file as a data source.</p>
+<p>I went ahead and pulled the URL to use for this exercise. <code>{sf}</code> is able to read the data using <a href="https://gdal.org/user/virtual_file_systems.html">GDAL</a> (the Geospatial Data Abstraction Library). GDAL has a feature known as the <a href="https://gdal.org/user/virtual_file_systems.html#gdal-virtual-file-systems-compressed-network-hosted-etc-vsimem-vsizip-vsitar-vsicurl">virtual file system</a> that allows it to read from a URL (see <a href="https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access">“vsicurl”</a> for details).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dsn <span class="ot">&lt;-</span> <span class="st">"https://geodata.md.gov/imap/rest/services/Transportation/MD_Transit/FeatureServer/9/query?outFields=*&amp;where=1%3D1&amp;f=geojson"</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>dsn <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"/vsicurl/"</span> , dsn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dsn <span class="ot">&lt;-</span> <span class="st">"https://geodata.md.gov/imap/rest/services/Transportation/MD_Transit/FeatureServer/9/query?outFields=*&amp;where=1%3D1&amp;f=geojson"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -699,6 +697,22 @@ About GDAL and other sf dependencies
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>bus_stops ____ ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise Update (2023-09-04)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>While <code>mapview()</code> can display the <code>bus_stop</code> data interactively, I’ve discovered that it won’t work when you render the Quarto document. To avoid confusion, I’ve updated the last two code blocks to use the setting <code>eval: false</code> (turning off evaluation when the document is rendered). <a href="https://quarto.org/docs/computations/execution-options.html">Execution options</a> are a more advanced topic we cover later in this course.</p>
+</div>
+</div>
+</div>
 <p>Load the <code>{mapview}</code> library and then use the <code>mapview()</code> function to create an interactive map of the new <code>bus_stops</code> object:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>____</span>

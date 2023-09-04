@@ -426,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You must <a href="https://github.com/signup">sign up for a GitHub user account</a> and share your GitHub username with me before I can create an exercise repository for you.</li>
 <li>Note that you must have <a href="https://posit.co/download/rstudio-desktop/">installed R and RStudio</a> to complete exercises and <a href="https://desktop.github.com/">installed GitHub Desktop</a> to submit exercises.</li>
 <li>Soon after I get your username, you should expect an email asking you to accept an invitation to the “2023_Students” Team in the class <a href="https://github.com/bldgspatialdata">GitHub organization</a>.</li>
-<li>This is a private repository just for <em>your</em> exercise assignments so the repository will be named: <strong>&lt;your first name&gt;_&lt;your last name&gt;</strong> and can be accessed at: <strong>https://github.com/bldgspatialdata/&lt;your first name&gt;_&lt;your last name&gt;</strong>.</li>
+<li>This is a private repository just for <em>your</em> exercise assignments so the repository will be named: <strong>&lt;your first name&gt;_&lt;your last name&gt;</strong> and can be accessed at: <strong>https://github.com/bldgspatialdata/&lt;your first name&gt;_&lt;your last name&gt;</strong>. Don’t forget to replace the placeholder with your first and last name in lower case. You can also go to <a href="https://github.com/orgs/bldgspatialdata/repositories">the course repository list</a> and, if you are logged in and have access, you should find your repository there.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -502,14 +502,14 @@ What is a Quarto document?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>A Quarto document is a format that lets you mix “chunks” of R code with sections of text formatted using the Markdown formatting conventions. It is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone <a href="https://quarto.org/docs/websites/">website</a>, a <a href="https://quarto.org/docs/output-formats/pdf-basics.html">formatted PDF</a>, a <a href="https://quarto.org/docs/presentations/">presentation</a>, and more. This course website, for example, is built with Quarto.</p>
+<p>A Quarto document is a format that lets you mix blocks (also known as “chunks”) of R code with sections of text formatted using <a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown formatting</a>. This format is similar to an older format known as RMarkdown (<code>.Rmd</code>). <a href="https://quarto.org/">Quarto</a> comes installed with RStudio but it is a separate command line application that can turn a <code>qmd</code> document into a standalone <a href="https://quarto.org/docs/websites/">website</a>, a <a href="https://quarto.org/docs/output-formats/pdf-basics.html">formatted PDF</a>, a <a href="https://quarto.org/docs/presentations/">presentation</a>, and more. This course website, for example, is built with Quarto.</p>
 <p>You can see that a <a href="https://quarto.org/docs/authoring/front-matter.html">front matter</a> section at the top of each document. This front matter (also known as <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>) controls the format, appearance, and content of the rendered document.</p>
-<p>The <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello, Quarto tutorial</a> is a great place to learn how to render Quarto documents, run code chunks interactively, and format text using the markdown syntax.</p>
+<p>The <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello, Quarto tutorial</a> is a great place to learn how to render Quarto documents, run code blocks interactively, and format text using the markdown syntax.</p>
 </div>
 </div>
 </div>
 <ul>
-<li>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the “code chunks” that look like this:</li>
+<li>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the <a href="https://quarto.org/docs/computations/r.html#code-blocks">code blocks</a> that look like this:</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -521,9 +521,11 @@ What is a Quarto document?
 <section id="running-code-and-writing-responses-to-the-exercise-prompts" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="running-code-and-writing-responses-to-the-exercise-prompts"><span class="header-section-number">3.2</span> Running code and writing responses to the exercise prompts</h3>
 <ul>
-<li><p>Try executing the code in each chunk as you work through the practice exercise. The results from the code appear right below the chunk. If you get an error or a warning, try to use that information as a clue to figure out what you need to change.</p></li>
-<li><p>When you are done with the exercise, there should be no more blank spaces like this one: <code>____</code>. The bonus exercises are optional but otherwise any code chunk that started empty should now have code inside. Some questions require short written responses which should be included above or below the code chunks—not inside!</p></li>
-<li><p>If all of your code chunks run smoothly, you should be able to “render” the <code>.qmd</code> document to create a new HTML document. When I review completed assignments, trying to render the document will always be my first step.</p></li>
+<li><p>Try executing the code in each block as you work through the practice exercise. The results from the code appear right below the block. If you get an error or a warning, try to use that information as a clue to figure out what you need to change.</p></li>
+<li><p>When you are done with the exercise, there should be no more blank spaces like this one: <code>____</code>. The bonus exercises are optional but otherwise any code block that started empty should now have code inside.</p></li>
+<li><p>Some questions require short written responses which should be completed as Markdown formatted text above or below the related code block—not as a comment inside the code block!</p></li>
+<li><p>If all of your code blocks run smoothly, you should be able to “render” the <code>.qmd</code> document to create a new HTML document. When I review completed assignments, trying to render the document will always be my first step.</p></li>
+<li><p>When you done with the exercise, please change the front matter for the document from <code>status: Available</code> to <code>status: Complete</code>.</p></li>
 <li><p>Remember, you don’t need to get everything right and it is OK if your document won’t render. Just try your best with each part of the exercise.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -539,7 +541,7 @@ Tips for completing exercises
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Complete this exercise from top to bottom. Some later chunks of code may depend on an earlier chunk so avoid skipping around.</li>
+<li>Complete this exercise from top to bottom. Blocks of code at the end of the document may depend on blocks from the beginning or middle so avoid skipping around.</li>
 <li>If you get an error message, read it. If it doesn’t make sense, try looking it up. R for Data Science reminds readers that <a href="https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend">Google is your friend</a>.</li>
 <li>Read the documentation!</li>
 </ul>
@@ -583,7 +585,7 @@ When should you commit your changes?
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>You don’t need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the “status” for the exercise from “Available” to “Complete” when your exercise is complete and ready for evaluation. I will typically evaluate the last week’s exercises on the Tuesday before each class session.</p>
+<p>You don’t need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the “status” for the exercise from “Available” to “Complete” when your exercise is complete and ready for evaluation. I will typically evaluate the last week’s exercises on the Tuesday before each class session. Committing changes as you go can also avoid conflicts if I need to make corrections or additions to some part of the assignment after you started working on it.</p>
 </div>
 </div>
 </div>
