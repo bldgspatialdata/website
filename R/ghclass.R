@@ -50,20 +50,26 @@ purrr::walk2(
 
 # Updates ----
 
-roster_add_file <- function(roster,
+roster_add_file <- function(roster = NULL,
+                            repos = NULL,
                             file = NULL,
                             repo_folder = "exercises",
                             path = NULL,
                             skip = NULL) {
+
+  if (!is.null(roster)) {
+    repos <- roster[["repository"]]
+  }
+
   purrr::walk(
-    roster[["repository"]],
+    repos,
     \(repo) {
 
       if (!is.null(skip) && (repo %in% skip)) {
         return(NULL)
       }
 
-      if (is.null(file)) {
+      if (is.null(file) && !is.null(path)) {
         file <- fs::dir_ls(path)
       }
 
