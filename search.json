@@ -140,6 +140,216 @@
     "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\nWeek 5\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "slides/fall-2023.html#week-2-september-6-2023",
+    "href": "slides/fall-2023.html#week-2-september-6-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 2: September 6, 2023",
+    "text": "Week 2: September 6, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-3-september-13-2023",
+    "href": "slides/fall-2023.html#week-3-september-13-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 3: September 13, 2023",
+    "text": "Week 3: September 13, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-4-september-20-2023",
+    "href": "slides/fall-2023.html#week-4-september-20-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 4: September 20, 2023",
+    "text": "Week 4: September 20, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-5-september-27-2023",
+    "href": "slides/fall-2023.html#week-5-september-27-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 5: September 27, 2023",
+    "text": "Week 5: September 27, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-6-october-4-2023",
+    "href": "slides/fall-2023.html#week-6-october-4-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 6: October 4, 2023",
+    "text": "Week 6: October 4, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-7-october-11-2023",
+    "href": "slides/fall-2023.html#week-7-october-11-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 7: October 11, 2023",
+    "text": "Week 7: October 11, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-8-october-18-2023",
+    "href": "slides/fall-2023.html#week-8-october-18-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 8: October 18, 2023",
+    "text": "Week 8: October 18, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-9-october-25-2023",
+    "href": "slides/fall-2023.html#week-9-october-25-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 9: October 25, 2023",
+    "text": "Week 9: October 25, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-10-november-1-2023",
+    "href": "slides/fall-2023.html#week-10-november-1-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 10: November 1, 2023",
+    "text": "Week 10: November 1, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-11-november-8-2023",
+    "href": "slides/fall-2023.html#week-11-november-8-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 11: November 8, 2023",
+    "text": "Week 11: November 8, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-12-november-15-2023",
+    "href": "slides/fall-2023.html#week-12-november-15-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 12: November 15, 2023",
+    "text": "Week 12: November 15, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-13-november-22-2023",
+    "href": "slides/fall-2023.html#week-13-november-22-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 13: November 22, 2023",
+    "text": "Week 13: November 22, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-14-november-29-2023",
+    "href": "slides/fall-2023.html#week-14-november-29-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 14: November 29, 2023",
+    "text": "Week 14: November 29, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-15-december-6-2023",
+    "href": "slides/fall-2023.html#week-15-december-6-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 15: December 6, 2023",
+    "text": "Week 15: December 6, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.html#week-1-september-6-2023",
+    "href": "slides/fall-2023.html#week-1-september-6-2023",
+    "title": "Fall 2023 Weekly Updates",
+    "section": "Week 1: September 6, 2023",
+    "text": "Week 1: September 6, 2023\n\nWelcome!"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about",
+    "href": "slides/welcome.html#what-is-this-class-about",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-1",
+    "href": "slides/welcome.html#what-is-this-class-about-1",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data using R"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-2",
+    "href": "slides/welcome.html#what-is-this-class-about-2",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data spatial data using R"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-3",
+    "href": "slides/welcome.html#what-is-this-class-about-3",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about places"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-4",
+    "href": "slides/welcome.html#what-is-this-class-about-4",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about people and places"
+  },
+  {
+    "objectID": "slides/welcome.html#what-is-this-class-about-5",
+    "href": "slides/welcome.html#what-is-this-class-about-5",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
+  },
+  {
+    "objectID": "slides/welcome.html#why-are-you-here",
+    "href": "slides/welcome.html#why-are-you-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why are you here?",
+    "text": "Why are you here?"
+  },
+  {
+    "objectID": "slides/welcome.html#how-did-you-get-here",
+    "href": "slides/welcome.html#how-did-you-get-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "How did you get here?",
+    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
+  },
+  {
+    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What experiences do you bring with you today?",
+    "text": "What experiences do you bring with you today?"
+  },
+  {
+    "objectID": "slides/welcome.html#why-am-i-here",
+    "href": "slides/welcome.html#why-am-i-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why am I here?",
+    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
+  },
+  {
+    "objectID": "slides/welcome.html#communication",
+    "href": "slides/welcome.html#communication",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Communication 📬",
+    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
+  },
+  {
+    "objectID": "slides/welcome.html#assignments",
+    "href": "slides/welcome.html#assignments",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Assignments",
+    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
+  },
+  {
+    "objectID": "slides/welcome.html#readings",
+    "href": "slides/welcome.html#readings",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Readings 📚",
+    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
+  },
+  {
+    "objectID": "slides/welcome.html#miscellaneous",
+    "href": "slides/welcome.html#miscellaneous",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous"
+  },
+  {
+    "objectID": "slides/welcome.html#welcome-again",
+    "href": "slides/welcome.html#welcome-again",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Welcome again!",
+    "text": "Welcome again!"
+  },
+  {
     "objectID": "slides/spatial-data.html#overview",
     "href": "slides/spatial-data.html#overview",
     "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
@@ -305,14 +515,28 @@
     "href": "weeks/week_02.html",
     "title": "Week 2",
     "section": "",
-    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+    "text": "Week 2 Updates\nYour week 1 questions\nIntroduction to visualizing spatial data in R\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore the “grammar of graphics” as a way of structuring plots and maps\nExplore the concept of “tidy” data\nPractice creating plots and maps with the {ggplot2} package\nLearn how the pipe function (%&gt;% or |&gt;) works and when it may be useful"
+  },
+  {
+    "objectID": "weeks/week_02.html#overview",
+    "href": "weeks/week_02.html#overview",
+    "title": "Week 2",
+    "section": "",
+    "text": "Week 2 Updates\nYour week 1 questions\nIntroduction to visualizing spatial data in R\n\n\n\n\n\n\n\nKey Objectives\n\n\n\n\nExplore the “grammar of graphics” as a way of structuring plots and maps\nExplore the concept of “tidy” data\nPractice creating plots and maps with the {ggplot2} package\nLearn how the pipe function (%&gt;% or |&gt;) works and when it may be useful"
   },
   {
     "objectID": "weeks/week_02.html#prepare",
     "href": "weeks/week_02.html#prepare",
     "title": "Week 2",
-    "section": "",
-    "text": "Ch. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\n\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+    "section": "Prepare",
+    "text": "Prepare\n\nRequired readings\n\nCh. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 3 Workflow: basics in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 1 Local Origins in Yanni Alexander Loukissas All Data Are Local: Thinking Critically in a Data-Driven Society, 2019, doi:10.7551/mitpress/11543.001.0001.\n\n\n\nOptional readings\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nCh. 2 Data visualization in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science."
+  },
+  {
+    "objectID": "weeks/week_02.html#participate",
+    "href": "weeks/week_02.html#participate",
+    "title": "Week 2",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Visualizing spatial data with {ggplot2}"
   },
   {
     "objectID": "weeks/week_02.html#practice",
@@ -581,109 +805,144 @@
     "text": "Week\nDate\nTopic\nSlides\nExercise\n\n\n\n\n1\nWed, Aug 30\nGetting started with spatial data using sf and the tidyverse\n📖\n📝\n\n\n2\nWed, Sep 6\nVisualizing spatial data with ggplot2\n📖\n📝\n\n\n3\nWed, Sep 13\nTransforming data with dplyr\n📖\n📝\n\n\n4\nWed, Sep 20\nTransforming spatial data attributes\n📖\n📝\n\n\n5\nWed, Sep 27\nApplying spatial transformations and geometric operations using sf\n📖\n📝\n\n\n6\nWed, Oct 4\nTidying and joining spatial data\n📖\n📝\n\n\n7\nWed, Oct 11\nBuilding functions in R and literate programming with Quarto\n📖\n📝\n\n\n8\nWed, Oct 18\nDeveloping an exploratory data analysis with sf and the tidyverse\n📖\n📝\n\n\n9\nWed, Oct 25\nEditing OpenStreetMap and exploring OpenStreetMap data with the osmdata package\n📖\n📝\n\n\n10\nWed, Nov 1\nExploring American Community Survey data with the tidycensus package\n📖\n📝\n\n\n11\nWed, Nov 8\nReading and writing spatial data files and services\n📖\n📝\n\n\n12\nWed, Nov 15\nCreating and managing spatial metadata\n📖\n📝\n\n\n13\nWed, Nov 22\nProject check-in meetings (no class)\n—\n—\n\n\n14\nWed, Nov 29\nReview and work session\n—\n—\n\n\n15\nWed, Dec 6\nFinal project presentations\n—\n—\n\n\n—\nThu, Dec 14\nDue: Final project repository\n—\n—"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about",
-    "href": "slides/welcome.html#what-is-this-class-about",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?"
+    "objectID": "slides/coding-basics.html#week-1",
+    "href": "slides/coding-basics.html#week-1",
+    "title": "Coding basics",
+    "section": "1 Week 1",
+    "text": "1 Week 1"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-1",
-    "href": "slides/welcome.html#what-is-this-class-about-1",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data using R"
+    "objectID": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
+    "href": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n2.1 Why do we visualize spatial data?",
+    "text": "2.1 Why do we visualize spatial data?\nWhy do we visualize spatial data?\n\nValidation\nExploration\nCommunication"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-2",
-    "href": "slides/welcome.html#what-is-this-class-about-2",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data spatial data using R"
+    "objectID": "slides/data-visualization.html#anscombes-quartet",
+    "href": "slides/data-visualization.html#anscombes-quartet",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n2.2 Anscombe’s quartet",
+    "text": "2.2 Anscombe’s quartet\nTo illustrate why visualization is essential, let’s look at the Anscombe’s Quartet data:\n\n\n\n\n\n\n\nx\ny\n\nx\ny\n\nx\ny\n\nx\ny\n\n\n\nI\n10\n8.04\nII\n10\n9.14\nIII\n10\n7.46\nIV\n8\n6.58\n\n\nI\n8\n6.95\nII\n8\n8.14\nIII\n8\n6.77\nIV\n8\n5.76\n\n\nI\n13\n7.58\nII\n13\n8.74\nIII\n13\n12.74\nIV\n8\n7.71\n\n\nI\n9\n8.81\nII\n9\n8.77\nIII\n9\n7.11\nIV\n8\n8.84\n\n\nI\n11\n8.33\nII\n11\n9.26\nIII\n11\n7.81\nIV\n8\n8.47\n\n\nI\n14\n9.96\nII\n14\n8.10\nIII\n14\n8.84\nIV\n8\n7.04\n\n\nI\n6\n7.24\nII\n6\n6.13\nIII\n6\n6.08\nIV\n8\n5.25\n\n\nI\n4\n4.26\nII\n4\n3.10\nIII\n4\n5.39\nIV\n19\n12.50\n\n\nI\n12\n10.84\nII\n12\n9.13\nIII\n12\n8.15\nIV\n8\n5.56\n\n\nI\n7\n4.82\nII\n7\n7.26\nIII\n7\n6.42\nIV\n8\n7.91\n\n\nI\n5\n5.68\nII\n5\n4.74\nIII\n5\n5.73\nIV\n8\n6.89\n\n\n\n\n\n\n\nThis data is from the Tmisc package but can be found in many places."
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-3",
-    "href": "slides/welcome.html#what-is-this-class-about-3",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about places"
+    "objectID": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
+    "href": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n2.3 How do we visualize spatial data?",
+    "text": "2.3 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-4",
-    "href": "slides/welcome.html#what-is-this-class-about-4",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about people and places"
+    "objectID": "slides/data-visualization.html#data",
+    "href": "slides/data-visualization.html#data",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.1 Data",
+    "text": "3.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-5",
-    "href": "slides/welcome.html#what-is-this-class-about-5",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
+    "objectID": "slides/data-visualization.html#mapping",
+    "href": "slides/data-visualization.html#mapping",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.2 Mapping",
+    "text": "3.2 Mapping\n\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
   },
   {
-    "objectID": "slides/welcome.html#why-are-you-here",
-    "href": "slides/welcome.html#why-are-you-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why are you here?",
-    "text": "Why are you here?"
+    "objectID": "slides/data-visualization.html#statistics",
+    "href": "slides/data-visualization.html#statistics",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.3 Statistics",
+    "text": "3.3 Statistics\n\nData may not represent the displayed values\n\nStatistics transform input variables into displayed values, e.g.\n\nCounting the number of observations by category\nCalculating summary statistics for a boxplot\n\n\n\n\nStatistics can be used prior to plotting data or used by a plotting function directly."
   },
   {
-    "objectID": "slides/welcome.html#how-did-you-get-here",
-    "href": "slides/welcome.html#how-did-you-get-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "How did you get here?",
-    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
+    "objectID": "slides/data-visualization.html#scales",
+    "href": "slides/data-visualization.html#scales",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.4 Scales",
+    "text": "3.4 Scales\n\n\nScales translate between value ranges and graphical properties, e.g.\n\nCategories -&gt; Colors\nNumbers -&gt; Position\n\n\nScales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.\n\n\nIn the not too common case where data directly represents a graphical property, e.g. a “color” column, you can use a special type of scale called an “identity” scale."
   },
   {
-    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What experiences do you bring with you today?",
-    "text": "What experiences do you bring with you today?"
+    "objectID": "slides/data-visualization.html#geometries",
+    "href": "slides/data-visualization.html#geometries",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.5 Geometries",
+    "text": "3.5 Geometries\n\nHow translate aesthetics into graphical representations\nBasic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)\nTypically, the geometries are the same as the “type” of plot"
   },
   {
-    "objectID": "slides/welcome.html#why-am-i-here",
-    "href": "slides/welcome.html#why-am-i-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why am I here?",
-    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
+    "objectID": "slides/data-visualization.html#facets",
+    "href": "slides/data-visualization.html#facets",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.6 Facets",
+    "text": "3.6 Facets\n\nDefines how data is split across multiple panels"
   },
   {
-    "objectID": "slides/welcome.html#communication",
-    "href": "slides/welcome.html#communication",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Communication 📬",
-    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
+    "objectID": "slides/data-visualization.html#coordinates",
+    "href": "slides/data-visualization.html#coordinates",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.7 Coordinates",
+    "text": "3.7 Coordinates\n\nPositional aesthetics must be interpreted by a coordinate system\nDefines the physical mapping of aesthetics to the paper\n\n\nWe usually think about the cartesian coordinate system—but there are a lot of different kinds of coordinate systems."
   },
   {
-    "objectID": "slides/welcome.html#assignments",
-    "href": "slides/welcome.html#assignments",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Assignments",
-    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
+    "objectID": "slides/data-visualization.html#theme",
+    "href": "slides/data-visualization.html#theme",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n3.8 Theme",
+    "text": "3.8 Theme\n\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
   },
   {
-    "objectID": "slides/welcome.html#readings",
-    "href": "slides/welcome.html#readings",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Readings 📚",
-    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
+    "objectID": "slides/data-visualization.html#setup-packages",
+    "href": "slides/data-visualization.html#setup-packages",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n5.1 Setup packages",
+    "text": "5.1 Setup packages\nFor this session, we are going to use the ggplot2 and dplyr packages:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)"
   },
   {
-    "objectID": "slides/welcome.html#miscellaneous",
-    "href": "slides/welcome.html#miscellaneous",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous"
+    "objectID": "slides/data-visualization.html#setup-data",
+    "href": "slides/data-visualization.html#setup-data",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n5.2 Setup data",
+    "text": "5.2 Setup data\nWe are also going to use the storms data included with dplyr.\nTake a quick look at storms using glimpse():\n\nglimpse(storms)\n\n\n\nRows: 19,066\nColumns: 13\n$ name                         &lt;chr&gt; \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\",…\n$ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 1975,…\n$ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…\n$ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 2…\n$ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, 18,…\n$ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33.3,…\n$ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78.7,…\n$ status                       &lt;fct&gt; tropical depression, tropical depression,…\n$ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n$ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40, 4…\n$ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 1011,…\n$ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n$ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n\n\n\nWhen we use storms, it is important to remember that each row is an observation of a storm, not a summary feature for an individual storm."
   },
   {
-    "objectID": "slides/welcome.html#welcome-again",
-    "href": "slides/welcome.html#welcome-again",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Welcome again!",
-    "text": "Welcome again!"
+    "objectID": "slides/data-visualization.html#create-a-ggplot",
+    "href": "slides/data-visualization.html#create-a-ggplot",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n5.3 Create a ggplot",
+    "text": "5.3 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\nggplot(data = storms)\n\n\n\n\n\n\n\n\n\nWell, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later."
+  },
+  {
+    "objectID": "slides/data-visualization.html#add-aesthetics-and-layers",
+    "href": "slides/data-visualization.html#add-aesthetics-and-layers",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n5.4 Add aesthetics and layers",
+    "text": "5.4 Add aesthetics and layers"
+  },
+  {
+    "objectID": "slides/data-visualization.html#visualizing-distributions",
+    "href": "slides/data-visualization.html#visualizing-distributions",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n6.1 Visualizing distributions",
+    "text": "6.1 Visualizing distributions"
+  },
+  {
+    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable",
+    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n6.2 Distribution of one numeric variable",
+    "text": "6.2 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
+  },
+  {
+    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
+    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n6.3 Distribution of one numeric variable",
+    "text": "6.3 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
+  },
+  {
+    "objectID": "slides/data-visualization.html#distribution-of-one-categorical-variable",
+    "href": "slides/data-visualization.html#distribution-of-one-categorical-variable",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "\n6.4 Distribution of one categorical variable",
+    "text": "6.4 Distribution of one categorical variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
   },
   {
     "objectID": "exercises/exercise_01.html",
@@ -725,28 +984,28 @@
     "href": "exercises/exercise_02.html#overview",
     "title": "Exercise 02",
     "section": "1 Overview",
-    "text": "1 Overview"
+    "text": "1 Overview\n\n\n\n\n\n\nPractice these skills\n\n\n\n\n\n\nBuild a layered plot using ggplot(), aes(), and different geom_ functions\nExplore the difference between discrete and continuous variables\nUse coord_sf() to modify a plot created with geom_sf()\n\n\n\n\n\n\n\n\n\n\nThink about these questions\n\n\n\n\n\n\nWhat makes a scale better or worse at visualizing data?\nHow do you write a clear and accurate title, legend, or caption?\nWhen is it appropriate to modify the geometry of your data when making a map?"
   },
   {
     "objectID": "exercises/exercise_02.html#setup",
     "href": "exercises/exercise_02.html#setup",
     "title": "Exercise 02",
     "section": "2 Setup",
-    "text": "2 Setup\n\nlibrary(ggplot2)\nlibrary(sf)\n\nOne advantage of using {ggplot2} over a map-making focused package like {tmap} is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with {ggplot2}.\nFor this exercise, we are going to use the following packages:\n\npak::pkg_install(c(\"ggrepel\", \"cols4all\", \"patchwork\", \"ggtext\", \"spDataLarge\"))\n\nWe are also going to demonstrate a few advanced features. You won’t need to do anything with these packages but you need them installed to see the results:\n\npak::pkg_install(c(\"ggdist\", \"geomtextpath\", \"plotly\", \"smoothr\"))"
+    "text": "2 Setup\nThis exercises uses the {ggplot2} and {dplyr} packages (both from the tidyverse family of packages) and the {sf} package:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)\n\nFor this week’s exercise, we are also going to use data from the {rnaturalearth} package. Make sure to install those packages and re-start your session if these packages are not installed already:\n\n# pak::pkg_install(c(\"rnaturalearth\", \"rnaturalearthdata\"))\nlibrary(rnaturalearth)\n\nWe are going to use ne_download() to download the countries dataset and then use st_centroid() to make a version of this dataset where the features show the center of each country instead of the boundaries:\n\ncountries &lt;- ne_download(scale = \"medium\", type = \"countries\", returnclass = \"sf\")\n\ncountries &lt;- st_transform(countries, crs = 3857)\n\ncountries_center &lt;- st_centroid(countries)\n\nglimpse(countries)\n\nOne advantage of using {ggplot2} over a map-making focused package like {tmap} is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with {ggplot2}.\nWe are going to use some of these extension packages (and others) but we won’t load them yet. Run the following code to install (and don’t forget to restart your session afterwards):\n\npak::pkg_install(c(\"ggrepel\", \"cols4all\", \"patchwork\", \"ggtext\", \"spDataLarge\", \"ggdist\", \"geomtextpath\", \"plotly\", \"smoothr\"))\n\nIf you finish this exercise but still want more practice, you can download this RMarkdown document with exercises shared by Thomas Lin Pedersen for his two-part 2020 online workshop on {ggplot2} (part 1 and part 2 are both available on YouTube)."
   },
   {
     "objectID": "exercises/exercise_02.html#exercises",
     "href": "exercises/exercise_02.html#exercises",
     "title": "Exercise 02",
     "section": "3 Exercises",
-    "text": "3 Exercises\n\n3.1 Visualizing one variable\nWorking with geom_bar() with one discrete variable:\n\nggplot() +\n  geom_bar(aes(x = ____))\n\nWorking with geom_dotplot() with one continuous variable:\n\nggplot(data = ____) +\n  geom_dotplot()\n\nWorking with geom_sf() with one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(size = ____))\n\nWorking with geom_sf() with one discrete variable:\n\nggplot(data = ____) +\n  geom_sf(aes(color = ____))\n\n\n\n3.2 Visualizing two variables\nUsing geom_col() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_col(aes(____))\n\nUsing geom_sf() and facet_wrap() with one discrete and one continuous variable:\n\nggplot(data = ____) +\n  geom_sf(aes(fill = ____)) +\n  facet_wrap(~ ____)\n\n\n\n3.3 Using scales and colors\nUsing the viridis scales for a dot plot:\n\nggplot(data = ____) +\n  geom_dotplot() +\n  scale_color_viridis_c()\n\nUsing the ColorBrewer scales with color:\n\nggplot() +\n  geom_sf(aes(color = ____)) +\n  scale_color_brewer()\n\nThe same with fill:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_brewer()\n\nThe same with a continuous variable:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_distiller()\n\n\n\n3.4 Adding labels, legends, and themes\nUsing the labs() function:\n\nggplot() +\n  geom_sf(aes(fill = ____)) +\n  labs(\n    title = ____,\n    caption = ____,\n    fill = ____\n  )\n\n\n\n3.5 Map making with {ggplot2}\nHiding graticules with theme_void():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme_void()\n\nHiding graticules with theme():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme(\n    panel.grid = element_blank(),\n    panel.grid.major = element_blank(),\n    panel.grid.minor = element_blank()\n    )\n\n“Zooming” into an area with coord_sf()\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\nAdding inset maps with {patchwork}\n\narea_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA)\n\ninset_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf()\n\narea_map +\n  patchwork::inset_element(\n    inset_map,\n    left = ____,\n    bottom = ____,\n    top = ____,\n    right = ____\n  )\n\nSmoothing features with {smoothr}\n\ndata &lt;- ____\nsmooth_data &lt;- smoothr::smooth(data, method = \"ksmooth\", smoothness = ____)\n\nggplot() +\n  geom_sf(\n    data = data,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = smooth_data,\n    color = \"blue\"\n  ) +\n  theme_void()"
+    "text": "3 Exercises\n\n3.1 Plotting a single variable\nFind a discrete variable in countries and then create a plot with geom_bar():\n\nggplot(data = countries) +\n  geom_bar(mapping = aes(x = ____))\n\nNext, find a continuous variable and make a plot with geom_histogram():\n\nggplot(data = countries) +\n  geom_histogram(mapping = aes(x = ____))\n\nNow, let’s make a map! Use countries_center and geom_sf() to make a map with a continuous variable mapped to size:\n\nggplot(data = countries_center) +\n  geom_sf(aes(size = ____))\n\n\nNext, make a map with geom_sf() with one discrete variable mapped to color:\n\nggplot(data = countries) +\n  geom_sf(aes(color = ____))\n\nIs that the map you expected? Try it again with the discrete variable mapped to fill:\n\nggplot(data = countries) +\n  geom_sf(aes(fill = ____))\n\n\nNow, make a plot using any geom function of your choice:\n\nggplot(data = countries) +\n  ____\n\nExplain in plain language. What does your map show? ____\n\n\n3.2 Plotting two variables\nFor this next section, you can continue to use countries as your dataset or load a different dataset using {rnaturaleath}. You can see what vector data is available using rnaturalearth::ne_find_vector_data() and use the empty code block below to load it into a new object:\nFirst, find two continuous variables and create a scatter plot with geom_point():\n\nggplot(data = ____) +\n  geom_point(aes(____))\n\nNext, look in your data for one discrete and one continuous variable then use aes() to set those variables for geom_col(). The geom_col() function is similar to geom_bar() but you must provide both an x and a y variable:\n\nggplot(data = ____) +\n  geom_col(aes(____))\n\nNow, use geom_sf() mapping your continous variable to fill or color and your discrete variable to facet_wrap():\n\nggplot(data = ____) +\n  geom_sf(aes(____)) +\n  facet_wrap(~ ____)\n\nFinally, create a map using a different aesthetic that we haven’t tried yet. Options could include linewidth, size, alpha, or linetype:\n\nggplot(data = ____) +\n  geom_sf(aes(____))\n\nIs this aesthetic mapping an effective way of visualizing the variable? ____\nIf so, why do you think it works well? If not, why does it not work well? ____\n\n\n3.3 Using scales and colors\n{ggplot2} uses naming conventions to organize the scale functions. This isn’t the same for every function but they look something like: “scale_”. So, scale_fill_viridis_d() applies the Viridis color scale to a discrete variable mapped to the fill aesthetic.\nUse the data to create a plot and take a look at the colors set when you use scale_color_viridis_c():\n\nggplot(____) +\n  geom_dotplot(aes(____, _____, color = ____)) +\n  scale_color_viridis_c()\n\nThe ColorBrewer scales are designed for use with thematic maps. Use ?scale_color_brewer() to pull up the documentation for this function and review the information on the type and palette parameters.\nNow, map a variable to the color aesthetic for geom_sf() and assign an appropriate type and palette value:\n\nggplot(____) +\n  geom_sf(aes(color = ____)) +\n  scale_color_brewer(type = ____, palette = ____)\n\nSwitching from color to fill, try it again with a different type and palette value:\n\nggplot(____) +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_brewer(type = ____, palette = ____)\n\nOne last time, but we’re using scale_fill_distiller():\n\nggplot(____) +\n  geom_sf(aes(fill = ____)) +\n  scale_fill_distiller(type = ____, palette = ____)\n\nNote that this scale only works with continuous values.\n\n\n3.4 Adding labels, legends, and themes\nSet the data for ggplot() and then use the labs() function to apply a title and caption that make sense:\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  labs(\n    title = ____,\n    caption = ____\n  )\n\nNow, map fill to a variable in your data using aes() and then use labs() to assign a label for fill:\n\nggplot(data = ____) +\n  geom_sf(aes(fill = ____)) +\n  labs(\n    ____\n  )\n\n\n\n3.5 Map making with {ggplot2}\nBy default, any map created with geom_sf() will show the graticulates on the map and axis labels with the coordinate values. Add data to this map and then hide these graticules by adding theme_void():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  ____\n\nYou can also hide or change graticules by using theme(). Try setting the panel.grid argument to element_blank() to hide the grid:\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  theme(\n    panel.grid = ____\n    )\n\nNow, try “zooming” into a selected area of your map using the xlim and ylim arguments for coord_sf():\n\nggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf(\n    xlim = ____,\n    ylim = ____\n  )\n\n\nUsing an inset map or “locator map” with a larger area and a zoomed in map showing a featured area is a common cartographic approach. You can use patchwork::inset_element() from the {patchwork} package to set this up:\n\narea_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA) +\n  coord_sf(\n    xlim = ____,\n    ylim = ____\n  )\n\ninset_map &lt;- ggplot(data = ____) +\n  geom_sf(color = \"black\", fill = NA)\n\narea_map +\n  patchwork::inset_element(\n    inset_map,\n    left = ____,\n    bottom = ____,\n    top = ____,\n    right = ____\n  )\n\nRemember, this format of calling functions (&lt;package name&gt;::&lt;function name&gt;) is just a shortcut for using functions from packages that are installed but not loaded into your environment. If you have any difficulty with this part of the exercise, make sure you have {patchwork} installed.\n\nThere are some cases when you need to modify the geometry of your data as part of the process of making a map. The st_simplify() function is one way to do that. Try setting dTolerance to a low value, e.g. dTolerance = 10, and run the code block. Then try to run it again with dTolerance = 100000.\n\nusa &lt;- filter(countries, name == \"United States of America\")\n\nsimple_usa &lt;- st_simplify(x = usa, dTolerance = ____)\n\nggplot() +\n  geom_sf(\n    data = data,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = simple_data,\n    color = \"blue\"\n  ) +\n  theme_void()\n\nWhat happens when you increase the value of dTolerance? ____\nNow, let’s try to same thing but smoothing features with smoothr::smooth() instead of simplifying with sf::st_simplify(). Start by setting smoothness to a small number, smoothness = 0.5, and then run again with higher and higher numbers:\n\nsmooth_usa &lt;- smoothr::smooth(x = usa, method = \"ksmooth\", smoothness = ____)\n\nggplot() +\n  geom_sf(\n    data = usa,\n    color = \"red\"\n    ) +\n  geom_sf(\n    data = smooth_usa,\n    color = \"blue\"\n  ) +\n  theme_void()\n\nWhat happens when you increase the value of smoothness? ____\nCheck the documentation for st_simplify() or smoothr::smooth() for more information on how these functions work to modify the geometry."
   },
   {
     "objectID": "exercises/exercise_02.html#bonus-exercise",
     "href": "exercises/exercise_02.html#bonus-exercise",
     "title": "Exercise 02",
     "section": "4 Bonus exercise",
-    "text": "4 Bonus exercise\n\n4.1 Creating maps with {tmap}"
+    "text": "4 Bonus exercise\n\n4.1 Creating maps with {tmap}\nPick one of the maps you created in the prior questions of this exercise and create a similar version using the {tmap} package.\nYou can install {tmap} the same as any other package:\n\n# pak::pkg_install(\"tmap\")\n\nThen load the library:\n\nlibrary(tmap)\n\nAnd make a map using data from {rnaturalearth} or another source of your choice:\nWhat is the same about making a map with {tmap} compared to {ggplot2}? ____\nWhat is different about making a map with {tmap} compared to {ggplot2}? ____\nDo you have any preference between the two? ____"
   },
   {
     "objectID": "exercises/exercise_06.html",
