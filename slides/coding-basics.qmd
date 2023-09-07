@@ -1,0 +1,98 @@
+---
+title: "Coding basics"
+execute: 
+  error: true
+---
+
+## Week 1
+
+### Packages in R
+
+A container for:
+
+-   functions
+-   data
+-   documentation
+
+`{tidyverse}` is a *metapackage*—or a package that loads a set of other packages.
+
+#### Installing packages
+
+Use `install.packages()` to install a package from [CRAN](https://cran.r-project.org/) (Comprehensive R Archive Network):
+
+```{r}
+install.packages("sf")
+```
+
+But, remember, this does not work:
+
+```{r}
+install.packages(sf)
+```
+
+#### Loading packages
+
+Use `library()` to load a package into your environment:
+
+```{r}
+library(sf)
+```
+
+::: {.callout-note collapse="true"}
+#### Why can we use both `library(sf)` and `library("sf")`?
+
+The `package` argument can be the name of a package: as a **name**, **literal character string**, or **a character string**.
+:::
+
+#### base functions and packages are always available
+
+The `{base}` package for R is one of fifteen "base packages" that are always available. Functions like `sum()`, `max()`, and `paste0()` are all examples of "base functions".
+
+### Functions in R
+
+Functions take inputs (known as arguments or parameters) and return outputs.
+
+A container for:
+
+-   Logic (a.k.a. an algorithm)
+-   Math
+-   More functions
+-   Data *or* connections to data sources
+
+------------------------------------------------------------------------
+
+### Take a look at `st_read()`
+
+```{r}
+
+```
+
+
+------------------------------------------------------------------------
+
+Some functions require a specific type of input:
+
+```{r}
+sum(1, 2, 3)
+
+sum("A", "B", "C")
+```
+
+------------------------------------------------------------------------
+
+But some functions are more flexible:
+
+```{r}
+paste0(1, 2, 3)
+
+paste0("A", "B", "C")
+```
+
+------------------------------------------------------------------------
+
+Order of execution matters!
+
+```{r}
+var + 2
+var <- 1
+```

@@ -1,0 +1,107 @@
+---
+title: "Fall 2023 Weekly Updates"
+number-sections: false
+scrollable: true
+---
+
+# This Week
+
+## Week 2: September 6, 2023
+
+### What is due by this week
+
+- Set up R, RStudio, and GitHub Desktop
+- Complete required readings for [week 1](../weeks/week_01.html) and [week 2](../weeks/week_02.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Review [instructions to complete exercises](../course-exercises.html) using RStudio and GitHub 
+- Complete [Exercise 1](../exercises/exercise_01.html) on R basics and the structure of `{sf}` objects
+
+### What is coming up for next week
+
+- Complete required readings for [week 3](../weeks/week_03.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
+
+### Before we start this week
+
+- Do you have access to your GitHub repository? Do you understand how to commit changes?
+- How can you get the most out of the readings?
+- How do you customize your settings in RStudio?
+- Where can you get help if you need it?
+- What are we doing for the final project?
+
+### Your questions this week
+
+- Why do some functions require arguments and other functions do not?
+- What are some of the best ways of sharing reproducible methods?
+- How do you get data that you create into R?
+- What is a vector tile? What is the difference between raster and vector tiles?
+- What does the function `ggplot2::aes()` and the attributes passed to the function really do?
+- Do you need to re-install your packages every time you start work?
+
+Reminder: questions are *required* as part of the weekly check-in.
+
+# Upcoming Updates
+
+## Week 3: September 13, 2023
+
+### What is due by this week
+
+- Complete required readings for [week 3](../weeks/week_03.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
+
+### What is coming up for next week
+
+- Complete required readings for [week 4](../weeks/week_04.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}` and `{tidyr}`
+
+### Before we start this week
+
+## Week 4: September 20, 2023
+
+### What is due by this week
+
+- Complete required readings for [week 4](../weeks/week_04.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}` and `{tidyr}`
+
+### What is coming up for next week
+
+- Complete required readings for [week 5](../weeks/week_05.html)
+- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
+- Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and `{dplyr}`
+
+## Week 5: September 27, 2023
+
+## Week 6: October 4, 2023
+
+## Week 7: October 11, 2023
+
+## Week 8: October 18, 2023
+
+## Week 9: October 25, 2023
+
+## Week 10: November 1, 2023
+
+## Week 11: November 8, 2023
+
+## Week 12: November 15, 2023
+
+## Week 13: November 22, 2023
+
+## Week 14: November 29, 2023
+
+## Week 15: December 6, 2023
+
+# Past Updates
+
+## Week 1: September 6, 2023
+
+- Welcome!
+
+### What is due by this week
+
+- Join the Discord chat
+

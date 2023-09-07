@@ -1,15 +1,10 @@
 ---
 title: "Exercise 02"
 order: 2
-status: WIP
+status: Available
 date-due: 2023-09-11
 date-modified: last-modified
 ---
-
-::: {.callout-note appearance="minimal" icon="true"}
-#### {{< meta status >}}
-This exercise is a work-in-progress. Please wait for this status message to be removed before getting started.
-:::
 
 ::: {.callout-important appearance="minimal" icon="true"}
 Exercise due on {{< meta date-due >}}
@@ -19,169 +14,306 @@ Exercise due on {{< meta date-due >}}
 
 ## Overview
 
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
+## Practice these skills
+
+-   Build a layered plot using `ggplot()`, `aes()`, and different `geom_` functions
+-   Explore the difference between discrete and continuous variables
+-   Use `coord_sf()` to modify a plot created with `geom_sf()`
+:::
+
+::: {.callout-note collapse="false" appearance="default" icon="true"}
+## Think about these questions
+
+-   What makes a scale better or worse at visualizing data?
+-   How do you write a clear and accurate title, legend, or caption?
+-   When is it appropriate to modify the geometry of your data when making a map?
+:::
+
 ## Setup
+
+This exercises uses the `{ggplot2}` and `{dplyr}` packages (both from the [tidyverse family](https://www.tidyverse.org/) of packages) and the `{sf}` package:
 
 ```{r}
 library(ggplot2)
+library(dplyr)
 library(sf)
 ```
 
+For this week's exercise, we are also going to use data from the `{rnaturalearth}` package. Make sure to install those packages and re-start your session if these packages are not installed already:
+
+```{r}
+# pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))
+library(rnaturalearth)
+```
+
+We are going to use `ne_download()` to download the `countries` dataset and then use `st_centroid()` to make a version of this dataset where the features show the center of each country instead of the boundaries:
+
+```{r}
+countries <- ne_download(scale = "medium", type = "countries", returnclass = "sf")
+
+countries <- st_transform(countries, crs = 3857)
+
+countries_center <- st_centroid(countries)
+
+glimpse(countries)
+```
+
+Some of the following exercises don't require a sf object. You can also use the `mpg` or `storms` dataset we looked at during this week's lecture: 
+
+```{r}
+glimpse(mpg)
+
+glimpse(storms)
+```
+
+
 One advantage of using `{ggplot2}` over a map-making focused package like `{tmap}` is the wide variety of extension packages created by the large community of users and developers making data visualizations (including maps) with `{ggplot2}`.
 
-For this exercise, we are going to use the following packages:
+We aren't going to use some of these extension packages (and others) but we won't load them yet. Run the following code to install (and don't forget to restart your session afterwards):
 
 ```{r}
 #| eval: false
-pak::pkg_install(c("ggrepel", "cols4all", "patchwork", "ggtext", "spDataLarge"))
+pak::pkg_install(c("patchwork", "plotly", "smoothr"))
 ```
 
-We are also going to demonstrate a few advanced features. You won't need to do anything with these packages but you need them installed to see the results:
-
-```{r}
-#| eval: false
-pak::pkg_install(c("ggdist", "geomtextpath", "plotly", "smoothr"))
-```
+If you finish this exercise but still want more practice, you can download this [RMarkdown document with exercises](https://github.com/thomasp85/ggplot2_workshop/blob/master/exercises.Rmd) shared by Thomas Lin Pedersen for his two-part 2020 online workshop on `{ggplot2}` ([part 1](https://www.youtube.com/watch?v=h29g21z0a68) and [part 2](https://www.youtube.com/watch?v=0m4yywqNPVY) are both available on YouTube).
 
 ## Exercises
 
-### Visualizing one variable
+### Plotting a single variable
 
-Working with `geom_bar()` with one discrete variable:
+Find a discrete variable in countries and then create a plot with `geom_bar()`:
 
 ```{r}
-ggplot() +
-  geom_bar(aes(x = ____))
+ggplot(data = countries) +
+  geom_bar(mapping = aes(x = ____))
 ```
 
-Working with `geom_dotplot()` with one continuous variable:
+Next, find a continuous variable and make a plot with `geom_histogram()`:
 
 ```{r}
-ggplot(data = ____) +
-  geom_dotplot()
+ggplot(data = countries) +
+  geom_histogram(mapping = aes(x = ____))
 ```
 
-Working with `geom_sf()` with one continuous variable:
+Now, let's make a map! Use `countries_center` and `geom_sf()` to make a map with a continuous variable mapped to size:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = countries_center) +
   geom_sf(aes(size = ____))
 ```
 
-Working with `geom_sf()` with one discrete variable:
+----
+
+Next, make a map with `geom_sf()` with one discrete variable mapped to color:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = countries) +
   geom_sf(aes(color = ____))
 ```
 
-### Visualizing two variables
+Is that the map you expected? Try it again with the discrete variable mapped to fill:
 
-Using `geom_col()` with one discrete and one continuous variable:
+```{r}
+ggplot(data = countries) +
+  geom_sf(aes(fill = ____))
+```
+
+----
+
+Now, make a plot using any `geom` function of your choice:
+
+```{r}
+ggplot(data = countries) +
+  ____
+```
+
+Explain in plain language. What does your map show? ____
+
+### Plotting two variables
+
+For this next section, you can continue to use `countries` as your dataset or load a different dataset using `{rnaturaleath}`. You can see what vector data is available using `rnaturalearth::ne_find_vector_data()` then find the function you need to load the data into a new object:
+
+```{r}
+rnaturalearth::ne_find_vector_data()
+```
+
+First, find two continuous variables and create a scatter plot with `geom_point()`:
+
+```{r}
+ggplot(data = ____) +
+  geom_point(aes(____))
+```
+
+Next, look in your data for one discrete and one continuous variable then use `aes()` to set those variables for `geom_col()`. The `geom_col()` function is similar to `geom_bar()` but you *must* provide *both* an x *and* a y variable:
 
 ```{r}
 ggplot(data = ____) +
   geom_col(aes(____))
 ```
 
-Using `geom_sf()` and `facet_wrap()` with one discrete and one continuous variable:
+Now, use `geom_sf()` mapping your continous variable to fill or color and your discrete variable to `facet_wrap()`:
 
 ```{r}
 ggplot(data = ____) +
-  geom_sf(aes(fill = ____)) +
+  geom_sf(aes(____)) +
   facet_wrap(~ ____)
 ```
 
-### Using scales and colors
-
-Using the viridis scales for a dot plot:
+Finally, create a map using a different aesthetic that we haven't tried yet. Options could include `linewidth`, `size`, `alpha`, or `linetype`:
 
 ```{r}
 ggplot(data = ____) +
-  geom_dotplot() +
+  geom_sf(aes(____ = ____))
+```
+
+Is this aesthetic mapping an effective way of visualizing the variable? ____
+
+If so, why do you think it works well? If not, why does it *not* work well? ____
+
+### Using scales and colors
+
+ `{ggplot2}` uses naming conventions to organize the scale functions. This isn't the same for every function but they look something like: "scale_<aesthetic>_<color scheme>_<type of data>". So, `scale_fill_viridis_d()` applies the Viridis color scale to a discrete variable mapped to the fill aesthetic.
+ 
+Use the data to create a plot and take a look at the colors set when you use `scale_color_viridis_c()`:
+
+```{r}
+ggplot(____) +
+  geom_dotplot(aes(____, _____, color = ____)) +
   scale_color_viridis_c()
 ```
 
-Using the [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) scales with color:
+The [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) scales are designed for use with [thematic maps](https://en.wikipedia.org/wiki/Thematic_map). Use `?scale_color_brewer()` to pull up the documentation for this function and review the information on the type and palette parameters.
+
+Now, map a variable to the `color` aesthetic for `geom_sf()` and assign an appropriate type and palette value:
 
 ```{r}
-ggplot() +
+ggplot(____) +
   geom_sf(aes(color = ____)) +
-  scale_color_brewer()
+  scale_color_brewer(type = ____, palette = ____)
 ```
 
-The same with fill:
+Switching from `color` to `fill`, try it again with a different type and palette value:
 
 ```{r}
-ggplot() +
+ggplot(____) +
   geom_sf(aes(fill = ____)) +
-  scale_fill_brewer()
+  scale_fill_brewer(type = ____, palette = ____)
 ```
 
-The same with a continuous variable:
+One last time, but we're using `scale_fill_distiller()`:
 
 ```{r}
-ggplot() +
+ggplot(____) +
   geom_sf(aes(fill = ____)) +
-  scale_fill_distiller()
+  scale_fill_distiller(type = ____, palette = ____)
 ```
+
+Note that this `scale_fill_distiller()` scale only works with continuous values. If you get an error, you may need to map a different variable to `fill`.
 
 ### Adding labels, legends, and themes
 
-Using the `labs()` function:
-
-```{r}
-ggplot() +
-  geom_sf(aes(fill = ____)) +
-  labs(
-    title = ____,
-    caption = ____,
-    fill = ____
-  )
-```
-
-### Map making with `{ggplot2}`
-
-Hiding graticules with `theme_void()`:
+Set the data for `ggplot()` and then use the `labs()` function to apply a title and caption that make sense:
 
 ```{r}
 ggplot(data = ____) +
   geom_sf(color = "black", fill = NA) +
-  theme_void()
+  labs(
+    title = ____,
+    caption = ____
+  )
 ```
 
-Hiding [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)) with `theme()`:
+Now, map `fill` to a variable in your data using `aes()` and then use `labs()` to assign a label for fill:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(aes(fill = ____)) +
+  labs(
+    ____
+  )
+```
+
+Finally, put all of these elements together with a theme function. `theme_minimal()` and `theme_void()` are good themes to use for maps but you can explore [all of the options in the ggplot2 documentation](https://ggplot2.tidyverse.org/reference/ggtheme.html):
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(mapping = aes(____)) +
+  labs(
+    title = ____,
+    caption = ____,
+    ____
+  ) +
+  ____
+```
+
+### Interactive plots with `{plotly}`
+
+We aren't doing much with interactivity in this class (or exercise) but I did want to give you a chance to try it out using the `ggplotly()` function from the `{plotly}` package:
+
+```{r}
+p <- ggplot(data = ____) +
+  geom____(aes(____))
+  
+plotly::ggplotly(
+  p = p
+)
+```
+
+A [directory of `{ggplot2}` extensions](https://exts.ggplot2.tidyverse.org/index.html) is available through the tidyverse website if you want to try more tools for animation or interactivity including [{gganimate}](https://gganimate.com/) or [{ggiraph}](https://davidgohel.github.io/ggiraph/).
+
+### Map making with `{ggplot2}`
+
+By default, any map created with `geom_sf()` will show the graticulates on the map and axis labels with the coordinate values. Add data to this map and then hide these graticules by adding `theme_void()`:
+
+```{r}
+ggplot(data = ____) +
+  geom_sf(color = "black", fill = NA) +
+  ____
+```
+
+You can also hide or change [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)) by using `theme()`. Try setting the `panel.grid` argument to `element_blank()` to hide the grid:
 
 ```{r}
 ggplot(data = ____) +
   geom_sf(color = "black", fill = NA) +
   theme(
-    panel.grid = element_blank(),
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
+    panel.grid = ____
     )
 ```
 
-"Zooming" into an area with `coord_sf()`
+Now, try "zooming" into a selected area of your map using the `xlim` and `ylim` arguments for `coord_sf()`:
 
 ```{r}
 ggplot(data = ____) +
   geom_sf(color = "black", fill = NA) +
-  coord_sf()
+  coord_sf(
+    xlim = ____,
+    ylim = ____
+  )
 ```
 
-Adding inset maps with `{patchwork}`
+If you have difficulty with this one, look back at [our week 2 slides](https://bldgspatialdata.github.io/website/slides/data-visualization.html#/8/6) for an example showing how to use `sf::st_bbox()` to get xmin, xmax, ymin, and ymax values for the xlim and ylim parameter.
+
+----
+
+Using an inset map or "locator map" with a larger area and a zoomed in map showing a featured area is a common cartographic approach. You can use `patchwork::inset_element()` from the `{patchwork}` package to set this up:
 
 ```{r}
 area_map <- ggplot(data = ____) +
-  geom_sf(color = "black", fill = NA)
+  geom_sf(color = "black", fill = NA) +
+  coord_sf(
+    xlim = ____,
+    ylim = ____
+  )
 
 inset_map <- ggplot(data = ____) +
-  geom_sf(color = "black", fill = NA) +
-  coord_sf()
+  geom_sf(color = "black", fill = NA)
 
 area_map +
   patchwork::inset_element(
-    inset_map,
+    p = inset_map,
     left = ____,
     bottom = ____,
     top = ____,
@@ -189,28 +321,78 @@ area_map +
   )
 ```
 
-Smoothing features with `{smoothr}`
+Remember, this format of calling functions (`<package name>::<function name>`) is just a shortcut for using functions from packages that *are* installed but not loaded into your environment. If you have any difficulty with this part of the exercise, make sure you have `{patchwork}` installed.
+
+---
+
+There are some cases when you need to modify the geometry of your data as part of the process of making a map. The `st_simplify()` function is one way to do that. Try setting dTolerance to a low value, e.g. `dTolerance = 10`, and run the code block. Then try to run it again with `dTolerance = 100000`.
 
 ```{r}
-data <- ____
-smooth_data <- smoothr::smooth(data, method = "ksmooth", smoothness = ____)
+usa <- filter(countries, name == "United States of America")
+
+simple_usa <- st_simplify(x = usa, dTolerance = ____)
 
 ggplot() +
   geom_sf(
     data = data,
-    color = "red"
+    color = "orange"
     ) +
   geom_sf(
-    data = smooth_data,
-    color = "blue"
+    data = simple_data,
+    color = "purple"
   ) +
   theme_void()
 ```
+
+What happens when you increase the value of dTolerance? ____
+
+Now, let's try to same thing but smoothing features with `smoothr::smooth()` instead of simplifying with `sf::st_simplify()`. Start by setting smoothness to a small number, `smoothness = 0.5`, and then run again with higher and higher numbers:
+
+```{r}
+smooth_usa <- smoothr::smooth(x = usa, method = "ksmooth", smoothness = ____)
+
+ggplot() +
+  geom_sf(
+    data = usa,
+    color = "orange"
+    ) +
+  geom_sf(
+    data = smooth_usa,
+    color = "purple"
+  ) +
+  theme_void()
+```
+
+What happens when you increase the value of smoothness? ____
+
+Check the documentation for `st_simplify()` or `smoothr::smooth()` for more information on how these functions work to modify the geometry.
 
 ## Bonus exercise
 
 ### Creating maps with `{tmap}`
 
-```{r}
+Pick one of the maps you created in the prior questions of this exercise and create a similar version using the `{tmap}` package.
 
+You can install `{tmap}` the same as any other package:
+
+```{r}
+# pak::pkg_install("tmap")
 ```
+
+Then load the library:
+
+```{r}
+library(tmap)
+```
+
+And make a map using data from `{rnaturalearth}` or another source of your choice:
+
+```{r}
+____
+```
+
+What is the same about making a map with `{tmap}` compared to `{ggplot2}`? ____
+
+What is different about making a map with `{tmap}` compared to `{ggplot2}`? ____
+
+Do you have any preference between the two? ____

@@ -1,5 +1,727 @@
 ---
 title: "Visualizing spatial data with ggplot2"
+date-meta: 2023-09-06
+execute: 
+  error: true
+format: 
+  revealjs:
+    code-link: true
+    output-location: column-fragment
+    scrollable: true
 ---
 
+```{r}
+#| echo: false
 
+library(ggplot2)
+library(dplyr)
+library(gt)
+```
+
+
+# Overview
+
+-   Why and how do we visualize spatial data?
+-   What is the "grammar of graphics"?
+-   How to use `{ggplot2}` to
+    -   build layered data visualizations
+    -   visualize spatial data
+
+# Why and how do we visualize spatial data?
+
+## Why do we visualize spatial data?
+
+Why do we visualize spatial data?
+
+- Validation
+- Exploration
+- Communication
+
+----
+
+## Anscombe's quartet
+
+To illustrate why visualization is essential, let's look at the Anscombe's Quartet data:
+
+```{r}
+#| echo: false
+Tmisc::quartet |> 
+  dplyr::group_nest(set, keep = TRUE) |> 
+  dplyr::pull(data) |> 
+  purrr::list_cbind(name_repair = "universal") |>
+  gt::gt() |> 
+  gt::cols_label(
+    starts_with("set") ~ "",
+    starts_with("x") ~ "x",
+    starts_with("y") ~ "y"
+  ) |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
+    location = cells_body()
+  ) |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
+    location = cells_column_labels()
+  ) |> 
+  gt::tab_style(
+    locations = cells_body(
+      columns = starts_with("set")
+    ),
+    style = cell_fill(color = "gray", alpha = 0.25)
+  ) |> 
+  gt::tab_style(
+    locations = cells_body(
+      columns = starts_with("set")
+    ),
+    style = cell_text(size = "small", weight= "bold")
+  )
+```
+
+::: footer
+This data is from the `{Tmisc}` package but can be found in many places.
+:::
+
+----
+
+Hard to make sense of all those numbers at once.
+
+What if we use some summary statistics and get the mean, standard deviation, and Pearson correlation coefficient for x and y by set:
+
+```{r}
+#| echo: false
+Tmisc::quartet |> 
+  group_by(set) |> 
+  summarise(
+    mean_x = mean(x),
+    mean_y = mean(x),
+    sd_x = sd(x),
+    sd_y = sd(y),
+    r = cor(x, y)
+  ) |> 
+  gt::gt(groupname_col = "set", row_group_as_column = TRUE) |> 
+  gt::fmt_number() |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
+    location = cells_body()
+  ) |> 
+  gt::tab_style(
+    style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
+    location = cells_column_labels()
+  ) |> 
+  gt::tab_style(
+    locations = cells_body(
+      columns = starts_with("set")
+    ),
+    style = cell_text(size = "small", weight= "bold")
+  ) |> 
+  gt::tab_style(
+    locations = cells_row_groups(),
+    style = cell_text(size = "small", weight= "bold")
+  )
+```
+
+----
+
+Now, take another look using a plot:
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(data = Tmisc::quartet, aes(x, y, color = set)) +
+  geom_smooth(method = "lm", alpha = 0.5, color = "gray30", linewidth = 0.25) +
+  geom_point() +
+  facet_wrap(~set) +
+  scale_color_brewer(palette = "Dark2", type = "qual") +
+  guides(color = "none") +
+  hrbrthemes::theme_ipsum_pub(
+    base_family = "Atkinson Hyperlegible",
+    plot_title_family = "Atkinson Hyperlegible",
+    caption_family = "Atkinson Hyperlegible",
+    axis_title_size = 16,
+    axis_text_size = 16,
+    strip_text_size = 20
+  )
+```
+
+What do you *see*?
+
+## How do we visualize spatial data?
+
+:::: {.columns}
+
+::: {.column width='50%'}
+A map is a special type of data visualization for spatial data but it isn't the only one.
+
+**Plots** and **tables** are two other common ways to visualize spatial data.
+:::
+
+::: {.column width='50%'}
+![Key for interpreting Sanborn fire insurance maps courtesy [Library of Congress](https://www.loc.gov/collections/sanborn-maps/about-this-collection/)](https://www.loc.gov/rr/geogmap/sanborn/images/sankey22c.jpg)
+:::
+
+::::
+
+----
+
+:::: {.columns}
+
+::: {.column width='40%'}
+Graphics can be further transformed using **animation** and **interactivity**. Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
+
+:::
+
+::: {.column width='60%'}
+![](https://media.giphy.com/media/xUA7aUs09Brz1ZED72/giphy.gif)
+:::
+
+::::
+
+# What is the "grammar of graphics"?
+
+![Image adapted from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](https://r.qcbs.ca/workshop03/book-en/images/gglayers.png)
+
+----
+
+- Data
+- Mapping
+- Statistics
+- Scales
+- Geometries
+- Facets
+- Coordinates
+- Theme
+
+::: footer
+This introduction to the "grammar of graphics" is based largely on a 2020 ggplot2 workshop ([part 1](https://www.youtube.com/watch?v=h29g21z0a68)) by Thomas Lin Pedersen.
+:::
+
+## Data
+
+- Structure and representation of data determines what you can and can't do with it
+- Data is expected to be in a "tidy" format (also known as long format data)
+
+----
+
+A few definitions (from [Ch. 2 of R for Data Science](https://r4ds.hadley.nz/data-visualize)):
+
+-   variable: a quantity, quality, or property that you can measure.
+-   value: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.
+-   observation: a set of measurements made under similar conditions
+-   tabular data: a set of values, each associated with a variable and an observation.
+
+----
+
+What works best with the grammar of graphics is **tidy data**:
+
+-   each value is placed in its own "cell",
+-   each variable in its own column, and
+-   each observation in its own row.
+
+## Mapping
+
+- Allow data to be understood by the graphics system through:
+
+  - Aesthetic mapping: variables -> graphical properties in the geometry
+  - Facet mapping: variables -> panels in layout
+
+## Statistics
+
+- Data may not represent the displayed values
+
+- Statistics transform input variables into displayed values, e.g.
+
+  - Counting the number of observations by category
+  - Calculating summary statistics for a boxplot
+  
+::: footer
+Statistics can be used prior to plotting data or used by a plotting function directly.
+:::
+
+## Scales
+
+- Scales translate between value ranges and graphical properties, e.g.
+
+  - Categories -> Colors
+  - Numbers -> Position
+  
+- Scales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.
+
+::: footer
+In the not too common case where data directly represents a graphical property, e.g. a "color" column, you can use a special type of scale called an "identity" scale.
+:::
+
+## Geometries
+
+- How translate aesthetics into graphical representations
+
+- Basic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)
+
+- Typically, the geometries are the same as the "type" of plot
+
+## Facets
+
+- Defines how data is split across multiple panels
+
+## Coordinates
+
+- Positional aesthetics must be interpreted by a coordinate system
+
+- Defines the physical mapping of aesthetics to the paper
+
+::: footer
+We usually think about the [cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)—but there are a lot of different kinds of coordinate systems.
+:::
+
+## Theme
+
+- Every part of the graphic that *isn't* linked to the data:
+
+  - Fonts
+  - Spacing
+  - Colors 
+  - Weights
+  - etc.
+
+# How to to use `{ggplot2}` to...
+
+-   build layered data visualizations
+-   visualize spatial data
+
+# Build layered data visualizations
+
+## Setup packages
+
+For this session, we are going to use the `{ggplot2}` and `{dplyr}` packages:
+
+```{r}
+#| output-location: default
+library(ggplot2)
+library(dplyr)
+library(sf)
+```
+
+## Setup data
+
+We are also going to use the `storms` data included with `{dplyr}`.
+
+Take a quick look at `storms` using `glimpse()`:
+
+```{r}
+#| output-location: fragment
+glimpse(storms)
+```
+
+::: footer
+When we use `storms`, it is important to remember that each row is an **observation** of a storm, not a summary feature for an individual storm.
+:::
+
+----
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif)
+
+::: footer
+`storms` is a subset of a larger [Atlantic hurricane database (HURDAT2)](https://www.nhc.noaa.gov/data/#hurdat) with data from 1851 to 2022. Since 1974, NOAA's [Geostationary Operational Environmental Satellite](https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite) program has played a key role in tracking storms and monitoring weather around the world.
+:::
+
+## Create a ggplot
+
+We can start by using the function `ggplot()` to define a plot object. Set `storm` as the input data for `ggplot()`:
+
+```{r}
+ggplot(data = storms)
+```
+
+. . .
+
+::: {.smaller}
+Well, that doesn't look like much. 🤔
+
+This is the first step in creating a plot that we can add layers to. Parameters set with `ggplot()` can be "inherited" by layers added later.
+:::
+
+## Add aesthetics and layers
+
+### Set mapping with `aes()`
+
+Next, we can set the mapping using the `aes()` function. We can start by mapping `long` (longitude) to `x` and `lat` (latitude) to `y`:
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(
+    x = long,
+    y = lat
+  )
+)
+```
+
+Before we can see any data, we need to tell `ggplot()` how we want to represent the data using layers.
+
+::: notes
+The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.
+:::
+
+----
+
+Layers in `{ggplot2}` are most often added using "geoms" (short for geometry) functions like `geom_point()`, `geom_col()`, or `geom_histogram()`.
+
+Let's give it a try using `geom_point()`:
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(
+    x = long,
+    y = lat
+  )
+) +
+  geom_point()
+```
+
+----
+
+You can define the `data` and `mapping` parameters globally using `ggplot()` or locally for a single geom function. This code does the exact same thing as the prior block:
+
+```{r}
+ggplot() +
+  geom_point(
+    mapping = aes(
+      x = long,
+      y = lat
+    ),
+    data = storms
+  )
+```
+
+----
+
+### What is this `+` operator?
+
+Notice that we are combining the `ggplot()` and `geom_point()` functions using the `+` operator. This is a style of function or operator known as an [infix operator](https://en.wikipedia.org/wiki/Infix_notation).
+
+Next week, we will introduce a similar function known as a pipe, `%>%` or `|>` that works to pass the output from one function (or line of code) into the next line as the first parameter in a function.
+
+----
+
+For example, see how we can use a series of pipes to operate on the storms data:
+
+```{r}
+storms |>
+  distinct(name)
+```
+
+----
+
+```{r}
+storms |>
+  distinct(name) |> 
+  nrow()
+```
+
+----
+
+The prior block is the same as the following block:
+
+```{r}
+storm_names <- distinct(storms, name)
+nrow(storm_names)
+```
+
+::: footer
+Using pipes can help avoid the need for intermediate objects like `storm_names` that might only exist to move the output of one function to the input for another function.
+:::
+
+----
+
+The first parameter for `ggplot()` is `data` and the first parameter for all geom functions is `mapping` so you often see these passed as unnnamed parameters:
+
+```{r}
+ggplot(storms) +
+  geom_point(
+    aes(
+      x = long,
+      y = lat
+    )
+  )
+```
+
+---
+
+You can even leave off the x and y parameter names:
+
+```{r}
+ggplot(storms) +
+  geom_point(aes(long, lat))
+```
+
+----
+
+# Mapping variables are not strings!
+
+The variables passed to `aes()` don't have quotes around them! This is because `aes()` is a data-masking (also known as a quoting function) where the inputs are evaluated in the context of the data.
+
+TLDR: only put quotes around your aesthetic mappings when you want to pass a literal string.
+
+----
+
+Next we can map one of the variables (`status` or storm classification) to an aesthetic (`color`):
+
+```{r}
+ggplot(storms) +
+  geom_point(aes(long, lat, color = status))
+```
+
+Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a "positional aesthetic" we can't easily interpret the meaning of the graphic without a legend, labels, or annotations.
+
+
+----
+
+In addition to having mapped aesthetics, we can also have "fixed" aesthetics (fixed because the same value is used for every observation in the plot). When you have a lot of overlapping features (known as overplotting), you may want to reduce the `alpha` (or transparency) of the features:
+
+```{r}
+ggplot(storms) +
+  geom_point(
+    aes(x = long,
+    y = lat,
+    color = status),
+  alpha = 0.4
+  )
+```
+
+Fixed aesthetics should be defined for each geom—they are ignored if you pass them to `ggplot()`.
+
+----
+
+Aesthetics can also be defined using a function. In this example, we are using the boolean operator `==` to compare the values from "status" to the string "hurricane":
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(
+    x = long,
+    y = lat,
+    color = status == "hurricane"
+  )
+) +
+  geom_point()
+```
+
+
+## Visualizing distributions
+
+## Distribution of one numeric variable
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(y = lat)
+) +
+  geom_histogram(bins = 90)
+```
+
+## Distribution of one numeric variable
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(x = lat)
+) +
+  geom_freqpoly(binwidth = 1)
+```
+
+## Distribution of one categorical variable
+
+```{r}
+ggplot(
+  data = storms,
+  mapping = aes(y = category)
+) +
+  geom_bar()
+```
+
+# Visualize spatial data
+
+To start, let's convert our storms data set from a data frame into a sf object using `sf::st_as_sf()`:
+
+```{r}
+storms_sf <- sf::st_as_sf(
+    storms,
+    coords = c("long", "lat"),
+    crs = 4326
+  )
+```
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+# Always supply coordinates with longitude before latitude!
+`sf::st_as_sf()` requires that you supply coordinates in lon lat order. This is also the standard order for GeoJSON files, Shapefiles, and KML files. Check out [lon lat lat lon by Tom MacWright](https://macwright.com/lonlat/) for more information.
+:::
+
+----
+
+Finally, we can look at these observations on a map:
+
+```{r}
+ggplot(data = storms_sf) +
+  geom_sf(aes(color = status))
+```
+
+----
+
+That first map may not look much different.
+
+But converting the data to a `sf` object allows us to use `coord_sf()` to transform the coorindate reference system on the fly:
+
+```{r}
+ggplot(data = storms_sf) +
+  geom_sf(aes(color = status)) +
+  coord_sf(crs = "EPSG:3035")
+```
+
+----
+
+This is equivalent to converting the coordinate reference system in advance using `st_transform()`:
+
+```{r}
+storms_sf |> 
+  st_transform(2804) |> 
+  ggplot() +
+  geom_sf(aes(color = status))
+```
+
+Note, that this is another example of how we can use the pipe (`|>`) to move data between functions in R.
+
+----
+
+However, to really show the potential, we need some more data. Install and load the `{rnaturalearth}` package and then load data for the coastline and countries:
+
+```{r}
+# pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))
+library(rnaturalearth)
+
+coastline <- ne_coastline(returnclass = "sf")
+
+countries <- ne_countries(returnclass = "sf")
+```
+
+----
+
+Put them together and we are starting to get somehwere:
+
+```{r}
+ggplot() +
+  geom_sf(data = storms_sf, aes(color = status)) +
+  geom_sf(data = coastline, color = "white")
+```
+
+----
+
+But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of `coord_sf()` to "zoom" in on a smaller area:
+
+```{r}
+storms_bbox <- storms_sf |> 
+  st_transform("EPSG:3035") |> 
+  st_bbox()
+
+storms_map <- ggplot() +
+  geom_sf(data = countries, fill = "white") +
+  geom_sf(data = storms_sf, aes(color = category), alpha = 0.3) +
+  geom_sf(data = coastline, color = "black") +
+  coord_sf(
+    xlim = c(storms_bbox$xmin, storms_bbox$xmax),
+    ylim = c(storms_bbox$ymin, storms_bbox$ymax),
+    crs = "EPSG:3035"
+    )
+
+storms_map
+```
+
+----
+
+Try adding a scale:
+
+```{r}
+storms_map <- storms_map +
+  scale_color_distiller(type = "seq", direction = 1, palette = "YlOrRd", na.value = "gray60")
+
+storms_map
+```
+
+----
+
+Now try adding some labels:
+
+```{r}
+storms_map <- storms_map +
+  labs(
+    title = "Atlantic hurricanes by category, 1975-2021",
+    caption = "Data: NOAA Atlantic hurricane database best track data via the {dplyr package}"
+  )
+
+storms_map
+```
+
+----
+
+Lastly, we can adjust the theme:
+
+```{r}
+ storms_map +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom"
+  )
+```
+
+
+----
+
+:::: {.columns}
+
+::: {.column width='40%'}
+![](https://images.routledge.com/common/jackets/amazon/978036749/9780367494759.jpg)
+:::
+
+::: {.column width='60%'}
+"It's true that there are better and worse ways to make a map but **no one way to make an excellent map**."
+
+Gretchen N. Peterson in GIS Cartography: A Guide to Effective Map Design
+:::
+
+::::
+
+----
+
+What makes a bad map *bad*?
+
+For new map makers who might not know any better, it is often:
+
+- Confusing or distracting layout
+- Not enough color contrast for features
+- Cluttered labels, legends, or features
+
+----
+
+What makes a fine map *just* fine?
+
+For more experienced map makers who might be in a hurry:
+
+- Not enough thought on font sizes and styling
+- No feature generalization (simplifying geometry where appropriate for the map scale or subject)
+- Inappropriate color scales
+
+----
+
+There are many cartographic considerations that also apply to other all types of data visualization:
+
+- Layout
+- Fonts (Typography)
+- Colors
+- Output formats
+
+----
+
+But there are also some cartographic considerations that apply to maps in special and important ways: 
+
+- Feature geometry (and cartographic conventions)
+- Projections
+- Scaling

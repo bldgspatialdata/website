@@ -5,6 +5,23 @@ subtitle: "Visualizing spatial data with `{ggplot2}`"
 date: 2023-09-06
 ---
 
+## Overview
+
+### Agenda
+
+-   Week 2 Updates
+-   Your week 1 questions
+-   Introduction to visualizing spatial data in R
+
+::: {.callout-note appearance="minimal" icon="true"}
+#### Key Objectives
+
+-   Explore the "grammar of graphics" as a way of structuring plots and maps
+-   Explore the concept of "tidy" data
+-   Practice creating plots and maps with the `{ggplot2}` package
+-   Learn how the pipe function (`%>%` or `|>`) works and when it may be useful
+:::
+
 ## Prepare
 
 ### Required readings
@@ -17,6 +34,10 @@ date: 2023-09-06
 
 -   @dignazioWhoCollectsData2021
 -   [Ch. 2 Data visualization](https://r4ds.hadley.nz/data-visualize) in @wickhamDataScienceImport2023
+
+## Participate
+
+🖥️ [Visualizing spatial data with `{ggplot2}`](/slides/data-visualization.html)
 
 ## Practice
 
