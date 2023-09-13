@@ -341,11 +341,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
   </ul></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -383,10 +387,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="agenda" class="level3">
+<h3 class="anchored" data-anchor-id="agenda">Agenda</h3>
 <ul>
-<li>Filtering data with <code>dplyr::filter()</code></li>
-<li>Creating new variables with <code>dplyr::mutate()</code></li>
+<li>Week 3 updates</li>
+<li>Mapping with <code>{ggplot}</code> review</li>
+<li>Introduction to data transformation with <code>{dplyr}</code></li>
+<li>Using <code>{dplyr}</code> with <code>sf</code> objects</li>
 </ul>
+</section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
@@ -397,6 +406,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA">Ch. 2 A Place for Plant Data</a> in <span class="citation" data-cites="loukissasAllDataAre2019">Yanni Alexander Loukissas <em>All <span>Data Are Local</span>: <span>Thinking Critically</span> in a <span>Data-Driven Society</span></em>, 2019, doi:<a href="https://doi.org/10.7551/mitpress/11543.001.0001" role="doc-biblioref">10.7551/mitpress/11543.001.0001</a>.</span></li>
 </ul>
 </section>
+</section>
+<section id="participate" class="level2">
+<h2 class="anchored" data-anchor-id="participate">Participate</h2>
+<p>🖥️ <a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code> and <code>{tidyr}</code></a></p>
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>

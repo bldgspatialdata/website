@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.339">
 
-  <meta name="dcterms.date" content="2023-09-06">
+  <meta name="dcterms.date" content="2023-09-13">
   <title>GES 668 - Fall 2023 - Fall 2023 Weekly Updates</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -334,30 +334,19 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-09-06</p>
+  <p class="date">2023-09-13</p>
 </section>
 <section>
 <section id="this-week" class="title-slide slide level1 center">
 <h1>This Week</h1>
 
 </section>
-<section id="week-2-september-6-2023" class="title-slide slide level2 center">
-<h2>Week 2: September 6, 2023</h2>
+<section id="week-3-september-13-2023" class="title-slide slide level2 center">
+<h2>Week 3: September 13, 2023</h2>
 
 </section>
 <section id="what-is-due-by-this-week" class="title-slide slide level3 center">
 <h3>What is due by this week</h3>
-<ul>
-<li>Set up R, RStudio, and GitHub Desktop</li>
-<li>Complete required readings for <a href="../weeks/week_01.html">week 1</a> and <a href="../weeks/week_02.html">week 2</a></li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
-<li>Review <a href="../course-exercises.html">instructions to complete exercises</a> using RStudio and GitHub</li>
-<li>Complete <a href="../exercises/exercise_01.html">Exercise 1</a> on R basics and the structure of <code>{sf}</code> objects</li>
-</ul>
-</section>
-
-<section id="what-is-coming-up-for-next-week" class="title-slide slide level3 center">
-<h3>What is coming up for next week</h3>
 <ul>
 <li>Complete required readings for <a href="../weeks/week_03.html">week 3</a></li>
 <li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
@@ -365,28 +354,82 @@
 </ul>
 </section>
 
+<section id="what-is-coming-up-for-next-week" class="title-slide slide level3 center">
+<h3>What is coming up for next week</h3>
+<ul>
+<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a></li>
+<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
+<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <code>{dplyr}</code> and <code>{tidyr}</code></li>
+</ul>
+</section>
+
 <section id="before-we-start-this-week" class="title-slide slide level3 center">
 <h3>Before we start this week</h3>
 <ul>
-<li>Do you have access to your GitHub repository? Do you understand how to commit changes?</li>
-<li>How can you get the most out of the readings?</li>
-<li>How do you customize your settings in RStudio?</li>
-<li>Where can you get help if you need it?</li>
-<li>What are we doing for the final project?</li>
+<li>I want to set up reminders for due dates. How about calendar invites?</li>
+<li>I am considering shifting the exercise due date from Monday to Tuesday. What do you think?</li>
+</ul>
+</section>
+
+<section id="what-are-you-finding-interesting" class="title-slide slide level3 center">
+<h3>What are you finding interesting</h3>
+<ul>
+<li>Ease and speed of plotting spatial data</li>
+<li>Setting colors for plots using <code>scale_</code> functions from <code>{ggplot}</code></li>
+<li>Customizing plots using <code>theme_</code> functions from <code>{ggplot}</code></li>
+<li>Similarities and differences between R and Python</li>
+</ul>
+</section>
+
+<section id="what-are-you-finding-difficult" class="title-slide slide level3 center">
+<h3>What are you finding difficult</h3>
+<ul>
+<li><code>ggploty()</code> didn’t work as expected</li>
+<li>The <code>countries</code> dataset from <code>{rnaturalearth}</code></li>
+<li>When to use the <code>summarize()</code> function</li>
 </ul>
 </section>
 
 <section id="your-questions-this-week" class="title-slide slide level3 center">
 <h3>Your questions this week</h3>
 <ul>
-<li>Why do some functions require arguments and other functions do not?</li>
-<li>What are some of the best ways of sharing reproducible methods?</li>
-<li>How do you get data that you create into R?</li>
-<li>What is a vector tile? What is the difference between raster and vector tiles?</li>
-<li>What does the function <code>ggplot2::aes()</code> and the attributes passed to the function really do?</li>
-<li>Do you need to re-install your packages every time you start work?</li>
+<li>Questions about <code>{ggplot2}</code></li>
+<li>Questions about <code>{dplyr}</code></li>
+<li>Other questions</li>
 </ul>
-<p>Reminder: questions are <em>required</em> as part of the weekly check-in.</p>
+</section>
+<section id="ggplot2-questions" class="slide level4">
+<h4><code>{ggplot2}</code> questions</h4>
+<ul>
+<li>If you make a plot with <code>ggplot()</code>, when do you need to specify data? And when can you leave it out?</li>
+<li>Why do some <code>geom_</code> functions work with some variables and not others?</li>
+<li>What is the difference between <code>{tmap}</code> and <code>{ggplot2}</code>?</li>
+</ul>
+</section>
+<section id="dplyr-questions" class="slide level4">
+<h4><code>{dplyr}</code> questions</h4>
+<p>We’ll cover both of these questions today:</p>
+<ul>
+<li>What is <code>distinct()</code> actually doing?</li>
+<li>How do you use the <code>.before</code> and <code>.after</code> parameters provided for <code>mutate()</code> and <code>relocate()</code>?</li>
+</ul>
+</section>
+
+<section id="other-questions" class="title-slide slide level3 center">
+<h3>Other questions</h3>
+<p>Check out the Discord for a few answers:</p>
+<ul>
+<li>Can you use R for machine learning with big data?</li>
+<li>How do I access other datasets with the <code>{rnaturalearth}</code>?</li>
+</ul>
+<p>Please post your questions to the Discord!</p>
+</section>
+
+<section id="things-to-think-about" class="title-slide slide level3 center">
+<h3>Things to think about</h3>
+<ul>
+<li>What does it mean for data to be part of a knowledge system?</li>
+</ul>
 </section>
 
 </section>
@@ -395,48 +438,20 @@
 <h1>Upcoming Updates</h1>
 
 </section>
-<section id="week-3-september-13-2023" class="title-slide slide level2 center">
-<h2>Week 3: September 13, 2023</h2>
+<section id="week-4-september-20-2023" class="title-slide slide level2 center">
+<h2>Week 4: September 20, 2023</h2>
 
 </section>
 <section id="what-is-due-by-this-week-1" class="title-slide slide level3 center">
 <h3>What is due by this week</h3>
 <ul>
-<li>Complete required readings for <a href="../weeks/week_03.html">week 3</a></li>
+<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a></li>
 <li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
-<li>Complete <a href="../exercises/exercise_02.html">Exercise 2</a> on <code>{ggplot2}</code></li>
+<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <code>{dplyr}</code> and <code>{tidyr}</code></li>
 </ul>
 </section>
 
 <section id="what-is-coming-up-for-next-week-1" class="title-slide slide level3 center">
-<h3>What is coming up for next week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a></li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <code>{dplyr}</code> and <code>{tidyr}</code></li>
-</ul>
-</section>
-
-<section id="before-we-start-this-week-1" class="title-slide slide level3 center">
-<h3>Before we start this week</h3>
-
-</section>
-
-
-<section id="week-4-september-20-2023" class="title-slide slide level2 center">
-<h2>Week 4: September 20, 2023</h2>
-
-</section>
-<section id="what-is-due-by-this-week-2" class="title-slide slide level3 center">
-<h3>What is due by this week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a></li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <code>{dplyr}</code> and <code>{tidyr}</code></li>
-</ul>
-</section>
-
-<section id="what-is-coming-up-for-next-week-2" class="title-slide slide level3 center">
 <h3>What is coming up for next week</h3>
 <ul>
 <li>Complete required readings for <a href="../weeks/week_05.html">week 5</a></li>
@@ -512,11 +527,60 @@
 <li>Welcome!</li>
 </ul>
 </section>
-<section id="what-is-due-by-this-week-3" class="title-slide slide level3 center">
+<section id="what-is-due-by-this-week-2" class="title-slide slide level3 center">
 <h3>What is due by this week</h3>
 <ul>
 <li>Join the Discord chat</li>
 </ul>
+</section>
+
+
+<section id="week-2-september-6-2023" class="title-slide slide level2 center">
+<h2>Week 2: September 6, 2023</h2>
+
+</section>
+<section id="what-is-due-by-this-week-3" class="title-slide slide level3 center">
+<h3>What is due by this week</h3>
+<ul>
+<li>Set up R, RStudio, and GitHub Desktop</li>
+<li>Complete required readings for <a href="../weeks/week_01.html">week 1</a> and <a href="../weeks/week_02.html">week 2</a></li>
+<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
+<li>Review <a href="../course-exercises.html">instructions to complete exercises</a> using RStudio and GitHub</li>
+<li>Complete <a href="../exercises/exercise_01.html">Exercise 1</a> on R basics and the structure of <code>{sf}</code> objects</li>
+</ul>
+</section>
+
+<section id="what-is-coming-up-for-next-week-2" class="title-slide slide level3 center">
+<h3>What is coming up for next week</h3>
+<ul>
+<li>Complete required readings for <a href="../weeks/week_03.html">week 3</a></li>
+<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a></li>
+<li>Complete <a href="../exercises/exercise_02.html">Exercise 2</a> on <code>{ggplot2}</code></li>
+</ul>
+</section>
+
+<section id="before-we-start-this-week-1" class="title-slide slide level3 center">
+<h3>Before we start this week</h3>
+<ul>
+<li>Do you have access to your GitHub repository? Do you understand how to commit changes?</li>
+<li>How can you get the most out of the readings?</li>
+<li>How do you customize your settings in RStudio?</li>
+<li>Where can you get help if you need it?</li>
+<li>What are we doing for the final project?</li>
+</ul>
+</section>
+
+<section id="your-questions-this-week-1" class="title-slide slide level3 center">
+<h3>Your questions this week</h3>
+<ul>
+<li>Why do some functions require arguments and other functions do not?</li>
+<li>What are some of the best ways of sharing reproducible methods?</li>
+<li>How do you get data that you create into R?</li>
+<li>What is a vector tile? What is the difference between raster and vector tiles?</li>
+<li>What does the function <code>ggplot2::aes()</code> and the attributes passed to the function really do?</li>
+<li>Do you need to re-install your packages every time you start work?</li>
+</ul>
+<p>Reminder: questions are <em>required</em> as part of the weekly check-in.</p>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">

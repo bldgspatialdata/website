@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bldgspatialdata.github.io/website/course-syllabus.html</loc>
-    <lastmod>2023-09-04T18:38:36.323Z</lastmod>
+    <lastmod>2023-09-09T23:57:11.685Z</lastmod>
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/exercises/exercise_08.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/exercises/exercise_03.html</loc>
-    <lastmod>2023-09-04T18:38:36.325Z</lastmod>
+    <lastmod>2023-09-13T21:20:49.012Z</lastmod>
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/course-schedule.html</loc>
@@ -34,78 +34,22 @@
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/slides/fall-2023.html</loc>
-    <lastmod>2023-09-06T21:37:46.891Z</lastmod>
+    <lastmod>2023-09-13T21:16:35.753Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/slides/welcome.html</loc>
-    <lastmod>2023-09-04T18:38:36.345Z</lastmod>
+    <loc>https://bldgspatialdata.github.io/website/slides/data-transformation.html</loc>
+    <lastmod>2023-09-13T21:27:58.419Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/slides/spatial-data.html</loc>
-    <lastmod>2023-09-04T18:38:36.339Z</lastmod>
+    <loc>https://bldgspatialdata.github.io/website/slides/coding-basics.html</loc>
+    <lastmod>2023-09-04T21:24:31.397Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/course-overview.html</loc>
-    <lastmod>2023-09-04T18:38:36.322Z</lastmod>
+    <loc>https://bldgspatialdata.github.io/website/index.html</loc>
+    <lastmod>2023-09-13T21:21:42.388Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_08.html</loc>
-    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_05.html</loc>
-    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_10.html</loc>
-    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_12.html</loc>
-    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_07.html</loc>
-    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_02.html</loc>
-    <lastmod>2023-09-06T21:52:10.884Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_01.html</loc>
-    <lastmod>2023-09-04T18:38:36.380Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/course-exercises.html</loc>
-    <lastmod>2023-09-04T18:38:36.322Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/LICENSE.html</loc>
-    <lastmod>2023-09-04T18:38:36.259Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_15.html</loc>
-    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_14.html</loc>
-    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_03.html</loc>
-    <lastmod>2023-09-04T18:38:36.380Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_13.html</loc>
-    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_06.html</loc>
-    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_04.html</loc>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_09.html</loc>
     <lastmod>2023-09-04T18:38:36.381Z</lastmod>
   </url>
   <url>
@@ -113,16 +57,76 @@
     <lastmod>2023-09-04T18:38:36.382Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/weeks/week_09.html</loc>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_04.html</loc>
     <lastmod>2023-09-04T18:38:36.381Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/index.html</loc>
-    <lastmod>2023-09-04T18:38:36.329Z</lastmod>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_06.html</loc>
+    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
   </url>
   <url>
-    <loc>https://bldgspatialdata.github.io/website/slides/coding-basics.html</loc>
-    <lastmod>2023-09-04T21:24:31.397Z</lastmod>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_13.html</loc>
+    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_03.html</loc>
+    <lastmod>2023-09-13T20:35:56.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_14.html</loc>
+    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_15.html</loc>
+    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/LICENSE.html</loc>
+    <lastmod>2023-09-04T18:38:36.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/course-exercises.html</loc>
+    <lastmod>2023-09-04T18:38:36.322Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_01.html</loc>
+    <lastmod>2023-09-04T18:38:36.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_02.html</loc>
+    <lastmod>2023-09-13T20:34:58.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_07.html</loc>
+    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_12.html</loc>
+    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_10.html</loc>
+    <lastmod>2023-09-04T18:38:36.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_05.html</loc>
+    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/weeks/week_08.html</loc>
+    <lastmod>2023-09-04T18:38:36.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/course-overview.html</loc>
+    <lastmod>2023-09-04T18:38:36.322Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/slides/spatial-data.html</loc>
+    <lastmod>2023-09-04T18:38:36.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bldgspatialdata.github.io/website/slides/welcome.html</loc>
+    <lastmod>2023-09-04T18:38:36.345Z</lastmod>
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/slides/data-visualization.html</loc>
@@ -138,7 +142,7 @@
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/exercises/exercise_02.html</loc>
-    <lastmod>2023-09-06T21:19:27.281Z</lastmod>
+    <lastmod>2023-09-11T16:35:40.384Z</lastmod>
   </url>
   <url>
     <loc>https://bldgspatialdata.github.io/website/exercises/exercise_06.html</loc>
