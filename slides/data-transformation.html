@@ -1226,7 +1226,8 @@
 <span id="cb70-2"><a href="#cb70-2"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb70-3"><a href="#cb70-3"></a></span>
 <span id="cb70-4"><a href="#cb70-4"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb70-5"><a href="#cb70-5"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb70-5"><a href="#cb70-5"></a></span>
+<span id="cb70-6"><a href="#cb70-6"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(storms_sf, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
