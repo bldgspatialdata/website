@@ -1,0 +1,517 @@
+---
+title: "Session {{< meta order >}}: Transforming data with `{dplyr}` and `{tidyr}`"
+format:
+  revealjs:
+    error: true
+order: 3
+exec:
+  eval: false
+---
+
+These slides are adapted from [Ch. 4 Data transformation](https://r4ds.hadley.nz/) in R for Data Science (2e).
+
+# Overview
+
+## Load `{dplyr}`
+
+```{r}
+library(dplyr)
+```
+
+## How can you transform your data using `{dplyr}`?
+
+-   Manipulate cases (rows)
+-   Manipulate variables (columns)
+-   Manipulate groups
+
+## Manipulate cases
+
+1.  `filter()`, which changes which rows are present without changing their order, and
+2.  `arrange()`, which changes the order of the rows without changing which are present.
+3.  `distinct()` which finds rows with unique values but unlike `arrange()` and `filter()` it can also optionally modify the columns.
+
+## Manipulate variables
+
+1.  `mutate()` creates new columns that are derived from the existing columns,
+2.  `select()` changes which columns are present,
+3.  `rename()` changes the names of the columns, and
+4.  `relocate()` changes the positions of the columns.
+
+## Manipulate groups
+
+-   `group_by()`,
+-   `summarize()`, and
+-   the `slice_()` family of functions.
+
+------------------------------------------------------------------------
+
+## The pipe
+
+. . .
+
+### |>
+
+The base pipe was added as a base R function with version 4.1.0 released in 2021. For simple uses, the base pipe is identical to the pipe from the magrittr package.
+
+### %>%
+
+The `%>%` pipe is part of the magrittr package which is loaded as part of the tidyverse. This operator has some additional features but they are less frequently used.
+
+# `select()`
+
+Select (and optionally rename) variables in a data frame, using a concise mini-language that makes it easy to refer to variables based on their name (e.g. a:f selects all columns from a on the left to f on the right) or type (e.g. where(is.numeric) selects all numeric columns).
+
+------------------------------------------------------------------------
+
+Select the variables to *keep*:
+
+```{r}
+select(storms, name, lat, long)
+```
+
+------------------------------------------------------------------------
+
+Select the variables to *drop* using `-` or `!`:
+
+```{r}
+select(storms, !name)
+```
+
+------------------------------------------------------------------------
+
+Select a range of variables to keep using `:`:
+
+```{r}
+select(storms, year:hour)
+```
+
+------------------------------------------------------------------------
+
+Use helper functions from `{tidyselect}`:
+
+```{r}
+select(storms, any_of(c("lat", "latitude", "y", "lon", "long", "longitude", "x")))
+```
+
+------------------------------------------------------------------------
+
+select works with unquoted and quoted inputs:
+
+```{r}
+select(storms, wind)
+select(storms, "wind")
+select(storms, all_of("wind"))
+```
+
+------------------------------------------------------------------------
+
+select doesn't work if you use the wrong variable names:
+
+```{r}
+select(storms, wnd)
+```
+
+------------------------------------------------------------------------
+
+Your turn: use select to subset the variables for wind, pressure, tropical storm force diameter, and hurricane force dimeter.
+
+## Take a minute ⏰
+
+------------------------------------------------------------------------
+
+OK. Here is one answer:
+
+```{r}
+select(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)
+```
+
+------------------------------------------------------------------------
+
+Here is another answer:
+
+```{r}
+select(storms, wind:hurricane_force_diameter)
+```
+
+------------------------------------------------------------------------
+
+And here is yet another answer:
+
+```{r}
+select(storms, wind, pressure, ends_with("diameter"))
+```
+
+------------------------------------------------------------------------
+
+# `filter()`
+
+The `filter()` function is used to subset a data frame, retaining all rows that satisfy your conditions.
+
+------------------------------------------------------------------------
+
+Use a logical condition to get rows that return `TRUE`:
+
+```{r}
+filter(storms, wind >= 50)
+```
+
+### Use logical and and boolean operators to make conditions
+
+```{r}
+1 == 1
+1 != 2
+1 < 2
+2 > 1
+2 <= 2
+2 >= 2
+is.na(NA_integer_)
+!is.na(1)
+1 %in% c(1, 2, 3)
+```
+
+------------------------------------------------------------------------
+
+Multiple tests separated by commas are combined so the returned rows pass *all* tests:
+
+```{r}
+filter(storms, month == 9, day == 13)
+```
+
+------------------------------------------------------------------------
+
+You *can* combine tests with a logical "OR" operator (`|`):
+
+```{r}
+filter(
+  storms,
+  name == "Eloise" | name == "Evelyn",
+  day == 13
+)
+```
+
+------------------------------------------------------------------------
+
+But it may be easier to use write the condition using a different operator:
+
+```{r}
+filter(
+  storms, name %in% c("Eloise", "Evelyn"),
+  day == 13
+)
+```
+
+------------------------------------------------------------------------
+
+![](https://media.npr.org/assets/img/2023/09/13/hurricane-lee-satellite-forecast-8d2596727e2cdc48cc53502417079144cffe96c7-s1600-c85.webp)
+
+Your turn: Hurricane Lee has **hurricane-force winds** extending up to 115 miles from its center and **tropical storm-force winds** extending for some 240 miles. Can you use filter to find the name and year of a hurricane with observed wind speeds that are the same or greater?
+
+## Take a minute ⏰
+
+------------------------------------------------------------------------
+
+...
+
+------------------------------------------------------------------------
+
+OK, here is an answer:
+
+```{r}
+filter(
+  storms,
+  hurricane_force_diameter >= 115,
+  tropicalstorm_force_diameter >= 240
+)
+```
+
+## `mutate()`
+
+`mutate()` creates new columns that are functions of existing variables.
+
+It can also modify (if the name is the same as an existing column) and delete columns (by setting their value to `NULL`).
+
+------------------------------------------------------------------------
+
+Use a function to add a new column based on existing variables:
+
+```{r}
+mutate(storms, ratio = pressure / wind)
+```
+
+------------------------------------------------------------------------
+
+`mutate()` also has a `.before` or `.after` parameter allowing you to add the new variables before or after a selected variable or range of variables:
+
+```{r}
+mutate(storms, ratio = pressure / wind, .before = everything())
+```
+
+------------------------------------------------------------------------
+
+Window functions (also known as vectorized functions) are a group of functions that you can use with `{dplyr}`.
+
+For example, `lag()` returns the previous value for a variable (effectively assumes the variable the observations are arranged in a meaningful order):
+
+```{r}
+mutate(
+  storms,
+  lag_status = lag(status)
+)
+```
+
+------------------------------------------------------------------------
+
+There is actually a problem with this new variable. Can you think what it is?
+
+------------------------------------------------------------------------
+
+In this case, the `lag()` function needs to be applied to a grouped data frame or it may return a value from a different storm and different year:
+
+```{r}
+mutate(
+  storms,
+  lag_status = lag(status),
+  .by = c(year, name)
+)
+```
+
+### Types of vectorized functions to use with `mutate()`
+
+-   Offset, e.g. `lag()`
+-   Cumulative aggregate, e.g. `cumsum()`
+-   Ranking, e.g. `ntile()`
+-   Math, e.g. `between()`
+-   Other, e.g. `case_when()` (one of the best!)
+
+------------------------------------------------------------------------
+
+`case_when()` is an especially useful vector function with varied applications.
+
+For example, we can use it to create new categorical variables based on continuous variables:
+
+```{r}
+mutate(
+  storms,
+  beaufort_desc = case_when(
+    wind < 1 ~ "Calm",
+    wind < 4 ~ "Light Air",
+    wind < 8 ~ "Light Breeze",
+    wind < 13 ~ "Gentle Breeze",
+    wind < 19 ~ "Moderate Breeze",
+    wind < 25 ~ "Fresh Breze",
+    wind < 32 ~ "Strong Breeze",
+    wind < 39 ~ "Near Gale",
+    wind < 47 ~ "Gale",
+    wind < 55 ~ "Strong Gale",
+    wind < 64 ~ "Whole Gale",
+    wind < 75 ~ "Storm Force",
+    .default = "Hurricane Force"
+  )
+)
+```
+
+------------------------------------------------------------------------
+
+# `summarise()`, `group_by()`, and `slice_()`
+
+## `summarise()` 
+
+`summarise()` creates a new data frame with:
+
+- one row for each combination of grouping variables; if there are no grouping variables, the output will have a single row summarising all observations in the input.
+- one column for each grouping variable
+- one column for each of the summary statistics that you have specified.
+
+------------------------------------------------------------------------
+
+`summarise()` works well with "summary" or analysis functions that take a vector and return a single value:
+
+```{r}
+summarise(
+  storms,
+  n_names = n_distinct(name),
+  max_category = max(category, na.rm = TRUE),
+  mean_lat = mean(lat),
+  mean_long = mean(long)
+)
+```
+
+### Types of analysis functions to use with `summarize()`
+
+-   Count
+-   Position
+-   Logical
+-   Order
+-   Rank
+-   Spread
+
+------------------------------------------------------------------------
+
+Most often you will want to use `summarise()` in combination with `group_by()`: 
+
+```{r}
+storms |>
+  group_by(year) |>
+  summarise(
+    n_names = n_distinct(name),
+    max_category = max(category, na.rm = TRUE),
+    mean_lat = mean(lat),
+    mean_long = mean(long)
+  )
+```
+
+------------------------------------------------------------------------
+
+You can also use the `.by` parameter to define the groups for `summarise()`:
+
+```{r}
+summarise(
+  storms,
+  n_names = n_distinct(name),
+  max_category = max(category, na.rm = TRUE),
+  mean_lat = mean(lat),
+  mean_long = mean(long),
+  .by = year
+)
+```
+
+------------------------------------------------------------------------
+
+`across()` is a helper function that you can use in combination with `mutate()` or `summarise()`:
+
+```{r}
+summarise(
+  storms,
+  across(
+    .cols = where(is.numeric),
+    .fns = list(
+      mean = mean,
+      median = median,
+      min = min,
+      max = max
+      )
+  )
+)
+```
+
+
+------------------------------------------------------------------------
+
+# Using data transformation functions with `sf` objects
+
+First convert storms into a `sf` object:
+
+```{r}
+library(sf)
+options(tigris_use_cache = TRUE)
+
+storms_sf <- st_as_sf(storms, coords = c("long", "lat"), crs = 4326)
+
+us_states <- tigris::states()
+```
+
+```{r}
+storms_sf <- st_transform(storms_sf, crs = 3857)
+us_states <- st_transform(us_states, crs = 3857)
+```
+
+## Using filter with `sf` objects
+
+If you are just working with attributes (variables), `sf` objects work just like any other data frame:
+
+```{r}
+filter(
+  storms_sf,
+  wind > 50
+)
+```
+
+But, you can use a special set of predicate functions that work with `sf` objects to return a logical vector that also works with filter:
+
+```{r}
+filter(
+  storms_sf,
+  as.logical(st_intersects(geometry, st_union(us_states), sparse = FALSE))
+)
+```
+
+------------------------------------------------------------------------
+
+By default, `st_intersects()` returns a matrix with the index for each value of the first parameter that intersects with each value of the second parameter.
+
+For example, this takes each observation and checks if the POINT geometry intersects with each U.S. state:
+
+```{r}
+st_intersects(storms_sf, us_states)
+
+dim(st_intersects(storms_sf, us_states))
+```
+
+## Using mutate with `sf` objects
+
+```{r}
+storms_usa <- storms_sf |>
+  mutate(
+    usa_observation = as.logical(
+      st_intersects(
+        geometry,
+        st_union(us_states),
+        sparse = FALSE
+      )
+    )
+  )
+```
+
+------------------------------------------------------------------------
+
+```{r}
+storms_usa |>
+  ggplot() +
+  geom_sf(aes(color = usa_observation), alpha = 0.5)
+```
+
+## Using summarise with `sf` objects
+
+You can use summarise to combine geometry by grouping variables: 
+
+```{r}
+storms_categories <- storms_sf |>
+  group_by(category) |>
+  summarise()
+
+storms_categories
+```
+
+------------------------------------------------------------------------
+
+```{r}
+storms_categories |>
+  filter(!is.na(category)) |>
+  ggplot() +
+  geom_sf(aes(color = category), alpha = 0.5) +
+  scale_color_distiller(palette = "PuRd", direction = 1)
+```
+
+------------------------------------------------------------------------
+
+You can also work with the geometry column directly to modify the returned geometry.
+
+For example, we can use `st_combine()` to turn the POINT geometry into MULTIPOINT geometry and then use `st_cast()` to transform the MULTIPOINT geometry into lines:
+
+```{r}
+storms_tracks <- storms_sf |>
+  group_by(year, name) |>
+  summarise(
+    geometry = st_cast(st_combine(geometry), to = "LINESTRING")
+  )
+
+storms_tracks
+```
+
+------------------------------------------------------------------------
+
+```{r}
+storms_tracks |>
+  ggplot() +
+  geom_sf(aes(color = year), alpha = 0.5)
+```

@@ -34,6 +34,8 @@ website:
             text: Exercise How-to
       - section: "Weeks 🗓️"
         contents:
+          - href: slides/fall-2023.qmd
+            text: Weekly Updates
           - course-schedule.qmd
           - href: weeks/week_01.qmd
           - href: weeks/week_02.qmd

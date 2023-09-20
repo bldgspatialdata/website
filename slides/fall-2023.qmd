@@ -4,74 +4,127 @@ number-sections: false
 scrollable: true
 ---
 
+```{r}
+library(tidyverse)
+library(nycflights13)
+library(sf)
+```
+
 # This Week
-
-## Week 2: September 6, 2023
-
-### What is due by this week
-
-- Set up R, RStudio, and GitHub Desktop
-- Complete required readings for [week 1](../weeks/week_01.html) and [week 2](../weeks/week_02.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Review [instructions to complete exercises](../course-exercises.html) using RStudio and GitHub 
-- Complete [Exercise 1](../exercises/exercise_01.html) on R basics and the structure of `{sf}` objects
-
-### What is coming up for next week
-
-- Complete required readings for [week 3](../weeks/week_03.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
-
-### Before we start this week
-
-- Do you have access to your GitHub repository? Do you understand how to commit changes?
-- How can you get the most out of the readings?
-- How do you customize your settings in RStudio?
-- Where can you get help if you need it?
-- What are we doing for the final project?
-
-### Your questions this week
-
-- Why do some functions require arguments and other functions do not?
-- What are some of the best ways of sharing reproducible methods?
-- How do you get data that you create into R?
-- What is a vector tile? What is the difference between raster and vector tiles?
-- What does the function `ggplot2::aes()` and the attributes passed to the function really do?
-- Do you need to re-install your packages every time you start work?
-
-Reminder: questions are *required* as part of the weekly check-in.
-
-# Upcoming Updates
-
-## Week 3: September 13, 2023
-
-### What is due by this week
-
-- Complete required readings for [week 3](../weeks/week_03.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
-
-### What is coming up for next week
-
-- Complete required readings for [week 4](../weeks/week_04.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}` and `{tidyr}`
-
-### Before we start this week
 
 ## Week 4: September 20, 2023
 
+### Your questions
+
+![](https://r4ds.hadley.nz/diagrams/data-science/transform.png)
+
+----
+
+**How to filter multiple rows from a column?**
+
+It all depends on the tests or conditions you pass to `filter()`. Review
+the reading [on the filter
+function](https://r4ds.hadley.nz/data-transform#filter) or check out
+this optional section of R for Data Science on [boolean operations with
+strings](https://r4ds.hadley.nz/regexps#sec-boolean-operations).
+
+----
+
+**How do you set `{tidyselect}` helpers to be case *insensitive*?**
+
+[Check out the
+documentation](https://tidyselect.r-lib.org/reference/starts_with.html)!
+Look for the `ignore.case` parameter.
+
+----
+
+"I would love to run through the code for this bar graph in class, since
+I don't totally understand what thought process to use to come up with
+it."
+
+```{r}
+flights |> 
+  mutate(
+    hour_factor = factor(hour),
+    arr_delay_flag = arr_delay > 5 | !is.na(arr_delay)
+  ) |> 
+  ggplot(aes(x = hour_factor, fill = arr_delay_flag)) +
+  geom_bar()
+```
+
+### Interesting things
+
+We all love `filter()`! We also appreciate `distinct(),`
+
+
+----
+
+"I have been working with R for a while now, in classes and for my own
+research. The lecture this week and the exercise really helped me
+understand the application of all the tools to transform data, which was
+super interesting because I often end up doing selections and filters in
+ArcGIS Pro or in a csv."
+
+### Difficult things
+
+**Answering this question:** Which carrier has the worst average delays?
+**Challenge:** can you disentangle the effects of bad airports vs. bad
+carriers? Why/why not?
+
+```{r}
+# flights |> 
+#   replace_na(
+#     replace = list(
+#       arr_delay = 0,
+#       dep_delay = 0
+#     )
+#   ) |> 
+#   summarise(
+#     n_flights = n(),
+#     n_delay_flights = sum(n > dep_delay),
+#     mean_arr_delay = mean(arr_delay),
+#     mean_dep_delay = mean(dep_delay),
+#     mean_total_delay = mean(arr_delay + dep_delay),
+#     .by = carrier
+#   ) |> 
+#   slice_max(order_by = mean_total_delay, n = 10)
+```
+
+```{r}
+flights |> 
+  replace_na(
+    replace = list(
+      arr_delay = 0,
+      dep_delay = 0
+    )
+  ) |> 
+  summarise(
+    mean_arr_delay = mean(arr_delay),
+    mean_dep_delay = mean(dep_delay),
+    mean_total_delay = mean(arr_delay + dep_delay),
+    .by = carrier
+  ) |> 
+  arrange(desc(mean_total_delay))
+```
+
+----
+
 ### What is due by this week
 
-- Complete required readings for [week 4](../weeks/week_04.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}` and `{tidyr}`
+-   Complete required readings for [week 4](../weeks/week_04.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
 
 ### What is coming up for next week
 
-- Complete required readings for [week 5](../weeks/week_05.html)
-- Submit [response to weekly check-in questions](https://forms.gle/PAKvmQX652e5Eois6)
-- Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and `{dplyr}`
+-   Complete required readings for [week 5](../weeks/week_05.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and
+    `{dplyr}` (and a little `{tidyr}`)
+
+# Upcoming Updates
 
 ## Week 5: September 27, 2023
 
@@ -97,11 +150,127 @@ Reminder: questions are *required* as part of the weekly check-in.
 
 # Past Updates
 
-## Week 1: September 6, 2023
+These past updates are in reverse chronological order.
 
-- Welcome!
+## Week 3: September 13, 2023
 
 ### What is due by this week
 
-- Join the Discord chat
+-   Complete required readings for [week 3](../weeks/week_03.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
 
+### What is coming up for next week
+
+-   Complete required readings for [week 4](../weeks/week_04.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
+    and `{tidyr}`
+
+### Before we start this week
+
+-   I want to set up reminders for due dates. How about calendar
+    invites?
+-   I am considering shifting the exercise due date from Monday to
+    Tuesday. What do you think?
+
+### What are you finding interesting
+
+-   Ease and speed of plotting spatial data
+-   Setting colors for plots using `scale_` functions from `{ggplot}`
+-   Customizing plots using `theme_` functions from `{ggplot}`
+-   Similarities and differences between R and Python
+
+### What are you finding difficult
+
+-   `ggploty()` didn't work as expected
+-   The `countries` dataset from `{rnaturalearth}`
+-   When to use the `summarize()` function
+
+### Your questions this week
+
+-   Questions about `{ggplot2}`
+-   Questions about `{dplyr}`
+-   Other questions
+
+#### `{ggplot2}` questions
+
+-   If you make a plot with `ggplot()`, when do you need to specify
+    data? And when can you leave it out?
+-   Why do some `geom_` functions work with some variables and not
+    others?
+-   What is the difference between `{tmap}` and `{ggplot2}`?
+
+#### `{dplyr}` questions
+
+We'll cover both of these questions today:
+
+-   What is `distinct()` actually doing?
+-   How do you use the `.before` and `.after` parameters provided for
+    `mutate()` and `relocate()`?
+
+### Other questions
+
+Check out the Discord for a few answers:
+
+-   Can you use R for machine learning with big data?
+-   How do I access other datasets with the `{rnaturalearth}`?
+
+Please post your questions to the Discord!
+
+### Things to think about
+
+-   What does it mean for data to be part of a knowledge system?
+
+## Week 2: September 6, 2023
+
+### What is due by this week
+
+-   Set up R, RStudio, and GitHub Desktop
+-   Complete required readings for [week 1](../weeks/week_01.html) and
+    [week 2](../weeks/week_02.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Review [instructions to complete
+    exercises](../course-exercises.html) using RStudio and GitHub
+-   Complete [Exercise 1](../exercises/exercise_01.html) on R basics and
+    the structure of `{sf}` objects
+
+### What is coming up for next week
+
+-   Complete required readings for [week 3](../weeks/week_03.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 2](../exercises/exercise_02.html) on `{ggplot2}`
+
+### Before we start this week
+
+-   Do you have access to your GitHub repository? Do you understand how
+    to commit changes?
+-   How can you get the most out of the readings?
+-   How do you customize your settings in RStudio?
+-   Where can you get help if you need it?
+-   What are we doing for the final project?
+
+### Your questions this week
+
+-   Why do some functions require arguments and other functions do not?
+-   What are some of the best ways of sharing reproducible methods?
+-   How do you get data that you create into R?
+-   What is a vector tile? What is the difference between raster and
+    vector tiles?
+-   What does the function `ggplot2::aes()` and the attributes passed to
+    the function really do?
+-   Do you need to re-install your packages every time you start work?
+
+Reminder: questions are *required* as part of the weekly check-in.
+
+## Week 1: September 6, 2023
+
+-   Welcome!
+
+### What is due by this week
+
+-   Join the Discord chat

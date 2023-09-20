@@ -1,5 +1,6 @@
 ---
-title: "Visualizing spatial data with ggplot2"
+title: "Session {{< meta order >}}: Visualizing spatial data with ggplot2"
+order: 2
 date-meta: 2023-09-06
 execute: 
   error: true

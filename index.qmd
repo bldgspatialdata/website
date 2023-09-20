@@ -8,8 +8,8 @@ tbl <- tibble::tribble(
                               ~Week,        ~Date,                                                                            ~Topic,                                      ~Slides,                         ~Exercise,
           "[1](weeks/week_01.html)", "2023-08-30",                    "Getting started with spatial data using sf and the tidyverse",           "[📖](slides/spatial-data.html)", "[📝](exercises/exercise_01.html)",
           "[2](weeks/week_02.html)", "2023-09-06",                                           "Visualizing spatial data with ggplot2",     "[📖](slides/data-visualization.html)", "[📝](exercises/exercise_02.html)",
-          "[3](weeks/week_03.html)", "2023-09-13",                                                    "Transforming data with dplyr",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_03.html)",
-          "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/03_data-transformation.html)", "[📝](exercises/exercise_04.html)",
+          "[3](weeks/week_03.html)", "2023-09-13",                                                    "Transforming data with dplyr",    "[📖](slides/data-transformation.html)", "[📝](exercises/exercise_03.html)",
+          "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/data-transformation.html)", "[📝](exercises/exercise_04.html)",
           "[5](weeks/week_05.html)", "2023-09-27",              "Applying spatial transformations and geometric operations using sf", "[📖](slides/05_spatial-transformation.html)", "[📝](exercises/exercise_05.html)",
           "[6](weeks/week_06.html)", "2023-10-04",                                                "Tidying and joining spatial data",              "[📖](slides/06_tidy-data.html)", "[📝](exercises/exercise_06.html)",
           "[7](weeks/week_07.html)", "2023-10-11",                    "Building functions in R and literate programming with Quarto",            "[📖](slides/07_r-functions.html)", "[📝](exercises/exercise_07.html)",
@@ -44,7 +44,9 @@ tbl |>
   ) |> 
   gt::fmt_url(
     columns = c("Slides", "Exercise"),
-    show_underline = FALSE
+    target = "_self",
+    show_underline = FALSE,
+    
   ) |> 
   gt::sub_missing() |> 
   gt::tab_style(

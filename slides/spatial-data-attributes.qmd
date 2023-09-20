@@ -1,0 +1,491 @@
+---
+title: "Working with spatial data attributes"
+editor: visual
+exec:
+  eval: false
+---
+
+## Setup
+
+Today, we are going to keep using the `{tidyverse}` but we are also going to use the `{sf}` library again:
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+```{r}
+#| eval: false
+pak::pkg_install(c("lwgeom", "tigris"))
+```
+
+------------------------------------------------------------------------
+
+```{r}
+library(lwgeom)
+library(units)
+```
+
+## Getting started
+
+```{r}
+library(tigris)
+options(tigris_use_cache = TRUE)
+```
+
+```{r}
+us_states <- tigris::states()
+
+us_highways <- tigris::primary_roads()
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: false
+compare_sf <- function(x, y, colors = c("orange", "purple")) {
+ggplot() +
+  geom_sf(data = x, color = colors[[1]]) +
+  geom_sf(data = y, color = colors[[2]]) +
+  theme_minimal()
+}
+```
+
+
+## Things to remember about spatial data
+
+Fields vs. Objects
+
+## Things to remember about `sf` and `sfc` objects
+
+A `sf` object is a data frame with a `sfc` list-column.
+
+```{r}
+us_states$geometry
+```
+
+## Things to remember about `sf` and `sfc` objects
+
+-   a `sf` object is a data frame with a `sfc` list-column
+-   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+
+------------------------------------------------------------------------
+
+```{r}
+attributes(us_states)
+```
+
+## Things to remember about `sf` and `sfc` objects
+
+-   a `sf` object is a data frame with a `sfc` list-column
+-   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+-   `sf` and `sfc` objects use a coordinate reference system
+
+------------------------------------------------------------------------
+
+```{r}
+st_crs(us_states)
+
+st_crs(us_states$geometry)
+```
+
+## Things to remember about `sf` and `sfc` objects
+
+-   a `sf` object is a data frame with a `sfc` list-column
+-   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+-   `sf` and `sfc` objects use a coordinate reference system
+-   working with `sf` objects is *slower* than working with data frames---so drop the geometry if you don't need it
+
+------------------------------------------------------------------------
+
+```{r}
+st_drop_geometry(us_states)
+```
+
+## Things to remember about coordinate reference systems
+
+-   objects *must* share the same coordinate reference system if you are using them together
+-   coordinate reference systems are stored as attributes for `sfc` and `sf` objects (`sfg` objects don't have a CRS)
+-   coordinate reference systems have *units*
+-   geographic and projected coordinate reference systems are *not* the same
+-   coordinate reference systems can be missing and they can be wrong
+
+------------------------------------------------------------------------
+
+```{r}
+#| eval: false
+# bad: assigning a CRS that doesn't match the geometry
+st_crs(us_states) <- 3857
+
+# good: using st_transform to convert the geometry to a new CRS
+st_transform(us_states, crs = 3857)
+```
+
+------------------------------------------------------------------------
+
+Get the objects into the same CRS before we continue: 
+
+```{r}
+us_states <- st_transform(us_states, crs = 3857)
+
+us_highways <- st_transform(us_highways, crs = 3857)
+```
+
+## Things to think about
+
+-   `sf` objects are *not* the only way to represent spatial data in R
+
+-   If you are working with more than one `sf` or `sfc`, the objects must use the *same* coordinate reference system to use them together.
+
+```{r}
+# state
+```
+
+## What is an "attribute" in GIS?
+
+Within a GIS desktop application, an **attribute** may be known as a **field**.
+
+https://support.esri.com/en-us/gis-dictionary/attribute
+
+-   \[data models\] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.
+-   \[data models\] In raster datasets, information associated with each unique value of a raster cell.
+-   \[graphics (map display)\] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling.
+
+## What is an "attribute" in R?
+
+When we talk about tidy data frames, an attribute is equivalent to a **variable** which is represented as a **column** in a data frame.
+
+----
+
+**But!** Feature geometry is also stored as a column.
+
+A single `sfc` object (or list-column) can contain more than one feature (shapefiles can't do this BTW!) using MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, or GEOMETRYCOLLECTION geometry types.
+
+----
+
+**And!** Objects in R can also have attributes and these are *not* the same thing as attributes for spatial data. Try not to get them mixed up.
+
+## What is an attribute?
+
+So an *attribute* in GIS can also be called a...
+
+-   ...**field** in a desktop GIS application
+-   ...**variable** in tidy data
+-   ...**column** in a data frame
+
+## What types of attributes exist?
+
+Attributes are "properties of features ('things') that do not describe the feature’s geometry".
+
+Attributes can have:
+
+- point support: the value applies to every point, or
+- block support: the value summarises all points in the geometry
+
+----
+
+The relationship between attributes and geometry can be described as:
+
+- constant: the value is valid everywhere in or over the geometry
+- aggregate: the value is associated with the entire geometry
+
+----
+
+What is an example of an attribute with a constant relationship?
+
+```{r}
+glimpse(us_states)
+```
+
+::: notes
+- NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
+- ALAND: No - this is an aggregate value
+- INTPTLAT: No - this is a summary value
+:::
+----
+
+What is an example with an aggregate relationship?
+
+
+```{r}
+glimpse(us_states)
+```
+
+::: notes
+- NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
+- ALAND or AWATER: Yes - this is an aggregate value - if the shape of the state changed, the land area would change
+- INTPTLAT or INTPTLON: Yes - this is a summary value - if the shape of the state changed, the interior latitude/longitude point would change
+
+Illustrates the point: "A typical property of such variables is that associated geometries come for instance from legislation, observation devices or analysis choices, but not intrinsically from the observed variable."
+:::
+
+----
+
+Attributes can be:
+
+- extensive: corresponding to amounts, associated with a physical size (length, area, volume, counts of items)
+- intensive: 
+
+----
+aggregation (upscaling) and disaggregation (downscaling)
+
+## What is an "attribute domain"?
+
+-   \[data structures\] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes.
+
+## What do you do with attributes?
+
+----
+
+## What are we working with?
+
+- Boolean operators or predicates
+- Window or vector functions
+- Summary or analysis functions
+
+## Predicate functions for geometries with `{sf}`
+
+`{sf}` includes "vectorized" logical operators or tests that work with geometry including:
+
+- `st_is()`
+- `st_is_valid()`
+- `st_is_empty()`
+
+```{r}
+st_is(us_states, "POLYGON")
+
+st_is(us_states, "MULTIPOLYGON")
+```
+
+You can use these functions with `filter()` to separate POINT features from POLYGON features:
+
+```{r}
+#| echo: false
+us_states_pt <- st_centroid(us_states)
+us_states_multilinestring <- st_cast(us_states, to = "MULTILINESTRING")
+us_states_mixedtype <- bind_rows(
+  us_states_pt,
+  us_states_multilinestring,
+  us_states
+)
+```
+
+
+```{r}
+maryland <- filter(us_states, NAME == "Maryland")
+
+st_filter(us_highways, maryland)
+```
+
+```{r}
+# compare_sf(
+#   us_highways,
+#   st_filter(us_highways, maryland)
+# )
+```
+
+
+
+```{r}
+st_filter(us_highways, us_states)
+```
+
+
+```{r}
+st_filter(us_states, maryland, .predicate = st_disjoint)
+```
+
+
+## Predicate functions for geometries with `{sf}`
+
+`{sf}` also includes predicate functions for working with multiple logical operators or tests that work with geometry including:
+
+## Using predicate
+
+## Creating new variables with geometry
+
+- Measuring feature geometries
+- Comparing feature geometries
+- Joining data based on feature geometries
+
+```{r}
+maryland <- filter(us_states, NAME == "Maryland")
+```
+
+## Measuring geometries with `{sf}`
+
+
+## Measuring geometries with `{sf}`
+
+`{sf}` includes a few different functions for measuring geometries:
+
+-   `st_area()` (only works with POLYGON and MULTIPOLYGON geometries)
+-   `st_length()` (only wrks with LINESTRING and MULTILINSTRING geometries)
+-   `st_distance()` (requires a pair of objects)
+
+## Measuring geometries with `{sf}`
+
+All of these functions are *vectorized* meaning that they can operate independently on each feature in a `sf` or `sfc` object.
+
+They support both `sf` inputs (data frames) *and* `sfc` inputs (lists)---but they always return a vector:
+
+```{r}
+st_area(maryland)
+
+st_area(maryland$geometry)
+```
+
+## Measuring geometries with `{sf}`
+
+But, remember, `dplyr::mutate()` is designed to work with vectorized functions so you can do us a measurement function inside `mutate()`:
+
+```{r}
+maryland |> 
+  mutate(
+    area = st_area(geometry)
+  )
+```
+
+## Measuring geometries with `{sf}`
+
+You can even work with multiple geometries using this same approach:
+
+```{r}
+us_states |> 
+  mutate(
+    area = st_area(geometry),
+    distance_to_maryland = st_distance(geometry, maryland)
+  )
+```
+
+This works to aggregate features by division:
+
+```{r}
+us_states |> 
+  group_by(DIVISION) |> 
+  summarise(
+    n_states = n_distinct(NAME)
+  ) 
+```
+
+------------------------------------------------------------------------
+
+```{r}
+us_states |> 
+  group_by(DIVISION) |> 
+  summarise(
+    n_states = n_distinct(NAME)
+  ) |> 
+  ggplot() +
+  geom_sf(aes(fill = DIVISION)) +
+  theme_minimal()
+```
+
+------------------------------------------------------------------------
+
+This doesn't entirely work (yet):
+
+```{r}
+us_states |> 
+  group_by(DIVISION) |> 
+  summarise(
+    n_states = n_distinct(NAME)#,
+    # .by = DIVISION
+  )
+```
+
+------------------------------------------------------------------------
+
+But *this* (explicitly unioning the geometry) does work:
+
+```{r}
+us_states |> 
+  summarise(
+    n_states = n_distinct(NAME),
+    geometry = st_union(geometry),
+    .by = DIVISION
+  )
+```
+
+------------------------------------------------------------------------
+
+```{r}
+us_states |> 
+  group_by(DIVISION) |> 
+  summarise(
+    n_states = n_distinct(NAME),
+    geometry = st_union(geometry),
+    .by = DIVISION
+  ) |> 
+  st_as_sf() |> 
+  ggplot() +
+  geom_sf(aes(fill = DIVISION)) +
+  theme_minimal()
+```
+
+## Measuring geometries with `{sf}`
+
+Not all functions work with all geometry types!
+
+-   `st_area()` only works with POLYGON and MULTIPOLYGON geometries
+-   `st_length()` only wrks with LINESTRING and MULTILINSTRING geometries
+
+## Measuring geometries with `{sf}`
+
+Not all functions always return a vector. Try
+
+```{r}
+
+```
+
+-   `st_distance()` requires at least two objects
+
+## Measuring geometries with `{lwgeom}` and `{geosphere}`
+
+-   `lwgeom::st_perimeter()`
+-   `geosphere::bearing()`
+
+------------------------------------------------------------------------
+
+```{r}
+us_states |> 
+  group_by(DIVISION) |> 
+  summarise(
+    n_states = n_distinct(NAME)
+  )
+```
+
+------------------------------------------------------------------------
+
+```{r}
+
+```
+
+
+## Compute geometric measurements
+
+`{sf}` works well with the `{tidyverse}`---but there are some things to know.
+
+------------------------------------------------------------------------
+
+Your geometry column sticks around, even if you don't select it
+
+-   
+
+If you lose your sf class, but you still have your geometry, convert from a data frame to a sf object with `st_as_sf()`
+
+```{r}
+us_states |> 
+  mutate(
+    area = st_area(geometry)
+  )
+```
+
+neighborhoods \|\> distinct(type, .keep_all = TRUE) \|\> class() mapview::mapview()
+
+
+## More things to remember
+
+-   "attributes" in GIS and attributes in R are *different* things.
+-   Outside of today's lecture, I will typically talk about variables or columns—but not attributes.
+
