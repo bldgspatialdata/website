@@ -328,17 +328,17 @@ Remember, this format of calling functions (`<package name>::<function name>`) i
 There are some cases when you need to modify the geometry of your data as part of the process of making a map. The `st_simplify()` function is one way to do that. Try setting dTolerance to a low value, e.g. `dTolerance = 10`, and run the code block. Then try to run it again with `dTolerance = 100000`.
 
 ```{r}
-usa <- filter(countries, name == "United States of America")
+usa <- filter(countries, NAME == "United States of America")
 
 simple_usa <- st_simplify(x = usa, dTolerance = ____)
 
 ggplot() +
   geom_sf(
-    data = data,
+    data = usa,
     color = "orange"
     ) +
   geom_sf(
-    data = simple_data,
+    data = simple_usa,
     color = "purple"
   ) +
   theme_void()
