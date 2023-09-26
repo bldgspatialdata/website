@@ -347,7 +347,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
@@ -390,11 +393,31 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="agenda" class="level3">
+<h3 class="anchored" data-anchor-id="agenda">Agenda</h3>
+<ul>
+<li>Weekly 5 Updates and Questions</li>
+<li>Complete discussion on working with attribute data (continued from week 4)</li>
+<li>Introduction to spatial, geometry, and geometric operations in <code>{sf}</code></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Using geometry operations for buffering or simplifying features</li>
 <li>Using geometric operations like union, intersection, and difference</li>
 <li>Using related functions including spatial joins and filters</li>
 </ul>
+</div>
+</div>
+</section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
@@ -402,7 +425,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
 <li><a href="https://geocompr.robinlovelace.net/spatial-operations.html">Ch. 4 Spatial data operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd (WIP)., 2022, <a href="https://geocompr.robinlovelace.net/" role="doc-biblioref">https://geocompr.robinlovelace.net/</a>.</span></li>
-<li><a href="https://geocompr.robinlovelace.net/geometric-operations.html">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Lovelace, Nowosad, and Muenchow <em>Geocomputation with <span>R</span></em>.</span></li>
+<li><a href="https://r.geocompx.org/geometry-operations">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Lovelace, Nowosad, and Muenchow <em>Geocomputation with <span>R</span></em>.</span></li>
 </ul>
 </section>
 <section id="optional-readings" class="level3">

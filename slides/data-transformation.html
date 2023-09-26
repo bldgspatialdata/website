@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.339">
 
-  <meta name="dcterms.date" content="2023-09-13">
+  <meta name="dcterms.date" content="2023-09-20">
   <title>GES 668 - Fall 2023 - Session 3: Transforming data with {dplyr} and {tidyr}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -399,7 +399,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-09-13</p>
+  <p class="date">2023-09-20</p>
 </section>
 <section class="slide level4">
 
@@ -482,162 +482,43 @@
 <p>Select the variables to <em>keep</em>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">select</span>(storms, name, lat, long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 3
-   name    lat  long
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 Amy    27.5 -79  
- 2 Amy    28.5 -79  
- 3 Amy    29.5 -79  
- 4 Amy    30.5 -79  
- 5 Amy    31.5 -78.8
- 6 Amy    32.4 -78.7
- 7 Amy    33.3 -78  
- 8 Amy    34   -77  
- 9 Amy    34.4 -75.8
-10 Amy    34   -74.8
-# ℹ 19,056 more rows</code></pre>
-</div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Select the variables to <em>drop</em> using <code>-</code> or <code>!</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">select</span>(storms, <span class="sc">!</span>name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 12
-    year month   day  hour   lat  long status            category  wind pressure
-   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;                &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1  1975     6    27     0  27.5 -79   tropical depress…       NA    25     1013
- 2  1975     6    27     6  28.5 -79   tropical depress…       NA    25     1013
- 3  1975     6    27    12  29.5 -79   tropical depress…       NA    25     1013
- 4  1975     6    27    18  30.5 -79   tropical depress…       NA    25     1013
- 5  1975     6    28     0  31.5 -78.8 tropical depress…       NA    25     1012
- 6  1975     6    28     6  32.4 -78.7 tropical depress…       NA    25     1012
- 7  1975     6    28    12  33.3 -78   tropical depress…       NA    25     1011
- 8  1975     6    28    18  34   -77   tropical depress…       NA    30     1006
- 9  1975     6    29     0  34.4 -75.8 tropical storm          NA    35     1004
-10  1975     6    29     6  34   -74.8 tropical storm          NA    40     1002
-# ℹ 19,056 more rows
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">select</span>(storms, <span class="sc">!</span>name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Select a range of variables to keep using <code>:</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">select</span>(storms, year<span class="sc">:</span>hour)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 4
-    year month   day  hour
-   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
- 1  1975     6    27     0
- 2  1975     6    27     6
- 3  1975     6    27    12
- 4  1975     6    27    18
- 5  1975     6    28     0
- 6  1975     6    28     6
- 7  1975     6    28    12
- 8  1975     6    28    18
- 9  1975     6    29     0
-10  1975     6    29     6
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">select</span>(storms, year<span class="sc">:</span>hour)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Use helper functions from <code>{tidyselect}</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">select</span>(storms, <span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"latitude"</span>, <span class="st">"y"</span>, <span class="st">"lon"</span>, <span class="st">"long"</span>, <span class="st">"longitude"</span>, <span class="st">"x"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 2
-     lat  long
-   &lt;dbl&gt; &lt;dbl&gt;
- 1  27.5 -79  
- 2  28.5 -79  
- 3  29.5 -79  
- 4  30.5 -79  
- 5  31.5 -78.8
- 6  32.4 -78.7
- 7  33.3 -78  
- 8  34   -77  
- 9  34.4 -75.8
-10  34   -74.8
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">select</span>(storms, <span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"latitude"</span>, <span class="st">"y"</span>, <span class="st">"lon"</span>, <span class="st">"long"</span>, <span class="st">"longitude"</span>, <span class="st">"x"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>select works with unquoted and quoted inputs:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">select</span>(storms, wind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 1
-    wind
-   &lt;int&gt;
- 1    25
- 2    25
- 3    25
- 4    25
- 5    25
- 6    25
- 7    25
- 8    30
- 9    35
-10    40
-# ℹ 19,056 more rows</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">select</span>(storms, <span class="st">"wind"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 1
-    wind
-   &lt;int&gt;
- 1    25
- 2    25
- 3    25
- 4    25
- 5    25
- 6    25
- 7    25
- 8    30
- 9    35
-10    40
-# ℹ 19,056 more rows</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">select</span>(storms, <span class="fu">all_of</span>(<span class="st">"wind"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 1
-    wind
-   &lt;int&gt;
- 1    25
- 2    25
- 3    25
- 4    25
- 5    25
- 6    25
- 7    25
- 8    30
- 9    35
-10    40
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">select</span>(storms, wind)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">select</span>(storms, <span class="st">"wind"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">select</span>(storms, <span class="fu">all_of</span>(<span class="st">"wind"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>select doesn’t work if you use the wrong variable names:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">select</span>(storms, wnd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `select()`:
-! Can't subset columns that don't exist.
-✖ Column `wnd` doesn't exist.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">select</span>(storms, wnd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -652,69 +533,21 @@
 
 <p>OK. Here is one answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">select</span>(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 4
-    wind pressure tropicalstorm_force_diameter hurricane_force_diameter
-   &lt;int&gt;    &lt;int&gt;                        &lt;int&gt;                    &lt;int&gt;
- 1    25     1013                           NA                       NA
- 2    25     1013                           NA                       NA
- 3    25     1013                           NA                       NA
- 4    25     1013                           NA                       NA
- 5    25     1012                           NA                       NA
- 6    25     1012                           NA                       NA
- 7    25     1011                           NA                       NA
- 8    30     1006                           NA                       NA
- 9    35     1004                           NA                       NA
-10    40     1002                           NA                       NA
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">select</span>(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Here is another answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">select</span>(storms, wind<span class="sc">:</span>hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 4
-    wind pressure tropicalstorm_force_diameter hurricane_force_diameter
-   &lt;int&gt;    &lt;int&gt;                        &lt;int&gt;                    &lt;int&gt;
- 1    25     1013                           NA                       NA
- 2    25     1013                           NA                       NA
- 3    25     1013                           NA                       NA
- 4    25     1013                           NA                       NA
- 5    25     1012                           NA                       NA
- 6    25     1012                           NA                       NA
- 7    25     1011                           NA                       NA
- 8    30     1006                           NA                       NA
- 9    35     1004                           NA                       NA
-10    40     1002                           NA                       NA
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">select</span>(storms, wind<span class="sc">:</span>hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>And here is yet another answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">select</span>(storms, wind, pressure, <span class="fu">ends_with</span>(<span class="st">"diameter"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 4
-    wind pressure tropicalstorm_force_diameter hurricane_force_diameter
-   &lt;int&gt;    &lt;int&gt;                        &lt;int&gt;                    &lt;int&gt;
- 1    25     1013                           NA                       NA
- 2    25     1013                           NA                       NA
- 3    25     1013                           NA                       NA
- 4    25     1013                           NA                       NA
- 5    25     1012                           NA                       NA
- 6    25     1012                           NA                       NA
- 7    25     1011                           NA                       NA
- 8    30     1006                           NA                       NA
- 9    35     1004                           NA                       NA
-10    40     1002                           NA                       NA
-# ℹ 19,056 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">select</span>(storms, wind, pressure, <span class="fu">ends_with</span>(<span class="st">"diameter"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -730,132 +563,49 @@
 
 <p>Use a logical condition to get rows that return <code>TRUE</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">filter</span>(storms, wind <span class="sc">&gt;=</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8,118 × 13
-   name   year month   day  hour   lat  long status      category  wind pressure
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    29    18  33.8 -72.8 tropical s…       NA    50      998
- 2 Amy    1975     6    30     0  34.3 -71.6 tropical s…       NA    50      998
- 3 Amy    1975     6    30     6  35.6 -70.8 tropical s…       NA    55      998
- 4 Amy    1975     6    30    12  35.9 -70.5 tropical s…       NA    60      987
- 5 Amy    1975     6    30    18  36.2 -70.2 tropical s…       NA    60      987
- 6 Amy    1975     7     1     0  36.2 -69.8 tropical s…       NA    60      984
- 7 Amy    1975     7     1     6  36.2 -69.4 tropical s…       NA    60      984
- 8 Amy    1975     7     1    12  36.2 -68.3 tropical s…       NA    60      984
- 9 Amy    1975     7     1    18  36.7 -67.2 tropical s…       NA    60      984
-10 Amy    1975     7     2     0  37.4 -66.7 tropical s…       NA    60      984
-# ℹ 8,108 more rows
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">filter</span>(storms, wind <span class="sc">&gt;=</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="use-logical-and-and-boolean-operators-to-make-conditions" class="title-slide slide level3 center">
 <h3>Use logical and and boolean operators to make conditions</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="dv">2</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="dv">2</span> <span class="sc">&gt;=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">is.na</span>(<span class="cn">NA_integer_</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">2</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">1</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="dv">2</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="dv">2</span> <span class="sc">&gt;=</span> <span class="dv">2</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">is.na</span>(<span class="cn">NA_integer_</span>)</span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="dv">1</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Multiple tests separated by commas are combined so the returned rows pass <em>all</em> tests:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">filter</span>(storms, month <span class="sc">==</span> <span class="dv">9</span>, day <span class="sc">==</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 254 × 13
-   name      year month   day  hour   lat  long status   category  wind pressure
-   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Eloise    1975     9    13    12  17.6 -55.2 tropica…       NA    25     1009
- 2 Eloise    1975     9    13    18  17.7 -56.3 tropica…       NA    25     1009
- 3 Flossie   1978     9    13     0  31.8 -42.9 hurrica…        2    85      976
- 4 Flossie   1978     9    13    18  33.6 -43.1 hurrica…        1    75      985
- 5 Hope      1978     9    13     0  31.1 -76.5 subtrop…       NA    25     1010
- 6 Hope      1978     9    13    12  31.8 -74.2 subtrop…       NA    25     1009
- 7 Frederic  1979     9    13     0  29.7 -88   hurrica…        4   115      946
- 8 Frederic  1979     9    13     6  30.8 -88.5 hurrica…        2    95      955
- 9 Frederic  1979     9    13    12  32.2 -88.7 hurrica…        1    65      975
-10 Frederic  1979     9    13    18  34   -88   tropica…       NA    45      985
-# ℹ 244 more rows
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">filter</span>(storms, month <span class="sc">==</span> <span class="dv">9</span>, day <span class="sc">==</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>You <em>can</em> combine tests with a logical “OR” operator (<code>|</code>):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">filter</span>(</span>
-<span id="cb46-2"><a href="#cb46-2"></a>  storms,</span>
-<span id="cb46-3"><a href="#cb46-3"></a>  name <span class="sc">==</span> <span class="st">"Eloise"</span> <span class="sc">|</span> name <span class="sc">==</span> <span class="st">"Evelyn"</span>,</span>
-<span id="cb46-4"><a href="#cb46-4"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 13
-  name    year month   day  hour   lat  long status      category  wind pressure
-  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
-1 Eloise  1975     9    13    12  17.6 -55.2 tropical d…       NA    25     1009
-2 Eloise  1975     9    13    18  17.7 -56.3 tropical d…       NA    25     1009
-3 Evelyn  1977    10    13    18  26.9 -62.9 tropical d…       NA    30     1010
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">filter</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  storms,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  name <span class="sc">==</span> <span class="st">"Eloise"</span> <span class="sc">|</span> name <span class="sc">==</span> <span class="st">"Evelyn"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>But it may be easier to use write the condition using a different operator:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">filter</span>(</span>
-<span id="cb48-2"><a href="#cb48-2"></a>  storms, name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Eloise"</span>, <span class="st">"Evelyn"</span>),</span>
-<span id="cb48-3"><a href="#cb48-3"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
-<span id="cb48-4"><a href="#cb48-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 13
-  name    year month   day  hour   lat  long status      category  wind pressure
-  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
-1 Eloise  1975     9    13    12  17.6 -55.2 tropical d…       NA    25     1009
-2 Eloise  1975     9    13    18  17.7 -56.3 tropical d…       NA    25     1009
-3 Evelyn  1977    10    13    18  26.9 -62.9 tropical d…       NA    30     1010
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">filter</span>(</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  storms, name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Eloise"</span>, <span class="st">"Evelyn"</span>),</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -876,29 +626,11 @@
 
 <p>OK, here is an answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">filter</span>(</span>
-<span id="cb50-2"><a href="#cb50-2"></a>  storms,</span>
-<span id="cb50-3"><a href="#cb50-3"></a>  hurricane_force_diameter <span class="sc">&gt;=</span> <span class="dv">115</span>,</span>
-<span id="cb50-4"><a href="#cb50-4"></a>  tropicalstorm_force_diameter <span class="sc">&gt;=</span> <span class="dv">240</span></span>
-<span id="cb50-5"><a href="#cb50-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 298 × 13
-   name     year month   day  hour   lat  long status    category  wind pressure
-   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;        &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Frances  2004     9     1     6  21   -67.9 hurricane        4   120      939
- 2 Frances  2004     9     1    12  21.4 -69.1 hurricane        4   120      937
- 3 Frances  2004     9     1    18  21.8 -70.4 hurricane        4   120      941
- 4 Frances  2004     9     2     0  22.2 -71.4 hurricane        4   120      939
- 5 Frances  2004     9     2     6  22.7 -72.5 hurricane        4   125      937
- 6 Frances  2004     9     2    12  23.2 -73.5 hurricane        4   120      939
- 7 Frances  2004     9     2    18  23.8 -74.3 hurricane        4   115      948
- 8 Frances  2004     9     3     0  24.2 -75   hurricane        3   105      948
- 9 Frances  2004     9     3     6  24.7 -75.7 hurricane        3   100      954
-10 Frances  2004     9     3    12  25.3 -76.3 hurricane        2    95      958
-# ℹ 288 more rows
-# ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">filter</span>(</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  storms,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  hurricane_force_diameter <span class="sc">&gt;=</span> <span class="dv">115</span>,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  tropicalstorm_force_diameter <span class="sc">&gt;=</span> <span class="dv">240</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -911,50 +643,14 @@
 
 <p>Use a function to add a new column based on existing variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 14
-   name   year month   day  hour   lat  long status      category  wind pressure
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013
- 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013
- 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013
- 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013
- 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012
- 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012
- 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011
- 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006
- 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004
-10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002
-# ℹ 19,056 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, ratio &lt;dbl&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p><code>mutate()</code> also has a <code>.before</code> or <code>.after</code> parameter allowing you to add the new variables before or after a selected variable or range of variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind, <span class="at">.before =</span> <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 14
-   ratio name   year month   day  hour   lat  long status         category  wind
-   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;             &lt;dbl&gt; &lt;int&gt;
- 1  40.5 Amy    1975     6    27     0  27.5 -79   tropical depr…       NA    25
- 2  40.5 Amy    1975     6    27     6  28.5 -79   tropical depr…       NA    25
- 3  40.5 Amy    1975     6    27    12  29.5 -79   tropical depr…       NA    25
- 4  40.5 Amy    1975     6    27    18  30.5 -79   tropical depr…       NA    25
- 5  40.5 Amy    1975     6    28     0  31.5 -78.8 tropical depr…       NA    25
- 6  40.5 Amy    1975     6    28     6  32.4 -78.7 tropical depr…       NA    25
- 7  40.4 Amy    1975     6    28    12  33.3 -78   tropical depr…       NA    25
- 8  33.5 Amy    1975     6    28    18  34   -77   tropical depr…       NA    30
- 9  28.7 Amy    1975     6    29     0  34.4 -75.8 tropical storm       NA    35
-10  25.0 Amy    1975     6    29     6  34   -74.8 tropical storm       NA    40
-# ℹ 19,056 more rows
-# ℹ 3 more variables: pressure &lt;int&gt;, tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind, <span class="at">.before =</span> <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -962,28 +658,10 @@
 <p>Window functions (also known as vectorized functions) are a group of functions that you can use with <code>{dplyr}</code>.</p>
 <p>For example, <code>lag()</code> returns the previous value for a variable (effectively assumes the variable the observations are arranged in a meaningful order):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb56-2"><a href="#cb56-2"></a>  storms,</span>
-<span id="cb56-3"><a href="#cb56-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status)</span>
-<span id="cb56-4"><a href="#cb56-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 14
-   name   year month   day  hour   lat  long status      category  wind pressure
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013
- 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013
- 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013
- 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013
- 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012
- 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012
- 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011
- 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006
- 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004
-10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002
-# ℹ 19,056 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, lag_status &lt;fct&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  storms,</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status)</span>
+<span id="cb19-4"><a href="#cb19-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -994,29 +672,11 @@
 
 <p>In this case, the <code>lag()</code> function needs to be applied to a grouped data frame or it may return a value from a different storm and different year:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb58-2"><a href="#cb58-2"></a>  storms,</span>
-<span id="cb58-3"><a href="#cb58-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status),</span>
-<span id="cb58-4"><a href="#cb58-4"></a>  <span class="at">.by =</span> <span class="fu">c</span>(year, name)</span>
-<span id="cb58-5"><a href="#cb58-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 14
-   name   year month   day  hour   lat  long status      category  wind pressure
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013
- 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013
- 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013
- 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013
- 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012
- 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012
- 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011
- 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006
- 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004
-10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002
-# ℹ 19,056 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, lag_status &lt;fct&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  storms,</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status),</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="at">.by =</span> <span class="fu">c</span>(year, name)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="types-of-vectorized-functions-to-use-with-mutate" class="title-slide slide level3 center">
@@ -1034,42 +694,24 @@
 <p><code>case_when()</code> is an especially useful vector function with varied applications.</p>
 <p>For example, we can use it to create new categorical variables based on continuous variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb60-2"><a href="#cb60-2"></a>  storms,</span>
-<span id="cb60-3"><a href="#cb60-3"></a>  <span class="at">beaufort_desc =</span> <span class="fu">case_when</span>(</span>
-<span id="cb60-4"><a href="#cb60-4"></a>    wind <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Calm"</span>,</span>
-<span id="cb60-5"><a href="#cb60-5"></a>    wind <span class="sc">&lt;</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Light Air"</span>,</span>
-<span id="cb60-6"><a href="#cb60-6"></a>    wind <span class="sc">&lt;</span> <span class="dv">8</span> <span class="sc">~</span> <span class="st">"Light Breeze"</span>,</span>
-<span id="cb60-7"><a href="#cb60-7"></a>    wind <span class="sc">&lt;</span> <span class="dv">13</span> <span class="sc">~</span> <span class="st">"Gentle Breeze"</span>,</span>
-<span id="cb60-8"><a href="#cb60-8"></a>    wind <span class="sc">&lt;</span> <span class="dv">19</span> <span class="sc">~</span> <span class="st">"Moderate Breeze"</span>,</span>
-<span id="cb60-9"><a href="#cb60-9"></a>    wind <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Fresh Breze"</span>,</span>
-<span id="cb60-10"><a href="#cb60-10"></a>    wind <span class="sc">&lt;</span> <span class="dv">32</span> <span class="sc">~</span> <span class="st">"Strong Breeze"</span>,</span>
-<span id="cb60-11"><a href="#cb60-11"></a>    wind <span class="sc">&lt;</span> <span class="dv">39</span> <span class="sc">~</span> <span class="st">"Near Gale"</span>,</span>
-<span id="cb60-12"><a href="#cb60-12"></a>    wind <span class="sc">&lt;</span> <span class="dv">47</span> <span class="sc">~</span> <span class="st">"Gale"</span>,</span>
-<span id="cb60-13"><a href="#cb60-13"></a>    wind <span class="sc">&lt;</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"Strong Gale"</span>,</span>
-<span id="cb60-14"><a href="#cb60-14"></a>    wind <span class="sc">&lt;</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">"Whole Gale"</span>,</span>
-<span id="cb60-15"><a href="#cb60-15"></a>    wind <span class="sc">&lt;</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Storm Force"</span>,</span>
-<span id="cb60-16"><a href="#cb60-16"></a>    <span class="at">.default =</span> <span class="st">"Hurricane Force"</span></span>
-<span id="cb60-17"><a href="#cb60-17"></a>  )</span>
-<span id="cb60-18"><a href="#cb60-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,066 × 14
-   name   year month   day  hour   lat  long status      category  wind pressure
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    27     0  27.5 -79   tropical d…       NA    25     1013
- 2 Amy    1975     6    27     6  28.5 -79   tropical d…       NA    25     1013
- 3 Amy    1975     6    27    12  29.5 -79   tropical d…       NA    25     1013
- 4 Amy    1975     6    27    18  30.5 -79   tropical d…       NA    25     1013
- 5 Amy    1975     6    28     0  31.5 -78.8 tropical d…       NA    25     1012
- 6 Amy    1975     6    28     6  32.4 -78.7 tropical d…       NA    25     1012
- 7 Amy    1975     6    28    12  33.3 -78   tropical d…       NA    25     1011
- 8 Amy    1975     6    28    18  34   -77   tropical d…       NA    30     1006
- 9 Amy    1975     6    29     0  34.4 -75.8 tropical s…       NA    35     1004
-10 Amy    1975     6    29     6  34   -74.8 tropical s…       NA    40     1002
-# ℹ 19,056 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, beaufort_desc &lt;chr&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  storms,</span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="at">beaufort_desc =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-4"><a href="#cb21-4"></a>    wind <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Calm"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5"></a>    wind <span class="sc">&lt;</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Light Air"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6"></a>    wind <span class="sc">&lt;</span> <span class="dv">8</span> <span class="sc">~</span> <span class="st">"Light Breeze"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    wind <span class="sc">&lt;</span> <span class="dv">13</span> <span class="sc">~</span> <span class="st">"Gentle Breeze"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8"></a>    wind <span class="sc">&lt;</span> <span class="dv">19</span> <span class="sc">~</span> <span class="st">"Moderate Breeze"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    wind <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Fresh Breze"</span>,</span>
+<span id="cb21-10"><a href="#cb21-10"></a>    wind <span class="sc">&lt;</span> <span class="dv">32</span> <span class="sc">~</span> <span class="st">"Strong Breeze"</span>,</span>
+<span id="cb21-11"><a href="#cb21-11"></a>    wind <span class="sc">&lt;</span> <span class="dv">39</span> <span class="sc">~</span> <span class="st">"Near Gale"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12"></a>    wind <span class="sc">&lt;</span> <span class="dv">47</span> <span class="sc">~</span> <span class="st">"Gale"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13"></a>    wind <span class="sc">&lt;</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"Strong Gale"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14"></a>    wind <span class="sc">&lt;</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">"Whole Gale"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15"></a>    wind <span class="sc">&lt;</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Storm Force"</span>,</span>
+<span id="cb21-16"><a href="#cb21-16"></a>    <span class="at">.default =</span> <span class="st">"Hurricane Force"</span></span>
+<span id="cb21-17"><a href="#cb21-17"></a>  )</span>
+<span id="cb21-18"><a href="#cb21-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -1095,19 +737,13 @@
 
 <p><code>summarise()</code> works well with “summary” or analysis functions that take a vector and return a single value:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb62-2"><a href="#cb62-2"></a>  storms,</span>
-<span id="cb62-3"><a href="#cb62-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb62-4"><a href="#cb62-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb62-5"><a href="#cb62-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb62-6"><a href="#cb62-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
-<span id="cb62-7"><a href="#cb62-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 4
-  n_names max_category mean_lat mean_long
-    &lt;int&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1     258            5     27.0     -61.5</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">summarise</span>(</span>
+<span id="cb22-2"><a href="#cb22-2"></a>  storms,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb22-4"><a href="#cb22-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
+<span id="cb22-7"><a href="#cb22-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="types-of-analysis-functions-to-use-with-summarize" class="title-slide slide level3 center">
@@ -1125,91 +761,46 @@
 
 <p>Most often you will want to use <code>summarise()</code> in combination with <code>group_by()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb64-2"><a href="#cb64-2"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb64-3"><a href="#cb64-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb64-4"><a href="#cb64-4"></a>    <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb64-5"><a href="#cb64-5"></a>    <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb64-6"><a href="#cb64-6"></a>    <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb64-7"><a href="#cb64-7"></a>    <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
-<span id="cb64-8"><a href="#cb64-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 47 × 5
-    year n_names max_category mean_lat mean_long
-   &lt;dbl&gt;   &lt;int&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
- 1  1975       8            4     28.3     -67.0
- 2  1976       7            3     29.9     -57.9
- 3  1977       6            5     31.0     -75.9
- 4  1978      11            4     26.6     -65.5
- 5  1979       8            5     24.2     -70.5
- 6  1980      11            5     26.6     -56.1
- 7  1981      11            4     28.3     -58.5
- 8  1982       5            4     26.5     -63.2
- 9  1983       4            3     31.1     -79.8
-10  1984      12            4     28.6     -60.9
-# ℹ 37 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb23-4"><a href="#cb23-4"></a>    <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
+<span id="cb23-8"><a href="#cb23-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>You can also use the <code>.by</code> parameter to define the groups for <code>summarise()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb66-2"><a href="#cb66-2"></a>  storms,</span>
-<span id="cb66-3"><a href="#cb66-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb66-4"><a href="#cb66-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb66-5"><a href="#cb66-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb66-6"><a href="#cb66-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long),</span>
-<span id="cb66-7"><a href="#cb66-7"></a>  <span class="at">.by =</span> year</span>
-<span id="cb66-8"><a href="#cb66-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 47 × 5
-    year n_names max_category mean_lat mean_long
-   &lt;dbl&gt;   &lt;int&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
- 1  1975       8            4     28.3     -67.0
- 2  1976       7            3     29.9     -57.9
- 3  1977       6            5     31.0     -75.9
- 4  1978      11            4     26.6     -65.5
- 5  1979       8            5     24.2     -70.5
- 6  1980      11            5     26.6     -56.1
- 7  1981      11            4     28.3     -58.5
- 8  1982       5            4     26.5     -63.2
- 9  1983       4            3     31.1     -79.8
-10  1984      12            4     28.6     -60.9
-# ℹ 37 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">summarise</span>(</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  storms,</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long),</span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="at">.by =</span> year</span>
+<span id="cb24-8"><a href="#cb24-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p><code>across()</code> is a helper function that you can use in combination with <code>mutate()</code> or <code>summarise()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb68-2"><a href="#cb68-2"></a>  storms,</span>
-<span id="cb68-3"><a href="#cb68-3"></a>  <span class="fu">across</span>(</span>
-<span id="cb68-4"><a href="#cb68-4"></a>    <span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
-<span id="cb68-5"><a href="#cb68-5"></a>    <span class="at">.fns =</span> <span class="fu">list</span>(</span>
-<span id="cb68-6"><a href="#cb68-6"></a>      <span class="at">mean =</span> mean,</span>
-<span id="cb68-7"><a href="#cb68-7"></a>      <span class="at">median =</span> median,</span>
-<span id="cb68-8"><a href="#cb68-8"></a>      <span class="at">min =</span> min,</span>
-<span id="cb68-9"><a href="#cb68-9"></a>      <span class="at">max =</span> max</span>
-<span id="cb68-10"><a href="#cb68-10"></a>      )</span>
-<span id="cb68-11"><a href="#cb68-11"></a>  )</span>
-<span id="cb68-12"><a href="#cb68-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 44
-  year_mean year_median year_min year_max month_mean month_median month_min
-      &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;
-1     2002.        2004     1975     2021       8.70            9         1
-# ℹ 37 more variables: month_max &lt;dbl&gt;, day_mean &lt;dbl&gt;, day_median &lt;dbl&gt;,
-#   day_min &lt;int&gt;, day_max &lt;int&gt;, hour_mean &lt;dbl&gt;, hour_median &lt;dbl&gt;,
-#   hour_min &lt;dbl&gt;, hour_max &lt;dbl&gt;, lat_mean &lt;dbl&gt;, lat_median &lt;dbl&gt;,
-#   lat_min &lt;dbl&gt;, lat_max &lt;dbl&gt;, long_mean &lt;dbl&gt;, long_median &lt;dbl&gt;,
-#   long_min &lt;dbl&gt;, long_max &lt;dbl&gt;, category_mean &lt;dbl&gt;, category_median &lt;dbl&gt;,
-#   category_min &lt;dbl&gt;, category_max &lt;dbl&gt;, wind_mean &lt;dbl&gt;, wind_median &lt;dbl&gt;,
-#   wind_min &lt;int&gt;, wind_max &lt;int&gt;, pressure_mean &lt;dbl&gt;, …</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">summarise</span>(</span>
+<span id="cb25-2"><a href="#cb25-2"></a>  storms,</span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">across</span>(</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="at">.fns =</span> <span class="fu">list</span>(</span>
+<span id="cb25-6"><a href="#cb25-6"></a>      <span class="at">mean =</span> mean,</span>
+<span id="cb25-7"><a href="#cb25-7"></a>      <span class="at">median =</span> median,</span>
+<span id="cb25-8"><a href="#cb25-8"></a>      <span class="at">min =</span> min,</span>
+<span id="cb25-9"><a href="#cb25-9"></a>      <span class="at">max =</span> max</span>
+<span id="cb25-10"><a href="#cb25-10"></a>      )</span>
+<span id="cb25-11"><a href="#cb25-11"></a>  )</span>
+<span id="cb25-12"><a href="#cb25-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -1222,79 +813,33 @@
 <h1><span class="header-section-number">5</span> Using data transformation functions with <code>sf</code> objects</h1>
 <p>First convert storms into a <code>sf</code> object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb70-3"><a href="#cb70-3"></a></span>
-<span id="cb70-4"><a href="#cb70-4"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb70-5"><a href="#cb70-5"></a></span>
-<span id="cb70-6"><a href="#cb70-6"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a></span>
+<span id="cb26-4"><a href="#cb26-4"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb26-5"><a href="#cb26-5"></a></span>
+<span id="cb26-6"><a href="#cb26-6"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(storms_sf, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
-<span id="cb71-2"><a href="#cb71-2"></a>us_states <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(storms_sf, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a>us_states <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="using-filter-with-sf-objects" class="title-slide slide level2 center" data-number="5.1">
 <h2><span class="header-section-number">5.1</span> Using filter with <code>sf</code> objects</h2>
 <p>If you are just working with attributes (variables), <code>sf</code> objects work just like any other data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">filter</span>(</span>
-<span id="cb72-2"><a href="#cb72-2"></a>  storms_sf,</span>
-<span id="cb72-3"><a href="#cb72-3"></a>  wind <span class="sc">&gt;</span> <span class="dv">50</span></span>
-<span id="cb72-4"><a href="#cb72-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 6812 features and 11 fields
-Geometry type: POINT
-Dimension:     XY
-Bounding box:  xmin: -11109690 ymin: 1006021 xmax: 278298.7 ymax: 9349764
-Projected CRS: WGS 84 / Pseudo-Mercator
-# A tibble: 6,812 × 12
-   name   year month   day  hour status         category  wind pressure
- * &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;fct&gt;             &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Amy    1975     6    30     6 tropical storm       NA    55      998
- 2 Amy    1975     6    30    12 tropical storm       NA    60      987
- 3 Amy    1975     6    30    18 tropical storm       NA    60      987
- 4 Amy    1975     7     1     0 tropical storm       NA    60      984
- 5 Amy    1975     7     1     6 tropical storm       NA    60      984
- 6 Amy    1975     7     1    12 tropical storm       NA    60      984
- 7 Amy    1975     7     1    18 tropical storm       NA    60      984
- 8 Amy    1975     7     2     0 tropical storm       NA    60      984
- 9 Amy    1975     7     2     6 tropical storm       NA    60      984
-10 Amy    1975     7     2    12 tropical storm       NA    60      981
-# ℹ 6,802 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, geometry &lt;POINT [m]&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">filter</span>(</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  storms_sf,</span>
+<span id="cb28-3"><a href="#cb28-3"></a>  wind <span class="sc">&gt;</span> <span class="dv">50</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>But, you can use a special set of predicate functions that work with <code>sf</code> objects to return a logical vector that also works with filter:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">filter</span>(</span>
-<span id="cb74-2"><a href="#cb74-2"></a>  storms_sf,</span>
-<span id="cb74-3"><a href="#cb74-3"></a>  <span class="fu">as.logical</span>(<span class="fu">st_intersects</span>(geometry, <span class="fu">st_union</span>(us_states), <span class="at">sparse =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb74-4"><a href="#cb74-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 1561 features and 11 fields
-Geometry type: POINT
-Dimension:     XY
-Bounding box:  xmin: -11877790 ymin: 2002464 xmax: -7191239 ymax: 6024072
-Projected CRS: WGS 84 / Pseudo-Mercator
-# A tibble: 1,561 × 12
-   name    year month   day  hour status              category  wind pressure
- * &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;fct&gt;                  &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
- 1 Eloise  1975     9    23    18 tropical storm            NA    55      982
- 2 Eloise  1975     9    24     0 tropical depression       NA    30      999
- 3 Eloise  1975     9    24     6 extratropical             NA    20     1004
- 4 Eloise  1975     9    24    12 extratropical             NA    20     1004
- 5 Eloise  1975     9    24    18 extratropical             NA    20     1004
- 6 Belle   1976     8    10     6 tropical storm            NA    60      983
- 7 Belle   1976     8    10    12 tropical storm            NA    35      992
- 8 Dottie  1976     8    18    12 tropical depression       NA    20     1009
- 9 Dottie  1976     8    19    18 tropical storm            NA    35     1006
-10 Dottie  1976     8    21     0 tropical storm            NA    35     1005
-# ℹ 1,551 more rows
-# ℹ 3 more variables: tropicalstorm_force_diameter &lt;int&gt;,
-#   hurricane_force_diameter &lt;int&gt;, geometry &lt;POINT [m]&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">filter</span>(</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  storms_sf,</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">as.logical</span>(<span class="fu">st_intersects</span>(geometry, <span class="fu">st_union</span>(us_states), <span class="at">sparse =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb29-4"><a href="#cb29-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -1302,53 +847,33 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <p>By default, <code>st_intersects()</code> returns a matrix with the index for each value of the first parameter that intersects with each value of the second parameter.</p>
 <p>For example, this takes each observation and checks if the POINT geometry intersects with each U.S. state:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="fu">st_intersects</span>(storms_sf, us_states)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sparse geometry binary predicate list of length 19066, where the
-predicate was `intersects'
-first 10 elements:
- 1: (empty)
- 2: (empty)
- 3: (empty)
- 4: (empty)
- 5: (empty)
- 6: (empty)
- 7: (empty)
- 8: (empty)
- 9: (empty)
- 10: (empty)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">dim</span>(<span class="fu">st_intersects</span>(storms_sf, us_states))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 19066    56</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">st_intersects</span>(storms_sf, us_states)</span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">dim</span>(<span class="fu">st_intersects</span>(storms_sf, us_states))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
 <section id="using-mutate-with-sf-objects" class="title-slide slide level2 center" data-number="5.2">
 <h2><span class="header-section-number">5.2</span> Using mutate with <code>sf</code> objects</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>storms_usa <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb80-2"><a href="#cb80-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb80-3"><a href="#cb80-3"></a>    <span class="at">usa_observation =</span> <span class="fu">as.logical</span>(</span>
-<span id="cb80-4"><a href="#cb80-4"></a>      <span class="fu">st_intersects</span>(</span>
-<span id="cb80-5"><a href="#cb80-5"></a>        geometry,</span>
-<span id="cb80-6"><a href="#cb80-6"></a>        <span class="fu">st_union</span>(us_states),</span>
-<span id="cb80-7"><a href="#cb80-7"></a>        <span class="at">sparse =</span> <span class="cn">FALSE</span></span>
-<span id="cb80-8"><a href="#cb80-8"></a>      )</span>
-<span id="cb80-9"><a href="#cb80-9"></a>    )</span>
-<span id="cb80-10"><a href="#cb80-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>storms_usa <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="at">usa_observation =</span> <span class="fu">as.logical</span>(</span>
+<span id="cb31-4"><a href="#cb31-4"></a>      <span class="fu">st_intersects</span>(</span>
+<span id="cb31-5"><a href="#cb31-5"></a>        geometry,</span>
+<span id="cb31-6"><a href="#cb31-6"></a>        <span class="fu">st_union</span>(us_states),</span>
+<span id="cb31-7"><a href="#cb31-7"></a>        <span class="at">sparse =</span> <span class="cn">FALSE</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>      )</span>
+<span id="cb31-9"><a href="#cb31-9"></a>    )</span>
+<span id="cb31-10"><a href="#cb31-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>storms_usa <span class="sc">|&gt;</span></span>
-<span id="cb81-2"><a href="#cb81-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb81-3"><a href="#cb81-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> usa_observation), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(storms_usa): could not find function "ggplot"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>storms_usa <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> usa_observation), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -1356,40 +881,21 @@ first 10 elements:
 <h2><span class="header-section-number">5.3</span> Using summarise with <code>sf</code> objects</h2>
 <p>You can use summarise to combine geometry by grouping variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a>storms_categories <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb83-2"><a href="#cb83-2"></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
-<span id="cb83-3"><a href="#cb83-3"></a>  <span class="fu">summarise</span>()</span>
-<span id="cb83-4"><a href="#cb83-4"></a></span>
-<span id="cb83-5"><a href="#cb83-5"></a>storms_categories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 6 features and 1 field
-Geometry type: MULTIPOINT
-Dimension:     XY
-Bounding box:  xmin: -12167220 ymin: 781182.2 xmax: 1502813 ymax: 11300470
-Projected CRS: WGS 84 / Pseudo-Mercator
-# A tibble: 6 × 2
-  category                                                              geometry
-     &lt;dbl&gt;                                                      &lt;MULTIPOINT [m]&gt;
-1        1 ((-11042893 2644116), (-11020630 3161003), (-10953838 2765598), (-10…
-2        2 ((-10920442 3086040), (-10887046 2790007), (-10875914 2777798), (-10…
-3        3 ((-10887046 2777798), (-10864782 2851199), (-10853650 2765598), (-10…
-4        4 ((-10909310 2716894), (-10797991 2741227), (-10786859 3248974), (-10…
-5        5 ((-10809123 2777798), (-10708935 2826693), (-10619879 2900330), (-10…
-6       NA ((-12167220 2777798), (-12144956 2790007), (-12133824 2753408), (-12…</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>storms_categories <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">summarise</span>()</span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a>storms_categories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a>storms_categories <span class="sc">|&gt;</span></span>
-<span id="cb85-2"><a href="#cb85-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
-<span id="cb85-3"><a href="#cb85-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb85-4"><a href="#cb85-4"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb85-5"><a href="#cb85-5"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(filter(storms_categories, !is.na(category))): could not find function "ggplot"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>storms_categories <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -1397,46 +903,21 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <p>You can also work with the geometry column directly to modify the returned geometry.</p>
 <p>For example, we can use <code>st_combine()</code> to turn the POINT geometry into MULTIPOINT geometry and then use <code>st_cast()</code> to transform the MULTIPOINT geometry into lines:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb87-2"><a href="#cb87-2"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span></span>
-<span id="cb87-3"><a href="#cb87-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb87-4"><a href="#cb87-4"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_combine</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
-<span id="cb87-5"><a href="#cb87-5"></a>  )</span>
-<span id="cb87-6"><a href="#cb87-6"></a></span>
-<span id="cb87-7"><a href="#cb87-7"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 639 features and 2 fields
-Geometry type: LINESTRING
-Dimension:     XY
-Bounding box:  xmin: -12167220 ymin: 781182.2 xmax: 1502813 ymax: 11300470
-Projected CRS: WGS 84 / Pseudo-Mercator
-# A tibble: 639 × 3
-# Groups:   year [47]
-    year name                                                           geometry
-   &lt;dbl&gt; &lt;chr&gt;                                                  &lt;LINESTRING [m]&gt;
- 1  1975 Amy      (-8794240 3186080, -8794240 3312160, -8794240 3439440, -87942…
- 2  1975 Blanche  (-7614253 2999081, -7736705 2999081, -7848024 3011472, -79593…
- 3  1975 Caroline (-7770100 2559618, -7914816 2499523, -8070663 2463568, -82153…
- 4  1975 Doris    (-5154092 3935192, -5287676 3975217, -5354468 4096139, -53989…
- 5  1975 Eloise   (-6144836 1990782, -6267287 2002464, -6378607 2014152, -64899…
- 6  1975 Faye     (-6334079 2632019, -6367475 2729056, -6467662 2777798, -65455…
- 7  1975 Gladys   (-3873918 1152817, -3985238 1186776, -4085425 1232107, -41633…
- 8  1975 Hallie   (-8827636 3388380, -8794240 3350215, -8838768 3426656, -88721…
- 9  1976 Belle    (-8104059 2999081, -8126323 3036285, -8170851 2999081, -81485…
-10  1976 Candice  (-7591989 3723995, -7514066 3948518, -7391614 4191094, -71244…
-# ℹ 629 more rows</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_combine</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
+<span id="cb35-5"><a href="#cb35-5"></a>  )</span>
+<span id="cb35-6"><a href="#cb35-6"></a></span>
+<span id="cb35-7"><a href="#cb35-7"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a>storms_tracks <span class="sc">|&gt;</span></span>
-<span id="cb89-2"><a href="#cb89-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb89-3"><a href="#cb89-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(storms_tracks): could not find function "ggplot"</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>storms_tracks <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
