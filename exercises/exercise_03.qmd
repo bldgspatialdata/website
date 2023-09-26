@@ -1,6 +1,7 @@
 ---
 title: "Exercise 03"
 order: 3
+status: Available
 date-due: 2023-09-18
 date-modified	: last-modified
 ---
@@ -9,4 +10,184 @@ date-modified	: last-modified
 Exercise due on {{< meta date-due >}}
 :::
 
-ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0{{< meta order >}}.html) for related slides and readings
+ℹ️ See [week
+{{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html) for related slides and readings
+
+## Overview
+
+This week's exercise comes directly from [the data transformation
+chapter](https://r4ds.hadley.nz/data-transform) of R for Data Science.
+More typically, our exercises will always include spatial data but I
+wanted to use a more tried and tested exercise for this week's material.
+
+## Setup
+
+If you don't already have the `{nycflights13}` package installed, go ahead and install it then restart before continuing with the exercise.
+
+```{r}
+#| eval: false
+pak::pkg_install("nycflights13")
+```
+
+In addition to nycflights13, you will also need `{dplyr}` and `{ggplot2}`. Load the tidyverse library to make sure you have everything you need:
+
+```{r}
+library(nycflights13)
+library(tidyverse)
+```
+
+## Exercises
+
+### Working with rows
+
+In a single pipeline for each condition, find all flights that meet the
+condition:
+
+-   Had an arrival delay of two or more hours
+-   Flew to Houston (`IAH` or `HOU`)
+-   Were operated by United, American, or Delta
+-   Departed in summer (July, August, and September)
+-   Arrived more than two hours late, but didn't leave late
+-   Were delayed by at least an hour, but made up over 30 minutes in
+    flight
+
+```{r}
+flights |> 
+  ____
+```
+
+Sort `flights` to find the flights with longest departure delays. Find
+the flights that left earliest in the morning.
+
+```{r}
+flights |> 
+  arrange(____)
+```
+
+Sort `flights` to find the fastest flights. (Hint: Try including a math
+calculation inside of your function.)
+
+```{r}
+flights |> 
+  ____
+```
+
+Was there a flight on every day of 2013?
+
+```{r}
+flights |> 
+  ____
+```
+
+Which flights traveled the farthest distance? Which traveled the least
+distance?
+
+```{r}
+flights |> 
+  ____
+```
+
+Does it matter what order you used
+[`filter()`](https://dplyr.tidyverse.org/reference/filter.html) and
+[`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html) if
+you're using both? Why/why not? Think about the results and how much
+work the functions would have to do.
+
+\_\_\_\_
+
+### Working with columns
+
+Compare `dep_time`, `sched_dep_time`, and `dep_delay`. How would you
+expect those three numbers to be related?
+
+\_\_\_\_
+
+Brainstorm as many ways as possible to select `dep_time`, `dep_delay`,
+`arr_time`, and `arr_delay` from `flights`.
+
+```{r}
+select(flights, ____)
+```
+
+What happens if you specify the name of the same variable multiple times
+in a [`select()`](https://dplyr.tidyverse.org/reference/select.html)
+call?
+
+```{r}
+select(flights, ____)
+```
+
+What does the
+[`any_of()`](https://tidyselect.r-lib.org/reference/all_of.html)
+function do? Why might it be helpful in conjunction with this vector?
+
+```{r}
+variables <- c("year", "month", "day", "dep_delay", "arr_delay")
+```
+
+Does the result of running the following code surprise you? How do the
+select helpers deal with upper and lower case by default? How can you
+change that default?
+
+```{r}
+flights |> select(contains("TIME"))
+```
+
+Rename `air_time` to `air_time_min` to indicate units of measurement and
+move it to the beginning of the data frame.
+
+```{r}
+flights |> 
+  rename(____)
+```
+
+Why doesn't the following work, and what does the error mean?
+
+```{r}
+flights |> 
+  select(tailnum) |> 
+  arrange(arr_delay)
+```
+
+### Working with groups
+
+Which carrier has the worst average delays? Challenge: can you
+disentangle the effects of bad airports vs. bad carriers? Why/why not?
+(Hint: think about
+`flights |> group_by(carrier, dest) |> summarize(n())`)
+
+```{r}
+flights |> 
+  ____
+```
+
+Find the flights that are most delayed upon departure from each
+destination.
+
+```{r}
+flights |> 
+  ____
+```
+
+How do delays vary over the course of the day. Illustrate your answer
+with a plot.
+
+```{r}
+
+```
+
+What happens if you supply a negative `n` to [`slice_min()`](https://dplyr.tidyverse.org/reference/slice.html) and
+friends?
+
+```{r}
+slice_min(flights, ____)
+```
+
+Explain what [`count()`](https://dplyr.tidyverse.org/reference/count.html) does in
+terms of the dplyr verbs you just learned. What does the `sort` argument to [`count()`](https://dplyr.tidyverse.org/reference/count.html) do?
+
+```{r}
+count(flights, ____)
+
+count(flights, ____, sort = ____)
+```
