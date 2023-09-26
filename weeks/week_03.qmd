@@ -7,8 +7,20 @@ date: 2023-09-13
 
 ## Overview
 
--   Filtering data with `dplyr::filter()`
--   Creating new variables with `dplyr::mutate()`
+### Agenda
+
+- Week 3 updates
+- Mapping with `{ggplot}` review
+- Introduction to data transformation with `{dplyr}`
+- Using `{dplyr}` with `sf` objects
+
+::: {.callout-note appearance="minimal" icon="true"}
+#### Key Objectives
+
+-   Introduction to the concept of "tidy data"
+-   Learn to subset data with `dplyr::filter()`
+-   Learn to create new variables with `dplyr::mutate()`
+:::
 
 ## Prepare
 
@@ -16,6 +28,10 @@ date: 2023-09-13
 
 -   [Ch. 5 Data transformation](https://r4ds.hadley.nz/data-transform) in @wickhamDataScienceImport2023
 -   [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA) in @loukissasAllDataAre2019
+
+## Participate
+
+🖥️ [Transforming data with `{dplyr}` and `{tidyr}`](/slides/data-transformation.html)
 
 ## Practice
 

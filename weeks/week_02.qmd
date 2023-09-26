@@ -41,4 +41,17 @@ date: 2023-09-06
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+
+## Notes
+
+We didn't quite finish the in-class lecture and practice this week so week 3 may include some review.
+
+### What skills did we practice
+
+- Building plots using `ggplot()` and `geom_()` functions
+- Creating aesthetic mappings using the `aes()` function
+
+### What concepts did we discuss
+
+- How the "grammar of graphics" inform the `{ggplot}` interface

@@ -20,6 +20,10 @@ date: 2023-09-20
 
 -   [Ch. 5 Attributes and Support](https://r-spatial.org/book/05-Attributes.html) in @pebesmaSpatialDataScience2023
 
+## Participate
+
+🖥️ [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.html)
+
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+🛠 Look out for a combined exercise for week 4 and 5.

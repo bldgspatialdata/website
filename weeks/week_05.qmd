@@ -7,16 +7,26 @@ date: 2023-09-27
 
 ## Overview
 
+### Agenda
+
+- Weekly 5 Updates and Questions
+- Complete discussion on working with attribute data (continued from week 4)
+- Introduction to spatial, geometry, and geometric operations in `{sf}`
+
+::: {.callout-note appearance="minimal" icon="true"}
+#### Key Objectives
+
 -   Using geometry operations for buffering or simplifying features
 -   Using geometric operations like union, intersection, and difference
 -   Using related functions including spatial joins and filters
+:::
 
 ## Prepare
 
 ### Required readings
 
 -   [Ch. 4 Spatial data operations](https://geocompr.robinlovelace.net/spatial-operations.html) in @lovelaceGeocomputation2022
--   [Ch. 5 Geometry operations](https://geocompr.robinlovelace.net/geometric-operations.html) in @lovelaceGeocomputation2022
+-   [Ch. 5 Geometry operations](https://r.geocompx.org/geometry-operations) in @lovelaceGeocomputation2022
 
 ### Optional readings
 
