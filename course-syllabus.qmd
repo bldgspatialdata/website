@@ -144,9 +144,9 @@ You can earn up to a total of 100 points in this class by submitting at least 10
 | Presentation                           | 10     |
 | Project repository                     | 20     |
 
-# **Policies & Resources**
+## Policies & Resources
 
-## **Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination**
+### Sexual Assault, Sexual Harassment, and Gender Based Violence and Discrimination
 
 [UMBC Policy](https://ecr.umbc.edu/gender-discrimination-sexual-misconduct/) and Federal law (Title IX) prohibit discrimination and harassment on the basis of sex, sexual orientation, and gender identity in University programs and activities. Any student who is impacted by sexual harassment, sexual assault, domestic violence, dating violence, stalking, sexual exploitation, gender discrimination, pregnancy discrimination, gender-based harassment or retaliation should contact the University's Title IX Coordinator to make a report and/or access support and resources:
 
@@ -158,7 +158,7 @@ You can earn up to a total of 100 points in this class by submitting at least 10
 If you are interested in or thinking about making a report, please use the [Online Reporting/Referral Form](https://umbc-advocate.symplicity.com/titleix_report/index.php/pid364290?). Please note that, if you report anonymously, the University's ability to respond will be limited.
 
 ::: {.callout-important appearance="minimal"}
-### **Faculty are Responsible Employees with Mandatory Reporting Obligations**
+### Faculty are Responsible Employees with Mandatory Reporting Obligations
 
 All faculty members are considered *Responsible Employees*, per [UMBC's Policy on Sexual Misconduct, Sexual Harassment, and Gender Discrimination.](https://ecr.umbc.edu/policy-on-sexual-misconduct-sexual-harassment-and-gender-discrimination/) Faculty are therefore required to report any/ all available information regarding conduct falling under the Policy and violations of the Policy to the Title IX Coordinator, even if a student discloses an experience that occurred before attending UMBC and/or an incident that only involves people not affiliated with UMBC. Reports are required regardless of the amount of detail provided and even in instances where support has already been offered or received.
 
@@ -180,7 +180,7 @@ Other Resources:
 :::
 
 ::: {.callout-important appearance="minimal"}
-### [**Child Abuse and Neglect**](https://oei.umbc.edu/child-protection/)
+### [Child Abuse and Neglect](https://oei.umbc.edu/child-protection/)
 
 Please note that Maryland law and [UMBC policy](https://oei.umbc.edu/child-protection/) require that faculty report all disclosures or suspicions of child abuse or neglect to the Department of Social Services and/or the police even if the person who experienced the abuse or neglect is now over 18.
 :::
@@ -195,13 +195,13 @@ Pregnant students and students in the early months of parenting may be entitled 
 In addition, students who are pregnant and have an impairment related to their pregnancy that qualifies as disability under the ADA may be entitled to accommodations through the [Student Disability Service Office](https://sds.umbc.edu/accommodations/registering-with-sds/).
 :::
 
-## **Religious Observances & Accommodations**
+### Religious Observances & Accommodations
 
 [UMBC Policy](https://provost.umbc.edu/wp-content/uploads/sites/46/2022/08/Religious-Observance-Academic-Policy-2022_2023.pdf) provides that students should not be penalized because of observances of their religious beliefs, and that students shall be given an opportunity, whenever feasible, to make up within a reasonable time any academic assignment that is missed due to individual participation in religious observances. It is the responsibility of the student to inform the instructor of any intended absences or requested modifications for religious observances in advance, and as early as possible.
 
 For questions or guidance regarding religious observance accommodations, please contact the Office of Equity and Civil Rights at [ecr\@umbc.edu](mailto:ecr@umbc.edu).
 
-## **Plagiarism**
+### Plagiarism
 
 Copying or using another's work in written or oral form---partial or complete---without giving credit to the other person is a serious academic offense and is taken very seriously in this class, by the Department and by the University of Maryland, Baltimore County. UMBC specifically defines plagiarism as anyone who "knowingly, or by carelessness or negligence, representing as one's own in any academic exercise the words, ideas, works of art or computer-generated information and images of someone else."
 
@@ -217,7 +217,7 @@ Any student who plagiarizes will be referred to the Department Chair and will be
 
 Details about avoiding [plagiarism, examples, and disciplinary policies](http://aok.lib.umbc.edu/informationliteracy/plagiarism.php) should be reviewed to gain a clear understanding prior to working on an assignment or exam.
 
-## **Hate, Bias, Discrimination and Harassment**
+### Hate, Bias, Discrimination and Harassment
 
 UMBC values safety, cultural and ethnic diversity, social responsibility, lifelong learning, equity, and civic engagement.
 
@@ -225,13 +225,13 @@ Consistent with these principles, [UMBC Policy](https://ecr.umbc.edu/discriminat
 
 Students (and faculty and staff) who experience discrimination, harassment, hate or bias or who have such matters reported to them should use the[online reporting/referral form](https://umbc-advocate.symplicity.com/titleix_report/index.php/pid066642?) to report discrimination, hate or bias incidents. You may report incidents that happen to you anonymously*.* Please note that, if you report anonymously, the University's ability to respond will be limited.
 
-## **COVID-19 Safety Protocols**
+### COVID-19 Safety Protocols
 
 UMBC encourages all members of our community to take personal safety measures. This includes remaining up to date on your vaccinations and following CDC guidelines if you are recovering from COVID-19. See the [**Retriever Ready: COVID-19 Response**](https://covid19.umbc.edu/) page for UMBC's curent COVID-19 policies and answers to frequently asked questions.
 
 For the health of all in our community, please remember to **Stay Home if You Are Sick.**
 
-## Retriever Essentials
+### Retriever Essentials
 
 [Retriever Essentials](https://retrieveressentials.umbc.edu/) is a faculty, staff, and student-led partnership that promotes food access in the UMBC community. Retriever Essentials offers *free* groceries, toiletries, baby items, and meal swipes, and have opportunities to engage and volunteer:
 
@@ -244,7 +244,7 @@ For the health of all in our community, please remember to **Stay Home if You Ar
 
 Email Retriever Essentials if you would like to join our team or [volunteer](https://retrieveressentials.umbc.edu/volunteer/).
 
-# Notes
+## Notes
 
 -   The respect statement is adapted from [California State University Chico's Office of Diversity and Inclusion](https://www.csuchico.edu/diversity/office/index.shtml).
 -   This course website is based in part on the [website for STA 210 at Duke University](https://github.com/sta210-s22/website). Check out the [repository on GitHub](https://github.com/bldgspatialdata/website) for more information about the site.
