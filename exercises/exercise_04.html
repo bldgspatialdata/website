@@ -384,8 +384,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">2</span> Setup</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3</span> Exercises</a>
   <ul class="collapse">
-  <li><a href="#searching-for-us_states" id="toc-searching-for-us_states" class="nav-link" data-scroll-target="#searching-for-us_states"><span class="header-section-number">3.1</span> Searching for <code>us_states</code></a></li>
+  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data"><span class="header-section-number">3.1</span> Filtering data</a></li>
   <li><a href="#comparing-and-summarizing-data" id="toc-comparing-and-summarizing-data" class="nav-link" data-scroll-target="#comparing-and-summarizing-data"><span class="header-section-number">3.2</span> Comparing and summarizing data</a></li>
+  <li><a href="#spatial-operations" id="toc-spatial-operations" class="nav-link" data-scroll-target="#spatial-operations"><span class="header-section-number">3.3</span> Spatial operations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercises/exercise_04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -407,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 25, 2023</p>
+      <p class="date-modified">September 27, 2023</p>
     </div>
   </div>
     
@@ -453,8 +454,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercises" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3</span> Exercises</h2>
-<section id="searching-for-us_states" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="searching-for-us_states"><span class="header-section-number">3.1</span> Searching for <code>us_states</code></h3>
+<section id="filtering-data" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="filtering-data"><span class="header-section-number">3.1</span> Filtering data</h3>
 <p>Find all states with the following characteristics (bonus find and plot them):</p>
 <p>Belong to the Midwest region.</p>
 <div class="cell">
@@ -497,9 +498,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>How much has population density changed between 2010 and 2015 in each state?</strong></p>
 <p>Calculate the change in percentages and map them.</p>
 <p>Calculate the change in the number of residents living below the poverty level between 2010 and 2015 for each state. (Hint: See <code>?us_states_df</code> for documentation on the poverty level columns.)</p>
-<p>Bonus: Calculate the change in the percentage of residents living below the poverty level in each state.</p>
+<p><strong>Bonus:</strong> Calculate the change in the percentage of residents living below the poverty level in each state.</p>
 <p>What was the minimum, average and maximum state’s number of people living below the poverty line in 2015 for each region?</p>
-<p>Bonus: What is the region with the largest increase in people living below the poverty line?</p>
+<p><strong>Bonus:</strong> What is the region with the largest increase in people living below the poverty line?</p>
+</section>
+<section id="spatial-operations" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="spatial-operations"><span class="header-section-number">3.3</span> Spatial operations</h3>
+<p>It was established in Section <a href="https://r.geocompx.org/spatial-operations#spatial-vec">4.2</a> that Canterbury was the region of New Zealand containing most of the 100 highest points in the country. How many of these high points does the Canterbury region contain?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>canterbury <span class="ot">&lt;-</span> nz <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Canterbury"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>nz_height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Bonus:</strong> plot the result using the <code>ggplot2::geom_sf()</code> function to show all of New Zealand, <code>canterbury</code> region highlighted in yellow, high points in Canterbury represented by red crosses (hint: <code>shape = 7</code>) and high points in other parts of New Zealand represented by blue circles. See the help page <code>?ggplot2::shape</code> and run the examples to see an illustration of different <code>shape</code> values.</p>
+<p>Which region has the second highest number of <code>nz_height</code> points, and how many does it have?</p>
+<p>Generalizing the question to all regions: how many of New Zealand's 16 regions contain points which belong to the top 100 highest points in the country? Which regions?</p>
+<p><strong>Bonus:</strong> create a table listing these regions in order of the number of points and their name. Hint: use <code>dplyr::slice_max()</code> and <code>gt::gt()</code>.</p>
+<p>Test your knowledge of spatial predicates by finding out and plotting how US states relate to each other and other spatial objects.</p>
+<p>The starting point of this exercise is to create an object representing Maryland state in the USA using the <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter()</code></a> function and plot the resulting object in the context of US states.</p>
+<p>Create a new object representing all the states that geographically intersect with Maryland and plot the result (hint: the most concise way to do this is with the subsetting method <code>[</code>).</p>
+<p>Create another object representing all the objects that touch (have a shared boundary with) Maryland and plot the result (hint: remember you can use the argument <code>op = st_intersects</code> and other spatial relations during spatial subsetting operations in base R).</p>
+<p>Bonus: create a straight line from the centroid of the District of Columbia near the East coast to the centroid of California near the West coast of the USA (hint: functions <a href="https://r-spatial.github.io/sf/reference/geos_unary.html"><code>st_centroid()</code></a>, <a href="https://r-spatial.github.io/sf/reference/geos_combine.html"><code>st_union()</code></a> and <a href="https://r-spatial.github.io/sf/reference/st_cast.html"><code>st_cast()</code></a> described in Chapter 5 may help) and identify which states this long East-West line crosses.</p>
 
 
 </section>

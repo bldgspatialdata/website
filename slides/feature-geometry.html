@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.339">
 <meta name="dcterms.date" content="2023-09-27">
-<title>GES 668 - Fall 2023 - Fall 2023 Weekly Updates</title>
+<title>GES 668 - Fall 2023 - Session 5: Working with spatial and geometric operations in sf</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,365 +386,442 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Fall 2023 Weekly Updates">
+<meta property="og:title" content="GES 668 - Fall 2023 - Session 5: Working with spatial and geometric operations in sf">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Fall 2023 Weekly Updates</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Session 5: Working with spatial and geometric operations in <code>{sf}</code>
+</h1>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-09-27</p>
-</section><section class="slide level4"><div class="cell">
+</section><section><section id="getting-started" class="title-slide slide level2 center" data-number="1"><h2>
+<span class="header-section-number">1</span> Getting started</h2>
+<div class="cell columns column-output-location">
+<div class="column">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(nycflights13)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section><section id="this-week" class="title-slide slide level1 center"><h1>This Week</h1>
+<div class="column fragment">
 
-</section><section id="week-5-september-27-2023" class="title-slide slide level2 center"><h2>Week 5: September 27, 2023</h2>
-
-</section><section id="your-questions" class="title-slide slide level3 center"><h3>Your questions</h3>
-
-</section><section class="slide level4"><p>How do I get my own shapefiles into R?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path to your shapefile"</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section class="slide level4"><p>Is there a “best” way to perform specific operations? Or does it depend on individual preference?</p>
-<p>There isn’t a “best” way but there are often <em>better</em> and <em>worse</em> ways. If you have more than one way to achieve the same objective in R, you can compare the approaches using a few related considerations:</p>
-<ul>
-<li>Performance (speed and memory)</li>
-<li>Code readability</li>
-<li>Consistency and predictability</li>
-</ul></section><section class="slide level4"><p>This presentation on <a href="https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html">Styling R Code</a> from Jacob Scott is one of the best resources I’ve seen on the topic.</p>
-<p>A few related resources:</p>
-<ul>
-<li>
-<a href="https://github.com/r-lib/lintr">lintr</a> flags when it detects problems in your code.</li>
-<li>
-<a href="https://github.com/r-lib/styler">styler</a> can help automatically reformat your code.</li>
-<li>Documentation like <a href="https://style.tidyverse.org/">the tidyverse style guide</a> can inform how you write code.</li>
-</ul></section><section class="slide level4"><p>How can you keep track of what is happening when piping data from one function to another?</p>
-<p>The <a href="https://github.com/elbersb/tidylog/">tidylog</a> package is one tool for getting more insight into your pipelines:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidylog, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+</div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">options</span>(<span class="st">"tigris_use_cache"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>us_states <span class="ot">&lt;-</span> <span class="fu">states</span>()</span>
+<span id="cb2-3"><a href="#cb2-3"></a>us_highways <span class="ot">&lt;-</span> <span class="fu">primary_roads</span>()</span>
+<span id="cb2-4"><a href="#cb2-4"></a>maryland <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>lower48 <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, <span class="sc">!</span>(NAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States Virgin Islands"</span>, <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>, <span class="st">"Alaska"</span>, <span class="st">"American Samoa"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"Hawaii"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+
+</div>
+</div>
+</section></section><section><section id="converting-objects-between-types" class="title-slide slide level2 center" data-number="2"><h2>
+<span class="header-section-number">2</span> Converting objects between types</h2>
+
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>sfg <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">76.712838</span>, <span class="fl">39.253383</span>))</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">mutate</span>(<span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">select</span>(mpg, cyl, new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>sfg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+
+</div>
+</div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>                mpg cyl   new_var
-Datsun 710     22.8   4  5.382400
-Merc 240D      24.4   4 10.176100
-Merc 230       22.8   4  9.922500
-Fiat 128       32.4   4  4.840000
-Honda Civic    30.4   4  2.608225
-Toyota Corolla 33.9   4  3.367225
-Toyota Corona  21.5   4  6.076225
-Fiat X1-9      27.3   4  3.744225
-Porsche 914-2  26.0   4  4.579600
-Lotus Europa   30.4   4  2.289169
-Volvo 142E     21.4   4  7.728400</code></pre>
+<pre><code>Geometry set for 1 feature 
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
+CRS:           NA</code></pre>
 </div>
 </div>
-<p>Another is <a href="https://github.com/daranzolin/ViewPipeSteps"><code>{ViewPipeSteps}</code></a></p>
-<p>The <a href="https://adv-r.hadley.nz/debugging.html">debugging tools</a> built into R and RStudio can also be useful for trouble-shooting in case of errors or unexpected results.</p>
-</section><section class="slide level4"><p>What is the difference between an intensive and extensive variable?</p>
-<p>The concept of <em>intensive</em> or <em>extensive</em> variables comes to the world of spatial data from physics and chemistry. The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties">intensive and extensive properties</a> provides helpful definitions:</p>
-<ul>
-<li><p>an intensive property or intensive quantity is one whose magnitude is independent of the size of the system (e.g.&nbsp;temperature, hardness)</p></li>
-<li><p>an extensive property or extensive quantity is one whose magnitude is additive for subsystems (e.g.&nbsp;mass, volume)</p></li>
-</ul></section><section id="what-is-due-next-week" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Your weekly check-in response!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>responses <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"files/2023-09-27_check-in-responses.csv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="at">week =</span> week <span class="sc">-</span> <span class="dv">34</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  )</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>responses <span class="sc">|&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">num_resp =</span> <span class="fu">n_distinct</span>(id),</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">.by =</span> week</span>
-<span id="cb5-10"><a href="#cb5-10"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(week, num_resp)) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-16"><a href="#cb5-16"></a>    <span class="at">x =</span> <span class="st">"Weeks into class"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17"></a>    <span class="at">y =</span> <span class="st">"Number of responses"</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a>  hrbrthemes<span class="sc">::</span><span class="fu">theme_ipsum_pub</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>sfc <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>sfc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>responses <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">group_by</span>(id) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">num_weeks =</span> <span class="fu">n_distinct</span>(week)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">distinct</span>(id, num_weeks) <span class="sc">|&gt;</span> </span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(num_weeks)) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">geom_bar</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-10"><a href="#cb6-10"></a>    <span class="at">x =</span> <span class="st">"Week"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    <span class="at">y =</span> <span class="st">"Number of students"</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>  hrbrthemes<span class="sc">::</span><span class="fu">theme_ipsum_pub</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</div>
-</div>
-</section><section id="what-is-due-next-week-1" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Readings:</p>
-<ul>
-<li><p><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, 2nd edition (WIP). (Sebastopol, CA: O'Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>.</p></li>
-<li><p><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in Wickham, Grolemund, and Çetinkaya-Rundel <em>R for Data Science</em>.</p></li>
-<li><p>Karl W. Broman and Kara H. Woo "Data Organization in Spreadsheets," <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</p></li>
-</ul></section></section><section><section id="upcoming-updates" class="title-slide slide level1 center"><h1>Upcoming Updates</h1>
-
-</section><section id="week-6-october-4-2023" class="title-slide slide level2 center"><h2>Week 6: October 4, 2023</h2>
-
-</section><section id="week-7-october-11-2023" class="title-slide slide level2 center"><h2>Week 7: October 11, 2023</h2>
-
-</section><section id="week-8-october-18-2023" class="title-slide slide level2 center"><h2>Week 8: October 18, 2023</h2>
-
-</section><section id="week-9-october-25-2023" class="title-slide slide level2 center"><h2>Week 9: October 25, 2023</h2>
-
-</section><section id="week-10-november-1-2023" class="title-slide slide level2 center"><h2>Week 10: November 1, 2023</h2>
-
-</section><section id="week-11-november-8-2023" class="title-slide slide level2 center"><h2>Week 11: November 8, 2023</h2>
-
-</section><section id="week-12-november-15-2023" class="title-slide slide level2 center"><h2>Week 12: November 15, 2023</h2>
-
-</section><section id="week-13-november-22-2023" class="title-slide slide level2 center"><h2>Week 13: November 22, 2023</h2>
-
-</section><section id="week-14-november-29-2023" class="title-slide slide level2 center"><h2>Week 14: November 29, 2023</h2>
-
-</section><section id="week-15-december-6-2023" class="title-slide slide level2 center"><h2>Week 15: December 6, 2023</h2>
-
-</section></section><section><section id="past-updates" class="title-slide slide level1 center"><h1>Past Updates</h1>
-<p>These past updates are in reverse chronological order.</p>
-</section><section id="week-3-september-13-2023" class="title-slide slide level2 center"><h2>Week 3: September 13, 2023</h2>
-
-</section><section id="what-is-due-by-this-week" class="title-slide slide level3 center"><h3>What is due by this week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_03.html">week 3</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_02.html">Exercise 2</a> on <a href="https://ggplot2.tidyverse.org">ggplot2</a>
-</li>
-</ul></section><section id="what-is-coming-up-for-next-week" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <a href="https://dplyr.tidyverse.org">dplyr</a> and <a href="https://tidyr.tidyverse.org">tidyr</a>
-</li>
-</ul></section><section id="before-we-start-this-week" class="title-slide slide level3 center"><h3>Before we start this week</h3>
-<ul>
-<li>I want to set up reminders for due dates. How about calendar invites?</li>
-<li>I am considering shifting the exercise due date from Monday to Tuesday. What do you think?</li>
-</ul></section><section id="what-are-you-finding-interesting" class="title-slide slide level3 center"><h3>What are you finding interesting</h3>
-<ul>
-<li>Ease and speed of plotting spatial data</li>
-<li>Setting colors for plots using <code>scale_</code> functions from <code>{ggplot}</code>
-</li>
-<li>Customizing plots using <code>theme_</code> functions from <code>{ggplot}</code>
-</li>
-<li>Similarities and differences between R and Python</li>
-</ul></section><section id="what-are-you-finding-difficult" class="title-slide slide level3 center"><h3>What are you finding difficult</h3>
-<ul>
-<li>
-<code>ggploty()</code> didn’t work as expected</li>
-<li>The <code>countries</code> dataset from <a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a>
-</li>
-<li>When to use the <code>summarize()</code> function</li>
-</ul></section><section id="your-questions-this-week" class="title-slide slide level3 center"><h3>Your questions this week</h3>
-<ul>
-<li>Questions about <a href="https://ggplot2.tidyverse.org">ggplot2</a>
-</li>
-<li>Questions about <a href="https://dplyr.tidyverse.org">dplyr</a>
-</li>
-<li>Other questions</li>
-</ul></section><section id="ggplot2-questions" class="slide level4"><h4>
-<code>{ggplot2}</code> questions</h4>
-<ul>
-<li>If you make a plot with <code>ggplot()</code>, when do you need to specify data? And when can you leave it out?</li>
-<li>Why do some <code>geom_</code> functions work with some variables and not others?</li>
-<li>What is the difference between <a href="https://r-tmap.github.io/tmap/">tmap</a> and <a href="https://ggplot2.tidyverse.org">ggplot2</a>?</li>
-</ul></section><section id="dplyr-questions" class="slide level4"><h4>
-<code>{dplyr}</code> questions</h4>
-<p>We’ll cover both of these questions today:</p>
-<ul>
-<li>What is <code>distinct()</code> actually doing?</li>
-<li>How do you use the <code>.before</code> and <code>.after</code> parameters provided for <code>mutate()</code> and <code>relocate()</code>?</li>
-</ul></section><section id="other-questions" class="title-slide slide level3 center"><h3>Other questions</h3>
-<p>Check out the Discord for a few answers:</p>
-<ul>
-<li>Can you use R for machine learning with big data?</li>
-<li>How do I access other datasets with the <a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a>?</li>
-</ul>
-<p>Please post your questions to the Discord!</p>
-</section><section id="things-to-think-about" class="title-slide slide level3 center"><h3>Things to think about</h3>
-<ul>
-<li>What does it mean for data to be part of a knowledge system?</li>
-</ul></section><section id="week-2-september-6-2023" class="title-slide slide level2 center"><h2>Week 2: September 6, 2023</h2>
-
-</section><section id="what-is-due-by-this-week-1" class="title-slide slide level3 center"><h3>What is due by this week</h3>
-<ul>
-<li>Set up R, RStudio, and GitHub Desktop</li>
-<li>Complete required readings for <a href="../weeks/week_01.html">week 1</a> and <a href="../weeks/week_02.html">week 2</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Review <a href="../course-exercises.html">instructions to complete exercises</a> using RStudio and GitHub</li>
-<li>Complete <a href="../exercises/exercise_01.html">Exercise 1</a> on R basics and the structure of <a href="https://r-spatial.github.io/sf/">sf</a> objects</li>
-</ul></section><section id="what-is-coming-up-for-next-week-1" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_03.html">week 3</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_02.html">Exercise 2</a> on <a href="https://ggplot2.tidyverse.org">ggplot2</a>
-</li>
-</ul></section><section id="before-we-start-this-week-1" class="title-slide slide level3 center"><h3>Before we start this week</h3>
-<ul>
-<li>Do you have access to your GitHub repository? Do you understand how to commit changes?</li>
-<li>How can you get the most out of the readings?</li>
-<li>How do you customize your settings in RStudio?</li>
-<li>Where can you get help if you need it?</li>
-<li>What are we doing for the final project?</li>
-</ul></section><section id="your-questions-this-week-1" class="title-slide slide level3 center"><h3>Your questions this week</h3>
-<ul>
-<li>Why do some functions require arguments and other functions do not?</li>
-<li>What are some of the best ways of sharing reproducible methods?</li>
-<li>How do you get data that you create into R?</li>
-<li>What is a vector tile? What is the difference between raster and vector tiles?</li>
-<li>What does the function <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">ggplot2::aes()</a></code> and the attributes passed to the function really do?</li>
-<li>Do you need to re-install your packages every time you start work?</li>
-</ul>
-<p>Reminder: questions are <em>required</em> as part of the weekly check-in.</p>
-</section><section id="week-1-september-6-2023" class="title-slide slide level2 center"><h2>Week 1: September 6, 2023</h2>
-<ul>
-<li>Welcome!</li>
-</ul></section><section id="what-is-due-by-this-week-2" class="title-slide slide level3 center"><h3>What is due by this week</h3>
-<ul>
-<li>Join the Discord chat</li>
-</ul></section><section id="week-4-september-20-2023" class="title-slide slide level2 center"><h2>Week 4: September 20, 2023</h2>
-
-</section><section id="your-questions-1" class="title-slide slide level3 center"><h3>Your questions</h3>
-
-<img data-src="https://r4ds.hadley.nz/diagrams/data-science/transform.png" class="r-stretch"></section><section class="slide level4"><p><strong>How to filter multiple rows from a column?</strong></p>
-<p>It all depends on the tests or conditions you pass to <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>. Review the reading <a href="https://r4ds.hadley.nz/data-transform#filter">on the filter function</a> or check out this optional section of R for Data Science on <a href="https://r4ds.hadley.nz/regexps#sec-boolean-operations">boolean operations with strings</a>.</p>
-</section><section class="slide level4"><p><strong>How do you set <a href="https://tidyselect.r-lib.org">tidyselect</a> helpers to be case <em>insensitive</em>?</strong></p>
-<p><a href="https://tidyselect.r-lib.org/reference/starts_with.html">Check out the documentation</a>! Look for the <code>ignore.case</code> parameter.</p>
-</section><section class="slide level4"><p>“I would love to run through the code for this bar graph in class, since I don’t totally understand what thought process to use to come up with it.”</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>flights <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">replace_na</span>(</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(<span class="at">arr_delay =</span> <span class="dv">0</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="at">hour_factor =</span> <span class="fu">factor</span>(hour),</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">arr_delay_flag =</span> arr_delay <span class="sc">&gt;</span> <span class="dv">5</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hour_factor, <span class="at">fill =</span> arr_delay_flag)) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting things</h3>
-<p>We all love <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>! We also appreciate <code>distinct()</code></p>
-</section><section class="slide level4"><p>“I have been working with R for a while now, in classes and for my own research. The lecture this week and the exercise really helped me understand the application of all the tools to transform data, which was super interesting because I often end up doing selections and filters in ArcGIS Pro or in a csv.”</p>
-</section><section id="difficult-things" class="title-slide slide level3 center"><h3>Difficult things</h3>
-<p><strong>Answering this question:</strong> Which carrier has the worst average delays? <strong>Challenge:</strong> can you disentangle the effects of bad airports vs.&nbsp;bad carriers? Why/why not?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># flights |&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#   replace_na(</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#     replace = list(</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#       arr_delay = 0,</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#       dep_delay = 0</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co">#     )</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">#   ) |&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="co">#   summarise(</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="co">#     n_flights = n(),</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="co">#     n_delay_flights = sum(n &gt; dep_delay),</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#     mean_arr_delay = mean(arr_delay),</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="co">#     mean_dep_delay = mean(dep_delay),</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="co">#     mean_total_delay = mean(arr_delay + dep_delay),</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="co">#     .by = carrier</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="co">#   ) |&gt;</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="co">#   slice_max(order_by = mean_total_delay, n = 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>flights <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">replace_na</span>(</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(</span>
-<span id="cb9-4"><a href="#cb9-4"></a>      <span class="at">arr_delay =</span> <span class="dv">0</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>      <span class="at">dep_delay =</span> <span class="dv">0</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>    )</span>
-<span id="cb9-7"><a href="#cb9-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb9-9"><a href="#cb9-9"></a>    <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay),</span>
-<span id="cb9-10"><a href="#cb9-10"></a>    <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay),</span>
-<span id="cb9-11"><a href="#cb9-11"></a>    <span class="at">mean_total_delay_diff =</span> <span class="fu">mean</span>(dep_delay <span class="sc">-</span> arr_delay),</span>
-<span id="cb9-12"><a href="#cb9-12"></a>    <span class="at">mean_total_delay =</span> <span class="fu">mean</span>(dep_delay <span class="sc">+</span> arr_delay),</span>
-<span id="cb9-13"><a href="#cb9-13"></a>    <span class="at">.by =</span> carrier</span>
-<span id="cb9-14"><a href="#cb9-14"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_total_delay))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 5
-   carrier mean_dep_delay mean_arr_delay mean_total_delay_diff mean_total_delay
-   &lt;chr&gt;            &lt;dbl&gt;          &lt;dbl&gt;                 &lt;dbl&gt;            &lt;dbl&gt;
- 1 F9               20.1          21.8                  -1.67             41.9 
- 2 FL               18.3          19.6                  -1.28             37.9 
- 3 EV               18.9          14.9                   4.02             33.8 
- 4 YV               17.2          14.1                   3.14             31.3 
- 5 WN               17.4           9.47                  7.97             26.9 
- 6 9E               15.8           6.91                  8.87             22.7 
- 7 B6               12.9           9.36                  3.55             22.3 
- 8 OO               11.4          10.8                   0.594            22.2 
- 9 MQ               10.1          10.2                  -0.161            20.3 
-10 UA               12.0           3.50                  8.46             15.5 
-11 VX               12.8           1.75                 11.0              14.5 
-12 DL                9.20          1.63                  7.57             10.8 
-13 AA                8.42          0.356                 8.06              8.77
-14 US                3.66          2.06                  1.60              5.72
-15 HA                4.90         -6.92                 11.8              -2.01
-16 AS                5.79         -9.86                 15.6              -4.07</code></pre>
+<pre><code>Geometry set for 1 feature 
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
+Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div>
-</section><section class="slide level4"></section><section id="what-is-due-by-this-week-3" class="title-slide slide level3 center"><h3>What is due by this week</h3>
+</div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">st_as_sf</span>(sfc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 0 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
+Geodetic CRS:  WGS 84
+                           x
+1 POINT (-76.71284 39.25338)</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>sf_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="at">name =</span> <span class="st">"Example data frame"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">lon =</span>  <span class="sc">-</span><span class="fl">76.712838</span>,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">lat =</span> <span class="fl">39.253383</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a>sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_df, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a>sf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 1 field
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
+Geodetic CRS:  WGS 84
+                name                   geometry
+1 Example data frame POINT (-76.71284 39.25338)</code></pre>
+</div>
+</div>
+</div>
+</section></section><section><section id="types-of-spatial-operations" class="title-slide slide level2 center" data-number="3"><h2>
+<span class="header-section-number">3</span> Types of spatial operations</h2>
 <ul>
-<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <a href="https://dplyr.tidyverse.org">dplyr</a>
-</li>
-</ul></section><section id="what-is-coming-up-for-next-week-2" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
+<li>Spatial filtering and topological relations</li>
+<li>Spatial joins and non-overlapping joins</li>
+<li>Spatial aggregation</li>
+</ul></section><section id="spatial-filtering-and-topological-relations" class="title-slide slide level3 center"><h3>Spatial filtering and topological relations</h3>
+<p><code>st_filter()</code> efaults to intersecting geometries:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">st_filter</span>(us_states, maryland)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 6 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -83.67539 ymin: 36.54085 xmax: -74.68956 ymax: 42.51607
+Geodetic CRS:  NAD83
+  REGION DIVISION STATEFP  STATENS GEOID STUSPS                 NAME LSAD MTFCC
+1      3        5      54 01779805    54     WV        West Virginia   00 G4000
+2      3        5      24 01714934    24     MD             Maryland   00 G4000
+3      3        5      10 01779781    10     DE             Delaware   00 G4000
+4      1        2      42 01779798    42     PA         Pennsylvania   00 G4000
+5      3        5      51 01779803    51     VA             Virginia   00 G4000
+6      3        5      11 01702382    11     DC District of Columbia   00 G4000
+  FUNCSTAT        ALAND     AWATER    INTPTLAT     INTPTLON
+1        A  62266298634  489204185 +38.6472854 -080.6183274
+2        A  25151992308 6979074857 +38.9466584 -076.6744939
+3        A   5046731559 1399179670 +38.9985661 -075.4416440
+4        A 115881784866 3397909903 +40.9046013 -077.8275298
+5        A 102258210137 8528040726 +37.5222512 -078.6681938
+6        A    158316124   18709762 +38.9042474 -077.0165167
+                        geometry
+1 MULTIPOLYGON (((-80.85847 3...
+2 MULTIPOLYGON (((-75.76659 3...
+3 MULTIPOLYGON (((-75.13846 3...
+4 MULTIPOLYGON (((-75.5931 39...
+5 MULTIPOLYGON (((-77.76715 3...
+6 MULTIPOLYGON (((-77.11975 3...</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><p><code>st_filter()</code> can also support alternate topological relations:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">st_filter</span>(us_states, maryland, <span class="at">.predicate =</span> st_disjoint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 50 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -179.2311 ymin: -14.60181 xmax: 179.8597 ymax: 71.43979
+Geodetic CRS:  NAD83
+First 10 features:
+   REGION DIVISION STATEFP  STATENS GEOID STUSPS           NAME LSAD MTFCC
+1       3        5      12 00294478    12     FL        Florida   00 G4000
+2       2        3      17 01779784    17     IL       Illinois   00 G4000
+3       2        4      27 00662849    27     MN      Minnesota   00 G4000
+4       1        1      44 01219835    44     RI   Rhode Island   00 G4000
+5       4        8      16 01779783    16     ID          Idaho   00 G4000
+6       1        1      33 01779794    33     NH  New Hampshire   00 G4000
+7       3        5      37 01027616    37     NC North Carolina   00 G4000
+8       1        1      50 01779802    50     VT        Vermont   00 G4000
+9       1        1      09 01779780    09     CT    Connecticut   00 G4000
+10      4        8      35 00897535    35     NM     New Mexico   00 G4000
+   FUNCSTAT        ALAND      AWATER    INTPTLAT     INTPTLON
+1         A 138961722096 45972570361 +28.3989775 -082.5143005
+2         A 143778561906  6216493488 +40.1028754 -089.1526108
+3         A 206232627084 18949394733 +46.3159573 -094.1996043
+4         A   2677763359  1323686988 +41.5964850 -071.5264901
+5         A 214049931578  2391569647 +44.3484222 -114.5588538
+6         A  23190115212  1025971768 +43.6726907 -071.5843145
+7         A 125933327733 13456093195 +35.5397100 -079.1308636
+8         A  23872569964  1030754609 +44.0589536 -072.6710173
+9         A  12541690473  1816424193 +41.5798637 -072.7466572
+10        A 314198560947   726482113 +34.4346843 -106.1316181
+                         geometry
+1  MULTIPOLYGON (((-83.10874 2...
+2  MULTIPOLYGON (((-89.17208 3...
+3  MULTIPOLYGON (((-92.74568 4...
+4  MULTIPOLYGON (((-71.67881 4...
+5  MULTIPOLYGON (((-111.0455 4...
+6  MULTIPOLYGON (((-71.24548 4...
+7  MULTIPOLYGON (((-76.91598 3...
+8  MULTIPOLYGON (((-72.43462 4...
+9  MULTIPOLYGON (((-72.5279 41...
+10 MULTIPOLYGON (((-104.8477 3...</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4">
+<img data-src="https://r.geocompx.org/04-spatial-operations_files/figure-html/relations-1.png" class="r-stretch"></section><section id="spatial-joins-and-non-overlapping-joins" class="title-slide slide level3 center"><h3>Spatial joins and non-overlapping joins</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">st_join</span>(maryland, us_highways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 471 features and 18 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -79.48765 ymin: 37.88661 xmax: -74.98628 ymax: 39.72304
+Geodetic CRS:  NAD83
+First 10 features:
+    REGION DIVISION STATEFP  STATENS GEOID STUSPS     NAME LSAD MTFCC.x
+1        3        5      24 01714934    24     MD Maryland   00   G4000
+1.1      3        5      24 01714934    24     MD Maryland   00   G4000
+1.2      3        5      24 01714934    24     MD Maryland   00   G4000
+1.3      3        5      24 01714934    24     MD Maryland   00   G4000
+1.4      3        5      24 01714934    24     MD Maryland   00   G4000
+1.5      3        5      24 01714934    24     MD Maryland   00   G4000
+1.6      3        5      24 01714934    24     MD Maryland   00   G4000
+1.7      3        5      24 01714934    24     MD Maryland   00   G4000
+1.8      3        5      24 01714934    24     MD Maryland   00   G4000
+1.9      3        5      24 01714934    24     MD Maryland   00   G4000
+    FUNCSTAT       ALAND     AWATER    INTPTLAT     INTPTLON      LINEARID
+1          A 25151992308 6979074857 +38.9466584 -076.6744939 1104258795072
+1.1        A 25151992308 6979074857 +38.9466584 -076.6744939 1104258845568
+1.2        A 25151992308 6979074857 +38.9466584 -076.6744939  110191599447
+1.3        A 25151992308 6979074857 +38.9466584 -076.6744939  110191599448
+1.4        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149806121
+1.5        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149806067
+1.6        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149813008
+1.7        A 25151992308 6979074857 +38.9466584 -076.6744939 1102166635559
+1.8        A 25151992308 6979074857 +38.9466584 -076.6744939 1104258795090
+1.9        A 25151992308 6979074857 +38.9466584 -076.6744939 1103075320064
+         FULLNAME RTTYP MTFCC.y                       geometry
+1   Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.1 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.2 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.3 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.4 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.5 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.6 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.7 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.8 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
+1.9 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><p><code>st_is_within_distance()</code> is an example of a non-overlapping join:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Sparse geometry binary predicate list of length 17378, where the
+predicate was `is_within_distance'
+first 10 elements:
+ 1: (empty)
+ 2: (empty)
+ 3: (empty)
+ 4: (empty)
+ 5: (empty)
+ 6: (empty)
+ 7: (empty)
+ 8: (empty)
+ 9: (empty)
+ 10: (empty)</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><p>You can use these joins for spatial filters using the base R syntax:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>us_highways[<span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>)),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-error">
+<pre><code>Error in `[.default`(geom, i): invalid subscript type 'list'</code></pre>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><p>Or using <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> if you use the name of the geomtery column (and convert the matrix output into a logical vector):</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">filter</span>(us_highways, <span class="fu">as.logical</span>(<span class="fu">st_is_within_distance</span>(geometry, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>), <span class="at">sparse =</span> <span class="cn">FALSE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 2245 features and 4 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -81.72573 ymin: 36.57507 xmax: -74.04969 ymax: 41.34626
+Geodetic CRS:  NAD83
+First 10 features:
+         LINEARID      FULLNAME RTTYP MTFCC                       geometry
+1  11013853809147 State Rte 611     S S1100 LINESTRING (-75.1366 40.350...
+2  11013853809270 State Rte 611     S S1100 LINESTRING (-75.12634 40.28...
+3  11013853809430 State Rte 611     S S1100 LINESTRING (-75.12603 40.28...
+4  11013853864377  State Rte 29     S S1100 LINESTRING (-74.76432 40.20...
+5   1108296536943  State Rte 26     S S1100 LINESTRING (-74.76814 40.20...
+6   1108296536969  State Rte 26     S S1100 LINESTRING (-74.71174 40.27...
+7   1104486135566  State Rte 26     S S1100 LINESTRING (-77.73356 40.89...
+8   1105598256809  State Rte 26     S S1100 LINESTRING (-77.73622 40.89...
+9   1108296538090 State Rte 129     S S1100 LINESTRING (-74.72239 40.18...
+10  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
+</div>
+</div>
+</div>
+</section><section id="spatial-aggregation" class="title-slide slide level3 center"><h3>Spatial aggregation</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>us_states_combine <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">geometry =</span> <span class="fu">st_combine</span>(geometry)</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  )</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="fu">plot</span>(us_states_combine[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section></section><section><section id="types-of-geometric-operations" class="title-slide slide level2 center" data-number="4"><h2>
+<span class="header-section-number">4</span> Types of geometric operations</h2>
 <ul>
-<li>Complete required readings for <a href="../weeks/week_05.html">week 5</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 4</a> on <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> (and a little <a href="https://tidyr.tidyverse.org">tidyr</a>)</li>
-</ul>
+<li>Simplification</li>
+<li>Centroids</li>
+<li>Buffers</li>
+<li>Clipping (with or without subsetting)</li>
+<li>Unions</li>
+<li>Type transformations</li>
+</ul></section><section id="simplification" class="title-slide slide level3 center"><h3>Simplification</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">plot</span>(<span class="fu">st_simplify</span>(lower48, <span class="at">dTolerance =</span> <span class="dv">100000</span>)[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section id="centroids" class="title-slide slide level3 center"><h3>Centroids</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">plot</span>(<span class="fu">st_centroid</span>(lower48)[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section id="buffers" class="title-slide slide level3 center"><h3>Buffers</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> <span class="dv">100</span>)[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section id="clipping-with-or-without-subsetting" class="title-slide slide level3 center"><h3>Clipping (with or without subsetting)</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">plot</span>(<span class="fu">st_intersection</span>(us_highways, maryland)[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section id="unions" class="title-slide slide level3 center"><h3>Unions</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>us_highways_union <span class="ot">&lt;-</span> us_highways <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">group_by</span>(RTTYP) <span class="sc">|&gt;</span> </span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">geometry =</span> <span class="fu">st_union</span>(geometry)</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  )</span>
+<span id="cb30-6"><a href="#cb30-6"></a></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="fu">plot</span>(us_highways_union[,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section><section id="type-transformations" class="title-slide slide level3 center"><h3>Type transformations</h3>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">plot</span>(<span class="fu">st_cast</span>(us_highways[<span class="dv">1</span>,], <span class="at">to =</span> <span class="st">"POINT"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</div>
+</div>
+</div>
 
-
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section></section>
