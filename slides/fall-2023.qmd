@@ -2,6 +2,7 @@
 title: "Fall 2023 Weekly Updates"
 number-sections: false
 scrollable: true
+code-link: true
 ---
 
 ```{r}
@@ -12,124 +13,153 @@ library(sf)
 
 # This Week
 
-## Week 4: September 20, 2023
+## Week 5: September 27, 2023
 
 ### Your questions
 
-![](https://r4ds.hadley.nz/diagrams/data-science/transform.png)
+------------------------------------------------------------------------
 
-----
-
-**How to filter multiple rows from a column?**
-
-It all depends on the tests or conditions you pass to `filter()`. Review
-the reading [on the filter
-function](https://r4ds.hadley.nz/data-transform#filter) or check out
-this optional section of R for Data Science on [boolean operations with
-strings](https://r4ds.hadley.nz/regexps#sec-boolean-operations).
-
-----
-
-**How do you set `{tidyselect}` helpers to be case *insensitive*?**
-
-[Check out the
-documentation](https://tidyselect.r-lib.org/reference/starts_with.html)!
-Look for the `ignore.case` parameter.
-
-----
-
-"I would love to run through the code for this bar graph in class, since
-I don't totally understand what thought process to use to come up with
-it."
+How do I get my own shapefiles into R?
 
 ```{r}
-flights |>
-  replace_na(
-    replace = list(arr_delay = 0)
-  ) |> 
+#| eval: false
+path <- "path to your shapefile"
+
+your_data <- read_sf(path)
+```
+
+------------------------------------------------------------------------
+
+Is there a "best" way to perform specific operations? Or does it depend
+on individual preference?
+
+There isn't a "best" way but there are often *better* and *worse* ways.
+If you have more than one way to achieve the same objective in R, you
+can compare the approaches using a few related considerations:
+
+-   Performance (speed and memory)
+-   Code readability
+-   Consistency and predictability
+
+------------------------------------------------------------------------
+
+This presentation on [Styling R
+Code](https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html)
+from Jacob Scott is one of the best resources I've seen on the topic.
+
+A few related resources:
+
+-   `{lintr}` flags when it detects problems in your code.
+-   `{styler}` can help automatically reformat your code.
+-   Documentation like [the tidyverse style
+    guide](https://style.tidyverse.org/) can inform how you write code.
+
+------------------------------------------------------------------------
+
+How can you keep track of what is happening when piping data from one
+function to another?
+
+The `{tidylog}` package is one tool for getting more insight into your
+pipelines:
+
+```{r}
+library(tidylog, warn.conflicts = FALSE)
+
+mtcars |> 
+  filter(cyl == 4) |> 
+  mutate(new_var = wt ** 2) |> 
+  select(mpg, cyl, new_var)
+```
+
+Another is
+[`{ViewPipeSteps}`](https://github.com/daranzolin/ViewPipeSteps)
+
+The [debugging tools](https://adv-r.hadley.nz/debugging.html) built into
+R and RStudio can also be useful for trouble-shooting in case of errors
+or unexpected results.
+
+------------------------------------------------------------------------
+
+What is the difference between an intensive and extensive variable?
+
+The concept of *intensive* or *extensive* variables comes to the world
+of spatial data from physics and chemistry. The Wikipedia article on
+[intensive and extensive
+properties](https://en.wikipedia.org/wiki/Intensive_and_extensive_properties)
+provides helpful definitions:
+
+-   an intensive property or intensive quantity is one whose magnitude
+    is independent of the size of the system (e.g. temperature,
+    hardness)
+
+-   an extensive property or extensive quantity is one whose magnitude
+    is additive for subsystems (e.g. mass, volume)
+
+### What is due next week
+
+Your weekly check-in response!
+
+```{r}
+#| output-location: col
+responses <- readr::read_csv("files/2023-09-27_check-in-responses.csv") |> 
   mutate(
-    hour_factor = factor(hour),
-    arr_delay_flag = arr_delay > 5
-  ) |>
-  ggplot(aes(x = hour_factor, fill = arr_delay_flag)) +
-  geom_bar()
-```
+    week = week - 34
+  )
 
-### Interesting things
-
-We all love `filter()`! We also appreciate `distinct()`
-
-----
-
-"I have been working with R for a while now, in classes and for my own
-research. The lecture this week and the exercise really helped me
-understand the application of all the tools to transform data, which was
-super interesting because I often end up doing selections and filters in
-ArcGIS Pro or in a csv."
-
-### Difficult things
-
-**Answering this question:** Which carrier has the worst average delays?
-**Challenge:** can you disentangle the effects of bad airports vs. bad
-carriers? Why/why not?
-
-```{r}
-# flights |>
-#   replace_na(
-#     replace = list(
-#       arr_delay = 0,
-#       dep_delay = 0
-#     )
-#   ) |>
-#   summarise(
-#     n_flights = n(),
-#     n_delay_flights = sum(n > dep_delay),
-#     mean_arr_delay = mean(arr_delay),
-#     mean_dep_delay = mean(dep_delay),
-#     mean_total_delay = mean(arr_delay + dep_delay),
-#     .by = carrier
-#   ) |>
-#   slice_max(order_by = mean_total_delay, n = 10)
-```
-
-```{r}
-flights |>
-  replace_na(
-    replace = list(
-      arr_delay = 0,
-      dep_delay = 0
-    )
-  ) |>
+responses |>
   summarise(
-    mean_dep_delay = mean(dep_delay),
-    mean_arr_delay = mean(arr_delay),
-    mean_total_delay_diff = mean(dep_delay - arr_delay),
-    mean_total_delay = mean(dep_delay + arr_delay),
-    .by = carrier
-  ) |>
-  arrange(desc(mean_total_delay))
+    num_resp = n_distinct(id),
+    .by = week
+  ) |> 
+  ggplot(aes(week, num_resp)) +
+  geom_point(size = 2) +
+  geom_line(linewidth = 0.75) +
+  scale_y_continuous(limits = c(0,15)) +
+  labs(
+    x = "Weeks into class",
+    y = "Number of responses"
+  ) +
+  hrbrthemes::theme_ipsum_pub()
 ```
 
 ----
 
-### What is due by this week
+```{r}
+responses |>
+  group_by(id) |> 
+  mutate(
+    num_weeks = n_distinct(week)
+  ) |> 
+  distinct(id, num_weeks) |> 
+  ggplot(aes(num_weeks)) +
+  geom_bar(alpha = 0.75) +
+  labs(
+    x = "Week",
+    y = "Number of students"
+  ) +
+  hrbrthemes::theme_ipsum_pub()
 
--   Complete required readings for [week 4](../weeks/week_04.html)
--   Submit [response to weekly check-in
-    questions](https://forms.gle/PAKvmQX652e5Eois6)
--   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
+```
 
-### What is coming up for next week
+### What is due next week
 
--   Complete required readings for [week 5](../weeks/week_05.html)
--   Submit [response to weekly check-in
-    questions](https://forms.gle/PAKvmQX652e5Eois6)
--   Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and
-    `{dplyr}` (and a little `{tidyr}`)
+Readings:
+
+-   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in
+    Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel *R for
+    Data Science: Import, Tidy, Transform, Visualize, and Model Data*,
+    2nd edition (WIP). (Sebastopol, CA: O\'Reilly Media, 2023),
+    <https://r4ds.hadley.nz/>.
+
+-   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in Wickham, Grolemund,
+    and Çetinkaya-Rundel *R for Data Science*.
+
+-   Karl W. Broman and Kara H. Woo \"Data Organization in
+    Spreadsheets,\" *The American Statistician* 72, no. 1 (January 2,
+    2018): 2--10,
+    doi:[10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989).
 
 # Upcoming Updates
-
-## Week 5: September 27, 2023
 
 ## Week 6: October 4, 2023
 
@@ -277,3 +307,118 @@ Reminder: questions are *required* as part of the weekly check-in.
 ### What is due by this week
 
 -   Join the Discord chat
+
+## Week 4: September 20, 2023
+
+### Your questions
+
+![](https://r4ds.hadley.nz/diagrams/data-science/transform.png)
+
+------------------------------------------------------------------------
+
+**How to filter multiple rows from a column?**
+
+It all depends on the tests or conditions you pass to `filter()`. Review
+the reading [on the filter
+function](https://r4ds.hadley.nz/data-transform#filter) or check out
+this optional section of R for Data Science on [boolean operations with
+strings](https://r4ds.hadley.nz/regexps#sec-boolean-operations).
+
+------------------------------------------------------------------------
+
+**How do you set `{tidyselect}` helpers to be case *insensitive*?**
+
+[Check out the
+documentation](https://tidyselect.r-lib.org/reference/starts_with.html)!
+Look for the `ignore.case` parameter.
+
+------------------------------------------------------------------------
+
+"I would love to run through the code for this bar graph in class, since
+I don't totally understand what thought process to use to come up with
+it."
+
+```{r}
+flights |>
+  replace_na(
+    replace = list(arr_delay = 0)
+  ) |> 
+  mutate(
+    hour_factor = factor(hour),
+    arr_delay_flag = arr_delay > 5
+  ) |>
+  ggplot(aes(x = hour_factor, fill = arr_delay_flag)) +
+  geom_bar()
+```
+
+### Interesting things
+
+We all love `filter()`! We also appreciate `distinct()`
+
+------------------------------------------------------------------------
+
+"I have been working with R for a while now, in classes and for my own
+research. The lecture this week and the exercise really helped me
+understand the application of all the tools to transform data, which was
+super interesting because I often end up doing selections and filters in
+ArcGIS Pro or in a csv."
+
+### Difficult things
+
+**Answering this question:** Which carrier has the worst average delays?
+**Challenge:** can you disentangle the effects of bad airports vs. bad
+carriers? Why/why not?
+
+```{r}
+# flights |>
+#   replace_na(
+#     replace = list(
+#       arr_delay = 0,
+#       dep_delay = 0
+#     )
+#   ) |>
+#   summarise(
+#     n_flights = n(),
+#     n_delay_flights = sum(n > dep_delay),
+#     mean_arr_delay = mean(arr_delay),
+#     mean_dep_delay = mean(dep_delay),
+#     mean_total_delay = mean(arr_delay + dep_delay),
+#     .by = carrier
+#   ) |>
+#   slice_max(order_by = mean_total_delay, n = 10)
+```
+
+```{r}
+flights |>
+  replace_na(
+    replace = list(
+      arr_delay = 0,
+      dep_delay = 0
+    )
+  ) |>
+  summarise(
+    mean_dep_delay = mean(dep_delay),
+    mean_arr_delay = mean(arr_delay),
+    mean_total_delay_diff = mean(dep_delay - arr_delay),
+    mean_total_delay = mean(dep_delay + arr_delay),
+    .by = carrier
+  ) |>
+  arrange(desc(mean_total_delay))
+```
+
+------------------------------------------------------------------------
+
+### What is due by this week
+
+-   Complete required readings for [week 4](../weeks/week_04.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
+
+### What is coming up for next week
+
+-   Complete required readings for [week 5](../weeks/week_05.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and
+    `{dplyr}` (and a little `{tidyr}`)
