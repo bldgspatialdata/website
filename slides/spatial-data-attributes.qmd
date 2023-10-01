@@ -454,8 +454,7 @@ us_states |>
   group_by(DIVISION) |> 
   summarise(
     n_states = n_distinct(NAME),
-    geometry = st_union(geometry),
-    .by = DIVISION
+    geometry = st_union(geometry)
   ) |> 
   st_as_sf() |> 
   ggplot() +
@@ -468,16 +467,10 @@ us_states |>
 Not all functions work with all geometry types!
 
 -   `st_area()` only works with POLYGON and MULTIPOLYGON geometries
--   `st_length()` only wrks with LINESTRING and MULTILINSTRING
+-   `st_length()` only works with LINESTRING and MULTILINSTRING
     geometries
 
 ## Measuring geometries with `{sf}`
-
-Not all functions always return a vector. Try
-
-```{r}
-
-```
 
 -   `st_distance()` requires at least two objects
 
@@ -496,38 +489,3 @@ us_states |>
   )
 ```
 
-------------------------------------------------------------------------
-
-```{r}
-
-```
-
-## Compute geometric measurements
-
-`{sf}` works well with the `{tidyverse}`---but there are some things to
-know.
-
-------------------------------------------------------------------------
-
-Your geometry column sticks around, even if you don't select it
-
--   
-
-If you lose your sf class, but you still have your geometry, convert
-from a data frame to a sf object with `st_as_sf()`
-
-```{r}
-us_states |> 
-  mutate(
-    area = st_area(geometry)
-  )
-```
-
-neighborhoods \|\> distinct(type, .keep_all = TRUE) \|\> class()
-mapview::mapview()
-
-## More things to remember
-
--   "attributes" in GIS and attributes in R are *different* things.
--   Outside of today's lecture, I will typically talk about variables or
-    columns---but not attributes.
