@@ -1,7 +1,7 @@
 ---
 title: "Exercise 04"
 order: 4
-date-due: 2023-09-25
+date-due: 2023-10-03
 date-modified: last-modified
 ---
 
@@ -9,22 +9,26 @@ date-modified: last-modified
 Exercise due on {{< meta date-due >}}
 :::
 
-ℹ️ See [week
-{{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
-for related slides and readings
+ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html) for related slides and readings
 
 ## Overview
 
-This week's exercises are excerpted from [Ch. 3 Attribute data operations](https://r.geocompx.org/attr) in Geocomputation with R. These exercises build on our last exercise using `{dplyr}` and include some of the same skills including:
+This week's exercises are excerpted from [Ch. 3](https://r.geocompx.org/attr), [Ch. 4](https://r.geocompx.org/spatial-operations#exercises-2), and [Ch. 5](https://r.geocompx.org/geometry-operations#exercises-3) in Geocomputation with R. These exercises build on our last exercise using `{dplyr}` and include some of the same skills including:
 
-- Filtering or subsetting rows using attributes
+-   Filtering rows or observations
+-   Grouping and summarizing data by variable
 
 New skills you will practice with this exercise include:
 
-- Working with `unit` class attributes (columns)
-- Joining datasets
+-   Using non-spatial joins for data frames
+-   Computing geometric measurements
+-   Using spatial filters
+-   Using geometric operations on a simple feature geometry set
+-   Using geometric operations on pairs of simple feature geometries
 
 ## Setup
+
+This exercise uses the `sf` and `tidyverse` packages:
 
 ```{r}
 library(tidyverse)
@@ -37,100 +41,173 @@ We are also going to use the `us_states` and `us_states_df` data from the `{spDa
 library(spData)
 ```
 
+Note that the `us_states` loaded for this exercise is different than the `us_states` we created during class with the `tigris::states()` function. For this exercise, the bonus exercises are mixed in with the other questions but you are welcome to skip them if you do not want go for the bonus part of the exercise.
+
 ## Exercises
 
-### Searching for `us_states`
+### Filtering data
 
-Find all states with the following characteristics (bonus find and plot
-them):
-
-Belong to the Midwest region.
+Find all states that belong to the West region, have an area below 250,000 km2and in 2015 a population greater than 5,000,000 residents (**Hint:** you may need to use the function `units::set_units()` or `as.numeric()`).
 
 ```{r}
 us_states |> 
   ____
 ```
 
-Belong to the West region, have an area below 250,000 km2and in 2015 a
-population greater than 5,000,000 residents (hint: you may need to use
-the function `units::set_units()` or `as.numeric()`).
+Find all states that belong to the South region, had an area larger than 150,000 km2 or a total population in 2015 larger than 7,000,000 residents.
 
 ```{r}
 us_states |> 
   ____
 ```
 
-Belong to the South region, had an area larger than 150,000 km2 or a
-total population in 2015 larger than 7,000,000 residents.
+### Joining and summarizing data
+
+What was the total population in 2015 in the `us_states` dataset? What was the minimum and maximum total population in 2015?
 
 ```{r}
 us_states |> 
   ____
 ```
 
-What was the total population in 2015 in the `us_states` dataset? What
-was the minimum and maximum total population in 2015?
-
-```{r}
-us_states |> 
-  ____
-```
-
-### Comparing and summarizing data
-
-Add variables from `us_states_df` to `us_states`, and create a new
-object called `us_states_stats`.
+Add variables from `us_states_df` to `us_states`, and create a new object called `us_states_stats`.
 
 -   What function did you use and why?
 -   Which variable is the key in both datasets?
 -   What is the class of the new object?
+
+Tip: we are covering joins in more detail next week---check out [the R for Data Science chapter on Joins](https://r4ds.hadley.nz/joins) for more information.
 
 ```{r}
 us_states_stats <- us_states |> 
   ____
 ```
 
-`us_states_df` has two more rows than `us_states`. **How can you find
-them?**
-
-Hint: try to use the `dplyr::anti_join()` function.
+`us_states_df` has two more rows than `us_states`. **How can you find them?** Hint: try to use the `dplyr::anti_join()` function.
 
 ```{r}
 ____(us_states, us_states_df)
 ```
 
-**How much has population density changed between 2010 and 2015 in each
-state?**
+**How much has population density changed between 2010 and 2015 in each state?**
 
-Calculate the change in percentages and map them.
-
-```{r}
-
-```
-
-Calculate the change in the number of residents living below the poverty level between 2010 and 2015 for each state. (Hint: See `?us_states_df` for documentation on the poverty level columns.)
+Calculate the change in percentages and map them with `plot()` or `geom_sf()`:
 
 ```{r}
 
 ```
 
-Bonus: Calculate the change in the percentage of residents living below the poverty level in each state.
+Calculate the change in the number of residents living below the poverty level between 2010 and 2015 for each state. **Hint:** See `?us_states_df` for documentation on the poverty level columns.
 
 ```{r}
 
 ```
 
-
-What was the minimum, average and maximum state’s number of people living below the poverty line in 2015 for each region?
-
-```{r}
-
-```
-
-Bonus: What is the region with the largest increase in people living below the poverty line?
+**Bonus:** Calculate the change in the percentage of residents living below the poverty level in each state.
 
 ```{r}
 
 ```
 
+What was the minimum, average and maximum state's number of people living below the poverty line in 2015 for each region?
 
+```{r}
+
+```
+
+**Bonus:** What is the region with the largest increase in people living below the poverty line?
+
+```{r}
+
+```
+
+### Spatial operations
+
+Section [4.2](https://r.geocompx.org/spatial-operations#spatial-vec) (in Geocomputation with R) established that Canterbury was the region of New Zealand containing most of the 100 highest points in the country. How many of these high points does the Canterbury region contain?
+
+```{r}
+canterbury <- nz |>
+  filter(Name == "Canterbury")
+
+nz_height |> 
+  ____
+```
+
+**Bonus:** plot the result using the `ggplot2::geom_sf()` function to show all of New Zealand, `canterbury` region highlighted in yellow, high points in Canterbury represented by red crosses (**Hint:** try using `shape = 7`) and high points in other parts of New Zealand represented by blue circles.
+
+See the help page `?ggplot2::shape` and run the examples to see an illustration of different `shape` values.
+
+```{r}
+
+```
+
+Which region has the second highest number of `nz_height` points, and how many does it have?
+
+```{r}
+nz_height |> 
+  ____
+```
+
+Generalizing the question to all regions: how many of New Zealand's 16 regions contain points which belong to the top 100 highest points in the country? Which regions?
+
+```{r}
+
+```
+
+**Bonus:** create a table listing these regions in order of the number of points and their name. Hint: use `dplyr::slice_max()` and `gt::gt()`.
+
+```{r}
+
+```
+
+Using [`st_buffer()`](https://r-spatial.github.io/sf/reference/geos_unary.html), how many points in `nz_height` are within 100 km of Canterbury?
+
+```{r}
+nz_height |> 
+  st_buffer(____, dist = ____)
+```
+
+### Spatial predicates
+
+Test your knowledge of spatial predicates by finding out and plotting how US states relate to each other and other spatial objects.
+
+The starting point of this part of the exercise is to create an object representing Maryland state in the USA using the [`filter()`](https://dplyr.tidyverse.org/reference/filter.html) function and plot the resulting object in the context of US states.
+
+```{r}
+maryland <- filter(____, ____)
+
+ggplot() +
+  geom_sf(data = us_states) +
+  geom_sf(data = ____)
+```
+
+Create a new object representing all the states that geographically intersect with Maryland and plot the result (hint: the most concise way to do this is with the subsetting method `[` but you can also use `sf::st_filter()`).
+
+```{r}
+states_intersecting_md <- ____
+```
+
+Create another object representing all the objects that touch (have a shared boundary with) Maryland and plot the result (hint: remember you can use the argument `op = st_intersects` when subsetting with base R or `.predicate = st_intersects` when using `st_filter()`).
+
+```{r}
+states_touching_md <- ____
+```
+
+**Bonus:** create a straight line from the centroid of Maryland to the centroid of California near the West coast of the USA (hint: functions [`st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html), [`st_union()`](https://r-spatial.github.io/sf/reference/geos_combine.html) and [`st_cast()`](https://r-spatial.github.io/sf/reference/st_cast.html) described in Chapter 5 may help) and identify which states this long East-West line crosses.
+
+```{r}
+
+```
+
+How far is the geographic centroid of Maryland from the geographic centroid of Canterbury, New Zealand?
+
+```{r}
+
+```
+
+Calculate the length of the boundary lines of US states in meters. Which state has the longest border and which has the shortest? **Hint:** The `st_length` function computes the length of a `LINESTRING` or `MULTILINESTRING` geometry.
+
+```{r}
+us_states |> 
+  ____
+```
