@@ -7,17 +7,17 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.339">
-
-  <meta name="dcterms.date" content="2023-10-04">
-  <title>GES 668 - Fall 2023 - Welcome to GES 668: Building Spatial Datasets</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.339">
+<meta name="dcterms.date" content="2023-09-06">
+<title>GES 668 - Fall 2023 - Session 2: Visualizing spatial data with ggplot2</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,13 +29,78 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -233,7 +298,7 @@
   }
 
   </style>
-  <style type="text/css">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -321,265 +386,218 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Welcome to GES 668: Building Spatial Datasets">
+<meta property="og:title" content="GES 668 - Fall 2023 - Session 2: Visualizing spatial data with ggplot2">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Welcome to GES 668: Building Spatial Datasets</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Session 2: Visualizing spatial data with ggplot2</h1>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-10-04</p>
-</section>
-<section id="what-is-this-class-about" class="title-slide slide level2 center">
-<h2>What is this class about?</h2>
-
-</section>
-
-<section id="what-is-this-class-about-1" class="title-slide slide level2 center">
-<h2>What is this class about?</h2>
-<ul>
-<li>Working with data using R</li>
-</ul>
-</section>
-
-<section id="what-is-this-class-about-2" class="title-slide slide level2 center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What is this class about?</h2>
-<ul>
-<li>Working with <del>data</del> spatial data using R</li>
-</ul>
-</section>
-
-<section id="what-is-this-class-about-3" class="title-slide slide level2 center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What is this class about?</h2>
-<ul>
-<li>Working with spatial data <em>about places</em></li>
-</ul>
-</section>
-
-<section id="what-is-this-class-about-4" class="title-slide slide level2 center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What is this class about?</h2>
-<ul>
-<li>Working with spatial data <em>about <strong>people and</strong> places</em></li>
-</ul>
-</section>
-
-<section id="what-is-this-class-about-5" class="title-slide slide level2 center" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What is this class about?</h2>
-<ul>
-<li>Working with <del>spatial data</del> <strong>local knowledge</strong> about people and places</li>
-</ul>
-</section>
-
-<section id="why-are-you-here" class="title-slide slide level2 center">
-<h2>Why are you here?</h2>
-
-</section>
-
-<section>
-<section id="how-did-you-get-here" class="title-slide slide level2 center">
-<h2>How did you get here?</h2>
-<p>This isn’t a metaphorical question.</p>
-<p>Let’s make a map:</p>
-<ul>
-<li><a href="https://felt.com/map/UMBC-GES-668-Week-1-Map-wtdoPYAuTdSluuj1YzOuQD?loc=39.24098,-76.71654,14.97z">Open this Felt map and trace a route for your commute to campus today</a></li>
-<li>Start as close or far from home as you like</li>
-<li>Use the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g.&nbsp;UMBC Shuttle, Car or truck, Bike, etc.)</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<div class="r-fit-text">
-<p>🥳 Congratulations!</p>
-<p>We just built some spatial data.</p>
-</div>
-<div class="smaller">
-<p>We’ll come back to it later.</p>
-</div>
-</section></section>
-<section>
-<section id="what-experiences-do-you-bring-with-you-today" class="title-slide slide level2 center">
-<h2>What experiences do you bring with you today?</h2>
-
-</section>
-<section class="slide level4">
-
-
-<img data-src="images/2023-08-30_student-survey.png" style="width:100.0%" class="r-stretch"><aside class="notes">
-<p>What experiences do you bring?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section id="why-am-i-here" class="title-slide slide level2 center">
-<h2>Why am I here?</h2>
-<p>A few things about me:</p>
-<ul>
-<li>I first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007</li>
-<li>I started learning R as a student at the John Hopkins University School of Public Health in 2019</li>
-<li>I started developing R packages while working at the Neighborhood Design Center in 2020</li>
-<li>I work as a community planner at the Baltimore City Department of Planning (since June 2022)</li>
-</ul>
-<aside class="notes">
-<p>I believe in the potential of data to build power, inform collective action, and make change in the world</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="communication" class="title-slide slide level2 center">
-<h2>Communication 📬</h2>
-<ul>
-<li>I am not always on top of my email.</li>
-<li>Please post questions to the Discord if you think other students could help (or others may share your question).</li>
-<li>If you don’t get a timely response by email, message me on Discord.</li>
-</ul>
-</section>
-
-<section>
-<section id="assignments" class="title-slide slide level2 center">
-<h2>Assignments</h2>
+</section><section class="slide level4"><p>Categories of functions in <a href="https://tidyr.tidyverse.org">tidyr</a>:</p>
 <ol type="1">
-<li>Weekly check-in</li>
-<li>Practice exercises</li>
-<li>Final project</li>
+<li><strong>Pivoting</strong></li>
+<li><strong>Rectangling</strong></li>
+<li><strong>Nesting and unnesting</strong></li>
+<li><strong>Splitting and combining character columns</strong></li>
+<li><strong>Handling missing values</strong></li>
 </ol>
-</section>
-<section id="weekly-check-in" class="title-slide slide level3 center">
-<h3>Weekly check-in 📝</h3>
+<aside class="notes"><p>From https://tidyr.tidyverse.org/#getting-started</p>
+<p>“Pivoting” which converts between long and wide forms. tidyr 1.0.0 introduces pivot_longer() and pivot_wider(), replacing the older spread() and gather() functions. See vignette(“pivot”) for more details.</p>
+<p>“Rectangling”, which turns deeply nested lists (as from JSON) into tidy tibbles. See unnest_longer(), unnest_wider(), hoist(), and vignette(“rectangle”) for more details.</p>
+<p>Nesting converts grouped data to a form where each group becomes a single row containing a nested data frame, and unnesting does the opposite. See nest(), unnest(), and vignette(“nest”) for more details.</p>
+<p>Splitting and combining character columns. Use separate() and extract() to pull a single character column into multiple columns; use unite() to combine multiple columns into a single character column.</p>
+<p>Make implicit missing values explicit with complete(); make explicit missing values implicit with drop_na(); replace missing values with next/previous value with fill(), or a known value with replace_na().</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="what-is-involved-in-tidying-messy-datasets" class="title-slide slide level2 center" data-number="1"><h2>
+<span class="header-section-number">1</span> What is involved in tidying messy datasets?</h2>
 <ul>
-<li>The goal of the weekly check-in is to help you stay on top of the reading and get your questions out for everyone to benefit from.</li>
+<li>Column headers are values, not variable names</li>
+<li>Multiple variables stored in one column</li>
+<li>Variables are stored in both rows and columns</li>
+<li>Multiple types in one table</li>
+<li>One type in multiple tables</li>
 </ul>
-</section>
+<aside class="notes"><p>from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="pivoting" class="title-slide slide level2 center" data-number="2"><h2>
+<span class="header-section-number">2</span> Pivoting</h2>
 
-<section id="practice-exercises" class="title-slide slide level3 center">
-<h3>Practice exercises 🛠️</h3>
+</section><section><section id="how-would-this-look-if-we-turn-it-into-tidy-data" class="title-slide slide level2 center" data-number="3"><h2>
+<span class="header-section-number">3</span> How would this look if we turn it into tidy data?</h2>
+<table>
+<thead><tr class="header">
+<th>City</th>
+<th>2000</th>
+<th>2010</th>
+<th>2020</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Baltimore city, Maryland</td>
+<td>300000</td>
+<td>290000</td>
+<td>285000</td>
+</tr>
+<tr class="even">
+<td>Washington, DC</td>
+<td>300000</td>
+<td>315000</td>
+<td>330000</td>
+</tr>
+<tr class="odd">
+<td>Richmond, Virginia</td>
+<td>200000</td>
+<td>202000</td>
+<td>210000</td>
+</tr>
+</tbody>
+</table></section><section class="slide level4"><table>
+<thead><tr class="header">
+<th>City</th>
+<th>Year</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Baltimore city, Maryland</td>
+<td>2000</td>
+<td>300000</td>
+</tr>
+<tr class="even">
+<td>Baltimore city, Maryland</td>
+<td>2010</td>
+<td>290000</td>
+</tr>
+<tr class="odd">
+<td>Baltimore city, Maryland</td>
+<td>2020</td>
+<td>285000</td>
+</tr>
+</tbody>
+</table>
+<p>…</p>
+</section><section class="slide level4"><div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="at">cols =</span> <span class="sc">!</span><span class="fu">any_of</span>(<span class="st">"City"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="at">names_to =</span> <span class="st">"Year"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="at">values_to =</span> <span class="st">"Value"</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="column fragment">
+
+</div>
+</div>
+</section><section class="slide level4"></section></section><section><section id="tidying-messy-datasets" class="title-slide slide level2 center" data-number="4"><h2>
+<span class="header-section-number">4</span> Tidying messy datasets</h2>
 <ul>
-<li><p>Each practice exercise will include a mix of questions and coding prompts excerpted or adapted from R for Data Science, Geocomputation with R, and other resources.</p></li>
-<li><p>Questions may include both close-ended “fill in the blank” style questions and more open-ended prompts.</p></li>
-<li><p>Feedback on the exercises is welcome!</p></li>
-</ul>
-</section>
-
-<section id="final-project" class="title-slide slide level3 center">
-<h3>Final project</h3>
-<p>The final project includes a few elements:</p>
-<ul>
-<li>A proposal</li>
-<li>A presentation</li>
-<li>A reproducible project repository</li>
-</ul>
-<p>The proposal and presentation will both be built with <a href="https://quarto.org/">Quarto</a> using the <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML document</a> and <a href="https://quarto.org/docs/presentations/revealjs/">Reveal.js presentation</a> formats.</p>
-</section>
-</section>
-<section>
-<section id="readings" class="title-slide slide level2 center">
-<h2>Readings 📚</h2>
-<ul>
-<li>What are the readings?</li>
-<li>How can you get the most out of the readings?</li>
-</ul>
-</section>
-<section id="r-for-data-science" class="title-slide slide level3 center">
-<h3>R for Data Science</h3>
-
-<img data-src="https://r4ds.hadley.nz/cover.jpg" class="r-stretch"></section>
-
-<section id="geocomputation-with-r" class="title-slide slide level3 center">
-<h3>Geocomputation with R</h3>
-
-<img data-src="https://geocompx.org/static/img/book_cover.jpg" class="r-stretch"></section>
-
-<section id="all-data-are-local" class="title-slide slide level3 center">
-<h3>All Data are Local</h3>
-
-<img data-src="https://mit-press-us.imgix.net/covers/9780262545174.jpg?auto=format&amp;w=298&amp;dpr=2&amp;q=20" class="r-stretch"></section>
-</section>
-<section>
-<section id="miscellaneous" class="title-slide slide level2 center">
-<h2>Miscellaneous</h2>
-
-</section>
-<section id="make-this-a-safe-and-mutually-supportive-space" class="title-slide slide level3 center">
-<h3>Make this a safe and mutually supportive space</h3>
-<p>We are all learning! No prior programming experience is required and we should all work to make this an inclusive experienced for everyone.</p>
-</section>
-
-<section id="attendance-and-remote-participation" class="title-slide slide level3 center">
-<h3>Attendance and remote participation</h3>
-<p><strong>Do come to class.</strong> You’ll get the most out of this semester if you are present and participating.</p>
-<p><strong>Don’t come to class sick!</strong> Please prioritize your health and well-being if you are sick or need to care for someone else.</p>
-<p>You <em>can</em> participate online if you need to. We can screen share sessions to Discord and record lectures if needed.</p>
-</section>
-
-<section id="using-chatgpt-or-other-llm-for-coding" class="title-slide slide level3 center">
-<h3>Using ChatGPT or other LLM for coding</h3>
-<ul>
-<li><p>You <em>are</em> allowed to use ChatGPT or other large language models to help with your project or, if desired, assignments.</p></li>
-<li><p>You <em>must</em> include information about when and how you use it including your specific prompts and tools used.</p></li>
-<li><p>You <em>should</em> use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don’t let this tool stand in the way of developing your own understanding of R and how it works.</p></li>
-</ul>
-</section>
-</section>
-<section id="welcome-again" class="title-slide slide level2 center">
-<h2>Welcome again!</h2>
-
+<li>Column headers are values, not variable names</li>
+<li>Multiple variables stored in one column</li>
+<li>Variables are stored in both rows and columns</li>
+<li>Multiple types in one table</li>
+<li>One type in multiple tables</li>
+</ul></section><section class="slide level4"></section></section><section><section id="how-would-this-look-if-we-turn-it-into-tidy-data-1" class="title-slide slide level2 center" data-number="5"><h2>
+<span class="header-section-number">5</span> How would this look if we turn it into tidy data?</h2>
+<table>
+<thead><tr class="header">
+<th>City name</th>
+<th>2000</th>
+<th>2010</th>
+<th>2020</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Baltimore city, Maryland</td>
+<td>300000</td>
+<td>290000</td>
+<td>285000</td>
+</tr>
+<tr class="even">
+<td>Washington, DC</td>
+<td>300000</td>
+<td>315000</td>
+<td>330000</td>
+</tr>
+<tr class="odd">
+<td>Richmond, Virginia</td>
+<td>200000</td>
+<td>202000</td>
+<td>210000</td>
+</tr>
+</tbody>
+</table></section><section class="slide level4"><table>
+<thead><tr class="header">
+<th>City</th>
+<th>State</th>
+<th>Year</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Baltimore city</td>
+<td>Maryland</td>
+<td>2000</td>
+<td>300000</td>
+</tr>
+<tr class="even">
+<td>Washington</td>
+<td>DC</td>
+<td>2000</td>
+<td>300000</td>
+</tr>
+<tr class="odd">
+<td>Richmond</td>
+<td>Virginia</td>
+<td>2000</td>
+<td>200000</td>
+</tr>
+</tbody>
+</table>
+<p>…</p>
+</section><section class="slide level4">
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
-    </div>
+</section></section>
+</div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease-in-out",
+'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
-'autoAnimateUnmatched': false,
+'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
@@ -759,8 +777,42 @@
           RevealZoom
         ]
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -914,6 +966,6 @@
       }
     });
     </script>
-    
+
 
 </body></html>

@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.339">
-<meta name="dcterms.date" content="2023-09-27">
+<meta name="dcterms.date" content="2023-10-04">
 <title>GES 668 - Fall 2023 - Fall 2023 Weekly Updates</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -398,7 +398,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-09-27</p>
+  <p class="date">2023-10-04</p>
 </section><section class="slide level4"><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(nycflights13)</span>
@@ -406,114 +406,117 @@
 </div>
 </section><section><section id="this-week" class="title-slide slide level1 center"><h1>This Week</h1>
 
-</section><section id="week-5-september-27-2023" class="title-slide slide level2 center"><h2>Week 5: September 27, 2023</h2>
-
-</section><section id="your-questions" class="title-slide slide level3 center"><h3>Your questions</h3>
-
-</section><section class="slide level4"><p>How do I get my own shapefiles into R?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path to your shapefile"</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section class="slide level4"><p>Is there a “best” way to perform specific operations? Or does it depend on individual preference?</p>
-<p>There isn’t a “best” way but there are often <em>better</em> and <em>worse</em> ways. If you have more than one way to achieve the same objective in R, you can compare the approaches using a few related considerations:</p>
-<ul>
-<li>Performance (speed and memory)</li>
-<li>Code readability</li>
-<li>Consistency and predictability</li>
-</ul></section><section class="slide level4"><p>This presentation on <a href="https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html">Styling R Code</a> from Jacob Scott is one of the best resources I’ve seen on the topic.</p>
-<p>A few related resources:</p>
-<ul>
-<li>
-<a href="https://github.com/r-lib/lintr">lintr</a> flags when it detects problems in your code.</li>
-<li>
-<a href="https://github.com/r-lib/styler">styler</a> can help automatically reformat your code.</li>
-<li>Documentation like <a href="https://style.tidyverse.org/">the tidyverse style guide</a> can inform how you write code.</li>
-</ul></section><section class="slide level4"><p>How can you keep track of what is happening when piping data from one function to another?</p>
-<p>The <a href="https://github.com/elbersb/tidylog/">tidylog</a> package is one tool for getting more insight into your pipelines:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(tidylog, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">mutate</span>(<span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">select</span>(mpg, cyl, new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                mpg cyl   new_var
-Datsun 710     22.8   4  5.382400
-Merc 240D      24.4   4 10.176100
-Merc 230       22.8   4  9.922500
-Fiat 128       32.4   4  4.840000
-Honda Civic    30.4   4  2.608225
-Toyota Corolla 33.9   4  3.367225
-Toyota Corona  21.5   4  6.076225
-Fiat X1-9      27.3   4  3.744225
-Porsche 914-2  26.0   4  4.579600
-Lotus Europa   30.4   4  2.289169
-Volvo 142E     21.4   4  7.728400</code></pre>
-</div>
-</div>
-<p>Another is <a href="https://github.com/daranzolin/ViewPipeSteps"><code>{ViewPipeSteps}</code></a></p>
-<p>The <a href="https://adv-r.hadley.nz/debugging.html">debugging tools</a> built into R and RStudio can also be useful for trouble-shooting in case of errors or unexpected results.</p>
-</section><section class="slide level4"><p>What is the difference between an intensive and extensive variable?</p>
-<p>The concept of <em>intensive</em> or <em>extensive</em> variables comes to the world of spatial data from physics and chemistry. The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties">intensive and extensive properties</a> provides helpful definitions:</p>
-<ul>
-<li><p>an intensive property or intensive quantity is one whose magnitude is independent of the size of the system (e.g.&nbsp;temperature, hardness)</p></li>
-<li><p>an extensive property or extensive quantity is one whose magnitude is additive for subsystems (e.g.&nbsp;mass, volume)</p></li>
-</ul></section><section id="what-is-due-next-week" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Your weekly check-in response!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>responses <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"files/2023-09-27_check-in-responses.csv"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="at">week =</span> week <span class="sc">-</span> <span class="dv">34</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  )</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>responses <span class="sc">|&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">num_resp =</span> <span class="fu">n_distinct</span>(id),</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">.by =</span> week</span>
-<span id="cb5-10"><a href="#cb5-10"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(week, num_resp)) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-16"><a href="#cb5-16"></a>    <span class="at">x =</span> <span class="st">"Weeks into class"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17"></a>    <span class="at">y =</span> <span class="st">"Number of responses"</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a>  hrbrthemes<span class="sc">::</span><span class="fu">theme_ipsum_pub</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>responses <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">group_by</span>(id) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">num_weeks =</span> <span class="fu">n_distinct</span>(week)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">distinct</span>(id, num_weeks) <span class="sc">|&gt;</span> </span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(num_weeks)) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">geom_bar</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-10"><a href="#cb6-10"></a>    <span class="at">x =</span> <span class="st">"Week"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    <span class="at">y =</span> <span class="st">"Number of students"</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>  hrbrthemes<span class="sc">::</span><span class="fu">theme_ipsum_pub</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</div>
-</div>
-</section><section id="what-is-due-next-week-1" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Readings:</p>
-<ul>
-<li><p><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, 2nd edition (WIP). (Sebastopol, CA: O'Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>.</p></li>
-<li><p><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in Wickham, Grolemund, and Çetinkaya-Rundel <em>R for Data Science</em>.</p></li>
-<li><p>Karl W. Broman and Kara H. Woo "Data Organization in Spreadsheets," <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</p></li>
-</ul></section></section><section><section id="upcoming-updates" class="title-slide slide level1 center"><h1>Upcoming Updates</h1>
-
 </section><section id="week-6-october-4-2023" class="title-slide slide level2 center"><h2>Week 6: October 4, 2023</h2>
+
+</section><section id="weekly-questions" class="title-slide slide level2 center"><h2>Weekly questions</h2>
+
+</section><section id="geometric-and-spatial-operations" class="title-slide slide level3 center"><h3>Geometric and spatial operations</h3>
+<p>While the concept of a buffer is rather easy to understand for me in other spatial software such as ArcGIS Pro, it was difficult for me to manipulate in R.</p>
+</section><section class="slide level4"><div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>storms_sf <span class="ot">&lt;-</span> storms <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">st_as_sf</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">crs =</span> <span class="dv">4326</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  )</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span> </span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">arrange</span>(year, month, day, hour) <span class="sc">|&gt;</span> </span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span> </span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    <span class="at">avg_wind =</span> <span class="fu">mean</span>(wind),</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_union</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    )</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 639 features and 3 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -109.3 ymin: 7 xmax: 13.5 ymax: 70.7
+Geodetic CRS:  WGS 84
+# A tibble: 639 × 4
+# Groups:   year [47]
+    year name     avg_wind                                              geometry
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;                                      &lt;LINESTRING [°]&gt;
+ 1  1975 Amy          46.5 (-48 47, -51.6 44.5, -54.8 42.5, -58 40.5, -78 33.3,…
+ 2  1975 Blanche      45   (-65.2 44, -62.4 47.2, -74.6 32.2, -75 31, -74.9 29.…
+ 3  1975 Caroline     38.9 (-90.1 22.8, -91 22.9, -91.9 23, -92.6 23.1, -93.6 2…
+ 4  1975 Doris        67.1 (-44.6 34.5, -44.9 34.6, -44 35.4, -44 34.9, -44.2 3…
+ 5  1975 Eloise       45   (-81.5 37.5, -82.5 37, -83.5 36.5, -84.3 35.5, -85.7…
+ 6  1975 Faye         68.4 (-46 42.8, -40 42.9, -52 42.3, -57.1 41, -63.7 38.4,…
+ 7  1975 Gladys       66.3 (-36.7 11, -35.8 10.6, -34.8 10.3, -37.4 11.4, -38.2…
+ 8  1975 Hallie       34.6 (-79.4 29.4, -79.7 30, -79.8 30.2, -79.9 30.5, -80.1…
+ 9  1976 Belle        68.1 (-75.2 32.5, -75.3 30.9, -75.3 29.5, -75.1 28.1, -73…
+10  1976 Candice      49.5 (-51.2 44.4, -56.4 41.3, -59 41, -59.3 41.2, -68.2 3…
+# ℹ 629 more rows</code></pre>
+</div>
+</div>
+</section><section class="slide level4"><p>What do I mean by “states that intersect Maryland”?</p>
+</section><section class="slide level4"><p>How do you create the map (straight line between MD and CA) using ggplot instead of plot?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">plot</span>(</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  us_states<span class="sc">$</span>geometry,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">main =</span> <span class="st">"States crossed by a straight line from central Maryland to central California"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  )</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">plot</span>(</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  states_crossed<span class="sc">$</span>geometry,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="at">col =</span> <span class="st">"grey"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  )</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">plot</span>(</span>
+<span id="cb4-13"><a href="#cb4-13"></a>  md_to_cali,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="assorted-questions" class="title-slide slide level3 center"><h3>Assorted questions</h3>
+<p>How can I streamline my workflow?</p>
+</section><section id="tidy-data-questions" class="title-slide slide level3 center"><h3>Tidy data questions</h3>
+
+</section><section class="slide level4"><p>Are most built in datasets in R already tidy?</p>
+</section><section class="slide level4"><p>Can functions from the <a href="https://r-quantities.github.io/units/">units</a> work with any type of variable?</p>
+</section><section class="slide level4"><p>When might you use both <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">tidyr::pivot_longer()</a></code> and <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr::pivot_wider()</a></code>?</p>
+</section><section class="slide level4"><p>What is the purpose of the <code>.value</code> parameter used in <code>names_to</code> attribute of <code>pivot_longer()</code> function?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="fu">everything</span>(),</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="at">cols_vary =</span> <span class="st">"slowest"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"set"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">names_pattern =</span> <span class="st">"(.)(.)"</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 3
+   set       x     y
+   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 1        10  8.04
+ 2 1         8  6.95
+ 3 1        13  7.58
+ 4 1         9  8.81
+ 5 1        11  8.33
+ 6 1        14  9.96
+ 7 1         6  7.24
+ 8 1         4  4.26
+ 9 1        12 10.8 
+10 1         7  4.82
+# ℹ 34 more rows</code></pre>
+</div>
+</div>
+<aside class="notes"><p>“.value” indicates that the corresponding component of the column name defines the name of the output column containing the cell values, overriding values_to entirely.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section class="slide level4"><p>How does <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr::pivot_wider()</a></code> handle cases with conflicting or duplicate values when pivoting?</p>
+</section></section><section><section id="upcoming-updates" class="title-slide slide level1 center"><h1>Upcoming Updates</h1>
 
 </section><section id="week-7-october-11-2023" class="title-slide slide level2 center"><h2>Week 7: October 11, 2023</h2>
 
@@ -645,7 +648,7 @@ Volvo 142E     21.4   4  7.728400</code></pre>
 <li>Join the Discord chat</li>
 </ul></section><section id="week-4-september-20-2023" class="title-slide slide level2 center"><h2>Week 4: September 20, 2023</h2>
 
-</section><section id="your-questions-1" class="title-slide slide level3 center"><h3>Your questions</h3>
+</section><section id="your-questions" class="title-slide slide level3 center"><h3>Your questions</h3>
 
 <img data-src="https://r4ds.hadley.nz/diagrams/data-science/transform.png" class="r-stretch"></section><section class="slide level4"><p><strong>How to filter multiple rows from a column?</strong></p>
 <p>It all depends on the tests or conditions you pass to <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>. Review the reading <a href="https://r4ds.hadley.nz/data-transform#filter">on the filter function</a> or check out this optional section of R for Data Science on <a href="https://r4ds.hadley.nz/regexps#sec-boolean-operations">boolean operations with strings</a>.</p>
@@ -665,7 +668,7 @@ Volvo 142E     21.4   4  7.728400</code></pre>
 <span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting things</h3>
+<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting things</h3>
 <p>We all love <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>! We also appreciate <code>distinct()</code></p>
 </section><section class="slide level4"><p>“I have been working with R for a while now, in classes and for my own research. The lecture this week and the exercise really helped me understand the application of all the tools to transform data, which was super interesting because I often end up doing selections and filters in ArcGIS Pro or in a csv.”</p>
 </section><section id="difficult-things" class="title-slide slide level3 center"><h3>Difficult things</h3>
@@ -741,6 +744,69 @@ Volvo 142E     21.4   4  7.728400</code></pre>
 <li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
 </li>
 <li>Complete <a href="../exercises/exercise_03.html">Exercise 4</a> on <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> (and a little <a href="https://tidyr.tidyverse.org">tidyr</a>)</li>
+</ul></section><section id="week-5-september-27-2023" class="title-slide slide level2 center"><h2>Week 5: September 27, 2023</h2>
+
+</section><section id="your-questions-1" class="title-slide slide level3 center"><h3>Your questions</h3>
+
+</section><section class="slide level4"><p>How do I get my own shapefiles into R?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path to your shapefile"</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section class="slide level4"><p>Is there a “best” way to perform specific operations? Or does it depend on individual preference?</p>
+<p>There isn’t a “best” way but there are often <em>better</em> and <em>worse</em> ways. If you have more than one way to achieve the same objective in R, you can compare the approaches using a few related considerations:</p>
+<ul>
+<li>Performance (speed and memory)</li>
+<li>Code readability</li>
+<li>Consistency and predictability</li>
+</ul></section><section class="slide level4"><p>This presentation on <a href="https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html">Styling R Code</a> from Jacob Scott is one of the best resources I’ve seen on the topic.</p>
+<p>A few related resources:</p>
+<ul>
+<li>
+<a href="https://github.com/r-lib/lintr">lintr</a> flags when it detects problems in your code.</li>
+<li>
+<a href="https://github.com/r-lib/styler">styler</a> can help automatically reformat your code.</li>
+<li>Documentation like <a href="https://style.tidyverse.org/">the tidyverse style guide</a> can inform how you write code.</li>
+</ul></section><section class="slide level4"><p>How can you keep track of what is happening when piping data from one function to another?</p>
+<p>The <a href="https://github.com/elbersb/tidylog/">tidylog</a> package is one tool for getting more insight into your pipelines:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">library</span>(tidylog, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">mutate</span>(<span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">select</span>(mpg, cyl, new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                mpg cyl   new_var
+Datsun 710     22.8   4  5.382400
+Merc 240D      24.4   4 10.176100
+Merc 230       22.8   4  9.922500
+Fiat 128       32.4   4  4.840000
+Honda Civic    30.4   4  2.608225
+Toyota Corolla 33.9   4  3.367225
+Toyota Corona  21.5   4  6.076225
+Fiat X1-9      27.3   4  3.744225
+Porsche 914-2  26.0   4  4.579600
+Lotus Europa   30.4   4  2.289169
+Volvo 142E     21.4   4  7.728400</code></pre>
+</div>
+</div>
+<p>Another is <a href="https://github.com/daranzolin/ViewPipeSteps"><code>{ViewPipeSteps}</code></a></p>
+<p>The <a href="https://adv-r.hadley.nz/debugging.html">debugging tools</a> built into R and RStudio can also be useful for trouble-shooting in case of errors or unexpected results.</p>
+</section><section class="slide level4"><p>What is the difference between an intensive and extensive variable?</p>
+<p>The concept of <em>intensive</em> or <em>extensive</em> variables comes to the world of spatial data from physics and chemistry. The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties">intensive and extensive properties</a> provides helpful definitions:</p>
+<ul>
+<li><p>an intensive property or intensive quantity is one whose magnitude is independent of the size of the system (e.g.&nbsp;temperature, hardness)</p></li>
+<li><p>an extensive property or extensive quantity is one whose magnitude is additive for subsystems (e.g.&nbsp;mass, volume)</p></li>
+</ul></section><section id="what-is-due-next-week" class="title-slide slide level3 center"><h3>What is due next week</h3>
+<p>Your weekly check-in response!</p>
+</section><section id="what-is-due-next-week-1" class="title-slide slide level3 center"><h3>What is due next week</h3>
+<p>Readings:</p>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, 2nd edition (WIP). (Sebastopol, CA: O'Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>.</p></li>
+<li><p><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in Wickham, Grolemund, and Çetinkaya-Rundel <em>R for Data Science</em>.</p></li>
+<li><p>Karl W. Broman and Kara H. Woo "Data Organization in Spreadsheets," <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</p></li>
 </ul>
 
 
