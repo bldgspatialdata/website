@@ -1,0 +1,111 @@
+---
+title: "Session {{< meta order >}}: Visualizing spatial data with ggplot2"
+order: 2
+date-meta: 2023-09-06
+execute: 
+  error: true
+format: 
+  revealjs:
+    code-link: true
+    output-location: column-fragment
+    scrollable: true
+---
+
+------------------------------------------------------------------------
+
+Categories of functions in `{tidyr}`:
+
+1.  **Pivoting**
+2.  **Rectangling**
+3.  **Nesting and unnesting**
+4.  **Splitting and combining character columns**
+5.  **Handling missing values**
+
+::: notes
+From https://tidyr.tidyverse.org/#getting-started
+
+"Pivoting" which converts between long and wide forms. tidyr 1.0.0 introduces pivot_longer() and pivot_wider(), replacing the older spread() and gather() functions. See vignette("pivot") for more details.
+
+"Rectangling", which turns deeply nested lists (as from JSON) into tidy tibbles. See unnest_longer(), unnest_wider(), hoist(), and vignette("rectangle") for more details.
+
+Nesting converts grouped data to a form where each group becomes a single row containing a nested data frame, and unnesting does the opposite. See nest(), unnest(), and vignette("nest") for more details.
+
+Splitting and combining character columns. Use separate() and extract() to pull a single character column into multiple columns; use unite() to combine multiple columns into a single character column.
+
+Make implicit missing values explicit with complete(); make explicit missing values implicit with drop_na(); replace missing values with next/previous value with fill(), or a known value with replace_na().
+:::
+
+## What is involved in tidying messy datasets?
+
+-   Column headers are values, not variable names
+-   Multiple variables stored in one column
+-   Variables are stored in both rows and columns
+-   Multiple types in one table
+-   One type in multiple tables
+
+::: notes
+from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html
+:::
+
+## Pivoting
+
+## How would this look if we turn it into tidy data?
+
+| City                | 2000   | 2010   | 2020   |
+|--------------------------|--------|--------|--------|
+| Baltimore city, Maryland | 300000 | 290000 | 285000 |
+| Washington, DC           | 300000 | 315000 | 330000 |
+| Richmond, Virginia       | 200000 | 202000 | 210000 |
+
+------------------------------------------------------------------------
+
+| City                | Year | Value  |
+|--------------------------|------|--------|
+| Baltimore city, Maryland | 2000 | 300000 |
+| Baltimore city, Maryland | 2010 | 290000 |
+| Baltimore city, Maryland | 2020 | 285000 |
+
+...
+
+------------------------------------------------------------------------
+
+```{r}
+#| eval: false
+pivot_longer(
+  cols = !any_of("City"),
+  names_to = "Year",
+  values_to = "Value"
+)
+```
+
+------------------------------------------------------------------------
+
+## Tidying messy datasets
+
+-   Column headers are values, not variable names
+-   Multiple variables stored in one column
+-   Variables are stored in both rows and columns
+-   Multiple types in one table
+-   One type in multiple tables
+
+------------------------------------------------------------------------
+
+## How would this look if we turn it into tidy data?
+
+| City name                | 2000   | 2010   | 2020   |
+|--------------------------|--------|--------|--------|
+| Baltimore city, Maryland | 300000 | 290000 | 285000 |
+| Washington, DC           | 300000 | 315000 | 330000 |
+| Richmond, Virginia       | 200000 | 202000 | 210000 |
+
+------------------------------------------------------------------------
+
+| City           | State    | Year | Value  |
+|----------------|----------|------|--------|
+| Baltimore city | Maryland | 2000 | 300000 |
+| Washington     | DC       | 2000 | 300000 |
+| Richmond       | Virginia | 2000 | 200000 |
+
+...
+
+------------------------------------------------------------------------
