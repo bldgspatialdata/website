@@ -1,0 +1,95 @@
+---
+title: "Data sources"
+---
+
+Spatial data is available in a wide range of formats at the local, national, and international levels. Data is often published through larger data portals where you can find links to access data through a web service or options to download part of all of the data.
+
+## Local data sources for Baltimore and Maryland 🦀
+
+-   [Baltimore City Open Data Hub](https://data.baltimorecity.gov/)
+
+-   [Baltimore County GIS Open Data Portal](https://opendata-bc-gis.hub.arcgis.com/)
+
+-   [BMC Regional GIS Data Center - Baltimore Metropolitan Council](https://gisdata.baltometro.org/)
+
+-   [Chesapeake Bay Open Data Portal](https://data-chesbay.opendata.arcgis.com/)
+
+-   [Maryland's GIS Data Catalog](https://data.imap.maryland.gov/)
+
+-   [Maryland Open Data](https://opendata.maryland.gov/)
+
+-   [Vital Signs Open Data Portal](https://vital-signs-bniajfi.hub.arcgis.com/)
+
+-   [Maryland Food Systems Open Data Portal](https://data-clf.hub.arcgis.com/)
+
+## National data sources for the U.S. 🇺🇸
+
+-   [U.S. Department of Housing and Urban Development Geospatial Data Storefront](https://hudgis-hud.opendata.arcgis.com/)
+
+-   [Geospatial at BTS (Bureau of Transportation Statistics)](https://data-usdot.opendata.arcgis.com/), U.S. Department of Transportation
+
+-   [BTS Data Inventory](https://data.bts.gov/) (Bureau of Transportation Statistics), U.S. Department of Transportation
+
+-   [EDGE Geodata](https://data-nces.opendata.arcgis.com/) (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics
+
+-   [U.S. Geological Survey Science Data Catalog](https://data.usgs.gov/datacatalog/)
+
+-   [GeoPlatform.gov](https://www.geoplatform.gov/)
+
+-   [National Ecological Observatory Network (NEON) Data Portal](https://data.neonscience.org/)
+
+-   [Open Data Network](https://www.opendatanetwork.com/) (Socrata/Tyler Technologies)
+
+-   [Urban Institute Data Catalog](https://datacatalog.urban.org/)
+
+## Global data sources 🌏
+
+-   [Natural Earth](https://www.naturalearthdata.com/)
+
+-   [OpenStreetMap](https://www.openstreetmap.org/) (see the [OSM Wiki](https://wiki.openstreetmap.org/wiki/Main_Page) for more on how data is organized on OSM)
+
+-   [ArcGIS Living Atlas of the World](https://livingatlas.arcgis.com/en/home/)
+
+-   [NASA Open Data Portal](https://data.nasa.gov/)
+
+-   [NOAA Data Discovery Portal](https://data.noaa.gov/datasetsearch/)
+
+-   [World Bank Open Data](https://data.worldbank.org/)
+
+-   [Humanitarian Data Exchange](https://data.humdata.org/)
+
+-   [Data Portals](https://datacatalog.urban.org/) (Open Knowledge Foundation)
+
+## R packages for data access
+
+### General data access packages
+
+General data access packages include:
+
+-   [{arcgislayers}](https://github.com/R-ArcGIS/arcgislayers) 📦 to access ArcGIS FeatureServer data
+-   [{RSocrata}](https://github.com/Chicago/RSocrata) to access Socrata data portals
+-   [{ckanr}](https://docs.ropensci.org/ckanr/) to access CKAN data portals
+
+### Domain-specific data access packages
+
+There are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.
+
+A few broadly useful recommendations include:
+
+-   [{rnaturalearth}](https://docs.ropensci.org/rnaturalearth/): Get Natural Earth data.
+-   [{tigris}](https://github.com/walkerke/tigris): Download and use Census TIGER/Line shapefiles.
+-   [{tidycensus}](https://github.com/walkerke/tidycensus): Get US Census boundary and attribute data.
+-   [{geodata}](https://github.com/rspatial/geodata/): Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.
+-   [{dataRetrieval}](https://rconnect.usgs.gov/dataRetrieval/): Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.
+-   [{osmdata}](https://github.com/ropensci/osmdata): Get OpenStreetMap data.
+
+Explore the [Data Access category on ROpenSci](https://ropensci.org/packages/data-access/) or search for packages on [R-universe](https://r-universe.dev/search/) or [CRAN](https://cran.r-project.org/) to find the right package for your project or exercise.
+
+### Local data access packages
+
+I also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:
+
+-   [{mapbaltimore}](https://elipousson.github.io/mapbaltimore/)
+-   [{bcpss}](https://elipousson.github.io/bcpss/)
+-   [{mapmaryland}](https://elipousson.github.io/mapmaryland)
+-   [{marylandedu}](https://elipousson.github.io/bcpss/)

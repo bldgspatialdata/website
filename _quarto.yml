@@ -66,6 +66,10 @@ website:
           - href: exercises/exercise_10.qmd
           - href: exercises/exercise_11.qmd
           - href: exercises/exercise_12.qmd
+      - section: "Resources 📋️"
+        contents:
+          - href: resources/data-sources.qmd
+            text: Data Sources
 
 format:
   html:
