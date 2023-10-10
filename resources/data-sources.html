@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-04">
 
-<title>GES 668 - Fall 2023 - Week 6</title>
+<title>GES 668 - Fall 2023 - Data sources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week_07.html" rel="next">
-<link href="../weeks/week_05.html" rel="prev">
+<link href="../exercises/exercise_12.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,8 +68,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="GES 668 - Fall 2023 - Week 6">
-<meta property="og:description" content="Tidying and joining spatial data">
+<meta property="og:title" content="GES 668 - Fall 2023 - Data sources">
+<meta property="og:description" content="Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023.">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 
@@ -84,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/fall-2023.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_06.html">Week 6</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/data-sources.html">Resources 📋️</a></li><li class="breadcrumb-item"><a href="../resources/data-sources.html">Data Sources</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -143,13 +141,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Weeks 🗓️</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../slides/fall-2023.html" class="sidebar-item-text sidebar-link">
@@ -194,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week_06.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week_06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
@@ -339,16 +337,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Resources 📋️</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/data-sources.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/data-sources.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Sources</span></a>
   </div>
 </li>
@@ -364,39 +362,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
+  <li><a href="#local-data-sources-for-baltimore-and-maryland" id="toc-local-data-sources-for-baltimore-and-maryland" class="nav-link active" data-scroll-target="#local-data-sources-for-baltimore-and-maryland">Local data sources for Baltimore and Maryland 🦀</a></li>
+  <li><a href="#national-data-sources-for-the-u.s." id="toc-national-data-sources-for-the-u.s." class="nav-link" data-scroll-target="#national-data-sources-for-the-u.s.">National data sources for the U.S. 🇺🇸</a></li>
+  <li><a href="#global-data-sources" id="toc-global-data-sources" class="nav-link" data-scroll-target="#global-data-sources">Global data sources 🌏</a></li>
+  <li><a href="#r-packages-for-data-access" id="toc-r-packages-for-data-access" class="nav-link" data-scroll-target="#r-packages-for-data-access">R packages for data access</a>
   <ul class="collapse">
-  <li><a href="#required-reading" id="toc-required-reading" class="nav-link" data-scroll-target="#required-reading">Required reading</a></li>
-  <li><a href="#optional-reading" id="toc-optional-reading" class="nav-link" data-scroll-target="#optional-reading">Optional reading</a></li>
+  <li><a href="#general-data-access-packages" id="toc-general-data-access-packages" class="nav-link" data-scroll-target="#general-data-access-packages">General data access packages</a></li>
+  <li><a href="#domain-specific-data-access-packages" id="toc-domain-specific-data-access-packages" class="nav-link" data-scroll-target="#domain-specific-data-access-packages">Domain-specific data access packages</a></li>
+  <li><a href="#local-data-access-packages" id="toc-local-data-access-packages" class="nav-link" data-scroll-target="#local-data-access-packages">Local data access packages</a></li>
   </ul></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/resources/data-sources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/fall-2023.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_06.html">Week 6</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/data-sources.html">Resources 📋️</a></li><li class="breadcrumb-item"><a href="../resources/data-sources.html">Data Sources</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 6</h1>
-<p class="subtitle lead">Tidying and joining spatial data</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">weeks</div>
-  </div>
-  </div>
+<h1 class="title">Data sources</h1>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 4, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -405,43 +395,87 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Spatial data is available in a wide range of formats at the local, national, and international levels. Data is often published through larger data portals where you can find links to access data through a web service or options to download part of all of the data.</p>
+<section id="local-data-sources-for-baltimore-and-maryland" class="level2">
+<h2 class="anchored" data-anchor-id="local-data-sources-for-baltimore-and-maryland">Local data sources for Baltimore and Maryland 🦀</h2>
 <ul>
-<li>Joining tables by attribute with <code>{dplyr}</code></li>
-<li>Using <a href="https://stringr.tidyverse.org/">{stringr}</a> functions to tidy messy address data</li>
-<li>Recoding categorical attribute data with <a href="https://forcats.tidyverse.org/">{forcats}</a></li>
-<li>Converting between wide and long data formats with <code>dplyr::pivot_longer()</code> and <code>dplyr::pivot_wider()</code></li>
-<li>Working with date-time attributes using <a href="https://lubridate.tidyverse.org/">{lubridate}</a></li>
+<li><p><a href="https://data.baltimorecity.gov/">Baltimore City Open Data Hub</a></p></li>
+<li><p><a href="https://opendata-bc-gis.hub.arcgis.com/">Baltimore County GIS Open Data Portal</a></p></li>
+<li><p><a href="https://gisdata.baltometro.org/">BMC Regional GIS Data Center - Baltimore Metropolitan Council</a></p></li>
+<li><p><a href="https://data-chesbay.opendata.arcgis.com/">Chesapeake Bay Open Data Portal</a></p></li>
+<li><p><a href="https://data.imap.maryland.gov/">Maryland’s GIS Data Catalog</a></p></li>
+<li><p><a href="https://opendata.maryland.gov/">Maryland Open Data</a></p></li>
+<li><p><a href="https://vital-signs-bniajfi.hub.arcgis.com/">Vital Signs Open Data Portal</a></p></li>
+<li><p><a href="https://data-clf.hub.arcgis.com/">Maryland Food Systems Open Data Portal</a></p></li>
 </ul>
 </section>
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<section id="required-reading" class="level3">
-<h3 class="anchored" data-anchor-id="required-reading">Required reading</h3>
+<section id="national-data-sources-for-the-u.s." class="level2">
+<h2 class="anchored" data-anchor-id="national-data-sources-for-the-u.s.">National data sources for the U.S. 🇺🇸</h2>
 <ul>
-<li><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition (WIP). (<span>Sebastopol, CA</span>: <span>O’Reilly Media</span>, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
-<li><span class="citation" data-cites="bromanDataOrganizationSpreadsheets2018">Karl W. Broman and Kara H. Woo <span>“Data <span>Organization</span> in <span>Spreadsheets</span>,”</span> <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989" role="doc-biblioref">10.1080/00031305.2017.1375989</a>.</span></li>
+<li><p><a href="https://hudgis-hud.opendata.arcgis.com/">U.S. Department of Housing and Urban Development Geospatial Data Storefront</a></p></li>
+<li><p><a href="https://data-usdot.opendata.arcgis.com/">Geospatial at BTS (Bureau of Transportation Statistics)</a>, U.S. Department of Transportation</p></li>
+<li><p><a href="https://data.bts.gov/">BTS Data Inventory</a> (Bureau of Transportation Statistics), U.S. Department of Transportation</p></li>
+<li><p><a href="https://data-nces.opendata.arcgis.com/">EDGE Geodata</a> (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics</p></li>
+<li><p><a href="https://data.usgs.gov/datacatalog/">U.S. Geological Survey Science Data Catalog</a></p></li>
+<li><p><a href="https://www.geoplatform.gov/">GeoPlatform.gov</a></p></li>
+<li><p><a href="https://data.neonscience.org/">National Ecological Observatory Network (NEON) Data Portal</a></p></li>
+<li><p><a href="https://www.opendatanetwork.com/">Open Data Network</a> (Socrata/Tyler Technologies)</p></li>
+<li><p><a href="https://datacatalog.urban.org/">Urban Institute Data Catalog</a></p></li>
 </ul>
 </section>
-<section id="optional-reading" class="level3">
-<h3 class="anchored" data-anchor-id="optional-reading">Optional reading</h3>
+<section id="global-data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="global-data-sources">Global data sources 🌏</h2>
 <ul>
-<li><span class="citation" data-cites="QuartzGuideBad2022"><span>“The <span>Quartz</span> Guide to Bad Data”</span> (<span>Quartz</span>, August 31, 2022), <a href="https://github.com/Quartz/bad-data-guide" role="doc-biblioref">https://github.com/Quartz/bad-data-guide</a>.</span></li>
+<li><p><a href="https://www.naturalearthdata.com/">Natural Earth</a></p></li>
+<li><p><a href="https://www.openstreetmap.org/">OpenStreetMap</a> (see the <a href="https://wiki.openstreetmap.org/wiki/Main_Page">OSM Wiki</a> for more on how data is organized on OSM)</p></li>
+<li><p><a href="https://livingatlas.arcgis.com/en/home/">ArcGIS Living Atlas of the World</a></p></li>
+<li><p><a href="https://data.nasa.gov/">NASA Open Data Portal</a></p></li>
+<li><p><a href="https://data.noaa.gov/datasetsearch/">NOAA Data Discovery Portal</a></p></li>
+<li><p><a href="https://data.worldbank.org/">World Bank Open Data</a></p></li>
+<li><p><a href="https://data.humdata.org/">Humanitarian Data Exchange</a></p></li>
+<li><p><a href="https://datacatalog.urban.org/">Data Portals</a> (Open Knowledge Foundation)</p></li>
 </ul>
 </section>
+<section id="r-packages-for-data-access" class="level2">
+<h2 class="anchored" data-anchor-id="r-packages-for-data-access">R packages for data access</h2>
+<section id="general-data-access-packages" class="level3">
+<h3 class="anchored" data-anchor-id="general-data-access-packages">General data access packages</h3>
+<p>General data access packages include:</p>
+<ul>
+<li><a href="https://github.com/R-ArcGIS/arcgislayers">{arcgislayers}</a> 📦 to access ArcGIS FeatureServer data</li>
+<li><a href="https://github.com/Chicago/RSocrata">{RSocrata}</a> to access Socrata data portals</li>
+<li><a href="https://docs.ropensci.org/ckanr/">{ckanr}</a> to access CKAN data portals</li>
+</ul>
 </section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>🛠️️ <a href="../exercises/exercise_06.html">Exercise 06</a></p>
+<section id="domain-specific-data-access-packages" class="level3">
+<h3 class="anchored" data-anchor-id="domain-specific-data-access-packages">Domain-specific data access packages</h3>
+<p>There are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.</p>
+<p>A few broadly useful recommendations include:</p>
+<ul>
+<li><a href="https://docs.ropensci.org/rnaturalearth/">{rnaturalearth}</a>: Get Natural Earth data.</li>
+<li><a href="https://github.com/walkerke/tigris">{tigris}</a>: Download and use Census TIGER/Line shapefiles.</li>
+<li><a href="https://github.com/walkerke/tidycensus">{tidycensus}</a>: Get US Census boundary and attribute data.</li>
+<li><a href="https://github.com/rspatial/geodata/">{geodata}</a>: Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.</li>
+<li><a href="https://rconnect.usgs.gov/dataRetrieval/">{dataRetrieval}</a>: Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.</li>
+<li><a href="https://github.com/ropensci/osmdata">{osmdata}</a>: Get OpenStreetMap data.</li>
+</ul>
+<p>Explore the <a href="https://ropensci.org/packages/data-access/">Data Access category on ROpenSci</a> or search for packages on <a href="https://r-universe.dev/search/">R-universe</a> or <a href="https://cran.r-project.org/">CRAN</a> to find the right package for your project or exercise.</p>
+</section>
+<section id="local-data-access-packages" class="level3">
+<h3 class="anchored" data-anchor-id="local-data-access-packages">Local data access packages</h3>
+<p>I also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:</p>
+<ul>
+<li><a href="https://elipousson.github.io/mapbaltimore/">{mapbaltimore}</a></li>
+<li><a href="https://elipousson.github.io/bcpss/">{bcpss}</a></li>
+<li><a href="https://elipousson.github.io/mapmaryland">{mapmaryland}</a></li>
+<li><a href="https://elipousson.github.io/bcpss/">{marylandedu}</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -690,6 +724,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     window.tippy(el, config); 
   }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
   const processXRef = (id, note) => {
     // Strip column container classes
@@ -920,14 +966,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weeks/week_05.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 5</span>
+      <a href="../exercises/exercise_12.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise 12</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weeks/week_07.html" class="pagination-link">
-        <span class="nav-page-text">Week 7</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
