@@ -24,16 +24,7 @@ date: 2023-09-06
 
 ## Prepare
 
-### Required readings
-
--   [Ch. 6 Maps](https://ggplot2-book.org/maps.html) in @wickhamGgplot2ElegantGraphics2023
--   [Ch. 3 Workflow: basics](https://r4ds.hadley.nz/workflow-basics) in @wickhamDataScienceImport2023
--   [Ch. 1 Local Origins](https://direct.mit.edu/books/oa-monograph/4323/chapter/181048/LOCAL-ORIGINS) in @loukissasAllDataAre2019
-
-### Optional readings
-
--   @dignazioWhoCollectsData2021
--   [Ch. 2 Data visualization](https://r4ds.hadley.nz/data-visualize) in @wickhamDataScienceImport2023
+{{< include _readings_02.qmd >}}
 
 ## Participate
 

@@ -7,16 +7,7 @@ date: 2023-10-11
 
 ## Prepare
 
-### Required readings
-
--   [Ch. 26 Functions](https://r4ds.hadley.nz/functions) in @wickhamDataScienceImport2023
--   [Ch. 11 Scripts, algorithms and functions](https://geocompr.robinlovelace.net/algorithms.html) in @lovelaceGeocomputation2022
--   [Ch. 29 Quarto](https://r4ds.hadley.nz/quarto) in @wickhamDataScienceImport2023
-
-### Optional readings
-
--   @leonAccountingMethodsSpreadsheets2021
--   @mockWelcomeQuartoWorkshop2022
+{{< include _readings_07.qmd >}}
 
 ## Practice
 

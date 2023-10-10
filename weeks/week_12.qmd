@@ -17,16 +17,7 @@ Reminder! **Peer feedback on project proposals** is due by {{< var dates.project
 
 ## Prepare
 
-### Required readings
-
--   [Ch. 7 Show Your Work](https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3) in @dignazioDataFeminism2020
--   @pileggiCaseVariableLabels2022
--   @Dataprimers2019
-
-### Optional readngs
-
--   @GuideWritingReadme
--   @riedererColumnNamesContracts2020
+{{< include _readings_12.qmd >}}
 
 ## Practice
 

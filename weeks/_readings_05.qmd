@@ -1,0 +1,8 @@
+### Required readings
+
+-   [Ch. 4 Spatial data operations](https://geocompr.robinlovelace.net/spatial-operations.html) in @lovelaceGeocomputation2022
+-   [Ch. 5 Geometry operations](https://r.geocompx.org/geometry-operations) in @lovelaceGeocomputation2022
+
+### Optional readings
+
+-   @pebesmaManipulatingSimpleFeature2016

@@ -1,0 +1,59 @@
+## Week 1
+
+{{< include weeks/_readings_01.qmd >}}
+
+## Week 2
+
+{{< include weeks/_readings_02.qmd >}}
+
+## Week 3
+
+{{< include weeks/_readings_03.qmd >}}
+
+## Week 4
+
+{{< include weeks/_readings_04.qmd >}}
+
+## Week 5
+
+{{< include weeks/_readings_05.qmd >}}
+
+## Week 6
+
+{{< include weeks/_readings_06.qmd >}}
+
+## Week 7
+
+{{< include weeks/_readings_07.qmd >}}
+
+## Week 8
+
+{{< include weeks/_readings_08.qmd >}}
+
+## Week 9
+
+{{< include weeks/_readings_09.qmd >}}
+
+## Week 10
+
+{{< include weeks/_readings_10.qmd >}}
+
+## Week 11
+
+{{< include weeks/_readings_11.qmd >}}
+
+## Week 12
+
+{{< include weeks/_readings_12.qmd >}}
+
+## Week 13
+
+{{< include weeks/_readings_13.qmd >}}
+
+## Week 14
+
+No readings for this week.
+
+## Week 15
+
+No readings for this week.

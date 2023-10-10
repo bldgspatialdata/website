@@ -23,14 +23,7 @@ date: 2023-09-27
 
 ## Prepare
 
-### Required readings
-
--   [Ch. 4 Spatial data operations](https://geocompr.robinlovelace.net/spatial-operations.html) in @lovelaceGeocomputation2022
--   [Ch. 5 Geometry operations](https://r.geocompx.org/geometry-operations) in @lovelaceGeocomputation2022
-
-### Optional readings
-
--   @pebesmaManipulatingSimpleFeature2016
+{{< include _readings_05.qmd >}}
 
 ## Practice
 

@@ -5,6 +5,11 @@ format:
   html: default
   pdf:
     output-file: "GES668_Fall-2023_Syllabus.pdf"
+bibliography: weeks/files/readings.bib
+csl: weeks/files/chicago-syllabus.csl
+suppress-bibliography: true
+footnotes-hover: false
+link-citations: false
 ---
 
 Date 📅
@@ -248,3 +253,7 @@ Email Retriever Essentials if you would like to join our team or [volunteer](htt
 
 -   The respect statement is adapted from [California State University Chico's Office of Diversity and Inclusion](https://www.csuchico.edu/diversity/office/index.shtml).
 -   This course website is based in part on the [website for STA 210 at Duke University](https://github.com/sta210-s22/website). Check out the [repository on GitHub](https://github.com/bldgspatialdata/website) for more information about the site.
+
+# Schedule
+
+{{< include _course-syllabus-schedule.qmd >}}

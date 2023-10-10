@@ -1,0 +1,4 @@
+### Required readings
+
+-   [Ch. 5 Data transformation](https://r4ds.hadley.nz/data-transform) in @wickhamDataScienceImport2023
+-   [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA) in @loukissasAllDataAre2019

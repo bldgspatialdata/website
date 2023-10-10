@@ -1,0 +1,9 @@
+### Required readings
+
+-   @padghamOsmdata2023
+-   @mcconchieOpenStreetMapPastsOpenStreetMap2016
+
+### Optional readings
+
+-   @boeingRightToolsJob2020
+-   @arribas-belGeographyComputersPresent2018

@@ -16,15 +16,7 @@ date: 2023-10-04
 
 ## Prepare
 
-### Required reading
-
--   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in @wickhamDataScienceImport2023
--   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in @wickhamDataScienceImport2023
--   @bromanDataOrganizationSpreadsheets2018
-
-### Optional reading
-
--   @QuartzGuideBad2022
+{{< include _readings_06.qmd >}}
 
 ## Practice
 
