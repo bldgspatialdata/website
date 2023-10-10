@@ -1,7 +1,7 @@
 ---
-title: "Session {{< meta order >}}: Visualizing spatial data with ggplot2"
+title: "Session {{< meta order >}}: Tidying and joining data"
 order: 2
-date-meta: 2023-09-06
+date-meta: 2023-09-04
 execute: 
   error: true
 format: 
@@ -109,3 +109,25 @@ pivot_longer(
 ...
 
 ------------------------------------------------------------------------
+
+## Data organization in spreadsheets
+
+### What are the benefits of careful data organization in spreadsheets?
+
+- reduce errors
+- ease later analyses
+
+### What are the practical approaches for data organization in spreadsheets?
+
+1. be consistent,
+2. write dates like YYYY-MM-DD,
+3. do not leave any cells empty, 
+4. put just one thing in a cell,
+5. organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row),
+6. create a data dictionary,
+7. do not include calculations in the raw data files,
+8. do not use font color or highlighting as data,
+9. choose good names for things,
+10. make backups, 
+11. use data validation to avoid data entry errors,
+12. and save the data in plain text files.
