@@ -13,6 +13,142 @@ library(sf)
 
 # This Week
 
+## Week 7: October 11, 2023
+
+### Due this week
+
+* Exercise 6 is due this Friday!
+* Readings on scripts, functions, and Quarto. 
+
+### Due next week
+
+* Make a mapping function and use it in a Quarto document!
+
+### Your interesting things!
+
+----
+
+The reasoning behind why sometimes you can use pipes and sometimes not finally clicked with me! I had been trying to use pipes for everything and didn't understand why it wasn't working -- getting that down was really helpful.
+
+----
+
+I have found that it super interesting to determine how to tidy data, like taking the time to make logical sense of the data is great but this also leads to what I find most difficult.
+
+----
+
+I really enjoyed the independence of going out and located are own data and being able to manipulate it in R. Feels like the first step into the real world.
+
+----
+
+Joining is just *so much easier* in R as opposed to ArcGIS or QGIS.
+
+----
+
+### Your difficult things
+
+One of the most challenging concepts or topics for me from all the syllabus covered till now is the `st_()` functions.
+
+There are a lot of geometry operations and each has a different set of parameters and features, which are mostly confusing.
+
+### Your questions
+
+#### Trouble-shooting code questions
+
+Why does `plot()` make 6 maps instead of 1?
+
+```{r}
+maryland <- us_states |> 
+  select(NAME) |> 
+  filter(NAME == "Maryland")
+
+states_intersecting_md <- st_filter(
+  us_states,
+  maryland,
+  .predicate = st_intersects
+  ) 
+
+plot(states_intersecting_md)
+```
+
+----
+
+Why does this not work?
+
+```{r}
+ggplot(
+  data = states_intersecting_md,
+  mapping = aes(x = long, y = lat)
+  ) +
+geom_sf()
+```
+
+----
+
+What is `stringr::str_flatten()` doing?
+
+`str_flatten()` reduces a character vector to a single string.
+
+This is a **summary function** because regardless of the length of the input `x`, it always returns a single string.
+
+```{r}
+commas <- function(x) {
+  str_flatten(x, collapse = ", ", last = " and ")
+}
+
+commas(c("cat", "dog", "pigeon"))
+```
+
+----
+
+#### Questions about finding and citing data
+
+Is there a large list or repository of good places to find data or is it more of a treasure hunt?
+
+Here is [a big list of possible data sources](https://bldgspatialdata.github.io/website/resources/data-sources.html) including local and national data sources and a set of R packages focused on data access. Many libraries create similar resources for students and researchers to use and some libraries have geospatial data specialists who can assist you in a search.
+
+There are also a wide variety of scientific data repositories that are typically specific to a domain of research, community of practice, or institution. For example, take a look at this [NIH directory of 130+ data respositories](https://sharing.nih.gov/data-management-and-sharing-policy/sharing-scientific-data/repositories-for-sharing-scientific-data) or the [Environmental Data Initiative (EDI) repository](https://edirepository.org/) used by the long-running Baltimore Ecosystem Study.
+
+---
+
+Are there more sources for *untidy* data? Are there any purposely untidy to be used for tidying practice?
+
+It turns out there is a [package dedicated to sharing a selection of untidy datasets](https://github.com/kwstat/untidydata2)!
+
+`{tidyr}` also comes with a set of tiny practice datasets (`table1`, `table2`, `table3`, `table4a`, `table4b`, `table5`) for practicing these skills. These [slides from Data Science in a Box](https://datasciencebox.org/course-materials/_slides/u2-d09-tidying/u2-d09-tidying#1) or the [accompanying video](https://www.youtube.com/watch?v=x3KM5uxaFdI) are good resources to review the basics of using the `pivot_` and `separate_` function families to change the strcture of your data.
+
+----
+
+What is the best approach for proper citation and credit for data if there is no metadata and it is not clear who created it?
+
+Create a citation with as much information as you have available using a citation manager such as [Zotero](https://www.zotero.org/). But, also reflect: if you don't know who created the data or how they created the data, should you be *using* the data?
+
+#### Questions about data formats
+
+What are the advantages or disadvantages of working with CSV files vs. GeoJSON files vs. other file types?
+
+----
+
+How do I access data using a Feature Service URL?
+
+<https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/CustomerServiceRequest_Prod/FeatureServer/0>
+
+#### Questions about working with Quarto
+
+
+Can use the RStudio debugging tools for code blocks in a `.qmd` file (Quarto document)?
+
+Not really. You could keep your code in one or more R scripts that you can then source into your Quarto document. Or you could extract your code chunks into a R script using the `knitr::purl()` function (for de-bugging purposes only or to use as a source for the document).
+
+----
+
+What is the keyboard shortcut to delete empty code chunks?
+
+It doesn't exist (although it was proposed [via GitHub issue back in November 2021](https://github.com/rstudio/rstudio/issues/10147)). You could probably create one using the [`{shrtcts}` package](https://pkg.garrickadenbuie.com/shrtcts/) or by creating a custom [RStudio Addin](https://rstudio.github.io/rstudioaddins/).
+
+# Past Updates
+
+These past updates are in reverse chronological order.
+
 ## Week 6: October 4, 2023
 
 ## Weekly questions
@@ -70,7 +206,6 @@ plot(
   )
 ```
 
-
 ### Assorted questions
 
 How can I streamline my workflow?
@@ -112,29 +247,225 @@ anscombe %>%
 
 How does `tidyr::pivot_wider()` handle cases with conflicting or duplicate values when pivoting?
 
-# Upcoming Updates
 
-## Week 7: October 11, 2023
+## Week 5: September 27, 2023
 
-## Week 8: October 18, 2023
+### Your questions
 
-## Week 9: October 25, 2023
+------------------------------------------------------------------------
 
-## Week 10: November 1, 2023
+How do I get my own shapefiles into R?
 
-## Week 11: November 8, 2023
+```{r}
+#| eval: false
+path <- "path to your shapefile"
 
-## Week 12: November 15, 2023
+your_data <- read_sf(path)
+```
 
-## Week 13: November 22, 2023
+------------------------------------------------------------------------
 
-## Week 14: November 29, 2023
+Is there a "best" way to perform specific operations? Or does it depend
+on individual preference?
 
-## Week 15: December 6, 2023
+There isn't a "best" way but there are often *better* and *worse* ways.
+If you have more than one way to achieve the same objective in R, you
+can compare the approaches using a few related considerations:
 
-# Past Updates
+-   Performance (speed and memory)
+-   Code readability
+-   Consistency and predictability
 
-These past updates are in reverse chronological order.
+------------------------------------------------------------------------
+
+This presentation on [Styling R
+Code](https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html)
+from Jacob Scott is one of the best resources I've seen on the topic.
+
+A few related resources:
+
+-   `{lintr}` flags when it detects problems in your code.
+-   `{styler}` can help automatically reformat your code.
+-   Documentation like [the tidyverse style
+    guide](https://style.tidyverse.org/) can inform how you write code.
+
+------------------------------------------------------------------------
+
+How can you keep track of what is happening when piping data from one
+function to another?
+
+The `{tidylog}` package is one tool for getting more insight into your
+pipelines:
+
+```{r}
+library(tidylog, warn.conflicts = FALSE)
+
+mtcars |> 
+  filter(cyl == 4) |> 
+  mutate(new_var = wt ** 2) |> 
+  select(mpg, cyl, new_var)
+```
+
+Another is
+[`{ViewPipeSteps}`](https://github.com/daranzolin/ViewPipeSteps)
+
+The [debugging tools](https://adv-r.hadley.nz/debugging.html) built into
+R and RStudio can also be useful for trouble-shooting in case of errors
+or unexpected results.
+
+------------------------------------------------------------------------
+
+What is the difference between an intensive and extensive variable?
+
+The concept of *intensive* or *extensive* variables comes to the world
+of spatial data from physics and chemistry. The Wikipedia article on
+[intensive and extensive
+properties](https://en.wikipedia.org/wiki/Intensive_and_extensive_properties)
+provides helpful definitions:
+
+-   an intensive property or intensive quantity is one whose magnitude
+    is independent of the size of the system (e.g. temperature,
+    hardness)
+
+-   an extensive property or extensive quantity is one whose magnitude
+    is additive for subsystems (e.g. mass, volume)
+
+### What is due next week
+
+Your weekly check-in response!
+
+### What is due next week
+
+Readings:
+
+-   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in
+    Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel *R for
+    Data Science: Import, Tidy, Transform, Visualize, and Model Data*,
+    2nd edition (WIP). (Sebastopol, CA: O\'Reilly Media, 2023),
+    <https://r4ds.hadley.nz/>.
+
+-   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in Wickham, Grolemund,
+    and Çetinkaya-Rundel *R for Data Science*.
+
+-   Karl W. Broman and Kara H. Woo \"Data Organization in
+    Spreadsheets,\" *The American Statistician* 72, no. 1 (January 2,
+    2018): 2--10,
+    doi:[10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989).
+
+## Week 4: September 20, 2023
+
+### Your questions
+
+![](https://r4ds.hadley.nz/diagrams/data-science/transform.png)
+
+------------------------------------------------------------------------
+
+**How to filter multiple rows from a column?**
+
+It all depends on the tests or conditions you pass to `filter()`. Review
+the reading [on the filter
+function](https://r4ds.hadley.nz/data-transform#filter) or check out
+this optional section of R for Data Science on [boolean operations with
+strings](https://r4ds.hadley.nz/regexps#sec-boolean-operations).
+
+------------------------------------------------------------------------
+
+**How do you set `{tidyselect}` helpers to be case *insensitive*?**
+
+[Check out the
+documentation](https://tidyselect.r-lib.org/reference/starts_with.html)!
+Look for the `ignore.case` parameter.
+
+------------------------------------------------------------------------
+
+"I would love to run through the code for this bar graph in class, since
+I don't totally understand what thought process to use to come up with
+it."
+
+```{r}
+flights |>
+  replace_na(
+    replace = list(arr_delay = 0)
+  ) |> 
+  mutate(
+    hour_factor = factor(hour),
+    arr_delay_flag = arr_delay > 5
+  ) |>
+  ggplot(aes(x = hour_factor, fill = arr_delay_flag)) +
+  geom_bar()
+```
+
+### Interesting things
+
+We all love `filter()`! We also appreciate `distinct()`
+
+------------------------------------------------------------------------
+
+"I have been working with R for a while now, in classes and for my own
+research. The lecture this week and the exercise really helped me
+understand the application of all the tools to transform data, which was
+super interesting because I often end up doing selections and filters in
+ArcGIS Pro or in a csv."
+
+### Difficult things
+
+**Answering this question:** Which carrier has the worst average delays?
+**Challenge:** can you disentangle the effects of bad airports vs. bad
+carriers? Why/why not?
+
+```{r}
+# flights |>
+#   replace_na(
+#     replace = list(
+#       arr_delay = 0,
+#       dep_delay = 0
+#     )
+#   ) |>
+#   summarise(
+#     n_flights = n(),
+#     n_delay_flights = sum(n > dep_delay),
+#     mean_arr_delay = mean(arr_delay),
+#     mean_dep_delay = mean(dep_delay),
+#     mean_total_delay = mean(arr_delay + dep_delay),
+#     .by = carrier
+#   ) |>
+#   slice_max(order_by = mean_total_delay, n = 10)
+```
+
+```{r}
+flights |>
+  replace_na(
+    replace = list(
+      arr_delay = 0,
+      dep_delay = 0
+    )
+  ) |>
+  summarise(
+    mean_dep_delay = mean(dep_delay),
+    mean_arr_delay = mean(arr_delay),
+    mean_total_delay_diff = mean(dep_delay - arr_delay),
+    mean_total_delay = mean(dep_delay + arr_delay),
+    .by = carrier
+  ) |>
+  arrange(desc(mean_total_delay))
+```
+
+------------------------------------------------------------------------
+
+### What is due by this week
+
+-   Complete required readings for [week 4](../weeks/week_04.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
+
+### What is coming up for next week
+
+-   Complete required readings for [week 5](../weeks/week_05.html)
+-   Submit [response to weekly check-in
+    questions](https://forms.gle/PAKvmQX652e5Eois6)
+-   Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and
+    `{dplyr}` (and a little `{tidyr}`)
 
 ## Week 3: September 13, 2023
 
@@ -259,223 +590,21 @@ Reminder: questions are *required* as part of the weekly check-in.
 
 -   Join the Discord chat
 
-## Week 4: September 20, 2023
+# Upcoming Updates
 
-### Your questions
+## Week 8: October 18, 2023
 
-![](https://r4ds.hadley.nz/diagrams/data-science/transform.png)
+## Week 9: October 25, 2023
 
-------------------------------------------------------------------------
+## Week 10: November 1, 2023
 
-**How to filter multiple rows from a column?**
+## Week 11: November 8, 2023
 
-It all depends on the tests or conditions you pass to `filter()`. Review
-the reading [on the filter
-function](https://r4ds.hadley.nz/data-transform#filter) or check out
-this optional section of R for Data Science on [boolean operations with
-strings](https://r4ds.hadley.nz/regexps#sec-boolean-operations).
+## Week 12: November 15, 2023
 
-------------------------------------------------------------------------
+## Week 13: November 22, 2023
 
-**How do you set `{tidyselect}` helpers to be case *insensitive*?**
+## Week 14: November 29, 2023
 
-[Check out the
-documentation](https://tidyselect.r-lib.org/reference/starts_with.html)!
-Look for the `ignore.case` parameter.
+## Week 15: December 6, 2023
 
-------------------------------------------------------------------------
-
-"I would love to run through the code for this bar graph in class, since
-I don't totally understand what thought process to use to come up with
-it."
-
-```{r}
-flights |>
-  replace_na(
-    replace = list(arr_delay = 0)
-  ) |> 
-  mutate(
-    hour_factor = factor(hour),
-    arr_delay_flag = arr_delay > 5
-  ) |>
-  ggplot(aes(x = hour_factor, fill = arr_delay_flag)) +
-  geom_bar()
-```
-
-### Interesting things
-
-We all love `filter()`! We also appreciate `distinct()`
-
-------------------------------------------------------------------------
-
-"I have been working with R for a while now, in classes and for my own
-research. The lecture this week and the exercise really helped me
-understand the application of all the tools to transform data, which was
-super interesting because I often end up doing selections and filters in
-ArcGIS Pro or in a csv."
-
-### Difficult things
-
-**Answering this question:** Which carrier has the worst average delays?
-**Challenge:** can you disentangle the effects of bad airports vs. bad
-carriers? Why/why not?
-
-```{r}
-# flights |>
-#   replace_na(
-#     replace = list(
-#       arr_delay = 0,
-#       dep_delay = 0
-#     )
-#   ) |>
-#   summarise(
-#     n_flights = n(),
-#     n_delay_flights = sum(n > dep_delay),
-#     mean_arr_delay = mean(arr_delay),
-#     mean_dep_delay = mean(dep_delay),
-#     mean_total_delay = mean(arr_delay + dep_delay),
-#     .by = carrier
-#   ) |>
-#   slice_max(order_by = mean_total_delay, n = 10)
-```
-
-```{r}
-flights |>
-  replace_na(
-    replace = list(
-      arr_delay = 0,
-      dep_delay = 0
-    )
-  ) |>
-  summarise(
-    mean_dep_delay = mean(dep_delay),
-    mean_arr_delay = mean(arr_delay),
-    mean_total_delay_diff = mean(dep_delay - arr_delay),
-    mean_total_delay = mean(dep_delay + arr_delay),
-    .by = carrier
-  ) |>
-  arrange(desc(mean_total_delay))
-```
-
-------------------------------------------------------------------------
-
-### What is due by this week
-
--   Complete required readings for [week 4](../weeks/week_04.html)
--   Submit [response to weekly check-in
-    questions](https://forms.gle/PAKvmQX652e5Eois6)
--   Complete [Exercise 3](../exercises/exercise_03.html) on `{dplyr}`
-
-### What is coming up for next week
-
--   Complete required readings for [week 5](../weeks/week_05.html)
--   Submit [response to weekly check-in
-    questions](https://forms.gle/PAKvmQX652e5Eois6)
--   Complete [Exercise 4](../exercises/exercise_03.html) on `{sf}` and
-    `{dplyr}` (and a little `{tidyr}`)
-
-
-
-## Week 5: September 27, 2023
-
-### Your questions
-
-------------------------------------------------------------------------
-
-How do I get my own shapefiles into R?
-
-```{r}
-#| eval: false
-path <- "path to your shapefile"
-
-your_data <- read_sf(path)
-```
-
-------------------------------------------------------------------------
-
-Is there a "best" way to perform specific operations? Or does it depend
-on individual preference?
-
-There isn't a "best" way but there are often *better* and *worse* ways.
-If you have more than one way to achieve the same objective in R, you
-can compare the approaches using a few related considerations:
-
--   Performance (speed and memory)
--   Code readability
--   Consistency and predictability
-
-------------------------------------------------------------------------
-
-This presentation on [Styling R
-Code](https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html)
-from Jacob Scott is one of the best resources I've seen on the topic.
-
-A few related resources:
-
--   `{lintr}` flags when it detects problems in your code.
--   `{styler}` can help automatically reformat your code.
--   Documentation like [the tidyverse style
-    guide](https://style.tidyverse.org/) can inform how you write code.
-
-------------------------------------------------------------------------
-
-How can you keep track of what is happening when piping data from one
-function to another?
-
-The `{tidylog}` package is one tool for getting more insight into your
-pipelines:
-
-```{r}
-library(tidylog, warn.conflicts = FALSE)
-
-mtcars |> 
-  filter(cyl == 4) |> 
-  mutate(new_var = wt ** 2) |> 
-  select(mpg, cyl, new_var)
-```
-
-Another is
-[`{ViewPipeSteps}`](https://github.com/daranzolin/ViewPipeSteps)
-
-The [debugging tools](https://adv-r.hadley.nz/debugging.html) built into
-R and RStudio can also be useful for trouble-shooting in case of errors
-or unexpected results.
-
-------------------------------------------------------------------------
-
-What is the difference between an intensive and extensive variable?
-
-The concept of *intensive* or *extensive* variables comes to the world
-of spatial data from physics and chemistry. The Wikipedia article on
-[intensive and extensive
-properties](https://en.wikipedia.org/wiki/Intensive_and_extensive_properties)
-provides helpful definitions:
-
--   an intensive property or intensive quantity is one whose magnitude
-    is independent of the size of the system (e.g. temperature,
-    hardness)
-
--   an extensive property or extensive quantity is one whose magnitude
-    is additive for subsystems (e.g. mass, volume)
-
-### What is due next week
-
-Your weekly check-in response!
-
-### What is due next week
-
-Readings:
-
--   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in
-    Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel *R for
-    Data Science: Import, Tidy, Transform, Visualize, and Model Data*,
-    2nd edition (WIP). (Sebastopol, CA: O\'Reilly Media, 2023),
-    <https://r4ds.hadley.nz/>.
-
--   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in Wickham, Grolemund,
-    and Çetinkaya-Rundel *R for Data Science*.
-
--   Karl W. Broman and Kara H. Woo \"Data Organization in
-    Spreadsheets,\" *The American Statistician* 72, no. 1 (January 2,
-    2018): 2--10,
-    doi:[10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989).
