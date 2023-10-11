@@ -25,6 +25,10 @@ date: 2023-09-27
 
 {{< include _readings_05.qmd >}}
 
+## Participate
+
+🖥️ [Getting started with spatial data using sf and the tidyverse](/slides/spatial-data.html)
+
 ## Practice
 
 🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

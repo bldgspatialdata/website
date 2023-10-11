@@ -9,6 +9,10 @@ date: 2023-10-11
 
 {{< include _readings_07.qmd >}}
 
+## Participate
+
+🖥️ [Working with scripts, functions, and Quarto](/slides/functions.html)
+
 ## Practice
 
 🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

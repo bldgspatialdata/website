@@ -18,6 +18,10 @@ date: 2023-10-04
 
 {{< include _readings_06.qmd >}}
 
+## Participate
+
+🖥️ [Tidying and joining data](/slides/tidy-data.html)
+
 ## Practice
 
 🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
