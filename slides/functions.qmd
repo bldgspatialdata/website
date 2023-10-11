@@ -1,0 +1,240 @@
+---
+title: "Session {{< meta order >}}: Working with scripts, functions, and Quarto"
+order: 7
+date-meta: 2023-10-11
+execute: 
+  error: true
+format: 
+  revealjs:
+    code-link: true
+    scrollable: true
+---
+
+```{r}
+#| echo: false
+library(tidyverse)
+```
+
+### Accounting for Methods
+
+This first part of the lecture is based on the *Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks* chapter by Sam Leon from *The Data Journalism Handbook: Towards A Critical Data Practice.*
+
+------------------------------------------------------------------------
+
+How you that the sources you have used is reliable and that the work done to derive your conclusions is sound?
+
+::: notes
+"Reproducibility is widely regarded as a pillar of the modern scientif ic method. It aids in the process of corroborating results and identifying and addressing problematic findings or questionable theories."
+:::
+
+------------------------------------------------------------------------
+
+*What is the issue?*
+
+Common tools like Excel "[hide] much of the process of working with data by design."
+
+------------------------------------------------------------------------
+
+*What is the alternative?*
+
+Literate programming: "an approach to writing computer code where the author intersperses code with ordinary human language explaining the steps taken."
+
+------------------------------------------------------------------------
+
+> The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. (Knuth, 1984)
+
+------------------------------------------------------------------------
+
+> He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other. (Knuth, 1984)
+
+------------------------------------------------------------------------
+
+Publishing code can also aid collaboration between organizations!
+
+## Functions
+
+### Why functions?
+
+1.  Make your code easier to understand
+2.  Update code in one place, instead of many
+3.  Reduce chance of making copy and paste mistakes
+4.  Reuse work from project-to-project
+
+### Types of functions
+
+1.  **Vector functions** take one or more vectors as input and return a vector as output.
+2.  **Data frame functions** take a data frame as input and return a data frame as output.
+3.  **Plot functions** that take a data frame as input and return a plot as output.
+
+### Writing a function
+
+-   Look for repeated sections of code.
+-   What parts are constant?
+-   What parts vary?
+
+### Writing a function
+
+To turn code into a function you need three things:
+
+1.  A name.
+2.  The arguments.
+3.  The body.
+
+### Writing a function
+
+To turn code into a function you need three things:
+
+```{r}
+name <- function(arguments) {
+  body
+}
+```
+
+### Writing a function
+
+Adapted from [the tidyverse style guide](https://style.tidyverse.org/functions.html):
+
+1.  Naming functions
+2.  Formatting functions
+3.  Using `return()`
+4.  Using comments
+
+### Naming functions
+
+Strive to use verbs for function names:
+
+```{r}
+# Good
+add_row()
+permute()
+
+# Bad
+row_adder()
+permutation()
+```
+
+### Formatting functions
+
+```{r}
+# Good
+alphabet <- function(A = 1,
+                     B = 2,
+                     C = 3,
+                     D = 4,
+                     E = 5,
+                     case = "upper",
+                     ...) {
+  ...
+}
+
+# Bad
+alphabet <- function(A = 1, B = 2, C = 3, D = 4, E = 5, case = "upper", ...) {
+  ...
+}
+```
+
+### Using `return()`
+
+Only use `return()` for early returns.
+
+Use early returns to avoid `else` and "nested" logic.
+
+```{r}
+# Good
+is_it_wednesday <- function(x) {
+  wday <- wday(x, label = TRUE)
+  
+  if (identical(wday, "Wed")) {
+    return("Yes!")
+  }
+  
+  "No..."
+}
+
+# Bad
+is_it_wednesday <- function(x) {
+  wday <- wday(x, label = TRUE)
+  
+  if (identical(wday, "Wed")) {
+    return("Yes!")
+  } else {
+    return("No...")
+  }
+}
+```
+
+### Using comments
+
+Use comments to explain the "why" not the "what" or "how".
+
+### Types of vector functions
+
+-   **"mutate" functions:** functions that work well inside of `mutate()` and `filter()` because they return an output of the same length as the input.
+-   **summary functions:** functions that return a single value for use in `summarize()`.
+
+### Example of vector functions
+
+If a function is type-stable it satisfies two conditions:
+
+-   You can predict the output type based only on the input types (not their values).
+
+-   If the function uses ..., the order of arguments in does not affect the output type.
+
+### Designing a "tidy" function
+
+Four guiding principles for the "tidyverse":
+
+1.  human centered
+2.  consistent
+3.  composable
+4.  inclusive
+
+::: notes
+1.  It is human centered, i.e. the tidyverse is designed specifically to support the activities of a human data analyst.
+
+2.  It is consistent, so that what you learn about one function or package can be applied to another, and the number of special cases that you need to remember is as small as possible.
+
+3.  It is composable, allowing you to solve complex problems by breaking them down into small pieces, supporting a rapid cycle of exploratory iteration to find the best solution.
+
+4.  It is inclusive, because the tidyverse is not just the collection of packages, but it is also the community of people who use them.
+:::
+
+### Why Quarto?
+
+1.  communicating to decision-makers
+2.  collaborating with other data scientists
+3.  as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.
+
+It contains three important types of content:
+
+1.  An (optional) YAML header surrounded by `---`s.
+2.  Chunks of R code surrounded by ````` ```` `````.
+3.  Text mixed with simple text formatting like `# heading` and `_italics_`.
+
+### What happens when you render a Quarto document?
+
+![](https://r4ds.hadley.nz/images/quarto-flow.png)
+
+::: notes
+When you render the document, Quarto sends the `.qmd` file to **knitr**, <https://yihui.org/knitr/>, which executes all of the code chunks and creates a new markdown (`.md`) document which includes the code and its output. The markdown file generated by knitr is then processed by **pandoc**, [https://pandoc.org](https://pandoc.org/), which is responsible for creating the finished file.
+:::
+
+### How do you maximize reproducibility with Quarto?
+
+![](https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/fig/01-fig4.png)
+
+------------------------------------------------------------------------
+
+https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/08-code-chunks/index.html#key-points
+
+-   Learn how to externally source code `source()`
+
+-   Learn how to modularize your code to make it more reproducible
+
+-   Use a chunk at the beginning of your document to load libraries and data globally to make your document more efficient.
+
+### How do you insert citations into a Quarto document?
+
+Write a function for calculating the "roundness" of a POLYGON geometry. [Take a look at Wikipedia](https://en.wikipedia.org/wiki/Roundness) for details but use the formula:
+
+Roundness = (4π × Area) / Perimeter\^2
