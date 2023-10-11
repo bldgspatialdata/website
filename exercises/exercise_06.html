@@ -378,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 4, 2023</p>
+      <p class="date-modified">October 11, 2023</p>
     </div>
   </div>
     
@@ -394,11 +394,23 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Exercise due on 2023-10-09</p>
+<p>Exercise due on 2023-10-13</p>
 </div>
 </div>
 </div>
-<p>ℹ️ See <a href="https://bldgspatialdata.github.io/website/weeks/week_06.html">week 6</a> for related slides and readings</p>
+<p>ℹ️ See <a href="https://bldgspatialdata.github.io/website/weeks/week_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html">week 6</a> for related slides and readings</p>
+<p>This week's exercise has five parts and a bonus:</p>
+<ol type="1">
+<li><p>Search online for a dataset that interests you (maybe even related to your final project idea) that <em>isn't</em> "tidy". Open Baltimore and Maryland iMap are two good sources for local data and have plenty of untidy datasets. Make sure you are using vector data with both spatial geometry and attributes.</p></li>
+<li><p>Create a Quarto document named <code>exerise_06.qmd</code> in the exercise folder of your repository. Write a brief description of the data and the ways in which it is or is not "tidy". Make sure to start the description with a link to the data source and a brief description of who collected the data and for what purpose. Is there a legal requirement to collect this data? Is there a standard for how the attributes are collected or organized? You may need to do some additional searching online to answer these questions so make sure to include links or references to any sources used in writing the description.</p></li>
+<li><p>Add a code chunk to your document reading the document into R using <code>sf::read_sf()</code>. I strongly recommend using a URL as your data source if you can (for example you can use a GeoJSON link on the page for an individual dataset on Maryland iMap or Open Baltimore). If you need to use a file create a new folder within exercises titled files and place the file in the folder. Note: your file <em>must</em> be less than 50MB in size or your changes to the repository can't be committed to GitHub. If your file is not a spatial data file (e.g.&nbsp;a CSV file) you should convert the object into a sf object using <code>sf::st_as_sf()</code>.</p></li>
+</ol>
+<!-- -->
+<ol start="4" type="1">
+<li><p>In a new code chunk, use ggplot2 to try to make a plot or map of the untidy data. Think about what you can't do with the data in this format (and write out those observations following the code chunk).</p></li>
+<li><p>In a new code chunk, try using pivot_wider and other tidyr functions to try to tidy the data to resolve the issues you identified in your description. Write a brief description explaining what issues with the data you have been able to "tidy" and flag any issues that you noticed but can't figure out how to fix.</p></li>
+<li><p>Bonus: Find a related dataset that shares an attribute with your dataset. Use a join function from dplyr to connect the two datasets. Explore different ways you can create new variables or summarize the data using the combination of your original dataset and the new dataset. For example if your original data set has count by attribute by county, you could join the data to county boundaries from <code>{tigris}</code> and try normalizing your data by population or physical area.</p></li>
+</ol>
 
 
 

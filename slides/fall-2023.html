@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.339">
-<meta name="dcterms.date" content="2023-10-04">
+<meta name="dcterms.date" content="2023-10-11">
 <title>GES 668 - Fall 2023 - Fall 2023 Weekly Updates</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -398,14 +398,331 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-10-04</p>
+  <p class="date">2023-10-11</p>
 </section><section class="slide level4"><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(nycflights13)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |                                                                      |   1%
+  |                                                                            
+  |=                                                                     |   1%
+  |                                                                            
+  |=                                                                     |   2%
+  |                                                                            
+  |==                                                                    |   2%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |====                                                                  |   6%
+  |                                                                            
+  |=====                                                                 |   7%
+  |                                                                            
+  |======                                                                |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |========                                                              |  11%
+  |                                                                            
+  |=========                                                             |  12%
+  |                                                                            
+  |=========                                                             |  13%
+  |                                                                            
+  |==========                                                            |  14%
+  |                                                                            
+  |==========                                                            |  15%
+  |                                                                            
+  |===========                                                           |  15%
+  |                                                                            
+  |===========                                                           |  16%
+  |                                                                            
+  |============                                                          |  17%
+  |                                                                            
+  |============                                                          |  18%
+  |                                                                            
+  |=============                                                         |  18%
+  |                                                                            
+  |=============                                                         |  19%
+  |                                                                            
+  |==============                                                        |  19%
+  |                                                                            
+  |==============                                                        |  20%
+  |                                                                            
+  |==============                                                        |  21%
+  |                                                                            
+  |===============                                                       |  21%
+  |                                                                            
+  |===============                                                       |  22%
+  |                                                                            
+  |================                                                      |  22%
+  |                                                                            
+  |================                                                      |  23%
+  |                                                                            
+  |=================                                                     |  24%
+  |                                                                            
+  |=================                                                     |  25%
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |===================                                                   |  26%
+  |                                                                            
+  |===================                                                   |  27%
+  |                                                                            
+  |===================                                                   |  28%
+  |                                                                            
+  |====================                                                  |  28%
+  |                                                                            
+  |====================                                                  |  29%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |=====================                                                 |  31%
+  |                                                                            
+  |======================                                                |  31%
+  |                                                                            
+  |======================                                                |  32%
+  |                                                                            
+  |=======================                                               |  32%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |=======================                                               |  34%
+  |                                                                            
+  |========================                                              |  34%
+  |                                                                            
+  |========================                                              |  35%
+  |                                                                            
+  |=========================                                             |  35%
+  |                                                                            
+  |=========================                                             |  36%
+  |                                                                            
+  |==========================                                            |  37%
+  |                                                                            
+  |===========================                                           |  38%
+  |                                                                            
+  |===========================                                           |  39%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |============================                                          |  41%
+  |                                                                            
+  |=============================                                         |  41%
+  |                                                                            
+  |=============================                                         |  42%
+  |                                                                            
+  |==============================                                        |  42%
+  |                                                                            
+  |==============================                                        |  43%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |================================                                      |  45%
+  |                                                                            
+  |================================                                      |  46%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |====================================                                  |  51%
+  |                                                                            
+  |====================================                                  |  52%
+  |                                                                            
+  |=====================================                                 |  53%
+  |                                                                            
+  |======================================                                |  54%
+  |                                                                            
+  |======================================                                |  55%
+  |                                                                            
+  |=======================================                               |  55%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |========================================                              |  57%
+  |                                                                            
+  |===========================================                           |  61%
+  |                                                                            
+  |============================================                          |  63%
+  |                                                                            
+  |=============================================                         |  64%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |=================================================                     |  69%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |==================================================                    |  71%
+  |                                                                            
+  |==================================================                    |  72%
+  |                                                                            
+  |===================================================                   |  73%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |====================================================                  |  75%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |======================================================                |  77%
+  |                                                                            
+  |======================================================                |  78%
+  |                                                                            
+  |=======================================================               |  78%
+  |                                                                            
+  |========================================================              |  79%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |=========================================================             |  82%
+  |                                                                            
+  |==========================================================            |  82%
+  |                                                                            
+  |==========================================================            |  83%
+  |                                                                            
+  |===========================================================           |  84%
+  |                                                                            
+  |============================================================          |  85%
+  |                                                                            
+  |============================================================          |  86%
+  |                                                                            
+  |=============================================================         |  87%
+  |                                                                            
+  |=============================================================         |  88%
+  |                                                                            
+  |==============================================================        |  88%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |===============================================================       |  89%
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |=================================================================     |  93%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |==================================================================    |  95%
+  |                                                                            
+  |===================================================================   |  95%
+  |                                                                            
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  97%
+  |                                                                            
+  |====================================================================  |  98%
+  |                                                                            
+  |===================================================================== |  98%
+  |                                                                            
+  |===================================================================== |  99%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+</div>
 </div>
 </section><section><section id="this-week" class="title-slide slide level1 center"><h1>This Week</h1>
 
+</section><section id="week-7-october-11-2023" class="title-slide slide level2 center"><h2>Week 7: October 11, 2023</h2>
+
+</section><section id="due-this-week" class="title-slide slide level3 center"><h3>Due this week</h3>
+<ul>
+<li>Exercise 6 is due this Friday!</li>
+<li>Readings on scripts, functions, and Quarto.</li>
+</ul></section><section id="due-next-week" class="title-slide slide level3 center"><h3>Due next week</h3>
+<ul>
+<li>Make a mapping function and use it in a Quarto document!</li>
+</ul></section><section id="your-interesting-things" class="title-slide slide level3 center"><h3>Your interesting things!</h3>
+
+</section><section class="slide level4"><p>The reasoning behind why sometimes you can use pipes and sometimes not finally clicked with me! I had been trying to use pipes for everything and didn’t understand why it wasn’t working – getting that down was really helpful.</p>
+</section><section class="slide level4"><p>I have found that it super interesting to determine how to tidy data, like taking the time to make logical sense of the data is great but this also leads to what I find most difficult.</p>
+</section><section class="slide level4"><p>I really enjoyed the independence of going out and located are own data and being able to manipulate it in R. Feels like the first step into the real world.</p>
+</section><section class="slide level4"><p>Joining is just <em>so much easier</em> in R as opposed to ArcGIS or QGIS.</p>
+</section><section class="slide level4"></section><section id="your-difficult-things" class="title-slide slide level3 center"><h3>Your difficult things</h3>
+<p>One of the most challenging concepts or topics for me from all the syllabus covered till now is the <code>st_()</code> functions.</p>
+<p>There are a lot of geometry operations and each has a different set of parameters and features, which are mostly confusing.</p>
+</section><section id="your-questions" class="title-slide slide level3 center"><h3>Your questions</h3>
+
+</section><section id="trouble-shooting-code-questions" class="slide level4"><h4>Trouble-shooting code questions</h4>
+<p>Why does <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> make 6 maps instead of 1?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>maryland <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(NAME) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>states_intersecting_md <span class="ot">&lt;-</span> <span class="fu">st_filter</span>(</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  us_states,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  maryland,</span>
+<span id="cb3-8"><a href="#cb3-8"></a>  <span class="at">.predicate =</span> st_intersects</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  ) </span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">plot</span>(states_intersecting_md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section><section class="slide level4"><p>Why does this not work?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="at">data =</span> states_intersecting_md,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `geom_sf()`:
+! Problem while computing aesthetics.
+ℹ Error occurred in the 1st layer.
+Caused by error:
+! object 'long' not found</code></pre>
+</div>
+</div>
+</section><section class="slide level4"><p>What is <code><a href="https://stringr.tidyverse.org/reference/str_flatten.html">stringr::str_flatten()</a></code> doing?</p>
+<p><code>str_flatten()</code> reduces a character vector to a single string.</p>
+<p>This is a <strong>summary function</strong> because regardless of the length of the input <code>x</code>, it always returns a single string.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>commas <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">str_flatten</span>(x, <span class="at">collapse =</span> <span class="st">", "</span>, <span class="at">last =</span> <span class="st">" and "</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">commas</span>(<span class="fu">c</span>(<span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"pigeon"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "cat, dog and pigeon"</code></pre>
+</div>
+</div>
+</section><section id="questions-about-finding-and-citing-data" class="slide level4"><h4>Questions about finding and citing data</h4>
+<p>Is there a large list or repository of good places to find data or is it more of a treasure hunt?</p>
+<p>Here is <a href="https://bldgspatialdata.github.io/website/resources/data-sources.html">a big list of possible data sources</a> including local and national data sources and a set of R packages focused on data access. Many libraries create similar resources for students and researchers to use and some libraries have geospatial data specialists who can assist you in a search.</p>
+<p>There are also a wide variety of scientific data repositories that are typically specific to a domain of research, community of practice, or institution. For example, take a look at this <a href="https://sharing.nih.gov/data-management-and-sharing-policy/sharing-scientific-data/repositories-for-sharing-scientific-data">NIH directory of 130+ data respositories</a> or the <a href="https://edirepository.org/">Environmental Data Initiative (EDI) repository</a> used by the long-running Baltimore Ecosystem Study.</p>
+</section><section class="slide level4"><p>Are there more sources for <em>untidy</em> data? Are there any purposely untidy to be used for tidying practice?</p>
+<p>It turns out there is a <a href="https://github.com/kwstat/untidydata2">package dedicated to sharing a selection of untidy datasets</a>!</p>
+<p><a href="https://tidyr.tidyverse.org">tidyr</a> also comes with a set of tiny practice datasets (<code>table1</code>, <code>table2</code>, <code>table3</code>, <code>table4a</code>, <code>table4b</code>, <code>table5</code>) for practicing these skills. These <a href="https://datasciencebox.org/course-materials/_slides/u2-d09-tidying/u2-d09-tidying#1">slides from Data Science in a Box</a> or the <a href="https://www.youtube.com/watch?v=x3KM5uxaFdI">accompanying video</a> are good resources to review the basics of using the <code>pivot_</code> and <code>separate_</code> function families to change the strcture of your data.</p>
+</section><section class="slide level4"><p>What is the best approach for proper citation and credit for data if there is no metadata and it is not clear who created it?</p>
+<p>Create a citation with as much information as you have available using a citation manager such as <a href="https://www.zotero.org/">Zotero</a>. But, also reflect: if you don’t know who created the data or how they created the data, should you be <em>using</em> the data?</p>
+</section><section id="questions-about-data-formats" class="slide level4"><h4>Questions about data formats</h4>
+<p>What are the advantages or disadvantages of working with CSV files vs.&nbsp;GeoJSON files vs.&nbsp;other file types?</p>
+</section><section class="slide level4"><p>How do I access data using a Feature Service URL?</p>
+<p><a href="https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/CustomerServiceRequest_Prod/FeatureServer/0" class="uri">https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/CustomerServiceRequest_Prod/FeatureServer/0</a></p>
+</section><section id="questions-about-working-with-quarto" class="slide level4"><h4>Questions about working with Quarto</h4>
+<p>Can use the RStudio debugging tools for code blocks in a <code>.qmd</code> file (Quarto document)?</p>
+<p>Not really. You could keep your code in one or more R scripts that you can then source into your Quarto document. Or you could extract your code chunks into a R script using the <code><a href="https://rdrr.io/pkg/knitr/man/knit.html">knitr::purl()</a></code> function (for de-bugging purposes only or to use as a source for the document).</p>
+</section><section class="slide level4"><p>What is the keyboard shortcut to delete empty code chunks?</p>
+<p>It doesn’t exist (although it was proposed <a href="https://github.com/rstudio/rstudio/issues/10147">via GitHub issue back in November 2021</a>). You could probably create one using the <a href="https://pkg.garrickadenbuie.com/shrtcts/"><code>{shrtcts}</code> package</a> or by creating a custom <a href="https://rstudio.github.io/rstudioaddins/">RStudio Addin</a>.</p>
+</section></section><section><section id="past-updates" class="title-slide slide level1 center"><h1>Past Updates</h1>
+<p>These past updates are in reverse chronological order.</p>
 </section><section id="week-6-october-4-2023" class="title-slide slide level2 center"><h2>Week 6: October 4, 2023</h2>
 
 </section><section id="weekly-questions" class="title-slide slide level2 center"><h2>Weekly questions</h2>
@@ -413,21 +730,21 @@
 </section><section id="geometric-and-spatial-operations" class="title-slide slide level3 center"><h3>Geometric and spatial operations</h3>
 <p>While the concept of a buffer is rather easy to understand for me in other spatial software such as ArcGIS Pro, it was difficult for me to manipulate in R.</p>
 </section><section class="slide level4"><div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>storms_sf <span class="ot">&lt;-</span> storms <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">st_as_sf</span>(</span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">crs =</span> <span class="dv">4326</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  )</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span> </span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">arrange</span>(year, month, day, hour) <span class="sc">|&gt;</span> </span>
-<span id="cb2-9"><a href="#cb2-9"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span> </span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="at">avg_wind =</span> <span class="fu">mean</span>(wind),</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_union</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13"></a>    )</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>storms_sf <span class="ot">&lt;-</span> storms <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">st_as_sf</span>(</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="at">crs =</span> <span class="dv">4326</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  )</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">arrange</span>(year, month, day, hour) <span class="sc">|&gt;</span> </span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span> </span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="at">avg_wind =</span> <span class="fu">mean</span>(wind),</span>
+<span id="cb8-12"><a href="#cb8-12"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_union</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
+<span id="cb8-13"><a href="#cb8-13"></a>    )</span>
+<span id="cb8-14"><a href="#cb8-14"></a></span>
+<span id="cb8-15"><a href="#cb8-15"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 639 features and 3 fields
 Geometry type: LINESTRING
@@ -454,22 +771,22 @@ Geodetic CRS:  WGS 84
 </section><section class="slide level4"><p>What do I mean by “states that intersect Maryland”?</p>
 </section><section class="slide level4"><p>How do you create the map (straight line between MD and CA) using ggplot instead of plot?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">plot</span>(</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  us_states<span class="sc">$</span>geometry,</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">main =</span> <span class="st">"States crossed by a straight line from central Maryland to central California"</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  )</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">plot</span>(</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  states_crossed<span class="sc">$</span>geometry,</span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="at">col =</span> <span class="st">"grey"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  )</span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">plot</span>(</span>
-<span id="cb4-13"><a href="#cb4-13"></a>  md_to_cali,</span>
-<span id="cb4-14"><a href="#cb4-14"></a>  <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb4-15"><a href="#cb4-15"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">plot</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  us_states<span class="sc">$</span>geometry,</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">main =</span> <span class="st">"States crossed by a straight line from central Maryland to central California"</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  )</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="fu">plot</span>(</span>
+<span id="cb10-7"><a href="#cb10-7"></a>  states_crossed<span class="sc">$</span>geometry,</span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="at">col =</span> <span class="st">"grey"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>  )</span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="fu">plot</span>(</span>
+<span id="cb10-13"><a href="#cb10-13"></a>  md_to_cali,</span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="at">add =</span> <span class="cn">TRUE</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="assorted-questions" class="title-slide slide level3 center"><h3>Assorted questions</h3>
 <p>How can I streamline my workflow?</p>
@@ -480,13 +797,13 @@ Geodetic CRS:  WGS 84
 </section><section class="slide level4"><p>When might you use both <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">tidyr::pivot_longer()</a></code> and <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr::pivot_wider()</a></code>?</p>
 </section><section class="slide level4"><p>What is the purpose of the <code>.value</code> parameter used in <code>names_to</code> attribute of <code>pivot_longer()</code> function?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>anscombe <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="fu">everything</span>(),</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="at">cols_vary =</span> <span class="st">"slowest"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"set"</span>),</span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">names_pattern =</span> <span class="st">"(.)(.)"</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>anscombe <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="fu">everything</span>(),</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="at">cols_vary =</span> <span class="st">"slowest"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"set"</span>),</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="at">names_pattern =</span> <span class="st">"(.)(.)"</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 44 × 3
    set       x     y
@@ -516,31 +833,170 @@ Geodetic CRS:  WGS 84
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section class="slide level4"><p>How does <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr::pivot_wider()</a></code> handle cases with conflicting or duplicate values when pivoting?</p>
-</section></section><section><section id="upcoming-updates" class="title-slide slide level1 center"><h1>Upcoming Updates</h1>
+</section><section id="week-5-september-27-2023" class="title-slide slide level2 center"><h2>Week 5: September 27, 2023</h2>
 
-</section><section id="week-7-october-11-2023" class="title-slide slide level2 center"><h2>Week 7: October 11, 2023</h2>
+</section><section id="your-questions-1" class="title-slide slide level3 center"><h3>Your questions</h3>
 
-</section><section id="week-8-october-18-2023" class="title-slide slide level2 center"><h2>Week 8: October 18, 2023</h2>
+</section><section class="slide level4"><p>How do I get my own shapefiles into R?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path to your shapefile"</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section class="slide level4"><p>Is there a “best” way to perform specific operations? Or does it depend on individual preference?</p>
+<p>There isn’t a “best” way but there are often <em>better</em> and <em>worse</em> ways. If you have more than one way to achieve the same objective in R, you can compare the approaches using a few related considerations:</p>
+<ul>
+<li>Performance (speed and memory)</li>
+<li>Code readability</li>
+<li>Consistency and predictability</li>
+</ul></section><section class="slide level4"><p>This presentation on <a href="https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html">Styling R Code</a> from Jacob Scott is one of the best resources I’ve seen on the topic.</p>
+<p>A few related resources:</p>
+<ul>
+<li>
+<a href="https://github.com/r-lib/lintr">lintr</a> flags when it detects problems in your code.</li>
+<li>
+<a href="https://github.com/r-lib/styler">styler</a> can help automatically reformat your code.</li>
+<li>Documentation like <a href="https://style.tidyverse.org/">the tidyverse style guide</a> can inform how you write code.</li>
+</ul></section><section class="slide level4"><p>How can you keep track of what is happening when piping data from one function to another?</p>
+<p>The <a href="https://github.com/elbersb/tidylog/">tidylog</a> package is one tool for getting more insight into your pipelines:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(tidylog, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">mutate</span>(<span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">select</span>(mpg, cyl, new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                mpg cyl   new_var
+Datsun 710     22.8   4  5.382400
+Merc 240D      24.4   4 10.176100
+Merc 230       22.8   4  9.922500
+Fiat 128       32.4   4  4.840000
+Honda Civic    30.4   4  2.608225
+Toyota Corolla 33.9   4  3.367225
+Toyota Corona  21.5   4  6.076225
+Fiat X1-9      27.3   4  3.744225
+Porsche 914-2  26.0   4  4.579600
+Lotus Europa   30.4   4  2.289169
+Volvo 142E     21.4   4  7.728400</code></pre>
+</div>
+</div>
+<p>Another is <a href="https://github.com/daranzolin/ViewPipeSteps"><code>{ViewPipeSteps}</code></a></p>
+<p>The <a href="https://adv-r.hadley.nz/debugging.html">debugging tools</a> built into R and RStudio can also be useful for trouble-shooting in case of errors or unexpected results.</p>
+</section><section class="slide level4"><p>What is the difference between an intensive and extensive variable?</p>
+<p>The concept of <em>intensive</em> or <em>extensive</em> variables comes to the world of spatial data from physics and chemistry. The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties">intensive and extensive properties</a> provides helpful definitions:</p>
+<ul>
+<li><p>an intensive property or intensive quantity is one whose magnitude is independent of the size of the system (e.g.&nbsp;temperature, hardness)</p></li>
+<li><p>an extensive property or extensive quantity is one whose magnitude is additive for subsystems (e.g.&nbsp;mass, volume)</p></li>
+</ul></section><section id="what-is-due-next-week" class="title-slide slide level3 center"><h3>What is due next week</h3>
+<p>Your weekly check-in response!</p>
+</section><section id="what-is-due-next-week-1" class="title-slide slide level3 center"><h3>What is due next week</h3>
+<p>Readings:</p>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, 2nd edition (WIP). (Sebastopol, CA: O'Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>.</p></li>
+<li><p><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in Wickham, Grolemund, and Çetinkaya-Rundel <em>R for Data Science</em>.</p></li>
+<li><p>Karl W. Broman and Kara H. Woo "Data Organization in Spreadsheets," <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</p></li>
+</ul></section><section id="week-4-september-20-2023" class="title-slide slide level2 center"><h2>Week 4: September 20, 2023</h2>
 
-</section><section id="week-9-october-25-2023" class="title-slide slide level2 center"><h2>Week 9: October 25, 2023</h2>
+</section><section id="your-questions-2" class="title-slide slide level3 center"><h3>Your questions</h3>
 
-</section><section id="week-10-november-1-2023" class="title-slide slide level2 center"><h2>Week 10: November 1, 2023</h2>
+<img data-src="https://r4ds.hadley.nz/diagrams/data-science/transform.png" class="r-stretch"></section><section class="slide level4"><p><strong>How to filter multiple rows from a column?</strong></p>
+<p>It all depends on the tests or conditions you pass to <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>. Review the reading <a href="https://r4ds.hadley.nz/data-transform#filter">on the filter function</a> or check out this optional section of R for Data Science on <a href="https://r4ds.hadley.nz/regexps#sec-boolean-operations">boolean operations with strings</a>.</p>
+</section><section class="slide level4"><p><strong>How do you set <a href="https://tidyselect.r-lib.org">tidyselect</a> helpers to be case <em>insensitive</em>?</strong></p>
+<p><a href="https://tidyselect.r-lib.org/reference/starts_with.html">Check out the documentation</a>! Look for the <code>ignore.case</code> parameter.</p>
+</section><section class="slide level4"><p>“I would love to run through the code for this bar graph in class, since I don’t totally understand what thought process to use to come up with it.”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>flights <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">replace_na</span>(</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(<span class="at">arr_delay =</span> <span class="dv">0</span>)</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="at">hour_factor =</span> <span class="fu">factor</span>(hour),</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">arr_delay_flag =</span> arr_delay <span class="sc">&gt;</span> <span class="dv">5</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hour_factor, <span class="at">fill =</span> arr_delay_flag)) <span class="sc">+</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-</section><section id="week-11-november-8-2023" class="title-slide slide level2 center"><h2>Week 11: November 8, 2023</h2>
+</div>
+<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting things</h3>
+<p>We all love <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>! We also appreciate <code>distinct()</code></p>
+</section><section class="slide level4"><p>“I have been working with R for a while now, in classes and for my own research. The lecture this week and the exercise really helped me understand the application of all the tools to transform data, which was super interesting because I often end up doing selections and filters in ArcGIS Pro or in a csv.”</p>
+</section><section id="difficult-things" class="title-slide slide level3 center"><h3>Difficult things</h3>
+<p><strong>Answering this question:</strong> Which carrier has the worst average delays? <strong>Challenge:</strong> can you disentangle the effects of bad airports vs.&nbsp;bad carriers? Why/why not?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># flights |&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#   replace_na(</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#     replace = list(</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#       arr_delay = 0,</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co">#       dep_delay = 0</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="co">#     )</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="co">#   ) |&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="co">#   summarise(</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="co">#     n_flights = n(),</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a><span class="co">#     n_delay_flights = sum(n &gt; dep_delay),</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a><span class="co">#     mean_arr_delay = mean(arr_delay),</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a><span class="co">#     mean_dep_delay = mean(dep_delay),</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a><span class="co">#     mean_total_delay = mean(arr_delay + dep_delay),</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a><span class="co">#     .by = carrier</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a><span class="co">#   ) |&gt;</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a><span class="co">#   slice_max(order_by = mean_total_delay, n = 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>flights <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">replace_na</span>(</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(</span>
+<span id="cb18-4"><a href="#cb18-4"></a>      <span class="at">arr_delay =</span> <span class="dv">0</span>,</span>
+<span id="cb18-5"><a href="#cb18-5"></a>      <span class="at">dep_delay =</span> <span class="dv">0</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>    )</span>
+<span id="cb18-7"><a href="#cb18-7"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-9"><a href="#cb18-9"></a>    <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay),</span>
+<span id="cb18-10"><a href="#cb18-10"></a>    <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay),</span>
+<span id="cb18-11"><a href="#cb18-11"></a>    <span class="at">mean_total_delay_diff =</span> <span class="fu">mean</span>(dep_delay <span class="sc">-</span> arr_delay),</span>
+<span id="cb18-12"><a href="#cb18-12"></a>    <span class="at">mean_total_delay =</span> <span class="fu">mean</span>(dep_delay <span class="sc">+</span> arr_delay),</span>
+<span id="cb18-13"><a href="#cb18-13"></a>    <span class="at">.by =</span> carrier</span>
+<span id="cb18-14"><a href="#cb18-14"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb18-15"><a href="#cb18-15"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_total_delay))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 5
+   carrier mean_dep_delay mean_arr_delay mean_total_delay_diff mean_total_delay
+   &lt;chr&gt;            &lt;dbl&gt;          &lt;dbl&gt;                 &lt;dbl&gt;            &lt;dbl&gt;
+ 1 F9               20.1          21.8                  -1.67             41.9 
+ 2 FL               18.3          19.6                  -1.28             37.9 
+ 3 EV               18.9          14.9                   4.02             33.8 
+ 4 YV               17.2          14.1                   3.14             31.3 
+ 5 WN               17.4           9.47                  7.97             26.9 
+ 6 9E               15.8           6.91                  8.87             22.7 
+ 7 B6               12.9           9.36                  3.55             22.3 
+ 8 OO               11.4          10.8                   0.594            22.2 
+ 9 MQ               10.1          10.2                  -0.161            20.3 
+10 UA               12.0           3.50                  8.46             15.5 
+11 VX               12.8           1.75                 11.0              14.5 
+12 DL                9.20          1.63                  7.57             10.8 
+13 AA                8.42          0.356                 8.06              8.77
+14 US                3.66          2.06                  1.60              5.72
+15 HA                4.90         -6.92                 11.8              -2.01
+16 AS                5.79         -9.86                 15.6              -4.07</code></pre>
+</div>
+</div>
+</section><section class="slide level4"></section><section id="what-is-due-by-this-week" class="title-slide slide level3 center"><h3>What is due by this week</h3>
+<ul>
+<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a>
+</li>
+<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
+</li>
+<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <a href="https://dplyr.tidyverse.org">dplyr</a>
+</li>
+</ul></section><section id="what-is-coming-up-for-next-week" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
+<ul>
+<li>Complete required readings for <a href="../weeks/week_05.html">week 5</a>
+</li>
+<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
+</li>
+<li>Complete <a href="../exercises/exercise_03.html">Exercise 4</a> on <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> (and a little <a href="https://tidyr.tidyverse.org">tidyr</a>)</li>
+</ul></section><section id="week-3-september-13-2023" class="title-slide slide level2 center"><h2>Week 3: September 13, 2023</h2>
 
-</section><section id="week-12-november-15-2023" class="title-slide slide level2 center"><h2>Week 12: November 15, 2023</h2>
-
-</section><section id="week-13-november-22-2023" class="title-slide slide level2 center"><h2>Week 13: November 22, 2023</h2>
-
-</section><section id="week-14-november-29-2023" class="title-slide slide level2 center"><h2>Week 14: November 29, 2023</h2>
-
-</section><section id="week-15-december-6-2023" class="title-slide slide level2 center"><h2>Week 15: December 6, 2023</h2>
-
-</section></section><section><section id="past-updates" class="title-slide slide level1 center"><h1>Past Updates</h1>
-<p>These past updates are in reverse chronological order.</p>
-</section><section id="week-3-september-13-2023" class="title-slide slide level2 center"><h2>Week 3: September 13, 2023</h2>
-
-</section><section id="what-is-due-by-this-week" class="title-slide slide level3 center"><h3>What is due by this week</h3>
+</section><section id="what-is-due-by-this-week-1" class="title-slide slide level3 center"><h3>What is due by this week</h3>
 <ul>
 <li>Complete required readings for <a href="../weeks/week_03.html">week 3</a>
 </li>
@@ -548,7 +1004,7 @@ Geodetic CRS:  WGS 84
 </li>
 <li>Complete <a href="../exercises/exercise_02.html">Exercise 2</a> on <a href="https://ggplot2.tidyverse.org">ggplot2</a>
 </li>
-</ul></section><section id="what-is-coming-up-for-next-week" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
+</ul></section><section id="what-is-coming-up-for-next-week-1" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
 <ul>
 <li>Complete required readings for <a href="../weeks/week_04.html">week 4</a>
 </li>
@@ -606,7 +1062,7 @@ Geodetic CRS:  WGS 84
 <li>What does it mean for data to be part of a knowledge system?</li>
 </ul></section><section id="week-2-september-6-2023" class="title-slide slide level2 center"><h2>Week 2: September 6, 2023</h2>
 
-</section><section id="what-is-due-by-this-week-1" class="title-slide slide level3 center"><h3>What is due by this week</h3>
+</section><section id="what-is-due-by-this-week-2" class="title-slide slide level3 center"><h3>What is due by this week</h3>
 <ul>
 <li>Set up R, RStudio, and GitHub Desktop</li>
 <li>Complete required readings for <a href="../weeks/week_01.html">week 1</a> and <a href="../weeks/week_02.html">week 2</a>
@@ -615,7 +1071,7 @@ Geodetic CRS:  WGS 84
 </li>
 <li>Review <a href="../course-exercises.html">instructions to complete exercises</a> using RStudio and GitHub</li>
 <li>Complete <a href="../exercises/exercise_01.html">Exercise 1</a> on R basics and the structure of <a href="https://r-spatial.github.io/sf/">sf</a> objects</li>
-</ul></section><section id="what-is-coming-up-for-next-week-1" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
+</ul></section><section id="what-is-coming-up-for-next-week-2" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
 <ul>
 <li>Complete required readings for <a href="../weeks/week_03.html">week 3</a>
 </li>
@@ -643,171 +1099,26 @@ Geodetic CRS:  WGS 84
 </section><section id="week-1-september-6-2023" class="title-slide slide level2 center"><h2>Week 1: September 6, 2023</h2>
 <ul>
 <li>Welcome!</li>
-</ul></section><section id="what-is-due-by-this-week-2" class="title-slide slide level3 center"><h3>What is due by this week</h3>
+</ul></section><section id="what-is-due-by-this-week-3" class="title-slide slide level3 center"><h3>What is due by this week</h3>
 <ul>
 <li>Join the Discord chat</li>
-</ul></section><section id="week-4-september-20-2023" class="title-slide slide level2 center"><h2>Week 4: September 20, 2023</h2>
+</ul></section></section><section><section id="upcoming-updates" class="title-slide slide level1 center"><h1>Upcoming Updates</h1>
 
-</section><section id="your-questions" class="title-slide slide level3 center"><h3>Your questions</h3>
+</section><section id="week-8-october-18-2023" class="title-slide slide level2 center"><h2>Week 8: October 18, 2023</h2>
 
-<img data-src="https://r4ds.hadley.nz/diagrams/data-science/transform.png" class="r-stretch"></section><section class="slide level4"><p><strong>How to filter multiple rows from a column?</strong></p>
-<p>It all depends on the tests or conditions you pass to <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>. Review the reading <a href="https://r4ds.hadley.nz/data-transform#filter">on the filter function</a> or check out this optional section of R for Data Science on <a href="https://r4ds.hadley.nz/regexps#sec-boolean-operations">boolean operations with strings</a>.</p>
-</section><section class="slide level4"><p><strong>How do you set <a href="https://tidyselect.r-lib.org">tidyselect</a> helpers to be case <em>insensitive</em>?</strong></p>
-<p><a href="https://tidyselect.r-lib.org/reference/starts_with.html">Check out the documentation</a>! Look for the <code>ignore.case</code> parameter.</p>
-</section><section class="slide level4"><p>“I would love to run through the code for this bar graph in class, since I don’t totally understand what thought process to use to come up with it.”</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>flights <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">replace_na</span>(</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(<span class="at">arr_delay =</span> <span class="dv">0</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="at">hour_factor =</span> <span class="fu">factor</span>(hour),</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">arr_delay_flag =</span> arr_delay <span class="sc">&gt;</span> <span class="dv">5</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hour_factor, <span class="at">fill =</span> arr_delay_flag)) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="week-9-october-25-2023" class="title-slide slide level2 center"><h2>Week 9: October 25, 2023</h2>
 
-</div>
-<img data-src="fall-2023_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting things</h3>
-<p>We all love <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>! We also appreciate <code>distinct()</code></p>
-</section><section class="slide level4"><p>“I have been working with R for a while now, in classes and for my own research. The lecture this week and the exercise really helped me understand the application of all the tools to transform data, which was super interesting because I often end up doing selections and filters in ArcGIS Pro or in a csv.”</p>
-</section><section id="difficult-things" class="title-slide slide level3 center"><h3>Difficult things</h3>
-<p><strong>Answering this question:</strong> Which carrier has the worst average delays? <strong>Challenge:</strong> can you disentangle the effects of bad airports vs.&nbsp;bad carriers? Why/why not?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># flights |&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#   replace_na(</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#     replace = list(</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#       arr_delay = 0,</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#       dep_delay = 0</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co">#     )</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">#   ) |&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="co">#   summarise(</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="co">#     n_flights = n(),</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="co">#     n_delay_flights = sum(n &gt; dep_delay),</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#     mean_arr_delay = mean(arr_delay),</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="co">#     mean_dep_delay = mean(dep_delay),</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="co">#     mean_total_delay = mean(arr_delay + dep_delay),</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="co">#     .by = carrier</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="co">#   ) |&gt;</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="co">#   slice_max(order_by = mean_total_delay, n = 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>flights <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">replace_na</span>(</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    <span class="at">replace =</span> <span class="fu">list</span>(</span>
-<span id="cb9-4"><a href="#cb9-4"></a>      <span class="at">arr_delay =</span> <span class="dv">0</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>      <span class="at">dep_delay =</span> <span class="dv">0</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>    )</span>
-<span id="cb9-7"><a href="#cb9-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb9-9"><a href="#cb9-9"></a>    <span class="at">mean_dep_delay =</span> <span class="fu">mean</span>(dep_delay),</span>
-<span id="cb9-10"><a href="#cb9-10"></a>    <span class="at">mean_arr_delay =</span> <span class="fu">mean</span>(arr_delay),</span>
-<span id="cb9-11"><a href="#cb9-11"></a>    <span class="at">mean_total_delay_diff =</span> <span class="fu">mean</span>(dep_delay <span class="sc">-</span> arr_delay),</span>
-<span id="cb9-12"><a href="#cb9-12"></a>    <span class="at">mean_total_delay =</span> <span class="fu">mean</span>(dep_delay <span class="sc">+</span> arr_delay),</span>
-<span id="cb9-13"><a href="#cb9-13"></a>    <span class="at">.by =</span> carrier</span>
-<span id="cb9-14"><a href="#cb9-14"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_total_delay))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16 × 5
-   carrier mean_dep_delay mean_arr_delay mean_total_delay_diff mean_total_delay
-   &lt;chr&gt;            &lt;dbl&gt;          &lt;dbl&gt;                 &lt;dbl&gt;            &lt;dbl&gt;
- 1 F9               20.1          21.8                  -1.67             41.9 
- 2 FL               18.3          19.6                  -1.28             37.9 
- 3 EV               18.9          14.9                   4.02             33.8 
- 4 YV               17.2          14.1                   3.14             31.3 
- 5 WN               17.4           9.47                  7.97             26.9 
- 6 9E               15.8           6.91                  8.87             22.7 
- 7 B6               12.9           9.36                  3.55             22.3 
- 8 OO               11.4          10.8                   0.594            22.2 
- 9 MQ               10.1          10.2                  -0.161            20.3 
-10 UA               12.0           3.50                  8.46             15.5 
-11 VX               12.8           1.75                 11.0              14.5 
-12 DL                9.20          1.63                  7.57             10.8 
-13 AA                8.42          0.356                 8.06              8.77
-14 US                3.66          2.06                  1.60              5.72
-15 HA                4.90         -6.92                 11.8              -2.01
-16 AS                5.79         -9.86                 15.6              -4.07</code></pre>
-</div>
-</div>
-</section><section class="slide level4"></section><section id="what-is-due-by-this-week-3" class="title-slide slide level3 center"><h3>What is due by this week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_04.html">week 4</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 3</a> on <a href="https://dplyr.tidyverse.org">dplyr</a>
-</li>
-</ul></section><section id="what-is-coming-up-for-next-week-2" class="title-slide slide level3 center"><h3>What is coming up for next week</h3>
-<ul>
-<li>Complete required readings for <a href="../weeks/week_05.html">week 5</a>
-</li>
-<li>Submit <a href="https://forms.gle/PAKvmQX652e5Eois6">response to weekly check-in questions</a>
-</li>
-<li>Complete <a href="../exercises/exercise_03.html">Exercise 4</a> on <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> (and a little <a href="https://tidyr.tidyverse.org">tidyr</a>)</li>
-</ul></section><section id="week-5-september-27-2023" class="title-slide slide level2 center"><h2>Week 5: September 27, 2023</h2>
+</section><section id="week-10-november-1-2023" class="title-slide slide level2 center"><h2>Week 10: November 1, 2023</h2>
 
-</section><section id="your-questions-1" class="title-slide slide level3 center"><h3>Your questions</h3>
+</section><section id="week-11-november-8-2023" class="title-slide slide level2 center"><h2>Week 11: November 8, 2023</h2>
 
-</section><section class="slide level4"><p>How do I get my own shapefiles into R?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>path <span class="ot">&lt;-</span> <span class="st">"path to your shapefile"</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section class="slide level4"><p>Is there a “best” way to perform specific operations? Or does it depend on individual preference?</p>
-<p>There isn’t a “best” way but there are often <em>better</em> and <em>worse</em> ways. If you have more than one way to achieve the same objective in R, you can compare the approaches using a few related considerations:</p>
-<ul>
-<li>Performance (speed and memory)</li>
-<li>Code readability</li>
-<li>Consistency and predictability</li>
-</ul></section><section class="slide level4"><p>This presentation on <a href="https://wurli.github.io/r-styling/coffee-and-coding-styling-r-code.html">Styling R Code</a> from Jacob Scott is one of the best resources I’ve seen on the topic.</p>
-<p>A few related resources:</p>
-<ul>
-<li>
-<a href="https://github.com/r-lib/lintr">lintr</a> flags when it detects problems in your code.</li>
-<li>
-<a href="https://github.com/r-lib/styler">styler</a> can help automatically reformat your code.</li>
-<li>Documentation like <a href="https://style.tidyverse.org/">the tidyverse style guide</a> can inform how you write code.</li>
-</ul></section><section class="slide level4"><p>How can you keep track of what is happening when piping data from one function to another?</p>
-<p>The <a href="https://github.com/elbersb/tidylog/">tidylog</a> package is one tool for getting more insight into your pipelines:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">library</span>(tidylog, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">mutate</span>(<span class="at">new_var =</span> wt <span class="sc">**</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">select</span>(mpg, cyl, new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                mpg cyl   new_var
-Datsun 710     22.8   4  5.382400
-Merc 240D      24.4   4 10.176100
-Merc 230       22.8   4  9.922500
-Fiat 128       32.4   4  4.840000
-Honda Civic    30.4   4  2.608225
-Toyota Corolla 33.9   4  3.367225
-Toyota Corona  21.5   4  6.076225
-Fiat X1-9      27.3   4  3.744225
-Porsche 914-2  26.0   4  4.579600
-Lotus Europa   30.4   4  2.289169
-Volvo 142E     21.4   4  7.728400</code></pre>
-</div>
-</div>
-<p>Another is <a href="https://github.com/daranzolin/ViewPipeSteps"><code>{ViewPipeSteps}</code></a></p>
-<p>The <a href="https://adv-r.hadley.nz/debugging.html">debugging tools</a> built into R and RStudio can also be useful for trouble-shooting in case of errors or unexpected results.</p>
-</section><section class="slide level4"><p>What is the difference between an intensive and extensive variable?</p>
-<p>The concept of <em>intensive</em> or <em>extensive</em> variables comes to the world of spatial data from physics and chemistry. The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Intensive_and_extensive_properties">intensive and extensive properties</a> provides helpful definitions:</p>
-<ul>
-<li><p>an intensive property or intensive quantity is one whose magnitude is independent of the size of the system (e.g.&nbsp;temperature, hardness)</p></li>
-<li><p>an extensive property or extensive quantity is one whose magnitude is additive for subsystems (e.g.&nbsp;mass, volume)</p></li>
-</ul></section><section id="what-is-due-next-week" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Your weekly check-in response!</p>
-</section><section id="what-is-due-next-week-1" class="title-slide slide level3 center"><h3>What is due next week</h3>
-<p>Readings:</p>
-<ul>
-<li><p><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, 2nd edition (WIP). (Sebastopol, CA: O'Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a>.</p></li>
-<li><p><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in Wickham, Grolemund, and Çetinkaya-Rundel <em>R for Data Science</em>.</p></li>
-<li><p>Karl W. Broman and Kara H. Woo "Data Organization in Spreadsheets," <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</p></li>
-</ul>
+</section><section id="week-12-november-15-2023" class="title-slide slide level2 center"><h2>Week 12: November 15, 2023</h2>
+
+</section><section id="week-13-november-22-2023" class="title-slide slide level2 center"><h2>Week 13: November 22, 2023</h2>
+
+</section><section id="week-14-november-29-2023" class="title-slide slide level2 center"><h2>Week 14: November 29, 2023</h2>
+
+</section><section id="week-15-december-6-2023" class="title-slide slide level2 center"><h2>Week 15: December 6, 2023</h2>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
