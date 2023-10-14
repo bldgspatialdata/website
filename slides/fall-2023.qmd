@@ -2,6 +2,9 @@
 title: "Fall 2023 Weekly Updates"
 number-sections: false
 scrollable: true
+format:
+  revealjs:
+    error: true
 code-link: true
 ---
 
@@ -9,6 +12,8 @@ code-link: true
 library(tidyverse)
 library(nycflights13)
 library(sf)
+
+us_states <- tigris::states()
 ```
 
 # This Week
