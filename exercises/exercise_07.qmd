@@ -1,7 +1,7 @@
 ---
 title: "Exercise 07"
 order: 7
-date-due: 2023-10-16
+date-due: 2023-10-20
 date-modified: last-modified
 ---
 
@@ -10,3 +10,60 @@ Exercise due on {{< meta date-due >}}
 :::
 
 ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0{{< meta order >}}.html) for related slides and readings
+
+## Setup
+
+To start this week's exercise, I have created a new folder named `project` in each of your class repositories (based on the new public [project-template](https://github.com/bldgspatialdata/project-template) repository for our class). [Sync your repository](../course-exercises.html#sec-update-repo) to make sure you have the latest files before you get started with the exercise.
+
+In the folder you will find a new RStudio project file (`.Rproj`) named `project.Rproj`. Open the project and locate the file named `example-functions.qmd`.
+
+Open `example-functions.qmd` and, in the editor pane of RStudio, click the "Render" button to turn the Quarto document into a rendered HTML document in the "Preview" pane.
+
+This Quarto document is designed to review the topics we covered in last week's class and to show some of the options for Quarto documents. You can review the document or, if you feel confident in the material, jump ahead to the exercise.
+
+## Exercise
+
+Here are the steps to complete this week's exercise:
+
+1. Use the menu to create a new Quarto document (Go to `File > New File > Quarto Document...`). Fill in the title "Exercise 7" and your name as the author. After the new document opens, notice how the title and author appear in the front matter for the new document.
+
+![](files/new-quarto-document-modal.jpeg)
+
+2. Save the Quarto document using the file name `exercise_07.qmd`.
+
+3. Insert a new code block and add code to read spatial data into R. You can use `sf::read_sf()` to read data from a URL or file path or you can use one of the data functions we've tried in class, such as `tigris::counties()` or `rnaturalearth::ne_countries(returnclass = "sf")`.
+
+:::{.callout-important collapse=false appearance='default' icon=true}
+Don't forget! If you are using a local file, the file size _must_ be less than 50MB or your changes to the repository can't be committed to GitHub. If your file is not a spatial data file (e.g. a CSV file) you should convert the object into a sf object using `sf::st_as_sf()`.
+:::
+
+4. Insert a new code block and write a **vector function** (either a "mutate" or "summary" style function) that can take one or more **attributes** from your data as an input. Include one or more examples of how the function works.
+
+5. Insert a new code block and write a **vector function** (either a "mutate" or "summary" style function) that can take the **feature geometry** from your data as an input. This function should use one of the geometric unary or binary functions from the `{sf}` package. It doesn't need to be complicated but take a look at the [function reference](https://r-spatial.github.io/sf/reference/index.html) or the [sf cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/sf.pdf) and find a function that you are curious to try out. Include one or more examples of how the function works.
+
+6. Insert a new code block and write a **mapping or plotting function**. Remember, if you write a mapping function, it should probably include `ggplot2::geom_sf()` in the body of the function.
+
+7. Finally—render the Quarto document and make sure it can be knit as an HTML page without error! You can also run `quarto::quarto_preview()` in the console to keep a live preview running in the background while you complete the exercise.
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## Use verbs for function names
+
+For each part of this exercise, make sure to use function names that help you and anyone using your code understand what the function does. Using verbs is an easy way to do that.
+:::
+
+Between each code block, please include a brief explanation of what question you are trying to answer with the functions.
+
+For example, you could write: "This function takes data on storm observations and summarizes the average wind speed and air pressure by hurricane category so I can better understand the relationship between the continuous and categorical variables."
+
+When you are done writing the functions (and examples!), there are just two steps left in this exercise to help you practice working with Quarto.
+
+1. Add a link to your Exercise 7 document to the navigation menu of your Quarto website. Open the `_quarto.yml` project configuration file and look for the `navbar` section. Take a look at the Quarto guide to [Website Navigation](https://quarto.org/docs/websites/website-navigation.html) for more information.
+2. Explore the [HTML theme options](https://quarto.org/docs/output-formats/html-themes.html) for your Quarto site. Try swapping the default `cosmo` theme for one of the other [Bootswatch](https://bootswatch.com/) themes.
+
+## Bonus exercise
+
+Read in more data and try using your mapping or plotting function with a *different dataset*.
+
+Does the function still work they way you expect? Why or why not?
+
+Write a few sentences explaining what happens and, if the functions do not work, try writing a new version that works with both your original data and the new version.
