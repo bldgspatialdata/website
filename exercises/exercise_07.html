@@ -359,7 +359,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup"><span class="header-section-number">1</span> Setup</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2</span> Exercise</a></li>
+  <li><a href="#bonus-exercise" id="toc-bonus-exercise" class="nav-link" data-scroll-target="#bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercises/exercise_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -378,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 4, 2023</p>
+      <p class="date-modified">October 14, 2023</p>
     </div>
   </div>
     
@@ -394,13 +402,83 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Exercise due on 2023-10-16</p>
+<p>Exercise due on 2023-10-20</p>
 </div>
 </div>
 </div>
 <p>ℹ️ See <a href="https://bldgspatialdata.github.io/website/weeks/week_07.html">week 7</a> for related slides and readings</p>
+<section id="setup" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1</span> Setup</h2>
+<p>To start this week’s exercise, I have created a new folder named <code>project</code> in each of your class repositories (based on the new public <a href="https://github.com/bldgspatialdata/project-template">project-template</a> repository for our class). <a href="../course-exercises.html#sec-update-repo">Sync your repository</a> to make sure you have the latest files before you get started with the exercise.</p>
+<p>In the folder you will find a new RStudio project file (<code>.Rproj</code>) named <code>project.Rproj</code>. Open the project and locate the file named <code>example-functions.qmd</code>.</p>
+<p>Open <code>example-functions.qmd</code> and, in the editor pane of RStudio, click the “Render” button to turn the Quarto document into a rendered HTML document in the “Preview” pane.</p>
+<p>This Quarto document is designed to review the topics we covered in last week’s class and to show some of the options for Quarto documents. You can review the document or, if you feel confident in the material, jump ahead to the exercise.</p>
+</section>
+<section id="exercise" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2</span> Exercise</h2>
+<p>Here are the steps to complete this week’s exercise:</p>
+<ol type="1">
+<li>Use the menu to create a new Quarto document (Go to <code>File &gt; New File &gt; Quarto Document...</code>). Fill in the title “Exercise 7” and your name as the author. After the new document opens, notice how the title and author appear in the front matter for the new document.</li>
+</ol>
+<p><img src="files/new-quarto-document-modal.jpeg" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>Save the Quarto document using the file name <code>exercise_07.qmd</code>.</p></li>
+<li><p>Insert a new code block and add code to read spatial data into R. You can use <code>sf::read_sf()</code> to read data from a URL or file path or you can use one of the data functions we’ve tried in class, such as <code>tigris::counties()</code> or <code>rnaturalearth::ne_countries(returnclass = "sf")</code>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Don’t forget! If you are using a local file, the file size&nbsp;<em>must</em>&nbsp;be less than 50MB or your changes to the repository can’t be committed to GitHub. If your file is not a spatial data file (e.g.&nbsp;a CSV file) you should convert the object into a sf object using&nbsp;<code>sf::st_as_sf()</code>.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li><p>Insert a new code block and write a <strong>vector function</strong> (either a “mutate” or “summary” style function) that can take one or more <strong>attributes</strong> from your data as an input. Include one or more examples of how the function works.</p></li>
+<li><p>Insert a new code block and write a <strong>vector function</strong> (either a “mutate” or “summary” style function) that can take the <strong>feature geometry</strong> from your data as an input. This function should use one of the geometric unary or binary functions from the <code>{sf}</code> package. It doesn’t need to be complicated but take a look at the <a href="https://r-spatial.github.io/sf/reference/index.html">function reference</a> or the <a href="https://github.com/rstudio/cheatsheets/blob/main/sf.pdf">sf cheatsheet</a> and find a function that you are curious to try out. Include one or more examples of how the function works.</p></li>
+<li><p>Insert a new code block and write a <strong>mapping or plotting function</strong>. Remember, if you write a mapping function, it should probably include <code>ggplot2::geom_sf()</code> in the body of the function.</p></li>
+<li><p>Finally—render the Quarto document and make sure it can be knit as an HTML page without error! You can also run <code>quarto::quarto_preview()</code> in the console to keep a live preview running in the background while you complete the exercise.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use verbs for function names
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>For each part of this exercise, make sure to use function names that help you and anyone using your code understand what the function does. Using verbs is an easy way to do that.</p>
+</div>
+</div>
+</div>
+<p>Between each code block, please include a brief explanation of what question you are trying to answer with the functions.</p>
+<p>For example, you could write: “This function takes data on storm observations and summarizes the average wind speed and air pressure by hurricane category so I can better understand the relationship between the continuous and categorical variables.”</p>
+<p>When you are done writing the functions (and examples!), there are just two steps left in this exercise to help you practice working with Quarto.</p>
+<ol type="1">
+<li>Add a link to your Exercise 7 document to the navigation menu of your Quarto website. Open the <code>_quarto.yml</code> project configuration file and look for the <code>navbar</code> section. Take a look at the Quarto guide to <a href="https://quarto.org/docs/websites/website-navigation.html">Website Navigation</a> for more information.</li>
+<li>Explore the <a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theme options</a> for your Quarto site. Try swapping the default <code>cosmo</code> theme for one of the other <a href="https://bootswatch.com/">Bootswatch</a>&nbsp;themes.</li>
+</ol>
+</section>
+<section id="bonus-exercise" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</h2>
+<p>Read in more data and try using your mapping or plotting function with a <em>different dataset</em>.</p>
+<p>Does the function still work they way you expect? Why or why not?</p>
+<p>Write a few sentences explaining what happens and, if the functions do not work, try writing a new version that works with both your original data and the new version.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -908,4 +986,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercises/exercise_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
