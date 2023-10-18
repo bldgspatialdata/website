@@ -282,352 +282,653 @@
   {
     "objectID": "slides/fall-2023.html#week-7-october-11-2023",
     "href": "slides/fall-2023.html#week-7-october-11-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 7: October 11, 2023",
     "text": "Week 7: October 11, 2023"
   },
   {
+    "objectID": "slides/fall-2023.html#week-agenda",
+    "href": "slides/fall-2023.html#week-agenda",
+    "title": "Week 8 Check-in",
+    "section": "Week 8 Agenda",
+    "text": "Week 8 Agenda\n\nCheck-in on difficult + interesting things\nFeedback on course experience (things to change, add, or keep)\nErrors of the week\n\nLecture + practice: Exploratory data analysis with sf and the tidyverse\nWeekly questions"
+  },
+  {
+    "objectID": "slides/fall-2023.html#check-in",
+    "href": "slides/fall-2023.html#check-in",
+    "title": "Week 8 Check-in",
+    "section": "Check-in",
+    "text": "Check-in\nThis week’s difficult things:\n\nQuarto can be confusing\nWriting functions is hard\nNaming functions is even harder\n\nThis week’s interesting things:\n\nFunctions can be a powerful tool\nQuarto has an exciting level of flexibility\nSetup"
+  },
+  {
+    "objectID": "slides/fall-2023.html#course-feedback-from-you-and-me",
+    "href": "slides/fall-2023.html#course-feedback-from-you-and-me",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to change:\n\nStart with slides + code demonstration (saving the check-ins + questions for the end)\nTry a remote session where students can screen share, see and understand each other’s work, and receive help on our code\nShare more feedback on completed exercises*"
+  },
+  {
+    "objectID": "slides/fall-2023.html#course-feedback-from-you-and-me-1",
+    "href": "slides/fall-2023.html#course-feedback-from-you-and-me-1",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to add:\n\nDistributing slides in advance of class and spend class time on coding exercises and trouble-shooting\nSpend more time on how to make maps with sf, ggplot2, and R\nShare exercise solutions for review*"
+  },
+  {
+    "objectID": "slides/fall-2023.html#course-feedback-from-you-and-me-2",
+    "href": "slides/fall-2023.html#course-feedback-from-you-and-me-2",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to keep the same:\n\nExercises that include debugging a code snippet\nSharing good questions for weekly check-ins*"
+  },
+  {
+    "objectID": "slides/fall-2023.html#errors-for-the-week",
+    "href": "slides/fall-2023.html#errors-for-the-week",
+    "title": "Week 8 Check-in",
+    "section": "Errors for the week",
+    "text": "Errors for the week\nIllegalArgumentException: Points of LinearRing do not form a closed linestring\nTake a look at sf::st_is_valid() and sf::st_make_valid()."
+  },
+  {
+    "objectID": "slides/fall-2023.html#errors-for-the-week-1",
+    "href": "slides/fall-2023.html#errors-for-the-week-1",
+    "title": "Week 8 Check-in",
+    "section": "Errors for the week",
+    "text": "Errors for the week\nError in UseMethod(\"mutate\") : no applicable method for 'mutate' applied to an object of class \"function\""
+  },
+  {
+    "objectID": "slides/fall-2023.html#lecture",
+    "href": "slides/fall-2023.html#lecture",
+    "title": "Week 8 Check-in",
+    "section": "Lecture",
+    "text": "Lecture\n🖥️ Exploratory data analysis"
+  },
+  {
+    "objectID": "slides/fall-2023.html#questions-on-tidy-data",
+    "href": "slides/fall-2023.html#questions-on-tidy-data",
+    "title": "Week 8 Check-in",
+    "section": "Questions on tidy data",
+    "text": "Questions on tidy data\nAfter you tidy data, where or how do you start looking in order to make sense of it?"
+  },
+  {
+    "objectID": "slides/fall-2023.html#questions-on-quarto",
+    "href": "slides/fall-2023.html#questions-on-quarto",
+    "title": "Week 8 Check-in",
+    "section": "Questions on Quarto",
+    "text": "Questions on Quarto\nWhy did Quarto render a bunch of figures from the quarto md files of exercises due in previous weeks?\nHow do you duplicate of a Quarto document?"
+  },
+  {
+    "objectID": "slides/fall-2023.html#questions-on-functions",
+    "href": "slides/fall-2023.html#questions-on-functions",
+    "title": "Week 8 Check-in",
+    "section": "Questions on functions",
+    "text": "Questions on functions\nIs there a way to embed a function within one another?\nYes! You can define a function within a function like this:\n\nexample_fn &lt;- function(..., ) {\n  \n  embedded_fn &lt;- function(..., collapse = \",\") {\n    paste0(..., collapse = collapse)\n  }\n  \n  embedded_fn(...)\n}\n\nError: &lt;text&gt;:1:29: unexpected ')'\n1: example_fn &lt;- function(..., )\n                                ^"
+  },
+  {
     "objectID": "slides/fall-2023.html#week-6-october-4-2023",
     "href": "slides/fall-2023.html#week-6-october-4-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 6: October 4, 2023",
     "text": "Week 6: October 4, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#weekly-questions",
     "href": "slides/fall-2023.html#weekly-questions",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Weekly questions",
     "text": "Weekly questions"
   },
   {
     "objectID": "slides/fall-2023.html#week-5-september-27-2023",
     "href": "slides/fall-2023.html#week-5-september-27-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 5: September 27, 2023",
     "text": "Week 5: September 27, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-4-september-20-2023",
     "href": "slides/fall-2023.html#week-4-september-20-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 4: September 20, 2023",
     "text": "Week 4: September 20, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-3-september-13-2023",
     "href": "slides/fall-2023.html#week-3-september-13-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 3: September 13, 2023",
     "text": "Week 3: September 13, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-2-september-6-2023",
     "href": "slides/fall-2023.html#week-2-september-6-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 2: September 6, 2023",
     "text": "Week 2: September 6, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-1-september-6-2023",
     "href": "slides/fall-2023.html#week-1-september-6-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 1: September 6, 2023",
     "text": "Week 1: September 6, 2023\n\nWelcome!"
   },
   {
     "objectID": "slides/fall-2023.html#week-8-october-18-2023",
     "href": "slides/fall-2023.html#week-8-october-18-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 8: October 18, 2023",
     "text": "Week 8: October 18, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-9-october-25-2023",
     "href": "slides/fall-2023.html#week-9-october-25-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 9: October 25, 2023",
     "text": "Week 9: October 25, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-10-november-1-2023",
     "href": "slides/fall-2023.html#week-10-november-1-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 10: November 1, 2023",
     "text": "Week 10: November 1, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-11-november-8-2023",
     "href": "slides/fall-2023.html#week-11-november-8-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 11: November 8, 2023",
     "text": "Week 11: November 8, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-12-november-15-2023",
     "href": "slides/fall-2023.html#week-12-november-15-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 12: November 15, 2023",
     "text": "Week 12: November 15, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-13-november-22-2023",
     "href": "slides/fall-2023.html#week-13-november-22-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 13: November 22, 2023",
     "text": "Week 13: November 22, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-14-november-29-2023",
     "href": "slides/fall-2023.html#week-14-november-29-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 14: November 29, 2023",
     "text": "Week 14: November 29, 2023"
   },
   {
     "objectID": "slides/fall-2023.html#week-15-december-6-2023",
     "href": "slides/fall-2023.html#week-15-december-6-2023",
-    "title": "Fall 2023 Weekly Updates",
+    "title": "Week 8 Check-in",
     "section": "Week 15: December 6, 2023",
     "text": "Week 15: December 6, 2023"
   },
   {
-    "objectID": "slides/data-transformation.html#load-dplyr",
-    "href": "slides/data-transformation.html#load-dplyr",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.1 Load {dplyr}",
-    "text": "1.1 Load {dplyr}\n\nlibrary(dplyr)"
+    "objectID": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
+    "href": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n2.1 Why do we visualize spatial data?",
+    "text": "2.1 Why do we visualize spatial data?\nWhy do we visualize spatial data?\n\nValidation\nExploration\nCommunication"
   },
   {
-    "objectID": "slides/data-transformation.html#how-can-you-transform-your-data-using-dplyr",
-    "href": "slides/data-transformation.html#how-can-you-transform-your-data-using-dplyr",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.2 How can you transform your data using {dplyr}?",
-    "text": "1.2 How can you transform your data using {dplyr}?\n\nManipulate cases (rows)\nManipulate variables (columns)\nManipulate groups"
+    "objectID": "slides/data-visualization.html#anscombes-quartet",
+    "href": "slides/data-visualization.html#anscombes-quartet",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n2.2 Anscombe’s quartet",
+    "text": "2.2 Anscombe’s quartet\nTo illustrate why visualization is essential, let’s look at the Anscombe’s Quartet data:\n\n\n\n\nThis data is from the Tmisc package but can be found in many places."
   },
   {
-    "objectID": "slides/data-transformation.html#manipulate-cases",
-    "href": "slides/data-transformation.html#manipulate-cases",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.3 Manipulate cases",
-    "text": "1.3 Manipulate cases\n\nfilter(), which changes which rows are present without changing their order, and\narrange(), which changes the order of the rows without changing which are present.\ndistinct() which finds rows with unique values but unlike arrange() and filter() it can also optionally modify the columns."
+    "objectID": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
+    "href": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n2.3 How do we visualize spatial data?",
+    "text": "2.3 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
   },
   {
-    "objectID": "slides/data-transformation.html#manipulate-variables",
-    "href": "slides/data-transformation.html#manipulate-variables",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.4 Manipulate variables",
-    "text": "1.4 Manipulate variables\n\nmutate() creates new columns that are derived from the existing columns,\nselect() changes which columns are present,\nrename() changes the names of the columns, and\nrelocate() changes the positions of the columns."
+    "objectID": "slides/data-visualization.html#data",
+    "href": "slides/data-visualization.html#data",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.1 Data",
+    "text": "3.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
   },
   {
-    "objectID": "slides/data-transformation.html#manipulate-groups",
-    "href": "slides/data-transformation.html#manipulate-groups",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.5 Manipulate groups",
-    "text": "1.5 Manipulate groups\n\ngroup_by(),\nsummarize(), and\nthe slice_() family of functions."
+    "objectID": "slides/data-visualization.html#mapping",
+    "href": "slides/data-visualization.html#mapping",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.2 Mapping",
+    "text": "3.2 Mapping\n\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
   },
   {
-    "objectID": "slides/data-transformation.html#the-pipe",
-    "href": "slides/data-transformation.html#the-pipe",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "1.6 The pipe",
-    "text": "1.6 The pipe"
+    "objectID": "slides/data-visualization.html#statistics",
+    "href": "slides/data-visualization.html#statistics",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.3 Statistics",
+    "text": "3.3 Statistics\n\nData may not represent the displayed values\n\nStatistics transform input variables into displayed values, e.g.\n\nCounting the number of observations by category\nCalculating summary statistics for a boxplot\n\n\n\n\nStatistics can be used prior to plotting data or used by a plotting function directly."
   },
   {
-    "objectID": "slides/data-transformation.html#take-a-minute",
-    "href": "slides/data-transformation.html#take-a-minute",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "2.1 Take a minute ⏰",
-    "text": "2.1 Take a minute ⏰"
+    "objectID": "slides/data-visualization.html#scales",
+    "href": "slides/data-visualization.html#scales",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.4 Scales",
+    "text": "3.4 Scales\n\n\nScales translate between value ranges and graphical properties, e.g.\n\nCategories -&gt; Colors\nNumbers -&gt; Position\n\n\nScales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.\n\n\nIn the not too common case where data directly represents a graphical property, e.g. a “color” column, you can use a special type of scale called an “identity” scale."
   },
   {
-    "objectID": "slides/data-transformation.html#take-a-minute-1",
-    "href": "slides/data-transformation.html#take-a-minute-1",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "3.1 Take a minute ⏰",
-    "text": "3.1 Take a minute ⏰"
+    "objectID": "slides/data-visualization.html#geometries",
+    "href": "slides/data-visualization.html#geometries",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.5 Geometries",
+    "text": "3.5 Geometries\n\nHow translate aesthetics into graphical representations\nBasic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)\nTypically, the geometries are the same as the “type” of plot"
   },
   {
-    "objectID": "slides/data-transformation.html#mutate",
-    "href": "slides/data-transformation.html#mutate",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "3.2 mutate()",
-    "text": "3.2 mutate()\nmutate() creates new columns that are functions of existing variables.\nIt can also modify (if the name is the same as an existing column) and delete columns (by setting their value to NULL)."
+    "objectID": "slides/data-visualization.html#facets",
+    "href": "slides/data-visualization.html#facets",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.6 Facets",
+    "text": "3.6 Facets\n\nDefines how data is split across multiple panels"
   },
   {
-    "objectID": "slides/data-transformation.html#summarise",
-    "href": "slides/data-transformation.html#summarise",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "4.1 summarise()",
-    "text": "4.1 summarise()\nsummarise() creates a new data frame with:\n\none row for each combination of grouping variables; if there are no grouping variables, the output will have a single row summarising all observations in the input.\none column for each grouping variable\none column for each of the summary statistics that you have specified."
+    "objectID": "slides/data-visualization.html#coordinates",
+    "href": "slides/data-visualization.html#coordinates",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.7 Coordinates",
+    "text": "3.7 Coordinates\n\nPositional aesthetics must be interpreted by a coordinate system\nDefines the physical mapping of aesthetics to the paper\n\n\nWe usually think about the cartesian coordinate system—but there are a lot of different kinds of coordinate systems."
   },
   {
-    "objectID": "slides/data-transformation.html#using-filter-with-sf-objects",
-    "href": "slides/data-transformation.html#using-filter-with-sf-objects",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "5.1 Using filter with sf objects",
-    "text": "5.1 Using filter with sf objects\nIf you are just working with attributes (variables), sf objects work just like any other data frame:\n\nfilter(\n  storms_sf,\n  wind &gt; 50\n)\n\nBut, you can use a special set of predicate functions that work with sf objects to return a logical vector that also works with filter:\n\nfilter(\n  storms_sf,\n  as.logical(st_intersects(geometry, st_union(us_states), sparse = FALSE))\n)"
+    "objectID": "slides/data-visualization.html#theme",
+    "href": "slides/data-visualization.html#theme",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n3.8 Theme",
+    "text": "3.8 Theme\n\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
   },
   {
-    "objectID": "slides/data-transformation.html#using-mutate-with-sf-objects",
-    "href": "slides/data-transformation.html#using-mutate-with-sf-objects",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "5.2 Using mutate with sf objects",
-    "text": "5.2 Using mutate with sf objects\n\nstorms_usa &lt;- storms_sf |&gt;\n  mutate(\n    usa_observation = as.logical(\n      st_intersects(\n        geometry,\n        st_union(us_states),\n        sparse = FALSE\n      )\n    )\n  )"
+    "objectID": "slides/data-visualization.html#setup-packages",
+    "href": "slides/data-visualization.html#setup-packages",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n5.1 Setup packages",
+    "text": "5.1 Setup packages\nFor this session, we are going to use the ggplot2 and dplyr packages:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)"
   },
   {
-    "objectID": "slides/data-transformation.html#using-summarise-with-sf-objects",
-    "href": "slides/data-transformation.html#using-summarise-with-sf-objects",
-    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
-    "section": "5.3 Using summarise with sf objects",
-    "text": "5.3 Using summarise with sf objects\nYou can use summarise to combine geometry by grouping variables:\n\nstorms_categories &lt;- storms_sf |&gt;\n  group_by(category) |&gt;\n  summarise()\n\nstorms_categories"
+    "objectID": "slides/data-visualization.html#setup-data",
+    "href": "slides/data-visualization.html#setup-data",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n5.2 Setup data",
+    "text": "5.2 Setup data\nWe are also going to use the storms data included with dplyr.\nTake a quick look at storms using glimpse():\n\nglimpse(storms)\n\n\n\n\n\nWhen we use storms, it is important to remember that each row is an observation of a storm, not a summary feature for an individual storm."
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about",
-    "href": "slides/welcome.html#what-is-this-class-about",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?"
+    "objectID": "slides/data-visualization.html#create-a-ggplot",
+    "href": "slides/data-visualization.html#create-a-ggplot",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n5.3 Create a ggplot",
+    "text": "5.3 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\nggplot(data = storms)\n\n\n\n\n\n\n\nWell, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later."
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-1",
-    "href": "slides/welcome.html#what-is-this-class-about-1",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data using R"
+    "objectID": "slides/data-visualization.html#add-aesthetics-and-layers",
+    "href": "slides/data-visualization.html#add-aesthetics-and-layers",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n5.4 Add aesthetics and layers",
+    "text": "5.4 Add aesthetics and layers"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-2",
-    "href": "slides/welcome.html#what-is-this-class-about-2",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data spatial data using R"
+    "objectID": "slides/data-visualization.html#visualizing-distributions",
+    "href": "slides/data-visualization.html#visualizing-distributions",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n6.1 Visualizing distributions",
+    "text": "6.1 Visualizing distributions"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-3",
-    "href": "slides/welcome.html#what-is-this-class-about-3",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about places"
+    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable",
+    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n6.2 Distribution of one numeric variable",
+    "text": "6.2 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-4",
-    "href": "slides/welcome.html#what-is-this-class-about-4",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about people and places"
+    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
+    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n6.3 Distribution of one numeric variable",
+    "text": "6.3 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-5",
-    "href": "slides/welcome.html#what-is-this-class-about-5",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
+    "objectID": "slides/data-visualization.html#distribution-of-one-categorical-variable",
+    "href": "slides/data-visualization.html#distribution-of-one-categorical-variable",
+    "title": "Session 2: Visualizing spatial data with ggplot2",
+    "section": "\n6.4 Distribution of one categorical variable",
+    "text": "6.4 Distribution of one categorical variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
   },
   {
-    "objectID": "slides/welcome.html#why-are-you-here",
-    "href": "slides/welcome.html#why-are-you-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why are you here?",
-    "text": "Why are you here?"
+    "objectID": "slides/tidy-data.html#what-is-involved-in-tidying-messy-datasets",
+    "href": "slides/tidy-data.html#what-is-involved-in-tidying-messy-datasets",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n1 What is involved in tidying messy datasets?",
+    "text": "1 What is involved in tidying messy datasets?\n\nColumn headers are values, not variable names\nMultiple variables stored in one column\nVariables are stored in both rows and columns\nMultiple types in one table\nOne type in multiple tables\n\nfrom Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html"
   },
   {
-    "objectID": "slides/welcome.html#how-did-you-get-here",
-    "href": "slides/welcome.html#how-did-you-get-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "How did you get here?",
-    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
+    "objectID": "slides/tidy-data.html#pivoting",
+    "href": "slides/tidy-data.html#pivoting",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n2 Pivoting",
+    "text": "2 Pivoting"
   },
   {
-    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What experiences do you bring with you today?",
-    "text": "What experiences do you bring with you today?"
+    "objectID": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data",
+    "href": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n3 How would this look if we turn it into tidy data?",
+    "text": "3 How would this look if we turn it into tidy data?\n\n\nCity\n2000\n2010\n2020\n\n\n\nBaltimore city, Maryland\n300000\n290000\n285000\n\n\nWashington, DC\n300000\n315000\n330000\n\n\nRichmond, Virginia\n200000\n202000\n210000"
   },
   {
-    "objectID": "slides/welcome.html#why-am-i-here",
-    "href": "slides/welcome.html#why-am-i-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why am I here?",
-    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
+    "objectID": "slides/tidy-data.html#tidying-messy-datasets",
+    "href": "slides/tidy-data.html#tidying-messy-datasets",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n4 Tidying messy datasets",
+    "text": "4 Tidying messy datasets\n\nColumn headers are values, not variable names\nMultiple variables stored in one column\nVariables are stored in both rows and columns\nMultiple types in one table\nOne type in multiple tables"
   },
   {
-    "objectID": "slides/welcome.html#communication",
-    "href": "slides/welcome.html#communication",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Communication 📬",
-    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
+    "objectID": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data-1",
+    "href": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data-1",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n5 How would this look if we turn it into tidy data?",
+    "text": "5 How would this look if we turn it into tidy data?\n\n\nCity name\n2000\n2010\n2020\n\n\n\nBaltimore city, Maryland\n300000\n290000\n285000\n\n\nWashington, DC\n300000\n315000\n330000\n\n\nRichmond, Virginia\n200000\n202000\n210000"
   },
   {
-    "objectID": "slides/welcome.html#assignments",
-    "href": "slides/welcome.html#assignments",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Assignments",
-    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
+    "objectID": "slides/tidy-data.html#data-organization-in-spreadsheets",
+    "href": "slides/tidy-data.html#data-organization-in-spreadsheets",
+    "title": "Session 2: Tidying and joining data",
+    "section": "\n6 Data organization in spreadsheets",
+    "text": "6 Data organization in spreadsheets"
   },
   {
-    "objectID": "slides/welcome.html#readings",
-    "href": "slides/welcome.html#readings",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Readings 📚",
-    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
+    "objectID": "slides/feature-geometry.html#getting-started",
+    "href": "slides/feature-geometry.html#getting-started",
+    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
+    "section": "\n1 Getting started",
+    "text": "1 Getting started\n\n\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(tigris)\noptions(tigris_use_cache = TRUE)"
   },
   {
-    "objectID": "slides/welcome.html#miscellaneous",
-    "href": "slides/welcome.html#miscellaneous",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous"
+    "objectID": "slides/feature-geometry.html#converting-objects-between-types",
+    "href": "slides/feature-geometry.html#converting-objects-between-types",
+    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
+    "section": "\n2 Converting objects between types",
+    "text": "2 Converting objects between types"
   },
   {
-    "objectID": "slides/welcome.html#welcome-again",
-    "href": "slides/welcome.html#welcome-again",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Welcome again!",
-    "text": "Welcome again!"
+    "objectID": "slides/feature-geometry.html#types-of-spatial-operations",
+    "href": "slides/feature-geometry.html#types-of-spatial-operations",
+    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
+    "section": "\n3 Types of spatial operations",
+    "text": "3 Types of spatial operations\n\nSpatial filtering and topological relations\nSpatial joins and non-overlapping joins\nSpatial aggregation"
   },
   {
-    "objectID": "slides/coding-basics.html#week-1",
-    "href": "slides/coding-basics.html#week-1",
-    "title": "Coding basics",
-    "section": "1 Week 1",
-    "text": "1 Week 1"
+    "objectID": "slides/feature-geometry.html#types-of-geometric-operations",
+    "href": "slides/feature-geometry.html#types-of-geometric-operations",
+    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
+    "section": "\n4 Types of geometric operations",
+    "text": "4 Types of geometric operations\n\nSimplification\nCentroids\nBuffers\nClipping (with or without subsetting)\nUnions\nType transformations"
   },
   {
-    "objectID": "slides/spatial-data.html#overview",
-    "href": "slides/spatial-data.html#overview",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "1 Overview",
-    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
+    "objectID": "slides/spatial-data-attributes.html#setup",
+    "href": "slides/spatial-data-attributes.html#setup",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "1 Setup",
+    "text": "1 Setup\nToday, we are going to use the {tidyverse} along with {sf} and two related packages: {lwgeom} and {units}.\n\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(lwgeom)\nlibrary(units)"
   },
   {
-    "objectID": "slides/spatial-data.html#what-is-r",
-    "href": "slides/spatial-data.html#what-is-r",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "2 What is R?",
-    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
+    "objectID": "slides/spatial-data-attributes.html#getting-started",
+    "href": "slides/spatial-data-attributes.html#getting-started",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "2 Getting started",
+    "text": "2 Getting started\nFor this session, we also need some data to look at. We are going to load data from the U.S. Census Bureau using the {tigris} package:\n\nlibrary(tigris)\noptions(tigris_use_cache = TRUE)"
   },
   {
-    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "3 How does R work with spatial data?",
-    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-spatial-data",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-spatial-data",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "3 Things to remember about spatial data",
+    "text": "3 Things to remember about spatial data\n\nFields\nObjects\n\nCheck out the Wikipedia article on data models in GIS for more background on this topic."
   },
   {
-    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "4 Take a look at {sf} and the tidyverse in action",
-    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "4 Things to remember about sf and sfc objects",
+    "text": "4 Things to remember about sf and sfc objects\nA sf object is a data frame with a sfc list-column.\n\nus_states$geometry\n\nGeometry set for 56 features \nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -179.2311 ymin: -14.60181 xmax: 179.8597 ymax: 71.43979\nGeodetic CRS:  NAD83\nFirst 5 geometries:"
   },
   {
-    "objectID": "slides/spatial-data.html#related-resources",
-    "href": "slides/spatial-data.html#related-resources",
-    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
-    "section": "5 Related resources",
-    "text": "5 Related resources\n\nWeek 1 Required readings and Optional readings\nExercise 1"
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-1",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-1",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "5 Things to remember about sf and sfc objects",
+    "text": "5 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-2",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-2",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "6 Things to remember about sf and sfc objects",
+    "text": "6 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)\nsf and sfc objects use a coordinate reference system"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-3",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-3",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "7 Things to remember about sf and sfc objects",
+    "text": "7 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)\nsf and sfc objects use a coordinate reference system\nworking with sf objects is slower than working with data frames—so drop the geometry if you don’t need it"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-coordinate-reference-systems",
+    "href": "slides/spatial-data-attributes.html#things-to-remember-about-coordinate-reference-systems",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "8 Things to remember about coordinate reference systems",
+    "text": "8 Things to remember about coordinate reference systems\n\nobjects must share the same coordinate reference system if you are using them together\ncoordinate reference systems are stored as attributes for sfc and sf objects (sfg objects don’t have a CRS)\ncoordinate reference systems have units\ngeographic and projected coordinate reference systems are not the same\ncoordinate reference systems can be missing and they can be wrong"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#things-to-think-about",
+    "href": "slides/spatial-data-attributes.html#things-to-think-about",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "9 Things to think about",
+    "text": "9 Things to think about\n\nsf objects are not the only way to represent spatial data in R\nIf you are working with more than one sf or sfc, the objects must use the same coordinate reference system to use them together.\n\n\n# state"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute-in-gis",
+    "href": "slides/spatial-data-attributes.html#what-is-an-attribute-in-gis",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "10 What is an “attribute” in GIS?",
+    "text": "10 What is an “attribute” in GIS?\nWithin a GIS desktop application, an attribute may be known as a field.\nWhen we talk about tidy data frames, an attribute is equivalent to a variable which is represented as a column in a data frame.\n\nhttps://support.esri.com/en-us/gis-dictionary/attribute\n\n[data models] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.\n[data models] In raster datasets, information associated with each unique value of a raster cell.\n[graphics (map display)] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling."
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute",
+    "href": "slides/spatial-data-attributes.html#what-is-an-attribute",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "11 What is an attribute?",
+    "text": "11 What is an attribute?\nSo (to recap) an attribute in GIS can also be called a…\n\n…field in a desktop GIS application\n…variable in tidy data\n…column in a data frame"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#what-types-of-attributes-exist",
+    "href": "slides/spatial-data-attributes.html#what-types-of-attributes-exist",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "12 What types of attributes exist?",
+    "text": "12 What types of attributes exist?\nAttributes are “properties of features (‘things’) that do not describe the feature’s geometry”.\nHere are the attributes for us_states:\n\nglimpse(st_drop_geometry(us_states))\n\nRows: 56\nColumns: 14\n$ REGION   &lt;chr&gt; \"3\", \"3\", \"2\", \"2\", \"3\", \"1\", \"4\", \"1\", \"3\", \"1\", \"1\", \"3\", \"…\n$ DIVISION &lt;chr&gt; \"5\", \"5\", \"3\", \"4\", \"5\", \"1\", \"8\", \"1\", \"5\", \"1\", \"1\", \"5\", \"…\n$ STATEFP  &lt;chr&gt; \"54\", \"12\", \"17\", \"27\", \"24\", \"44\", \"16\", \"33\", \"37\", \"50\", \"…\n$ STATENS  &lt;chr&gt; \"01779805\", \"00294478\", \"01779784\", \"00662849\", \"01714934\", \"…\n$ GEOID    &lt;chr&gt; \"54\", \"12\", \"17\", \"27\", \"24\", \"44\", \"16\", \"33\", \"37\", \"50\", \"…\n$ STUSPS   &lt;chr&gt; \"WV\", \"FL\", \"IL\", \"MN\", \"MD\", \"RI\", \"ID\", \"NH\", \"NC\", \"VT\", \"…\n$ NAME     &lt;chr&gt; \"West Virginia\", \"Florida\", \"Illinois\", \"Minnesota\", \"Marylan…\n$ LSAD     &lt;chr&gt; \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"…\n$ MTFCC    &lt;chr&gt; \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\"…\n$ FUNCSTAT &lt;chr&gt; \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"…\n$ ALAND    &lt;dbl&gt; 62266298634, 138961722096, 143778561906, 206232627084, 251519…\n$ AWATER   &lt;dbl&gt; 489204185, 45972570361, 6216493488, 18949394733, 6979074857, …\n$ INTPTLAT &lt;chr&gt; \"+38.6472854\", \"+28.3989775\", \"+40.1028754\", \"+46.3159573\", \"…\n$ INTPTLON &lt;chr&gt; \"-080.6183274\", \"-082.5143005\", \"-089.1526108\", \"-094.1996043…"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute-domain",
+    "href": "slides/spatial-data-attributes.html#what-is-an-attribute-domain",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "13 What is an “attribute domain”?",
+    "text": "13 What is an “attribute domain”?\n\n\n[data structures] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes."
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#what-are-we-working-with",
+    "href": "slides/spatial-data-attributes.html#what-are-we-working-with",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "14 What are we working with?",
+    "text": "14 What are we working with?\nWhen we do data analysis using {dplyr}, there are three types of functions we use most often:\n\nBoolean operators or predicates\nWindow or vector functions\nSummary or analysis functions\n\nThere are similar"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf",
+    "href": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "15 Predicate functions for geometries with {sf}",
+    "text": "15 Predicate functions for geometries with {sf}\n{sf} includes “vectorized” logical operators or tests that work with geometry including:\n\nst_is()\nst_is_valid()\nst_is_empty()"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf-1",
+    "href": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf-1",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "16 Predicate functions for geometries with {sf}",
+    "text": "16 Predicate functions for geometries with {sf}\n{sf} also includes more than a dozen predicate functions for working with pairs of simple geometries including:\n\nst_intersects\nst_disjoint\nst_contains\nst_covers\nst_is_within_distance"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#using-predicate-functions-for-spatial-joins-and-filters",
+    "href": "slides/spatial-data-attributes.html#using-predicate-functions-for-spatial-joins-and-filters",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "17 Using predicate functions for spatial joins and filters",
+    "text": "17 Using predicate functions for spatial joins and filters\nst_filter() and st_join() are two functions that rely on these predicate functions to work."
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#creating-new-variables-with-geometry",
+    "href": "slides/spatial-data-attributes.html#creating-new-variables-with-geometry",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "18 Creating new variables with geometry",
+    "text": "18 Creating new variables with geometry\n\nMeasuring feature geometries\nComparing feature geometries\nJoining data based on feature geometries\n\n\nmaryland &lt;- filter(us_states, NAME == \"Maryland\")"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "19 Measuring geometries with {sf}",
+    "text": "19 Measuring geometries with {sf}"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-1",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-1",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "20 Measuring geometries with {sf}",
+    "text": "20 Measuring geometries with {sf}\n{sf} includes a few different functions for measuring geometries:\n\nst_area() (only works with POLYGON and MULTIPOLYGON geometries)\nst_length() (only wrks with LINESTRING and MULTILINSTRING geometries)\nst_distance() (requires a pair of objects)"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-2",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-2",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "21 Measuring geometries with {sf}",
+    "text": "21 Measuring geometries with {sf}\nAll of these functions are vectorized meaning that they can operate independently on each feature in a sf or sfc object.\nThey support both sf inputs (data frames) and sfc inputs (lists)—but they always return a vector:\n\nst_area(maryland)\n\n53204014221 [m^2]\n\nst_area(maryland$geometry)\n\n53204014221 [m^2]"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-3",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-3",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "22 Measuring geometries with {sf}",
+    "text": "22 Measuring geometries with {sf}\nBut, remember, dplyr::mutate() is designed to work with vectorized functions so you can do us a measurement function inside mutate():\n\nmaryland |&gt; \n  mutate(\n    area = st_area(geometry)\n  )\n\nSimple feature collection with 1 feature and 15 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -8848525 ymin: 4563419 xmax: -8347435 ymax: 4825776\nProjected CRS: WGS 84 / Pseudo-Mercator\n  REGION DIVISION STATEFP  STATENS GEOID STUSPS     NAME LSAD MTFCC FUNCSTAT\n1      3        5      24 01714934    24     MD Maryland   00 G4000        A\n        ALAND     AWATER    INTPTLAT     INTPTLON\n1 25151992308 6979074857 +38.9466584 -076.6744939\n                        geometry              area\n1 MULTIPOLYGON (((-8434299 47... 53204014221 [m^2]"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-4",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-4",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "23 Measuring geometries with {sf}",
+    "text": "23 Measuring geometries with {sf}\nYou can even work with multiple geometries using this same approach:\n\nus_states |&gt; \n  mutate(\n    area = st_area(geometry),\n    distance_to_maryland = st_distance(geometry, maryland)\n  )\n\nSimple feature collection with 56 features and 16 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -19951910 ymin: -1643353 xmax: 20021890 ymax: 11554350\nProjected CRS: WGS 84 / Pseudo-Mercator\nFirst 10 features:\n   REGION DIVISION STATEFP  STATENS GEOID STUSPS           NAME LSAD MTFCC\n1       3        5      54 01779805    54     WV  West Virginia   00 G4000\n2       3        5      12 00294478    12     FL        Florida   00 G4000\n3       2        3      17 01779784    17     IL       Illinois   00 G4000\n4       2        4      27 00662849    27     MN      Minnesota   00 G4000\n5       3        5      24 01714934    24     MD       Maryland   00 G4000\n6       1        1      44 01219835    44     RI   Rhode Island   00 G4000\n7       4        8      16 01779783    16     ID          Idaho   00 G4000\n8       1        1      33 01779794    33     NH  New Hampshire   00 G4000\n9       3        5      37 01027616    37     NC North Carolina   00 G4000\n10      1        1      50 01779802    50     VT        Vermont   00 G4000\n   FUNCSTAT        ALAND      AWATER    INTPTLAT     INTPTLON\n1         A  62266298634   489204185 +38.6472854 -080.6183274\n2         A 138961722096 45972570361 +28.3989775 -082.5143005\n3         A 143778561906  6216493488 +40.1028754 -089.1526108\n4         A 206232627084 18949394733 +46.3159573 -094.1996043\n5         A  25151992308  6979074857 +38.9466584 -076.6744939\n6         A   2677763359  1323686988 +41.5964850 -071.5264901\n7         A 214049931578  2391569647 +44.3484222 -114.5588538\n8         A  23190115212  1025971768 +43.6726907 -071.5843145\n9         A 125933327733 13456093195 +35.5397100 -079.1308636\n10        A  23872569964  1030754609 +44.0589536 -072.6710173\n                         geometry               area distance_to_maryland\n1  MULTIPOLYGON (((-9001123 44... 103045932411 [m^2]              0.0 [m]\n2  MULTIPOLYGON (((-9251622 28... 240290408316 [m^2]        1122737.0 [m]\n3  MULTIPOLYGON (((-9926591 44... 257089838319 [m^2]         893538.7 [m]\n4  MULTIPOLYGON (((-10324402 5... 473223859874 [m^2]        1423100.6 [m]\n5  MULTIPOLYGON (((-8434299 47...  53204014221 [m^2]              0.0 [m]\n6  MULTIPOLYGON (((-7979248 50...   7160497121 [m^2]         490274.7 [m]\n7  MULTIPOLYGON (((-12361526 5... 424675068451 [m^2]        3530363.1 [m]\n8  MULTIPOLYGON (((-7931011 52...  46326405218 [m^2]         579065.3 [m]\n9  MULTIPOLYGON (((-8562247 43... 210941928191 [m^2]         186785.1 [m]\n10 MULTIPOLYGON (((-8063385 53...  48271922011 [m^2]         527897.6 [m]\n\n\nThis works to aggregate features by division:\n\nus_states |&gt; \n  group_by(DIVISION) |&gt; \n  summarise(\n    n_states = n_distinct(NAME)\n  ) \n\nSimple feature collection with 10 features and 2 fields\nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -19951910 ymin: -1643353 xmax: 20021890 ymax: 11554350\nProjected CRS: WGS 84 / Pseudo-Mercator\n# A tibble: 10 × 3\n   DIVISION n_states                                                    geometry\n   &lt;chr&gt;       &lt;int&gt;                                              &lt;GEOMETRY [m]&gt;\n 1 0               5 MULTIPOLYGON (((-18726019 -1633065, -18725998 -1633025, -1…\n 2 1               6 MULTIPOLYGON (((-7978692 5038758, -7978581 5039616, -79783…\n 3 2               3 POLYGON ((-8290777 4763109, -8291389 4762454, -8291849 476…\n 4 3               5 POLYGON ((-9926785 4448353, -9926789 4448327, -9926792 444…\n 5 4               7 POLYGON ((-10176807 4921011, -10176847 4920961, -10177047 …\n 6 5               9 MULTIPOLYGON (((-9250560 2835330, -9249947 2836819, -92493…\n 7 6               4 POLYGON ((-9840190 3523448, -9841106 3523126, -9842801 352…\n 8 7               4 POLYGON ((-9958183 3524892, -9957969 3524935, -9957739 352…\n 9 8               8 POLYGON ((-11671608 3763365, -11671634 3763365, -11672322 …\n10 9               5 MULTIPOLYGON (((-19000283 2939831, -19000200 2940106, -190…"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-5",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-5",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "24 Measuring geometries with {sf}",
+    "text": "24 Measuring geometries with {sf}\nNot all functions work with all geometry types!\n\nst_area() only works with POLYGON and MULTIPOLYGON geometries\nst_length() only works with LINESTRING and MULTILINSTRING geometries"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-6",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-6",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "25 Measuring geometries with {sf}",
+    "text": "25 Measuring geometries with {sf}\n\nst_distance() requires at least two objects"
+  },
+  {
+    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-lwgeom-and-geosphere",
+    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-lwgeom-and-geosphere",
+    "title": "Creating and manipulating attributes for spatial data",
+    "section": "26 Measuring geometries with {lwgeom} and {geosphere}",
+    "text": "26 Measuring geometries with {lwgeom} and {geosphere}\n\nlwgeom::st_perimeter()\ngeosphere::bearing()"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#why-open-your-work",
+    "href": "slides/exploratory-analysis.html#why-open-your-work",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n1.1 Why open your work?",
+    "text": "1.1 Why open your work?\n\nImprove the quality of your work: “be more organized, more accurate, less likely to miss errors”\nBroaden reach and impact\nFoster data literacy: “others can follow and learn—which can enrich and diversify data ecosystems, practices, and communities”"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#how-to-open-your-work",
+    "href": "slides/exploratory-analysis.html#how-to-open-your-work",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n1.2 How to open your work?",
+    "text": "1.2 How to open your work?\nConsider:\n\nwhen is transparency valuable?\nwhen is transparency a lower priority?\nwhen is transparency potentially harmful?"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#what-do-you-do-when-you-do-exploratory-data-analysis",
+    "href": "slides/exploratory-analysis.html#what-do-you-do-when-you-do-exploratory-data-analysis",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.1 What do you do when you do exploratory data analysis?",
+    "text": "2.1 What do you do when you do exploratory data analysis?\n\nGenerate questions about your data.\nSearch for answers by visualizing, transforming, and modelling your data.\nUse what you learn to refine your questions and/or generate new questions.\n\n“More than anything, EDA is a state of mind.”"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#use-questions-as-tools-to-guide-your-investigation",
+    "href": "slides/exploratory-analysis.html#use-questions-as-tools-to-guide-your-investigation",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.2 Use questions as tools to guide your investigation",
+    "text": "2.2 Use questions as tools to guide your investigation\nWhen you ask a question…\n\nthe question focuses your attention on a specific part of your dataset\nthis helps you decide which graphs, models, or transformations to make.\nthe key to asking quality questions is to generate a large quantity of questions\n\n\nYour goal during EDA is to develop an understanding of your data. The easiest way to do this is to use questions as tools to guide your investigation. When you ask a question, the question focuses your attention on a specific part of your dataset and helps you decide which graphs, models, or transformations to make."
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#two-useful-questions-to-start",
+    "href": "slides/exploratory-analysis.html#two-useful-questions-to-start",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.3 Two useful questions to start",
+    "text": "2.3 Two useful questions to start\n\nWhat type of variation occurs within my variables?\nWhat type of covariation occurs between my variables?"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#what-are-you-exploring-when-you-do-exploratory-data-analysis",
+    "href": "slides/exploratory-analysis.html#what-are-you-exploring-when-you-do-exploratory-data-analysis",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.4 What are you “exploring” when you do exploratory data analysis?",
+    "text": "2.4 What are you “exploring” when you do exploratory data analysis?"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#variation",
+    "href": "slides/exploratory-analysis.html#variation",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.5 Variation",
+    "text": "2.5 Variation"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#covariation",
+    "href": "slides/exploratory-analysis.html#covariation",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.6 Covariation",
+    "text": "2.6 Covariation\n\nCovariation is the tendency for the values of two or more variables to vary together in a related way. The best way to spot covariation is to visualize the relationship between two or more variables."
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#patterns-and-models",
+    "href": "slides/exploratory-analysis.html#patterns-and-models",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.7 Patterns and models",
+    "text": "2.7 Patterns and models\nIf a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:\n\nCould this pattern be due to coincidence (i.e. random chance)?\n\nHow can you describe the relationship implied by the pattern?\nHow strong is the relationship implied by the pattern?\nWhat other variables might affect the relationship?\nDoes the relationship change if you look at individual subgroups of the data?"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#tools-for-data-exploration",
+    "href": "slides/exploratory-analysis.html#tools-for-data-exploration",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.8 Tools for data exploration",
+    "text": "2.8 Tools for data exploration"
+  },
+  {
+    "objectID": "slides/exploratory-analysis.html#communicating",
+    "href": "slides/exploratory-analysis.html#communicating",
+    "title": "Session 8: Exploratory data analysis",
+    "section": "\n2.9 Communicating",
+    "text": "2.9 Communicating"
   },
   {
     "objectID": "index.html",
@@ -648,28 +949,28 @@
     "href": "resources/data-sources.html#local-data-sources-for-baltimore-and-maryland",
     "title": "Data sources",
     "section": "Local data sources for Baltimore and Maryland 🦀",
-    "text": "Local data sources for Baltimore and Maryland 🦀\n\nBaltimore City Open Data Hub\nBaltimore County GIS Open Data Portal\nBMC Regional GIS Data Center - Baltimore Metropolitan Council\nChesapeake Bay Open Data Portal\nMaryland’s GIS Data Catalog\nMaryland Open Data\nVital Signs Open Data Portal\nMaryland Food Systems Open Data Portal"
+    "text": "Local data sources for Baltimore and Maryland 🦀\n\nBaltimore City Open Data Hub\nBaltimore County GIS Open Data Portal\nBMC Regional GIS Data Center - Baltimore Metropolitan Council\nChesapeake Bay Open Data Portal\nMaryland’s GIS Data Catalog\nMaryland Open Data\nVital Signs Open Data Portal\nMaryland Food Systems Open Data Portal\nMaryland ArcGIS REST API Services Index"
   },
   {
     "objectID": "resources/data-sources.html#national-data-sources-for-the-u.s.",
     "href": "resources/data-sources.html#national-data-sources-for-the-u.s.",
     "title": "Data sources",
     "section": "National data sources for the U.S. 🇺🇸",
-    "text": "National data sources for the U.S. 🇺🇸\n\nU.S. Department of Housing and Urban Development Geospatial Data Storefront\nGeospatial at BTS (Bureau of Transportation Statistics), U.S. Department of Transportation\nBTS Data Inventory (Bureau of Transportation Statistics), U.S. Department of Transportation\nEDGE Geodata (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics\nU.S. Geological Survey Science Data Catalog\nGeoPlatform.gov\nNational Ecological Observatory Network (NEON) Data Portal\nOpen Data Network (Socrata/Tyler Technologies)\nUrban Institute Data Catalog"
+    "text": "National data sources for the U.S. 🇺🇸\n\nData.gov (Aggregates local, state, and federal open data catalogs)\nU.S. Department of Housing and Urban Development Geospatial Data Storefront\nGeospatial at BTS (Bureau of Transportation Statistics), U.S. Department of Transportation\nBTS Data Inventory (Bureau of Transportation Statistics), U.S. Department of Transportation\nEDGE Geodata (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics\nU.S. Geological Survey Science Data Catalog\nGeoPlatform.gov\nNational Ecological Observatory Network (NEON) Data Portal\nOpen Data Network (Socrata/Tyler Technologies)\nUrban Institute Data Catalog"
   },
   {
     "objectID": "resources/data-sources.html#global-data-sources",
     "href": "resources/data-sources.html#global-data-sources",
     "title": "Data sources",
     "section": "Global data sources 🌏",
-    "text": "Global data sources 🌏\n\nNatural Earth\nOpenStreetMap (see the OSM Wiki for more on how data is organized on OSM)\nArcGIS Living Atlas of the World\nNASA Open Data Portal\nNOAA Data Discovery Portal\nWorld Bank Open Data\nHumanitarian Data Exchange\nData Portals (Open Knowledge Foundation)"
+    "text": "Global data sources 🌏\n\nNatural Earth\nOpenStreetMap (see the OSM Wiki for more on how data is organized on OSM)\nArcGIS Living Atlas of the World\nNASA Open Data Portal\nNOAA Data Discovery Portal\nWorld Bank Open Data\nHumanitarian Data Exchange\nData Portals (Open Knowledge Foundation)\nRegistry of Open Data on AWS"
   },
   {
     "objectID": "resources/data-sources.html#r-packages-for-data-access",
     "href": "resources/data-sources.html#r-packages-for-data-access",
     "title": "Data sources",
     "section": "R packages for data access",
-    "text": "R packages for data access\n\nGeneral data access packages\nGeneral data access packages include:\n\n{arcgislayers} 📦 to access ArcGIS FeatureServer data\n{RSocrata} to access Socrata data portals\n{ckanr} to access CKAN data portals\n\n\n\nDomain-specific data access packages\nThere are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.\nA few broadly useful recommendations include:\n\n{rnaturalearth}: Get Natural Earth data.\n{tigris}: Download and use Census TIGER/Line shapefiles.\n{tidycensus}: Get US Census boundary and attribute data.\n{geodata}: Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.\n{dataRetrieval}: Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.\n{osmdata}: Get OpenStreetMap data.\n\nExplore the Data Access category on ROpenSci or search for packages on R-universe or CRAN to find the right package for your project or exercise.\n\n\nLocal data access packages\nI also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:\n\n{mapbaltimore}\n{bcpss}\n{mapmaryland}\n{marylandedu}"
+    "text": "R packages for data access\n\nGeneral data access packages\nGeneral data access packages include:\n\n{arcgislayers} 📦 to access ArcGIS FeatureServer data\n{RSocrata} to access Socrata data portals\n{ckanr} to access CKAN data portals\n\n\n\nDomain-specific data access packages\nThere are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.\nA few broadly useful packages include:\n\n{tigris}: Download and use Census TIGER/Line shapefiles.\n{tidycensus}: Get US Census boundary and attribute data.\n{rnaturalearth}: Get Natural Earth data.\n{osmdata}: Get OpenStreetMap data.\n{geodata}: Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.\n{dataRetrieval}: Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.\n\nExplore the Data Access category on ROpenSci or search for packages on R-universe or CRAN to find the right package for your project or exercise.\n\n\nLocal data access packages\nI also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:\n\n{mapbaltimore}\n{bcpss}\n{mapmaryland}\n{marylandedu}"
   },
   {
     "objectID": "weeks/week_08.html",
@@ -1134,389 +1435,431 @@
     "text": "1 Functions"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#setup",
-    "href": "slides/spatial-data-attributes.html#setup",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "1 Setup",
-    "text": "1 Setup\nToday, we are going to use the {tidyverse} along with {sf} and two related packages: {lwgeom} and {units}.\n\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(lwgeom)\nlibrary(units)"
+    "objectID": "slides/spatial-data.html#overview",
+    "href": "slides/spatial-data.html#overview",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "1 Overview",
+    "text": "1 Overview\n\nWhat is R?\nHow does R work with spatial data?\nTake a look at {sf} and tidyverse in action"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#getting-started",
-    "href": "slides/spatial-data-attributes.html#getting-started",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "2 Getting started",
-    "text": "2 Getting started\nFor this session, we also need some data to look at. We are going to load data from the U.S. Census Bureau using the {tigris} package:\n\nlibrary(tigris)\noptions(tigris_use_cache = TRUE)"
+    "objectID": "slides/spatial-data.html#what-is-r",
+    "href": "slides/spatial-data.html#what-is-r",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "2 What is R?",
+    "text": "2 What is R?\n\n\nR is best known for as a statistical programming language often used in data science and research.\nLike Python or C++, R is an object-oriented, functional programming language where the base set of features can be extended through open-source packages or libraries.\n\n\n\n\n\n\nA package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).\n\nFrom BasicBasics 2 (R-Ladies Sydney)"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-spatial-data",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-spatial-data",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "3 Things to remember about spatial data",
-    "text": "3 Things to remember about spatial data\n\nFields\nObjects\n\nCheck out the Wikipedia article on data models in GIS for more background on this topic."
+    "objectID": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "href": "slides/spatial-data.html#how-does-r-work-with-spatial-data",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "3 How does R work with spatial data?",
+    "text": "3 How does R work with spatial data?\n\n\nThe {sf} package, first published in 2016, is the most popular R package for spatial data.\n\nExtension packages include:\n\nlwgeom for selected liblwgeom/PostGIS functions\nstars for raster data, and raster or vector data cubes (spatial time series)\nsfnetworks for geospatial network data"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "4 Things to remember about sf and sfc objects",
-    "text": "4 Things to remember about sf and sfc objects\nA sf object is a data frame with a sfc list-column.\n\nus_states$geometry\n\nGeometry set for 56 features \nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -179.2311 ymin: -14.60181 xmax: 179.8597 ymax: 71.43979\nGeodetic CRS:  NAD83\nFirst 5 geometries:"
+    "objectID": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "href": "slides/spatial-data.html#take-a-look-at-sf-and-the-tidyverse-in-action",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "4 Take a look at {sf} and the tidyverse in action",
+    "text": "4 Take a look at {sf} and the tidyverse in action\nPackages are simple to install:\n\ninstall.packages(c(\"sf\", \"ggplot2\", \"dplyr\"))\n\nAnd to load:\n\nlibrary(sf)\nlibrary(ggplot2)\nlibrary(dplyr)"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-1",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-1",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "5 Things to remember about sf and sfc objects",
-    "text": "5 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)"
+    "objectID": "slides/spatial-data.html#related-resources",
+    "href": "slides/spatial-data.html#related-resources",
+    "title": "Session 1: Getting started with spatial data using sf and the tidyverse",
+    "section": "5 Related resources",
+    "text": "5 Related resources\n\nWeek 1 Required readings and Optional readings\nExercise 1"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-2",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-2",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "6 Things to remember about sf and sfc objects",
-    "text": "6 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)\nsf and sfc objects use a coordinate reference system"
+    "objectID": "slides/coding-basics.html#week-1",
+    "href": "slides/coding-basics.html#week-1",
+    "title": "Coding basics",
+    "section": "1 Week 1",
+    "text": "1 Week 1"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-3",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-sf-and-sfc-objects-3",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "7 Things to remember about sf and sfc objects",
-    "text": "7 Things to remember about sf and sfc objects\n\na sf object is a data frame with a sfc list-column\na sf object has a sf_column attribute (it isn’t always named geometry—use attributes() to take a look)\nsf and sfc objects use a coordinate reference system\nworking with sf objects is slower than working with data frames—so drop the geometry if you don’t need it"
+    "objectID": "slides/welcome.html#what-is-this-class-about",
+    "href": "slides/welcome.html#what-is-this-class-about",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-remember-about-coordinate-reference-systems",
-    "href": "slides/spatial-data-attributes.html#things-to-remember-about-coordinate-reference-systems",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "8 Things to remember about coordinate reference systems",
-    "text": "8 Things to remember about coordinate reference systems\n\nobjects must share the same coordinate reference system if you are using them together\ncoordinate reference systems are stored as attributes for sfc and sf objects (sfg objects don’t have a CRS)\ncoordinate reference systems have units\ngeographic and projected coordinate reference systems are not the same\ncoordinate reference systems can be missing and they can be wrong"
+    "objectID": "slides/welcome.html#what-is-this-class-about-1",
+    "href": "slides/welcome.html#what-is-this-class-about-1",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data using R"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#things-to-think-about",
-    "href": "slides/spatial-data-attributes.html#things-to-think-about",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "9 Things to think about",
-    "text": "9 Things to think about\n\nsf objects are not the only way to represent spatial data in R\nIf you are working with more than one sf or sfc, the objects must use the same coordinate reference system to use them together.\n\n\n# state"
+    "objectID": "slides/welcome.html#what-is-this-class-about-2",
+    "href": "slides/welcome.html#what-is-this-class-about-2",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with data spatial data using R"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute-in-gis",
-    "href": "slides/spatial-data-attributes.html#what-is-an-attribute-in-gis",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "10 What is an “attribute” in GIS?",
-    "text": "10 What is an “attribute” in GIS?\nWithin a GIS desktop application, an attribute may be known as a field.\nWhen we talk about tidy data frames, an attribute is equivalent to a variable which is represented as a column in a data frame.\n\nhttps://support.esri.com/en-us/gis-dictionary/attribute\n\n[data models] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.\n[data models] In raster datasets, information associated with each unique value of a raster cell.\n[graphics (map display)] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling."
+    "objectID": "slides/welcome.html#what-is-this-class-about-3",
+    "href": "slides/welcome.html#what-is-this-class-about-3",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about places"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute",
-    "href": "slides/spatial-data-attributes.html#what-is-an-attribute",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "11 What is an attribute?",
-    "text": "11 What is an attribute?\nSo (to recap) an attribute in GIS can also be called a…\n\n…field in a desktop GIS application\n…variable in tidy data\n…column in a data frame"
+    "objectID": "slides/welcome.html#what-is-this-class-about-4",
+    "href": "slides/welcome.html#what-is-this-class-about-4",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data about people and places"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#what-types-of-attributes-exist",
-    "href": "slides/spatial-data-attributes.html#what-types-of-attributes-exist",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "12 What types of attributes exist?",
-    "text": "12 What types of attributes exist?\nAttributes are “properties of features (‘things’) that do not describe the feature’s geometry”.\nHere are the attributes for us_states:\n\nglimpse(st_drop_geometry(us_states))\n\nRows: 56\nColumns: 14\n$ REGION   &lt;chr&gt; \"3\", \"3\", \"2\", \"2\", \"3\", \"1\", \"4\", \"1\", \"3\", \"1\", \"1\", \"3\", \"…\n$ DIVISION &lt;chr&gt; \"5\", \"5\", \"3\", \"4\", \"5\", \"1\", \"8\", \"1\", \"5\", \"1\", \"1\", \"5\", \"…\n$ STATEFP  &lt;chr&gt; \"54\", \"12\", \"17\", \"27\", \"24\", \"44\", \"16\", \"33\", \"37\", \"50\", \"…\n$ STATENS  &lt;chr&gt; \"01779805\", \"00294478\", \"01779784\", \"00662849\", \"01714934\", \"…\n$ GEOID    &lt;chr&gt; \"54\", \"12\", \"17\", \"27\", \"24\", \"44\", \"16\", \"33\", \"37\", \"50\", \"…\n$ STUSPS   &lt;chr&gt; \"WV\", \"FL\", \"IL\", \"MN\", \"MD\", \"RI\", \"ID\", \"NH\", \"NC\", \"VT\", \"…\n$ NAME     &lt;chr&gt; \"West Virginia\", \"Florida\", \"Illinois\", \"Minnesota\", \"Marylan…\n$ LSAD     &lt;chr&gt; \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"00\", \"…\n$ MTFCC    &lt;chr&gt; \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\", \"G4000\"…\n$ FUNCSTAT &lt;chr&gt; \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"…\n$ ALAND    &lt;dbl&gt; 62266298634, 138961722096, 143778561906, 206232627084, 251519…\n$ AWATER   &lt;dbl&gt; 489204185, 45972570361, 6216493488, 18949394733, 6979074857, …\n$ INTPTLAT &lt;chr&gt; \"+38.6472854\", \"+28.3989775\", \"+40.1028754\", \"+46.3159573\", \"…\n$ INTPTLON &lt;chr&gt; \"-080.6183274\", \"-082.5143005\", \"-089.1526108\", \"-094.1996043…"
+    "objectID": "slides/welcome.html#what-is-this-class-about-5",
+    "href": "slides/welcome.html#what-is-this-class-about-5",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What is this class about?",
+    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#what-is-an-attribute-domain",
-    "href": "slides/spatial-data-attributes.html#what-is-an-attribute-domain",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "13 What is an “attribute domain”?",
-    "text": "13 What is an “attribute domain”?\n\n\n[data structures] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes."
+    "objectID": "slides/welcome.html#why-are-you-here",
+    "href": "slides/welcome.html#why-are-you-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why are you here?",
+    "text": "Why are you here?"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#what-are-we-working-with",
-    "href": "slides/spatial-data-attributes.html#what-are-we-working-with",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "14 What are we working with?",
-    "text": "14 What are we working with?\nWhen we do data analysis using {dplyr}, there are three types of functions we use most often:\n\nBoolean operators or predicates\nWindow or vector functions\nSummary or analysis functions\n\nThere are similar"
+    "objectID": "slides/welcome.html#how-did-you-get-here",
+    "href": "slides/welcome.html#how-did-you-get-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "How did you get here?",
+    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf",
-    "href": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "15 Predicate functions for geometries with {sf}",
-    "text": "15 Predicate functions for geometries with {sf}\n{sf} includes “vectorized” logical operators or tests that work with geometry including:\n\nst_is()\nst_is_valid()\nst_is_empty()"
+    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "What experiences do you bring with you today?",
+    "text": "What experiences do you bring with you today?"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf-1",
-    "href": "slides/spatial-data-attributes.html#predicate-functions-for-geometries-with-sf-1",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "16 Predicate functions for geometries with {sf}",
-    "text": "16 Predicate functions for geometries with {sf}\n{sf} also includes more than a dozen predicate functions for working with pairs of simple geometries including:\n\nst_intersects\nst_disjoint\nst_contains\nst_covers\nst_is_within_distance"
+    "objectID": "slides/welcome.html#why-am-i-here",
+    "href": "slides/welcome.html#why-am-i-here",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Why am I here?",
+    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#using-predicate-functions-for-spatial-joins-and-filters",
-    "href": "slides/spatial-data-attributes.html#using-predicate-functions-for-spatial-joins-and-filters",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "17 Using predicate functions for spatial joins and filters",
-    "text": "17 Using predicate functions for spatial joins and filters\nst_filter() and st_join() are two functions that rely on these predicate functions to work."
+    "objectID": "slides/welcome.html#communication",
+    "href": "slides/welcome.html#communication",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Communication 📬",
+    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#creating-new-variables-with-geometry",
-    "href": "slides/spatial-data-attributes.html#creating-new-variables-with-geometry",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "18 Creating new variables with geometry",
-    "text": "18 Creating new variables with geometry\n\nMeasuring feature geometries\nComparing feature geometries\nJoining data based on feature geometries\n\n\nmaryland &lt;- filter(us_states, NAME == \"Maryland\")"
+    "objectID": "slides/welcome.html#assignments",
+    "href": "slides/welcome.html#assignments",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Assignments",
+    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "19 Measuring geometries with {sf}",
-    "text": "19 Measuring geometries with {sf}"
+    "objectID": "slides/welcome.html#readings",
+    "href": "slides/welcome.html#readings",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Readings 📚",
+    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-1",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-1",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "20 Measuring geometries with {sf}",
-    "text": "20 Measuring geometries with {sf}\n{sf} includes a few different functions for measuring geometries:\n\nst_area() (only works with POLYGON and MULTIPOLYGON geometries)\nst_length() (only wrks with LINESTRING and MULTILINSTRING geometries)\nst_distance() (requires a pair of objects)"
+    "objectID": "slides/welcome.html#miscellaneous",
+    "href": "slides/welcome.html#miscellaneous",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-2",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-2",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "21 Measuring geometries with {sf}",
-    "text": "21 Measuring geometries with {sf}\nAll of these functions are vectorized meaning that they can operate independently on each feature in a sf or sfc object.\nThey support both sf inputs (data frames) and sfc inputs (lists)—but they always return a vector:\n\nst_area(maryland)\n\n53204014221 [m^2]\n\nst_area(maryland$geometry)\n\n53204014221 [m^2]"
+    "objectID": "slides/welcome.html#welcome-again",
+    "href": "slides/welcome.html#welcome-again",
+    "title": "Welcome to GES 668: Building Spatial Datasets",
+    "section": "Welcome again!",
+    "text": "Welcome again!"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-3",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-3",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "22 Measuring geometries with {sf}",
-    "text": "22 Measuring geometries with {sf}\nBut, remember, dplyr::mutate() is designed to work with vectorized functions so you can do us a measurement function inside mutate():\n\nmaryland |&gt; \n  mutate(\n    area = st_area(geometry)\n  )\n\nSimple feature collection with 1 feature and 15 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -8848525 ymin: 4563419 xmax: -8347435 ymax: 4825776\nProjected CRS: WGS 84 / Pseudo-Mercator\n  REGION DIVISION STATEFP  STATENS GEOID STUSPS     NAME LSAD MTFCC FUNCSTAT\n1      3        5      24 01714934    24     MD Maryland   00 G4000        A\n        ALAND     AWATER    INTPTLAT     INTPTLON\n1 25151992308 6979074857 +38.9466584 -076.6744939\n                        geometry              area\n1 MULTIPOLYGON (((-8434299 47... 53204014221 [m^2]"
+    "objectID": "slides/data-transformation.html#load-dplyr",
+    "href": "slides/data-transformation.html#load-dplyr",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.1 Load {dplyr}",
+    "text": "1.1 Load {dplyr}\n\nlibrary(dplyr)"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-4",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-4",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "23 Measuring geometries with {sf}",
-    "text": "23 Measuring geometries with {sf}\nYou can even work with multiple geometries using this same approach:\n\nus_states |&gt; \n  mutate(\n    area = st_area(geometry),\n    distance_to_maryland = st_distance(geometry, maryland)\n  )\n\nSimple feature collection with 56 features and 16 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -19951910 ymin: -1643353 xmax: 20021890 ymax: 11554350\nProjected CRS: WGS 84 / Pseudo-Mercator\nFirst 10 features:\n   REGION DIVISION STATEFP  STATENS GEOID STUSPS           NAME LSAD MTFCC\n1       3        5      54 01779805    54     WV  West Virginia   00 G4000\n2       3        5      12 00294478    12     FL        Florida   00 G4000\n3       2        3      17 01779784    17     IL       Illinois   00 G4000\n4       2        4      27 00662849    27     MN      Minnesota   00 G4000\n5       3        5      24 01714934    24     MD       Maryland   00 G4000\n6       1        1      44 01219835    44     RI   Rhode Island   00 G4000\n7       4        8      16 01779783    16     ID          Idaho   00 G4000\n8       1        1      33 01779794    33     NH  New Hampshire   00 G4000\n9       3        5      37 01027616    37     NC North Carolina   00 G4000\n10      1        1      50 01779802    50     VT        Vermont   00 G4000\n   FUNCSTAT        ALAND      AWATER    INTPTLAT     INTPTLON\n1         A  62266298634   489204185 +38.6472854 -080.6183274\n2         A 138961722096 45972570361 +28.3989775 -082.5143005\n3         A 143778561906  6216493488 +40.1028754 -089.1526108\n4         A 206232627084 18949394733 +46.3159573 -094.1996043\n5         A  25151992308  6979074857 +38.9466584 -076.6744939\n6         A   2677763359  1323686988 +41.5964850 -071.5264901\n7         A 214049931578  2391569647 +44.3484222 -114.5588538\n8         A  23190115212  1025971768 +43.6726907 -071.5843145\n9         A 125933327733 13456093195 +35.5397100 -079.1308636\n10        A  23872569964  1030754609 +44.0589536 -072.6710173\n                         geometry               area distance_to_maryland\n1  MULTIPOLYGON (((-9001123 44... 103045932411 [m^2]              0.0 [m]\n2  MULTIPOLYGON (((-9251622 28... 240290408316 [m^2]        1122737.0 [m]\n3  MULTIPOLYGON (((-9926591 44... 257089838319 [m^2]         893538.7 [m]\n4  MULTIPOLYGON (((-10324402 5... 473223859874 [m^2]        1423100.6 [m]\n5  MULTIPOLYGON (((-8434299 47...  53204014221 [m^2]              0.0 [m]\n6  MULTIPOLYGON (((-7979248 50...   7160497121 [m^2]         490274.7 [m]\n7  MULTIPOLYGON (((-12361526 5... 424675068451 [m^2]        3530363.1 [m]\n8  MULTIPOLYGON (((-7931011 52...  46326405218 [m^2]         579065.3 [m]\n9  MULTIPOLYGON (((-8562247 43... 210941928191 [m^2]         186785.1 [m]\n10 MULTIPOLYGON (((-8063385 53...  48271922011 [m^2]         527897.6 [m]\n\n\nThis works to aggregate features by division:\n\nus_states |&gt; \n  group_by(DIVISION) |&gt; \n  summarise(\n    n_states = n_distinct(NAME)\n  ) \n\nSimple feature collection with 10 features and 2 fields\nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -19951910 ymin: -1643353 xmax: 20021890 ymax: 11554350\nProjected CRS: WGS 84 / Pseudo-Mercator\n# A tibble: 10 × 3\n   DIVISION n_states                                                    geometry\n   &lt;chr&gt;       &lt;int&gt;                                              &lt;GEOMETRY [m]&gt;\n 1 0               5 MULTIPOLYGON (((-18726019 -1633065, -18725998 -1633025, -1…\n 2 1               6 MULTIPOLYGON (((-7978692 5038758, -7978581 5039616, -79783…\n 3 2               3 POLYGON ((-8290777 4763109, -8291389 4762454, -8291849 476…\n 4 3               5 POLYGON ((-9926785 4448353, -9926789 4448327, -9926792 444…\n 5 4               7 POLYGON ((-10176807 4921011, -10176847 4920961, -10177047 …\n 6 5               9 MULTIPOLYGON (((-9250560 2835330, -9249947 2836819, -92493…\n 7 6               4 POLYGON ((-9840190 3523448, -9841106 3523126, -9842801 352…\n 8 7               4 POLYGON ((-9958183 3524892, -9957969 3524935, -9957739 352…\n 9 8               8 POLYGON ((-11671608 3763365, -11671634 3763365, -11672322 …\n10 9               5 MULTIPOLYGON (((-19000283 2939831, -19000200 2940106, -190…"
+    "objectID": "slides/data-transformation.html#how-can-you-transform-your-data-using-dplyr",
+    "href": "slides/data-transformation.html#how-can-you-transform-your-data-using-dplyr",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.2 How can you transform your data using {dplyr}?",
+    "text": "1.2 How can you transform your data using {dplyr}?\n\nManipulate cases (rows)\nManipulate variables (columns)\nManipulate groups"
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-5",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-5",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "24 Measuring geometries with {sf}",
-    "text": "24 Measuring geometries with {sf}\nNot all functions work with all geometry types!\n\nst_area() only works with POLYGON and MULTIPOLYGON geometries\nst_length() only works with LINESTRING and MULTILINSTRING geometries"
+    "objectID": "slides/data-transformation.html#manipulate-cases",
+    "href": "slides/data-transformation.html#manipulate-cases",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.3 Manipulate cases",
+    "text": "1.3 Manipulate cases\n\nfilter(), which changes which rows are present without changing their order, and\narrange(), which changes the order of the rows without changing which are present.\ndistinct() which finds rows with unique values but unlike arrange() and filter() it can also optionally modify the columns."
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-6",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-sf-6",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "25 Measuring geometries with {sf}",
-    "text": "25 Measuring geometries with {sf}\n\nst_distance() requires at least two objects"
+    "objectID": "slides/data-transformation.html#manipulate-variables",
+    "href": "slides/data-transformation.html#manipulate-variables",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.4 Manipulate variables",
+    "text": "1.4 Manipulate variables\n\nmutate() creates new columns that are derived from the existing columns,\nselect() changes which columns are present,\nrename() changes the names of the columns, and\nrelocate() changes the positions of the columns."
   },
   {
-    "objectID": "slides/spatial-data-attributes.html#measuring-geometries-with-lwgeom-and-geosphere",
-    "href": "slides/spatial-data-attributes.html#measuring-geometries-with-lwgeom-and-geosphere",
-    "title": "Creating and manipulating attributes for spatial data",
-    "section": "26 Measuring geometries with {lwgeom} and {geosphere}",
-    "text": "26 Measuring geometries with {lwgeom} and {geosphere}\n\nlwgeom::st_perimeter()\ngeosphere::bearing()"
+    "objectID": "slides/data-transformation.html#manipulate-groups",
+    "href": "slides/data-transformation.html#manipulate-groups",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.5 Manipulate groups",
+    "text": "1.5 Manipulate groups\n\ngroup_by(),\nsummarize(), and\nthe slice_() family of functions."
   },
   {
-    "objectID": "slides/feature-geometry.html#getting-started",
-    "href": "slides/feature-geometry.html#getting-started",
-    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
-    "section": "\n1 Getting started",
-    "text": "1 Getting started\n\n\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(tigris)\noptions(tigris_use_cache = TRUE)"
+    "objectID": "slides/data-transformation.html#the-pipe",
+    "href": "slides/data-transformation.html#the-pipe",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "1.6 The pipe",
+    "text": "1.6 The pipe"
   },
   {
-    "objectID": "slides/feature-geometry.html#converting-objects-between-types",
-    "href": "slides/feature-geometry.html#converting-objects-between-types",
-    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
-    "section": "\n2 Converting objects between types",
-    "text": "2 Converting objects between types"
+    "objectID": "slides/data-transformation.html#take-a-minute",
+    "href": "slides/data-transformation.html#take-a-minute",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "2.1 Take a minute ⏰",
+    "text": "2.1 Take a minute ⏰"
   },
   {
-    "objectID": "slides/feature-geometry.html#types-of-spatial-operations",
-    "href": "slides/feature-geometry.html#types-of-spatial-operations",
-    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
-    "section": "\n3 Types of spatial operations",
-    "text": "3 Types of spatial operations\n\nSpatial filtering and topological relations\nSpatial joins and non-overlapping joins\nSpatial aggregation"
+    "objectID": "slides/data-transformation.html#take-a-minute-1",
+    "href": "slides/data-transformation.html#take-a-minute-1",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "3.1 Take a minute ⏰",
+    "text": "3.1 Take a minute ⏰"
   },
   {
-    "objectID": "slides/feature-geometry.html#types-of-geometric-operations",
-    "href": "slides/feature-geometry.html#types-of-geometric-operations",
-    "title": "Session 5: Working with spatial and geometric operations in {sf}\n",
-    "section": "\n4 Types of geometric operations",
-    "text": "4 Types of geometric operations\n\nSimplification\nCentroids\nBuffers\nClipping (with or without subsetting)\nUnions\nType transformations"
+    "objectID": "slides/data-transformation.html#mutate",
+    "href": "slides/data-transformation.html#mutate",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "3.2 mutate()",
+    "text": "3.2 mutate()\nmutate() creates new columns that are functions of existing variables.\nIt can also modify (if the name is the same as an existing column) and delete columns (by setting their value to NULL)."
   },
   {
-    "objectID": "slides/tidy-data.html#what-is-involved-in-tidying-messy-datasets",
-    "href": "slides/tidy-data.html#what-is-involved-in-tidying-messy-datasets",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n1 What is involved in tidying messy datasets?",
-    "text": "1 What is involved in tidying messy datasets?\n\nColumn headers are values, not variable names\nMultiple variables stored in one column\nVariables are stored in both rows and columns\nMultiple types in one table\nOne type in multiple tables\n\nfrom Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html"
+    "objectID": "slides/data-transformation.html#summarise",
+    "href": "slides/data-transformation.html#summarise",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "4.1 summarise()",
+    "text": "4.1 summarise()\nsummarise() creates a new data frame with:\n\none row for each combination of grouping variables; if there are no grouping variables, the output will have a single row summarising all observations in the input.\none column for each grouping variable\none column for each of the summary statistics that you have specified."
   },
   {
-    "objectID": "slides/tidy-data.html#pivoting",
-    "href": "slides/tidy-data.html#pivoting",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n2 Pivoting",
-    "text": "2 Pivoting"
+    "objectID": "slides/data-transformation.html#using-filter-with-sf-objects",
+    "href": "slides/data-transformation.html#using-filter-with-sf-objects",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "5.1 Using filter with sf objects",
+    "text": "5.1 Using filter with sf objects\nIf you are just working with attributes (variables), sf objects work just like any other data frame:\n\nfilter(\n  storms_sf,\n  wind &gt; 50\n)\n\nBut, you can use a special set of predicate functions that work with sf objects to return a logical vector that also works with filter:\n\nfilter(\n  storms_sf,\n  as.logical(st_intersects(geometry, st_union(us_states), sparse = FALSE))\n)"
   },
   {
-    "objectID": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data",
-    "href": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n3 How would this look if we turn it into tidy data?",
-    "text": "3 How would this look if we turn it into tidy data?\n\n\nCity\n2000\n2010\n2020\n\n\n\nBaltimore city, Maryland\n300000\n290000\n285000\n\n\nWashington, DC\n300000\n315000\n330000\n\n\nRichmond, Virginia\n200000\n202000\n210000"
+    "objectID": "slides/data-transformation.html#using-mutate-with-sf-objects",
+    "href": "slides/data-transformation.html#using-mutate-with-sf-objects",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "5.2 Using mutate with sf objects",
+    "text": "5.2 Using mutate with sf objects\n\nstorms_usa &lt;- storms_sf |&gt;\n  mutate(\n    usa_observation = as.logical(\n      st_intersects(\n        geometry,\n        st_union(us_states),\n        sparse = FALSE\n      )\n    )\n  )"
   },
   {
-    "objectID": "slides/tidy-data.html#tidying-messy-datasets",
-    "href": "slides/tidy-data.html#tidying-messy-datasets",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n4 Tidying messy datasets",
-    "text": "4 Tidying messy datasets\n\nColumn headers are values, not variable names\nMultiple variables stored in one column\nVariables are stored in both rows and columns\nMultiple types in one table\nOne type in multiple tables"
+    "objectID": "slides/data-transformation.html#using-summarise-with-sf-objects",
+    "href": "slides/data-transformation.html#using-summarise-with-sf-objects",
+    "title": "Session 3: Transforming data with {dplyr} and {tidyr}",
+    "section": "5.3 Using summarise with sf objects",
+    "text": "5.3 Using summarise with sf objects\nYou can use summarise to combine geometry by grouping variables:\n\nstorms_categories &lt;- storms_sf |&gt;\n  group_by(category) |&gt;\n  summarise()\n\nstorms_categories"
   },
   {
-    "objectID": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data-1",
-    "href": "slides/tidy-data.html#how-would-this-look-if-we-turn-it-into-tidy-data-1",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n5 How would this look if we turn it into tidy data?",
-    "text": "5 How would this look if we turn it into tidy data?\n\n\nCity name\n2000\n2010\n2020\n\n\n\nBaltimore city, Maryland\n300000\n290000\n285000\n\n\nWashington, DC\n300000\n315000\n330000\n\n\nRichmond, Virginia\n200000\n202000\n210000"
+    "objectID": "slides/fall-2023.knit.html#week-7-october-11-2023",
+    "href": "slides/fall-2023.knit.html#week-7-october-11-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 7: October 11, 2023",
+    "text": "Week 7: October 11, 2023"
   },
   {
-    "objectID": "slides/tidy-data.html#data-organization-in-spreadsheets",
-    "href": "slides/tidy-data.html#data-organization-in-spreadsheets",
-    "title": "Session 2: Tidying and joining data",
-    "section": "\n6 Data organization in spreadsheets",
-    "text": "6 Data organization in spreadsheets"
+    "objectID": "slides/fall-2023.knit.html#week-agenda",
+    "href": "slides/fall-2023.knit.html#week-agenda",
+    "title": "Week 8 Check-in",
+    "section": "Week 8 Agenda",
+    "text": "Week 8 Agenda\n\nCheck-in on difficult + interesting things\nFeedback on course experience (things to change, add, or keep)\nErrors of the week\nLecture + practice: Exploratory data analysis with {sf} and the tidyverse\nWeekly questions"
   },
   {
-    "objectID": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
-    "href": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n2.1 Why do we visualize spatial data?",
-    "text": "2.1 Why do we visualize spatial data?\nWhy do we visualize spatial data?\n\nValidation\nExploration\nCommunication"
+    "objectID": "slides/fall-2023.knit.html#check-in",
+    "href": "slides/fall-2023.knit.html#check-in",
+    "title": "Week 8 Check-in",
+    "section": "Check-in",
+    "text": "Check-in\nThis week’s difficult things:\n\nQuarto can be confusing\nWriting functions is hard\nNaming functions is even harder\n\nThis week’s interesting things:\n\nFunctions can be a powerful tool\nQuarto has an exciting level of flexibility\nSetup"
   },
   {
-    "objectID": "slides/data-visualization.html#anscombes-quartet",
-    "href": "slides/data-visualization.html#anscombes-quartet",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n2.2 Anscombe’s quartet",
-    "text": "2.2 Anscombe’s quartet\nTo illustrate why visualization is essential, let’s look at the Anscombe’s Quartet data:\n\n\n\n\nThis data is from the Tmisc package but can be found in many places."
+    "objectID": "slides/fall-2023.knit.html#course-feedback-from-you-and-me",
+    "href": "slides/fall-2023.knit.html#course-feedback-from-you-and-me",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to change:\n\nStart with slides + code demonstration (saving the check-ins + questions for the end)\nTry a remote session where students can screen share, see and understand each other’s work, and receive help on our code\nShare more feedback on completed exercises*"
   },
   {
-    "objectID": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
-    "href": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n2.3 How do we visualize spatial data?",
-    "text": "2.3 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
+    "objectID": "slides/fall-2023.knit.html#course-feedback-from-you-and-me-1",
+    "href": "slides/fall-2023.knit.html#course-feedback-from-you-and-me-1",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to add:\n\nDistributing slides in advance of class and spend class time on coding exercises and trouble-shooting\nSpend more time on how to make maps with {sf}, {ggplot2}, and R\nShare exercise solutions for review*"
   },
   {
-    "objectID": "slides/data-visualization.html#data",
-    "href": "slides/data-visualization.html#data",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.1 Data",
-    "text": "3.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
+    "objectID": "slides/fall-2023.knit.html#course-feedback-from-you-and-me-2",
+    "href": "slides/fall-2023.knit.html#course-feedback-from-you-and-me-2",
+    "title": "Week 8 Check-in",
+    "section": "Course feedback from you (and me)",
+    "text": "Course feedback from you (and me)\nThings to keep the same:\n\nExercises that include debugging a code snippet\nSharing good questions for weekly check-ins*"
   },
   {
-    "objectID": "slides/data-visualization.html#mapping",
-    "href": "slides/data-visualization.html#mapping",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.2 Mapping",
-    "text": "3.2 Mapping\n\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
+    "objectID": "slides/fall-2023.knit.html#errors-for-the-week",
+    "href": "slides/fall-2023.knit.html#errors-for-the-week",
+    "title": "Week 8 Check-in",
+    "section": "Errors for the week",
+    "text": "Errors for the week\nIllegalArgumentException: Points of LinearRing do not form a closed linestring\nTake a look at sf::st_is_valid() and sf::st_make_valid()."
   },
   {
-    "objectID": "slides/data-visualization.html#statistics",
-    "href": "slides/data-visualization.html#statistics",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.3 Statistics",
-    "text": "3.3 Statistics\n\nData may not represent the displayed values\n\nStatistics transform input variables into displayed values, e.g.\n\nCounting the number of observations by category\nCalculating summary statistics for a boxplot\n\n\n\n\nStatistics can be used prior to plotting data or used by a plotting function directly."
+    "objectID": "slides/fall-2023.knit.html#errors-for-the-week-1",
+    "href": "slides/fall-2023.knit.html#errors-for-the-week-1",
+    "title": "Week 8 Check-in",
+    "section": "Errors for the week",
+    "text": "Errors for the week\nError in UseMethod(\"mutate\") : no applicable method for 'mutate' applied to an object of class \"function\""
   },
   {
-    "objectID": "slides/data-visualization.html#scales",
-    "href": "slides/data-visualization.html#scales",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.4 Scales",
-    "text": "3.4 Scales\n\n\nScales translate between value ranges and graphical properties, e.g.\n\nCategories -&gt; Colors\nNumbers -&gt; Position\n\n\nScales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.\n\n\nIn the not too common case where data directly represents a graphical property, e.g. a “color” column, you can use a special type of scale called an “identity” scale."
+    "objectID": "slides/fall-2023.knit.html#lecture",
+    "href": "slides/fall-2023.knit.html#lecture",
+    "title": "Week 8 Check-in",
+    "section": "Lecture",
+    "text": "Lecture\n🖥️ Exploratory data analysis"
   },
   {
-    "objectID": "slides/data-visualization.html#geometries",
-    "href": "slides/data-visualization.html#geometries",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.5 Geometries",
-    "text": "3.5 Geometries\n\nHow translate aesthetics into graphical representations\nBasic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)\nTypically, the geometries are the same as the “type” of plot"
+    "objectID": "slides/fall-2023.knit.html#questions-on-tidy-data",
+    "href": "slides/fall-2023.knit.html#questions-on-tidy-data",
+    "title": "Week 8 Check-in",
+    "section": "Questions on tidy data",
+    "text": "Questions on tidy data\nAfter you tidy data, where or how do you start looking in order to make sense of it?"
   },
   {
-    "objectID": "slides/data-visualization.html#facets",
-    "href": "slides/data-visualization.html#facets",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.6 Facets",
-    "text": "3.6 Facets\n\nDefines how data is split across multiple panels"
+    "objectID": "slides/fall-2023.knit.html#questions-on-quarto",
+    "href": "slides/fall-2023.knit.html#questions-on-quarto",
+    "title": "Week 8 Check-in",
+    "section": "Questions on Quarto",
+    "text": "Questions on Quarto\nWhy did Quarto render a bunch of figures from the quarto md files of exercises due in previous weeks?\nHow do you duplicate of a Quarto document?"
   },
   {
-    "objectID": "slides/data-visualization.html#coordinates",
-    "href": "slides/data-visualization.html#coordinates",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.7 Coordinates",
-    "text": "3.7 Coordinates\n\nPositional aesthetics must be interpreted by a coordinate system\nDefines the physical mapping of aesthetics to the paper\n\n\nWe usually think about the cartesian coordinate system—but there are a lot of different kinds of coordinate systems."
+    "objectID": "slides/fall-2023.knit.html#questions-on-functions",
+    "href": "slides/fall-2023.knit.html#questions-on-functions",
+    "title": "Week 8 Check-in",
+    "section": "Questions on functions",
+    "text": "Questions on functions\nIs there a way to embed a function within one another?\nYes! You can define a function within a function like this:\n\nexample_fn &lt;- function(..., ) {\n  \n  embedded_fn &lt;- function(..., collapse = \",\") {\n    paste0(..., collapse = collapse)\n  }\n  \n  embedded_fn(...)\n}\n\nError: &lt;text&gt;:1:29: unexpected ')'\n1: example_fn &lt;- function(..., )\n                                ^"
   },
   {
-    "objectID": "slides/data-visualization.html#theme",
-    "href": "slides/data-visualization.html#theme",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n3.8 Theme",
-    "text": "3.8 Theme\n\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
+    "objectID": "slides/fall-2023.knit.html#week-6-october-4-2023",
+    "href": "slides/fall-2023.knit.html#week-6-october-4-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 6: October 4, 2023",
+    "text": "Week 6: October 4, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#setup-packages",
-    "href": "slides/data-visualization.html#setup-packages",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n5.1 Setup packages",
-    "text": "5.1 Setup packages\nFor this session, we are going to use the ggplot2 and dplyr packages:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)"
+    "objectID": "slides/fall-2023.knit.html#weekly-questions",
+    "href": "slides/fall-2023.knit.html#weekly-questions",
+    "title": "Week 8 Check-in",
+    "section": "Weekly questions",
+    "text": "Weekly questions"
   },
   {
-    "objectID": "slides/data-visualization.html#setup-data",
-    "href": "slides/data-visualization.html#setup-data",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n5.2 Setup data",
-    "text": "5.2 Setup data\nWe are also going to use the storms data included with dplyr.\nTake a quick look at storms using glimpse():\n\nglimpse(storms)\n\n\n\n\n\nWhen we use storms, it is important to remember that each row is an observation of a storm, not a summary feature for an individual storm."
+    "objectID": "slides/fall-2023.knit.html#week-5-september-27-2023",
+    "href": "slides/fall-2023.knit.html#week-5-september-27-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 5: September 27, 2023",
+    "text": "Week 5: September 27, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#create-a-ggplot",
-    "href": "slides/data-visualization.html#create-a-ggplot",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n5.3 Create a ggplot",
-    "text": "5.3 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\nggplot(data = storms)\n\n\n\n\n\n\n\nWell, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later."
+    "objectID": "slides/fall-2023.knit.html#week-4-september-20-2023",
+    "href": "slides/fall-2023.knit.html#week-4-september-20-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 4: September 20, 2023",
+    "text": "Week 4: September 20, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#add-aesthetics-and-layers",
-    "href": "slides/data-visualization.html#add-aesthetics-and-layers",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n5.4 Add aesthetics and layers",
-    "text": "5.4 Add aesthetics and layers"
+    "objectID": "slides/fall-2023.knit.html#week-3-september-13-2023",
+    "href": "slides/fall-2023.knit.html#week-3-september-13-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 3: September 13, 2023",
+    "text": "Week 3: September 13, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#visualizing-distributions",
-    "href": "slides/data-visualization.html#visualizing-distributions",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n6.1 Visualizing distributions",
-    "text": "6.1 Visualizing distributions"
+    "objectID": "slides/fall-2023.knit.html#week-2-september-6-2023",
+    "href": "slides/fall-2023.knit.html#week-2-september-6-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 2: September 6, 2023",
+    "text": "Week 2: September 6, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable",
-    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n6.2 Distribution of one numeric variable",
-    "text": "6.2 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
+    "objectID": "slides/fall-2023.knit.html#week-1-september-6-2023",
+    "href": "slides/fall-2023.knit.html#week-1-september-6-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 1: September 6, 2023",
+    "text": "Week 1: September 6, 2023\n\nWelcome!"
   },
   {
-    "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
-    "href": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n6.3 Distribution of one numeric variable",
-    "text": "6.3 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
+    "objectID": "slides/fall-2023.knit.html#week-8-october-18-2023",
+    "href": "slides/fall-2023.knit.html#week-8-october-18-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 8: October 18, 2023",
+    "text": "Week 8: October 18, 2023"
   },
   {
-    "objectID": "slides/data-visualization.html#distribution-of-one-categorical-variable",
-    "href": "slides/data-visualization.html#distribution-of-one-categorical-variable",
-    "title": "Session 2: Visualizing spatial data with ggplot2",
-    "section": "\n6.4 Distribution of one categorical variable",
-    "text": "6.4 Distribution of one categorical variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
+    "objectID": "slides/fall-2023.knit.html#week-9-october-25-2023",
+    "href": "slides/fall-2023.knit.html#week-9-october-25-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 9: October 25, 2023",
+    "text": "Week 9: October 25, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-10-november-1-2023",
+    "href": "slides/fall-2023.knit.html#week-10-november-1-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 10: November 1, 2023",
+    "text": "Week 10: November 1, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-11-november-8-2023",
+    "href": "slides/fall-2023.knit.html#week-11-november-8-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 11: November 8, 2023",
+    "text": "Week 11: November 8, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-12-november-15-2023",
+    "href": "slides/fall-2023.knit.html#week-12-november-15-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 12: November 15, 2023",
+    "text": "Week 12: November 15, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-13-november-22-2023",
+    "href": "slides/fall-2023.knit.html#week-13-november-22-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 13: November 22, 2023",
+    "text": "Week 13: November 22, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-14-november-29-2023",
+    "href": "slides/fall-2023.knit.html#week-14-november-29-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 14: November 29, 2023",
+    "text": "Week 14: November 29, 2023"
+  },
+  {
+    "objectID": "slides/fall-2023.knit.html#week-15-december-6-2023",
+    "href": "slides/fall-2023.knit.html#week-15-december-6-2023",
+    "title": "Week 8 Check-in",
+    "section": "Week 15: December 6, 2023",
+    "text": "Week 15: December 6, 2023"
   },
   {
     "objectID": "exercises/exercise_01.html",
