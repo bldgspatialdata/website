@@ -22,7 +22,11 @@ Spatial data is available in a wide range of formats at the local, national, and
 
 -   [Maryland Food Systems Open Data Portal](https://data-clf.hub.arcgis.com/)
 
+-   [Maryland ArcGIS REST API Services Index](https://docs.google.com/spreadsheets/d/1c829bZdNqvbpoizulBU_XE5jVeNNck2kHkS-smpQ52s/edit?usp=sharing)
+
 ## National data sources for the U.S. 🇺🇸
+
+-   [Data.gov](https://data.gov/) (Aggregates local, state, and federal open data catalogs)
 
 -   [U.S. Department of Housing and Urban Development Geospatial Data Storefront](https://hudgis-hud.opendata.arcgis.com/)
 
@@ -58,7 +62,9 @@ Spatial data is available in a wide range of formats at the local, national, and
 
 -   [Humanitarian Data Exchange](https://data.humdata.org/)
 
--   [Data Portals](https://datacatalog.urban.org/) (Open Knowledge Foundation)
+-   [Data Portals](https://dataportals.org/) (Open Knowledge Foundation)
+
+-   [Registry of Open Data on AWS](https://registry.opendata.aws/)
 
 ## R packages for data access
 
@@ -74,14 +80,14 @@ General data access packages include:
 
 There are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.
 
-A few broadly useful recommendations include:
+A few broadly useful packages include:
 
--   [{rnaturalearth}](https://docs.ropensci.org/rnaturalearth/): Get Natural Earth data.
 -   [{tigris}](https://github.com/walkerke/tigris): Download and use Census TIGER/Line shapefiles.
 -   [{tidycensus}](https://github.com/walkerke/tidycensus): Get US Census boundary and attribute data.
+-   [{rnaturalearth}](https://docs.ropensci.org/rnaturalearth/): Get Natural Earth data.
+-   [{osmdata}](https://github.com/ropensci/osmdata): Get OpenStreetMap data.
 -   [{geodata}](https://github.com/rspatial/geodata/): Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.
 -   [{dataRetrieval}](https://rconnect.usgs.gov/dataRetrieval/): Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.
--   [{osmdata}](https://github.com/ropensci/osmdata): Get OpenStreetMap data.
 
 Explore the [Data Access category on ROpenSci](https://ropensci.org/packages/data-access/) or search for packages on [R-universe](https://r-universe.dev/search/) or [CRAN](https://cran.r-project.org/) to find the right package for your project or exercise.
 

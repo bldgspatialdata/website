@@ -1,0 +1,191 @@
+---
+title: "Session {{< meta order >}}: Exploratory data analysis"
+order: 8
+date-meta: 2023-10-17
+execute: 
+  error: true
+format: 
+  revealjs:
+    code-link: true
+    scrollable: true
+---
+
+# Working openly
+
+## Why open your work?
+
+1. Improve the quality of your work: "be more organized, more accurate, less likely to miss errors"
+2. Broaden reach and impact
+3. Foster data literacy: "others can follow and learn—which can enrich and diversify data ecosystems, practices, and communities"
+
+## How to open your work?
+
+Consider:
+
+- when is transparency valuable?
+- when is transparency a lower priority?
+- when is transparency potentially harmful?
+
+# Exploratory data analysis
+
+This next section is straight from [R for Data Science (2e) - 11  Exploratory data analysis](https://r4ds.hadley.nz/eda#introduction).
+
+## What do you *do* when you *do* exploratory data analysis?
+
+1. Generate questions about your data.
+2. Search for answers by visualizing, transforming, and modelling your data.
+3. Use what you learn to refine your questions and/or generate new questions.
+
+**"More than anything, EDA is a state of mind."**
+
+## Use questions as tools to guide your investigation
+
+When you ask a question…
+
+- the question focuses your attention on a specific part of your dataset
+- this helps you decide which graphs, models, or transformations to make.
+- the key to asking _quality_ questions is to generate a large _quantity_ of questions
+
+::: notes
+>Your goal during EDA is to develop an understanding of your data. The easiest way to do this is to **use questions as tools to guide your investigation**. When you ask a question, the question focuses your attention on a specific part of your dataset and helps you decide which graphs, models, or transformations to make.
+:::
+
+## Two useful questions to start
+
+1. What type of variation occurs within my variables?
+2. What type of covariation occurs between my variables?
+
+## What are you "exploring" when you do exploratory data analysis?
+
+### General summary
+
+When you start with a dataset, you might do something where you look at the general summary, using functions such as:
+
+- [`summary()`](https://rdrr.io/r/base/summary.html)
+- [`str()`](https://rdrr.io/r/utils/str.html)
+- [`skimr::skim()`](https://github.com/ropensci/skimr), or
+- [`dplyr::glimpse()`](https://pillar.r-lib.org/reference/glimpse.html)
+
+"These work really well when you’ve got a small amount of data, but when you have more data, you are generally limited by how much you can read."
+
+## Variation
+
+### Typical values
+
+- Which values are the most common? Why?
+- Which values are rare? Why? Does that match your expectations?
+- Can you see any unusual patterns? What might explain them?
+
+---
+
+```{r}
+smaller <- diamonds |> 
+  filter(carat < 3)
+
+ggplot(smaller, aes(x = carat)) +
+  geom_histogram(binwidth = 0.01)
+```
+
+#### Sub-groups
+
+To understand the subgroups, ask:
+
+- How are the observations within each subgroup similar to each other?
+- How are the observations in separate clusters different from each other?
+- How can you explain or describe the clusters?
+- Why might the appearance of clusters be misleading?
+
+### Unusual values
+
+What makes a value unusual?
+
+```{r}
+ggplot(diamonds, aes(x = y)) + 
+  geom_histogram(binwidth = 0.5)
+```
+
+---
+
+Handling unusual values can include:
+
+- Dropping observations with unusual values
+- Replacing unusual values with missing values
+
+---
+
+## Covariation
+
+::: notes
+>**Covariation** is the tendency for the values of two or more variables to vary together in a related way. The best way to spot covariation is to visualize the relationship between two or more variables.
+:::
+
+### A categorical and a numerical variable
+
+```{r}
+ggplot(diamonds, aes(x = price)) + 
+  geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)
+```
+
+### Two categorical variables
+
+```{r}
+ggplot(diamonds, aes(x = cut, y = color)) +
+  geom_count()
+```
+
+### Two numerical variables
+
+```{r}
+ggplot(smaller, aes(x = carat, y = price)) +
+  geom_point()
+```
+
+## Patterns and models
+
+If a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:
+
+- Could this pattern be due to coincidence (i.e. random chance)?  
+- How can you describe the relationship implied by the pattern?
+- How strong is the relationship implied by the pattern?
+- What other variables might affect the relationship?
+- Does the relationship change if you look at individual subgroups of the data?
+
+## Tools for data exploration
+
+### Missing data
+
+[naniar](https://naniar.njtierney.com/)
+
+>`naniar` provides principled, tidy ways to summarise, visualise, and manipulate missing data with minimal deviations from the workflows in ggplot2 and tidy data.
+
+### Distributions
+
+[Visualizations of Distributions and Uncertainty • ggdist](https://mjskay.github.io/ggdist/)
+
+>`ggdist` is an R package that provides a flexible set of ggplot2 geoms and stats designed especially for visualizing distributions and uncertainty.
+
+- What type of data do you have?
+- How much time do you have?
+- How do you expect to communicate what you learn?
+
+## Communicating
+
+### Codebooks
+
+[Create Codebooks from Data Frames • codebookr](https://brad-cannell.github.io/codebookr/)
+
+>The `codebookr` package is intended to make it easy for users to create codebooks (also called data dictionaries) directly from an R data frame.
+
+[Option to put interactive elements in an HTML table — opt\_interactive • gt](https://gt.rstudio.com/reference/opt_interactive.html)
+
+### Additional packages
+
+[inspectdf](https://alastairrushworth.github.io/inspectdf/)
+
+>inspectdf is collection of utilities for columnwise summary, comparison and visualisation of data frames. Functions are provided to summarise missingness, categorical levels, numeric distribution, correlation, column types and memory usage.
+
+### Other tools
+
+[Datasette](https://datasette.io/):
+
+>Datasette is a tool for exploring and publishing data. It helps people take data of any shape, analyze and explore it, and publish it as an interactive website and accompanying API.

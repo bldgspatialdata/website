@@ -85,6 +85,14 @@ roster_add_file <- function(roster = NULL,
               repo_folder = repo_folder,
               overwrite = TRUE
             )
+          } else if (fs::is_dir(x)) {
+            ghclass::repo_add_file(
+              repo = paste0(org, "/", repo),
+              message = paste0("Add ", basename(x), " to repository"),
+              file = x,
+              repo_folder = repo_folder,
+              overwrite = TRUE
+            )
           }
         }
       )

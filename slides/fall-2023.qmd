@@ -8,7 +8,11 @@ format:
 code-link: true
 ---
 
+# This Week
+
 ```{r}
+#| echo: false
+#| message: false
 library(tidyverse)
 library(nycflights13)
 library(sf)
@@ -16,9 +20,13 @@ library(sf)
 us_states <- tigris::states()
 ```
 
-# This Week
-
 ## Week 7: October 11, 2023
+
+{{< include week/_week_08.qmd >}}
+
+# Past Updates
+
+These past updates are in reverse chronological order.
 
 ### Due this week
 
@@ -149,10 +157,6 @@ Not really. You could keep your code in one or more R scripts that you can then 
 What is the keyboard shortcut to delete empty code chunks?
 
 It doesn't exist (although it was proposed [via GitHub issue back in November 2021](https://github.com/rstudio/rstudio/issues/10147)). You could probably create one using the [`{shrtcts}` package](https://pkg.garrickadenbuie.com/shrtcts/) or by creating a custom [RStudio Addin](https://rstudio.github.io/rstudioaddins/).
-
-# Past Updates
-
-These past updates are in reverse chronological order.
 
 ## Week 6: October 4, 2023
 
