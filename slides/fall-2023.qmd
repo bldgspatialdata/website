@@ -20,9 +20,12 @@ library(sf)
 us_states <- tigris::states()
 ```
 
+{{< include week/_week_09_update.qmd >}}
+
+{{< include week/_week_08_update.qmd >}}
+
 ## Week 7: October 11, 2023
 
-{{< include week/_week_08.qmd >}}
 
 # Past Updates
 

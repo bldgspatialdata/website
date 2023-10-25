@@ -1,0 +1,42 @@
+---
+code-link: true
+---
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+## Week 9 Agenda
+
+-   Check-in on difficult + interesting things
+-   Errors of the week
+-   **Lecture + practice (continued):** Exploratory data analysis with `{sf}` and the tidyverse
+-   **Lecture + practice:** Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package
+-   Weekly questions
+
+## Check-in
+
+This week's difficult things:
+
+-   Issues getting Quarto documents to knit
+-   Challenge thinking of novel functions (when do I write a function?)
+
+This week's interesting things:
+
+-   ...
+
+## Errors for the week
+
+`ERROR: YAMLException: bad indentation of a mapping entry (_quarto.yml, 10:7)`
+
+Take a look at the Quarto [configuration options for website navigation](https://quarto.org/docs/reference/projects/websites.html#nav-items) for more information.
+
+## Lecture
+
+🖥️ [Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package](/slides/open-street-map.html)
+
+## Questions
+
+

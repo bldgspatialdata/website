@@ -1,0 +1,133 @@
+---
+title: "Session {{< meta order >}}: Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package"
+order: 9
+date-meta: 2023-10-25
+execute: 
+  error: true
+format: 
+  revealjs:
+    code-link: true
+---
+
+## Overview
+
+-   What is OpenStreetMap?
+-   How do you contribute to OpenStreetMap?
+-   How do you download data from OpenStreetMap?
+
+These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` package are based on a March 10, 2020 presentation by [Jonathan Dandois](https://twitter.com/jondandois) for MaptimeBmore and the CCBC GIS Capstone.
+
+## What is OpenStreetMap?
+
+-   Created in 2004 in response to restrictive data sharing by the UK [Ordnance Survey](https://www.gov.uk/government/organisations/ordnance-survey)
+
+-   Grew as the "Wikipedia of maps" in response to increasing cost of commercial services like Google Maps after 2011 price hikes
+
+## Using OpenStreetMap
+
+![](images/umbc-area-open-street-map.png)
+
+OpenStreetMap isn't just a map---it is a "**global geodatabase** of everything and anything that people add to the map":
+
+-   roads, crosswalks, speed bumps, stop lights
+-   restaurants, daycares, playgrounds, cannons
+-   forests, central business districts, boundaries
+-   land cover, gravestones, utility ROWs
+
+## Who is using OpenStreetMap?
+
+Individual users, developers, and researchers:
+
+-   Apps and websites
+-   Games
+-   Advocacy and policy
+
+## Who is using OpenStreetMap?
+
+### Microsoft Flight Simulator
+
+![](images/2020-08-21_microsoft-flight-simulator_the-verge.png) [Courtesy The Verge](https://www.theverge.com/2020/8/21/21395084/microsoft-flight-simulator-melbourne-obelish-openstreetmap-bing-maps-data-glitch)
+
+### People for Bikes City Ratings
+
+![](images/cityratings-people-for-bikes.png)
+
+The Bike Network Analysis (BNA) is a data analysis tool that measures how well bike networks connect people with the places they want to go and is used for the [PeopleForBikes 2023 City Ratings](https://cityratings.peopleforbikes.org/). The [methodology is described online](https://cityratings.peopleforbikes.org/about/methodology) and the [PeopleForBikes · GitHub](https://github.com/PeopleForBikes) includes the full code for the analysis.
+
+## Contributing to Open Street Map
+
+Different editors have different reasons for contributing and contribute in different ways:
+
+-   Individuals
+-   Public agencies
+-   Non-profit organizations
+-   Corporations
+
+::: notes
+Different editors use different tools, focus on editing different resources.
+
+Other options include:
+
+-   [ArcGIS Editor for OpenStreetMap](https://www.esri.com/en-us/arcgis/products/arcgis-editor-for-openstreetmap)
+:::
+
+## Tracing and digitizing imagery
+
+Most editors for OpenStreetMap use high-resolution aerial, satellite, and drone-based imagery to trace or digitize:
+
+-   POIs, addresses (**points**)
+-   Roads, sidewalks, paths (**lines**)
+-   School areas, central business districts, parks, lakes, playgrounds (**polygons**)
+
+Learn more in [Getting Started with OSM](https://maptimebmore.github.io/ccbc-osm-presentation/#15).
+
+## What is "good" editing?
+
+Learn more in the [Good practice section](https://wiki.openstreetmap.org/wiki/Good_practice) of the OpenStreetMap Wiki.
+
+### Contributing with the iD Editor
+
+![](images/umbc-area-open-street-map-editor.png) Learn [how to use the iD Editor](https://learnosm.org/en/beginner/id-editor/).
+
+### Contributing with the JOSM Editor
+
+![](images/josm-screenshot.png)
+
+Try out [JOSM](https://live.osgeo.org/en/overview/josm_overview.html)---the desktop editor for OpenStreetMap.
+
+### Contributing with the Humanitarian OpenStreetMap Tasking Manager
+
+![](images/hot-open-street-map-morocco.png) Try [the HOT Tasking Manager](https://tasks.hotosm.org/).
+
+### Contributing with StreetComplete
+
+![](images/street-complete-screenshots.png)
+
+Learn [about StreetComplete](https://streetcomplete.app/).
+
+## Downloading data with overpass turbo
+
+![](images/overpass-turbo-screenshot.png) [*overpass turbo*](https://overpass-turbo.eu), a web-based data filtering tool for [OpenStreetMap](http://www.openstreetmap.org/), can run Overpass API queries and analyze the resulting OSM data interactively on a map.
+
+## Open Historical Map
+
+## ![](images/open-historical-map.png)
+
+## Downloading data with `{osmdata}`
+
+-   [`osmdata`](https://docs.ropensci.org/osmdata/) is an R package for accessing the data underlying OpenStreetMap (OSM), delivered via the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
+-   The package is designed to allow access to small-to-medium-sized OSM datasets (see [`osmextract`](https://github.com/ropensci/osmextract) for an approach for reading-in bulk OSM data extracts).
+
+## Resources
+
+-   [OSM Wiki](https://wiki.openstreetmap.org/)
+-   [LearnOSM](https://learnosm.org/)
+-   [TeachOSM](https://teachosm.org/)
+
+### QuickOSM: QGIS Plugin
+
+[QuickOSM --- QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/QuickOSM/)
+
+### OSMQuery: ArcMap and Pro Python toolbox
+
+[riccardoklinger/OSMquery: Query OSM data and add results to your ArcGIS project](https://github.com/riccardoklinger/OSMquery)
