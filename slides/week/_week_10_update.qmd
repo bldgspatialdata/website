@@ -1,0 +1,37 @@
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+## Week 10 Agenda
+
+-   Check-in on difficult + interesting things
+-   Errors of the week
+-   **Lecture + practice:** Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package
+-   **Lecture + practice:** Exploring American Community Survey data with the `{tidycensus}` package
+-   Weekly questions
+
+### Check-in on difficult things
+
+This week's difficult things:
+
+-   Issues getting Quarto documents to knit
+-   Challenge thinking of novel functions (when do I write a function?)
+
+### Check-in on interesting things
+
+-   `tigris::shift_geometry()`: "It is cool that it can show geographically distant places in one map in a way that makes sense."
+-   "I found it interesting that people hate YAML."
+-   The [the ggplot2 book chapter on Maps](https://ggplot2-book.org/maps.html) "was really helpful for me to make the labeled maps and think of all the different ways we need to treat polygons when map making"
+-   "I don't think I realized how much [OpenStreetMap] relies on contributors."
+
+### Check-in on interesting things
+
+>I explored the OpenStreetMap this week, and it was amazing. I even located my parish back in India, which was surprisingly not labeled, and added it to the map. I officially contributed to OpenStreetMap!
+
+### Questions about the final project
+
+- Is it OK to do exploratory data analysis that combines multiple data sets with only limited maps?
+- What should the overall split of documentation to coding be on the final project?
+- How deeply should we be looking into the real-life implications of our data and our results?

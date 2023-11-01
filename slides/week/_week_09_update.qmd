@@ -1,7 +1,3 @@
----
-code-link: true
----
-
 ```{r}
 #| echo: false
 #| message: false
@@ -16,7 +12,7 @@ library(tidyverse)
 -   **Lecture + practice:** Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package
 -   Weekly questions
 
-## Check-in
+### Check-in
 
 This week's difficult things:
 
@@ -27,16 +23,12 @@ This week's interesting things:
 
 -   ...
 
-## Errors for the week
+### Errors for the week
 
 `ERROR: YAMLException: bad indentation of a mapping entry (_quarto.yml, 10:7)`
 
 Take a look at the Quarto [configuration options for website navigation](https://quarto.org/docs/reference/projects/websites.html#nav-items) for more information.
 
-## Lecture
+###Lecture
 
 🖥️ [Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package](/slides/open-street-map.html)
-
-## Questions
-
-
