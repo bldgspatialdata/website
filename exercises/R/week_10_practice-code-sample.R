@@ -40,7 +40,8 @@ baltcity_tracts <- tracts(
   county = ____
 )
 
-# Use geom_sf to make a map using the `baltimore_dots` data that is color-coded by race/ethnicity
+# Use geom_sf to make a map using the `baltimore_dots` data that is color-coded
+# by race/ethnicity
 ggplot() +
   geom_sf(data = ____) +
   geom_sf(data = ____, aes(color = ____)) +
