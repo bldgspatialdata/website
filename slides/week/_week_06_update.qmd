@@ -1,0 +1,98 @@
+## Week 6: October 4, 2023
+
+## Weekly questions
+
+### Geometric and spatial operations
+
+While the concept of a buffer is rather easy to understand for me in other spatial software such as ArcGIS Pro, it was difficult for me to manipulate in R.
+
+----
+
+```{r}
+storms_sf <- storms |> 
+  st_as_sf(
+    coords = c("long", "lat"),
+    crs = 4326
+  )
+
+storms_tracks <- storms_sf |> 
+  arrange(year, month, day, hour) |> 
+  group_by(year, name) |> 
+  summarise(
+    avg_wind = mean(wind),
+    geometry = st_cast(st_union(geometry), to = "LINESTRING")
+    )
+
+storms_tracks
+```
+
+
+----
+
+What do I mean by "states that intersect Maryland"?
+
+----
+
+How do you create the map (straight line between MD and CA) using ggplot instead of plot?
+
+```{r}
+#| eval: false
+plot(
+  us_states$geometry,
+  main = "States crossed by a straight line from central Maryland to central California"
+  )
+
+plot(
+  states_crossed$geometry,
+  col = "grey",
+  add = TRUE
+  )
+
+plot(
+  md_to_cali,
+  color = "black",
+  add = TRUE
+  )
+```
+
+### Assorted questions
+
+How can I streamline my workflow?
+
+### Tidy data questions
+
+----
+
+Are most built in datasets in R already tidy?
+
+----
+
+Can functions from the `{units}` work with any type of variable?
+
+----
+
+When might you use both `tidyr::pivot_longer()` and `tidyr::pivot_wider()`? 
+
+----
+
+What is the purpose of the `.value` parameter used in `names_to` attribute of `pivot_longer()` function?
+
+```{r}
+anscombe %>%
+  pivot_longer(
+    everything(),
+    cols_vary = "slowest",
+    names_to = c(".value", "set"),
+    names_pattern = "(.)(.)"
+  )
+```
+
+
+::: notes
+".value" indicates that the corresponding component of the column name defines the name of the output column containing the cell values, overriding values_to entirely.
+:::
+
+----
+
+How does `tidyr::pivot_wider()` handle cases with conflicting or duplicate values when pivoting?
+
