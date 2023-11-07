@@ -1,0 +1,311 @@
+---
+title: "Exercise 04 (Solutions)"
+order: 4
+date-due: 2023-10-03
+date-modified: last-modified
+---
+
+## Setup
+
+This exercise uses the `sf` and `tidyverse` packages:
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+We are also going to use the `us_states` and `us_states_df` data from the `{spData}` package:
+
+```{r}
+library(spData)
+```
+
+Note that the `us_states` loaded for this exercise is different than the `us_states` we created during class with the `tigris::states()` function. For this exercise, the bonus exercises are mixed in with the other questions but you are welcome to skip them if you do not want go for the bonus part of the exercise.
+
+## Exercises
+
+### Filtering data
+
+Find all states that belong to the West region, have an area below 250,000 km2 and in 2015 a population greater than 5,000,000 residents (**Hint:** you may need to use the function `units::set_units()` or `as.numeric()`).
+
+```{r}
+us_states |> 
+  filter(
+    as.numeric(AREA) < 250000,
+    total_pop_15 > 5000000
+    )
+```
+
+Find all states that belong to the South region, had an area larger than 150,000 km2 or a total population in 2015 larger than 7,000,000 residents.
+
+```{r}
+us_states |> 
+  filter(
+    REGION == "South" |
+    as.numeric(AREA) > 150000 |
+    total_pop_15 > 7000000
+  )
+```
+
+### Joining and summarizing data
+
+What was the total population in 2015 in the `us_states` dataset? What was the minimum and maximum total population in 2015?
+
+```{r}
+us_states |>
+  st_drop_geometry() |> 
+  summarise(
+    total_state_pop_15 = sum(total_pop_15),
+    min_state_pop_15 = min(total_pop_15),
+    max_state_pop_15 = max(total_pop_15)
+  )
+```
+
+Add variables from `us_states_df` to `us_states`, and create a new object called `us_states_stats`.
+
+-   What function did you use and why?
+-   Which variable is the key in both datasets?
+-   What is the class of the new object?
+
+Tip: we are covering joins in more detail next week---check out [the R for Data Science chapter on Joins](https://r4ds.hadley.nz/joins) for more information.
+
+```{r}
+us_states_stats <- us_states |> 
+  left_join(
+    us_states_df,
+    by = join_by(NAME == state)
+    )
+
+us_states_stats
+```
+
+`us_states_df` has two more rows than `us_states`. **How can you find them?** Hint: try to use the `dplyr::anti_join()` function.
+
+```{r}
+anti_join(
+  us_states_df,
+  us_states,
+  by = join_by(state == NAME)
+)
+```
+
+**How much has population density changed between 2010 and 2015 in each state?**
+
+Calculate the change in percentages and map them with `plot()` or `geom_sf()`:
+
+```{r}
+us_states_density <- us_states |> 
+  mutate(
+    AREA_sq_km = as.numeric(AREA),
+    pop_density_10 = total_pop_10 / AREA_sq_km,
+    pop_density_15 = total_pop_15 / AREA_sq_km,
+    pop_density_change = round(pop_density_15 / pop_density_10, digits = 2) - 1
+  )
+```
+
+
+```{r}
+us_states_density |> 
+  ggplot() +
+  geom_sf(aes(fill = pop_density_change)) +
+  scale_fill_continuous(labels = scales::label_percent()) +
+  labs(
+    fill = "% change in pop. density (2010-2015)"
+  ) +
+  theme_void()
+```
+
+
+```{r}
+plot(us_states_density[, 11])
+```
+
+Calculate the change in the number of residents living below the poverty level between 2010 and 2015 for each state. **Hint:** See `?us_states_df` for documentation on the poverty level columns.
+
+```{r}
+us_states_poverty_level <- us_states_stats |> 
+  mutate(
+    poverty_level_change = poverty_level_15 - poverty_level_10,
+    .after = NAME
+  )
+
+us_states_poverty_level
+```
+**Bonus:** Calculate the change in the percentage of residents living below the poverty level in each state.
+
+```{r}
+us_states_stats |> 
+  mutate(
+    pct_poverty_level_10 = poverty_level_10 / total_pop_10,
+    pct_poverty_level_15 = poverty_level_15 / total_pop_15,
+    pct_poverty_level_change = pct_poverty_level_15 - pct_poverty_level_10
+  )
+```
+
+What was the minimum, average and maximum state's number of people living below the poverty line in 2015 for each region?
+
+```{r}
+us_states_stats |> 
+  group_by(REGION) |> 
+  summarise(
+    min_poverty_level_15 = min(poverty_level_15),
+    max_poverty_level_15 = max(poverty_level_15),
+    mean_poverty_level_15 = mean(poverty_level_15)
+  )
+```
+
+**Bonus:** What is the region with the largest increase in people living below the poverty line?
+
+```{r}
+us_states_stats |> 
+  st_drop_geometry() |> 
+  group_by(REGION) |> 
+  summarise(
+   poverty_level_change = sum(poverty_level_15) - sum(poverty_level_10)
+  ) |> 
+  slice_max(n = 1, order_by = poverty_level_change)
+```
+
+### Spatial operations
+
+Section [4.2](https://r.geocompx.org/spatial-operations#spatial-vec) (in Geocomputation with R) established that Canterbury was the region of New Zealand containing most of the 100 highest points in the country. How many of these high points does the Canterbury region contain?
+
+```{r}
+canterbury <- nz |>
+  filter(Name == "Canterbury")
+
+canterbury_height <- nz_height |> 
+  slice_max(order_by = elevation, n = 100) |> 
+  st_filter(canterbury)
+
+nrow(canterbury_height)
+```
+
+**Bonus:** plot the result using the `ggplot2::geom_sf()` function to show all of New Zealand, `canterbury` region highlighted in yellow, high points in Canterbury represented by red crosses (**Hint:** try using `shape = 7`) and high points in other parts of New Zealand represented by blue circles.
+
+See the help page `?ggplot2::shape` and run the examples to see an illustration of different `shape` values.
+
+```{r}
+ggplot() +
+  geom_sf(data = nz) +
+  geom_sf(data = canterbury, fill = "yellow") +
+  geom_sf(data = st_filter(nz_height, canterbury), shape = 7, color = "red") +
+  geom_sf(data =  st_filter(nz_height, canterbury, .predicate = st_disjoint), shape = 1, color = "blue")
+```
+
+Which region has the second highest number of `nz_height` points, and how many does it have?
+
+```{r}
+nz_height |> 
+  st_intersection(nz) |> 
+  st_drop_geometry() |> 
+  count(Name) |> 
+  slice_max(n = 2, order_by = n)
+```
+
+Generalizing the question to all regions: how many of New Zealand's 16 regions contain points which belong to the top 100 highest points in the country? Which regions?
+
+```{r}
+nz_height |> 
+  slice_max(n = 100, order_by = elevation) |> 
+  st_intersection(nz) |> 
+  st_drop_geometry() |> 
+  count(Name)
+```
+
+**Bonus:** create a table listing these regions in order of the number of points and their name. Hint: use `dplyr::slice_max()` and `gt::gt()`.
+
+```{r}
+nz_height |> 
+  slice_max(n = 100, order_by = elevation) |> 
+  st_intersection(nz) |> 
+  st_drop_geometry() |> 
+  count(Name, sort = TRUE) |> 
+  gt::gt() |> 
+  gt::tab_header(
+    "Regions with any of the 100 highest points in New Zealand"
+  )
+```
+
+Using [`st_buffer()`](https://r-spatial.github.io/sf/reference/geos_unary.html), how many points in `nz_height` are within 100 km of Canterbury?
+
+```{r}
+canterbury_buffered <- st_buffer(canterbury, dist = units::as_units(100, "km"))
+
+nz_height |> 
+  st_filter(
+    canterbury_buffered
+  ) |> 
+  nrow()
+```
+
+### Spatial predicates
+
+Test your knowledge of spatial predicates by finding out and plotting how US states relate to each other and other spatial objects.
+
+The starting point of this part of the exercise is to create an object representing Maryland state in the USA using the [`filter()`](https://dplyr.tidyverse.org/reference/filter.html) function and plot the resulting object in the context of US states.
+
+```{r}
+maryland <- filter(us_states, NAME == "Maryland")
+
+ggplot() +
+  geom_sf(data = us_states) +
+  geom_sf(data = maryland, fill = "orange")
+```
+
+Create a new object representing all the states that geographically intersect with Maryland and plot the result (hint: the most concise way to do this is with the subsetting method `[` but you can also use `sf::st_filter()`).
+
+```{r}
+states_intersecting_md <- us_states[maryland, ]
+```
+
+Create another object representing all the objects that touch (have a shared boundary with) Maryland and plot the result (hint: remember you can use the argument `op = st_intersects` when subsetting with base R or `.predicate = st_intersects` when using `st_filter()`).
+
+```{r}
+states_touching_md <- us_states[maryland, , op = st_touches]
+
+states_touching_md_alt <- st_filter(us_states, maryland, .predicate = st_touches)
+```
+
+**Bonus:** create a straight line from the centroid of Maryland to the centroid of California near the West coast of the USA (hint: functions [`st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html), [`st_union()`](https://r-spatial.github.io/sf/reference/geos_combine.html) and [`st_cast()`](https://r-spatial.github.io/sf/reference/st_cast.html) described in Chapter 5 may help) and identify which states this long East-West line crosses.
+
+```{r}
+md_centroid <- st_centroid(maryland)
+
+california <- filter(us_states, NAME == "California")
+
+ca_centroid <- st_centroid(california)
+
+md_and_ca <- st_union(md_centroid, ca_centroid)
+
+md_to_ca_line <- st_cast(md_and_ca, to = "LINESTRING")
+
+st_filter(us_states, md_to_ca_line, .predicate = st_crosses)
+```
+
+How far is the geographic centroid of Maryland from the geographic centroid of Canterbury, New Zealand?
+
+```{r}
+canterbury_centroid <- st_centroid(canterbury)
+canterbury_centroid <- st_transform(canterbury_centroid, crs = st_crs(md_centroid))
+
+st_distance(md_centroid, canterbury_centroid)
+```
+
+Calculate the length of the boundary lines of US states in meters. Which state has the longest border and which has the shortest? **Hint:** The `st_length` function computes the length of a `LINESTRING` or `MULTILINESTRING` geometry.
+
+```{r}
+us_states_borders <- us_states |> 
+  st_cast(
+    to = "MULTILINESTRING"
+  ) |> 
+  mutate(
+    border_length = st_length(geometry)
+  ) |> 
+  st_drop_geometry()
+  
+
+slice_max(us_states_borders, order_by = border_length, n = 1)
+
+slice_min(us_states_borders, order_by = border_length, n = 1)
+```
