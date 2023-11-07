@@ -1,0 +1,140 @@
+---
+title: Final Project
+bibliography: weeks/files/readings.bib
+csl: files/csl/chicago-author-date.csl
+suppress-bibliography: true
+link-citations: false
+---
+
+## Overview
+
+The final project is an opportunity for you to practice the spatial data skills we've been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.
+
+Your project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:
+
+-   A data visualization or interactive that uses the data to tell a story or prompt reflection
+
+-   An exploratory data analysis that uses the data to ask or answer questions
+
+This project has three parts:
+
+1.  A project proposal (due **November 13 - updated**)
+2.  An short presentation about your project (due **December 6 - tentative**)
+3.  A project GitHub repository including code, data, output files, and a README (due **December 15**)
+
+You are also expected to share peer feedback on two other proposals completed by **November 22** (updated).
+
+## Project proposal
+
+Your project proposal needs to answer **identify a data source** and answer **three main questions**:
+
+1. **What are your goals for the project?**
+2. **What data can you use to support your goal?**
+3. **What is your approach to using data to support your goal?**
+
+You should answer each question with a brief but considered response. If it helps to have a word count, try to answer all three questions in something between 700 and 1000 words.
+
+Format your proposal as [Quarto document](https://quarto.org/) with citations within the project folder of your class respository. Your proposal should include:
+
+- links to any published data or related resources
+- reproducible code blocks for any preliminary data analysis you completed to support your proposal
+
+**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.
+
+### Identifying a data source
+
+Students are strongly encouraged to build a project using data from:
+
+-   OpenStreetMap (accessed with the `{osmdata}` package),
+-   or American Community Survey data (accessed with the `{tidycensus}` package)
+
+See the readings and materials from [week 9](https://bldgspatialdata.github.io/website/weeks/week_09.html) or [week 10](https://bldgspatialdata.github.io/website/weeks/week_10.html) for more background information on these sources.
+
+:::{.callout-important appearance='simple' icon=true}
+### A caution about using different data source
+If you do not using `{tidycensus}` or `{osmdata}`, I may not be able to provide the same level of assistance with trouble-shooting your code for the final project. Consider opportunities to use OpenStreetMap and American Community Survey data in combination with other sources.
+:::
+
+If you are interested in working with some *other* data source, your project proposal should explain your reason for selecting the source and make sure to confirm that:
+
+-   you know the **data and goals are related** (e.g. you have a question that can be answered using the data),
+-   you have **permission to use the data** (e.g. the data is published under an open license),
+-   you know the **data is in an accessible format** (e.g. CSV, ArcGIS Feature Server, GeoPackage file),
+-   and you know there are **no major data quality issues** (e.g. location accuracy, completeness) that you can't address as part of the project.
+
+### What are your goals for the project?
+
+Your goals could include answering a research question, making the case for a public policy change, or building an interface to help people better understand an issue in their community.
+
+Your goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.
+
+**Ask yourself:** Who might benefit from your proposed project? How can your project can avoid causing people harm?
+
+In framing your project, look for opportunities to apply one or more of the six models of local practice described in @loukissasAllDataAre2019:
+
+-   Look at the data setting, not just the data set
+-   Make place part of data presentation
+-   Take a comparative approach to data analysis
+-   Create counterdata to challenge normative algorithms
+-   Create interfaces that cause friction
+-   Use data to build relationships
+
+Is your project designed around what Loukissas calls the common "ambitions" for working data---orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?
+
+Your goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.
+
+### What data can you use to support your goal?
+
+Your data could include any public spatial data or data that has a spatial attribute. You can even create data from scratch or collect your own data.
+
+**Ask yourself:** What is the "setting" for the data? Whose local knowledge does it represent? What communities participate in collecting or maintaining the data?
+
+### What is your approach to using data to support your goal?
+
+Your approach could include mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches.
+
+You don't need to reinvent the wheel. You can adapt an existing approach (reproducing an existing using new data or geography) or propose a few options you hope to try and compare.
+
+**Ask yourself:** Is your proposed approach feasible in the time you have available this semester? What challenges do you anticipate in using this data?
+
+:::{.callout-tip appearance='simple' icon=true}
+### Citing sources with RStudio and Zotero
+
+[Citing sources in RStudio](https://rstudio.github.io/visual-markdown-editing/citations) is a little different than Microsoft Word so I strongly recommend using the [Zotero citation manager](https://zotero.org/) in combination with the [Better Bibtex extension](https://retorque.re/zotero-better-bibtex/). If a single R package is a big part of your proposed approach, make sure to also include a citation for the package. Read [How to Cite R and R Packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/) by Steffi LaZerte for more background on how and why you should cite R packages.
+
+:::
+
+## Project presentation
+
+Your in-class presentation should be around five minutes and address these key questions:
+
+-   What were your initial goals for the project? How did they change or develop as you worked on your project?
+
+-   What data sources did you use? How, why, and where were they created?
+
+-   What packages, templates, or other resources did you use in creating your final project?
+
+-   What challenges did you encounter in making use of these resources and this data?
+
+-   What do you think your project does well?
+
+::: {.callout-tip appearance="simple"}
+### Creating presentations with Quarto and reveal.js
+Use the [Quarto reveal.js presentation format](https://quarto.org/docs/presentations/revealjs/) for your presentation. This format can be tricky to learn but allows you to easily incorporate data visualizations or other materials from your project into your presentation.
+:::
+
+## Final project repository
+
+Your final project should be submitted as a GitHub repository. A private repository can be provided to you as part of the course organization or you can set up your own repository on your personal GitHub account.
+
+The repository must include:
+
+-   **project data (if needed)**: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using `{osmdata}` or `{tidycensus}` should include scripts for downloading data but *do not* include the source data.
+
+-   **project code**: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.
+
+-   **output files**: including any processed data files or rendered PDF or HTML documents.
+
+-   **README**: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.
+
+-   **additional materials**: including any data collection materials (e.g. survey forms), reference data used by the project code, or other related materials.
