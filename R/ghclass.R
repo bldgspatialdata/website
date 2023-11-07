@@ -17,7 +17,7 @@ usethis::create_project(
 
 # Create repositories for each student in the roster
 purrr::walk(
-  roster[["repository"]],
+  roster[["repo"]],
   \(nm) {
     ghclass::repo_create(
       org = org,
@@ -28,6 +28,19 @@ purrr::walk(
     )
   }
 )
+
+# Grant student team permissions to each repository
+purrr::walk(
+  roster[["repo"]],
+  \(repo) {
+    ghclass::repo_team_permission(
+      repo = paste0(org, "/",  repo),
+      team = team,
+      permission = "pull"
+    )
+  }
+)
+
 
 # Add users who have joined the team to their repo
 # NOTE: I ended up doing a lot of this manually after the initial setup as a
