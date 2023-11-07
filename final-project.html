@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GES 668 - Fall 2023 – license</title>
+<title>GES 668 - Fall 2023 - Final Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./course-exercises.html" rel="next">
+<link href="./course-syllabus.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<meta property="og:title" content="GES 668 - Fall 2023 - Final Project">
+<meta property="og:description" content="Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023.">
+<meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 
 <body class="nav-sidebar docked">
@@ -79,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./final-project.html">Final Project</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
@@ -130,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./final-project.html" class="sidebar-item-text sidebar-link">
+  <a href="./final-project.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Final Project</span></a>
   </div>
 </li>
@@ -365,22 +370,178 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mit-license" id="toc-mit-license" class="nav-link active" data-scroll-target="#mit-license">MIT License</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#project-proposal" id="toc-project-proposal" class="nav-link" data-scroll-target="#project-proposal">Project proposal</a>
+  <ul class="collapse">
+  <li><a href="#identifying-a-data-source" id="toc-identifying-a-data-source" class="nav-link" data-scroll-target="#identifying-a-data-source">Identifying a data source</a></li>
+  <li><a href="#what-are-your-goals-for-the-project" id="toc-what-are-your-goals-for-the-project" class="nav-link" data-scroll-target="#what-are-your-goals-for-the-project">What are your goals for the project?</a></li>
+  <li><a href="#what-data-can-you-use-to-support-your-goal" id="toc-what-data-can-you-use-to-support-your-goal" class="nav-link" data-scroll-target="#what-data-can-you-use-to-support-your-goal">What data can you use to support your goal?</a></li>
+  <li><a href="#what-is-your-approach-to-using-data-to-support-your-goal" id="toc-what-is-your-approach-to-using-data-to-support-your-goal" class="nav-link" data-scroll-target="#what-is-your-approach-to-using-data-to-support-your-goal">What is your approach to using data to support your goal?</a></li>
+  </ul></li>
+  <li><a href="#project-presentation" id="toc-project-presentation" class="nav-link" data-scroll-target="#project-presentation">Project presentation</a></li>
+  <li><a href="#final-project-repository" id="toc-final-project-repository" class="nav-link" data-scroll-target="#final-project-repository">Final project repository</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/LICENSE.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/final-project.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-overview.html">Course information</a></li><li class="breadcrumb-item"><a href="./final-project.html">Final Project</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Final Project</h1>
+</div>
 
 
 
-<section id="mit-license" class="level1">
-<h1>MIT License</h1>
-<p>Copyright (c) 2023 Eli Pousson</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The final project is an opportunity for you to practice the spatial data skills we’ve been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.</p>
+<p>Your project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:</p>
+<ul>
+<li><p>A data visualization or interactive that uses the data to tell a story or prompt reflection</p></li>
+<li><p>An exploratory data analysis that uses the data to ask or answer questions</p></li>
+</ul>
+<p>This project has three parts:</p>
+<ol type="1">
+<li>A project proposal (due <strong>November 13 - updated</strong>)</li>
+<li>An short presentation about your project (due <strong>December 6 - tentative</strong>)</li>
+<li>A project GitHub repository including code, data, output files, and a README (due <strong>December 14 - tentative</strong>)</li>
+</ol>
+<p>You are also expected to share peer feedback on two other proposals completed by <strong>November 22</strong> (updated).</p>
+</section>
+<section id="project-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="project-proposal">Project proposal</h2>
+<p>Your project proposal needs to answer <strong>identify a data source</strong> and answer <strong>three main questions</strong>:</p>
+<ol type="1">
+<li><strong>What are your goals for the project?</strong></li>
+<li><strong>What data can you use to support your goal?</strong></li>
+<li><strong>What is your approach to using data to support your goal?</strong></li>
+</ol>
+<p>You should answer each question with a brief but considered response. If it helps to have a word count, try to answer all three questions in something between 700 and 1000 words.</p>
+<p>Format your proposal as <a href="https://quarto.org/">Quarto document</a> with citations within the project folder of your class respository. Your proposal should include:</p>
+<ul>
+<li>links to any published data or related resources</li>
+<li>reproducible code blocks for any preliminary data analysis you completed to support your proposal</li>
+</ul>
+<p><strong>Don’t forget to cite your sources!</strong> While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.</p>
+<section id="identifying-a-data-source" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-a-data-source">Identifying a data source</h3>
+<p>Students are strongly encouraged to build a project using data from:</p>
+<ul>
+<li>OpenStreetMap (accessed with the <code>{osmdata}</code> package),</li>
+<li>or American Community Survey data (accessed with the <code>{tidycensus}</code> package)</li>
+</ul>
+<p>See the readings and materials from <a href="https://bldgspatialdata.github.io/website/weeks/week_09.html">week 9</a> or <a href="https://bldgspatialdata.github.io/website/weeks/week_10.html">week 10</a> for more background information on these sources.</p>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A caution about using different data source
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you do not using <code>{tidycensus}</code> or <code>{osmdata}</code>, I may not be able to provide the same level of assistance with trouble-shooting your code for the final project. Consider opportunities to use OpenStreetMap and American Community Survey data in combination with other sources.</p>
+</div>
+</div>
+<p>If you are interested in working with some <em>other</em> data source, your project proposal should explain your reason for selecting the source and make sure to confirm that:</p>
+<ul>
+<li>you know the <strong>data and goals are related</strong> (e.g.&nbsp;you have a question that can be answered using the data),</li>
+<li>you have <strong>permission to use the data</strong> (e.g.&nbsp;the data is published under an open license),</li>
+<li>you know the <strong>data is in an accessible format</strong> (e.g.&nbsp;CSV, ArcGIS Feature Server, GeoPackage file),</li>
+<li>and you know there are <strong>no major data quality issues</strong> (e.g.&nbsp;location accuracy, completeness) that you can’t address as part of the project.</li>
+</ul>
+</section>
+<section id="what-are-your-goals-for-the-project" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-your-goals-for-the-project">What are your goals for the project?</h3>
+<p>Your goals could include answering a research question, making the case for a public policy change, or building an interface to help people better understand an issue in their community.</p>
+<p>Your goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.</p>
+<p><strong>Ask yourself:</strong> Who might benefit from your proposed project? How can your project can avoid causing people harm?</p>
+<p>In framing your project, look for opportunities to apply one or more of the six models of local practice described in <span class="citation" data-cites="loukissasAllDataAre2019">Loukissas (2019)</span>:</p>
+<ul>
+<li>Look at the data setting, not just the data set</li>
+<li>Make place part of data presentation</li>
+<li>Take a comparative approach to data analysis</li>
+<li>Create counterdata to challenge normative algorithms</li>
+<li>Create interfaces that cause friction</li>
+<li>Use data to build relationships</li>
+</ul>
+<p>Is your project designed around what Loukissas calls the common “ambitions” for working data—orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?</p>
+<p>Your goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.</p>
+</section>
+<section id="what-data-can-you-use-to-support-your-goal" class="level3">
+<h3 class="anchored" data-anchor-id="what-data-can-you-use-to-support-your-goal">What data can you use to support your goal?</h3>
+<p>Your data could include any public spatial data or data that has a spatial attribute. You can even create data from scratch or collect your own data.</p>
+<p><strong>Ask yourself:</strong> What is the “setting” for the data? Whose local knowledge does it represent? What communities participate in collecting or maintaining the data?</p>
+</section>
+<section id="what-is-your-approach-to-using-data-to-support-your-goal" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-your-approach-to-using-data-to-support-your-goal">What is your approach to using data to support your goal?</h3>
+<p>Your approach could include mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches.</p>
+<p>You don’t need to reinvent the wheel. You can adapt an existing approach (reproducing an existing using new data or geography) or propose a few options you hope to try and compare.</p>
+<p><strong>Ask yourself:</strong> Is your proposed approach feasible in the time you have available this semester? What challenges do you anticipate in using this data?</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Citing sources with RStudio and Zotero
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://rstudio.github.io/visual-markdown-editing/citations">Citing sources in RStudio</a> is a little different than Microsoft Word so I strongly recommend using the <a href="https://zotero.org/">Zotero citation manager</a> in combination with the <a href="https://retorque.re/zotero-better-bibtex/">Better Bibtex extension</a>. If a single R package is a big part of your proposed approach, make sure to also include a citation for the package. Read <a href="https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/">How to Cite R and R Packages</a> by Steffi LaZerte for more background on how and why you should cite R packages.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="project-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="project-presentation">Project presentation</h2>
+<p>Your in-class presentation should be around five minutes and address these key questions:</p>
+<ul>
+<li><p>What were your initial goals for the project? How did they change or develop as you worked on your project?</p></li>
+<li><p>What data sources did you use? How, why, and where were they created?</p></li>
+<li><p>What packages, templates, or other resources did you use in creating your final project?</p></li>
+<li><p>What challenges did you encounter in making use of these resources and this data?</p></li>
+<li><p>What do you think your project does well?</p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating presentations with Quarto and reveal.js
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the <a href="https://quarto.org/docs/presentations/revealjs/">Quarto reveal.js presentation format</a> for your presentation. This format can be tricky to learn but allows you to easily incorporate data visualizations or other materials from your project into your presentation.</p>
+</div>
+</div>
+</section>
+<section id="final-project-repository" class="level2">
+<h2 class="anchored" data-anchor-id="final-project-repository">Final project repository</h2>
+<p>Your final project should be submitted as a GitHub repository. A private repository can be provided to you as part of the course organization or you can set up your own repository on your personal GitHub account.</p>
+<p>The repository must include:</p>
+<ul>
+<li><p><strong>project data (if needed)</strong>: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using <code>{osmdata}</code> or <code>{tidycensus}</code> should include scripts for downloading data but <em>do not</em> include the source data.</p></li>
+<li><p><strong>project code</strong>: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.</p></li>
+<li><p><strong>output files</strong>: including any processed data files or rendered PDF or HTML documents.</p></li>
+<li><p><strong>README</strong>: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.</p></li>
+<li><p><strong>additional materials</strong>: including any data collection materials (e.g.&nbsp;survey forms), reference data used by the project code, or other related materials.</p></li>
+</ul>
 
 
 </section>
@@ -920,6 +1081,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./course-syllabus.html" class="pagination-link  aria-label=" syllabus"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./course-exercises.html" class="pagination-link" aria-label="Exercise How-to">
+        <span class="nav-page-text">Exercise How-to</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

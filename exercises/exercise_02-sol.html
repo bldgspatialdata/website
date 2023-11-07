@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GES 668 - Fall 2023 - Exercise 02</title>
+<title>GES 668 - Fall 2023 - Exercise 02 (Solutions - Incomplete)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,8 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../exercises/exercise_03.html" rel="next">
-<link href="../exercises/exercise_01.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="GES 668 - Fall 2023 - Exercise 02">
+<meta property="og:title" content="GES 668 - Fall 2023 - Exercise 02 (Solutions - Incomplete)">
 <meta property="og:description" content="Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023.">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
@@ -118,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exercises/exercise_01.html">Exercises 🛠️</a></li><li class="breadcrumb-item"><a href="../exercises/exercise_02.html">Exercise 02</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exercise 02 (Solutions - Incomplete)</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -296,13 +294,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Exercises 🛠️</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exercises/exercise_01.html" class="sidebar-item-text sidebar-link">
@@ -311,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/exercise_02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../exercises/exercise_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 02</span></a>
   </div>
 </li>
@@ -404,30 +402,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">2</span> Setup</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3</span> Exercises</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup"><span class="header-section-number">1</span> Setup</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2</span> Exercises</a>
   <ul class="collapse">
-  <li><a href="#plotting-a-single-variable" id="toc-plotting-a-single-variable" class="nav-link" data-scroll-target="#plotting-a-single-variable"><span class="header-section-number">3.1</span> Plotting a single variable</a></li>
-  <li><a href="#plotting-two-variables" id="toc-plotting-two-variables" class="nav-link" data-scroll-target="#plotting-two-variables"><span class="header-section-number">3.2</span> Plotting two variables</a></li>
-  <li><a href="#using-scales-and-colors" id="toc-using-scales-and-colors" class="nav-link" data-scroll-target="#using-scales-and-colors"><span class="header-section-number">3.3</span> Using scales and colors</a></li>
-  <li><a href="#adding-labels-legends-and-themes" id="toc-adding-labels-legends-and-themes" class="nav-link" data-scroll-target="#adding-labels-legends-and-themes"><span class="header-section-number">3.4</span> Adding labels, legends, and themes</a></li>
-  <li><a href="#interactive-plots-with-plotly" id="toc-interactive-plots-with-plotly" class="nav-link" data-scroll-target="#interactive-plots-with-plotly"><span class="header-section-number">3.5</span> Interactive plots with <code>{plotly}</code></a></li>
-  <li><a href="#map-making-with-ggplot2" id="toc-map-making-with-ggplot2" class="nav-link" data-scroll-target="#map-making-with-ggplot2"><span class="header-section-number">3.6</span> Map making with <code>{ggplot2}</code></a></li>
+  <li><a href="#plotting-a-single-variable" id="toc-plotting-a-single-variable" class="nav-link" data-scroll-target="#plotting-a-single-variable"><span class="header-section-number">2.1</span> Plotting a single variable</a></li>
+  <li><a href="#plotting-two-variables" id="toc-plotting-two-variables" class="nav-link" data-scroll-target="#plotting-two-variables"><span class="header-section-number">2.2</span> Plotting two variables</a></li>
+  <li><a href="#using-scales-and-colors" id="toc-using-scales-and-colors" class="nav-link" data-scroll-target="#using-scales-and-colors"><span class="header-section-number">2.3</span> Using scales and colors</a></li>
+  <li><a href="#adding-labels-legends-and-themes" id="toc-adding-labels-legends-and-themes" class="nav-link" data-scroll-target="#adding-labels-legends-and-themes"><span class="header-section-number">2.4</span> Adding labels, legends, and themes</a></li>
+  <li><a href="#interactive-plots-with-plotly" id="toc-interactive-plots-with-plotly" class="nav-link" data-scroll-target="#interactive-plots-with-plotly"><span class="header-section-number">2.5</span> Interactive plots with <code>{plotly}</code></a></li>
+  <li><a href="#map-making-with-ggplot2" id="toc-map-making-with-ggplot2" class="nav-link" data-scroll-target="#map-making-with-ggplot2"><span class="header-section-number">2.6</span> Map making with <code>{ggplot2}</code></a></li>
   </ul></li>
-  <li><a href="#bonus-exercise" id="toc-bonus-exercise" class="nav-link" data-scroll-target="#bonus-exercise"><span class="header-section-number">4</span> Bonus exercise</a>
+  <li><a href="#bonus-exercise" id="toc-bonus-exercise" class="nav-link" data-scroll-target="#bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</a>
   <ul class="collapse">
-  <li><a href="#creating-maps-with-tmap" id="toc-creating-maps-with-tmap" class="nav-link" data-scroll-target="#creating-maps-with-tmap"><span class="header-section-number">4.1</span> Creating maps with <code>{tmap}</code></a></li>
+  <li><a href="#creating-maps-with-tmap" id="toc-creating-maps-with-tmap" class="nav-link" data-scroll-target="#creating-maps-with-tmap"><span class="header-section-number">3.1</span> Creating maps with <code>{tmap}</code></a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercises/exercise_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/exercises/exercise_02-sol.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exercises/exercise_01.html">Exercises 🛠️</a></li><li class="breadcrumb-item"><a href="../exercises/exercise_02.html">Exercise 02</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exercise 02</h1>
+<h1 class="title">Exercise 02 (Solutions - Incomplete)</h1>
 </div>
 
 
@@ -439,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 4, 2023</p>
+      <p class="date-modified">November 7, 2023</p>
     </div>
   </div>
     
@@ -450,62 +447,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Exercise due on 2023-09-11</p>
-</div>
-</div>
-</div>
-<p>ℹ️ See <a href="https://bldgspatialdata.github.io/website/weeks/week_02.html">week 2</a> for related slides and readings</p>
-<section id="overview" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Practice these skills
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<ul>
-<li>Build a layered plot using <code>ggplot()</code>, <code>aes()</code>, and different <code>geom_</code> functions</li>
-<li>Explore the difference between discrete and continuous variables</li>
-<li>Use <code>coord_sf()</code> to modify a plot created with <code>geom_sf()</code></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Think about these questions
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<ul>
-<li>What makes a scale better or worse at visualizing data?</li>
-<li>How do you write a clear and accurate title, legend, or caption?</li>
-<li>When is it appropriate to modify the geometry of your data when making a map?</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="setup" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="setup"><span class="header-section-number">2</span> Setup</h2>
+<p>Incomplete solutions.</p>
+<section id="setup" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1</span> Setup</h2>
 <p>This exercises uses the <code>{ggplot2}</code> and <code>{dplyr}</code> packages (both from the <a href="https://www.tidyverse.org/">tidyverse family</a> of packages) and the <code>{sf}</code> package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -540,61 +484,63 @@ Think about these questions
 </div>
 <p>If you finish this exercise but still want more practice, you can download this <a href="https://github.com/thomasp85/ggplot2_workshop/blob/master/exercises.Rmd">RMarkdown document with exercises</a> shared by Thomas Lin Pedersen for his two-part 2020 online workshop on <code>{ggplot2}</code> (<a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a> and <a href="https://www.youtube.com/watch?v=0m4yywqNPVY">part 2</a> are both available on YouTube).</p>
 </section>
-<section id="exercises" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3</span> Exercises</h2>
-<section id="plotting-a-single-variable" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="plotting-a-single-variable"><span class="header-section-number">3.1</span> Plotting a single variable</h3>
+<section id="exercises" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2</span> Exercises</h2>
+<section id="plotting-a-single-variable" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="plotting-a-single-variable"><span class="header-section-number">2.1</span> Plotting a single variable</h3>
 <p>Find a discrete variable in countries and then create a plot with <code>geom_bar()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> SUBREGION))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, find a continuous variable and make a plot with <code>geom_histogram()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> POP_EST))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, let’s make a map! Use <code>countries_center</code> and <code>geom_sf()</code> to make a map with a continuous variable mapped to size:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries_center) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">size =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">size =</span> POP_EST))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>Next, make a map with <code>geom_sf()</code> with one discrete variable mapped to color:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> REGION_UN))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Is that the map you expected? Try it again with the discrete variable mapped to fill:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> ____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> REGION_UN))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>Now, make a plot using any <code>geom</code> function of your choice:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> countries) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(REGION_UN, POP_EST, <span class="at">color =</span> REGION_UN))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Explain in plain language. What does your map show? ____</p>
+<p>Explain in plain language. What does your plot show? ____</p>
 </section>
-<section id="plotting-two-variables" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="plotting-two-variables"><span class="header-section-number">3.2</span> Plotting two variables</h3>
+<section id="plotting-two-variables" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="plotting-two-variables"><span class="header-section-number">2.2</span> Plotting two variables</h3>
 <p>For this next section, you can continue to use <code>countries</code> as your dataset or load a different dataset using <code>{rnaturaleath}</code>. You can see what vector data is available using <code>rnaturalearth::ne_find_vector_data()</code> then find the function you need to load the data into a new object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rnaturalearth<span class="sc">::</span><span class="fu">ne_find_vector_data</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rnaturalearth<span class="sc">::</span><span class="fu">ne_find_vector_data</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>populated_places <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_download</span>(<span class="at">type =</span> <span class="st">"populated_places"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>First, find two continuous variables and create a scatter plot with <code>geom_point()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> populated_places) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(MAX_AREAKM, POP_MAX))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, look in your data for one discrete and one continuous variable then use <code>aes()</code> to set those variables for <code>geom_col()</code>. The <code>geom_col()</code> function is similar to <code>geom_bar()</code> but you <em>must</em> provide <em>both</em> an x <em>and</em> a y variable:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(____))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> populated_places) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(POP_MAX, FEATURECLA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now, use <code>geom_sf()</code> mapping your continous variable to fill or color and your discrete variable to <code>facet_wrap()</code>:</p>
+<p>Now, use <code>geom_sf()</code> mapping your continuous variable to fill or color and your discrete variable to <code>facet_wrap()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(____)) <span class="sc">+</span></span>
@@ -608,8 +554,8 @@ Think about these questions
 <p>Is this aesthetic mapping an effective way of visualizing the variable? ____</p>
 <p>If so, why do you think it works well? If not, why does it <em>not</em> work well? ____</p>
 </section>
-<section id="using-scales-and-colors" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="using-scales-and-colors"><span class="header-section-number">3.3</span> Using scales and colors</h3>
+<section id="using-scales-and-colors" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="using-scales-and-colors"><span class="header-section-number">2.3</span> Using scales and colors</h3>
 <p><code>{ggplot2}</code> uses naming conventions to organize the scale functions. This isn’t the same for every function but they look something like: “scale_<aesthetic><em><color scheme=""></color></em><type of="" data="">”. So, <code>scale_fill_viridis_d()</code> applies the Viridis color scale to a discrete variable mapped to the fill aesthetic.</type></aesthetic></p>
 <p>Use the data to create a plot and take a look at the colors set when you use <code>scale_color_viridis_c()</code>:</p>
 <div class="cell">
@@ -638,8 +584,8 @@ Think about these questions
 </div>
 <p>Note that this <code>scale_fill_distiller()</code> scale only works with continuous values. If you get an error, you may need to map a different variable to <code>fill</code>.</p>
 </section>
-<section id="adding-labels-legends-and-themes" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="adding-labels-legends-and-themes"><span class="header-section-number">3.4</span> Adding labels, legends, and themes</h3>
+<section id="adding-labels-legends-and-themes" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="adding-labels-legends-and-themes"><span class="header-section-number">2.4</span> Adding labels, legends, and themes</h3>
 <p>Set the data for <code>ggplot()</code> and then use the <code>labs()</code> function to apply a title and caption that make sense:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
@@ -669,8 +615,8 @@ Think about these questions
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="interactive-plots-with-plotly" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="interactive-plots-with-plotly"><span class="header-section-number">3.5</span> Interactive plots with <code>{plotly}</code></h3>
+<section id="interactive-plots-with-plotly" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="interactive-plots-with-plotly"><span class="header-section-number">2.5</span> Interactive plots with <code>{plotly}</code></h3>
 <p>We aren’t doing much with interactivity in this class (or exercise) but I did want to give you a chance to try it out using the <code>ggplotly()</code> function from the <code>{plotly}</code> package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
@@ -682,8 +628,8 @@ Think about these questions
 </div>
 <p>A <a href="https://exts.ggplot2.tidyverse.org/index.html">directory of <code>{ggplot2}</code> extensions</a> is available through the tidyverse website if you want to try more tools for animation or interactivity including <a href="https://gganimate.com/">{gganimate}</a> or <a href="https://davidgohel.github.io/ggiraph/">{ggiraph}</a>.</p>
 </section>
-<section id="map-making-with-ggplot2" class="level3" data-number="3.6">
-<h3 data-number="3.6" class="anchored" data-anchor-id="map-making-with-ggplot2"><span class="header-section-number">3.6</span> Map making with <code>{ggplot2}</code></h3>
+<section id="map-making-with-ggplot2" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="map-making-with-ggplot2"><span class="header-section-number">2.6</span> Map making with <code>{ggplot2}</code></h3>
 <p>By default, any map created with <code>geom_sf()</code> will show the graticulates on the map and axis labels with the coordinate values. Add data to this map and then hide these graticules by adding <code>theme_void()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ____) <span class="sc">+</span></span>
@@ -769,10 +715,10 @@ Think about these questions
 <p>Check the documentation for <code>st_simplify()</code> or <code>smoothr::smooth()</code> for more information on how these functions work to modify the geometry.</p>
 </section>
 </section>
-<section id="bonus-exercise" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="bonus-exercise"><span class="header-section-number">4</span> Bonus exercise</h2>
-<section id="creating-maps-with-tmap" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="creating-maps-with-tmap"><span class="header-section-number">4.1</span> Creating maps with <code>{tmap}</code></h3>
+<section id="bonus-exercise" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bonus-exercise"><span class="header-section-number">3</span> Bonus exercise</h2>
+<section id="creating-maps-with-tmap" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="creating-maps-with-tmap"><span class="header-section-number">3.1</span> Creating maps with <code>{tmap}</code></h3>
 <p>Pick one of the maps you created in the prior questions of this exercise and create a similar version using the <code>{tmap}</code> package.</p>
 <p>You can install <code>{tmap}</code> the same as any other package:</p>
 <div class="cell">
@@ -1329,18 +1275,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../exercises/exercise_01.html" class="pagination-link  aria-label=" exercise="" 01"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise 01</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../exercises/exercise_03.html" class="pagination-link" aria-label="Exercise 03">
-        <span class="nav-page-text">Exercise 03</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

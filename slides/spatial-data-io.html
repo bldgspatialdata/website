@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.339">
+  <meta name="generator" content="quarto-1.4.468">
 
-  <meta name="dcterms.date" content="2023-10-17">
-  <title>GES 668 - Fall 2023 - Session 8: Exploratory data analysis</title>
+  <meta name="dcterms.date" content="2023-11-07">
+  <title>GES 668 - Fall 2023 - Reading and writing spatial data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,7 +321,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Session 8: Exploratory data analysis">
+<meta property="og:title" content="GES 668 - Fall 2023 - Reading and writing spatial data">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -329,252 +329,20 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Session 8: Exploratory data analysis</h1>
+  <h1 class="title">Reading and writing spatial data</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-10-17</p>
+  <p class="date">2023-11-07</p>
 </section>
-<section>
-<section id="why-open" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Why open?</h1>
-<ol type="1">
-<li>Improve the quality of your work: “be more organized, more accurate, less likely to miss errors”</li>
-<li>Broaden reach and impact</li>
-<li>Foster data literacy: “others can follow and learn—which can enrich and diversify data ecosystems, practices, and communities”</li>
-</ol>
-<p>Consider when is transparency valuable; when is it a lower priority; when is it potentially harmful</p>
-</section>
-<section id="how-open" class="title-slide slide level2 center" data-number="1.1">
-<h2><span class="header-section-number">1.1</span> How open?</h2>
+<section class="slide level4">
 
-</section>
-<section id="methodology-section-a.k.a.-nerd-box" class="title-slide slide level3 center">
-<h3>Methodology section a.k.a. “nerd box”</h3>
-
-</section>
-
-
-<section id="spectator-graphics" class="title-slide slide level2 center" data-background-iframe="https://graphicsdesk.github.io/" data-background-interactive="false" data-number="1.2">
-<h2><span class="header-section-number">1.2</span> Spectator Graphics</h2>
-
-</section>
-</section>
-<section>
-<section id="exploratory-data-analysis" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> Exploratory data analysis</h1>
-<p>From <a href="https://r4ds.hadley.nz/eda#introduction">R for Data Science (2e) - 11&nbsp; Exploratory data analysis</a></p>
-<ol type="1">
-<li>Generate questions about your data.</li>
-<li>Search for answers by visualizing, transforming, and modelling your data.</li>
-<li>Use what you learn to refine your questions and/or generate new questions.</li>
-</ol>
-<p>“More than anything, EDA is a state of mind.”</p>
-</section>
-<section id="use-questions-as-tools-to-guide-your-investigation" class="title-slide slide level2 center" data-number="2.1">
-<h2><span class="header-section-number">2.1</span> use questions as tools to guide your investigation</h2>
-<p>When you ask a question…</p>
-<ul>
-<li>the question focuses your attention on a specific part of your dataset</li>
-<li>this helps you decide which graphs, models, or transformations to make.</li>
-<li>the&nbsp;key to asking&nbsp;<em>quality</em>&nbsp;questions is to generate a large&nbsp;<em>quantity</em>&nbsp;of questions</li>
-</ul>
-<aside class="notes">
-<blockquote>
-<p>Your goal during EDA is to develop an understanding of your data. The easiest way to do this is to <strong>use questions as tools to guide your investigation</strong>. When you ask a question, the question focuses your attention on a specific part of your dataset and helps you decide which graphs, models, or transformations to make.</p>
-</blockquote>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<ol type="1">
-<li>What type of variation occurs within my variables?</li>
-<li>What type of covariation occurs between my variables?</li>
-</ol>
-</section>
-
-<section id="variation" class="title-slide slide level2 center" data-number="2.2">
-<h2><span class="header-section-number">2.2</span> Variation</h2>
-
-</section>
-<section id="typical-values" class="title-slide slide level3 center">
-<h3>Typical values</h3>
-<ul>
-<li>Which values are the most common? Why?</li>
-<li>Which values are rare? Why? Does that match your expectations?</li>
-<li>Can you see any unusual patterns? What might explain them?</li>
-</ul>
-</section>
-<section id="sub-groups" class="slide level4">
-<h4>Sub-groups</h4>
-<p>To understand the subgroups, ask:</p>
-<ul>
-<li>How are the observations within each subgroup similar to each other?</li>
-<li>How are the observations in separate clusters different from each other?</li>
-<li>How can you explain or describe the clusters?</li>
-<li>Why might the appearance of clusters be misleading?</li>
-</ul>
-</section>
-
-<section id="unusual-values" class="title-slide slide level3 center">
-<h3>Unusual values</h3>
-<p>Handling unusual values can include:</p>
-<ul>
-<li>Dropping observations with unusual values</li>
-<li>Replacing unusual values with missing values</li>
-</ul>
-</section>
-
-
-<section id="covariation" class="title-slide slide level2 center" data-number="2.3">
-<h2><span class="header-section-number">2.3</span> Covariation</h2>
-<aside class="notes">
-<blockquote>
-<p><strong>Covariation</strong>&nbsp;is the tendency for the values of two or more variables to vary together in a related way. The best way to spot covariation is to visualize the relationship between two or more variables.</p>
-</blockquote>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="two-categorical-variables" class="title-slide slide level3 center">
-<h3>Two categorical variables</h3>
-
-</section>
-
-<section id="a-categorical-and-a-numerical-variable" class="title-slide slide level3 center">
-<h3>A categorical and a numerical variable</h3>
-
-</section>
-
-<section id="two-numerical-variables" class="title-slide slide level3 center">
-<h3>Two numerical variables</h3>
-
-</section>
-
-
-<section id="patterns-and-models" class="title-slide slide level2 center" data-number="2.4">
-<h2><span class="header-section-number">2.4</span> Patterns and models</h2>
-<p>If a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:</p>
-<ul>
-<li>Could this pattern be due to coincidence (i.e.&nbsp;random chance)?<br>
-</li>
-<li>How can you describe the relationship implied by the pattern?</li>
-<li>How strong is the relationship implied by the pattern?</li>
-<li>What other variables might affect the relationship?</li>
-<li>Does the relationship change if you look at individual subgroups of the data?</li>
-</ul>
-</section>
-
-<section id="tools-for-data-exploration" class="title-slide slide level2 center" data-number="2.5">
-<h2><span class="header-section-number">2.5</span> Tools for data exploration</h2>
-<ul>
-<li>Excel</li>
-<li>Google Sheets</li>
-<li>PowerBI</li>
-<li>ArcGIS Online</li>
-</ul>
-</section>
-
-<section id="what-are-you-exploring-when-you-do-exploratory-data-analysis" class="title-slide slide level2 center" data-number="2.6">
-<h2><span class="header-section-number">2.6</span> What are you “exploring” when you do exploratory data analysis?</h2>
-
-</section>
-<section id="general-summary" class="title-slide slide level3 center">
-<h3>General summary</h3>
-<p>When you start with a dataset, you might do something where you look at the general summary, using functions such as:</p>
-<ul>
-<li><a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a></li>
-<li><a href="https://rdrr.io/r/utils/str.html"><code>str()</code></a></li>
-<li><a href="https://github.com/ropensci/skimr"><code>skimr::skim()</code></a>, or</li>
-<li><a href="https://pillar.r-lib.org/reference/glimpse.html"><code>dplyr::glimpse()</code></a></li>
-</ul>
-<p>“These work really well when you’ve got a small amount of data, but when you have more data, you are generally limited by how much you can read.”</p>
-</section>
-
-<section id="missing-data" class="title-slide slide level3 center">
-<h3>Missing data</h3>
-<p><a href="https://naniar.njtierney.com/">naniar</a></p>
-<blockquote>
-<p><code>naniar</code>&nbsp;provides principled, tidy ways to summarise, visualise, and manipulate missing data with minimal deviations from the workflows in ggplot2 and tidy data.</p>
-</blockquote>
-</section>
-
-<section id="distributions" class="title-slide slide level3 center">
-<h3>Distributions</h3>
-<p><a href="https://mjskay.github.io/ggdist/">Visualizations of Distributions and Uncertainty • ggdist</a></p>
-<blockquote>
-<p><code>ggdist</code> is an R package that provides a flexible set of ggplot2 geoms and stats designed especially for visualizing distributions and uncertainty.</p>
-</blockquote>
-<ul>
-<li>What type of data do you have?</li>
-<li>How much time do you have?</li>
-<li>How do you expect to communicate what you learn?</li>
-</ul>
-</section>
-
-
-<section id="communicating" class="title-slide slide level2 center" data-number="2.7">
-<h2><span class="header-section-number">2.7</span> Communicating</h2>
-
-</section>
-<section id="codebooks" class="title-slide slide level3 center">
-<h3>Codebooks</h3>
-<p><a href="https://brad-cannell.github.io/codebookr/">Create Codebooks from Data Frames • codebookr</a></p>
-<blockquote>
-<p>The&nbsp;<code>codebookr</code>&nbsp;package is intended to make it easy for users to create codebooks (also called data dictionaries) directly from an R data frame.</p>
-</blockquote>
-<p>gt_interactive <a href="https://gt.rstudio.com/reference/opt_interactive.html">Option to put interactive elements in an HTML table — opt_interactive • gt</a></p>
-</section>
-
-<section id="additional-packages" class="title-slide slide level3 center">
-<h3>Additional packages</h3>
-<p><a href="https://alastairrushworth.github.io/inspectdf/">inspectdf</a></p>
-<blockquote>
-<p>inspectdf is collection of utilities for columnwise summary, comparison and visualisation of data frames. Functions are provided to summarise missingness, categorical levels, numeric distribution, correlation, column types and memory usage.</p>
-</blockquote>
-</section>
-
-<section id="other-tools" class="title-slide slide level3 center">
-<h3>Other tools</h3>
-<p><a href="https://datasette.io/">Datasette</a>:</p>
-<blockquote>
-<p>Datasette is a tool for exploring and publishing data. It helps people take data of any shape, analyze and explore it, and publish it as an interactive website and accompanying API.</p>
-</blockquote>
-</section>
-
-
-<section id="interactive" class="title-slide slide level2 center" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Interactive</h2>
-
-</section>
-
-<section id="tables" class="title-slide slide level2 center" data-number="2.9">
-<h2><span class="header-section-number">2.9</span> Tables</h2>
-<p>reactables</p>
-<p><a href="https://www.danieldsjoberg.com/gtsummary/">Presentation-Ready Data Summary and Analytic Result Tables • gtsummary</a></p>
-<p><a href="https://github.com/rolkra/explore">GitHub - rolkra/explore: R package that makes basic data exploration radically simple (interactive data exploration, reproducible data science)</a></p>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
 </section>
     </div>
   </div>
