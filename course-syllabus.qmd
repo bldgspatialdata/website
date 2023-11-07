@@ -116,7 +116,9 @@ All students will participate in a final project that can be completed independe
 -   American Community Survey data (accessed with the `{tidycensus}` package),
 -   or a combination of these and other sources.
 
-The final project is an opportunity for students to focus on the "models of local practice" described in All Data Are Local---with a special focus on how we can "make place part of data presentation." Typically, the final project should fit into one of two categories:
+The final project is an opportunity for students to focus on the "models of local practice" described in All Data Are Local---with a special focus on how we can "make place part of data presentation."
+
+Typically, the final project should fit into one of two categories:
 
 -   A data visualization or interactive that uses the data to tell a story or prompt reflection
 
@@ -126,10 +128,10 @@ The final project is an opportunity for students to focus on the "models of loca
 
 The assessment of the project is based on four parts:
 
--   A **project proposal** (1-2 pages in length) must be submitted by **November 7**.
--   **Peer feedback** on two other proposals completed by **November 14**.
--   An **project presentation** delivered in-class on **December 6**.
--   A **project GitHub repository** completed by **December 14**.
+-   A **project proposal** (1-2 pages in length) must be submitted by **November 13 (updated)**.
+-   **Peer feedback** on two other proposals completed by **November 22 (updated)**.
+-   An **project presentation** delivered in-class on **December 6 - tentative**.
+-   A **project GitHub repository** completed by **December 14 - tentative**.
 
 Evaluation of the final project will be based on both self-assessment by the individual student or group and an instructor assessment. The instructor can also offer bonus points in recognition of exceptional work or, if necessary, adjust points awarded through the student self-assessment.
 

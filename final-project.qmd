@@ -20,7 +20,7 @@ This project has three parts:
 
 1.  A project proposal (due **November 13 - updated**)
 2.  An short presentation about your project (due **December 6 - tentative**)
-3.  A project GitHub repository including code, data, output files, and a README (due **December 15**)
+3.  A project GitHub repository including code, data, output files, and a README (due **December 14 - tentative**)
 
 You are also expected to share peer feedback on two other proposals completed by **November 22** (updated).
 
