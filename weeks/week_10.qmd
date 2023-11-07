@@ -9,6 +9,22 @@ date: 2023-11-01
 
 {{< include _readings_10.qmd >}}
 
-## Practice
+## Participate
 
-🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_{{< meta order >}}.html)
+During class, we will review this sample code as an exercise.
+
+```{r}
+#| file: samples/week_10_practice-code-sample.R
+#| eval: false
+#| code-fold: true
+#| code-summary: "Practice exercise"
+```
+
+Solutions for this sample code are now available here.
+
+```{r}
+#| file: samples/week_10_demo-code-sample.R
+#| eval: false
+#| code-fold: true
+#| code-summary: "Practice solutions"
+```
