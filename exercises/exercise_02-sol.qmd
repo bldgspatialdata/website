@@ -30,6 +30,7 @@ We are going to use `ne_download()` to download the `countries` dataset and then
 ```{r}
 countries <- ne_download(scale = "medium", type = "countries", returnclass = "sf")
 
+countries <- filter(countries, REGION_UN != "Antarctica")
 countries <- st_transform(countries, crs = 3857)
 
 countries_center <- st_centroid(countries)
@@ -103,7 +104,7 @@ Now, make a plot using any `geom` function of your choice:
 
 ```{r}
 ggplot(data = countries) +
-  geom_boxplot(aes(REGION_UN, POP_EST, color = REGION_UN))
+  geom_jitter(aes(REGION_UN, POP_EST, color = REGION_UN))
 ```
 
 Explain in plain language. What does your plot show? ____
@@ -128,23 +129,25 @@ ggplot(data = populated_places) +
 Next, look in your data for one discrete and one continuous variable then use `aes()` to set those variables for `geom_col()`. The `geom_col()` function is similar to `geom_bar()` but you *must* provide *both* an x *and* a y variable:
 
 ```{r}
-ggplot(data = populated_places) +
-  geom_col(aes(POP_MAX, FEATURECLA))
+north_central_america <- filter(countries, SUBREGION %in% c("Northern America", "Central America"))
+
+ggplot(data = north_central_america) +
+  geom_col(aes(POP_EST, NAME))
 ```
 
 Now, use `geom_sf()` mapping your continuous variable to fill or color and your discrete variable to `facet_wrap()`:
 
 ```{r}
-ggplot(data = ____) +
-  geom_sf(aes(____)) +
-  facet_wrap(~ ____)
+ggplot(data = countries) +
+  geom_sf(aes(fill = POP_EST), color = NA) +
+  facet_wrap(~ TYPE)
 ```
 
 Finally, create a map using a different aesthetic that we haven't tried yet. Options could include `linewidth`, `size`, `alpha`, or `linetype`:
 
 ```{r}
-ggplot(data = ____) +
-  geom_sf(aes(____ = ____))
+ggplot(data = populated_places) +
+  geom_sf(aes(size = POP1950))
 ```
 
 Is this aesthetic mapping an effective way of visualizing the variable? ____
@@ -158,8 +161,8 @@ If so, why do you think it works well? If not, why does it *not* work well? ____
 Use the data to create a plot and take a look at the colors set when you use `scale_color_viridis_c()`:
 
 ```{r}
-ggplot(____) +
-  geom_dotplot(aes(____, _____, color = ____)) +
+ggplot(data = populated_places) +
+  geom_point(aes(LATITUDE, LONGITUDE, color = POP2015)) +
   scale_color_viridis_c()
 ```
 
@@ -168,25 +171,25 @@ The [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) sca
 Now, map a variable to the `color` aesthetic for `geom_sf()` and assign an appropriate type and palette value:
 
 ```{r}
-ggplot(____) +
-  geom_sf(aes(color = ____)) +
-  scale_color_brewer(type = ____, palette = ____)
+ggplot(data = countries_center) +
+  geom_sf(aes(color = REGION_UN)) +
+  scale_color_brewer(type = "qual", palette = "Accent")
 ```
 
 Switching from `color` to `fill`, try it again with a different type and palette value:
 
 ```{r}
-ggplot(____) +
-  geom_sf(aes(fill = ____)) +
-  scale_fill_brewer(type = ____, palette = ____)
+ggplot(data = countries) +
+  geom_sf(aes(fill = INCOME_GRP)) +
+  scale_fill_brewer(type = "seq", palette = "GnBu")
 ```
 
 One last time, but we're using `scale_fill_distiller()`:
 
 ```{r}
-ggplot(____) +
-  geom_sf(aes(fill = ____)) +
-  scale_fill_distiller(type = ____, palette = ____)
+ggplot(data = countries) +
+  geom_sf(aes(fill = GDP_MD)) +
+  scale_fill_distiller(type = "seq", palette = "GnBu")
 ```
 
 Note that this `scale_fill_distiller()` scale only works with continuous values. If you get an error, you may need to map a different variable to `fill`.
@@ -196,35 +199,35 @@ Note that this `scale_fill_distiller()` scale only works with continuous values.
 Set the data for `ggplot()` and then use the `labs()` function to apply a title and caption that make sense:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = north_central_america) +
   geom_sf(color = "black", fill = NA) +
   labs(
-    title = ____,
-    caption = ____
+    title = "North and Central American Countries",
+    caption = "Data from the rnaturalearth package"
   )
 ```
 
 Now, map `fill` to a variable in your data using `aes()` and then use `labs()` to assign a label for fill:
 
 ```{r}
-ggplot(data = ____) +
-  geom_sf(aes(fill = ____)) +
+ggplot(data = north_central_america) +
+  geom_sf(aes(fill = GDP_MD)) +
   labs(
-    ____
+    fill = "GDP"
   )
 ```
 
 Finally, put all of these elements together with a theme function. `theme_minimal()` and `theme_void()` are good themes to use for maps but you can explore [all of the options in the ggplot2 documentation](https://ggplot2.tidyverse.org/reference/ggtheme.html):
 
 ```{r}
-ggplot(data = ____) +
-  geom_sf(mapping = aes(____)) +
+ggplot(data = north_central_america) +
+  geom_sf(mapping = aes(fill = GDP_MD)) +
   labs(
-    title = ____,
-    caption = ____,
-    ____
+    title = "North and Central American countries by GDP",
+    caption = "Data from the rnaturalearth package",
+    fill = "GDP"
   ) +
-  ____
+  theme_void()
 ```
 
 ### Interactive plots with `{plotly}`
@@ -232,8 +235,8 @@ ggplot(data = ____) +
 We aren't doing much with interactivity in this class (or exercise) but I did want to give you a chance to try it out using the `ggplotly()` function from the `{plotly}` package:
 
 ```{r}
-p <- ggplot(data = ____) +
-  geom____(aes(____))
+p <- ggplot(data = countries) +
+  geom_point(aes(POP_EST, GDP_MD, color = REGION_UN))
   
 plotly::ggplotly(
   p = p
@@ -247,29 +250,29 @@ A [directory of `{ggplot2}` extensions](https://exts.ggplot2.tidyverse.org/index
 By default, any map created with `geom_sf()` will show the graticulates on the map and axis labels with the coordinate values. Add data to this map and then hide these graticules by adding `theme_void()`:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = countries) +
   geom_sf(color = "black", fill = NA) +
-  ____
+  theme_void()
 ```
 
 You can also hide or change [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)) by using `theme()`. Try setting the `panel.grid` argument to `element_blank()` to hide the grid:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = countries) +
   geom_sf(color = "black", fill = NA) +
   theme(
-    panel.grid = ____
+    panel.grid = element_blank()
     )
 ```
 
 Now, try "zooming" into a selected area of your map using the `xlim` and `ylim` arguments for `coord_sf()`:
 
 ```{r}
-ggplot(data = ____) +
+ggplot(data = countries) +
   geom_sf(color = "black", fill = NA) +
   coord_sf(
-    xlim = ____,
-    ylim = ____
+    xlim = c(-19836524, 20013016),
+    ylim = c(2150688, 18394384)
   )
 ```
 
@@ -280,23 +283,25 @@ If you have difficulty with this one, look back at [our week 2 slides](https://b
 Using an inset map or "locator map" with a larger area and a zoomed in map showing a featured area is a common cartographic approach. You can use `patchwork::inset_element()` from the `{patchwork}` package to set this up:
 
 ```{r}
-area_map <- ggplot(data = ____) +
+area_map <- ggplot(data = north_central_america) +
   geom_sf(color = "black", fill = NA) +
   coord_sf(
-    xlim = ____,
-    ylim = ____
-  )
+    xlim = c(-19836524, 20013016),
+    ylim = c(2150688, 18394384)
+  ) +
+  theme_void()
 
-inset_map <- ggplot(data = ____) +
-  geom_sf(color = "black", fill = NA)
+inset_map <- ggplot(data = countries) +
+  geom_sf(color = "black", fill = NA) +
+  theme_void()
 
 area_map +
   patchwork::inset_element(
     p = inset_map,
-    left = ____,
-    bottom = ____,
-    top = ____,
-    right = ____
+    left = 0.1,
+    bottom = 0.1,
+    top = 0.3,
+    right = 0.3
   )
 ```
 
@@ -309,7 +314,7 @@ There are some cases when you need to modify the geometry of your data as part o
 ```{r}
 usa <- filter(countries, NAME == "United States of America")
 
-simple_usa <- st_simplify(x = usa, dTolerance = ____)
+simple_usa <- st_simplify(x = usa, dTolerance = 100000)
 
 ggplot() +
   geom_sf(
@@ -328,7 +333,7 @@ What happens when you increase the value of dTolerance? ____
 Now, let's try to same thing but smoothing features with `smoothr::smooth()` instead of simplifying with `sf::st_simplify()`. Start by setting smoothness to a small number, `smoothness = 0.5`, and then run again with higher and higher numbers:
 
 ```{r}
-smooth_usa <- smoothr::smooth(x = usa, method = "ksmooth", smoothness = ____)
+smooth_usa <- smoothr::smooth(x = usa, method = "ksmooth", smoothness = 100)
 
 ggplot() +
   geom_sf(
@@ -337,7 +342,8 @@ ggplot() +
     ) +
   geom_sf(
     data = smooth_usa,
-    color = "purple"
+    color = "purple",
+    fill = NA
   ) +
   theme_void()
 ```
