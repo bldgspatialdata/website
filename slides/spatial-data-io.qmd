@@ -48,6 +48,17 @@ title: "Reading and writing spatial data"
 
 :::
 
+## Common spatial file formats
+
+These file formats vary in:
+
+- Types of geometry that they support
+- Constraints or limits (e.g. shapefiles limit the lenghth of column names, GeoJSON can only use one coordinate reference system)
+- File size
+- Speed of input or output
+- Compatibility with different tools or systems
+- And more!
+
 ## Read spatial data files with R
 
 The `dsn` or data source name for `sf::read_sf()` can include:
@@ -81,13 +92,115 @@ You can use the `query` parameter of `sf::read_sf()` to use a SQL query to selec
 
 When you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text.
 
+## Read data using `{sf}`
 
-## Storing and creating data
+First load `{sf}`:
 
-- Tabular: CSV, Microsoft Excel, delimited text
-- Nested: JSON
+```{r}
+library(sf)
+```
+
+## Read data using `{sf}`
+
+![](https://r-spatial.org/images/gis2.png)
+
+## Read data using `{sf}`
+
+![](https://r-spatial.org/images/gis3.png)
+
+
+## Read data using `{sf}`
+
+`{sf}` can use any available drivers to read data:
+
+```{r}
+drivers <- sf::st_drivers()
+
+drivers
+```
+
+## Read data from a URL using `{sf}`
+
+`read_sf()` works well with a direct link to a spatial data file:
+
+```{r}
+# GeoJSON (geojson)
+read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson")
+```
 
 ----
+
+```{r}
+# Keyhole Markup Language (kml)
+read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml")
+```
+
+----
+
+```{r}
+# GeoPackage (gpkg)
+read_sf("https://github.com/r-spatial/sf/raw/main/inst/gpkg/nc.gpkg")
+```
+
+----
+
+Even non-spatial data works if the data includes a well-known text column:
+
+```{r}
+# Comma-separated values (csv)
+read_sf("https://github.com/r-spatial/sf/raw/main/inst/csv/pt.csv")
+```
+
+----
+
+If the non-spatial data does not include a well-known text column, `read_sf()` still returns a data frame:
+
+```{r}
+read_sf("https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enrollment_By_Grade_2023.csv")
+```
+
+----
+
+However, multifile format like a shapefile does *not* work as a URL:
+
+```{r}
+# Shapefile (shp)
+read_sf("https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp")
+```
+
+But it *does* work if you provide a local file path (`system.file()` returns a file path in this case):
+
+```{r}
+read_sf(system.file("shape/nc.shp", package = "sf"))
+```
+
+----
+
+An ArcGIS FeatureServer URL does *not* work:
+
+```{r}
+read_sf("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0")
+```
+
+But a FeatureServer URL that includes the output format *does* work:
+
+```{r}
+read_sf("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
+```
+
+## Read spatial data with other packages
+
+There are a wide variety of packages that you can use to supplement  `{sf}`.
+
+```{r}
+library(arcgislayers)
+
+feature_layer <- arc_open("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0")
+
+arc_select(feature_layer)
+```
+
+## Examples
 
 ![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg)
 
@@ -95,14 +208,6 @@ When you write spatial data to a non-spatial format, you should drop the geometr
 Census data
 
 :::
-
-----
-
-![](https://r-spatial.org/images/gis2.png)
-
-----
-
-![](https://r-spatial.org/images/gis3.png)
 
 ---
 
@@ -133,6 +238,5 @@ SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg
 :::
 
 ----
-
 
 ![](https://www.e-education.psu.edu/geog583/sites/www.e-education.psu.edu.geog583/files/OGC_Standards.jpg)
