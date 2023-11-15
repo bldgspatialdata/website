@@ -9,15 +9,15 @@ tbl <- tibble::tribble(
           "[1](weeks/week_01.html)", "2023-08-30",                    "Getting started with spatial data using sf and the tidyverse",           "[📖](slides/spatial-data.html)", "[📝](exercises/exercise_01.html)",
           "[2](weeks/week_02.html)", "2023-09-06",                                           "Visualizing spatial data with ggplot2",     "[📖](slides/data-visualization.html)", "[📝](exercises/exercise_02.html)",
           "[3](weeks/week_03.html)", "2023-09-13",                                                    "Transforming data with dplyr",    "[📖](slides/data-transformation.html)", "[📝](exercises/exercise_03.html)",
-          "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/data-transformation.html)", "[📝](exercises/exercise_04.html)",
-          "[5](weeks/week_05.html)", "2023-09-27",              "Applying spatial transformations and geometric operations using sf", "[📖](slides/spatial-data.html)", "[📝](exercises/exercise_05.html)",
+          "[4](weeks/week_04.html)", "2023-09-20",                                            "Transforming spatial data attributes",    "[📖](slides/spatial-data-attributes.html)", "[📝](exercises/exercise_04.html)",
+          "[5](weeks/week_05.html)", "2023-09-27",              "Applying spatial transformations and geometric operations using sf", "[📖](slides/feature-geometry.html)", "[📝](exercises/exercise_05.html)",
           "[6](weeks/week_06.html)", "2023-10-04",                                                "Tidying and joining spatial data",              "[📖](slides/tidy-data.html)", "[📝](exercises/exercise_06.html)",
           "[7](weeks/week_07.html)", "2023-10-11",                    "Building functions in R and literate programming with Quarto",            "[📖](slides/functions.html)", "[📝](exercises/exercise_07.html)",
-          "[8](weeks/week_08.html)", "2023-10-18",               "Developing an exploratory data analysis with sf and the tidyverse",      "[📖](slides/exploratory-analysis.html)", "[📝](exercises/exercise_08.html)",
-          "[9](weeks/week_09.html)", "2023-10-25", "Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package",           "[📖](slides/open-street-map.html)", "[📝](exercises/exercise_09.html)",
-         "[10](weeks/week_10.html)", "2023-11-01",            "Exploring American Community Survey data with the tidycensus package",                "[📖](slides/tidycensus.html)", "[📝](exercises/exercise_10.html)",
-         "[11](weeks/week_11.html)", "2023-11-08",                             "Reading and writing spatial data files and services",           "[📖](slides/spatial-data-io.html)", "[📝](exercises/exercise_11.html)",
-         "[12](weeks/week_12.html)", "2023-11-15",                                          "Creating and managing spatial metadata",          "[📖](slides/spatial-metadata.html)", "[📝](exercises/exercise_12.html)",
+          "[8](weeks/week_08.html)", "2023-10-18",               "Developing an exploratory data analysis with sf and the tidyverse",      "[📖](slides/exploratory-analysis.html)", NA,
+          "[9](weeks/week_09.html)", "2023-10-25", "Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package",           "[📖](slides/open-street-map.html)", NA,
+         "[10](weeks/week_10.html)", "2023-11-01",            "Exploring American Community Survey data with the tidycensus package",                NA, NA,
+         "[11](weeks/week_11.html)", "2023-11-08",                             "Reading and writing spatial data files and services",           "[📖](slides/spatial-data-io.html)", NA,
+         "[12](weeks/week_12.html)", "2023-11-15",                                          "Creating and managing spatial metadata",          "[📖](slides/spatial-metadata.html)", NA,
          "[13](weeks/week_13.html)", "2023-11-22",                                            "Project check-in meetings (no class)",                                           NA,                                NA,
          "[14](weeks/week_14.html)", "2023-11-29",                                                         "Review and work session",                                           NA,                                NA,
          "[15](weeks/week_15.html)", "2023-12-06",                                                     "Final project presentations",                                           NA,                                NA,
@@ -29,7 +29,8 @@ library(gt)
 tbl |> 
   gt::gt() |> 
   gt::fmt_url(
-    columns = "Week"
+    columns = "Week",
+    target = "_self"
   ) |> 
   gt::cols_align(
     "center",
@@ -45,8 +46,7 @@ tbl |>
   gt::fmt_url(
     columns = c("Slides", "Exercise"),
     target = "_self",
-    show_underline = FALSE,
-    
+    show_underline = FALSE
   ) |> 
   gt::sub_missing() |> 
   gt::tab_style(
