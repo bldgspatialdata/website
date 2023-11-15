@@ -12,13 +12,17 @@ code-link: true
 
 ```{r}
 #| echo: false
-#| message: false
+#| output: false
 library(tidyverse)
 library(nycflights13)
 library(sf)
 
 us_states <- tigris::states()
 ```
+
+{{< include week/_week_12_update.qmd >}}
+
+{{< include week/_week_11_update.qmd >}}
 
 {{< include week/_week_10_update.qmd >}}
 

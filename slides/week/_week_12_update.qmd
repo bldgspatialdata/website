@@ -1,0 +1,10 @@
+## Week 12 Agenda
+
+-   Questions about the final project
+-   Check-in on difficult + interesting things
+-   Exercise 2 and 4 review (forgot this last week)
+-   **Lecture + practice:** Reading and writing spatial data with R (continued)
+
+### Check-in on interesting things
+
+### Check-in on difficult things

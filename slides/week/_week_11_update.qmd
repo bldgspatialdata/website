@@ -1,0 +1,40 @@
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+## Week 11 Agenda
+
+-   Questions about the final project
+-   Check-in on difficult + interesting things
+-   Exercise 2 and 4 review
+-   **Lecture + practice:** Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package
+-   **Lecture + practice:** Reading and writing spatial data with R
+
+### Final project questions
+
+- Can my proposal include a description of available data, even if I might not use it?
+- Do you have any example project presentations to share?
+- How do you determine the appropriate geographical scale for a project? e.g. county, tract, zip codes?
+
+::: notes
+
+https://github.com/bldgspatialdata22/exploreinaturalist
+
+https://github.com/bldgspatialdata22/visualizing_incarceration_final
+:::
+
+### Check-in on interesting things
+
+- "OpenStreetMap has so much cool stuff"
+
+### Check-in on interesting things
+
+![](https://cdn.masto.host/mapstodonspace/media_attachments/files/111/371/417/986/530/795/original/d75db9d24f4d3022.png)
+
+[Day 7 map](https://mapstodon.space/@awoodruff/111371425049773054) of the 30DayMapChallenge from Andy Woodruff
+
+### Check-in on difficult things
+
+- "I am still getting used to working with long data formats instead of wider formats. I think what I am finding the most difficult is switching between the two from when I work in ArcGIS Pro and RStudio."
