@@ -63,11 +63,11 @@ website:
           - href: exercises/exercise_05.qmd
           - href: exercises/exercise_06.qmd
           - href: exercises/exercise_07.qmd
-          - href: exercises/exercise_08.qmd
-          - href: exercises/exercise_09.qmd
-          - href: exercises/exercise_10.qmd
-          - href: exercises/exercise_11.qmd
-          - href: exercises/exercise_12.qmd
+          # - href: exercises/exercise_08.qmd
+          # - href: exercises/exercise_09.qmd
+          # - href: exercises/exercise_10.qmd
+          # - href: exercises/exercise_11.qmd
+          # - href: exercises/exercise_12.qmd
       - section: "Resources 📋️"
         contents:
           - href: resources/data-sources.qmd
