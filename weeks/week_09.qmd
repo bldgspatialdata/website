@@ -8,7 +8,3 @@ date: 2023-10-25
 ## Prepare
 
 {{< include _readings_09.qmd >}}
-
-## Practice
-
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)

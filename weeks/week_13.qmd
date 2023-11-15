@@ -6,6 +6,10 @@ date: 2023-11-22
 ---
 
 ::: {.callout-important appearance="simple"}
+Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
+:::
+
+::: {.callout-important appearance="simple"}
 Reminder! We have no in-person class on November 22.
 :::
 

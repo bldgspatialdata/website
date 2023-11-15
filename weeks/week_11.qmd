@@ -18,6 +18,6 @@ Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}
 
 {{< include _readings_11.qmd >}}
 
-## Practice
+## Participate
 
-🛠️️ [Exercise {{< meta order >}}](../exercises/exercise_{{< meta order >}}.html)
+🖥️ [Creating and managing spatial metadata](/slides/spatial-data-io.html)
