@@ -1,10 +1,24 @@
 ## Week 12 Agenda
 
--   Questions about the final project
 -   Check-in on difficult + interesting things
--   Exercise 2 and 4 review (forgot this last week)
--   **Lecture + practice:** Reading and writing spatial data with R (continued)
+-   Exercise 2 and 4 solutions review (forgot this last week)
+-   **Lecture:** Reading and writing spatial data with R (continued)
+-   Spatial metadata
 
 ### Check-in on interesting things
 
 ### Check-in on difficult things
+
+- I'm still not sure I understand the differences between and advantages/disadvantages of using GeoJson, shapefiles, sf objects, or KML files.
+
+## Questions
+
+Do people actually create data dictionaries within R?
+
+----
+
+How can we combine layers when making a map with `{ggplot2}`?
+
+----
+
+What is the difference between `{ggplot2}` and `{ggspatial}` packages? What makes one special over the other?
