@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.468">
 
-  <meta name="dcterms.date" content="2023-11-07">
+  <meta name="dcterms.date" content="2023-11-15">
   <title>GES 668 - Fall 2023 - Reading and writing spatial data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -334,16 +334,206 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-11-07</p>
+  <p class="date">2023-11-15</p>
+</section>
+<section id="spatial-data-is-everywhere" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Spatial data is everywhere</h2>
+<ul>
+<li>Shapefiles, GeoJSON files, and other spatial data files</li>
+<li>Spatial data editing and hosting services, e.g.&nbsp;<a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/overview">ArcGIS Online</a> or <a href="https://felt.com/maps/recent">Felt</a>)</li>
+<li>Open data portals serving spatial and non-spatial data, e.g.&nbsp;<a href="https://data.gov/">data.gov</a></li>
+</ul>
+</section>
+
+<section id="spatial-data-is-everywhere-1" class="title-slide slide level2 center" data-number="2">
+<h2><span class="header-section-number">2</span> Spatial data is everywhere</h2>
+<ul>
+<li>Google Maps, Apple Maps, Waze, and navigation apps (on your phone or <a href="https://support.google.com/googleappsincar/answer/9941814?hl=en">in your vehicle</a>)</li>
+<li>Biking and running apps (Strava publishes a <a href="https://www.strava.com/heatmap#11.21/-76.64618/39.34348/hot/all">global user activity heatmap</a>)</li>
+<li>Web browsers on your phone and desktop application</li>
+</ul>
+</section>
+
+<section id="spatial-data-is-everywhere-2" class="title-slide slide level2 center" data-number="3">
+<h2><span class="header-section-number">3</span> Spatial data is everywhere</h2>
+<ul>
+<li>Phone camera photos (stored in the EXIF metadata)</li>
+<li>Calendars (<a href="https://en.wikipedia.org/wiki/ICalendar">iCal</a>), contacts (<a href="https://en.wikipedia.org/wiki/VCard">vCard</a>), and emails (using <a href="https://en.wikipedia.org/wiki/Internet_geolocation">IP address</a> locations)</li>
+</ul>
+</section>
+
+<section id="creating-spatial-data-is-easy" class="title-slide slide level2 center" data-number="4">
+<h2><span class="header-section-number">4</span> Creating spatial data is “easy”</h2>
+<ul>
+<li>GIS Desktop applications, e.g.&nbsp;<a href="https://qgis.org/">QGIS</a></li>
+<li>Web mapping applications (e.g.&nbsp;<a href="https://geojson.io/#map=2/0/20">geojson.io</a>, <a href="https://felt.com/">Felt</a>)</li>
+<li>Spreadsheet applications (e.g.&nbsp;<a href="https://sheets.google.com/">Google Sheets</a>)</li>
+<li>Database builders (e.g.&nbsp;<a href="https://airtable.com/">Airtable</a> or <a href="https://support.microsoft.com/en-us/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7">Microsoft Lists</a>)</li>
+</ul>
+</section>
+
+<section id="what-can-we-do-with-it-all" class="title-slide slide level2 center" data-number="5">
+<h2><span class="header-section-number">5</span> What can we do with it all?</h2>
+<ul>
+<li>Read and write spatial data files</li>
+<li>Read and write related data files</li>
+<li>Read from and write to web services</li>
+</ul>
+</section>
+
+<section id="common-spatial-file-formats" class="title-slide slide level2 center" data-number="6">
+<h2><span class="header-section-number">6</span> Common spatial file formats</h2>
+<ul>
+<li>Shapefile (<code>.shp</code>)</li>
+<li>GeoJSON (<code>.json</code>, <code>.geojson</code>)</li>
+<li>GeoPackage (<code>.gpkg</code>)</li>
+<li>KML - Keyhole Markup Language (<code>.kml</code>)</li>
+<li>Esri File Geodatabase (<code>.gdb</code>)</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Vector spatial: Shapefile, <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a>, KML</li>
+<li>Raster spatial: <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a>,</li>
+<li>Tabular data with geometry: CSV, Microsoft Excel, delimited text with coordinates or WKT (well known text)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> Read spatial data files with R</h2>
+<p>The <code>dsn</code> or data source name for <code>sf::read_sf()</code> can include:</p>
+<ul>
+<li>a file name</li>
+<li>a URL</li>
+<li>a folder</li>
+<li>the name and access credentials of a database</li>
+<li>a character string with the contents of a GeoJSON file</li>
+</ul>
+</section>
+
+<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> Read spatial data files with R</h2>
+<p>You can use the <code>query</code> parameter of <code>sf::read_sf()</code> to use a SQL query to select records from a file (or select a specific geographical extent).</p>
+</section>
+
+<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center" data-number="9">
+<h2><span class="header-section-number">9</span> Many file formats <em>can</em> include spatial data</h2>
+<ul>
+<li>Excel files (<code>xlsx</code> or <code>xls</code>)<br>
+</li>
+<li>vCard or VCF (Virtual Contact File)</li>
+<li>EXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file</li>
+</ul>
+</section>
+
+<section id="reading-data-into-r" class="title-slide slide level2 center" data-number="10">
+<h2><span class="header-section-number">10</span> Reading data into R</h2>
+<ul>
+<li>Read data using <code>{sf}</code></li>
+<li>Read data using a package that returns a <code>sf</code> object</li>
+<li>Read data and use <code>{sf}</code> to convert to a <code>sf</code> object</li>
+</ul>
+</section>
+
+<section id="writing-data-from-r" class="title-slide slide level2 center" data-number="11">
+<h2><span class="header-section-number">11</span> Writing data from R</h2>
+<ul>
+<li>Write data to a spatial file using <code>{sf}</code></li>
+<li>Write data a a non-spatial file using a different package</li>
+</ul>
+<p>When you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text.</p>
+</section>
+
+<section>
+<section id="storing-and-creating-data" class="title-slide slide level2 center" data-number="12">
+<h2><span class="header-section-number">12</span> Storing and creating data</h2>
+<ul>
+<li>Tabular: CSV, Microsoft Excel, delimited text</li>
+<li>Nested: JSON</li>
+</ul>
 </section>
 <section class="slide level4">
 
 
+<img data-src="https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg" class="r-stretch"><aside class="notes">
+<p>Census data</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level4">
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+<img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section>
+<section class="slide level4">
+
+
+<img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"></section>
+<section class="slide level4">
+
+
+<img data-src="https://i0.wp.com/transportgeography.org/wp-content/uploads/esri_shapefile_model.png?w=1800&amp;ssl=1" class="r-stretch"><aside class="notes">
+<p>Shapefile model</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p><img data-src="https://developers.google.com/static/kml/documentation/images/classTree52.gif"> ::: notes</p>
+<p>KML</p>
+<p>Source: https://developers.google.com/kml/documentation/kmlreference :::</p>
+<p><img data-src="https://wiki.openstreetmap.org/w/images/thumb/1/10/ERD_of_OSM_DB.svg/1280px-ERD_of_OSM_DB.svg.png"></p>
+<aside class="notes">
+<p>Open Street Map</p>
+<p>SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p><img data-src="https://www.e-education.psu.edu/geog583/sites/www.e-education.psu.edu.geog583/files/OGC_Standards.jpg"></p>
+
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
