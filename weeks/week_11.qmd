@@ -20,4 +20,4 @@ Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}
 
 ## Participate
 
-🖥️ [Creating and managing spatial metadata](/slides/spatial-data-io.html)
+🖥️ [Reading and writing spatial data](/slides/spatial-data-io.html)
