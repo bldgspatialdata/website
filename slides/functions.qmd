@@ -1,13 +1,8 @@
 ---
-title: "Session {{< meta order >}}: Working with scripts, functions, and Quarto"
 order: 7
+title: "Working with scripts, functions, and Quarto"
+subtitle: "Session {{< meta order >}}"
 date-meta: 2023-10-11
-execute: 
-  error: true
-format: 
-  revealjs:
-    code-link: true
-    scrollable: true
 ---
 
 ```{r}

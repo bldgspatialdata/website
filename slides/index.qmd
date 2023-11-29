@@ -1,0 +1,10 @@
+---
+title: "Slides"
+format: html
+listing:
+  contents:
+    - "*.qmd"
+  type: grid
+  sort:
+    - "order"
+---

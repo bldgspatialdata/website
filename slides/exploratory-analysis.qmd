@@ -1,13 +1,8 @@
 ---
-title: "Session {{< meta order >}}: Exploratory data analysis"
 order: 8
+title: "Exploratory data analysis"
+subtitle: "Session {{< meta order >}}"
 date-meta: 2023-10-17
-execute: 
-  error: true
-format: 
-  revealjs:
-    code-link: true
-    scrollable: true
 ---
 
 # Working openly

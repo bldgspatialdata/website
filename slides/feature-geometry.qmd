@@ -1,14 +1,11 @@
 ---
-title: "Session {{< meta order >}}: Working with spatial and geometric operations in `{sf}`"
 order: 5
+title: "Working with spatial and geometric operations in `{sf}`"
+subtitle: "Session {{< meta order >}}"
 date-meta: 2023-09-27
-execute: 
-  error: true
 format: 
   revealjs:
-    code-link: true
     output-location: column-fragment
-    scrollable: true
 ---
 
 ## Getting started
@@ -120,7 +117,8 @@ st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi"))
 You can use these joins for spatial filters using the base R syntax:
 
 ```{r}
-us_highways[st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi")),]
+is_hwy_within_dist <- st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi"), sparse = FALSE)
+us_highways[is_hwy_within_dist, ]
 ```
 
 ----

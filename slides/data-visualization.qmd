@@ -1,14 +1,11 @@
 ---
-title: "Session {{< meta order >}}: Visualizing spatial data with ggplot2"
 order: 2
+title: "Visualizing spatial data with ggplot2"
+subtitle: "Session {{< meta order >}}"
 date-meta: 2023-09-06
-execute: 
-  error: true
 format: 
   revealjs:
-    code-link: true
     output-location: column-fragment
-    scrollable: true
 ---
 
 ```{r}

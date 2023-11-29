@@ -1,0 +1,372 @@
+---
+title: "Metadata, geospatial metadata, and READMEs"
+order: 12
+fig-align: left
+---
+
+## What are we talking about metadata?
+
+1.  What is metadata and why does it matter?
+
+2.  What is geospatial metadata?
+
+3.  How can *you* make metadata?
+
+::: footer
+Portions of these are adapted or inspired by a fall 2022 lecture by [Reina Chano Murray](https://github.com/reinacmurray/) ([repo](https://github.com/reinacmurray/documenting-spatial-data-class/) / [Google Slides](https://docs.google.com/presentation/d/1DF_OJP-wvxcUPL1Lbo7egtdoYUqEsdkLqd797zGAiq0/edit?usp=sharing)).
+:::
+
+::: notes
+1.  Introduction to metadata:
+
+    -   What is metadata?
+    -   Why does metadata matter?
+    -   What are metadata standards?
+
+2.  Geospatial metadata
+
+    -   Geospatial metadata standards
+    -   Geospatial metadata schemas
+
+3.  Metadata DIY
+
+    -   Diﬀerent levels of data
+    -   Common elements to include in metadata
+    -   Writing a READMEs
+    -   Using data dictionaries
+:::
+
+## What is metadata?
+
+-   What is metadata?
+-   Why does metadata matter?
+-   What is a metadata standard?
+-   What is a schema?
+
+## What is metadata?
+
+> Metadata is data about data. It describes information like who collected it, when, for what purpose, and the level of quality... You can think of metadata as **little messengers to the future**.
+
+-- Sarah Wakamiya (Inventory & Monitoring Program Data Manager), National Park Service from [What in the World is Metadata and Why Should I Care?](https://www.nps.gov/articles/what-in-the-world-is-metadata.htm)
+
+## What is metadata?
+
+-   Metadata provides **context**
+-   Metadata has **structure**
+-   Metadata makes it **easier to find, use, or manage** related data
+
+## What is metadata?
+
+> "the metadata is collected so that it can fulﬁll a useful purpose, and sorted into known categories. It is this notion of structure that turns *raw information* into *actionable metadata*."
+
+-- [Jenn Riley, NISO,](https://www.niso.org/publications/understanding-metadata-2017) from Understanding Metadata: What is Metadata, and What is it For?: A Primer, 2017
+
+## Why does metadata matter?
+
+Metadata makes your data more *discoverable* and *understandable*
+
+Good metadata helps others trust, validate, reuse and build upon your data.
+
+## What are metadata standards?
+
+A metadata standard is a set of rules, or an agreement, that set the minimum amount of information that should be documented about a dataset (and how).
+
+A metadata syntax is a set of rules for the structure and format of the metadata.
+
+Standardizing content and syntax makes it easier for both **humans** and **computers** to ﬁnd and understand your data!
+
+::: notes
+ Provides agreement on the meaning and semantics of the data.
+:::
+
+### How many standards are there?
+
+![Excerpt from [Seeing Standards: A Visualization of the Metadata Universe](https://jennriley.com/metadatamap/) ([CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/)) (2010)](images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png){width="100%"}
+
+::: footer
+*So many standards*. See [Jenn Riley's Metadata Map](http://jennriley.com/metadatamap/).
+:::
+
+::: notes
+-    <http://jennriley.com/metadatamap/>
+
+-   Other sources
+
+    -   <https://rdamsc.bath.ac.uk/>
+    -   <https://fairsharing.org/>
+    -   <https://datastandards.directory/>
+    -   <https://www.iso.org/home.html>
+:::
+
+------------------------------------------------------------------------
+
+![XKCD Comic: Standards](https://imgs.xkcd.com/comics/standards.png){width="400"}
+
+### What is a schema?
+
+Metadata standards usually include **schemas**.
+
+Schemas provide the overall structure for the metadata - provide a set of elements that should be used to describe a dataset.
+
+### What are the commonly required elements of a schema?
+
+-   Title
+-   Creator
+-   Date
+-   Subject
+-   Description
+-   Rights
+
+::: notes
+-   Title The name of the resource. Titles should include place names and dates when available. - Creator -- The person(s) or organization(s) that created the resource.
+
+-   Date -- The publication date for the resource.
+
+-   Subject [-- Theme or topic keywords of the resource chosen from a controlled vocabulary such as](https://airtable.com/shrwU7SjndL5chKcs/tblGYdmpUTgjFWTP9) [Library of Congress Cartographic](https://airtable.com/shrwU7SjndL5chKcs/tblGYdmpUTgjFWTP9) Genre [and/or](https://airtable.com/shrAftLyILyjheDZx) [ISO Topic](https://airtable.com/shrAftLyILyjheDZx) Category terms.
+
+-   Description -- A description of the resource that may include additional relevant information, like data creation methods, data sources, and special licenses. If the description is minimal or lacking, it can be improved by concatenating available metadata ﬁelds, such as title, date, format, and place.
+
+-   Rights -- Values such as "Public" or "Restricted" if applicable, as well as any licensing information.
+
+[-- Theme or topic keywords of the resource chosen from a controlled vocabulary such as](https://airtable.com/shrwU7SjndL5chKcs/tblGYdmpUTgjFWTP9) [Library of Congress Cartographic](https://airtable.com/shrwU7SjndL5chKcs/tblGYdmpUTgjFWTP9) Genre [and/or](https://airtable.com/shrAftLyILyjheDZx) [ISO Topic](https://airtable.com/shrAftLyILyjheDZx) Category terms.
+:::
+
+## Geospatial Metadata
+
+Geospatial metadata is just metadata about geospatial datasets, projects, or workflows.
+
+## What elements are in most geospatial metadata standards?
+
+-   Bounding box
+-   Geographic location (often a identifier or controlled vocabulary, e.g. [GeoName](https://www.geonames.org/))
+-   Geometry type (a.k.a. spatial representation)
+-   Projection/coordinate reference system
+-   Provenance (how the data was made)
+
+::: {.callout-important collapse="false" appearance="default" icon="true"}
+Some elements can be generated by a GIS application---but some require manual entry.
+:::
+
+## What *else* is included in a geospatial metadata standard?
+
+-   Geoprocessing tools used to create data
+-   Maintenance schedule (if data will be updated)
+-   System/software environment (e.g. software and software version used to create data)
+-   Geospatial metadata schema
+
+## Different Levels of Data to Document
+
+-   Data file or layer
+-   Collection of files or layers
+-   Map or data presentation
+-   Project
+
+## Metadata Policies: Maryland iMAP
+
+![](images/2023-05-08_md-imap_screenshot.png)
+
+## Metadata Policies: Maryland iMAP
+
+**How do you get data published on MD iMAP?**
+
+:   [MD iMAP Data Submission Policy](https://geodata.md.gov/documents/MDiMAPDataSubmissionPolicy.pdf) (Jan. 2015): "organizations can submit data for inclusion in MD iMAP using the guidelines in this document."
+
+**How should state agencies use ArcGIS Online?**
+
+:   [Policy and Standards for Esri ArcGIS Online](https://geodata.md.gov/documents/PolicyforEsriArcGISOnline.pdf) (Mar. 2021): "policy and guidance on standards and the use of ArcGIS Online for Maryland (AGOL) by State agencies."
+
+**What can people who use MD iMAP expect?**
+
+:   [MD iMAP Data Management Plan](https://geodata.md.gov/documents/MDiMAP_DataManagementPlan.pdf) (Jan. 2015): "standards and specifications" to improve "data consistency and availability of information."
+
+## Metadata Policies
+
+![](images/EPA-Metadata-Technical-Specification.png)
+
+**How do you ensure the integrity of data for environmental regulation?**
+
+:   EPA Metadata Specifications. See also [Ecological Metadata Language](https://eml.ecoinformatics.org/) (EML)
+
+## Metadata Schemas
+
+![](https://www.fgdc.gov/metadata/images/iso-geo-standard-diagram.png)
+
+**How do you share data across the federal government?**
+
+:   Federal agencies are encouraged to use *ISO 19115: Geographic information - Metadata* (a standard developed from 1999 to 2003 to make the 1998 [Content Standard for Digital Geospatial Metadata](https://www.fgdc.gov/metadata/geospatial-metadata-standards) (CSDGM) work with "other formal and defacto standards that support the documentation of geospatial data and services."
+
+::: notes
+ISO Standards Diagram via [FGDC](https://www.fgdc.gov/metadata/iso-standards)
+:::
+
+## Geospatial Metadata Schemas
+
+-   [INSPIRE](https://knowledge-base.inspire.ec.europa.eu/index_en) (Infrastructure for Spatial Information in Europe)
+-   [OpenGeoMetadata](https://opengeometadata.org/docs/ogm-aardvark)
+
+### OpenGeoMetadata
+
+![](images/2023-11-28_GeoBlacklight.png)
+
+## What can you do with geospatial metadata?
+
+-   **Search and discovery** for maps and data
+-   **Gazetteers** and controlled vocabularies
+-   **Build tools and references**
+
+::: notes
+-   input form
+-   structured attributes (author, subject, topic)
+-   unstructured attributes (description, keywords, tags)
+-   supplementary reference information
+:::
+
+## What can you build to work with spatial metadata?
+
+-   READMEs
+-   Data dictionaries
+-   Conventions and controlled vocabularies
+
+Varied tools can support the creation of different elements of metadata.
+
+## Useful how to resources
+
+![](images/USGS-Metadata-Creation.png)
+
+[USGS Metadata Creation Guide](https://www.usgs.gov/data-management/metadata-creation)
+
+## Search and discovery
+
+-   [GeoBlacklight](https://geoblacklight.org)
+-   [OpenIndexMaps](https://openindexmaps.org)
+-   [Allmaps](https://allmaps.org/): Curating, georeferencing and exploring for IIIF maps
+
+### OpenIndexMaps
+
+![](images/OpenIndexMaps.png)
+
+### Allmaps
+
+![](images/Allmaps-Editor.png)
+
+::: notes
+<https://editor.allmaps.org/#/georeference?url=https%3A%2F%2Fcdm21033.contentdm.oclc.org%2Fiiif%2Finfo%2Fkrt%2F2175%2Fmanifest.json&image=977d698d883a7354>
+:::
+
+## Gazetteers
+
+-   [Who's On First](https://whosonfirst.org/what/): a big list of places, each with a stable identifier and some number of descriptive properties about that location.
+-   [Pleiades](https://pleiades.stoa.org/): a community-built gazetteer and graph of ancient places.
+-   [World Historical Gazetteer](https://whgazetteer.org/)
+
+## Tips for Documentation
+
+-   READMEs are your best friend
+
+-   Document your data along the way - saves you time at the end
+
+-   Use descriptive file names
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## Use GIS applications to make metadata
+If you're using geospatial desktop software or web GIS, create your metadata in the platform/software you start in (inheritance). You can usually export the metadata as XML.
+:::
+
+## What is a README?
+
+A README file is a text file containing key information about your data which gives the reader a general understanding of the purpose and history of your data set, how it is organized, and how it can be used. You can think of a README file as a manual for your data.
+
+You can use it to capture components of your data that are not adequately captured in the metadata contained with your geoprocessing application.
+
+## What write a README?
+
+While some of the information contained within your README file may overlap with the content you entered in the metadata within your geoprocessing tool, it is still a good idea to create a separate file that lives outside of your geospatial file.
+
+This is helpful for not only if you share your data with others, but is also beneﬁcial to yourself if you need to revisit your data in the future.
+
+Furthermore, some geospatial formats (e.g. GeoJSON) or other formats you might save your file as (csv) just can't store metadata like a shapefile or GeoPackage.
+
+Cover all your bases.
+
+## README Files - What to include?
+
+-   Use templates and checklists!
+
+-   High-level and essential information, e.g. purpose of the data set, where the files can be found
+
+-   Geospatial-speciﬁc elements, e.g. coordinate reference system, geometry type
+
+-   Workﬂow/software environment, e.g. software version, data manipulations which occurred outside of your geoprocessing tool, data version history
+
+-   File naming and organization, e.g. purpose of key files and file naming scheme
+
+[Guide to writing “readme” style metadata](https://data.research.cornell.edu/content/readme)
+
+## Open Data Charter (2015)
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Created in October 2015, the [International Open Data Charter](https://opendatacharter.net/principles/) developed six principles on how to publish data that can be freely used, reused, and redistributed by anyone, anytime, anywhere:
+
+-   Open by Default
+-   Timely and Comprehensive
+-   Accessible and Usable
+-   Comparable and Interoperable
+-   For Improved Governance and Citizen Engagement
+-   For Inclusive Development and Innovation
+:::
+
+::: {.column width="40%"}
+![Cover of the International Open Data Charter](images/opendatacharter-charter_cover.png)
+:::
+
+::: notes
+1.  Open By Default This represents a real shift in how government operates and how it interacts with citizens. At the moment we often have to ask officials for the specific information we want. Open by default turns this on its head and says that there should be a presumption of publication for all. Governments need to justify data that's kept closed, for example for security or data protection reasons. To make this work, citizens must also feel confident that open data will not compromise their right to privacy.
+
+2.  Timely and Comprehensive Open data is only valuable if it's still relevant. Getting information published quickly and in a comprehensive way is central to its potential for success. As much as possible governments should provide data in its original, unmodified form.
+
+3.  Accessible and Usable Ensuring that data is machine readable and easy to find will make data go further. Portals are one way of achieving this. But it's also important to think about the user experience of those accessing data, including the file formats that information is provided. Data should be free of charge, under an open license, for example, those developed by Creative Commons.
+
+4.  Comparable and Interoperable Data has a multiplier effect. The more quality datasets you have access to, and the easier it is for them to talk to each other, the more potential value you can get from them. Commonly-agreed data standards play a crucial role in making this happen.
+
+5.  For Improved Governance & Citizen Engagement Open data has the capacity to let citizens (and others in government) have a better idea of what officials and politicians are doing. This transparency can improve public services and help hold governments to account.
+
+6.  For Inclusive Development and Innovation Finally, open data can help spur inclusive economic development. For example, greater access to data can make farming more efficient, or it can be used to tackle climate change. Finally, we often think of open data as just about improving government performance, but there's a whole universe out there of entrepreneurs making money off the back of open data.
+:::
+
+## FAIR and CARE
+
+::: columns
+::: {.column width="60%"}
+[FAIR](https://www.go-fair.org/fair-principles/) Guiding Principles (2016):
+
+-   Findable,
+-   Accessible,
+-   Interoperable,
+-   and Reusable
+
+[CARE](https://www.gida-global.org/care) Principles for Indigenous Data Governance (2019):
+
+-   Collective benefit,
+-   Authority to control,
+-   Responsibility,
+-   and Ethics
+:::
+
+::: {.column width="40%"}
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png)
+:::
+:::
+
+::: notes
+Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1
+:::
+
+## FAIR and CARE in Practice
+
+![Fig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig2_HTML.png?as=webp)
+
+::: notes
+Image: https://www.nature.com/articles/s41597-021-00892-0/figures/2
+:::

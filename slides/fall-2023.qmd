@@ -1,11 +1,6 @@
 ---
 title: "Fall 2023 Weekly Updates"
 number-sections: false
-scrollable: true
-format:
-  revealjs:
-    error: true
-code-link: true
 ---
 
 # This Week
@@ -19,6 +14,10 @@ library(sf)
 
 us_states <- tigris::states()
 ```
+
+- Scheduling
+- Final project check-in
+- Lecture + discussion for spatial metadata
 
 {{< include week/_week_12_update.qmd >}}
 
