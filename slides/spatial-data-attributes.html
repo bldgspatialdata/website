@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.468">
+  <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="dcterms.date" content="2023-10-04">
+  <meta name="dcterms.date" content="2023-12-13">
   <title>GES 668 - Fall 2023 - Creating and manipulating attributes for spatial data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -221,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -387,7 +386,7 @@
     }
   </style>
 <meta property="og:title" content="GES 668 - Fall 2023 - Creating and manipulating attributes for spatial data">
-<meta property="og:site_name" content="GES 668 - Fall 2023">
+<meta property="og:site-name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -399,7 +398,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-10-04</p>
+  <p class="date">2023-12-13</p>
 </section>
 <section>
 <section id="setup" class="title-slide slide level2 center" data-number="1">
@@ -1162,7 +1161,7 @@ First 10 features:
 <h2><span class="header-section-number">22</span> Measuring geometries with <code>{sf}</code></h2>
 <p>But, remember, <code>dplyr::mutate()</code> is designed to work with vectorized functions so you can do us a measurement function inside <code>mutate()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>maryland <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>maryland <span class="sc">|&gt;</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb36-3"><a href="#cb36-3"></a>    <span class="at">area =</span> <span class="fu">st_area</span>(geometry)</span>
 <span id="cb36-4"><a href="#cb36-4"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1187,7 +1186,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <h2><span class="header-section-number">23</span> Measuring geometries with <code>{sf}</code></h2>
 <p>You can even work with multiple geometries using this same approach:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>us_states <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb38-3"><a href="#cb38-3"></a>    <span class="at">area =</span> <span class="fu">st_area</span>(geometry),</span>
 <span id="cb38-4"><a href="#cb38-4"></a>    <span class="at">distance_to_maryland =</span> <span class="fu">st_distance</span>(geometry, maryland)</span>
@@ -1236,11 +1235,11 @@ First 10 features:
 </div>
 <p>This works to aggregate features by division:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>us_states <span class="sc">|&gt;</span> </span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>us_states <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb40-4"><a href="#cb40-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME)</span>
-<span id="cb40-5"><a href="#cb40-5"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-5"><a href="#cb40-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 10 features and 2 fields
 Geometry type: GEOMETRY
@@ -1266,11 +1265,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>us_states <span class="sc">|&gt;</span> </span>
-<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>us_states <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb42-3"><a href="#cb42-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME)</span>
-<span id="cb42-5"><a href="#cb42-5"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb42-5"><a href="#cb42-5"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb42-6"><a href="#cb42-6"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb42-7"><a href="#cb42-7"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> DIVISION)) <span class="sc">+</span></span>
 <span id="cb42-8"><a href="#cb42-8"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1281,10 +1280,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 
 <p>This doesn’t entirely work (yet):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>us_states <span class="sc">|&gt;</span> </span>
-<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>us_states <span class="sc">|&gt;</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME)<span class="co">#,</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME) <span class="co"># ,</span></span>
 <span id="cb43-5"><a href="#cb43-5"></a>    <span class="co"># .by = DIVISION</span></span>
 <span id="cb43-6"><a href="#cb43-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1313,7 +1312,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 
 <p>But <em>this</em> (explicitly unioning the geometry) does work:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>us_states <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb45-3"><a href="#cb45-3"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME),</span>
 <span id="cb45-4"><a href="#cb45-4"></a>    <span class="at">geometry =</span> <span class="fu">st_union</span>(geometry),</span>
@@ -1342,13 +1341,13 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>us_states <span class="sc">|&gt;</span> </span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>us_states <span class="sc">|&gt;</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb47-4"><a href="#cb47-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME),</span>
 <span id="cb47-5"><a href="#cb47-5"></a>    <span class="at">geometry =</span> <span class="fu">st_union</span>(geometry)</span>
-<span id="cb47-6"><a href="#cb47-6"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb47-6"><a href="#cb47-6"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span></span>
 <span id="cb47-8"><a href="#cb47-8"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb47-9"><a href="#cb47-9"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> DIVISION)) <span class="sc">+</span></span>
 <span id="cb47-10"><a href="#cb47-10"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1382,8 +1381,8 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>us_states <span class="sc">|&gt;</span> </span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>us_states <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb48-4"><a href="#cb48-4"></a>    <span class="at">n_states =</span> <span class="fu">n_distinct</span>(NAME)</span>
 <span id="cb48-5"><a href="#cb48-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1440,6 +1439,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1738,9 +1738,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1750,17 +1751,8 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

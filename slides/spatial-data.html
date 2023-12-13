@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.468">
+  <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="dcterms.date" content="2023-10-04">
-  <title>GES 668 - Fall 2023 - Session 1: Getting started with spatial data using sf and the tidyverse</title>
+  <meta name="dcterms.date" content="2023-12-13">
+  <title>GES 668 - Fall 2023 - Getting started with spatial data using {sf} and the {tidyverse}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -221,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -386,20 +385,25 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Session 1: Getting started with spatial data using sf and the tidyverse">
-<meta property="og:site_name" content="GES 668 - Fall 2023">
+<meta property="og:title" content="GES 668 - Fall 2023 - Getting started with spatial data using {sf} and the {tidyverse}">
+<meta property="og:description" content="Session 1">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/umbc-area-open-street-map.png">
+<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:image:height" content="1295">
+<meta property="og:image:width" content="1980">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Session 1: Getting started with spatial data using sf and the tidyverse</h1>
+  <h1 class="title">Getting started with spatial data using <code>{sf}</code> and the <code>{tidyverse}</code></h1>
+  <p class="subtitle">Session 1</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-10-04</p>
+  <p class="date">2023-12-13</p>
 </section>
 <section id="overview" class="title-slide slide level2 center" data-number="1">
 <h2><span class="header-section-number">1</span> Overview</h2>
@@ -531,7 +535,7 @@
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://www.rayshader.com/reference/figures/smallhobart.gif"></p>
+<p><img data-src="https://www.rayshader.com/reference/figures/smallhobart.gif" alt="Animated loop showing a mountain with lighting from different directions."></p>
 <figcaption>Created with <code>{rayshader}</code></figcaption>
 </figure>
 </div>
@@ -557,8 +561,16 @@
 </ul>
 </div>
 </div><div class="column" style="width:35%;">
-<p><img data-src="https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif" class="quarto-figure-center" alt="sf package logo"></p>
-<p><img data-src="https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png" class="quarto-figure-center" alt="sfnetworks package logo" width="200"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif" alt="sf package logo"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png" alt="sfnetworks package logo" width="200"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -611,10 +623,10 @@
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package=</span><span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `nc' from data source 
-  `/Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library/sf/shape/nc.shp' 
+  `/Users/elipousson/Library/R/arm64/4.3/library/sf/shape/nc.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 100 features and 14 fields
 Geometry type: MULTIPOLYGON
@@ -624,22 +636,34 @@ Geodetic CRS:  NAD27</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 100 × 15
-    AREA PERIMETER CNTY_ CNTY_ID NAME  FIPS  FIPSNO CRESS_ID BIR74 SID74 NWBIR74
-   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
- 1 0.114      1.44  1825    1825 Ashe  37009  37009        5  1091     1      10
- 2 0.061      1.23  1827    1827 Alle… 37005  37005        3   487     0      10
- 3 0.143      1.63  1828    1828 Surry 37171  37171       86  3188     5     208
- 4 0.07       2.97  1831    1831 Curr… 37053  37053       27   508     1     123
- 5 0.153      2.21  1832    1832 Nort… 37131  37131       66  1421     9    1066
- 6 0.097      1.67  1833    1833 Hert… 37091  37091       46  1452     7     954
- 7 0.062      1.55  1834    1834 Camd… 37029  37029       15   286     0     115
- 8 0.091      1.28  1835    1835 Gates 37073  37073       37   420     0     254
- 9 0.118      1.42  1836    1836 Warr… 37185  37185       93   968     4     748
-10 0.124      1.43  1837    1837 Stok… 37169  37169       85  1612     1     160
-# ℹ 90 more rows
-# ℹ 4 more variables: BIR79 &lt;dbl&gt;, SID79 &lt;dbl&gt;, NWBIR79 &lt;dbl&gt;,
-#   geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
+<pre><code>Simple feature collection with 100 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27
+First 10 features:
+    AREA PERIMETER CNTY_ CNTY_ID        NAME  FIPS FIPSNO CRESS_ID BIR74 SID74
+1  0.114     1.442  1825    1825        Ashe 37009  37009        5  1091     1
+2  0.061     1.231  1827    1827   Alleghany 37005  37005        3   487     0
+3  0.143     1.630  1828    1828       Surry 37171  37171       86  3188     5
+4  0.070     2.968  1831    1831   Currituck 37053  37053       27   508     1
+5  0.153     2.206  1832    1832 Northampton 37131  37131       66  1421     9
+6  0.097     1.670  1833    1833    Hertford 37091  37091       46  1452     7
+7  0.062     1.547  1834    1834      Camden 37029  37029       15   286     0
+8  0.091     1.284  1835    1835       Gates 37073  37073       37   420     0
+9  0.118     1.421  1836    1836      Warren 37185  37185       93   968     4
+10 0.124     1.428  1837    1837      Stokes 37169  37169       85  1612     1
+   NWBIR74 BIR79 SID79 NWBIR79                       geometry
+1       10  1364     0      19 MULTIPOLYGON (((-81.47276 3...
+2       10   542     3      12 MULTIPOLYGON (((-81.23989 3...
+3      208  3616     6     260 MULTIPOLYGON (((-80.45634 3...
+4      123   830     2     145 MULTIPOLYGON (((-76.00897 3...
+5     1066  1606     3    1197 MULTIPOLYGON (((-77.21767 3...
+6      954  1838     5    1237 MULTIPOLYGON (((-76.74506 3...
+7      115   350     2     139 MULTIPOLYGON (((-76.00897 3...
+8      254   594     2     371 MULTIPOLYGON (((-76.56251 3...
+9      748  1190     2     844 MULTIPOLYGON (((-78.30876 3...
+10     160  2038     5     176 MULTIPOLYGON (((-80.02567 3...</code></pre>
 </div>
 </div>
 <div class="footer">
@@ -721,23 +745,15 @@ $bbox
 <p><code>sfc</code> objects are composed of <code>sfg</code> objects. Each object hold the feature geometry of an individual simple feature.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">st_geometry</span>(nc)[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>MULTIPOLYGON (((-81.47276 36.23436, -81.54084 36.27251, -81.56198 36.27359, -81.63306 36.34069, -81.74107 36.39178, -81.69828 36.47178, -81.7028 36.51934, -81.67 36.58965, -81.3453 36.57286, -81.34754 36.53791, -81.32478 36.51368, -81.31332 36.4807, -81.26624 36.43721, -81.26284 36.40504, -81.24069 36.37942, -81.23989 36.36536, -81.26424 36.35241, -81.32899 36.3635, -81.36137 36.35316, -81.36569 36.33905, -81.35413 36.29972, -81.36745 36.2787, -81.40639 36.28505, -81.41233 36.26729, -81.43104 36.26072, -81.45289 36.23959, -81.47276 36.23436)))</code></pre>
-</div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>The <code>{sf}</code> package also includes functions that allow you to build feature geometry from scratch using <code>st_point()</code>, <code>st_linestring()</code>, and other functions:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>POINT (0 1)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">st_linestring</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), , <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>LINESTRING (0 1, 0 1)</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">st_linestring</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), , <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -749,13 +765,13 @@ $bbox
 <h2><span class="header-section-number">4</span> Take a look at <code>{sf}</code> and the tidyverse in action</h2>
 <p>Packages are simple to install:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And to load:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -773,7 +789,7 @@ $bbox
 <h3>Import spatial data from a file</h3>
 <p>Using the <code>{sf}</code> package, you can use <code>st_read()</code> to read data into R from a local file, URL, or database:</p>
 <div class="cell" name="st_read">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>md <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"files/md_counties.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>md <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"files/md_counties.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `md_counties' from data source 
   `/Users/elipousson/Projects/03_teaching/website/slides/files/md_counties.gpkg' 
@@ -790,24 +806,83 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>Or, if you drop the geometry, a <code>sf</code> object is just like a spreadsheet:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">st_drop_geometry</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">st_drop_geometry</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 24 × 17
-   STATEFP COUNTYFP COUNTYNS GEOID NAME       NAMELSAD LSAD  CLASSFP MTFCC CSAFP
-   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;
- 1 24      047      01668802 24047 Worcester  Worcest… 06    H1      G4020 480  
- 2 24      001      01713506 24001 Allegany   Allegan… 06    H1      G4020 &lt;NA&gt; 
- 3 24      510      01702381 24510 Baltimore  Baltimo… 25    C7      G4020 548  
- 4 24      015      00596115 24015 Cecil      Cecil C… 06    H1      G4020 428  
- 5 24      005      01695314 24005 Baltimore  Baltimo… 06    H1      G4020 548  
- 6 24      013      01696228 24013 Carroll    Carroll… 06    H1      G4020 548  
- 7 24      009      01676636 24009 Calvert    Calvert… 06    H1      G4020 548  
- 8 24      019      00596495 24019 Dorchester Dorches… 06    H1      G4020 480  
- 9 24      003      01710958 24003 Anne Arun… Anne Ar… 06    H1      G4020 548  
-10 24      021      01711211 24021 Frederick  Frederi… 06    H1      G4020 548  
-# ℹ 14 more rows
-# ℹ 7 more variables: CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;,
-#   ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;</code></pre>
+<pre><code>   STATEFP COUNTYFP COUNTYNS GEOID            NAME               NAMELSAD LSAD
+1       24      047 01668802 24047       Worcester       Worcester County   06
+2       24      001 01713506 24001        Allegany        Allegany County   06
+3       24      510 01702381 24510       Baltimore         Baltimore city   25
+4       24      015 00596115 24015           Cecil           Cecil County   06
+5       24      005 01695314 24005       Baltimore       Baltimore County   06
+6       24      013 01696228 24013         Carroll         Carroll County   06
+7       24      009 01676636 24009         Calvert         Calvert County   06
+8       24      019 00596495 24019      Dorchester      Dorchester County   06
+9       24      003 01710958 24003    Anne Arundel    Anne Arundel County   06
+10      24      021 01711211 24021       Frederick       Frederick County   06
+11      24      033 01714670 24033 Prince George's Prince George's County   06
+12      24      027 01709077 24027          Howard          Howard County   06
+13      24      023 01711058 24023         Garrett         Garrett County   06
+14      24      031 01712500 24031      Montgomery      Montgomery County   06
+15      24      035 00596089 24035    Queen Anne's    Queen Anne's County   06
+16      24      041 00592947 24041          Talbot          Talbot County   06
+17      24      045 01668606 24045        Wicomico        Wicomico County   06
+18      24      039 00596907 24039        Somerset        Somerset County   06
+19      24      025 01698178 24025         Harford         Harford County   06
+20      24      037 01697853 24037      St. Mary's      St. Mary's County   06
+21      24      029 00593907 24029            Kent            Kent County   06
+22      24      017 01676992 24017         Charles         Charles County   06
+23      24      043 01714220 24043      Washington      Washington County   06
+24      24      011 00595737 24011        Caroline        Caroline County   06
+   CLASSFP MTFCC CSAFP CBSAFP METDIVFP FUNCSTAT      ALAND     AWATER
+1       H1 G4020   480  41540     &lt;NA&gt;        A 1213156434  586531107
+2       H1 G4020  &lt;NA&gt;  19060     &lt;NA&gt;        A 1093489884   14710932
+3       C7 G4020   548  12580     &lt;NA&gt;        F  209649327   28758743
+4       H1 G4020   428  37980    48864        A  896912533  185281256
+5       H1 G4020   548  12580     &lt;NA&gt;        A 1549740652  215957832
+6       H1 G4020   548  12580     &lt;NA&gt;        A 1159355859   13112464
+7       H1 G4020   548  47900    47894        A  552158542  341580668
+8       H1 G4020   480  15700     &lt;NA&gt;        A 1400573746 1145353068
+9       H1 G4020   548  12580     &lt;NA&gt;        A 1074353889  448032843
+10      H1 G4020   548  47900    23224        A 1710922224   17674121
+11      H1 G4020   548  47900    47894        A 1250057213   41922695
+12      H1 G4020   548  12580     &lt;NA&gt;        A  649956423    6336170
+13      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A 1681102437   22498420
+14      H1 G4020   548  47900    23224        A 1277193339   35686502
+15      H1 G4020   548  12580     &lt;NA&gt;        A  962673214  360020725
+16      H1 G4020   548  20660     &lt;NA&gt;        A  695561637  539363457
+17      H1 G4020   480  41540     &lt;NA&gt;        A  969767208   66764613
+18      H1 G4020   480  41540     &lt;NA&gt;        A  828145301  752652883
+19      H1 G4020   548  12580     &lt;NA&gt;        A 1132152044  231885675
+20      H1 G4020   548  15680     &lt;NA&gt;        A  928809940 1050592561
+21      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A  717497117  353321619
+22      H1 G4020   548  47900    47894        A 1185757843  479438830
+23      H1 G4020   548  25180     &lt;NA&gt;        A 1185655248   24820607
+24      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A  827350254   16777066
+      INTPTLAT     INTPTLON
+1  +38.2221332 -075.3099315
+2  +39.6123134 -078.7031037
+3  +39.3000324 -076.6104761
+4  +39.5623537 -075.9415852
+5  +39.4431666 -076.6165693
+6  +39.5633280 -077.0153297
+7  +38.5227191 -076.5297621
+8  +38.4291957 -076.0474333
+9  +38.9916174 -076.5608941
+10 +39.4701773 -077.3976358
+11 +38.8292778 -076.8481880
+12 +39.2522639 -076.9244057
+13 +39.5472985 -079.2746192
+14 +39.1373815 -077.2030633
+15 +39.0406929 -076.0824053
+16 +38.7483486 -076.1784757
+17 +38.3673699 -075.6320828
+18 +38.0744501 -075.8533228
+19 +39.5374292 -076.2997894
+20 +38.2230765 -076.5344870
+21 +39.2412793 -076.1259867
+22 +38.4728532 -077.0154272
+23 +39.6036207 -077.8146709
+24 +38.8715306 -075.8316620</code></pre>
 </div>
 </div>
 </section>
@@ -815,10 +890,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>You can plot data with R’s built-in <code>plot()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">plot</span>(md[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">plot</span>(md[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="spatial-data_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"><div class="footer">
+<img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><div class="footer">
 <p>Square brackets (<code>[]</code>) are an easy way to subset rows and columns.</p>
 </div>
 </section>
@@ -826,7 +901,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>You can summarize data using the <code>summary()</code> function:</p>
 <div class="cell" name="summary">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">summary</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">summary</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   STATEFP            COUNTYFP           COUNTYNS            GEOID          
  Length:24          Length:24          Length:24          Length:24         
@@ -913,23 +988,23 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>For example, we can use <code>geom_sf()</code> from <code>{ggplot2}</code> to make a simple map:</p>
 <div class="cell" name="geom_sf">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>md_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb29-4"><a href="#cb29-4"></a></span>
-<span id="cb29-5"><a href="#cb29-5"></a>md_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>md_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-4"><a href="#cb25-4"></a></span>
+<span id="cb25-5"><a href="#cb25-5"></a>md_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide" name="geom_sf">
 <div class="cell-output-display">
-<p><img data-src="spatial-data_files/figure-html/unnamed-chunk-13-1.png" width="672"></p>
+<p><img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </div>
 </div></section><section class="slide level4">
 
 <p>Take a peek at the values of the data with the <code>glimpse()</code> function from <code>{dplyr}</code>:</p>
 <div class="cell" name="glimpse">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">glimpse</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">glimpse</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 24
 Columns: 18
@@ -992,81 +1067,104 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 <section id="using-sf-for-spatial-transformations-1" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: st_centroid assumes attributes are constant over geometries</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>balt_center</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a></span>
+<span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a>balt_center</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 18
-  STATEFP COUNTYFP COUNTYNS GEOID NAME      NAMELSAD   LSAD  CLASSFP MTFCC CSAFP
-  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;
-1 24      510      01702381 24510 Baltimore Baltimore… 25    C7      G4020 548  
-# ℹ 8 more variables: CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;,
-#   ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;, geom &lt;POINT [m]&gt;</code></pre>
+<pre><code>Simple feature collection with 1 feature and 17 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -8528259 ymin: 4764882 xmax: -8528259 ymax: 4764882
+Projected CRS: WGS 84 / Pseudo-Mercator
+  STATEFP COUNTYFP COUNTYNS GEOID      NAME       NAMELSAD LSAD CLASSFP MTFCC
+3      24      510 01702381 24510 Baltimore Baltimore city   25      C7 G4020
+  CSAFP CBSAFP METDIVFP FUNCSTAT     ALAND   AWATER    INTPTLAT     INTPTLON
+3   548  12580     &lt;NA&gt;        F 209649327 28758743 +39.3000324 -076.6104761
+                      geom
+3 POINT (-8528259 4764882)</code></pre>
 </div>
 </div>
 </section>
 <section id="using-sf-for-spatial-transformations-2" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: st_centroid assumes attributes are constant over geometries</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
-<span id="cb38-2"><a href="#cb38-2"></a></span>
-<span id="cb38-3"><a href="#cb38-3"></a>balt_area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a href="#cb30-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb30-2" class="hljs-ln-code"><a href="#cb30-2"></a></span>
+<span id="cb30-3" class="hljs-ln-code"><a href="#cb30-3"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
+<span id="cb30-4" class="hljs-ln-code"><a href="#cb30-4"></a></span>
+<span id="cb30-5" class="hljs-ln-code"><a href="#cb30-5"></a>balt_area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 18
-  STATEFP COUNTYFP COUNTYNS GEOID NAME      NAMELSAD   LSAD  CLASSFP MTFCC CSAFP
-  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;
-1 24      510      01702381 24510 Baltimore Baltimore… 25    C7      G4020 548  
-# ℹ 8 more variables: CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;,
-#   ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;,
-#   geom &lt;POLYGON [m]&gt;</code></pre>
+<pre><code>Simple feature collection with 1 feature and 17 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -8568493 ymin: 4724649 xmax: -8488026 ymax: 4805116
+Projected CRS: WGS 84 / Pseudo-Mercator
+  STATEFP COUNTYFP COUNTYNS GEOID      NAME       NAMELSAD LSAD CLASSFP MTFCC
+3      24      510 01702381 24510 Baltimore Baltimore city   25      C7 G4020
+  CSAFP CBSAFP METDIVFP FUNCSTAT     ALAND   AWATER    INTPTLAT     INTPTLON
+3   548  12580     &lt;NA&gt;        F 209649327 28758743 +39.3000324 -076.6104761
+                            geom
+3 POLYGON ((-8488026 4764882,...</code></pre>
 </div>
 </div>
 </section>
 <section id="using-sf-for-spatial-transformations-3" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: st_centroid assumes attributes are constant over geometries</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
-<span id="cb42-2"><a href="#cb42-2"></a></span>
-<span id="cb42-3"><a href="#cb42-3"></a>balt_area_counties <span class="ot">&lt;-</span> <span class="fu">st_filter</span>(md, balt_area, <span class="at">.predicate =</span> st_intersects)</span>
-<span id="cb42-4"><a href="#cb42-4"></a></span>
-<span id="cb42-5"><a href="#cb42-5"></a>balt_area_counties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb32-2" class="hljs-ln-code"><a href="#cb32-2"></a></span>
+<span id="cb32-3" class="hljs-ln-code"><a href="#cb32-3"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
+<span id="cb32-4" class="hljs-ln-code"><a href="#cb32-4"></a></span>
+<span id="cb32-5" class="hljs-ln-code"><a href="#cb32-5"></a>balt_area_counties <span class="ot">&lt;-</span> <span class="fu">st_filter</span>(md, balt_area, <span class="at">.predicate =</span> st_intersects)</span>
+<span id="cb32-6" class="hljs-ln-code"><a href="#cb32-6"></a></span>
+<span id="cb32-7" class="hljs-ln-code"><a href="#cb32-7"></a>balt_area_counties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 9 × 18
-  STATEFP COUNTYFP COUNTYNS GEOID NAME        NAMELSAD LSAD  CLASSFP MTFCC CSAFP
-  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;
-1 24      510      01702381 24510 Baltimore   Baltimo… 25    C7      G4020 548  
-2 24      005      01695314 24005 Baltimore   Baltimo… 06    H1      G4020 548  
-3 24      013      01696228 24013 Carroll     Carroll… 06    H1      G4020 548  
-4 24      003      01710958 24003 Anne Arund… Anne Ar… 06    H1      G4020 548  
-5 24      033      01714670 24033 Prince Geo… Prince … 06    H1      G4020 548  
-6 24      027      01709077 24027 Howard      Howard … 06    H1      G4020 548  
-7 24      031      01712500 24031 Montgomery  Montgom… 06    H1      G4020 548  
-8 24      025      01698178 24025 Harford     Harford… 06    H1      G4020 548  
-9 24      029      00593907 24029 Kent        Kent Co… 06    H1      G4020 &lt;NA&gt; 
-# ℹ 8 more variables: CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;,
-#   ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;,
-#   geom &lt;MULTIPOLYGON [m]&gt;</code></pre>
+<pre><code>Simple feature collection with 9 features and 17 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -8630342 ymin: 4655334 xmax: -8433120 ymax: 4825554
+Projected CRS: WGS 84 / Pseudo-Mercator
+  STATEFP COUNTYFP COUNTYNS GEOID            NAME               NAMELSAD LSAD
+1      24      510 01702381 24510       Baltimore         Baltimore city   25
+2      24      005 01695314 24005       Baltimore       Baltimore County   06
+3      24      013 01696228 24013         Carroll         Carroll County   06
+4      24      003 01710958 24003    Anne Arundel    Anne Arundel County   06
+5      24      033 01714670 24033 Prince George's Prince George's County   06
+6      24      027 01709077 24027          Howard          Howard County   06
+7      24      031 01712500 24031      Montgomery      Montgomery County   06
+8      24      025 01698178 24025         Harford         Harford County   06
+9      24      029 00593907 24029            Kent            Kent County   06
+  CLASSFP MTFCC CSAFP CBSAFP METDIVFP FUNCSTAT      ALAND    AWATER    INTPTLAT
+1      C7 G4020   548  12580     &lt;NA&gt;        F  209649327  28758743 +39.3000324
+2      H1 G4020   548  12580     &lt;NA&gt;        A 1549740652 215957832 +39.4431666
+3      H1 G4020   548  12580     &lt;NA&gt;        A 1159355859  13112464 +39.5633280
+4      H1 G4020   548  12580     &lt;NA&gt;        A 1074353889 448032843 +38.9916174
+5      H1 G4020   548  47900    47894        A 1250057213  41922695 +38.8292778
+6      H1 G4020   548  12580     &lt;NA&gt;        A  649956423   6336170 +39.2522639
+7      H1 G4020   548  47900    23224        A 1277193339  35686502 +39.1373815
+8      H1 G4020   548  12580     &lt;NA&gt;        A 1132152044 231885675 +39.5374292
+9      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A  717497117 353321619 +39.2412793
+      INTPTLON                           geom
+1 -076.6104761 MULTIPOLYGON (((-8539486 47...
+2 -076.6165693 MULTIPOLYGON (((-8537944 48...
+3 -077.0153297 MULTIPOLYGON (((-8566905 48...
+4 -076.5608941 MULTIPOLYGON (((-8524879 47...
+5 -076.8481880 MULTIPOLYGON (((-8564237 47...
+6 -076.9244057 MULTIPOLYGON (((-8545393 47...
+7 -077.2030633 MULTIPOLYGON (((-8577825 47...
+8 -076.2997894 MULTIPOLYGON (((-8483226 47...
+9 -076.1259867 MULTIPOLYGON (((-8479204 47...</code></pre>
 </div>
 </div>
 </section>
 <section id="using-sf-for-spatial-transformations-4" class="slide level4">
 <h4>Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area_counties, <span class="at">fill =</span> <span class="st">"darkorange"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area, <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area_counties, <span class="at">fill =</span> <span class="st">"darkorange"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area, <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <aside class="notes">
@@ -1085,7 +1183,7 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 </section>
 <section id="using-sf-for-spatial-transformations-4-output" class="slide level4 output-location-slide"><h4>Using <code>{sf}</code> for spatial transformations</h4><div class="cell output-location-slide">
 <div class="cell-output-display">
-<p><img data-src="spatial-data_files/figure-html/unnamed-chunk-18-1.png" width="672"></p>
+<p><img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </div>
 </div></section></section>
 <section id="related-resources" class="title-slide slide level2 center" data-number="5">
@@ -1126,6 +1224,7 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1310,6 +1409,44 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -1386,9 +1523,10 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1398,17 +1536,8 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

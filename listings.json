@@ -1,5 +1,25 @@
 [
   {
+    "listing": "/slides.html",
+    "items": [
+      "/slides/welcome.html",
+      "/slides/spatial-data.html",
+      "/slides/data-visualization.html",
+      "/slides/tidy-data.html",
+      "/slides/data-transformation.html",
+      "/slides/spatial-data-attributes.html",
+      "/slides/feature-geometry.html",
+      "/slides/functions.html",
+      "/slides/exploratory-analysis.html",
+      "/slides/open-street-map.html",
+      "/slides/metadata.html",
+      "/slides/spatial-data-io.html",
+      "/slides/coding-basics.html",
+      "/slides/effective-visualization.html",
+      "/slides/fall-2023.html"
+    ]
+  },
+  {
     "listing": "/course-schedule.html",
     "items": [
       "/weeks/week_01.html",

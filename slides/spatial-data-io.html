@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.468">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="dcterms.date" content="2023-11-15">
   <title>GES 668 - Fall 2023 - Reading and writing spatial data</title>
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -156,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -322,7 +386,11 @@
     }
   </style>
 <meta property="og:title" content="GES 668 - Fall 2023 - Reading and writing spatial data">
-<meta property="og:site_name" content="GES 668 - Fall 2023">
+<meta property="og:description" content="Session 12">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/2016-11-29_openeo_gdal-diagram.png">
+<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:image:height" content="648">
+<meta property="og:image:width" content="1226">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -330,6 +398,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Reading and writing spatial data</h1>
+  <p class="subtitle">Session 12</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -409,8 +478,21 @@
       }</style></aside>
 </section>
 
-<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center" data-number="7">
-<h2><span class="header-section-number">7</span> Read spatial data files with R</h2>
+<section id="common-spatial-file-formats-1" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> Common spatial file formats</h2>
+<p>These file formats vary in:</p>
+<ul>
+<li>Types of geometry that they support</li>
+<li>Constraints or limits (e.g.&nbsp;shapefiles limit the lenghth of column names, GeoJSON can only use one coordinate reference system)</li>
+<li>File size</li>
+<li>Speed of input or output</li>
+<li>Compatibility with different tools or systems</li>
+<li>And more!</li>
+</ul>
+</section>
+
+<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> Read spatial data files with R</h2>
 <p>The <code>dsn</code> or data source name for <code>sf::read_sf()</code> can include:</p>
 <ul>
 <li>a file name</li>
@@ -421,13 +503,13 @@
 </ul>
 </section>
 
-<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center" data-number="8">
-<h2><span class="header-section-number">8</span> Read spatial data files with R</h2>
+<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center" data-number="9">
+<h2><span class="header-section-number">9</span> Read spatial data files with R</h2>
 <p>You can use the <code>query</code> parameter of <code>sf::read_sf()</code> to use a SQL query to select records from a file (or select a specific geographical extent).</p>
 </section>
 
-<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center" data-number="9">
-<h2><span class="header-section-number">9</span> Many file formats <em>can</em> include spatial data</h2>
+<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center" data-number="10">
+<h2><span class="header-section-number">10</span> Many file formats <em>can</em> include spatial data</h2>
 <ul>
 <li>Excel files (<code>xlsx</code> or <code>xls</code>)<br>
 </li>
@@ -436,8 +518,8 @@
 </ul>
 </section>
 
-<section id="reading-data-into-r" class="title-slide slide level2 center" data-number="10">
-<h2><span class="header-section-number">10</span> Reading data into R</h2>
+<section id="reading-data-into-r" class="title-slide slide level2 center" data-number="11">
+<h2><span class="header-section-number">11</span> Reading data into R</h2>
 <ul>
 <li>Read data using <code>{sf}</code></li>
 <li>Read data using a package that returns a <code>sf</code> object</li>
@@ -445,8 +527,8 @@
 </ul>
 </section>
 
-<section id="writing-data-from-r" class="title-slide slide level2 center" data-number="11">
-<h2><span class="header-section-number">11</span> Writing data from R</h2>
+<section id="writing-data-from-r" class="title-slide slide level2 center" data-number="12">
+<h2><span class="header-section-number">12</span> Writing data from R</h2>
 <ul>
 <li>Write data to a spatial file using <code>{sf}</code></li>
 <li>Write data a a non-spatial file using a different package</li>
@@ -454,16 +536,521 @@
 <p>When you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text.</p>
 </section>
 
+<section id="read-data-using-sf" class="title-slide slide level2 center" data-number="13">
+<h2><span class="header-section-number">13</span> Read data using <code>{sf}</code></h2>
+<p>First load <code>{sf}</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="read-data-using-sf-1" class="title-slide slide level2 center" data-number="14">
+<h2><span class="header-section-number">14</span> Read data using <code>{sf}</code></h2>
+
+<img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section>
+
+<section id="read-data-using-sf-2" class="title-slide slide level2 center" data-number="15">
+<h2><span class="header-section-number">15</span> Read data using <code>{sf}</code></h2>
+
+<img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"></section>
+
+<section id="read-data-using-sf-3" class="title-slide slide level2 center" data-number="16">
+<h2><span class="header-section-number">16</span> Read data using <code>{sf}</code></h2>
+<p><code>{sf}</code> can use any available drivers to read data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>drivers <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_drivers</span>()</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>drivers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         name
+ESRIC                   ESRIC
+PCIDSK                 PCIDSK
+netCDF                 netCDF
+PDS4                     PDS4
+VICAR                   VICAR
+JP2OpenJPEG       JP2OpenJPEG
+PDF                       PDF
+MBTiles               MBTiles
+BAG                       BAG
+EEDA                     EEDA
+OGCAPI                 OGCAPI
+ESRI Shapefile ESRI Shapefile
+MapInfo File     MapInfo File
+UK .NTF               UK .NTF
+LVBAG                   LVBAG
+OGR_SDTS             OGR_SDTS
+S57                       S57
+DGN                       DGN
+OGR_VRT               OGR_VRT
+Memory                 Memory
+CSV                       CSV
+GML                       GML
+GPX                       GPX
+KML                       KML
+GeoJSON               GeoJSON
+GeoJSONSeq         GeoJSONSeq
+ESRIJSON             ESRIJSON
+TopoJSON             TopoJSON
+OGR_GMT               OGR_GMT
+GPKG                     GPKG
+SQLite                 SQLite
+ODBC                     ODBC
+WAsP                     WAsP
+PGeo                     PGeo
+MSSQLSpatial     MSSQLSpatial
+PostgreSQL         PostgreSQL
+OpenFileGDB       OpenFileGDB
+DXF                       DXF
+CAD                       CAD
+FlatGeobuf         FlatGeobuf
+Geoconcept         Geoconcept
+GeoRSS                 GeoRSS
+VFK                       VFK
+PGDUMP                 PGDUMP
+OSM                       OSM
+GPSBabel             GPSBabel
+OGR_PDS               OGR_PDS
+WFS                       WFS
+OAPIF                   OAPIF
+EDIGEO                 EDIGEO
+SVG                       SVG
+Idrisi                 Idrisi
+XLS                       XLS
+ODS                       ODS
+XLSX                     XLSX
+Elasticsearch   Elasticsearch
+Carto                   Carto
+AmigoCloud         AmigoCloud
+SXF                       SXF
+Selafin               Selafin
+JML                       JML
+PLSCENES             PLSCENES
+CSW                       CSW
+VDV                       VDV
+MVT                       MVT
+NGW                       NGW
+MapML                   MapML
+TIGER                   TIGER
+AVCBin                 AVCBin
+AVCE00                 AVCE00
+HTTP                     HTTP
+                                                          long_name write  copy
+ESRIC                                            Esri Compact Cache FALSE FALSE
+PCIDSK                                         PCIDSK Database File  TRUE FALSE
+netCDF                                   Network Common Data Format  TRUE  TRUE
+PDS4                                   NASA Planetary Data System 4  TRUE  TRUE
+VICAR                                               MIPL VICAR file  TRUE  TRUE
+JP2OpenJPEG              JPEG-2000 driver based on OpenJPEG library FALSE  TRUE
+PDF                                                  Geospatial PDF  TRUE  TRUE
+MBTiles                                                     MBTiles  TRUE  TRUE
+BAG                                      Bathymetry Attributed Grid  TRUE  TRUE
+EEDA                                          Earth Engine Data API FALSE FALSE
+OGCAPI                                                       OGCAPI FALSE FALSE
+ESRI Shapefile                                       ESRI Shapefile  TRUE FALSE
+MapInfo File                                           MapInfo File  TRUE FALSE
+UK .NTF                                                     UK .NTF FALSE FALSE
+LVBAG                                   Kadaster LV BAG Extract 2.0 FALSE FALSE
+OGR_SDTS                                                       SDTS FALSE FALSE
+S57                                                  IHO S-57 (ENC)  TRUE FALSE
+DGN                                                Microstation DGN  TRUE FALSE
+OGR_VRT                                    VRT - Virtual Datasource FALSE FALSE
+Memory                                                       Memory  TRUE FALSE
+CSV                                    Comma Separated Value (.csv)  TRUE FALSE
+GML                                 Geography Markup Language (GML)  TRUE FALSE
+GPX                                                             GPX  TRUE FALSE
+KML                                   Keyhole Markup Language (KML)  TRUE FALSE
+GeoJSON                                                     GeoJSON  TRUE FALSE
+GeoJSONSeq                                         GeoJSON Sequence  TRUE FALSE
+ESRIJSON                                                   ESRIJSON FALSE FALSE
+TopoJSON                                                   TopoJSON FALSE FALSE
+OGR_GMT                                    GMT ASCII Vectors (.gmt)  TRUE FALSE
+GPKG                                                     GeoPackage  TRUE  TRUE
+SQLite                                          SQLite / Spatialite  TRUE FALSE
+ODBC                                                                FALSE FALSE
+WAsP                                               WAsP .map format  TRUE FALSE
+PGeo                                      ESRI Personal GeoDatabase FALSE FALSE
+MSSQLSpatial                  Microsoft SQL Server Spatial Database  TRUE FALSE
+PostgreSQL                                       PostgreSQL/PostGIS  TRUE FALSE
+OpenFileGDB                                            ESRI FileGDB FALSE FALSE
+DXF                                                     AutoCAD DXF  TRUE FALSE
+CAD                                                  AutoCAD Driver FALSE FALSE
+FlatGeobuf                                               FlatGeobuf  TRUE FALSE
+Geoconcept                                               Geoconcept  TRUE FALSE
+GeoRSS                                                       GeoRSS  TRUE FALSE
+VFK                            Czech Cadastral Exchange Data Format FALSE FALSE
+PGDUMP                                          PostgreSQL SQL dump  TRUE FALSE
+OSM                                       OpenStreetMap XML and PBF FALSE FALSE
+GPSBabel                                                   GPSBabel  TRUE FALSE
+OGR_PDS                                Planetary Data Systems TABLE FALSE FALSE
+WFS                                   OGC WFS (Web Feature Service) FALSE FALSE
+OAPIF                                            OGC API - Features FALSE FALSE
+EDIGEO                                French EDIGEO exchange format FALSE FALSE
+SVG                                        Scalable Vector Graphics FALSE FALSE
+Idrisi                                         Idrisi Vector (.vct) FALSE FALSE
+XLS                                                 MS Excel format FALSE FALSE
+ODS            Open Document/ LibreOffice / OpenOffice Spreadsheet   TRUE FALSE
+XLSX                                 MS Office Open XML spreadsheet  TRUE FALSE
+Elasticsearch                                        Elastic Search  TRUE FALSE
+Carto                                                         Carto  TRUE FALSE
+AmigoCloud                                               AmigoCloud  TRUE FALSE
+SXF                                     Storage and eXchange Format FALSE FALSE
+Selafin                                                     Selafin  TRUE FALSE
+JML                                                    OpenJUMP JML  TRUE FALSE
+PLSCENES                                     Planet Labs Scenes API FALSE FALSE
+CSW                          OGC CSW (Catalog  Service for the Web) FALSE FALSE
+VDV                             VDV-451/VDV-452/INTREST Data Format  TRUE FALSE
+MVT                                             Mapbox Vector Tiles  TRUE FALSE
+NGW                                                     NextGIS Web  TRUE  TRUE
+MapML                                                         MapML  TRUE FALSE
+TIGER                                        U.S. Census TIGER/Line FALSE FALSE
+AVCBin                                     Arc/Info Binary Coverage FALSE FALSE
+AVCE00                                Arc/Info E00 (ASCII) Coverage FALSE FALSE
+HTTP                                          HTTP Fetching Wrapper FALSE FALSE
+               is_raster is_vector   vsi
+ESRIC               TRUE      TRUE  TRUE
+PCIDSK              TRUE      TRUE  TRUE
+netCDF              TRUE      TRUE FALSE
+PDS4                TRUE      TRUE  TRUE
+VICAR               TRUE      TRUE  TRUE
+JP2OpenJPEG         TRUE      TRUE  TRUE
+PDF                 TRUE      TRUE FALSE
+MBTiles             TRUE      TRUE  TRUE
+BAG                 TRUE      TRUE  TRUE
+EEDA               FALSE      TRUE FALSE
+OGCAPI              TRUE      TRUE  TRUE
+ESRI Shapefile     FALSE      TRUE  TRUE
+MapInfo File       FALSE      TRUE  TRUE
+UK .NTF            FALSE      TRUE  TRUE
+LVBAG              FALSE      TRUE  TRUE
+OGR_SDTS           FALSE      TRUE  TRUE
+S57                FALSE      TRUE  TRUE
+DGN                FALSE      TRUE  TRUE
+OGR_VRT            FALSE      TRUE  TRUE
+Memory             FALSE      TRUE FALSE
+CSV                FALSE      TRUE  TRUE
+GML                FALSE      TRUE  TRUE
+GPX                FALSE      TRUE  TRUE
+KML                FALSE      TRUE  TRUE
+GeoJSON            FALSE      TRUE  TRUE
+GeoJSONSeq         FALSE      TRUE  TRUE
+ESRIJSON           FALSE      TRUE  TRUE
+TopoJSON           FALSE      TRUE  TRUE
+OGR_GMT            FALSE      TRUE  TRUE
+GPKG                TRUE      TRUE  TRUE
+SQLite             FALSE      TRUE  TRUE
+ODBC               FALSE      TRUE FALSE
+WAsP               FALSE      TRUE  TRUE
+PGeo               FALSE      TRUE FALSE
+MSSQLSpatial       FALSE      TRUE FALSE
+PostgreSQL         FALSE      TRUE FALSE
+OpenFileGDB        FALSE      TRUE  TRUE
+DXF                FALSE      TRUE  TRUE
+CAD                 TRUE      TRUE  TRUE
+FlatGeobuf         FALSE      TRUE  TRUE
+Geoconcept         FALSE      TRUE  TRUE
+GeoRSS             FALSE      TRUE  TRUE
+VFK                FALSE      TRUE FALSE
+PGDUMP             FALSE      TRUE  TRUE
+OSM                FALSE      TRUE  TRUE
+GPSBabel           FALSE      TRUE FALSE
+OGR_PDS            FALSE      TRUE  TRUE
+WFS                FALSE      TRUE  TRUE
+OAPIF              FALSE      TRUE FALSE
+EDIGEO             FALSE      TRUE  TRUE
+SVG                FALSE      TRUE  TRUE
+Idrisi             FALSE      TRUE  TRUE
+XLS                FALSE      TRUE FALSE
+ODS                FALSE      TRUE  TRUE
+XLSX               FALSE      TRUE  TRUE
+Elasticsearch      FALSE      TRUE FALSE
+Carto              FALSE      TRUE FALSE
+AmigoCloud         FALSE      TRUE FALSE
+SXF                FALSE      TRUE  TRUE
+Selafin            FALSE      TRUE  TRUE
+JML                FALSE      TRUE  TRUE
+PLSCENES            TRUE      TRUE FALSE
+CSW                FALSE      TRUE FALSE
+VDV                FALSE      TRUE  TRUE
+MVT                FALSE      TRUE  TRUE
+NGW                 TRUE      TRUE FALSE
+MapML              FALSE      TRUE  TRUE
+TIGER              FALSE      TRUE  TRUE
+AVCBin             FALSE      TRUE  TRUE
+AVCE00             FALSE      TRUE  TRUE
+HTTP                TRUE      TRUE FALSE</code></pre>
+</div>
+</div>
+</section>
+
 <section>
-<section id="storing-and-creating-data" class="title-slide slide level2 center" data-number="12">
-<h2><span class="header-section-number">12</span> Storing and creating data</h2>
-<ul>
-<li>Tabular: CSV, Microsoft Excel, delimited text</li>
-<li>Nested: JSON</li>
-</ul>
+<section id="read-data-from-a-url-using-sf" class="title-slide slide level2 center" data-number="17">
+<h2><span class="header-section-number">17</span> Read data from a URL using <code>{sf}</code></h2>
+<p><code>read_sf()</code> works well with a direct link to a spatial data file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># GeoJSON (geojson)</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 11 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -124.4096 ymin: 32.53416 xmax: -114.1315 ymax: 42.00952
+Geodetic CRS:  WGS 84
+# A tibble: 1 × 12
+  name       abbreviation capital    city   population   area waterarea landarea
+  &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;     &lt;int&gt;    &lt;int&gt;
+1 California CA           Sacramento Los A…   38332521 423968     20502   403466
+# ℹ 4 more variables: houseseats &lt;int&gt;, statehood &lt;date&gt;, group &lt;chr&gt;,
+#   geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
+</div>
+</div>
 </section>
 <section class="slide level4">
 
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Keyhole Markup Language (kml)</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 161 features and 2 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -167.15 ymin: 0 xmax: 0 ymax: 69.3333
+Geodetic CRS:  WGS 84
+# A tibble: 161 × 3
+   Name                                    Description             geometry
+   &lt;chr&gt;                                   &lt;chr&gt;                &lt;POINT [°]&gt;
+ 1 "Patterson's bluegrass, Patterson blue… "&lt;table wi… (-113.9553 43.39448)
+ 2 "Patterson's bluegrass, Patterson blue… "&lt;table wi…  (-114.1191 46.0793)
+ 3 "Patterson's bluegrass, Patterson blue… "&lt;table wi…  (-114.1191 46.0793)
+ 4 "Patterson's bluegrass, Patterson blue… "&lt;table wi…  (-114.1191 46.0793)
+ 5 "Patterson's bluegrass, Patterson blue… "&lt;table wi… (-109.5936 44.49239)
+ 6 "Patterson's bluegrass, Patterson blue… "&lt;table wi…  (-114.1191 46.0793)
+ 7 "Patterson's bluegrass, Patterson blue… "&lt;table wi…   (-109.817 40.7667)
+ 8 "Patterson's bluegrass, Patterson blue… "&lt;table wi…            (-105 39)
+ 9 "Patterson's bluegrass, Patterson blue… "&lt;table wi… (-106.1376 39.62102)
+10 "Patterson's bluegrass, Patterson blue… "&lt;table wi…   (-111.183 40.6167)
+# ℹ 151 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level4">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># GeoPackage (gpkg)</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/gpkg/nc.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 100 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27
+# A tibble: 100 × 15
+    AREA PERIMETER CNTY_ CNTY_ID NAME  FIPS  FIPSNO CRESS_ID BIR74 SID74 NWBIR74
+   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+ 1 0.114      1.44  1825    1825 Ashe  37009  37009        5  1091     1      10
+ 2 0.061      1.23  1827    1827 Alle… 37005  37005        3   487     0      10
+ 3 0.143      1.63  1828    1828 Surry 37171  37171       86  3188     5     208
+ 4 0.07       2.97  1831    1831 Curr… 37053  37053       27   508     1     123
+ 5 0.153      2.21  1832    1832 Nort… 37131  37131       66  1421     9    1066
+ 6 0.097      1.67  1833    1833 Hert… 37091  37091       46  1452     7     954
+ 7 0.062      1.55  1834    1834 Camd… 37029  37029       15   286     0     115
+ 8 0.091      1.28  1835    1835 Gates 37073  37073       37   420     0     254
+ 9 0.118      1.42  1836    1836 Warr… 37185  37185       93   968     4     748
+10 0.124      1.43  1837    1837 Stok… 37169  37169       85  1612     1     160
+# ℹ 90 more rows
+# ℹ 4 more variables: BIR79 &lt;dbl&gt;, SID79 &lt;dbl&gt;, NWBIR79 &lt;dbl&gt;,
+#   geom &lt;MULTIPOLYGON [°]&gt;</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level4">
+
+<p>Even non-spatial data works if the data includes a well-known text column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Comma-separated values (csv)</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/csv/pt.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 3 features and 4 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 0 ymin: 0 xmax: 44 ymax: 55
+CRS:           NA
+# A tibble: 3 × 5
+  Id    Int64        Int32 WKT          geometry
+  &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;         &lt;POINT&gt;
+1 1     "0"          "33"  POINT(0 1)      (0 1)
+2 2     "4294967297" "44"  POINT(44 55)  (44 55)
+3 3     ""           ""    POINT(0 0)      (0 0)</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level4">
+
+<p>If the non-spatial data does not include a well-known text column, <code>read_sf()</code> still returns a data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enrollment_By_Grade_2023.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9,766 × 8
+   Year  LEA   `LEA Name` School `School Name`         Grade    `Enrolled Count`
+   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;                 &lt;chr&gt;    &lt;chr&gt;           
+ 1 2023  01    Allegany   0301   Flintstone Elementary Prekind… 19              
+ 2 2023  01    Allegany   0301   Flintstone Elementary Kinderg… 42              
+ 3 2023  01    Allegany   0301   Flintstone Elementary Grade 1  33              
+ 4 2023  01    Allegany   0301   Flintstone Elementary Grade 2  29              
+ 5 2023  01    Allegany   0301   Flintstone Elementary Grade 3  26              
+ 6 2023  01    Allegany   0301   Flintstone Elementary Grade 4  31              
+ 7 2023  01    Allegany   0301   Flintstone Elementary Grade 5  36              
+ 8 2023  01    Allegany   0301   Flintstone Elementary All Gra… 216             
+ 9 2023  01    Allegany   0401   South Penn Elementary Prekind… 77              
+10 2023  01    Allegany   0401   South Penn Elementary Kinderg… 79              
+# ℹ 9,756 more rows
+# ℹ 1 more variable: `Create Date` &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level4">
+
+<p>However, multifile format like a shapefile does <em>not</em> work as a URL:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Shapefile (shp)</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Cannot open "https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp"; The file doesn't seem to exist.</code></pre>
+</div>
+</div>
+<p>But it <em>does</em> work if you provide a local file path (<code>system.file()</code> returns a file path in this case):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">read_sf</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 100 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27
+# A tibble: 100 × 15
+    AREA PERIMETER CNTY_ CNTY_ID NAME  FIPS  FIPSNO CRESS_ID BIR74 SID74 NWBIR74
+   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+ 1 0.114      1.44  1825    1825 Ashe  37009  37009        5  1091     1      10
+ 2 0.061      1.23  1827    1827 Alle… 37005  37005        3   487     0      10
+ 3 0.143      1.63  1828    1828 Surry 37171  37171       86  3188     5     208
+ 4 0.07       2.97  1831    1831 Curr… 37053  37053       27   508     1     123
+ 5 0.153      2.21  1832    1832 Nort… 37131  37131       66  1421     9    1066
+ 6 0.097      1.67  1833    1833 Hert… 37091  37091       46  1452     7     954
+ 7 0.062      1.55  1834    1834 Camd… 37029  37029       15   286     0     115
+ 8 0.091      1.28  1835    1835 Gates 37073  37073       37   420     0     254
+ 9 0.118      1.42  1836    1836 Warr… 37185  37185       93   968     4     748
+10 0.124      1.43  1837    1837 Stok… 37169  37169       85  1612     1     160
+# ℹ 90 more rows
+# ℹ 4 more variables: BIR79 &lt;dbl&gt;, SID79 &lt;dbl&gt;, NWBIR79 &lt;dbl&gt;,
+#   geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level4">
+
+<p>An ArcGIS FeatureServer URL does <em>not</em> work:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">read_sf</span>(<span class="st">"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Cannot open "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"; The file doesn't seem to exist.</code></pre>
+</div>
+</div>
+<p>But a FeatureServer URL that includes the output format <em>does</em> work:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">read_sf</span>(<span class="st">"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&amp;where=1%3D1&amp;f=geojson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 24 features and 15 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: -79.48731 ymin: 37.88654 xmax: -75.0492 ymax: 39.72288
+Geodetic CRS:  WGS 84
+# A tibble: 24 × 16
+   OBJECTID COUNTY_NAME     COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS
+      &lt;int&gt; &lt;chr&gt;                    &lt;int&gt; &lt;chr&gt;                          &lt;int&gt;
+ 1        1 Prince George's             16 PG                                16
+ 2        2 Cecil                        7 CE                                 7
+ 3        3 Howard                      13 HO                                13
+ 4        4 Talbot                      20 TA                                20
+ 5        5 Garrett                     11 GA                                11
+ 6        6 Baltimore City              24 BC                                24
+ 7        7 Carroll                      6 CL                                 6
+ 8        8 Washington                  21 WA                                21
+ 9        9 Worcester                   23 WO                                23
+10       10 Frederick                   10 FR                                10
+# ℹ 14 more rows
+# ℹ 11 more variables: COUNTY_2DIGITCAPS &lt;chr&gt;, DISTRICT_NAME &lt;chr&gt;,
+#   DISTRICT_NUMBER &lt;int&gt;, COUNTY_FIP &lt;int&gt;, COUNTYNUM &lt;int&gt;, TSD_ID &lt;int&gt;,
+#   COUNTY &lt;chr&gt;, DISTRICT &lt;int&gt;, Shape__Area &lt;dbl&gt;, Shape__Length &lt;dbl&gt;,
+#   geometry &lt;POLYGON [°]&gt;</code></pre>
+</div>
+</div>
+</section></section>
+<section id="read-spatial-data-with-other-packages" class="title-slide slide level2 center" data-number="18">
+<h2><span class="header-section-number">18</span> Read spatial data with other packages</h2>
+<p>There are a wide variety of packages that you can use to supplement <code>{sf}</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">library</span>(arcgislayers)</span>
+<span id="cb22-2"><a href="#cb22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3"></a>feature_layer <span class="ot">&lt;-</span> <span class="fu">arc_open</span>(<span class="st">"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">arc_select</span>(feature_layer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 24 features and 15 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 607669.3 ymin: 80997.33 xmax: 1870976 ymax: 757701.4
+Projected CRS: NAD83(HARN) / Maryland (ftUS)
+First 10 features:
+   OBJECTID     COUNTY_NAME COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS
+1         1 Prince George's             16                  PG               16
+2         2           Cecil              7                  CE                7
+3         3          Howard             13                  HO               13
+4         4          Talbot             20                  TA               20
+5         5         Garrett             11                  GA               11
+6         6  Baltimore City             24                  BC               24
+7         7         Carroll              6                  CL                6
+8         8      Washington             21                  WA               21
+9         9       Worcester             23                  WO               23
+10       10       Frederick             10                  FR               10
+   COUNTY_2DIGITCAPS DISTRICT_NAME DISTRICT_NUMBER COUNTY_FIP COUNTYNUM TSD_ID
+1                 16    District 3               3         33        16      3
+2                 07    District 2               2         15         7     21
+3                 13    District 7               7         27        13     10
+4                 20    District 2               2         41        20     18
+5                 11    District 6               6         23        11      4
+6                 24   No District               0        510        24     23
+7                 06    District 7               7         13         6      1
+8                 21    District 6               6         43        21   1060
+9                 23    District 1               1         47        23      2
+10                10    District 7               7         21        10     24
+            COUNTY DISTRICT Shape__Area Shape__Length
+1  Prince George's        3 13902243040      720691.0
+2            Cecil        2 11643675836      494670.7
+3           Howard        7  7056288549      471922.1
+4           Talbot        2 13193323636      657963.0
+5          Garrett        6 18339518744      680782.9
+6   Baltimore City        0  2562810672      207145.0
+7          Carroll        7 12623420879      651107.6
+8       Washington        6 13031238277      948164.4
+9        Worcester        1 16297527948      694972.5
+10       Frederick        7 18613257293      683407.8
+                         geometry
+1  MULTIPOLYGON (((1313442 476...
+2  MULTIPOLYGON (((1660741 628...
+3  MULTIPOLYGON (((1391417 567...
+4  MULTIPOLYGON (((1611348 457...
+5  MULTIPOLYGON (((769889 7545...
+6  MULTIPOLYGON (((1445534 565...
+7  MULTIPOLYGON (((1371781 748...
+8  MULTIPOLYGON (((936016.4 75...
+9  MULTIPOLYGON (((1870321 284...
+10 MULTIPOLYGON (((1213130 747...</code></pre>
+</div>
+</div>
+</section>
+
+<section>
+<section id="examples" class="title-slide slide level2 center" data-number="19">
+<h2><span class="header-section-number">19</span> Examples</h2>
 
 <img data-src="https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg" class="r-stretch"><aside class="notes">
 <p>Census data</p>
@@ -479,14 +1066,6 @@
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level4">
-
-
-<img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section>
-<section class="slide level4">
-
-
-<img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"></section>
 <section class="slide level4">
 
 
@@ -560,6 +1139,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -744,6 +1324,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -820,9 +1438,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -832,17 +1451,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
