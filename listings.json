@@ -4,8 +4,8 @@
     "items": [
       "/slides/welcome.html",
       "/slides/spatial-data.html",
-      "/slides/data-visualization.html",
       "/slides/tidy-data.html",
+      "/slides/data-visualization.html",
       "/slides/data-transformation.html",
       "/slides/spatial-data-attributes.html",
       "/slides/feature-geometry.html",

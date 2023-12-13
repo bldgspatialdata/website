@@ -7,17 +7,17 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.513">
-<meta name="dcterms.date" content="2023-12-13">
-<title>GES 668 - Fall 2023 - Coding basics</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="dcterms.date" content="2023-12-13">
+  <title>GES 668 - Fall 2023 - Coding basics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,12 +95,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -221,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -298,7 +297,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -387,31 +386,38 @@
     }
   </style>
 <meta property="og:title" content="GES 668 - Fall 2023 - Coding basics">
-<meta property="og:site_name" content="GES 668 - Fall 2023">
+<meta property="og:site-name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Coding basics</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Coding basics</h1>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-12-13</p>
-</section><section><section id="week-1" class="title-slide slide level2 center" data-number="1"><h2>
-<span class="header-section-number">1</span> Week 1</h2>
+</section>
+<section>
+<section id="week-1" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Week 1</h2>
 
-</section><section id="packages-in-r" class="title-slide slide level3 center"><h3>Packages in R</h3>
+</section>
+<section id="packages-in-r" class="title-slide slide level3 center">
+<h3>Packages in R</h3>
 <p>A container for:</p>
 <ul>
 <li>functions</li>
 <li>data</li>
 <li>documentation</li>
 </ul>
-<p><a href="https://tidyverse.tidyverse.org">tidyverse</a> is a <em>metapackage</em>—or a package that loads a set of other packages.</p>
-</section><section id="installing-packages" class="slide level4"><h4>Installing packages</h4>
-<p>Use <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> to install a package from <a href="https://cran.r-project.org/">CRAN</a> (Comprehensive R Archive Network):</p>
+<p><code>{tidyverse}</code> is a <em>metapackage</em>—or a package that loads a set of other packages.</p>
+</section>
+<section id="installing-packages" class="slide level4">
+<h4>Installing packages</h4>
+<p>Use <code>install.packages()</code> to install a package from <a href="https://cran.r-project.org/">CRAN</a> (Comprehensive R Archive Network):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -427,8 +433,10 @@ The downloaded binary packages are in
 <pre><code>Error in eval(expr, envir, enclos): object 'sf' not found</code></pre>
 </div>
 </div>
-</section><section id="loading-packages" class="slide level4"><h4>Loading packages</h4>
-<p>Use <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> to load a package into your environment:</p>
+</section>
+<section id="loading-packages" class="slide level4">
+<h4>Loading packages</h4>
+<p>Use <code>library()</code> to load a package into your environment:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -438,16 +446,21 @@ The downloaded binary packages are in
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Why can we use both <code><a href="https://r-spatial.github.io/sf/">library(sf)</a></code> and <code><a href="https://r-spatial.github.io/sf/">library("sf")</a></code>?</strong></p>
+<p><strong>Why can we use both <code>library(sf)</code> and <code>library("sf")</code>?</strong></p>
 </div>
 <div class="callout-content">
 <p>The <code>package</code> argument can be the name of a package: as a <strong>name</strong>, <strong>literal character string</strong>, or <strong>a character string</strong>.</p>
 </div>
 </div>
 </div>
-</section><section id="base-functions-and-packages-are-always-available" class="slide level4"><h4>base functions and packages are always available</h4>
-<p>The <code>{base}</code> package for R is one of fifteen “base packages” that are always available. Functions like <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, and <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code> are all examples of “base functions”.</p>
-</section><section id="functions-in-r" class="title-slide slide level3 center"><h3>Functions in R</h3>
+</section>
+<section id="base-functions-and-packages-are-always-available" class="slide level4">
+<h4>base functions and packages are always available</h4>
+<p>The <code>{base}</code> package for R is one of fifteen “base packages” that are always available. Functions like <code>sum()</code>, <code>max()</code>, and <code>paste0()</code> are all examples of “base functions”.</p>
+</section>
+
+<section id="functions-in-r" class="title-slide slide level3 center">
+<h3>Functions in R</h3>
 <p>Functions take inputs (known as arguments or parameters) and return outputs.</p>
 <p>A container for:</p>
 <ul>
@@ -455,10 +468,19 @@ The downloaded binary packages are in
 <li>Math</li>
 <li>More functions</li>
 <li>Data <em>or</em> connections to data sources</li>
-</ul></section><section class="slide level4"></section><section id="take-a-look-at-st_read" class="title-slide slide level3 center"><h3>Take a look at <code>st_read()</code>
-</h3>
+</ul>
+</section>
+<section class="slide level4">
 
-</section><section class="slide level4"><p>Some functions require a specific type of input:</p>
+</section>
+
+<section id="take-a-look-at-st_read" class="title-slide slide level3 center">
+<h3>Take a look at <code>st_read()</code></h3>
+
+</section>
+<section class="slide level4">
+
+<p>Some functions require a specific type of input:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -469,7 +491,10 @@ The downloaded binary packages are in
 <pre><code>Error in sum("A", "B", "C"): invalid 'type' (character) of argument</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>But some functions are more flexible:</p>
+</section>
+<section class="slide level4">
+
+<p>But some functions are more flexible:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">paste0</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -480,7 +505,10 @@ The downloaded binary packages are in
 <pre><code>[1] "ABC"</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Order of execution matters!</p>
+</section>
+<section class="slide level4">
+
+<p>Order of execution matters!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>var <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -493,17 +521,35 @@ The downloaded binary packages are in
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
-</div>
+</section>
+</section>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -687,7 +733,9 @@ The downloaded binary packages are in
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -722,7 +770,9 @@ The downloaded binary packages are in
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -798,9 +848,10 @@ The downloaded binary packages are in
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -810,17 +861,8 @@ The downloaded binary packages are in
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -876,6 +918,6 @@ The downloaded binary packages are in
       }
     });
     </script>
-
+    
 
 </body></html>

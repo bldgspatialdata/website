@@ -7,17 +7,17 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.513">
-<meta name="dcterms.date" content="2023-10-11">
-<title>GES 668 - Fall 2023 - Working with scripts, functions, and Quarto</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="dcterms.date" content="2023-10-11">
+  <title>GES 668 - Fall 2023 - Working with scripts, functions, and Quarto</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,12 +95,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -221,8 +221,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -298,7 +297,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -388,23 +387,34 @@
   </style>
 <meta property="og:title" content="GES 668 - Fall 2023 - Working with scripts, functions, and Quarto">
 <meta property="og:description" content="Session 7">
-<meta property="og:site_name" content="GES 668 - Fall 2023">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/rforecology_functions-graphic.png">
+<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:image:height" content="1428">
+<meta property="og:image:width" content="2000">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Working with scripts, functions, and Quarto</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Working with scripts, functions, and Quarto</h1>
   <p class="subtitle">Session 7</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-12-13</p>
-</section><section><section id="accounting-for-methods" class="title-slide slide level3 center"><h3>Accounting for Methods</h3>
+  <p class="date">2023-10-11</p>
+</section>
+<section>
+<section id="accounting-for-methods" class="title-slide slide level3 center">
+<h3>Accounting for Methods</h3>
 <p>This first part of the lecture is based on the <em>Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks</em> chapter by Sam Leon from <em>The Data Journalism Handbook: Towards A Critical Data Practice.</em></p>
-</section><section class="slide level4"><p>How you that the sources you have used is reliable and that the work done to derive your conclusions is sound?</p>
-<aside class="notes"><p>“Reproducibility is widely regarded as a pillar of the modern scientif ic method. It aids in the process of corroborating results and identifying and addressing problematic findings or questionable theories.”</p>
+</section>
+<section class="slide level4">
+
+<p>How you that the sources you have used is reliable and that the work done to derive your conclusions is sound?</p>
+<aside class="notes">
+<p>“Reproducibility is widely regarded as a pillar of the modern scientif ic method. It aids in the process of corroborating results and identifying and addressing problematic findings or questionable theories.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -415,61 +425,103 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level4"><p><em>What is the issue?</em></p>
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p><em>What is the issue?</em></p>
 <p>Common tools like Excel “[hide] much of the process of working with data by design.”</p>
-</section><section class="slide level4"><p><em>What is the alternative?</em></p>
+</section>
+<section class="slide level4">
+
+<p><em>What is the alternative?</em></p>
 <p>Literate programming: “an approach to writing computer code where the author intersperses code with ordinary human language explaining the steps taken.”</p>
-</section><section class="slide level4"><blockquote>
+</section>
+<section class="slide level4">
+
+<blockquote>
 <p>The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. (Knuth, 1984)</p>
 </blockquote>
-</section><section class="slide level4"><blockquote>
+</section>
+<section class="slide level4">
+
+<blockquote>
 <p>He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other. (Knuth, 1984)</p>
 </blockquote>
-</section><section class="slide level4"><p>Publishing code can also aid collaboration between organizations!</p>
-</section></section><section><section id="functions" class="title-slide slide level2 center" data-number="1"><h2>
-<span class="header-section-number">1</span> Functions</h2>
+</section>
+<section class="slide level4">
 
-</section><section id="why-functions" class="title-slide slide level3 center"><h3>Why functions?</h3>
+<p>Publishing code can also aid collaboration between organizations!</p>
+</section></section>
+<section>
+<section id="functions" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Functions</h2>
+
+<img data-src="images/rforecology_functions-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">How to create a custom function in R</p><div class="footer">
+<p>Source: <a href="https://www.rforecology.com/post/how-to-create-your-own-function-in-r/">How to create your own function in R</a> (R for Ecology)</p>
+</div>
+</section>
+<section id="why-functions" class="title-slide slide level3 center">
+<h3>Why functions?</h3>
 <ol type="1">
 <li>Make your code easier to understand</li>
 <li>Update code in one place, instead of many</li>
 <li>Reduce chance of making copy and paste mistakes</li>
 <li>Reuse work from project-to-project</li>
-</ol></section><section id="types-of-functions" class="title-slide slide level3 center"><h3>Types of functions</h3>
+</ol>
+</section>
+
+<section id="types-of-functions" class="title-slide slide level3 center">
+<h3>Types of functions</h3>
 <ol type="1">
-<li>
-<strong>Vector functions</strong> take one or more vectors as input and return a vector as output.</li>
-<li>
-<strong>Data frame functions</strong> take a data frame as input and return a data frame as output.</li>
-<li>
-<strong>Plot functions</strong> that take a data frame as input and return a plot as output.</li>
-</ol></section><section id="writing-a-function" class="title-slide slide level3 center"><h3>Writing a function</h3>
+<li><strong>Vector functions</strong> take one or more vectors as input and return a vector as output.</li>
+<li><strong>Data frame functions</strong> take a data frame as input and return a data frame as output.</li>
+<li><strong>Plot functions</strong> that take a data frame as input and return a plot as output.</li>
+</ol>
+</section>
+
+<section id="writing-a-function" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <ul>
 <li>Look for repeated sections of code.</li>
 <li>What parts are constant?</li>
 <li>What parts vary?</li>
-</ul></section><section id="writing-a-function-1" class="title-slide slide level3 center"><h3>Writing a function</h3>
+</ul>
+</section>
+
+<section id="writing-a-function-1" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <p>To turn code into a function you need three things:</p>
 <ol type="1">
 <li>A name.</li>
 <li>The arguments.</li>
 <li>The body.</li>
-</ol></section><section id="writing-a-function-2" class="title-slide slide level3 center"><h3>Writing a function</h3>
+</ol>
+</section>
+
+<section id="writing-a-function-2" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <p>To turn code into a function you need three things:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  body</span>
 <span id="cb1-3"><a href="#cb1-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="writing-a-function-3" class="title-slide slide level3 center"><h3>Writing a function</h3>
+</section>
+
+<section id="writing-a-function-3" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <p>Adapted from <a href="https://style.tidyverse.org/functions.html">the tidyverse style guide</a>:</p>
 <ol type="1">
 <li>Naming functions</li>
 <li>Formatting functions</li>
-<li>Using <code><a href="https://rdrr.io/r/base/function.html">return()</a></code>
-</li>
+<li>Using <code>return()</code></li>
 <li>Using comments</li>
-</ol></section><section id="naming-functions" class="title-slide slide level3 center"><h3>Naming functions</h3>
+</ol>
+</section>
+
+<section id="naming-functions" class="title-slide slide level3 center">
+<h3>Naming functions</h3>
 <p>Strive to use verbs for function names:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Good</span></span>
@@ -491,7 +543,10 @@
 <pre><code>Error in permutation(): could not find function "permutation"</code></pre>
 </div>
 </div>
-</section><section id="formatting-functions" class="title-slide slide level3 center"><h3>Formatting functions</h3>
+</section>
+
+<section id="formatting-functions" class="title-slide slide level3 center">
+<h3>Formatting functions</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Good</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>alphabet <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">A =</span> <span class="dv">1</span>,</span>
@@ -509,9 +564,11 @@
 <span id="cb10-14"><a href="#cb10-14"></a>  ...</span>
 <span id="cb10-15"><a href="#cb10-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="using-return" class="title-slide slide level3 center"><h3>Using <code>return()</code>
-</h3>
-<p>Only use <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> for early returns.</p>
+</section>
+
+<section id="using-return" class="title-slide slide level3 center">
+<h3>Using <code>return()</code></h3>
+<p>Only use <code>return()</code> for early returns.</p>
 <p>Use early returns to avoid <code>else</code> and “nested” logic.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Good</span></span>
@@ -536,20 +593,32 @@
 <span id="cb11-20"><a href="#cb11-20"></a>  }</span>
 <span id="cb11-21"><a href="#cb11-21"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="using-comments" class="title-slide slide level3 center"><h3>Using comments</h3>
+</section>
+
+<section id="using-comments" class="title-slide slide level3 center">
+<h3>Using comments</h3>
 <p>Use comments to explain the “why” not the “what” or “how”.</p>
-</section><section id="types-of-vector-functions" class="title-slide slide level3 center"><h3>Types of vector functions</h3>
+</section>
+
+<section id="types-of-vector-functions" class="title-slide slide level3 center">
+<h3>Types of vector functions</h3>
 <ul>
-<li>
-<strong>“mutate” functions:</strong> functions that work well inside of <code>mutate()</code> and <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> because they return an output of the same length as the input.</li>
-<li>
-<strong>summary functions:</strong> functions that return a single value for use in <code>summarize()</code>.</li>
-</ul></section><section id="example-of-vector-functions" class="title-slide slide level3 center"><h3>Example of vector functions</h3>
+<li><strong>“mutate” functions:</strong> functions that work well inside of <code>mutate()</code> and <code>filter()</code> because they return an output of the same length as the input.</li>
+<li><strong>summary functions:</strong> functions that return a single value for use in <code>summarize()</code>.</li>
+</ul>
+</section>
+
+<section id="example-of-vector-functions" class="title-slide slide level3 center">
+<h3>Example of vector functions</h3>
 <p>If a function is type-stable it satisfies two conditions:</p>
 <ul>
 <li><p>You can predict the output type based only on the input types (not their values).</p></li>
 <li><p>If the function uses …, the order of arguments in does not affect the output type.</p></li>
-</ul></section><section id="designing-a-tidy-function" class="title-slide slide level3 center"><h3>Designing a “tidy” function</h3>
+</ul>
+</section>
+
+<section id="designing-a-tidy-function" class="title-slide slide level3 center">
+<h3>Designing a “tidy” function</h3>
 <p>Four guiding principles for the “tidyverse”:</p>
 <ol type="1">
 <li>human centered</li>
@@ -557,35 +626,13 @@
 <li>composable</li>
 <li>inclusive</li>
 </ol>
-<aside class="notes"><ol type="1">
+<aside class="notes">
+<ol type="1">
 <li><p>It is human centered, i.e.&nbsp;the tidyverse is designed specifically to support the activities of a human data analyst.</p></li>
 <li><p>It is consistent, so that what you learn about one function or package can be applied to another, and the number of special cases that you need to remember is as small as possible.</p></li>
 <li><p>It is composable, allowing you to solve complex problems by breaking them down into small pieces, supporting a rapid cycle of exploratory iteration to find the best solution.</p></li>
 <li><p>It is inclusive, because the tidyverse is not just the collection of packages, but it is also the community of people who use them.</p></li>
-</ol><style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="why-quarto" class="title-slide slide level3 center"><h3>Why Quarto?</h3>
-<ol type="1">
-<li>communicating to decision-makers</li>
-<li>collaborating with other data scientists</li>
-<li>as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.</li>
 </ol>
-<p>It contains three important types of content:</p>
-<ol type="1">
-<li>An (optional) YAML header surrounded by <code>---</code>s.</li>
-<li>Chunks of R code surrounded by <code>````</code>.</li>
-<li>Text mixed with simple text formatting like <code># heading</code> and <code>_italics_</code>.</li>
-</ol></section><section id="what-happens-when-you-render-a-quarto-document" class="title-slide slide level3 center"><h3>What happens when you render a Quarto document?</h3>
-
-<img data-src="https://r4ds.hadley.nz/images/quarto-flow.png" class="r-stretch"><aside class="notes"><p>When you render the document, Quarto sends the <code>.qmd</code> file to <strong>knitr</strong>, <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>, which executes all of the code chunks and creates a new markdown (<code>.md</code>) document which includes the code and its output. The markdown file generated by knitr is then processed by <strong>pandoc</strong>, <a href="https://pandoc.org/">https://pandoc.org</a>, which is responsible for creating the finished file.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -596,14 +643,58 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="how-do-you-maximize-reproducibility-with-quarto" class="title-slide slide level3 center"><h3>How do you maximize reproducibility with Quarto?</h3>
+      }</style></aside>
+</section>
 
-<img data-src="https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/fig/01-fig4.png" class="r-stretch"></section><section class="slide level4"><p>https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/08-code-chunks/index.html#key-points</p>
+<section id="why-quarto" class="title-slide slide level3 center">
+<h3>Why Quarto?</h3>
+<ol type="1">
+<li>communicating to decision-makers</li>
+<li>collaborating with other data scientists</li>
+<li>as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.</li>
+</ol>
+<p>It contains three important types of content:</p>
+<ol type="1">
+<li>An (optional) YAML header surrounded by <code>---</code>s.</li>
+<li>Chunks of R code surrounded by <code>````</code>.</li>
+<li>Text mixed with simple text formatting like <code># heading</code> and <code>_italics_</code>.</li>
+</ol>
+</section>
+
+<section id="what-happens-when-you-render-a-quarto-document" class="title-slide slide level3 center">
+<h3>What happens when you render a Quarto document?</h3>
+
+<img data-src="https://r4ds.hadley.nz/images/quarto-flow.png" class="r-stretch"><aside class="notes">
+<p>When you render the document, Quarto sends the <code>.qmd</code> file to <strong>knitr</strong>, <a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a>, which executes all of the code chunks and creates a new markdown (<code>.md</code>) document which includes the code and its output. The markdown file generated by knitr is then processed by <strong>pandoc</strong>, <a href="https://pandoc.org/">https://pandoc.org</a>, which is responsible for creating the finished file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="how-do-you-maximize-reproducibility-with-quarto" class="title-slide slide level3 center">
+<h3>How do you maximize reproducibility with Quarto?</h3>
+
+<img data-src="https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/fig/01-fig4.png" class="r-stretch"></section>
+<section class="slide level4">
+
+<p>https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/08-code-chunks/index.html#key-points</p>
 <ul>
-<li><p>Learn how to externally source code <code><a href="https://rdrr.io/r/base/source.html">source()</a></code></p></li>
+<li><p>Learn how to externally source code <code>source()</code></p></li>
 <li><p>Learn how to modularize your code to make it more reproducible</p></li>
 <li><p>Use a chunk at the beginning of your document to load libraries and data globally to make your document more efficient.</p></li>
-</ul></section><section id="how-do-you-insert-citations-into-a-quarto-document" class="title-slide slide level3 center"><h3>How do you insert citations into a Quarto document?</h3>
+</ul>
+</section>
+
+<section id="how-do-you-insert-citations-into-a-quarto-document" class="title-slide slide level3 center">
+<h3>How do you insert citations into a Quarto document?</h3>
 <p>Write a function for calculating the “roundness” of a POLYGON geometry. <a href="https://en.wikipedia.org/wiki/Roundness">Take a look at Wikipedia</a> for details but use the formula:</p>
 <p>Roundness = (4π × Area) / Perimeter^2</p>
 
@@ -611,17 +702,35 @@
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
-</div>
+</section>
+</section>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -805,7 +914,9 @@
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -840,7 +951,9 @@
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -916,9 +1029,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -928,17 +1042,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -994,6 +1099,6 @@
       }
     });
     </script>
-
+    
 
 </body></html>
