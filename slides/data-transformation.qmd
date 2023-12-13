@@ -387,7 +387,7 @@ summarise(
       median = median,
       min = min,
       max = max
-      )
+    )
   )
 )
 ```

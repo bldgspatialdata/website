@@ -74,7 +74,7 @@ When you start with a dataset, you might do something where you look at the gene
 ---
 
 ```{r}
-smaller <- diamonds |> 
+smaller <- diamonds |>
   filter(carat < 3)
 
 ggplot(smaller, aes(x = carat)) +
@@ -95,7 +95,7 @@ To understand the subgroups, ask:
 What makes a value unusual?
 
 ```{r}
-ggplot(diamonds, aes(x = y)) + 
+ggplot(diamonds, aes(x = y)) +
   geom_histogram(binwidth = 0.5)
 ```
 
@@ -117,7 +117,7 @@ Handling unusual values can include:
 ### A categorical and a numerical variable
 
 ```{r}
-ggplot(diamonds, aes(x = price)) + 
+ggplot(diamonds, aes(x = price)) +
   geom_freqpoly(aes(color = cut), binwidth = 500, linewidth = 0.75)
 ```
 

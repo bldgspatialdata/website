@@ -178,7 +178,7 @@ us_states |>
   ) +
   # facet_wrap with "free" scales creates a panel for each different variable
   # this is only possible because we converted our data into a long format
-  facet_wrap(~ variable, scales = "free") +
+  facet_wrap(~variable, scales = "free") +
   # Using `scales::label_number()` converts the y axis labels into a more
   # readable format
   scale_y_continuous(label = scales::label_number())
@@ -206,7 +206,7 @@ us_states |>
   filter(
     variable == "median_income",
     year == 2015
-    ) |>
+  ) |>
   ggplot() +
   geom_col(
     aes(

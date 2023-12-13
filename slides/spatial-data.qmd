@@ -190,7 +190,7 @@ From [Simple Feature for R](https://r-spatial.github.io/sf/articles/sf1.html#how
 ------------------------------------------------------------------------
 
 ```{r}
-nc <- st_read(system.file("shape/nc.shp", package="sf"))
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
 
 nc
 ```

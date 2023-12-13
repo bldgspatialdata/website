@@ -18,7 +18,7 @@ region <- ggplot() +
 bus_network <- ggplot() +
   geom_sf(data = mapmaryland::us_states_near_md, fill = NA) +
   geom_sf(data = mta_bus_lines |>
-            sfext::get_dist(to = c("xmid", "ymid"), drop= TRUE), linewidth = 0.25, aes(alpha = dist)) +
+    sfext::get_dist(to = c("xmid", "ymid"), drop = TRUE), linewidth = 0.25, aes(alpha = dist)) +
   geom_sf(data = mta_light_rail_lines, linewidth = 0.5) +
   geom_sf(data = mta_subway_lines, linewidth = 0.75) +
   maplayer::layer_neatline(data = baltimore_city, dist = 5, unit = "mi", crs = 2804, color = NA) +

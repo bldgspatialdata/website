@@ -43,35 +43,35 @@ To illustrate why visualization is essential, let's look at the Anscombe's Quart
 
 ```{r}
 #| echo: false
-Tmisc::quartet |> 
-  dplyr::group_nest(set, keep = TRUE) |> 
-  dplyr::pull(data) |> 
+Tmisc::quartet |>
+  dplyr::group_nest(set, keep = TRUE) |>
+  dplyr::pull(data) |>
   purrr::list_cbind(name_repair = "universal") |>
-  gt::gt() |> 
+  gt::gt() |>
   gt::cols_label(
     starts_with("set") ~ "",
     starts_with("x") ~ "x",
     starts_with("y") ~ "y"
-  ) |> 
+  ) |>
   gt::tab_style(
     style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
     location = cells_body()
-  ) |> 
+  ) |>
   gt::tab_style(
     style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
     location = cells_column_labels()
-  ) |> 
+  ) |>
   gt::tab_style(
     locations = cells_body(
       columns = starts_with("set")
     ),
     style = cell_fill(color = "gray", alpha = 0.25)
-  ) |> 
+  ) |>
   gt::tab_style(
     locations = cells_body(
       columns = starts_with("set")
     ),
-    style = cell_text(size = "small", weight= "bold")
+    style = cell_text(size = "small", weight = "bold")
   )
 ```
 
@@ -87,34 +87,34 @@ What if we use some summary statistics and get the mean, standard deviation, and
 
 ```{r}
 #| echo: false
-Tmisc::quartet |> 
-  group_by(set) |> 
+Tmisc::quartet |>
+  group_by(set) |>
   summarise(
     mean_x = mean(x),
     mean_y = mean(x),
     sd_x = sd(x),
     sd_y = sd(y),
     r = cor(x, y)
-  ) |> 
-  gt::gt(groupname_col = "set", row_group_as_column = TRUE) |> 
-  gt::fmt_number() |> 
+  ) |>
+  gt::gt(groupname_col = "set", row_group_as_column = TRUE) |>
+  gt::fmt_number() |>
   gt::tab_style(
     style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
     location = cells_body()
-  ) |> 
+  ) |>
   gt::tab_style(
     style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
     location = cells_column_labels()
-  ) |> 
+  ) |>
   gt::tab_style(
     locations = cells_body(
       columns = starts_with("set")
     ),
-    style = cell_text(size = "small", weight= "bold")
-  ) |> 
+    style = cell_text(size = "small", weight = "bold")
+  ) |>
   gt::tab_style(
     locations = cells_row_groups(),
-    style = cell_text(size = "small", weight= "bold")
+    style = cell_text(size = "small", weight = "bold")
   )
 ```
 
@@ -412,7 +412,7 @@ storms |>
 
 ```{r}
 storms |>
-  distinct(name) |> 
+  distinct(name) |>
   nrow()
 ```
 
@@ -479,10 +479,12 @@ In addition to having mapped aesthetics, we can also have "fixed" aesthetics (fi
 ```{r}
 ggplot(storms) +
   geom_point(
-    aes(x = long,
-    y = lat,
-    color = status),
-  alpha = 0.4
+    aes(
+      x = long,
+      y = lat,
+      color = status
+    ),
+    alpha = 0.4
   )
 ```
 
@@ -543,10 +545,10 @@ To start, let's convert our storms data set from a data frame into a sf object u
 
 ```{r}
 storms_sf <- sf::st_as_sf(
-    storms,
-    coords = c("long", "lat"),
-    crs = 4326
-  )
+  storms,
+  coords = c("long", "lat"),
+  crs = 4326
+)
 ```
 
 :::{.callout-tip collapse=false appearance='default' icon=true}
@@ -580,8 +582,8 @@ ggplot(data = storms_sf) +
 This is equivalent to converting the coordinate reference system in advance using `st_transform()`:
 
 ```{r}
-storms_sf |> 
-  st_transform(2804) |> 
+storms_sf |>
+  st_transform(2804) |>
   ggplot() +
   geom_sf(aes(color = status))
 ```
@@ -616,8 +618,8 @@ ggplot() +
 But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of `coord_sf()` to "zoom" in on a smaller area:
 
 ```{r}
-storms_bbox <- storms_sf |> 
-  st_transform("EPSG:3035") |> 
+storms_bbox <- storms_sf |>
+  st_transform("EPSG:3035") |>
   st_bbox()
 
 storms_map <- ggplot() +
@@ -628,7 +630,7 @@ storms_map <- ggplot() +
     xlim = c(storms_bbox$xmin, storms_bbox$xmax),
     ylim = c(storms_bbox$ymin, storms_bbox$ymax),
     crs = "EPSG:3035"
-    )
+  )
 
 storms_map
 ```
@@ -663,7 +665,7 @@ storms_map
 Lastly, we can adjust the theme:
 
 ```{r}
- storms_map +
+storms_map +
   theme_minimal() +
   theme(
     legend.position = "bottom"

@@ -62,7 +62,6 @@ A container for:
 ### Take a look at `st_read()`
 
 ```{r}
-
 ```
 
 

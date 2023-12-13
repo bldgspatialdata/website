@@ -1,9 +1,9 @@
 index_yml <- function(txt = NULL) {
   if (rlang::is_string(txt) && fs::is_file(txt)) {
-   txt <- readLines(txt)
+    txt <- readLines(txt)
   }
 
-  c(2:(which(txt == '---')[2] - 1))
+  c(2:(which(txt == "---")[2] - 1))
 }
 
 read_yml <- function(path, remove = FALSE) {
@@ -15,7 +15,7 @@ read_yml <- function(path, remove = FALSE) {
   }
 
   ymlthis::as_yml(
-    paste(txt[index_yml(txt)], collapse = '\n')
+    paste(txt[index_yml(txt)], collapse = "\n")
   )
 }
 
@@ -34,7 +34,7 @@ rename_files <- function(path,
     string = path,
     pattern = pattern,
     replacement = replacement
-    )
+  )
 
   fs::file_move(path, new_path)
 }

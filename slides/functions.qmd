@@ -138,18 +138,18 @@ Use early returns to avoid `else` and "nested" logic.
 # Good
 is_it_wednesday <- function(x) {
   wday <- wday(x, label = TRUE)
-  
+
   if (identical(wday, "Wed")) {
     return("Yes!")
   }
-  
+
   "No..."
 }
 
 # Bad
 is_it_wednesday <- function(x) {
   wday <- wday(x, label = TRUE)
-  
+
   if (identical(wday, "Wed")) {
     return("Yes!")
   } else {

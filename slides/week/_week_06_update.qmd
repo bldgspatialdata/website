@@ -9,19 +9,19 @@ While the concept of a buffer is rather easy to understand for me in other spati
 ----
 
 ```{r}
-storms_sf <- storms |> 
+storms_sf <- storms |>
   st_as_sf(
     coords = c("long", "lat"),
     crs = 4326
   )
 
-storms_tracks <- storms_sf |> 
-  arrange(year, month, day, hour) |> 
-  group_by(year, name) |> 
+storms_tracks <- storms_sf |>
+  arrange(year, month, day, hour) |>
+  group_by(year, name) |>
   summarise(
     avg_wind = mean(wind),
     geometry = st_cast(st_union(geometry), to = "LINESTRING")
-    )
+  )
 
 storms_tracks
 ```
@@ -40,19 +40,19 @@ How do you create the map (straight line between MD and CA) using ggplot instead
 plot(
   us_states$geometry,
   main = "States crossed by a straight line from central Maryland to central California"
-  )
+)
 
 plot(
   states_crossed$geometry,
   col = "grey",
   add = TRUE
-  )
+)
 
 plot(
   md_to_cali,
   color = "black",
   add = TRUE
-  )
+)
 ```
 
 ### Assorted questions

@@ -29,21 +29,21 @@ Note that the `us_states` loaded for this exercise is different than the `us_sta
 Find all states that belong to the West region, have an area below 250,000 km2 and in 2015 a population greater than 5,000,000 residents (**Hint:** you may need to use the function `units::set_units()` or `as.numeric()`).
 
 ```{r}
-us_states |> 
+us_states |>
   filter(
     as.numeric(AREA) < 250000,
     total_pop_15 > 5000000
-    )
+  )
 ```
 
 Find all states that belong to the South region, had an area larger than 150,000 km2 or a total population in 2015 larger than 7,000,000 residents.
 
 ```{r}
-us_states |> 
+us_states |>
   filter(
     REGION == "South" |
-    as.numeric(AREA) > 150000 |
-    total_pop_15 > 7000000
+      as.numeric(AREA) > 150000 |
+      total_pop_15 > 7000000
   )
 ```
 
@@ -53,7 +53,7 @@ What was the total population in 2015 in the `us_states` dataset? What was the m
 
 ```{r}
 us_states |>
-  st_drop_geometry() |> 
+  st_drop_geometry() |>
   summarise(
     total_state_pop_15 = sum(total_pop_15),
     min_state_pop_15 = min(total_pop_15),
@@ -70,11 +70,11 @@ Add variables from `us_states_df` to `us_states`, and create a new object called
 Tip: we are covering joins in more detail next week---check out [the R for Data Science chapter on Joins](https://r4ds.hadley.nz/joins) for more information.
 
 ```{r}
-us_states_stats <- us_states |> 
+us_states_stats <- us_states |>
   left_join(
     us_states_df,
     by = join_by(NAME == state)
-    )
+  )
 
 us_states_stats
 ```
@@ -94,7 +94,7 @@ anti_join(
 Calculate the change in percentages and map them with `plot()` or `geom_sf()`:
 
 ```{r}
-us_states_density <- us_states |> 
+us_states_density <- us_states |>
   mutate(
     AREA_sq_km = as.numeric(AREA),
     pop_density_10 = total_pop_10 / AREA_sq_km,
@@ -105,7 +105,7 @@ us_states_density <- us_states |>
 
 
 ```{r}
-us_states_density |> 
+us_states_density |>
   ggplot() +
   geom_sf(aes(fill = pop_density_change)) +
   scale_fill_continuous(labels = scales::label_percent()) +
@@ -123,7 +123,7 @@ plot(us_states_density[, 11])
 Calculate the change in the number of residents living below the poverty level between 2010 and 2015 for each state. **Hint:** See `?us_states_df` for documentation on the poverty level columns.
 
 ```{r}
-us_states_poverty_level <- us_states_stats |> 
+us_states_poverty_level <- us_states_stats |>
   mutate(
     poverty_level_change = poverty_level_15 - poverty_level_10,
     .after = NAME
@@ -134,7 +134,7 @@ us_states_poverty_level
 **Bonus:** Calculate the change in the percentage of residents living below the poverty level in each state.
 
 ```{r}
-us_states_stats |> 
+us_states_stats |>
   mutate(
     pct_poverty_level_10 = poverty_level_10 / total_pop_10,
     pct_poverty_level_15 = poverty_level_15 / total_pop_15,
@@ -145,8 +145,8 @@ us_states_stats |>
 What was the minimum, average and maximum state's number of people living below the poverty line in 2015 for each region?
 
 ```{r}
-us_states_stats |> 
-  group_by(REGION) |> 
+us_states_stats |>
+  group_by(REGION) |>
   summarise(
     min_poverty_level_15 = min(poverty_level_15),
     max_poverty_level_15 = max(poverty_level_15),
@@ -157,12 +157,12 @@ us_states_stats |>
 **Bonus:** What is the region with the largest increase in people living below the poverty line?
 
 ```{r}
-us_states_stats |> 
-  st_drop_geometry() |> 
-  group_by(REGION) |> 
+us_states_stats |>
+  st_drop_geometry() |>
+  group_by(REGION) |>
   summarise(
-   poverty_level_change = sum(poverty_level_15) - sum(poverty_level_10)
-  ) |> 
+    poverty_level_change = sum(poverty_level_15) - sum(poverty_level_10)
+  ) |>
   slice_max(n = 1, order_by = poverty_level_change)
 ```
 
@@ -174,8 +174,8 @@ Section [4.2](https://r.geocompx.org/spatial-operations#spatial-vec) (in Geocomp
 canterbury <- nz |>
   filter(Name == "Canterbury")
 
-canterbury_height <- nz_height |> 
-  slice_max(order_by = elevation, n = 100) |> 
+canterbury_height <- nz_height |>
+  slice_max(order_by = elevation, n = 100) |>
   st_filter(canterbury)
 
 nrow(canterbury_height)
@@ -190,38 +190,38 @@ ggplot() +
   geom_sf(data = nz) +
   geom_sf(data = canterbury, fill = "yellow") +
   geom_sf(data = st_filter(nz_height, canterbury), shape = 7, color = "red") +
-  geom_sf(data =  st_filter(nz_height, canterbury, .predicate = st_disjoint), shape = 1, color = "blue")
+  geom_sf(data = st_filter(nz_height, canterbury, .predicate = st_disjoint), shape = 1, color = "blue")
 ```
 
 Which region has the second highest number of `nz_height` points, and how many does it have?
 
 ```{r}
-nz_height |> 
-  st_intersection(nz) |> 
-  st_drop_geometry() |> 
-  count(Name) |> 
+nz_height |>
+  st_intersection(nz) |>
+  st_drop_geometry() |>
+  count(Name) |>
   slice_max(n = 2, order_by = n)
 ```
 
 Generalizing the question to all regions: how many of New Zealand's 16 regions contain points which belong to the top 100 highest points in the country? Which regions?
 
 ```{r}
-nz_height |> 
-  slice_max(n = 100, order_by = elevation) |> 
-  st_intersection(nz) |> 
-  st_drop_geometry() |> 
+nz_height |>
+  slice_max(n = 100, order_by = elevation) |>
+  st_intersection(nz) |>
+  st_drop_geometry() |>
   count(Name)
 ```
 
 **Bonus:** create a table listing these regions in order of the number of points and their name. Hint: use `dplyr::slice_max()` and `gt::gt()`.
 
 ```{r}
-nz_height |> 
-  slice_max(n = 100, order_by = elevation) |> 
-  st_intersection(nz) |> 
-  st_drop_geometry() |> 
-  count(Name, sort = TRUE) |> 
-  gt::gt() |> 
+nz_height |>
+  slice_max(n = 100, order_by = elevation) |>
+  st_intersection(nz) |>
+  st_drop_geometry() |>
+  count(Name, sort = TRUE) |>
+  gt::gt() |>
   gt::tab_header(
     "Regions with any of the 100 highest points in New Zealand"
   )
@@ -232,10 +232,10 @@ Using [`st_buffer()`](https://r-spatial.github.io/sf/reference/geos_unary.html),
 ```{r}
 canterbury_buffered <- st_buffer(canterbury, dist = units::as_units(100, "km"))
 
-nz_height |> 
+nz_height |>
   st_filter(
     canterbury_buffered
-  ) |> 
+  ) |>
   nrow()
 ```
 
@@ -295,15 +295,15 @@ st_distance(md_centroid, canterbury_centroid)
 Calculate the length of the boundary lines of US states in meters. Which state has the longest border and which has the shortest? **Hint:** The `st_length` function computes the length of a `LINESTRING` or `MULTILINESTRING` geometry.
 
 ```{r}
-us_states_borders <- us_states |> 
+us_states_borders <- us_states |>
   st_cast(
     to = "MULTILINESTRING"
-  ) |> 
+  ) |>
   mutate(
     border_length = st_length(geometry)
-  ) |> 
+  ) |>
   st_drop_geometry()
-  
+
 
 slice_max(us_states_borders, order_by = border_length, n = 1)
 

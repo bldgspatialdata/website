@@ -29,9 +29,9 @@ survey |>
     aes(y = experience, fill = experience),
     alpha = 0.8
   ) +
-  ggplot2::facet_wrap(~ tool) +
+  ggplot2::facet_wrap(~tool) +
   # scale_fill_viridis_d("Experience") +
-  pilot::scale_fill_pilot()  +
+  pilot::scale_fill_pilot() +
   hrbrthemes::theme_ipsum_pub(
     base_family = "Atkinson Hyperlegible",
     plot_title_family = "Atkinson Hyperlegible",

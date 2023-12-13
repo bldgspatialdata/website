@@ -44,15 +44,15 @@ There are a lot of geometry operations and each has a different set of parameter
 Why does `plot()` make 6 maps instead of 1?
 
 ```{r}
-maryland <- us_states |> 
-  select(NAME) |> 
+maryland <- us_states |>
+  select(NAME) |>
   filter(NAME == "Maryland")
 
 states_intersecting_md <- st_filter(
   us_states,
   maryland,
   .predicate = st_intersects
-  ) 
+)
 
 plot(states_intersecting_md)
 ```
@@ -65,8 +65,8 @@ Why does this not work?
 ggplot(
   data = states_intersecting_md,
   mapping = aes(x = long, y = lat)
-  ) +
-geom_sf()
+) +
+  geom_sf()
 ```
 
 ----

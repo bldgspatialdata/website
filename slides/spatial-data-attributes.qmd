@@ -38,10 +38,10 @@ us_highways <- primary_roads()
 ```{r}
 #| echo: false
 compare_sf <- function(x, y, colors = c("orange", "purple")) {
-ggplot() +
-  geom_sf(data = x, color = colors[[1]]) +
-  geom_sf(data = y, color = colors[[2]]) +
-  theme_minimal()
+  ggplot() +
+    geom_sf(data = x, color = colors[[1]]) +
+    geom_sf(data = y, color = colors[[2]]) +
+    theme_minimal()
 }
 ```
 
@@ -327,7 +327,7 @@ st_area(maryland$geometry)
 But, remember, `dplyr::mutate()` is designed to work with vectorized functions so you can do us a measurement function inside `mutate()`:
 
 ```{r}
-maryland |> 
+maryland |>
   mutate(
     area = st_area(geometry)
   )
@@ -338,7 +338,7 @@ maryland |>
 You can even work with multiple geometries using this same approach:
 
 ```{r}
-us_states |> 
+us_states |>
   mutate(
     area = st_area(geometry),
     distance_to_maryland = st_distance(geometry, maryland)
@@ -348,21 +348,21 @@ us_states |>
 This works to aggregate features by division:
 
 ```{r}
-us_states |> 
-  group_by(DIVISION) |> 
+us_states |>
+  group_by(DIVISION) |>
   summarise(
     n_states = n_distinct(NAME)
-  ) 
+  )
 ```
 
 ------------------------------------------------------------------------
 
 ```{r}
-us_states |> 
-  group_by(DIVISION) |> 
+us_states |>
+  group_by(DIVISION) |>
   summarise(
     n_states = n_distinct(NAME)
-  ) |> 
+  ) |>
   ggplot() +
   geom_sf(aes(fill = DIVISION)) +
   theme_minimal()
@@ -373,10 +373,10 @@ us_states |>
 This doesn't entirely work (yet):
 
 ```{r}
-us_states |> 
-  group_by(DIVISION) |> 
+us_states |>
+  group_by(DIVISION) |>
   summarise(
-    n_states = n_distinct(NAME)#,
+    n_states = n_distinct(NAME) # ,
     # .by = DIVISION
   )
 ```
@@ -386,7 +386,7 @@ us_states |>
 But *this* (explicitly unioning the geometry) does work:
 
 ```{r}
-us_states |> 
+us_states |>
   summarise(
     n_states = n_distinct(NAME),
     geometry = st_union(geometry),
@@ -397,13 +397,13 @@ us_states |>
 ------------------------------------------------------------------------
 
 ```{r}
-us_states |> 
-  group_by(DIVISION) |> 
+us_states |>
+  group_by(DIVISION) |>
   summarise(
     n_states = n_distinct(NAME),
     geometry = st_union(geometry)
-  ) |> 
-  st_as_sf() |> 
+  ) |>
+  st_as_sf() |>
   ggplot() +
   geom_sf(aes(fill = DIVISION)) +
   theme_minimal()
@@ -428,8 +428,8 @@ Not all functions work with all geometry types!
 ------------------------------------------------------------------------
 
 ```{r}
-us_states |> 
-  group_by(DIVISION) |> 
+us_states |>
+  group_by(DIVISION) |>
   summarise(
     n_states = n_distinct(NAME)
   )

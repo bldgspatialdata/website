@@ -26,24 +26,24 @@ pkg_plot_data <- pkg_downloads_data |>
   )
 
 pkg_plot <- pkg_plot_data |>
-    ggplot2::ggplot(ggplot2::aes(x = date_month, y = count, color = package)) +
-    ggplot2::stat_smooth(
-      geom = 'line', method = 'loess', span = 0.05, alpha = 0.75, linewidth = 1.75
-    ) +
-    ggplot2::scale_x_date() +
-    ggplot2::scale_y_continuous(
-      labels = scales::label_number()
-    ) +
-    pilot::scale_color_pilot() +
-    ggplot2::labs(
-      color = "Package name",
-      x = "Date",
-      y = "Average daily downloads",
-      caption = "Package downloads from CRAN (August 2018 - July 2023) via the {packageRank} package."
-    ) +
-    hrbrthemes::theme_ipsum_pub(
-      base_family = "Atkinson Hyperlegible"
-    )
+  ggplot2::ggplot(ggplot2::aes(x = date_month, y = count, color = package)) +
+  ggplot2::stat_smooth(
+    geom = "line", method = "loess", span = 0.05, alpha = 0.75, linewidth = 1.75
+  ) +
+  ggplot2::scale_x_date() +
+  ggplot2::scale_y_continuous(
+    labels = scales::label_number()
+  ) +
+  pilot::scale_color_pilot() +
+  ggplot2::labs(
+    color = "Package name",
+    x = "Date",
+    y = "Average daily downloads",
+    caption = "Package downloads from CRAN (August 2018 - July 2023) via the {packageRank} package."
+  ) +
+  hrbrthemes::theme_ipsum_pub(
+    base_family = "Atkinson Hyperlegible"
+  )
 
 ggplot2::ggsave(
   here::here("slides", "images", "pkg-downloads_08-2018_07-2023.png"),

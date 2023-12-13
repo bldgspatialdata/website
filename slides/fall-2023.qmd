@@ -89,9 +89,9 @@ pipelines:
 ```{r}
 library(tidylog, warn.conflicts = FALSE)
 
-mtcars |> 
-  filter(cyl == 4) |> 
-  mutate(new_var = wt ** 2) |> 
+mtcars |>
+  filter(cyl == 4) |>
+  mutate(new_var = wt**2) |>
   select(mpg, cyl, new_var)
 ```
 
@@ -175,7 +175,7 @@ it."
 flights |>
   replace_na(
     replace = list(arr_delay = 0)
-  ) |> 
+  ) |>
   mutate(
     hour_factor = factor(hour),
     arr_delay_flag = arr_delay > 5

@@ -63,7 +63,7 @@ st_as_sf(sfc)
 ```{r}
 sf_df <- data.frame(
   name = "Example data frame",
-  lon =  -76.712838,
+  lon = -76.712838,
   lat = 39.253383
 )
 
@@ -132,13 +132,13 @@ filter(us_highways, as.logical(st_is_within_distance(geometry, maryland, dist = 
 ### Spatial aggregation
 
 ```{r}
-us_states_combine <- us_states |> 
-  group_by(DIVISION) |> 
+us_states_combine <- us_states |>
+  group_by(DIVISION) |>
   summarise(
     geometry = st_combine(geometry)
   )
 
-plot(us_states_combine[,1])
+plot(us_states_combine[, 1])
 ```
 
 ## Types of geometric operations
@@ -153,48 +153,48 @@ plot(us_states_combine[,1])
 ### Simplification
 
 ```{r}
-plot(st_simplify(lower48, dTolerance = 100000)[,1])
+plot(st_simplify(lower48, dTolerance = 100000)[, 1])
 ```
 
 ### Centroids
 
 ```{r}
-plot(st_centroid(lower48)[,1])
+plot(st_centroid(lower48)[, 1])
 ```
 
 ### Buffers
 
 ```{r}
-plot(st_buffer(lower48, dist = 100)[,1])
+plot(st_buffer(lower48, dist = 100)[, 1])
 ```
 
 -----
 
 ```{r}
-plot(st_buffer(lower48, dist = units::set_units(100, "mi"))[,1])
+plot(st_buffer(lower48, dist = units::set_units(100, "mi"))[, 1])
 ```
 
 ### Clipping (with or without subsetting)
 
 ```{r}
-plot(st_intersection(us_highways, maryland)[,1])
+plot(st_intersection(us_highways, maryland)[, 1])
 ```
 
 ### Unions
 
 ```{r}
-us_highways_union <- us_highways |> 
-  group_by(RTTYP) |> 
+us_highways_union <- us_highways |>
+  group_by(RTTYP) |>
   summarise(
     geometry = st_union(geometry)
   )
 
-plot(us_highways_union[,1])
+plot(us_highways_union[, 1])
 ```
 
 ### Type transformations
 
 ```{r}
-plot(st_cast(us_highways[1,], to = "POINT"))
+plot(st_cast(us_highways[1, ], to = "POINT"))
 ```
 

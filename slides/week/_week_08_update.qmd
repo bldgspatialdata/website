@@ -86,11 +86,10 @@ Yes! You can define a function within a function like this:
 
 ```{r}
 example_fn <- function(...) {
-  
   embedded_fn <- function(..., collapse = ",") {
     paste0(..., collapse = collapse)
   }
-  
+
   embedded_fn(...)
 }
 ```
@@ -100,7 +99,9 @@ example_fn <- function(...) {
 You can also use [anonymous functions and shortcuts](https://adv-r.hadley.nz/functionals.html#purrr-shortcuts) (especially inside of tidyverse functions that translate the "tilde" formula style notation into a function):
 
 ```{r}
-map_dbl(mtcars, \(x){length(unique(x))})
+map_dbl(mtcars, \(x){
+  length(unique(x))
+})
 
 map_dbl(mtcars, ~ length(unique(.x)))
 ```

@@ -31,6 +31,7 @@ We are going to use `ne_download()` to download the `countries` dataset and then
 countries <- ne_download(scale = "medium", type = "countries", returnclass = "sf")
 
 countries <- filter(countries, REGION_UN != "Antarctica")
+
 countries <- st_transform(countries, crs = 3857)
 
 countries_center <- st_centroid(countries)
