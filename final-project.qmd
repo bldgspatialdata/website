@@ -18,11 +18,11 @@ Your project should focus on a topic area or dataset that is relevant to your pe
 
 This project has three parts:
 
-1.  A project proposal (due **November 13 - updated**)
-2.  An short presentation about your project (due **December 6 - tentative**)
-3.  A project GitHub repository including code, data, output files, and a README (due **December 14 - tentative**)
+1.  A project proposal (due **{{< var dates.project.proposal >}}**)
+2.  An short *recorded* presentation about your project (due **{{< var dates.project.presentation >}}**)
+3.  A project GitHub repository including code, data, output files, and a README (due **{{< var dates.project.repo >}}**)
 
-You are also expected to share peer feedback on two other proposals completed by **November 22** (updated).
+You are also expected to share peer feedback on two other project presentations completed by **{{< var dates.project.feedback >}}** (updated).
 
 ## Project proposal
 
