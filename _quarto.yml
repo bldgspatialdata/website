@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 logo: "images/logo.png"
 
@@ -31,7 +32,7 @@ website:
           - href: course-syllabus.qmd
             text: Syllabus
           - href: final-project.qmd
-            text: Final Project
+            text: Final Project How-to
           - href: course-exercises.qmd
             text: Exercise How-to
       - section: "Weeks 🗓️"
@@ -72,6 +73,8 @@ website:
         contents:
           - href: resources/data-sources.qmd
             text: Data Sources
+          - href: https://bldgspatialdata.github.io/starters/
+            text: Starters
 
 format:
   html:
