@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.513">
-<meta name="dcterms.date" content="2023-09-04">
-<title>GES 668 - Fall 2023 - Tidying and joining data</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.513">
+
+  <title>GES 668 - Fall 2023 - mermaid crash</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,78 +28,13 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -298,7 +232,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -309,7 +243,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -386,232 +319,69 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Tidying and joining data">
-<meta property="og:description" content="Session 2">
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<meta property="og:title" content="GES 668 - Fall 2023 - mermaid crash">
 <meta property="og:site_name" content="GES 668 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Tidying and joining data</h1>
-  <p class="subtitle">Session 2</p>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">mermaid crash</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-11-16</p>
-</section><section class="slide level4"><p>Categories of functions in <a href="https://tidyr.tidyverse.org">tidyr</a>:</p>
-<ol type="1">
-<li><strong>Pivoting</strong></li>
-<li><strong>Rectangling</strong></li>
-<li><strong>Nesting and unnesting</strong></li>
-<li><strong>Splitting and combining character columns</strong></li>
-<li><strong>Handling missing values</strong></li>
-</ol>
-<aside class="notes"><p>From https://tidyr.tidyverse.org/#getting-started</p>
-<p>“Pivoting” which converts between long and wide forms. tidyr 1.0.0 introduces pivot_longer() and pivot_wider(), replacing the older spread() and gather() functions. See vignette(“pivot”) for more details.</p>
-<p>“Rectangling”, which turns deeply nested lists (as from JSON) into tidy tibbles. See unnest_longer(), unnest_wider(), hoist(), and vignette(“rectangle”) for more details.</p>
-<p>Nesting converts grouped data to a form where each group becomes a single row containing a nested data frame, and unnesting does the opposite. See nest(), unnest(), and vignette(“nest”) for more details.</p>
-<p>Splitting and combining character columns. Use separate() and extract() to pull a single character column into multiple columns; use unite() to combine multiple columns into a single character column.</p>
-<p>Make implicit missing values explicit with complete(); make explicit missing values implicit with drop_na(); replace missing values with next/previous value with fill(), or a known value with replace_na().</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="what-is-involved-in-tidying-messy-datasets" class="title-slide slide level2 center" data-number="1"><h2>
-<span class="header-section-number">1</span> What is involved in tidying messy datasets?</h2>
-<ul>
-<li>Column headers are values, not variable names</li>
-<li>Multiple variables stored in one column</li>
-<li>Variables are stored in both rows and columns</li>
-<li>Multiple types in one table</li>
-<li>One type in multiple tables</li>
-</ul>
-<aside class="notes"><p>from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="pivoting" class="title-slide slide level2 center" data-number="2"><h2>
-<span class="header-section-number">2</span> Pivoting</h2>
+</section>
+<section class="slide level2">
 
-</section><section><section id="how-would-this-look-if-we-turn-it-into-tidy-data" class="title-slide slide level2 center" data-number="3"><h2>
-<span class="header-section-number">3</span> How would this look if we turn it into tidy data?</h2>
-<table>
-<thead><tr class="header">
-<th>City</th>
-<th>2000</th>
-<th>2010</th>
-<th>2020</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Baltimore city, Maryland</td>
-<td>300000</td>
-<td>290000</td>
-<td>285000</td>
-</tr>
-<tr class="even">
-<td>Washington, DC</td>
-<td>300000</td>
-<td>315000</td>
-<td>330000</td>
-</tr>
-<tr class="odd">
-<td>Richmond, Virginia</td>
-<td>200000</td>
-<td>202000</td>
-<td>210000</td>
-</tr>
-</tbody>
-</table></section><section class="slide level4"><table>
-<thead><tr class="header">
-<th>City</th>
-<th>Year</th>
-<th>Value</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Baltimore city, Maryland</td>
-<td>2000</td>
-<td>300000</td>
-</tr>
-<tr class="even">
-<td>Baltimore city, Maryland</td>
-<td>2010</td>
-<td>290000</td>
-</tr>
-<tr class="odd">
-<td>Baltimore city, Maryland</td>
-<td>2020</td>
-<td>285000</td>
-</tr>
-</tbody>
-</table>
-<p>…</p>
-</section><section class="slide level4"><div class="cell columns column-output-location">
-<div class="column">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">pivot_longer</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="at">cols =</span> <span class="sc">!</span><span class="fu">any_of</span>(<span class="st">"City"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3"></a>  <span class="at">names_to =</span> <span class="st">"Year"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="at">values_to =</span> <span class="st">"Value"</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="column fragment">
+<p>asfas</p>
+</section>
+<section class="slide level2">
 
+<div class="cell" data-reveal="true" data-fig-height="100">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Information] --&gt;|Structure| B(Actionable Metadata)
+</pre>
 </div>
 </div>
-</section><section class="slide level4"></section></section><section><section id="tidying-messy-datasets" class="title-slide slide level2 center" data-number="4"><h2>
-<span class="header-section-number">4</span> Tidying messy datasets</h2>
-<ul>
-<li>Column headers are values, not variable names</li>
-<li>Multiple variables stored in one column</li>
-<li>Variables are stored in both rows and columns</li>
-<li>Multiple types in one table</li>
-<li>One type in multiple tables</li>
-</ul></section><section class="slide level4"></section></section><section><section id="how-would-this-look-if-we-turn-it-into-tidy-data-1" class="title-slide slide level2 center" data-number="5"><h2>
-<span class="header-section-number">5</span> How would this look if we turn it into tidy data?</h2>
-<table>
-<thead><tr class="header">
-<th>City name</th>
-<th>2000</th>
-<th>2010</th>
-<th>2020</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Baltimore city, Maryland</td>
-<td>300000</td>
-<td>290000</td>
-<td>285000</td>
-</tr>
-<tr class="even">
-<td>Washington, DC</td>
-<td>300000</td>
-<td>315000</td>
-<td>330000</td>
-</tr>
-<tr class="odd">
-<td>Richmond, Virginia</td>
-<td>200000</td>
-<td>202000</td>
-<td>210000</td>
-</tr>
-</tbody>
-</table></section><section class="slide level4"><table>
-<thead><tr class="header">
-<th>City</th>
-<th>State</th>
-<th>Year</th>
-<th>Value</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Baltimore city</td>
-<td>Maryland</td>
-<td>2000</td>
-<td>300000</td>
-</tr>
-<tr class="even">
-<td>Washington</td>
-<td>DC</td>
-<td>2000</td>
-<td>300000</td>
-</tr>
-<tr class="odd">
-<td>Richmond</td>
-<td>Virginia</td>
-<td>2000</td>
-<td>200000</td>
-</tr>
-</tbody>
-</table>
-<p>…</p>
-</section><section class="slide level4"></section></section><section><section id="data-organization-in-spreadsheets" class="title-slide slide level2 center" data-number="6"><h2>
-<span class="header-section-number">6</span> Data organization in spreadsheets</h2>
-
-</section><section id="what-are-the-benefits-of-careful-data-organization-in-spreadsheets" class="title-slide slide level3 center"><h3>What are the benefits of careful data organization in spreadsheets?</h3>
-<ul>
-<li>reduce errors</li>
-<li>ease later analyses</li>
-</ul></section><section id="what-are-the-practical-approaches-for-data-organization-in-spreadsheets" class="title-slide slide level3 center"><h3>What are the practical approaches for data organization in spreadsheets?</h3>
-<ol type="1">
-<li>be consistent,</li>
-<li>write dates like YYYY-MM-DD,</li>
-<li>do not leave any cells empty,</li>
-<li>put just one thing in a cell,</li>
-<li>organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row),</li>
-<li>create a data dictionary,</li>
-<li>do not include calculations in the raw data files,</li>
-<li>do not use font color or highlighting as data,</li>
-<li>choose good names for things,</li>
-<li>make backups,</li>
-<li>use data validation to avoid data entry errors,</li>
-<li>and save the data in plain text files.</li>
-</ol>
+</div>
+</div>
+</section>
+<section class="slide level2">
 
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+<img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
-</div>
+</section>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -643,7 +413,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -801,42 +571,8 @@
           RevealZoom
         ]
       });
-    </script><script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -990,6 +726,6 @@
       }
     });
     </script>
-
+    
 
 </body></html>
