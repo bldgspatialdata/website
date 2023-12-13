@@ -1,12 +1,9 @@
 ---
-title: "Session {{< meta order >}}: Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package"
 order: 9
+title: "Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package"
+subtitle: "Session {{< meta order >}}"
 date-meta: 2023-10-25
-execute: 
-  error: true
-format: 
-  revealjs:
-    code-link: true
+image: "images/umbc-area-open-street-map.png"
 ---
 
 ## Overview

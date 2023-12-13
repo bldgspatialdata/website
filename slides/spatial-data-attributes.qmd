@@ -1,9 +1,6 @@
 ---
-title: "Creating and manipulating attributes for spatial data"
 order: 4
-editor: visual
-exec:
-  eval: false
+title: "Creating and manipulating attributes for spatial data"
 ---
 
 ## Setup

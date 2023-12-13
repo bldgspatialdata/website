@@ -1,0 +1,89 @@
+## Week 15 Agenda: December 6, 2023
+
+-   How did we do?
+
+    -   What do you think we should keep the same?
+
+        -   Weekly check-ins
+
+        -   Exercises *with* a template ("helped me feel not overwhelmed" nice to have some structure)
+
+        -   Structure of the later labs (not always telling you what to do - instruction had related resources)
+
+        -   Hands-on nature of the class ("best way to learn a program like R - compared to lecture-based - appreciate getting to work things through in class")
+
+        -   Keeping office hours is good
+
+        -   Using local data is helpful because of the connections to work (sense of confidence in working with data)
+
+        -   Flexibility to join online (+1 for hands-on experience)
+
+        -   Access to the course website and GitHub repository (being able to get all of the resources)
+
+        -   Weekly exercises were helpful (help keeping track of what we're covering)
+
+        -   Emphasis on where can we find datasets is helpful
+
+        -   80% complete rule for the exercises (helped to learn more when you can sometimes just skip it)
+
+        -   Really enjoyed the R for Data Science text, Geocomputation with R is a bit trickier (maybe because it the spatial stuff is a bit trickier)
+
+        -   Adjusted for student skill level and responding to feedback, catching up by using class time for review
+
+        -   Enjoyed the overall content, each topic in each week was useful and interesting
+
+        -   Discord server has been successful - easy to tell what is going on online - don't miss too much when I'm participating online and posting links to everything you're
+
+        -   Definitely want to +1 feedback so far; Data Feminism and All Data Are Local are favorites - ethical usage and how to use data for social justice
+
+    -   What do you think we should consider changing?
+
+        -   Flipped classroom - getting reading and lecture notes before class and spending class time on the exercises
+
+        -   Final project - starting the project at the beginning of the semester, e.g. proposal early in the class and incorporate as we go
+
+        -   Move visualization with ggplot2 after intro to dplyr and tidyr - after people get more experience with the language
+
+        -   Rough slides prior to start of class, taking notes based on a set of slides
+
+        -   Feedback on exercises would be helpful! Comments or general remarks
+
+        -   More exercises! If you assign them, I will do them. Even the exercises from the textbook. Make it required.
+
+        -   Agree on exercises being helpful. If you stick with a small number of exercises, make sure some are in the later part of the class because that material isn't necessarily duplicated.
+
+        -   Review feedback in the second half of each course session to avoid folks getting too fatigued.
+
+        -   *Also* feedback on the exercises. What did I miss?
+
+        -   Offering more varied prompts for the weekly check-in. Consider offering a quiz as an alternate.
+
+        -   Order of material/sessions - going a little slower at the start of the semester to give a strong foundation for the hands-on exercises - a little fast-paced at the beginning.
+
+        -   Assignment release time - a little lack of structure esp. at the beginning of the structure.
+
+        -   Seeing what people had been doing - if we could see material posted to GitHub (idea to share code with one another in a more structured kind of way)
+
+        -   Don't want anymore work *but* even small structured exercises keep momentum going. Focusing on here is what the week is about and what I was supposed to learn.
+
+        -   Got structure based on the homework assignments, overwhelming when we go off on tangents, more structure would assist with remembering what we're talking about.
+
+    -   What do you think we should consider adding or removing?
+
+        -   Importing and storing data - what is useful and what isn't useful? What are you looking for when you're cleaning data?
+
+        -   Thought we would learn building spatial datasets!
+
+        -   Every class in GES spatial data suite *does* Census data, e.g. Advanced GIS (Dillon's class) covers the same chapter and Ron's Just Maps is also all on Census data
+
+        -   Spending more time during class offering one-on-one support as needed
+
+-   Final project logistics
+
+    -   Presentation template
+    -   Presentation recording
+        -   Instructions on how to use presentation template
+        -   Form/instructions on submitting recording
+        -   Updated instructions on provides and submitting peer feedback
+
+-   Effective visual communication with R

@@ -1,7 +1,5 @@
 ---
 title: "Coding basics"
-execute: 
-  error: true
 ---
 
 ## Week 1

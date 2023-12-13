@@ -1,6 +1,6 @@
 ---
-title: "Welcome to GES 668: Building Spatial Datasets"
 order: 0
+title: "Welcome to GES 668: Building Spatial Datasets"
 format:
   revealjs: 
     auto-animate-easing: ease-in-out

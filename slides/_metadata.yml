@@ -2,6 +2,7 @@ date: last-modified
 format:
   revealjs:
     theme: files/clean.scss
+    # resource-path: ["images"]
     echo: true
     message: false
     scrollable: true
@@ -13,7 +14,9 @@ format:
     number-sections: true
     number-depth: 2
     sc-sb-title: true
+    code-link: true
 editor: visual
 execute:
   freeze: auto
   echo: true
+  error: true

@@ -17,7 +17,7 @@ tbl <- tibble::tribble(
           "[9](weeks/week_09.html)", "2023-10-25", "Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package",           "[📖](slides/open-street-map.html)", NA,
          "[10](weeks/week_10.html)", "2023-11-01",            "Exploring American Community Survey data with the tidycensus package",                NA, NA,
          "[11](weeks/week_11.html)", "2023-11-08",                             "Reading and writing spatial data files and services",           "[📖](slides/spatial-data-io.html)", NA,
-         "[12](weeks/week_12.html)", "2023-11-15",                                          "Creating and managing spatial metadata",          "[📖](slides/spatial-metadata.html)", NA,
+         "[12](weeks/week_12.html)", "2023-11-15",                                          "Creating and managing spatial metadata",          "[📖](slides/metadata.html)", NA,
          "[13](weeks/week_13.html)", "2023-11-22",                                            "Project check-in meetings (no class)",                                           NA,                                NA,
          "[14](weeks/week_14.html)", "2023-11-29",                                                         "Review and work session",                                           NA,                                NA,
          "[15](weeks/week_15.html)", "2023-12-06",                                                     "Final project presentations",                                           NA,                                NA,

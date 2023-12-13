@@ -2,6 +2,8 @@
 order: 3
 title: "Transforming data with `{dplyr}` and `{tidyr}`"
 subtitle: "Session {{< meta order >}}"
+execute: 
+  eval: false
 ---
 
 These slides are adapted from [Ch. 4 Data transformation](https://r4ds.hadley.nz/) in R for Data Science (2e).

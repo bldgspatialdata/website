@@ -15,6 +15,10 @@ library(sf)
 us_states <- tigris::states()
 ```
 
+{{< include week/_week_12_update.qmd >}}
+
+## Week 14: November 29, 2023
+
 - Scheduling
 - Final project check-in
 - Lecture + discussion for spatial metadata

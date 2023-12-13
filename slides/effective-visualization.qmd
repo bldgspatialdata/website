@@ -1,0 +1,103 @@
+---
+title: "Effective visualization with `{ggplot2}` and R"
+---
+
+## Where to start?
+
+-   Know your goal
+-   Know your audience
+-   Know your format
+
+## What next?
+
+-   Choosing appropriate graphic types
+-   Writing and formatting clear text
+-   Selecting appropriate and engaging colors
+-   Preparing your feature geometry appropriately
+
+## Choosing appropriate graphic types
+
+-   What makes one graphic, chart, plot, or map "better" or "worse"?
+
+------------------------------------------------------------------------
+
+What makes a bad map *bad*?
+
+For new map makers who might not know any better, it is often:
+
+-   Confusing or distracting layout
+-   Not enough color contrast for features
+-   Cluttered labels, legends, or features
+
+------------------------------------------------------------------------
+
+What makes a fine map *just* fine?
+
+For more experienced map makers who might be in a hurry:
+
+-   Not enough thought on font sizes and styling
+-   No feature generalization (simplifying geometry where appropriate for the map scale or subject)
+-   Inappropriate color scales
+
+------------------------------------------------------------------------
+
+There are many cartographic considerations that also apply to other all types of data visualization:
+
+-   Layout
+-   Fonts (Typography)
+-   Colors
+-   Output formats
+
+------------------------------------------------------------------------
+
+But there are also some cartographic considerations that apply to maps in special and important ways:
+
+-   Feature geometry (and cartographic conventions)
+-   Projections
+-   Scaling
+
+
+## Items, Attributes, Marks, and Channels
+
+In [Visualization Analysis and Design](https://www.cs.ubc.ca/~tmm/vadbook/) (2014), Tamara Munzner describes a set of useful concepts:
+
+-   items,
+-   attributes,
+-   links,
+-   marks,
+-   and channels
+
+::: notes
+Book website: https://www.cs.ubc.ca/\~tmm/vadbook/
+
+via https://homepage.divms.uiowa.edu/\~luke/classes/STAT4580/percep.html
+:::
+
+## Items and Attributes
+
+Items
+
+:   basic units on which data is collected
+
+Attributes
+
+:   numerical or categorical features of the data items we want to represent
+
+Links
+
+:   relations among items, e.g. months within a year, or countries within a continent.
+
+## Marks and Channels
+
+Marks
+
+:   geometric entities used to represent items: points, lines, areas.
+
+Visual channels
+
+:   features of marks that can be used to reflect values of attributes."
+
+::: notes
+https://homepage.divms.uiowa.edu/\~luke/classes/STAT4580/percep.html
+:::
+

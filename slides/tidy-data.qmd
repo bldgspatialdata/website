@@ -1,5 +1,6 @@
 ---
-title: "Session {{< meta order >}}: Tidying and joining data"
+title: "Tidying and joining data"
+subtitle: "Session {{< meta order >}}"
 order: 2
 date-meta: 2023-09-04
 execute: 
