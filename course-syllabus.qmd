@@ -3,8 +3,6 @@ title: "GES 668: Course Syllabus"
 date-modified: last-modified
 format: 
   html: default
-  pdf:
-    output-file: "GES668_Fall-2023_Syllabus.pdf"
 bibliography: weeks/files/readings.bib
 csl: weeks/files/chicago-syllabus.csl
 suppress-bibliography: true
