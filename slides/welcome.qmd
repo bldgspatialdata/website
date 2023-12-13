@@ -1,6 +1,8 @@
 ---
 order: 0
 title: "Welcome to GES 668: Building Spatial Datasets"
+image: "images/2023-08-30_student-survey.png"
+date: 2023-08-30
 format:
   revealjs: 
     auto-animate-easing: ease-in-out

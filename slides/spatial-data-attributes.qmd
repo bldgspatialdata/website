@@ -1,6 +1,7 @@
 ---
 order: 4
 title: "Creating and manipulating attributes for spatial data"
+date: 2023-09-20
 ---
 
 ## Setup

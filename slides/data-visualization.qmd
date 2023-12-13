@@ -2,7 +2,8 @@
 order: 2
 title: "Visualizing spatial data with ggplot2"
 subtitle: "Session {{< meta order >}}"
-date-meta: 2023-09-06
+date: 2023-09-06
+image: "images/qcbis_workshop03_gglayers-graphic.png"
 format: 
   revealjs:
     output-location: column-fragment
@@ -176,7 +177,7 @@ Graphics can be further transformed using **animation** and **interactivity**. M
 
 # What is the "grammar of graphics"?
 
-![Image adapted from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](https://r.qcbs.ca/workshop03/book-en/images/gglayers.png)
+![Image adapted from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](images/qcbis_workshop03_gglayers-graphic.png)
 
 ----
 

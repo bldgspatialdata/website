@@ -4,6 +4,5 @@ listing:
   contents:
     - "slides/*.qmd"
   type: grid
-  sort:
-    - "order"
+  filter-ui: true
 ---

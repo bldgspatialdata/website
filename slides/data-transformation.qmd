@@ -2,6 +2,8 @@
 order: 3
 title: "Transforming data with `{dplyr}` and `{tidyr}`"
 subtitle: "Session {{< meta order >}}"
+date: 2023-09-13
+image: "images/whole-game.png"
 execute: 
   eval: false
 ---

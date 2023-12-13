@@ -2,7 +2,8 @@
 order: 7
 title: "Working with scripts, functions, and Quarto"
 subtitle: "Session {{< meta order >}}"
-date-meta: 2023-10-11
+date: 2023-10-11
+image: "images/rforecology_functions-graphic.png"
 ---
 
 ```{r}
@@ -47,6 +48,13 @@ Literate programming: "an approach to writing computer code where the author int
 Publishing code can also aid collaboration between organizations!
 
 ## Functions
+
+![How to create a custom function in R](images/rforecology_functions-graphic.png){.r-stretch}
+
+::: footer
+Source: [How to create your own function in R](https://www.rforecology.com/post/how-to-create-your-own-function-in-r/) (R for Ecology)
+
+:::
 
 ### Why functions?
 

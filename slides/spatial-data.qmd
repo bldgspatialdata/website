@@ -2,7 +2,8 @@
 order: 1
 title: "Getting started with spatial data using `{sf}` and the `{tidyverse}`"
 subtitle: "Session {{< meta order >}}"
-image: images/umbc-area-open-street-map.png
+image: "images/rstudio-ide-screenshot.png"
+date: 2023-09-06
 ---
 
 ```{r}

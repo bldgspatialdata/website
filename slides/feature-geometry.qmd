@@ -2,7 +2,8 @@
 order: 5
 title: "Working with spatial and geometric operations in `{sf}`"
 subtitle: "Session {{< meta order >}}"
-date-meta: 2023-09-27
+date: 2023-09-27
+image: "images/st_intersections_postgis-intro.png"
 format: 
   revealjs:
     output-location: column-fragment
