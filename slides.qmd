@@ -1,9 +1,8 @@
 ---
 title: "Slides"
-format: html
 listing:
   contents:
-    - "*.qmd"
+    - "slides/*.qmd"
   type: grid
   sort:
     - "order"

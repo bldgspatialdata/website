@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: "_site"
 
 logo: "images/logo.png"
 
@@ -71,6 +71,8 @@ website:
           # - href: exercises/exercise_12.qmd
       - section: "Resources 📋️"
         contents:
+          - href: slides.qmd
+            text: Slides
           - href: resources/data-sources.qmd
             text: Data Sources
           - href: https://bldgspatialdata.github.io/starters/

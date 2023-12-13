@@ -17,6 +17,5 @@ format:
     code-link: true
 editor: visual
 execute:
-  freeze: auto
   echo: true
   error: true
