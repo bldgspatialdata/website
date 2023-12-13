@@ -3,6 +3,7 @@ order: 8
 title: "Exploratory data analysis"
 subtitle: "Session {{< meta order >}}"
 date: 2023-10-18
+image: "images/tidyverse-packages.png"
 ---
 
 # Working openly

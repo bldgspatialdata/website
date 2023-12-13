@@ -2,6 +2,7 @@
 title: "Metadata, geospatial metadata, and READMEs"
 order: 12
 fig-align: left
+date: 2023-11-15
 image: "images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png"
 ---
 

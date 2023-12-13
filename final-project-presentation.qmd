@@ -1,0 +1,148 @@
+---
+title: "GES668: Your Project Title"
+author: "Your Name"
+format: revealjs
+date-modified: 2023-12-13
+---
+
+## Using this template
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## How to use this template
+
+This template is based on the [the GES 668 Final Project instructions](https://bldgspatialdata.github.io/website/final-project.html). You should *replace* the questions or other instructions in this template with your own writing about the project. Link to your project README or other files in your repository to provide more detailed information where appropriate.
+:::
+
+## Working with Reveal.js
+
+:::{.callout-tip appearance='default'}
+## Remove this slide
+
+This slide and the next three slides should be removed. They are only provided as a reference for working with [Reveal.js presentation format](https://quarto.org/docs/presentations/revealjs/) in Quarto. Check [the full list of options for the Reveal.js presentation format](https://quarto.org/docs/reference/formats/presentations/revealjs.html) in Quarto for more detailed information.
+
+:::
+
+## Working with Reveal.js
+
+This slide includes a captioned image inserted with Markdown formatting.
+
+![Building Spatial Datasets Course logo](https://bldgspatialdata.github.io/website/images/logo.png){fig-align="right" fig-width="50%"}
+
+## Working with Reveal.js
+
+This slide includes a code block and presentation notes.
+
+```{r}
+#| label: example_code-block
+#| echo: true
+library(sf)
+library(ggplot2)
+
+nc <- st_read(system.file("shape/nc.shp", package="sf"))
+
+ggplot() +
+  geom_sf(data = nc, aes(fill = NAME)) +
+  guides(fill = "none")
+```
+
+::: notes
+
+This is an example of how you add in presentation notes.
+
+:::
+
+
+## Working with Reveal.js
+
+This slide includes a hidden code block and a custom footer. See the [Quarto code cells reference](https://quarto.org/docs/reference/cells/cells-knitr.html) for more information.
+
+```{r}
+#| label: example_hidden-code-block
+#| echo: false
+
+library(dplyr)
+library(gt)
+
+nc |> 
+  st_drop_geometry() |> 
+  select(AREA, PERIMETER, NAME, FIPS) |> 
+  slice_head(n = 3) |> 
+  gt()
+```
+
+::: footer
+This is an example of a custom footer.
+:::
+
+
+## Overview
+
+-   Brief summary description of the project
+
+## Project goals
+
+-   What were your initial goals for the project?
+
+-   How did they change or develop as you worked on your project?
+
+## Data sources
+
+More than one slide per data source is likely required for this section and basic information on each major data source used in your project. Make sure to answer:
+
+-   What data sources did you use?
+
+-   How, why, and where were they created?
+
+## Approach and methods for working with data
+
+Briefly recap related information from your initial project proposal describing your approach. Make sure to answer:
+
+-   Did your approach involve mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches?
+
+-   Why did you select this approach and did you change apporach while completing your final project?
+
+-   What packages, templates, or other resources did you use in creating your final project?
+
+## Challenges in working with data
+
+What challenges did you encounter in making use of these resources and this data?
+
+Challenges can be practical, e.g. "Difficulty identifying which key-value pairs needed to query OpenStreetMap data," or conceptual, e.g. "Unsure appropriate level of geographical analysis to support a robust analysis."
+
+## Successes in working with data
+
+What do you think your project does well?
+
+Your areas of success likely depend on your approach:
+
+-   If you completed a data analysis, what are your key findings?
+
+-   If you created a map, what does it communicate to people who see it?
+
+
+## Where to learn more
+
+::: {.r-fit-text}
+
+Add links or brief descriptions of how to find the required elements for your project repository.
+
+project data
+: source files or a script used for importing and processing the data before visualization or analysis. Students who are using {osmdata} or {tidycensus} should include scripts for downloading data.
+
+project code
+: any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.
+
+output files
+: including any processed data files or rendered PDF or HTML documents.
+
+README
+: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.
+
+These can be placeholder links as you still have time to complete the final project and some elements may be incomplete.
+
+:::
+
+::: footer
+
+This slide uses a [fit-text div](https://quarto.org/docs/presentations/revealjs/advanced.html#fit-text) to make sure the text fits on a single slide. Learn more about [Advanced Reveal features in the Quarto documentation](https://quarto.org/docs/presentations/revealjs/advanced.html).
+:::

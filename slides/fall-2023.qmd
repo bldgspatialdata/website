@@ -1,6 +1,7 @@
 ---
 title: "Fall 2023 Weekly Updates"
 number-sections: false
+date: 2023-08-30
 ---
 
 # This Week
