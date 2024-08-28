@@ -5,45 +5,24 @@ toc: true
 number-sections: true
 ---
 
-## Access your exercise repository
+## Accesssing exercises on GitHub
 
 ### Register for an account and join the student team
 
 -   You must [sign up for a GitHub user account](https://github.com/signup) and share your GitHub username with me before I can create an exercise repository for you.
--   Note that you must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and [installed GitHub Desktop](https://desktop.github.com/) to submit exercises.
--   Soon after I get your username, you should expect an email asking you to accept an invitation to the "2023_Students" Team in the class [GitHub organization](https://github.com/bldgspatialdata).
--   This is a private repository just for *your* exercise assignments so the repository will be named: **\<your first name\>\_\<your last name\>** and can be accessed at: **https://github.com/bldgspatialdata/\<your first name\>\_\<your last name\>**. Don't forget to replace the placeholder with your first and last name in lower case. You can also go to [the course repository list](https://github.com/orgs/bldgspatialdata/repositories) and, if you are logged in and have access, you should find your repository there. 
+-   You must have [installed R and RStudio](https://posit.co/download/rstudio-desktop/) to complete exercises and have Git installed.
+-   Soon after I get your username, you should expect an email asking you to accept an invitation to the "2024_Students" Team in the class [GitHub organization](https://github.com/bldgspatialdata).
+-   You can also go to [the course repository list](https://github.com/orgs/bldgspatialdata/repositories) and, if you are logged in and have access, you should find your repository there.
+
+Don't forget to connect RStudio to GitHub before working on the class exercises! Review the [instructions on how to connect RStudio and GitHub](course-prep) for more information.
+
+## Download or update your exercise repository
 
 ::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ### What is a repository?
 
 A repository is a collection of files where changes can be tracked and managed using a version control system. Git is a version control system. GitHub is a web service that makes it easier to manage version-controlled repositories and collaborate with others. For more background, read [Ch. 1 Why Git? Why GitHub?](https://happygitwithr.com/big-picture) from Happy Git and GitHub for the useR by Jenny Bryan.
 :::
-
-### Set up GitHub credentials in RStudio
-
-If you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your repositories. You
-
-The `{usethis}` documentation [includes detailed article on connecting GitHub and R](https://usethis.r-lib.org/articles/git-credentials.html) but it is more detail than you may need. First, install the `{usethis}` package (if you don't have it installed already):
-
-```{r}
-# pak::pkg_install("usethis")
-```
-
-Now, there are four steps (the first step is optional):
-
-1. [Set up two-factor authentication](https://usethis.r-lib.org/articles/git-credentials.html#turn-on-two-factor-authentication). This is optional but recommended.
-
-2. Run `usethis::create_github_token()` to [get a personal access token](https://usethis.r-lib.org/articles/git-credentials.html#get-a-personal-access-token-pat) and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won't need to refresh the token until after the end of this course.
-
-3. Run `gitcreds::gitcreds_set()` to [put your PAT in your Git credential store](https://usethis.r-lib.org/articles/git-credentials.html#put-your-pat-into-the-local-git-credential-store)
-
-4. **Restart your session** and run `usethis::gh_token_help()` to double-check that the token is saved in the right place.
-
-
-If you run into any trouble, you can also run `usethis::git_sitrep()` for more feedback on what is set up correctly and what (if anything) might need to be fixed.
-
-## Download or update your exercise repository
 
 ### Downloading (a.k.a "cloning") your exercise repository
 
@@ -96,11 +75,12 @@ The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.h
 
 -   Remember, you don't need to get everything right and it is OK if your document won't render. Just try your best with each part of the exercise.
 
-:::{.callout-tip collapse=false appearance='default' icon=true}
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
 ## Tips for completing exercises
-- Complete this exercise from top to bottom. Blocks of code at the end of the document may depend on blocks from the beginning or middle so avoid skipping around.
-- If you get an error message, read it. If it doesn't make sense, try looking it up. R for Data Science reminds readers that [Google is your friend](https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend).
-- Read the documentation!
+
+-   Complete this exercise from top to bottom. Blocks of code at the end of the document may depend on blocks from the beginning or middle so avoid skipping around.
+-   If you get an error message, read it. If it doesn't make sense, try looking it up. R for Data Science reminds readers that [Google is your friend](https://r4ds.hadley.nz/workflow-help.html#google-is-your-friend).
+-   Read the documentation!
 :::
 
 ## Committing your completed exercise to the repository
@@ -113,7 +93,7 @@ You may have saved your updated document to your computer but the last step is t
 
 The first and easiest way to commit changes is using GitHub Desktop.
 
-- Review the GitHub documentation on [Committing and reviewing changes to your project in GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) for more detailed instructions.
+-   Review the GitHub documentation on [Committing and reviewing changes to your project in GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) for more detailed instructions.
 
 ### Commit changes with RStudio
 

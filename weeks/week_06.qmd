@@ -1,18 +1,18 @@
 ---
 title: "Week 6"
 order: 6
-subtitle: "Tidying and joining spatial data"
-unit: "Getting started"
-date: 2023-10-04
+subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
+date: 2024-10-02
 ---
 
 ## Overview
 
--   Joining tables by attribute with `{dplyr}`
--   Using [{stringr}](https://stringr.tidyverse.org/) functions to tidy messy address data
--   Recoding categorical attribute data with [{forcats}](https://forcats.tidyverse.org/)
--   Converting between wide and long data formats with `dplyr::pivot_longer()` and `dplyr::pivot_wider()`
--   Working with date-time attributes using [{lubridate}](https://lubridate.tidyverse.org/)
+#### Key Objectives
+
+- Introduce spatial, geometry, and geometric operations in `{sf}`
+- Practice using geometry operations for buffering or simplifying features
+- Practice using geometric operations like union, intersection, and difference
+- Practice using related functions including spatial joins and filters
 
 ## Prepare
 
@@ -20,8 +20,8 @@ date: 2023-10-04
 
 ## Participate
 
-🖥️ [Tidying and joining data](/slides/tidy-data.html)
+🖥️ [Getting started with spatial data using sf and the tidyverse](/slides/spatial-data.html)
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+Details on week 6 exercise to be provided.

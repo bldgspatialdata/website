@@ -1,5 +1,6 @@
 ---
 title: "Effective visualization with `{ggplot2}` and R"
+date: 2023-11-29
 ---
 
 ## Where to start?

@@ -38,7 +38,7 @@ This slide includes a code block and presentation notes.
 library(sf)
 library(ggplot2)
 
-nc <- st_read(system.file("shape/nc.shp", package="sf"))
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
 
 ggplot() +
   geom_sf(data = nc, aes(fill = NAME)) +
@@ -63,10 +63,10 @@ This slide includes a hidden code block and a custom footer. See the [Quarto cod
 library(dplyr)
 library(gt)
 
-nc |> 
-  st_drop_geometry() |> 
-  select(AREA, PERIMETER, NAME, FIPS) |> 
-  slice_head(n = 3) |> 
+nc |>
+  st_drop_geometry() |>
+  select(AREA, PERIMETER, NAME, FIPS) |>
+  slice_head(n = 3) |>
   gt()
 ```
 

@@ -5,18 +5,17 @@ instructor:
   mastodon_url: "https://dads.cool/\\@elipousson"
   github: elipousson
   contact_policy: "Please contact me by email and I will get back to you with one to two days."
-  appointment_url: https://calendly.com/ # FIXME: Add an appointment URL if possible.
 
 course:
   number: "GES 668"
-  semester: "Fall 2023"
+  semester: "Fall 2024"
   days: "Wednesdays"
   time: "6:00–8:30 PM" # FIXME: Update the time when the time is confirmed
   location: "Sondheim Hall 001 (Cartography Lab), University of Maryland, Baltimore County, 1099 Hilltop Road, Baltimore, MD 21250"
-  dates: "August 30 – December 6, 2023"
+  dates: "August 28 – December 11, 2024"
   github: "https://www.github.com/bldgspatialdata/website"
   url: "https://bldgspatialdata.github.io/website"
-  year: "2023"
+  year: "2024"
 
 university:
   name: University of Maryland Baltimore County
@@ -28,7 +27,7 @@ department:
 
 dates:
   project:
-    proposal: 2023-11-13
-    presentation: 2023-12-13
-    feedback: 2023-12-15
-    repo: 2023-12-20
+    proposal: 2024-11-13
+    presentation: 2024-12-13
+    feedback: 2024-12-15
+    repo: 2024-12-20

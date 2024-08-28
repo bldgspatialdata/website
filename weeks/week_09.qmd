@@ -2,7 +2,7 @@
 title: "Week 9"
 order: 9
 subtitle: "Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`"
-date: 2023-10-25
+date: 2024-10-23
 ---
 
 ## Prepare

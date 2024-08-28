@@ -1,14 +1,23 @@
 project:
   type: website
   output-dir: "_site"
+  render:
+    - "*.qmd"
+    - "!TODO.md"
 
 logo: "images/logo.png"
 
 website:
   page-navigation: true
-  title: "GES 668 - Fall 2023"
+  title: "GES 668 - Fall 2024"
   description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023."
   site-url: "https://bldgspatialdata.github.io/website/"
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "Note: The 2024 course website is a work-in-progress. Check back soon for updates!"
+    type: info
+    position: below-navbar
 
   repo-url: https://github.com/bldgspatialdata/website
   repo-actions: [edit, issue]
@@ -31,15 +40,16 @@ website:
             text: Overview
           - href: course-syllabus.qmd
             text: Syllabus
-          - href: final-project.qmd
-            text: Final Project How-to
-          - href: course-exercises.qmd
-            text: Exercise How-to
+          - href: course-prep.qmd
+            text: Prep
+          - href: course-schedule.qmd
+            text: Schedule
+          - href: slides.qmd
+            text: Slides
       - section: "Weeks 🗓️"
         contents:
-          - href: slides/fall-2023.qmd
-            text: Weekly Updates
-          - course-schedule.qmd
+          # - href: slides/fall-2023.qmd
+          #   text: Weekly Updates
           - href: weeks/week_01.qmd
           - href: weeks/week_02.qmd
           - href: weeks/week_03.qmd
@@ -57,6 +67,8 @@ website:
           - href: weeks/week_15.qmd
       - section: "Exercises 🛠️"
         contents:
+          - href: course-exercises.qmd
+            text: Exercise How-to
           - href: exercises/exercise_01.qmd
           - href: exercises/exercise_02.qmd
           - href: exercises/exercise_03.qmd
@@ -69,10 +81,10 @@ website:
           # - href: exercises/exercise_10.qmd
           # - href: exercises/exercise_11.qmd
           # - href: exercises/exercise_12.qmd
+      - href: final-project.qmd
+        text: Final Project
       - section: "Resources 📋️"
         contents:
-          - href: slides.qmd
-            text: Slides
           - href: resources/data-sources.qmd
             text: Data Sources
           - href: https://bldgspatialdata.github.io/starters/

@@ -1,8 +1,4 @@
 ### Required readings
 
--   [Ch. 3 Attribute data operations](https://geocompr.robinlovelace.net/attr.html) in @lovelaceGeocomputation2022
--   [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019
-
-### Optional readings
-
--   [Ch. 5 Attributes and Support](https://r-spatial.org/book/05-Attributes.html) in @pebesmaSpatialDataScience2023
+-   @pebesmaManipulatingSimpleFeature2016
+-   [Ch. 4 Spatial data operations](https://r.geocompx.org/spatial-operations) in @lovelaceGeocomputation2022

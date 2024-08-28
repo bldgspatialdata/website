@@ -2,25 +2,34 @@
 title: "Week 2"
 order: 2
 subtitle: "Visualizing spatial data with `{ggplot2}`"
-date: 2023-09-06
+date: 2024-09-04
 ---
+
+```{r}
+#| echo: false
+#| message: false
+library(ggplot2)
+```
 
 ## Overview
 
-### Agenda
+This week is all about making plots and maps using the `{ggplot}` package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.
 
--   Week 2 Updates
--   Your week 1 questions
--   Introduction to visualizing spatial data in R
+### Key Objectives
 
-::: {.callout-note appearance="minimal" icon="true"}
-#### Key Objectives
+-   Introduce the concept of a "pipe" (`%>%` or `|>`) and how and when to use it
+-   Introduce the concept of the "grammar of graphics"
+-   Practice plotting and mapping data with `{ggplot2}`
+-   Practice mapping data with `{mapview}` (TODO: Make sure interactive maps are included in the slides/exercise)
 
--   Explore the "grammar of graphics" as a way of structuring plots and maps
--   Explore the concept of "tidy" data
--   Practice creating plots and maps with the `{ggplot2}` package
--   Learn how the pipe function (`%>%` or `|>`) works and when it may be useful
-:::
+### Key Skills
+
+- Using keyboard shortcuts in RStudio (TODO: Add keyboard shortcut for a pipe and assignment operator)
+- Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
+- Mapping spatial data using `geom_sf()` and `coord_sf()`
+- Mapping spatial data using `mapview()`
+- Using `theme_` functions to customize the appearance of a plot
+- Using `labs()` to add labels to a plot
 
 ## Prepare
 
@@ -28,21 +37,8 @@ date: 2023-09-06
 
 ## Participate
 
-🖥️ [Visualizing spatial data with `{ggplot2}`](/slides/data-visualization.html)
+🖥️ [Visualizing spatial data with `{ggplot2}`](../slides/data-visualization)
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
-
-## Notes
-
-We didn't quite finish the in-class lecture and practice this week so week 3 may include some review.
-
-### What skills did we practice
-
-- Building plots using `ggplot()` and `geom_()` functions
-- Creating aesthetic mappings using the `aes()` function
-
-### What concepts did we discuss
-
-- How the "grammar of graphics" inform the `{ggplot}` interface
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.qmd)
