@@ -24,4 +24,4 @@ date: 2023-09-27
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+Details on week 6 exercise to be provided.

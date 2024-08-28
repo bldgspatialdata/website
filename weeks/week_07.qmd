@@ -13,9 +13,6 @@ date: 2023-10-11
 
 🖥️ [Working with scripts, functions, and Quarto](/slides/functions.html)
 
-[Code sample from week 8](https://gist.github.com/elipousson/a2b9ab5daef7bdd654c043809f2af24e)
-
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
-
+Details on week 7 exercise to be provided.

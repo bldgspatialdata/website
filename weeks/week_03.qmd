@@ -7,12 +7,7 @@ date: 2023-09-13
 
 ## Overview
 
-### Agenda
-
-- Week 3 updates
-- Mapping with `{ggplot}` review
-- Introduction to data transformation with `{dplyr}`
-- Using `{dplyr}` with `sf` objects
+This week includes a review of data visualization and mapping with `{ggplot}` review, an introduction to data transformation with `{dplyr}`, and an initial discussion of using `{dplyr}` with `sf` objects.
 
 #### Key Objectives
 
