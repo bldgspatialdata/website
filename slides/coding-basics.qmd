@@ -4,6 +4,10 @@ title: "Coding basics"
 
 ## Week 1
 
+::: notes
+TODO: Fill in info re: Hands-On Programming with R chapters on [basics](https://rstudio-education.github.io/hopr/basics.html) and [packages](https://rstudio-education.github.io/hopr/packages.html)
+:::
+
 ### Packages in R
 
 A container for:
@@ -59,14 +63,6 @@ A container for:
 
 ------------------------------------------------------------------------
 
-### Take a look at `st_read()`
-
-```{r}
-```
-
-
-------------------------------------------------------------------------
-
 Some functions require a specific type of input:
 
 ```{r}
@@ -90,6 +86,15 @@ paste0("A", "B", "C")
 Order of execution matters!
 
 ```{r}
+var <- 0
 var + 2
 var <- 1
+var
+```
+
+```{r}
+var <- 0
+var <- 1
+var + 2
+var
 ```

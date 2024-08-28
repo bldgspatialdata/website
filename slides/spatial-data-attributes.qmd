@@ -4,6 +4,11 @@ title: "Creating and manipulating attributes for spatial data"
 date: 2023-09-20
 ---
 
+```{r}
+#| echo: false
+source(here::here("_common.R"))
+```
+
 ## Setup
 
 Today, we are going to use the `{tidyverse}` along with `{sf}` and two related packages: `{lwgeom}` and `{units}`.
@@ -180,6 +185,10 @@ Here are the attributes for `us_states`:
 glimpse(st_drop_geometry(us_states))
 ```
 
+::: notes
+FIXME: Add missing source for quoted text on this slide
+:::
+
 ------------------------------------------------------------------------
 
 Attributes can have:
@@ -203,6 +212,8 @@ glimpse(us_states)
 ```
 
 ::: notes
+FIXME: Turn this into a quiz
+
 -   NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
 -   ALAND: No - this is an aggregate value
 -   INTPTLAT: No - this is a summary value
@@ -229,7 +240,7 @@ Illustrates the point: "A typical property of such variables is that associated 
 Attributes can be:
 
 -   extensive: corresponding to amounts, associated with a physical size (length, area, volume, counts of items)
--   intensive:
+-   intensive: FIXME: fill in missing definition.
 
 ## What is an "attribute domain"?
 
@@ -245,15 +256,15 @@ When we do data analysis using `{dplyr}`, there are three types of functions we 
 -   Window or vector functions
 -   Summary or analysis functions
 
-There are similar
+There are similar groups of functions in `{sf}`:
 
 ## Predicate functions for geometries with `{sf}`
 
-`{sf}` includes "vectorized" logical operators or tests that work with geometry including:
+`{sf}` includes "vectorized" logical operators or tests that work with a geometry list (`sf` or `sfc`) or a single geometry (`sfg`) including:
 
--   `st_is()`
--   `st_is_valid()`
--   `st_is_empty()`
+-   `st_is`
+-   `st_is_valid`
+-   `st_is_empty`
 
 ------------------------------------------------------------------------
 
@@ -303,8 +314,6 @@ maryland <- filter(us_states, NAME == "Maryland")
 
 ## Measuring geometries with `{sf}`
 
-## Measuring geometries with `{sf}`
-
 `{sf}` includes a few different functions for measuring geometries:
 
 -   `st_area()` (only works with POLYGON and MULTIPOLYGON geometries)
@@ -325,7 +334,7 @@ st_area(maryland$geometry)
 
 ## Measuring geometries with `{sf}`
 
-But, remember, `dplyr::mutate()` is designed to work with vectorized functions so you can do us a measurement function inside `mutate()`:
+But, remember, `dplyr::mutate()` is designed to work with vectorized functions so you can use a measurement function inside `mutate()`:
 
 ```{r}
 maryland |>
