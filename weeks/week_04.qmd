@@ -7,7 +7,14 @@ date: 2023-09-20
 
 ## Overview
 
--   Summarizing features with `dplyr::summarize()`
+This week is to learn to use `{dplyr}` and `{sf}` in combination to create and manipulate attributes associated with spatial data.
+
+### Key Objectives
+
+-   Review key concepts of simple features in R
+-   Introduce key concepts for spatial attribute data (e.g. point vs. block support)
+-   Practice using `{sf}` functions for *geometric confirmation* (`st_intersects()`, `st_disjoint()`) and *geometric measurement* (`st_area()`, `st_length()`, `st_distance()`)
+-   Discuss ideas for final projects
 
 ## Prepare
 
@@ -19,4 +26,4 @@ date: 2023-09-20
 
 ## Practice
 
-🛠 Look out for a combined exercise for week 4 and 5.
+Exercise details to be provided.
