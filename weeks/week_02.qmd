@@ -41,4 +41,4 @@ This week is all about making plots and maps using the `{ggplot}` package. Learn
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0%7B%7B%3C%20meta%20order%20%3E%7D%7D.html)
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise__0{{< meta order >}}.qmd)
