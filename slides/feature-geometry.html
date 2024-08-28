@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="dcterms.date" content="2023-09-27">
-  <title>GES 668 - Fall 2023 - Working with spatial and geometric operations in {sf}</title>
+  <title>GES 668 - Fall 2024 – Working with spatial and geometric operations in {sf}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -385,10 +386,12 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Working with spatial and geometric operations in {sf}">
+<meta property="og:title" content="Working with spatial and geometric operations in {sf} – GES 668 - Fall 2024">
 <meta property="og:description" content="Session 5">
-<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/st_intersections_postgis-intro.png">
-<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/st_intersects_postgis-intro.png">
+<meta property="og:site_name" content="GES 668 - Fall 2024">
+<meta property="og:image:height" content="550">
+<meta property="og:image:width" content="500">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -408,28 +411,26 @@
 <h2><span class="header-section-number">1</span> Getting started</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tigris)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tigris)</span>
+<span id="cb1-4"><a></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">options</span>(<span class="st">"tigris_use_cache"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>us_states <span class="ot">&lt;-</span> <span class="fu">states</span>()</span>
-<span id="cb2-3"><a href="#cb2-3"></a>us_highways <span class="ot">&lt;-</span> <span class="fu">primary_roads</span>()</span>
-<span id="cb2-4"><a href="#cb2-4"></a>maryland <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a>lower48 <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, <span class="sc">!</span>(NAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States Virgin Islands"</span>, <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>, <span class="st">"Alaska"</span>, <span class="st">"American Samoa"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"Hawaii"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="st">"tigris_use_cache"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">states</span>()</span>
+<span id="cb2-3"><a></a>us_highways <span class="ot">&lt;-</span> <span class="fu">primary_roads</span>()</span>
+<span id="cb2-4"><a></a>maryland <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span>
+<span id="cb2-5"><a></a>lower48 <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, <span class="sc">!</span>(NAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States Virgin Islands"</span>, <span class="st">"Commonwealth of the Northern Mariana Islands"</span>, <span class="st">"Guam"</span>, <span class="st">"Alaska"</span>, <span class="st">"American Samoa"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"Hawaii"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="converting-objects-between-types" class="title-slide slide level2 center" data-number="2">
@@ -440,19 +441,18 @@
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>sfg <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">76.712838</span>, <span class="fl">39.253383</span>))</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>sfg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>sfg <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">76.712838</span>, <span class="fl">39.253383</span>))</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>sfg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Geometry set for 1 feature 
@@ -461,16 +461,15 @@ Dimension:     XY
 Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
 CRS:           NA</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>sfc <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>sfc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sfc <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>sfc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Geometry set for 1 feature 
@@ -479,14 +478,13 @@ Dimension:     XY
 Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
 Geodetic CRS:  WGS 84</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">st_as_sf</span>(sfc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">st_as_sf</span>(sfc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 1 feature and 0 fields
@@ -497,22 +495,21 @@ Geodetic CRS:  WGS 84
                            x
 1 POINT (-76.71284 39.25338)</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>sf_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="at">name =</span> <span class="st">"Example data frame"</span>,</span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">lon =</span> <span class="sc">-</span><span class="fl">76.712838</span>,</span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">lat =</span> <span class="fl">39.253383</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>)</span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-7"><a href="#cb10-7"></a>sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_df, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a>sf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>sf_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-2"><a></a>  <span class="at">name =</span> <span class="st">"Example data frame"</span>,</span>
+<span id="cb10-3"><a></a>  <span class="at">lon =</span> <span class="sc">-</span><span class="fl">76.712838</span>,</span>
+<span id="cb10-4"><a></a>  <span class="at">lat =</span> <span class="fl">39.253383</span></span>
+<span id="cb10-5"><a></a>)</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a>sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_df, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb10-8"><a></a></span>
+<span id="cb10-9"><a></a>sf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 1 feature and 1 field
@@ -523,8 +520,7 @@ Geodetic CRS:  WGS 84
                 name                   geometry
 1 Example data frame POINT (-76.71284 39.25338)</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="types-of-spatial-operations" class="title-slide slide level2 center" data-number="3">
@@ -540,7 +536,7 @@ Geodetic CRS:  WGS 84
 <p><code>st_filter()</code> efaults to intersecting geometries:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">st_filter</span>(us_states, maryland)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">st_filter</span>(us_states, maryland)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 14 fields
@@ -556,29 +552,28 @@ Geodetic CRS:  NAD83
 5      3        5      51 01779803    51     VA             Virginia   00 G4000
 6      3        5      11 01702382    11     DC District of Columbia   00 G4000
   FUNCSTAT        ALAND     AWATER    INTPTLAT     INTPTLON
-1        A  62266298634  489204185 +38.6472854 -080.6183274
-2        A  25151992308 6979074857 +38.9466584 -076.6744939
-3        A   5046731559 1399179670 +38.9985661 -075.4416440
-4        A 115881784866 3397909903 +40.9046013 -077.8275298
-5        A 102258210137 8528040726 +37.5222512 -078.6681938
-6        A    158316124   18709762 +38.9042474 -077.0165167
+1        A  62266456923  489045863 +38.6472854 -080.6183274
+2        A  25151771744 6979295311 +38.9466584 -076.6744939
+3        A   5046703789 1399207462 +38.9985661 -075.4416440
+4        A 115882119641 3397575101 +40.9046042 -077.8275233
+5        A 102258178227 8528072639 +37.5222512 -078.6681938
+6        A    158316184   18709787 +38.9042474 -077.0165167
                         geometry
-1 MULTIPOLYGON (((-80.85847 3...
-2 MULTIPOLYGON (((-75.76659 3...
-3 MULTIPOLYGON (((-75.13846 3...
+1 MULTIPOLYGON (((-77.75438 3...
+2 MULTIPOLYGON (((-75.756 39....
+3 MULTIPOLYGON (((-75.50949 3...
 4 MULTIPOLYGON (((-75.5931 39...
-5 MULTIPOLYGON (((-77.76715 3...
+5 MULTIPOLYGON (((-76.4915 36...
 6 MULTIPOLYGON (((-77.11975 3...</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p><code>st_filter()</code> can also support alternate topological relations:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">st_filter</span>(us_states, maryland, <span class="at">.predicate =</span> st_disjoint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">st_filter</span>(us_states, maryland, <span class="at">.predicate =</span> st_disjoint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 50 features and 14 fields
@@ -599,30 +594,29 @@ First 10 features:
 9       1        1      09 01779780    09     CT    Connecticut   00 G4000
 10      4        8      35 00897535    35     NM     New Mexico   00 G4000
    FUNCSTAT        ALAND      AWATER    INTPTLAT     INTPTLON
-1         A 138961722096 45972570361 +28.3989775 -082.5143005
-2         A 143778561906  6216493488 +40.1028754 -089.1526108
-3         A 206232627084 18949394733 +46.3159573 -094.1996043
-4         A   2677763359  1323686988 +41.5964850 -071.5264901
-5         A 214049931578  2391569647 +44.3484222 -114.5588538
-6         A  23190115212  1025971768 +43.6726907 -071.5843145
-7         A 125933327733 13456093195 +35.5397100 -079.1308636
-8         A  23872569964  1030754609 +44.0589536 -072.6710173
-9         A  12541690473  1816424193 +41.5798637 -072.7466572
-10        A 314198560947   726482113 +34.4346843 -106.1316181
+1         A 138962819934 45971472526 +28.3989775 -082.5143005
+2         A 143778515726  6216539665 +40.1028754 -089.1526108
+3         A 206244837557 18937184315 +46.3159573 -094.1996043
+4         A   2677763373  1323686975 +41.5964850 -071.5264901
+5         A 214049908397  2391592787 +44.3484222 -114.5588538
+6         A  23190126218  1025960758 +43.6726907 -071.5843145
+7         A 125935585728 13453835222 +35.5397100 -079.1308636
+8         A  23872569964  1030754610 +44.0589536 -072.6710173
+9         A  12541666998  1816447681 +41.5798637 -072.7466572
+10        A 314198573403   726463825 +34.4346843 -106.1316181
                          geometry
 1  MULTIPOLYGON (((-83.10874 2...
-2  MULTIPOLYGON (((-89.17208 3...
-3  MULTIPOLYGON (((-92.74568 4...
+2  MULTIPOLYGON (((-87.89243 3...
+3  MULTIPOLYGON (((-95.31989 4...
 4  MULTIPOLYGON (((-71.67881 4...
-5  MULTIPOLYGON (((-111.0455 4...
-6  MULTIPOLYGON (((-71.24548 4...
-7  MULTIPOLYGON (((-76.91598 3...
-8  MULTIPOLYGON (((-72.43462 4...
+5  MULTIPOLYGON (((-116.3584 4...
+6  MULTIPOLYGON (((-70.83887 4...
+7  MULTIPOLYGON (((-77.89977 3...
+8  MULTIPOLYGON (((-72.04187 4...
 9  MULTIPOLYGON (((-72.5279 41...
-10 MULTIPOLYGON (((-104.8477 3...</code></pre>
+10 MULTIPOLYGON (((-103.0647 3...</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -633,10 +627,10 @@ First 10 features:
 <h3>Spatial joins and non-overlapping joins</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">st_join</span>(maryland, us_highways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">st_join</span>(maryland, us_highways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 471 features and 18 fields
+<pre><code>Simple feature collection with 470 features and 18 fields
 Geometry type: MULTIPOLYGON
 Dimension:     XY
 Bounding box:  xmin: -79.48765 ymin: 37.88661 xmax: -74.98628 ymax: 39.72304
@@ -654,40 +648,39 @@ First 10 features:
 1.8      3        5      24 01714934    24     MD Maryland   00   G4000
 1.9      3        5      24 01714934    24     MD Maryland   00   G4000
     FUNCSTAT       ALAND     AWATER    INTPTLAT     INTPTLON      LINEARID
-1          A 25151992308 6979074857 +38.9466584 -076.6744939 1104258795072
-1.1        A 25151992308 6979074857 +38.9466584 -076.6744939 1104258845568
-1.2        A 25151992308 6979074857 +38.9466584 -076.6744939  110191599447
-1.3        A 25151992308 6979074857 +38.9466584 -076.6744939  110191599448
-1.4        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149806121
-1.5        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149806067
-1.6        A 25151992308 6979074857 +38.9466584 -076.6744939 1102149813008
-1.7        A 25151992308 6979074857 +38.9466584 -076.6744939 1102166635559
-1.8        A 25151992308 6979074857 +38.9466584 -076.6744939 1104258795090
-1.9        A 25151992308 6979074857 +38.9466584 -076.6744939 1103075320064
+1          A 25151771744 6979295311 +38.9466584 -076.6744939 1104258795090
+1.1        A 25151771744 6979295311 +38.9466584 -076.6744939 1103075320064
+1.2        A 25151771744 6979295311 +38.9466584 -076.6744939 1104258795072
+1.3        A 25151771744 6979295311 +38.9466584 -076.6744939 1104258845568
+1.4        A 25151771744 6979295311 +38.9466584 -076.6744939  110191599447
+1.5        A 25151771744 6979295311 +38.9466584 -076.6744939  110191599448
+1.6        A 25151771744 6979295311 +38.9466584 -076.6744939 1102149806067
+1.7        A 25151771744 6979295311 +38.9466584 -076.6744939 1102149813008
+1.8        A 25151771744 6979295311 +38.9466584 -076.6744939 1102149806121
+1.9        A 25151771744 6979295311 +38.9466584 -076.6744939 1102166635559
          FULLNAME RTTYP MTFCC.y                       geometry
-1   Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.1 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.2 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.3 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.4 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.5 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.6 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.7 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.8 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...
-1.9 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.76659 3...</code></pre>
+1   Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.1 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.2 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.3 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.4 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.5 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.6 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.7 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.8 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....
+1.9 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p><code>st_is_within_distance()</code> is an example of a non-overlapping join:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Sparse geometry binary predicate list of length 17378, where the
+<pre><code>Sparse geometry binary predicate list of length 17389, where the
 predicate was `is_within_distance'
 first 10 elements:
  1: (empty)
@@ -701,19 +694,18 @@ first 10 elements:
  9: (empty)
  10: (empty)</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>You can use these joins for spatial filters using the base R syntax:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>is_hwy_within_dist <span class="ot">&lt;-</span> <span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>), <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a>us_highways[is_hwy_within_dist, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>is_hwy_within_dist <span class="ot">&lt;-</span> <span class="fu">st_is_within_distance</span>(us_highways, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>), <span class="at">sparse =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-2"><a></a>us_highways[is_hwy_within_dist, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 2245 features and 4 fields
+<pre><code>Simple feature collection with 2241 features and 4 fields
 Geometry type: LINESTRING
 Dimension:     XY
 Bounding box:  xmin: -81.72573 ymin: 36.57507 xmax: -74.04969 ymax: 41.34626
@@ -724,25 +716,24 @@ First 10 features:
 18  11013853809270 State Rte 611     S S1100 LINESTRING (-75.12634 40.28...
 19  11013853809430 State Rte 611     S S1100 LINESTRING (-75.12603 40.28...
 77  11013853864377  State Rte 29     S S1100 LINESTRING (-74.76432 40.20...
-219  1108296536943  State Rte 26     S S1100 LINESTRING (-74.76814 40.20...
-220  1108296536969  State Rte 26     S S1100 LINESTRING (-74.71174 40.27...
-221  1104486135566  State Rte 26     S S1100 LINESTRING (-77.73356 40.89...
-223  1105598256809  State Rte 26     S S1100 LINESTRING (-77.73622 40.89...
-239  1108296538090 State Rte 129     S S1100 LINESTRING (-74.72239 40.18...
-240  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
+224  1105598256809  State Rte 26     S S1100 LINESTRING (-77.73622 40.89...
+226  1108296536943  State Rte 26     S S1100 LINESTRING (-74.76814 40.20...
+227  1108296536969  State Rte 26     S S1100 LINESTRING (-74.71174 40.27...
+229  1104486135566  State Rte 26     S S1100 LINESTRING (-77.73356 40.89...
+244  1108296538090 State Rte 129     S S1100 LINESTRING (-74.72239 40.18...
+245  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>Or using <code>filter()</code> if you use the name of the geomtery column (and convert the matrix output into a logical vector):</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">filter</span>(us_highways, <span class="fu">as.logical</span>(<span class="fu">st_is_within_distance</span>(geometry, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>), <span class="at">sparse =</span> <span class="cn">FALSE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">filter</span>(us_highways, <span class="fu">as.logical</span>(<span class="fu">st_is_within_distance</span>(geometry, maryland, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>), <span class="at">sparse =</span> <span class="cn">FALSE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 2245 features and 4 fields
+<pre><code>Simple feature collection with 2241 features and 4 fields
 Geometry type: LINESTRING
 Dimension:     XY
 Bounding box:  xmin: -81.72573 ymin: 36.57507 xmax: -74.04969 ymax: 41.34626
@@ -753,34 +744,36 @@ First 10 features:
 2  11013853809270 State Rte 611     S S1100 LINESTRING (-75.12634 40.28...
 3  11013853809430 State Rte 611     S S1100 LINESTRING (-75.12603 40.28...
 4  11013853864377  State Rte 29     S S1100 LINESTRING (-74.76432 40.20...
-5   1108296536943  State Rte 26     S S1100 LINESTRING (-74.76814 40.20...
-6   1108296536969  State Rte 26     S S1100 LINESTRING (-74.71174 40.27...
-7   1104486135566  State Rte 26     S S1100 LINESTRING (-77.73356 40.89...
-8   1105598256809  State Rte 26     S S1100 LINESTRING (-77.73622 40.89...
+5   1105598256809  State Rte 26     S S1100 LINESTRING (-77.73622 40.89...
+6   1108296536943  State Rte 26     S S1100 LINESTRING (-74.76814 40.20...
+7   1108296536969  State Rte 26     S S1100 LINESTRING (-74.71174 40.27...
+8   1104486135566  State Rte 26     S S1100 LINESTRING (-77.73356 40.89...
 9   1108296538090 State Rte 129     S S1100 LINESTRING (-74.72239 40.18...
 10  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 
 <section id="spatial-aggregation" class="title-slide slide level3 center">
 <h3>Spatial aggregation</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>us_states_combine <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">geometry =</span> <span class="fu">st_combine</span>(geometry)</span>
-<span id="cb24-5"><a href="#cb24-5"></a>  )</span>
-<span id="cb24-6"><a href="#cb24-6"></a></span>
-<span id="cb24-7"><a href="#cb24-7"></a><span class="fu">plot</span>(us_states_combine[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>us_states_combine <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb24-4"><a></a>    <span class="at">geometry =</span> <span class="fu">st_combine</span>(geometry)</span>
+<span id="cb24-5"><a></a>  )</span>
+<span id="cb24-6"><a></a></span>
+<span id="cb24-7"><a></a><span class="fu">plot</span>(us_states_combine[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 </section>
 <section>
@@ -799,100 +792,123 @@ First 10 features:
 <h3>Simplification</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">plot</span>(<span class="fu">st_simplify</span>(lower48, <span class="at">dTolerance =</span> <span class="dv">100000</span>)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">plot</span>(<span class="fu">st_simplify</span>(lower48, <span class="at">dTolerance =</span> <span class="dv">100000</span>)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="centroids" class="title-slide slide level3 center">
 <h3>Centroids</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">plot</span>(<span class="fu">st_centroid</span>(lower48)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">plot</span>(<span class="fu">st_centroid</span>(lower48)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="buffers" class="title-slide slide level3 center">
 <h3>Buffers</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> <span class="dv">100</span>)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> <span class="dv">100</span>)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="clipping-with-or-without-subsetting" class="title-slide slide level3 center">
 <h3>Clipping (with or without subsetting)</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">plot</span>(<span class="fu">st_intersection</span>(us_highways, maryland)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">plot</span>(<span class="fu">st_intersection</span>(us_highways, maryland)[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="unions" class="title-slide slide level3 center">
 <h3>Unions</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>us_highways_union <span class="ot">&lt;-</span> us_highways <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">group_by</span>(RTTYP) <span class="sc">|&gt;</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">geometry =</span> <span class="fu">st_union</span>(geometry)</span>
-<span id="cb30-5"><a href="#cb30-5"></a>  )</span>
-<span id="cb30-6"><a href="#cb30-6"></a></span>
-<span id="cb30-7"><a href="#cb30-7"></a><span class="fu">plot</span>(us_highways_union[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>us_highways_union <span class="ot">&lt;-</span> us_highways <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">group_by</span>(RTTYP) <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-4"><a></a>    <span class="at">geometry =</span> <span class="fu">st_union</span>(geometry)</span>
+<span id="cb30-5"><a></a>  )</span>
+<span id="cb30-6"><a></a></span>
+<span id="cb30-7"><a></a><span class="fu">plot</span>(us_highways_union[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="type-transformations" class="title-slide slide level3 center">
 <h3>Type transformations</h3>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">plot</span>(<span class="fu">st_cast</span>(us_highways[<span class="dv">1</span>, ], <span class="at">to =</span> <span class="st">"POINT"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">plot</span>(<span class="fu">st_cast</span>(us_highways[<span class="dv">1</span>, ], <span class="at">to =</span> <span class="st">"POINT"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 
+<div class="quarto-auto-generated-content">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
 </section>
@@ -922,7 +938,6 @@ First 10 features:
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1177,18 +1192,7 @@ First 10 features:
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1220,11 +1224,50 @@ First 10 features:
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/bldgspatialdata\.github\.io\/website\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1234,8 +1277,17 @@ First 10 features:
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1249,7 +1301,11 @@ First 10 features:
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

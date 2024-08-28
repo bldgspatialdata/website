@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="dcterms.date" content="2023-09-06">
-  <title>GES 668 - Fall 2023 - Getting started with spatial data using {sf} and the {tidyverse}</title>
+  <title>GES 668 - Fall 2024 – Getting started with spatial data using {sf} and the {tidyverse}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -385,12 +386,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Getting started with spatial data using {sf} and the {tidyverse}">
+<meta property="og:title" content="Getting started with spatial data using {sf} and the {tidyverse} – GES 668 - Fall 2024">
 <meta property="og:description" content="Session 1">
-<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/rstudio-ide-screenshot.png">
-<meta property="og:site-name" content="GES 668 - Fall 2023">
-<meta property="og:image:height" content="2124">
-<meta property="og:image:width" content="3248">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/allison-horst_sf-illustration.jpeg">
+<meta property="og:site_name" content="GES 668 - Fall 2024">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -423,8 +422,7 @@
 <p>Like Python or C++, R is an <strong>object-oriented, functional programming language</strong> where the base set of features can be extended through open-source packages or libraries.</p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/R_logo.png"></p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <blockquote>
 <p>A package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).</p>
@@ -455,8 +453,7 @@
 <figcaption>Digital Equipment Corporation VAX 11/780 mainframe computer. Source: Boston Public Library <a href="https://www.digitalcommonwealth.org/search/commonwealth:sn00b088z">Copyright Spencer Grant</a></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>S ran on VAX 11/780 computers like the mainframe above.</p>
 </div>
@@ -539,8 +536,7 @@
 <figcaption>Created with <code>{rayshader}</code></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>If a package doesn’t exist already, there are also packages like <code>{usethis}</code> or <code>{devtools}</code> that help <em>you</em> build it.</p>
 </div>
@@ -563,16 +559,15 @@
 </div><div class="column" style="width:35%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif" alt="sf package logo"></p>
+<p><img data-src="https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif" class="quarto-figure quarto-figure-center" alt="sf package logo"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png" alt="sfnetworks package logo" width="200"></p>
+<p><img data-src="https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png" class="quarto-figure quarto-figure-center" alt="sfnetworks package logo" width="200"></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="sf-is-built-on-open-source-libraries" class="title-slide slide level3 center">
 <h3><code>{sf}</code> is built on open source libraries</h3>
@@ -589,8 +584,7 @@
 </div>
 </div><div class="column" style="width:35%;">
 <p><img data-src="images/GDALLogoColor.svg" alt="GDAL logo"></p>
-</div>
-</div>
+</div></div>
 </section>
 
 <section id="how-are-sf-objects-organized" class="title-slide slide level3 center">
@@ -606,8 +600,7 @@
 <figcaption>Illustration (c) 2018 by <a href="https://twitter.com/allison_horst/status/1071456081308614656">Allison Horst</a></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>The geometry for a <code>sf</code> data frame is known as a simple feature collection (<code>sfc</code>) object. A <code>sfc</code> object is made up of <code>sfg</code> objects.</p>
 </div>
@@ -623,10 +616,10 @@
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `nc' from data source 
-  `/Users/elipousson/Library/R/arm64/4.3/library/sf/shape/nc.shp' 
+  `/Users/elipousson/Library/R/arm64/4.4/library/sf/shape/nc.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 100 features and 14 fields
 Geometry type: MULTIPOLYGON
@@ -634,7 +627,7 @@ Dimension:     XY
 Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
 Geodetic CRS:  NAD27</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 100 features and 14 fields
 Geometry type: MULTIPOLYGON
@@ -674,7 +667,7 @@ First 10 features:
 
 <p>You can take a look at the geometry (the <code>sfc</code> list-column) using <code>st_geometry()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">st_geometry</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">st_geometry</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Geometry set for 100 features 
 Geometry type: MULTIPOLYGON
@@ -704,7 +697,7 @@ First 5 geometries:</code></pre>
 
 <p><code>sfc</code> objects have attributes for the coordinate reference system (<code>crs</code>), bounding box (<code>bbox</code>), precision, and number of empty geometries (<code>n_empty</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">attributes</span>(<span class="fu">st_geometry</span>(nc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">attributes</span>(<span class="fu">st_geometry</span>(nc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$n_empty
 [1] 0
@@ -744,16 +737,16 @@ $bbox
 
 <p><code>sfc</code> objects are composed of <code>sfg</code> objects. Each object hold the feature geometry of an individual simple feature.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">st_geometry</span>(nc)[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">st_geometry</span>(nc)[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>The <code>{sf}</code> package also includes functions that allow you to build feature geometry from scratch using <code>st_point()</code>, <code>st_linestring()</code>, and other functions:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">st_linestring</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), , <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="fu">st_linestring</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>), , <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -765,13 +758,13 @@ $bbox
 <h2><span class="header-section-number">4</span> Take a look at <code>{sf}</code> and the tidyverse in action</h2>
 <p>Packages are simple to install:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And to load:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb17-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-3"><a></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -789,7 +782,7 @@ $bbox
 <h3>Import spatial data from a file</h3>
 <p>Using the <code>{sf}</code> package, you can use <code>st_read()</code> to read data into R from a local file, URL, or database:</p>
 <div class="cell" name="st_read">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>md <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"files/md_counties.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>md <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"files/md_counties.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `md_counties' from data source 
   `/Users/elipousson/Projects/03_teaching/website/slides/files/md_counties.gpkg' 
@@ -806,7 +799,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>Or, if you drop the geometry, a <code>sf</code> object is just like a spreadsheet:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">st_drop_geometry</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">st_drop_geometry</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   STATEFP COUNTYFP COUNTYNS GEOID            NAME               NAMELSAD LSAD
 1       24      047 01668802 24047       Worcester       Worcester County   06
@@ -890,7 +883,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>You can plot data with R’s built-in <code>plot()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">plot</span>(md[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">plot</span>(md[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><div class="footer">
@@ -901,7 +894,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>You can summarize data using the <code>summary()</code> function:</p>
 <div class="cell" name="summary">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">summary</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">summary</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   STATEFP            COUNTYFP           COUNTYNS            GEOID          
  Length:24          Length:24          Length:24          Length:24         
@@ -959,8 +952,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 </div>
 </div><div class="column" style="width:35%;">
 <p><img data-src="images/tidyverse-packages.png" alt="Tidyverse packages"></p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>Notably, the development of these packages is supported by Posit—but they are fully open-source and include contributions from quite literally <em>hundreds</em> of individual developers (291 for ggplot2 and 260 for dplyr).</p>
 <p>sf works well with tidyverse packages and I use them extensively in my own work.</p>
@@ -988,23 +980,27 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 
 <p>For example, we can use <code>geom_sf()</code> from <code>{ggplot2}</code> to make a simple map:</p>
 <div class="cell" name="geom_sf">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>md_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb25-4"><a href="#cb25-4"></a></span>
-<span id="cb25-5"><a href="#cb25-5"></a>md_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>md_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb25-3"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a>md_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide" name="geom_sf">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section class="slide level4">
 
 <p>Take a peek at the values of the data with the <code>glimpse()</code> function from <code>{dplyr}</code>:</p>
 <div class="cell" name="glimpse">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">glimpse</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">glimpse</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 24
 Columns: 18
@@ -1042,8 +1038,7 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 <figcaption>ST_intersects relationships with different geometry types</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>that you might usually do <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm">geoprocessing tools from ArcGIS Pro</a> or the <a href="https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html">QGIS Processing Toolbox</a> at included with the <code>{sf}</code>, <code>{lwgeom}</code>, or another R package.</p>
 <ul>
@@ -1067,9 +1062,9 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 <section id="using-sf-for-spatial-transformations-1" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
-<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a></span>
-<span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a>balt_center</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb28-2" class="hljs-ln-code"><a></a></span>
+<span id="cb28-3" class="hljs-ln-code"><a></a>balt_center</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 1 feature and 17 fields
 Geometry type: POINT
@@ -1088,11 +1083,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section id="using-sf-for-spatial-transformations-2" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a href="#cb30-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
-<span id="cb30-2" class="hljs-ln-code"><a href="#cb30-2"></a></span>
-<span id="cb30-3" class="hljs-ln-code"><a href="#cb30-3"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
-<span id="cb30-4" class="hljs-ln-code"><a href="#cb30-4"></a></span>
-<span id="cb30-5" class="hljs-ln-code"><a href="#cb30-5"></a>balt_area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb30-2" class="hljs-ln-code"><a></a></span>
+<span id="cb30-3" class="hljs-ln-code"><a></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
+<span id="cb30-4" class="hljs-ln-code"><a></a></span>
+<span id="cb30-5" class="hljs-ln-code"><a></a>balt_area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 1 feature and 17 fields
 Geometry type: POLYGON
@@ -1111,13 +1106,13 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section id="using-sf-for-spatial-transformations-3" class="slide level4" data-auto-animate="true">
 <h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
-<span id="cb32-2" class="hljs-ln-code"><a href="#cb32-2"></a></span>
-<span id="cb32-3" class="hljs-ln-code"><a href="#cb32-3"></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
-<span id="cb32-4" class="hljs-ln-code"><a href="#cb32-4"></a></span>
-<span id="cb32-5" class="hljs-ln-code"><a href="#cb32-5"></a>balt_area_counties <span class="ot">&lt;-</span> <span class="fu">st_filter</span>(md, balt_area, <span class="at">.predicate =</span> st_intersects)</span>
-<span id="cb32-6" class="hljs-ln-code"><a href="#cb32-6"></a></span>
-<span id="cb32-7" class="hljs-ln-code"><a href="#cb32-7"></a>balt_area_counties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
+<span id="cb32-2" class="hljs-ln-code"><a></a></span>
+<span id="cb32-3" class="hljs-ln-code"><a></a>balt_area <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(balt_center, <span class="at">dist =</span> <span class="fu">as_units</span>(<span class="dv">25</span>, <span class="st">"mi"</span>))</span>
+<span id="cb32-4" class="hljs-ln-code"><a></a></span>
+<span id="cb32-5" class="hljs-ln-code"><a></a>balt_area_counties <span class="ot">&lt;-</span> <span class="fu">st_filter</span>(md, balt_area, <span class="at">.predicate =</span> st_intersects)</span>
+<span id="cb32-6" class="hljs-ln-code"><a></a></span>
+<span id="cb32-7" class="hljs-ln-code"><a></a>balt_area_counties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 9 features and 17 fields
 Geometry type: MULTIPOLYGON
@@ -1160,11 +1155,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section id="using-sf-for-spatial-transformations-4" class="slide level4">
 <h4>Using <code>{sf}</code> for spatial transformations</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area_counties, <span class="at">fill =</span> <span class="st">"darkorange"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area, <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area_counties, <span class="at">fill =</span> <span class="st">"darkorange"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb34-4"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> balt_area, <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <aside class="notes">
@@ -1183,7 +1178,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 </section>
 <section id="using-sf-for-spatial-transformations-4-output" class="slide level4 output-location-slide"><h4>Using <code>{sf}</code> for spatial transformations</h4><div class="cell output-location-slide">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="spatial-data_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section></section>
 <section id="related-resources" class="title-slide slide level2 center" data-number="5">
@@ -1193,9 +1192,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <li><a href="https://bldgspatialdata.github.io/website/exercises/exercise_01.html">Exercise 1</a></li>
 </ul>
 
+<div class="quarto-auto-generated-content">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</div>
 </div>
 </section>
     </div>
@@ -1224,7 +1225,6 @@ Projected CRS: WGS 84 / Pseudo-Mercator
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1479,18 +1479,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1522,11 +1511,50 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/bldgspatialdata\.github\.io\/website\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1536,8 +1564,17 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1551,7 +1588,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

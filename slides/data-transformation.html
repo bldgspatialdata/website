@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="dcterms.date" content="2023-09-13">
-  <title>GES 668 - Fall 2023 - Transforming data with {dplyr} and {tidyr}</title>
+  <title>GES 668 - Fall 2024 – Transforming data with {dplyr} and {tidyr}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -385,10 +386,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Transforming data with {dplyr} and {tidyr}">
+<meta property="og:title" content="Transforming data with {dplyr} and {tidyr} – GES 668 - Fall 2024">
 <meta property="og:description" content="Session 3">
 <meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/whole-game.png">
-<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:site_name" content="GES 668 - Fall 2024">
 <meta property="og:image:height" content="508">
 <meta property="og:image:width" content="1504">
 </head>
@@ -417,7 +418,7 @@
 <section id="load-dplyr" class="title-slide slide level2 center" data-number="1.1">
 <h2><span class="header-section-number">1.1</span> Load <code>{dplyr}</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -430,7 +431,7 @@
 </ul>
 </section>
 
-<section id="manipulate-cases" class="title-slide slide level2 center" data-number="1.3">
+<section id="manipulate-cases" class="title-slide slide level2 center scrollable" data-number="1.3">
 <h2><span class="header-section-number">1.3</span> Manipulate cases</h2>
 <ol type="1">
 <li><code>filter()</code>, which changes which rows are present without changing their order, and</li>
@@ -439,7 +440,7 @@
 </ol>
 </section>
 
-<section id="manipulate-variables" class="title-slide slide level2 center" data-number="1.4">
+<section id="manipulate-variables" class="title-slide slide level2 center scrollable" data-number="1.4">
 <h2><span class="header-section-number">1.4</span> Manipulate variables</h2>
 <ol type="1">
 <li><code>mutate()</code> creates new columns that are derived from the existing columns,</li>
@@ -485,44 +486,44 @@
 
 <p>Select the variables to <em>keep</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">select</span>(storms, name, lat, long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">select</span>(storms, name, lat, long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Select the variables to <em>drop</em> using <code>-</code> or <code>!</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">select</span>(storms, <span class="sc">!</span>name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">select</span>(storms, <span class="sc">!</span>name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Select a range of variables to keep using <code>:</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">select</span>(storms, year<span class="sc">:</span>hour)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">select</span>(storms, year<span class="sc">:</span>hour)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Use helper functions from <code>{tidyselect}</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">select</span>(storms, <span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"latitude"</span>, <span class="st">"y"</span>, <span class="st">"lon"</span>, <span class="st">"long"</span>, <span class="st">"longitude"</span>, <span class="st">"x"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">select</span>(storms, <span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"lat"</span>, <span class="st">"latitude"</span>, <span class="st">"y"</span>, <span class="st">"lon"</span>, <span class="st">"long"</span>, <span class="st">"longitude"</span>, <span class="st">"x"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>select works with unquoted and quoted inputs:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">select</span>(storms, wind)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">select</span>(storms, <span class="st">"wind"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">select</span>(storms, <span class="fu">all_of</span>(<span class="st">"wind"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">select</span>(storms, wind)</span>
+<span id="cb6-2"><a></a><span class="fu">select</span>(storms, <span class="st">"wind"</span>)</span>
+<span id="cb6-3"><a></a><span class="fu">select</span>(storms, <span class="fu">all_of</span>(<span class="st">"wind"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>select doesn’t work if you use the wrong variable names:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">select</span>(storms, wnd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">select</span>(storms, wnd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -537,21 +538,21 @@
 
 <p>OK. Here is one answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">select</span>(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">select</span>(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Here is another answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">select</span>(storms, wind<span class="sc">:</span>hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">select</span>(storms, wind<span class="sc">:</span>hurricane_force_diameter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>And here is yet another answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">select</span>(storms, wind, pressure, <span class="fu">ends_with</span>(<span class="st">"diameter"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">select</span>(storms, wind, pressure, <span class="fu">ends_with</span>(<span class="st">"diameter"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -567,49 +568,49 @@
 
 <p>Use a logical condition to get rows that return <code>TRUE</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">filter</span>(storms, wind <span class="sc">&gt;=</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">filter</span>(storms, wind <span class="sc">&gt;=</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="use-logical-and-and-boolean-operators-to-make-conditions" class="title-slide slide level3 center">
 <h3>Use logical and and boolean operators to make conditions</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">2</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">1</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="dv">2</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="dv">2</span> <span class="sc">&gt;=</span> <span class="dv">2</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">is.na</span>(<span class="cn">NA_integer_</span>)</span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="dv">1</span>)</span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb12-2"><a></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">2</span></span>
+<span id="cb12-3"><a></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span>
+<span id="cb12-4"><a></a><span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">1</span></span>
+<span id="cb12-5"><a></a><span class="dv">2</span> <span class="sc">&lt;=</span> <span class="dv">2</span></span>
+<span id="cb12-6"><a></a><span class="dv">2</span> <span class="sc">&gt;=</span> <span class="dv">2</span></span>
+<span id="cb12-7"><a></a><span class="fu">is.na</span>(<span class="cn">NA_integer_</span>)</span>
+<span id="cb12-8"><a></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="dv">1</span>)</span>
+<span id="cb12-9"><a></a><span class="dv">1</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Multiple tests separated by commas are combined so the returned rows pass <em>all</em> tests:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">filter</span>(storms, month <span class="sc">==</span> <span class="dv">9</span>, day <span class="sc">==</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">filter</span>(storms, month <span class="sc">==</span> <span class="dv">9</span>, day <span class="sc">==</span> <span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>You <em>can</em> combine tests with a logical “OR” operator (<code>|</code>):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">filter</span>(</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  storms,</span>
-<span id="cb14-3"><a href="#cb14-3"></a>  name <span class="sc">==</span> <span class="st">"Eloise"</span> <span class="sc">|</span> name <span class="sc">==</span> <span class="st">"Evelyn"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">filter</span>(</span>
+<span id="cb14-2"><a></a>  storms,</span>
+<span id="cb14-3"><a></a>  name <span class="sc">==</span> <span class="st">"Eloise"</span> <span class="sc">|</span> name <span class="sc">==</span> <span class="st">"Evelyn"</span>,</span>
+<span id="cb14-4"><a></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
+<span id="cb14-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>But it may be easier to use write the condition using a different operator:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">filter</span>(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  storms, name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Eloise"</span>, <span class="st">"Evelyn"</span>),</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">filter</span>(</span>
+<span id="cb15-2"><a></a>  storms, name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Eloise"</span>, <span class="st">"Evelyn"</span>),</span>
+<span id="cb15-3"><a></a>  day <span class="sc">==</span> <span class="dv">13</span></span>
+<span id="cb15-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -630,11 +631,11 @@
 
 <p>OK, here is an answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">filter</span>(</span>
-<span id="cb16-2"><a href="#cb16-2"></a>  storms,</span>
-<span id="cb16-3"><a href="#cb16-3"></a>  hurricane_force_diameter <span class="sc">&gt;=</span> <span class="dv">115</span>,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>  tropicalstorm_force_diameter <span class="sc">&gt;=</span> <span class="dv">240</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">filter</span>(</span>
+<span id="cb16-2"><a></a>  storms,</span>
+<span id="cb16-3"><a></a>  hurricane_force_diameter <span class="sc">&gt;=</span> <span class="dv">115</span>,</span>
+<span id="cb16-4"><a></a>  tropicalstorm_force_diameter <span class="sc">&gt;=</span> <span class="dv">240</span></span>
+<span id="cb16-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -647,14 +648,14 @@
 
 <p>Use a function to add a new column based on existing variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p><code>mutate()</code> also has a <code>.before</code> or <code>.after</code> parameter allowing you to add the new variables before or after a selected variable or range of variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind, <span class="at">.before =</span> <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">mutate</span>(storms, <span class="at">ratio =</span> pressure <span class="sc">/</span> wind, <span class="at">.before =</span> <span class="fu">everything</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -662,10 +663,10 @@
 <p>Window functions (also known as vectorized functions) are a group of functions that you can use with <code>{dplyr}</code>.</p>
 <p>For example, <code>lag()</code> returns the previous value for a variable (effectively assumes the variable the observations are arranged in a meaningful order):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb19-2"><a href="#cb19-2"></a>  storms,</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status)</span>
-<span id="cb19-4"><a href="#cb19-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">mutate</span>(</span>
+<span id="cb19-2"><a></a>  storms,</span>
+<span id="cb19-3"><a></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status)</span>
+<span id="cb19-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -676,11 +677,11 @@
 
 <p>In this case, the <code>lag()</code> function needs to be applied to a grouped data frame or it may return a value from a different storm and different year:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb20-2"><a href="#cb20-2"></a>  storms,</span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status),</span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="at">.by =</span> <span class="fu">c</span>(year, name)</span>
-<span id="cb20-5"><a href="#cb20-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">mutate</span>(</span>
+<span id="cb20-2"><a></a>  storms,</span>
+<span id="cb20-3"><a></a>  <span class="at">lag_status =</span> <span class="fu">lag</span>(status),</span>
+<span id="cb20-4"><a></a>  <span class="at">.by =</span> <span class="fu">c</span>(year, name)</span>
+<span id="cb20-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="types-of-vectorized-functions-to-use-with-mutate" class="title-slide slide level3 center">
@@ -698,24 +699,24 @@
 <p><code>case_when()</code> is an especially useful vector function with varied applications.</p>
 <p>For example, we can use it to create new categorical variables based on continuous variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">mutate</span>(</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  storms,</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="at">beaufort_desc =</span> <span class="fu">case_when</span>(</span>
-<span id="cb21-4"><a href="#cb21-4"></a>    wind <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Calm"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5"></a>    wind <span class="sc">&lt;</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Light Air"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6"></a>    wind <span class="sc">&lt;</span> <span class="dv">8</span> <span class="sc">~</span> <span class="st">"Light Breeze"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7"></a>    wind <span class="sc">&lt;</span> <span class="dv">13</span> <span class="sc">~</span> <span class="st">"Gentle Breeze"</span>,</span>
-<span id="cb21-8"><a href="#cb21-8"></a>    wind <span class="sc">&lt;</span> <span class="dv">19</span> <span class="sc">~</span> <span class="st">"Moderate Breeze"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    wind <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Fresh Breze"</span>,</span>
-<span id="cb21-10"><a href="#cb21-10"></a>    wind <span class="sc">&lt;</span> <span class="dv">32</span> <span class="sc">~</span> <span class="st">"Strong Breeze"</span>,</span>
-<span id="cb21-11"><a href="#cb21-11"></a>    wind <span class="sc">&lt;</span> <span class="dv">39</span> <span class="sc">~</span> <span class="st">"Near Gale"</span>,</span>
-<span id="cb21-12"><a href="#cb21-12"></a>    wind <span class="sc">&lt;</span> <span class="dv">47</span> <span class="sc">~</span> <span class="st">"Gale"</span>,</span>
-<span id="cb21-13"><a href="#cb21-13"></a>    wind <span class="sc">&lt;</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"Strong Gale"</span>,</span>
-<span id="cb21-14"><a href="#cb21-14"></a>    wind <span class="sc">&lt;</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">"Whole Gale"</span>,</span>
-<span id="cb21-15"><a href="#cb21-15"></a>    wind <span class="sc">&lt;</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Storm Force"</span>,</span>
-<span id="cb21-16"><a href="#cb21-16"></a>    <span class="at">.default =</span> <span class="st">"Hurricane Force"</span></span>
-<span id="cb21-17"><a href="#cb21-17"></a>  )</span>
-<span id="cb21-18"><a href="#cb21-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">mutate</span>(</span>
+<span id="cb21-2"><a></a>  storms,</span>
+<span id="cb21-3"><a></a>  <span class="at">beaufort_desc =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-4"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Calm"</span>,</span>
+<span id="cb21-5"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Light Air"</span>,</span>
+<span id="cb21-6"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">8</span> <span class="sc">~</span> <span class="st">"Light Breeze"</span>,</span>
+<span id="cb21-7"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">13</span> <span class="sc">~</span> <span class="st">"Gentle Breeze"</span>,</span>
+<span id="cb21-8"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">19</span> <span class="sc">~</span> <span class="st">"Moderate Breeze"</span>,</span>
+<span id="cb21-9"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Fresh Breze"</span>,</span>
+<span id="cb21-10"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">32</span> <span class="sc">~</span> <span class="st">"Strong Breeze"</span>,</span>
+<span id="cb21-11"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">39</span> <span class="sc">~</span> <span class="st">"Near Gale"</span>,</span>
+<span id="cb21-12"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">47</span> <span class="sc">~</span> <span class="st">"Gale"</span>,</span>
+<span id="cb21-13"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">55</span> <span class="sc">~</span> <span class="st">"Strong Gale"</span>,</span>
+<span id="cb21-14"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">"Whole Gale"</span>,</span>
+<span id="cb21-15"><a></a>    wind <span class="sc">&lt;</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Storm Force"</span>,</span>
+<span id="cb21-16"><a></a>    <span class="at">.default =</span> <span class="st">"Hurricane Force"</span></span>
+<span id="cb21-17"><a></a>  )</span>
+<span id="cb21-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -741,13 +742,13 @@
 
 <p><code>summarise()</code> works well with “summary” or analysis functions that take a vector and return a single value:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb22-2"><a href="#cb22-2"></a>  storms,</span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
-<span id="cb22-7"><a href="#cb22-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">summarise</span>(</span>
+<span id="cb22-2"><a></a>  storms,</span>
+<span id="cb22-3"><a></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb22-4"><a></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb22-5"><a></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb22-6"><a></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
+<span id="cb22-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="types-of-analysis-functions-to-use-with-summarize" class="title-slide slide level3 center">
@@ -765,46 +766,46 @@
 
 <p>Most often you will want to use <code>summarise()</code> in combination with <code>group_by()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb23-4"><a href="#cb23-4"></a>    <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb23-5"><a href="#cb23-5"></a>    <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb23-6"><a href="#cb23-6"></a>    <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb23-7"><a href="#cb23-7"></a>    <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
-<span id="cb23-8"><a href="#cb23-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb23-4"><a></a>    <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb23-5"><a></a>    <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-6"><a></a>    <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb23-7"><a></a>    <span class="at">mean_long =</span> <span class="fu">mean</span>(long)</span>
+<span id="cb23-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>You can also use the <code>.by</code> parameter to define the groups for <code>summarise()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  storms,</span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-5"><a href="#cb24-5"></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long),</span>
-<span id="cb24-7"><a href="#cb24-7"></a>  <span class="at">.by =</span> year</span>
-<span id="cb24-8"><a href="#cb24-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">summarise</span>(</span>
+<span id="cb24-2"><a></a>  storms,</span>
+<span id="cb24-3"><a></a>  <span class="at">n_names =</span> <span class="fu">n_distinct</span>(name),</span>
+<span id="cb24-4"><a></a>  <span class="at">max_category =</span> <span class="fu">max</span>(category, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-5"><a></a>  <span class="at">mean_lat =</span> <span class="fu">mean</span>(lat),</span>
+<span id="cb24-6"><a></a>  <span class="at">mean_long =</span> <span class="fu">mean</span>(long),</span>
+<span id="cb24-7"><a></a>  <span class="at">.by =</span> year</span>
+<span id="cb24-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <p><code>across()</code> is a helper function that you can use in combination with <code>mutate()</code> or <code>summarise()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">summarise</span>(</span>
-<span id="cb25-2"><a href="#cb25-2"></a>  storms,</span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">across</span>(</span>
-<span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
-<span id="cb25-5"><a href="#cb25-5"></a>    <span class="at">.fns =</span> <span class="fu">list</span>(</span>
-<span id="cb25-6"><a href="#cb25-6"></a>      <span class="at">mean =</span> mean,</span>
-<span id="cb25-7"><a href="#cb25-7"></a>      <span class="at">median =</span> median,</span>
-<span id="cb25-8"><a href="#cb25-8"></a>      <span class="at">min =</span> min,</span>
-<span id="cb25-9"><a href="#cb25-9"></a>      <span class="at">max =</span> max</span>
-<span id="cb25-10"><a href="#cb25-10"></a>    )</span>
-<span id="cb25-11"><a href="#cb25-11"></a>  )</span>
-<span id="cb25-12"><a href="#cb25-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">summarise</span>(</span>
+<span id="cb25-2"><a></a>  storms,</span>
+<span id="cb25-3"><a></a>  <span class="fu">across</span>(</span>
+<span id="cb25-4"><a></a>    <span class="at">.cols =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb25-5"><a></a>    <span class="at">.fns =</span> <span class="fu">list</span>(</span>
+<span id="cb25-6"><a></a>      <span class="at">mean =</span> mean,</span>
+<span id="cb25-7"><a></a>      <span class="at">median =</span> median,</span>
+<span id="cb25-8"><a></a>      <span class="at">min =</span> min,</span>
+<span id="cb25-9"><a></a>      <span class="at">max =</span> max</span>
+<span id="cb25-10"><a></a>    )</span>
+<span id="cb25-11"><a></a>  )</span>
+<span id="cb25-12"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -817,33 +818,33 @@
 <h1><span class="header-section-number">5</span> Using data transformation functions with <code>sf</code> objects</h1>
 <p>First convert storms into a <code>sf</code> object:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a></span>
-<span id="cb26-4"><a href="#cb26-4"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb26-5"><a href="#cb26-5"></a></span>
-<span id="cb26-6"><a href="#cb26-6"></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb26-2"><a></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-3"><a></a></span>
+<span id="cb26-4"><a></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb26-5"><a></a></span>
+<span id="cb26-6"><a></a>us_states <span class="ot">&lt;-</span> tigris<span class="sc">::</span><span class="fu">states</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(storms_sf, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a>us_states <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>storms_sf <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(storms_sf, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
+<span id="cb27-2"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="using-filter-with-sf-objects" class="title-slide slide level2 center" data-number="5.1">
 <h2><span class="header-section-number">5.1</span> Using filter with <code>sf</code> objects</h2>
 <p>If you are just working with attributes (variables), <code>sf</code> objects work just like any other data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">filter</span>(</span>
-<span id="cb28-2"><a href="#cb28-2"></a>  storms_sf,</span>
-<span id="cb28-3"><a href="#cb28-3"></a>  wind <span class="sc">&gt;</span> <span class="dv">50</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">filter</span>(</span>
+<span id="cb28-2"><a></a>  storms_sf,</span>
+<span id="cb28-3"><a></a>  wind <span class="sc">&gt;</span> <span class="dv">50</span></span>
+<span id="cb28-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>But, you can use a special set of predicate functions that work with <code>sf</code> objects to return a logical vector that also works with filter:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">filter</span>(</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  storms_sf,</span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">as.logical</span>(<span class="fu">st_intersects</span>(geometry, <span class="fu">st_union</span>(us_states), <span class="at">sparse =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb29-4"><a href="#cb29-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">filter</span>(</span>
+<span id="cb29-2"><a></a>  storms_sf,</span>
+<span id="cb29-3"><a></a>  <span class="fu">as.logical</span>(<span class="fu">st_intersects</span>(geometry, <span class="fu">st_union</span>(us_states), <span class="at">sparse =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb29-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -851,33 +852,33 @@
 <p>By default, <code>st_intersects()</code> returns a matrix with the index for each value of the first parameter that intersects with each value of the second parameter.</p>
 <p>For example, this takes each observation and checks if the POINT geometry intersects with each U.S. state:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">st_intersects</span>(storms_sf, us_states)</span>
-<span id="cb30-2"><a href="#cb30-2"></a></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">dim</span>(<span class="fu">st_intersects</span>(storms_sf, us_states))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">st_intersects</span>(storms_sf, us_states)</span>
+<span id="cb30-2"><a></a></span>
+<span id="cb30-3"><a></a><span class="fu">dim</span>(<span class="fu">st_intersects</span>(storms_sf, us_states))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
 <section id="using-mutate-with-sf-objects" class="title-slide slide level2 center" data-number="5.2">
 <h2><span class="header-section-number">5.2</span> Using mutate with <code>sf</code> objects</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>storms_usa <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="at">usa_observation =</span> <span class="fu">as.logical</span>(</span>
-<span id="cb31-4"><a href="#cb31-4"></a>      <span class="fu">st_intersects</span>(</span>
-<span id="cb31-5"><a href="#cb31-5"></a>        geometry,</span>
-<span id="cb31-6"><a href="#cb31-6"></a>        <span class="fu">st_union</span>(us_states),</span>
-<span id="cb31-7"><a href="#cb31-7"></a>        <span class="at">sparse =</span> <span class="cn">FALSE</span></span>
-<span id="cb31-8"><a href="#cb31-8"></a>      )</span>
-<span id="cb31-9"><a href="#cb31-9"></a>    )</span>
-<span id="cb31-10"><a href="#cb31-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>storms_usa <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-3"><a></a>    <span class="at">usa_observation =</span> <span class="fu">as.logical</span>(</span>
+<span id="cb31-4"><a></a>      <span class="fu">st_intersects</span>(</span>
+<span id="cb31-5"><a></a>        geometry,</span>
+<span id="cb31-6"><a></a>        <span class="fu">st_union</span>(us_states),</span>
+<span id="cb31-7"><a></a>        <span class="at">sparse =</span> <span class="cn">FALSE</span></span>
+<span id="cb31-8"><a></a>      )</span>
+<span id="cb31-9"><a></a>    )</span>
+<span id="cb31-10"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>storms_usa <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> usa_observation), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>storms_usa <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-3"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> usa_observation), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -885,21 +886,21 @@
 <h2><span class="header-section-number">5.3</span> Using summarise with <code>sf</code> objects</h2>
 <p>You can use summarise to combine geometry by grouping variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>storms_categories <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">summarise</span>()</span>
-<span id="cb33-4"><a href="#cb33-4"></a></span>
-<span id="cb33-5"><a href="#cb33-5"></a>storms_categories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>storms_categories <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a></a>  <span class="fu">summarise</span>()</span>
+<span id="cb33-4"><a></a></span>
+<span id="cb33-5"><a></a>storms_categories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>storms_categories <span class="sc">|&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>storms_categories <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb34-4"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
@@ -907,26 +908,28 @@
 <p>You can also work with the geometry column directly to modify the returned geometry.</p>
 <p>For example, we can use <code>st_combine()</code> to turn the POINT geometry into MULTIPOINT geometry and then use <code>st_cast()</code> to transform the MULTIPOINT geometry into lines:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_combine</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
-<span id="cb35-5"><a href="#cb35-5"></a>  )</span>
-<span id="cb35-6"><a href="#cb35-6"></a></span>
-<span id="cb35-7"><a href="#cb35-7"></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>storms_tracks <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a></a>  <span class="fu">group_by</span>(year, name) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-4"><a></a>    <span class="at">geometry =</span> <span class="fu">st_cast</span>(<span class="fu">st_combine</span>(geometry), <span class="at">to =</span> <span class="st">"LINESTRING"</span>)</span>
+<span id="cb35-5"><a></a>  )</span>
+<span id="cb35-6"><a></a></span>
+<span id="cb35-7"><a></a>storms_tracks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>storms_tracks <span class="sc">|&gt;</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>storms_tracks <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
+<div class="quarto-auto-generated-content">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</div>
 </div>
 </section>
 </section>
@@ -956,7 +959,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1211,18 +1213,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1254,11 +1245,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/bldgspatialdata\.github\.io\/website\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1268,8 +1298,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1283,7 +1322,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

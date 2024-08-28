@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GES 668 - Fall 2023 - GES 668: Building Spatial Datasets (Fall 2023)</title>
+<title>GES 668: Building Spatial Datasets (Fall 2024) – GES 668 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -46,7 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -55,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -62,8 +69,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="GES 668 - Fall 2023 - GES 668: Building Spatial Datasets (Fall 2023)">
-<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:title" content="GES 668: Building Spatial Datasets (Fall 2024) – GES 668 - Fall 2024">
+<meta property="og:description" content="Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023.">
+<meta property="og:site_name" content="GES 668 - Fall 2024">
 </head>
 
 <body class="nav-sidebar docked">
@@ -72,22 +80,25 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">GES 668: Building Spatial Datasets (Fall 2023)</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">GES 668: Building Spatial Datasets (Fall 2024)</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
+  <div id="quarto-announcement" data-announcement-id="22a171134d6a18b6b1ecc5ae6aebc2c2" class="alert alert-info hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>Note: The 2024 course website is a work-in-progress. Check back soon for updates!</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -105,9 +116,9 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -126,39 +137,33 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./final-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Final Project How-to</span></a>
+  <a href="./course-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prep</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise How-to</span></a>
+  <a href="./course-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Weeks 🗓️</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./slides/fall-2023.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Weekly Updates</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./course-schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule overview</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./weeks/week_01.html" class="sidebar-item-text sidebar-link">
@@ -253,13 +258,19 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Exercises 🛠️</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise How-to</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercises/exercise_01.html" class="sidebar-item-text sidebar-link">
@@ -292,33 +303,27 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises/exercise_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 06</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./exercises/exercise_07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 07</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./final-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Resources 📋️</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slides</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources/data-sources.html" class="sidebar-item-text sidebar-link">
@@ -336,9 +341,9 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -346,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GES 668: Building Spatial Datasets (Fall 2023)</h1>
+<h1 class="title">GES 668: Building Spatial Datasets (Fall 2024)</h1>
 </div>
 
 
@@ -359,31 +364,33 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
+<p>In this course, students learn how to look critically at spatial data and use the R programming language to transform, visualize, and create spatial datasets. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data with the <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://www.tidyverse.org/">tidyverse family</a> of R packages.</p>
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="canivpdukh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mvdafxvlkj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#canivpdukh table {
+#mvdafxvlkj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#canivpdukh thead, #canivpdukh tbody, #canivpdukh tfoot, #canivpdukh tr, #canivpdukh td, #canivpdukh th {
+#mvdafxvlkj thead, #mvdafxvlkj tbody, #mvdafxvlkj tfoot, #mvdafxvlkj tr, #mvdafxvlkj td, #mvdafxvlkj th {
   border-style: none;
 }
 
-#canivpdukh p {
+#mvdafxvlkj p {
   margin: 0;
   padding: 0;
 }
 
-#canivpdukh .gt_table {
+#mvdafxvlkj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -409,12 +416,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#canivpdukh .gt_caption {
+#mvdafxvlkj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#canivpdukh .gt_title {
+#mvdafxvlkj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -426,7 +433,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#canivpdukh .gt_subtitle {
+#mvdafxvlkj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -438,7 +445,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#canivpdukh .gt_heading {
+#mvdafxvlkj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -450,13 +457,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#canivpdukh .gt_bottom_border {
+#mvdafxvlkj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#canivpdukh .gt_col_headings {
+#mvdafxvlkj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -471,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#canivpdukh .gt_col_heading {
+#mvdafxvlkj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -491,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#canivpdukh .gt_column_spanner_outer {
+#mvdafxvlkj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -503,15 +510,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#canivpdukh .gt_column_spanner_outer:first-child {
+#mvdafxvlkj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#canivpdukh .gt_column_spanner_outer:last-child {
+#mvdafxvlkj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#canivpdukh .gt_column_spanner {
+#mvdafxvlkj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -523,11 +530,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#canivpdukh .gt_spanner_row {
+#mvdafxvlkj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#canivpdukh .gt_group_heading {
+#mvdafxvlkj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -553,7 +560,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#canivpdukh .gt_empty_group_heading {
+#mvdafxvlkj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -568,15 +575,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#canivpdukh .gt_from_md > :first-child {
+#mvdafxvlkj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#canivpdukh .gt_from_md > :last-child {
+#mvdafxvlkj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#canivpdukh .gt_row {
+#mvdafxvlkj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -595,7 +602,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#canivpdukh .gt_stub {
+#mvdafxvlkj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -608,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#canivpdukh .gt_stub_row_group {
+#mvdafxvlkj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -622,15 +629,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#canivpdukh .gt_row_group_first td {
+#mvdafxvlkj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#canivpdukh .gt_row_group_first th {
+#mvdafxvlkj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#canivpdukh .gt_summary_row {
+#mvdafxvlkj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -640,16 +647,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#canivpdukh .gt_first_summary_row {
+#mvdafxvlkj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#canivpdukh .gt_first_summary_row.thick {
+#mvdafxvlkj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#canivpdukh .gt_last_summary_row {
+#mvdafxvlkj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -659,7 +666,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#canivpdukh .gt_grand_summary_row {
+#mvdafxvlkj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -669,7 +676,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#canivpdukh .gt_first_grand_summary_row {
+#mvdafxvlkj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -679,7 +686,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#canivpdukh .gt_last_grand_summary_row_top {
+#mvdafxvlkj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -689,11 +696,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#canivpdukh .gt_striped {
+#mvdafxvlkj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#canivpdukh .gt_table_body {
+#mvdafxvlkj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -702,7 +709,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#canivpdukh .gt_footnotes {
+#mvdafxvlkj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -716,7 +723,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#canivpdukh .gt_footnote {
+#mvdafxvlkj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -725,7 +732,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#canivpdukh .gt_sourcenotes {
+#mvdafxvlkj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -739,7 +746,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#canivpdukh .gt_sourcenote {
+#mvdafxvlkj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -747,169 +754,193 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#canivpdukh .gt_left {
+#mvdafxvlkj .gt_left {
   text-align: left;
 }
 
-#canivpdukh .gt_center {
+#mvdafxvlkj .gt_center {
   text-align: center;
 }
 
-#canivpdukh .gt_right {
+#mvdafxvlkj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#canivpdukh .gt_font_normal {
+#mvdafxvlkj .gt_font_normal {
   font-weight: normal;
 }
 
-#canivpdukh .gt_font_bold {
+#mvdafxvlkj .gt_font_bold {
   font-weight: bold;
 }
 
-#canivpdukh .gt_font_italic {
+#mvdafxvlkj .gt_font_italic {
   font-style: italic;
 }
 
-#canivpdukh .gt_super {
+#mvdafxvlkj .gt_super {
   font-size: 65%;
 }
 
-#canivpdukh .gt_footnote_marks {
+#mvdafxvlkj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#canivpdukh .gt_asterisk {
+#mvdafxvlkj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#canivpdukh .gt_indent_1 {
+#mvdafxvlkj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#canivpdukh .gt_indent_2 {
+#mvdafxvlkj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#canivpdukh .gt_indent_3 {
+#mvdafxvlkj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#canivpdukh .gt_indent_4 {
+#mvdafxvlkj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#canivpdukh .gt_indent_5 {
+#mvdafxvlkj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" style="table-layout: fixed;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <colgroup>
-    <col>
-    <col style="width:120px;">
-    <col>
-    <col>
-    <col>
-  </colgroup>
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Week">Week</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Date">Date</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Topic">Topic</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Slides">Slides</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="Exercise">Exercise</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_01.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">1</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Aug 30</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Getting started with spatial data using sf and the tidyverse</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-data.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_01.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_02.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">2</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 6</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Visualizing spatial data with ggplot2</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/data-visualization.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_02.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_03.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">3</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 13</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Transforming data with dplyr</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/data-transformation.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_03.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_04.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">4</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 20</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Transforming spatial data attributes</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-data-attributes.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_04.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_05.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">5</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Sep 27</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Applying spatial transformations and geometric operations using sf</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/feature-geometry.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_05.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_06.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">6</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 4</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Tidying and joining spatial data</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/tidy-data.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_06.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_07.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">7</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 11</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Building functions in R and literate programming with Quarto</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/functions.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="exercises/exercise_07.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_08.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">8</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 18</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Developing an exploratory data analysis with sf and the tidyverse</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/exploratory-analysis.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_09.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">9</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Oct 25</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/open-street-map.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_10.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">10</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 1</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Exploring American Community Survey data with the tidycensus package</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_11.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">11</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 8</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Reading and writing spatial data files and services</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/spatial-data-io.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_12.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">12</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 15</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Creating and managing spatial metadata</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';"><a href="slides/metadata.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_13.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">13</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 22</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Project check-in meetings (no class)</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_14.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">14</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Nov 29</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Review and work session</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';"><a href="weeks/week_15.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">15</a></td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Wed, Dec 6</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Final project presentations</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-    <tr><td headers="Week" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">—</td>
-<td headers="Date" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible';">Thu, Dec 14</td>
-<td headers="Topic" class="gt_row gt_left" style="font-family: 'Atkinson Hyperlegible';">Due: Final project repository</td>
-<td headers="Slides" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td>
-<td headers="Exercise" class="gt_row gt_center" style="font-family: 'Noto Color Emoji';">—</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Week" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold" scope="col">Week</th>
+<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold" scope="col">Date</th>
+<th id="Topic" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold" scope="col">Topic</th>
+<th id="Slides" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold" scope="col">Slides</th>
+<th id="Exercise" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold" scope="col">Exercise</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_01.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">1</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Aug 30</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Getting started with spatial data using sf and the tidyverse</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/spatial-data.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_01.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_02.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">2</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Sep 6</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Visualizing spatial data with ggplot2</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/data-visualization.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_02.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_03.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">3</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Sep 13</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Transforming data with dplyr</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/data-transformation.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_03.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_04.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">4</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Sep 20</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Transforming spatial data attributes</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/spatial-data-attributes.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_04.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_05.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">5</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Sep 27</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Applying spatial transformations and geometric operations using sf</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/feature-geometry.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_05.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_06.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">6</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Oct 4</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Tidying and joining spatial data</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/tidy-data.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_06.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_07.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">7</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Oct 11</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Building functions in R and literate programming with Quarto</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/functions.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="exercises/exercise_07.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📝</a></span></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_08.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">8</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Oct 18</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Developing an exploratory data analysis with sf and the tidyverse</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/exploratory-analysis.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_09.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">9</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Oct 25</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Editing OpenStreetMap and exploring OpenStreetMap data with the osmdata package</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/open-street-map.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_10.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">10</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Nov 1</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Exploring American Community Survey data with the tidycensus package</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'">—</td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_11.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">11</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Nov 8</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Reading and writing spatial data files and services</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/spatial-data-io.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_12.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">12</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Nov 15</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Creating and managing spatial metadata</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'"><span style="white-space: pre;"><a href="slides/metadata.html" target="_self" style="color:#008B8B;text-decoration:none;display: inline-block;">📖</a></span></td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_13.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">13</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Nov 22</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Project check-in meetings (no class)</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'">—</td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_14.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">14</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Nov 29</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Review and work session</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'">—</td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'"><span style="white-space: pre;"><a href="weeks/week_15.html" target="_self" style="color:#008B8B;text-decoration:underline;text-underline-position: under;display: inline-block;">15</a></span></td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Fri, Dec 6</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Final project presentations</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'">—</td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="Week" style="font-family: 'Atkinson Hyperlegible'">—</td>
+<td class="gt_row gt_center" headers="Date" style="font-family: 'Atkinson Hyperlegible'">Sat, Dec 14</td>
+<td class="gt_row gt_left" headers="Topic" style="font-family: 'Atkinson Hyperlegible'">Due: Final project repository</td>
+<td class="gt_row gt_center" headers="Slides" style="font-family: 'Noto Color Emoji'">—</td>
+<td class="gt_row gt_center" headers="Exercise" style="font-family: 'Noto Color Emoji'">—</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -958,6 +989,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -1026,13 +1084,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1067,18 +1127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1110,11 +1159,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/bldgspatialdata\.github\.io\/website\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1124,8 +1212,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1137,7 +1234,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1181,6 +1401,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1206,6 +1427,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1269,4 +1516,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bldgspatialdata/website/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

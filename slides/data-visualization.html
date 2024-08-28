@@ -8,10 +8,10 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="dcterms.date" content="2023-09-06">
-  <title>GES 668 - Fall 2023 - Visualizing spatial data with ggplot2</title>
+  <title>GES 668 - Fall 2024 – Visualizing spatial data with ggplot2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -385,10 +386,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="GES 668 - Fall 2023 - Visualizing spatial data with ggplot2">
+<meta property="og:title" content="Visualizing spatial data with ggplot2 – GES 668 - Fall 2024">
 <meta property="og:description" content="Session 2">
 <meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/qcbis_workshop03_gglayers-graphic.png">
-<meta property="og:site-name" content="GES 668 - Fall 2023">
+<meta property="og:site_name" content="GES 668 - Fall 2024">
 <meta property="og:image:height" content="1431">
 <meta property="og:image:width" content="1921">
 </head>
@@ -404,12 +405,6 @@
 </div>
 
   <p class="date">2023-09-06</p>
-</section>
-<section class="slide level4">
-
-<div class="cell">
-
-</div>
 </section>
 <section id="overview" class="title-slide slide level1 center" data-number="1">
 <h1><span class="header-section-number">1</span> Overview</h1>
@@ -446,606 +441,8 @@
 <h2><span class="header-section-number">2.2</span> Anscombe’s quartet</h2>
 <p>To illustrate why visualization is essential, let’s look at the Anscombe’s Quartet data:</p>
 <div class="cell">
-<div class="cell-output-display">
-
-<div id="jdxmegcfxb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#jdxmegcfxb table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#jdxmegcfxb thead, #jdxmegcfxb tbody, #jdxmegcfxb tfoot, #jdxmegcfxb tr, #jdxmegcfxb td, #jdxmegcfxb th {
-  border-style: none;
-}
-
-#jdxmegcfxb p {
-  margin: 0;
-  padding: 0;
-}
-
-#jdxmegcfxb .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#jdxmegcfxb .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#jdxmegcfxb .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#jdxmegcfxb .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#jdxmegcfxb .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#jdxmegcfxb .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#jdxmegcfxb .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#jdxmegcfxb .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#jdxmegcfxb .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#jdxmegcfxb .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#jdxmegcfxb .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#jdxmegcfxb .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#jdxmegcfxb .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#jdxmegcfxb .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#jdxmegcfxb .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdxmegcfxb .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#jdxmegcfxb .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#jdxmegcfxb .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#jdxmegcfxb .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdxmegcfxb .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#jdxmegcfxb .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdxmegcfxb .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#jdxmegcfxb .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdxmegcfxb .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jdxmegcfxb .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jdxmegcfxb .gt_left {
-  text-align: left;
-}
-
-#jdxmegcfxb .gt_center {
-  text-align: center;
-}
-
-#jdxmegcfxb .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#jdxmegcfxb .gt_font_normal {
-  font-weight: normal;
-}
-
-#jdxmegcfxb .gt_font_bold {
-  font-weight: bold;
-}
-
-#jdxmegcfxb .gt_font_italic {
-  font-style: italic;
-}
-
-#jdxmegcfxb .gt_super {
-  font-size: 65%;
-}
-
-#jdxmegcfxb .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#jdxmegcfxb .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#jdxmegcfxb .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#jdxmegcfxb .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#jdxmegcfxb .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#jdxmegcfxb .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#jdxmegcfxb .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="x">x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="y">y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="x">x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="y">y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="x">x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="y">y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="x">x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="y">y</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">10</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.04</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">10</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.14</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">10</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.46</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.58</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.95</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.14</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.77</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.76</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">13</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.58</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">13</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.74</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">13</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">12.74</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.71</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.81</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.77</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.11</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.84</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">11</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.33</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">11</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.26</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">11</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.81</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.47</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">14</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.96</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">14</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.10</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">14</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.84</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.04</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.24</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.13</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.08</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.25</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4.26</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">3.10</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.39</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">19</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">12.50</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">12</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">10.84</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">12</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.13</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">12</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8.15</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.56</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4.82</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.26</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.42</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">7.91</td></tr>
-    <tr><td headers="set...1" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">I</td>
-<td headers="x...2" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5</td>
-<td headers="y...3" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.68</td>
-<td headers="set...4" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">II</td>
-<td headers="x...5" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5</td>
-<td headers="y...6" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">4.74</td>
-<td headers="set...7" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">III</td>
-<td headers="x...8" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5</td>
-<td headers="y...9" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">5.73</td>
-<td headers="set...10" class="gt_row gt_center" style="font-family: 'Atkinson Hyperlegible'; font-size: small; font-weight: bold; background-color: rgba(190,190,190,0.25);">IV</td>
-<td headers="x...11" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">8</td>
-<td headers="y...12" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">6.89</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'Tmisc'</code></pre>
 </div>
 </div>
 <div class="footer">
@@ -1057,500 +454,20 @@
 <p>Hard to make sense of all those numbers at once.</p>
 <p>What if we use some summary statistics and get the mean, standard deviation, and Pearson correlation coefficient for x and y by set:</p>
 <div class="cell">
-<div class="cell-output-display">
-
-<div id="phhaxxvhqz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#phhaxxvhqz table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#phhaxxvhqz thead, #phhaxxvhqz tbody, #phhaxxvhqz tfoot, #phhaxxvhqz tr, #phhaxxvhqz td, #phhaxxvhqz th {
-  border-style: none;
-}
-
-#phhaxxvhqz p {
-  margin: 0;
-  padding: 0;
-}
-
-#phhaxxvhqz .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#phhaxxvhqz .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#phhaxxvhqz .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#phhaxxvhqz .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#phhaxxvhqz .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#phhaxxvhqz .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#phhaxxvhqz .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#phhaxxvhqz .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#phhaxxvhqz .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#phhaxxvhqz .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#phhaxxvhqz .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#phhaxxvhqz .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#phhaxxvhqz .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#phhaxxvhqz .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#phhaxxvhqz .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#phhaxxvhqz .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#phhaxxvhqz .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#phhaxxvhqz .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#phhaxxvhqz .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#phhaxxvhqz .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#phhaxxvhqz .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#phhaxxvhqz .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#phhaxxvhqz .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#phhaxxvhqz .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#phhaxxvhqz .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#phhaxxvhqz .gt_left {
-  text-align: left;
-}
-
-#phhaxxvhqz .gt_center {
-  text-align: center;
-}
-
-#phhaxxvhqz .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#phhaxxvhqz .gt_font_normal {
-  font-weight: normal;
-}
-
-#phhaxxvhqz .gt_font_bold {
-  font-weight: bold;
-}
-
-#phhaxxvhqz .gt_font_italic {
-  font-style: italic;
-}
-
-#phhaxxvhqz .gt_super {
-  font-size: 65%;
-}
-
-#phhaxxvhqz .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#phhaxxvhqz .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#phhaxxvhqz .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#phhaxxvhqz .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#phhaxxvhqz .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#phhaxxvhqz .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#phhaxxvhqz .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="mean_x">mean_x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="mean_y">mean_y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="sd_x">sd_x</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="sd_y">sd_y</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Atkinson Hyperlegible'; font-weight: bold;" scope="col" id="r">r</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_row_group_first"><td headers="I stub_1_1 stub_1" rowspan="1" class="gt_row gt_left gt_stub_row_group" style="font-size: small; font-weight: bold;">I</td>
-<td headers="I stub_1_1 mean_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="I stub_1_1 mean_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="I stub_1_1 sd_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">3.32</td>
-<td headers="I stub_1_1 sd_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">2.03</td>
-<td headers="I stub_1_1 r" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">0.82</td></tr>
-    <tr class="gt_row_group_first"><td headers="II stub_1_2 stub_1" rowspan="1" class="gt_row gt_left gt_stub_row_group" style="font-size: small; font-weight: bold;">II</td>
-<td headers="II stub_1_2 mean_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="II stub_1_2 mean_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="II stub_1_2 sd_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">3.32</td>
-<td headers="II stub_1_2 sd_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">2.03</td>
-<td headers="II stub_1_2 r" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">0.82</td></tr>
-    <tr class="gt_row_group_first"><td headers="III stub_1_3 stub_1" rowspan="1" class="gt_row gt_left gt_stub_row_group" style="font-size: small; font-weight: bold;">III</td>
-<td headers="III stub_1_3 mean_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="III stub_1_3 mean_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="III stub_1_3 sd_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">3.32</td>
-<td headers="III stub_1_3 sd_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">2.03</td>
-<td headers="III stub_1_3 r" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">0.82</td></tr>
-    <tr class="gt_row_group_first"><td headers="IV stub_1_4 stub_1" rowspan="1" class="gt_row gt_left gt_stub_row_group" style="font-size: small; font-weight: bold;">IV</td>
-<td headers="IV stub_1_4 mean_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="IV stub_1_4 mean_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">9.00</td>
-<td headers="IV stub_1_4 sd_x" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">3.32</td>
-<td headers="IV stub_1_4 sd_y" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">2.03</td>
-<td headers="IV stub_1_4 r" class="gt_row gt_right" style="font-family: 'Atkinson Hyperlegible';">0.82</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'Tmisc'</code></pre>
 </div>
 </div>
 </section>
 <section class="slide level4">
 
 <p>Now, take another look using a plot:</p>
-
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p>What do you <em>see</em>?</p>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'Tmisc'</code></pre>
+</div>
+</div>
+<p>What do you <em>see</em>?</p>
 </section>
 
 <section id="how-do-we-visualize-spatial-data" class="title-slide slide level2 center" data-number="2.3">
@@ -1566,8 +483,7 @@
 <figcaption>Key for interpreting Sanborn fire insurance maps courtesy <a href="https://www.loc.gov/collections/sanborn-maps/about-this-collection/">Library of Congress</a></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -1576,8 +492,7 @@
 <p>Graphics can be further transformed using <strong>animation</strong> and <strong>interactivity</strong>. Maps, graphics, and tables also vary in <strong>format</strong>: print, web, mobile, etc.</p>
 </div><div class="column" style="width:60%;">
 <p><img data-src="https://media.giphy.com/media/xUA7aUs09Brz1ZED72/giphy.gif"></p>
-</div>
-</div>
+</div></div>
 </section>
 </section>
 <section>
@@ -1727,9 +642,9 @@
 <h2><span class="header-section-number">5.1</span> Setup packages</h2>
 <p>For this session, we are going to use the <code>{ggplot2}</code> and <code>{dplyr}</code> packages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-3"><a></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -1738,11 +653,11 @@
 <p>We are also going to use the <code>storms</code> data included with <code>{dplyr}</code>.</p>
 <p>Take a quick look at <code>storms</code> using <code>glimpse()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">glimpse</span>(storms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(storms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 19,066
+<pre><code>Rows: 19,537
 Columns: 13
 $ name                         &lt;chr&gt; "Amy", "Amy", "Amy", "Amy", "Amy", "Amy",…
 $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 1975,…
@@ -1776,13 +691,16 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>We can start by using the function <code>ggplot()</code> to define a plot object. Set <code>storm</code> as the input data for <code>ggplot()</code>:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <div class="fragment">
 <div class="smaller">
 <p>Well, that doesn’t look like much. 🤔</p>
@@ -1800,19 +718,22 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>Next, we can set the mapping using the <code>aes()</code> function. We can start by mapping <code>long</code> (longitude) to <code>x</code> and <code>lat</code> (latitude) to <code>y</code>:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="at">x =</span> long,</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">y =</span> lat</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  )</span>
-<span id="cb5-7"><a href="#cb5-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb8-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb8-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb8-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb8-5"><a></a>    <span class="at">y =</span> lat</span>
+<span id="cb8-6"><a></a>  )</span>
+<span id="cb8-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <p>Before we can see any data, we need to tell <code>ggplot()</code> how we want to represent the data using layers.</p>
 <aside class="notes">
 <p>The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.</p>
@@ -1834,40 +755,46 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>Let’s give it a try using <code>geom_point()</code>:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">x =</span> long,</span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">y =</span> lat</span>
-<span id="cb6-6"><a href="#cb6-6"></a>  )</span>
-<span id="cb6-7"><a href="#cb6-7"></a>) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb9-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb9-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb9-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb9-5"><a></a>    <span class="at">y =</span> lat</span>
+<span id="cb9-6"><a></a>  )</span>
+<span id="cb9-7"><a></a>) <span class="sc">+</span></span>
+<span id="cb9-8"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>You can define the <code>data</code> and <code>mapping</code> parameters globally using <code>ggplot()</code> or locally for a single geom function. This code does the exact same thing as the prior block:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb7-4"><a href="#cb7-4"></a>      <span class="at">x =</span> long,</span>
-<span id="cb7-5"><a href="#cb7-5"></a>      <span class="at">y =</span> lat</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    ),</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">data =</span> storms</span>
-<span id="cb7-8"><a href="#cb7-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb10-3"><a></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb10-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb10-5"><a></a>      <span class="at">y =</span> lat</span>
+<span id="cb10-6"><a></a>    ),</span>
+<span id="cb10-7"><a></a>    <span class="at">data =</span> storms</span>
+<span id="cb10-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -1883,11 +810,11 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>For example, see how we can use a series of pipes to operate on the storms data:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">distinct</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">distinct</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 258 × 1
+<pre><code># A tibble: 260 × 1
    name    
    &lt;chr&gt;   
  1 Amy     
@@ -1900,38 +827,35 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
  8 Hallie  
  9 Belle   
 10 Dottie  
-# ℹ 248 more rows</code></pre>
+# ℹ 250 more rows</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">distinct</span>(name) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">distinct</span>(name) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 258</code></pre>
+<pre><code>[1] 260</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>The prior block is the same as the following block:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>storm_names <span class="ot">&lt;-</span> <span class="fu">distinct</span>(storms, name)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">nrow</span>(storm_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>storm_names <span class="ot">&lt;-</span> <span class="fu">distinct</span>(storms, name)</span>
+<span id="cb15-2"><a></a><span class="fu">nrow</span>(storm_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 258</code></pre>
+<pre><code>[1] 260</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>Using pipes can help avoid the need for intermediate objects like <code>storm_names</code> that might only exist to move the output of one function to the input for another function.</p>
 </div>
@@ -1941,33 +865,39 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>The first parameter for <code>ggplot()</code> is <code>data</code> and the first parameter for all geom functions is <code>mapping</code> so you often see these passed as unnnamed parameters:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb14-3"><a href="#cb14-3"></a>    <span class="fu">aes</span>(</span>
-<span id="cb14-4"><a href="#cb14-4"></a>      <span class="at">x =</span> long,</span>
-<span id="cb14-5"><a href="#cb14-5"></a>      <span class="at">y =</span> lat</span>
-<span id="cb14-6"><a href="#cb14-6"></a>    )</span>
-<span id="cb14-7"><a href="#cb14-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb17-3"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb17-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb17-5"><a></a>      <span class="at">y =</span> lat</span>
+<span id="cb17-6"><a></a>    )</span>
+<span id="cb17-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>You can even leave off the x and y parameter names:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -1985,14 +915,17 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>Next we can map one of the variables (<code>status</code> or storm classification) to an aesthetic (<code>color</code>):</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat, <span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat, <span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <p>Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a “positional aesthetic” we can’t easily interpret the meaning of the graphic without a legend, labels, or annotations.</p>
 </section>
 <section class="slide level4">
@@ -2000,21 +933,24 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>In addition to having mapped aesthetics, we can also have “fixed” aesthetics (fixed because the same value is used for every observation in the plot). When you have a lot of overlapping features (known as overplotting), you may want to reduce the <code>alpha</code> (or transparency) of the features:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb17-3"><a href="#cb17-3"></a>    <span class="fu">aes</span>(</span>
-<span id="cb17-4"><a href="#cb17-4"></a>      <span class="at">x =</span> long,</span>
-<span id="cb17-5"><a href="#cb17-5"></a>      <span class="at">y =</span> lat,</span>
-<span id="cb17-6"><a href="#cb17-6"></a>      <span class="at">color =</span> status</span>
-<span id="cb17-7"><a href="#cb17-7"></a>    ),</span>
-<span id="cb17-8"><a href="#cb17-8"></a>    <span class="at">alpha =</span> <span class="fl">0.4</span></span>
-<span id="cb17-9"><a href="#cb17-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb20-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb20-3"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb20-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb20-5"><a></a>      <span class="at">y =</span> lat,</span>
+<span id="cb20-6"><a></a>      <span class="at">color =</span> status</span>
+<span id="cb20-7"><a></a>    ),</span>
+<span id="cb20-8"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span></span>
+<span id="cb20-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <p>Fixed aesthetics should be defined for each geom—they are ignored if you pass them to <code>ggplot()</code>.</p>
 </section>
 <section class="slide level4">
@@ -2022,21 +958,24 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>Aesthetics can also be defined using a function. In this example, we are using the boolean operator <code>==</code> to compare the values from “status” to the string “hurricane”:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb18-4"><a href="#cb18-4"></a>    <span class="at">x =</span> long,</span>
-<span id="cb18-5"><a href="#cb18-5"></a>    <span class="at">y =</span> lat,</span>
-<span id="cb18-6"><a href="#cb18-6"></a>    <span class="at">color =</span> status <span class="sc">==</span> <span class="st">"hurricane"</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>  )</span>
-<span id="cb18-8"><a href="#cb18-8"></a>) <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb21-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb21-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb21-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb21-5"><a></a>    <span class="at">y =</span> lat,</span>
+<span id="cb21-6"><a></a>    <span class="at">color =</span> status <span class="sc">==</span> <span class="st">"hurricane"</span></span>
+<span id="cb21-7"><a></a>  )</span>
+<span id="cb21-8"><a></a>) <span class="sc">+</span></span>
+<span id="cb21-9"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section id="visualizing-distributions" class="title-slide slide level2 center" data-number="6.1">
 <h2><span class="header-section-number">6.1</span> Visualizing distributions</h2>
@@ -2047,51 +986,60 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <h2><span class="header-section-number">6.2</span> Distribution of one numeric variable</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> lat)</span>
-<span id="cb19-4"><a href="#cb19-4"></a>) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb22-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb22-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> lat)</span>
+<span id="cb22-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb22-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="distribution-of-one-numeric-variable-1" class="title-slide slide level2 center" data-number="6.3">
 <h2><span class="header-section-number">6.3</span> Distribution of one numeric variable</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lat)</span>
-<span id="cb20-4"><a href="#cb20-4"></a>) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb23-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb23-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lat)</span>
+<span id="cb23-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb23-5"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 
 <section id="distribution-of-one-categorical-variable" class="title-slide slide level2 center" data-number="6.4">
 <h2><span class="header-section-number">6.4</span> Distribution of one categorical variable</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">data =</span> storms,</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> category)</span>
-<span id="cb21-4"><a href="#cb21-4"></a>) <span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb24-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb24-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> category)</span>
+<span id="cb24-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb24-5"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 </section>
 <section>
@@ -2100,15 +1048,14 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>To start, let’s convert our storms data set from a data frame into a sf object using <code>sf::st_as_sf()</code>:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(</span>
-<span id="cb22-2"><a href="#cb22-2"></a>  storms,</span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="at">crs =</span> <span class="dv">4326</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(</span>
+<span id="cb25-2"><a></a>  storms,</span>
+<span id="cb25-3"><a></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb25-4"><a></a>  <span class="at">crs =</span> <span class="dv">4326</span></span>
+<span id="cb25-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 
-</div>
-</div>
+</div></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2128,14 +1075,17 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>Finally, we can look at these observations on a map:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -2143,31 +1093,37 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>But converting the data to a <code>sf</code> object allows us to use <code>coord_sf()</code> to transform the coorindate reference system on the fly:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"EPSG:3035"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
+<span id="cb27-3"><a></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"EPSG:3035"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>This is equivalent to converting the coordinate reference system in advance using <code>st_transform()</code>:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">st_transform</span>(<span class="dv">2804</span>) <span class="sc">|&gt;</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">st_transform</span>(<span class="dv">2804</span>) <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb28-4"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</div>
+</div></div>
 <p>Note, that this is another example of how we can use the pipe (<code>|&gt;</code>) to move data between functions in R.</p>
 </section>
 <section class="slide level4">
@@ -2175,110 +1131,113 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <p>However, to really show the potential, we need some more data. Install and load the <code>{rnaturalearth}</code> package and then load data for the coastline and countries:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb26-3"><a href="#cb26-3"></a></span>
-<span id="cb26-4"><a href="#cb26-4"></a>coastline <span class="ot">&lt;-</span> <span class="fu">ne_coastline</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb26-5"><a href="#cb26-5"></a></span>
-<span id="cb26-6"><a href="#cb26-6"></a>countries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))</span></span>
+<span id="cb29-2"><a></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb29-3"><a></a></span>
+<span id="cb29-4"><a></a>coastline <span class="ot">&lt;-</span> <span class="fu">ne_coastline</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-
+<div class="cell-output cell-output-error">
+<pre><code>Error in value[[3L]](cond): Failed to install the rnaturalearthdata package.
+ Please try installing the package for yourself using the following command: 
+ install.packages("rnaturalearthdata")</code></pre>
 </div>
-</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>Put them together and we are starting to get somehwere:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
+<span id="cb32-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<div class="cell-output-display">
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'coastline' not found</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of <code>coord_sf()</code> to “zoom” in on a smaller area:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>storms_bbox <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:3035"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">st_bbox</span>()</span>
-<span id="cb28-4"><a href="#cb28-4"></a></span>
-<span id="cb28-5"><a href="#cb28-5"></a>storms_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> countries, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">coord_sf</span>(</span>
-<span id="cb28-10"><a href="#cb28-10"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>xmin, storms_bbox<span class="sc">$</span>xmax),</span>
-<span id="cb28-11"><a href="#cb28-11"></a>    <span class="at">ylim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>ymin, storms_bbox<span class="sc">$</span>ymax),</span>
-<span id="cb28-12"><a href="#cb28-12"></a>    <span class="at">crs =</span> <span class="st">"EPSG:3035"</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>  )</span>
-<span id="cb28-14"><a href="#cb28-14"></a></span>
-<span id="cb28-15"><a href="#cb28-15"></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>storms_bbox <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:3035"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">st_bbox</span>()</span>
+<span id="cb34-4"><a></a></span>
+<span id="cb34-5"><a></a>storms_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb34-6"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> countries, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb34-7"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb34-8"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb34-9"><a></a>  <span class="fu">coord_sf</span>(</span>
+<span id="cb34-10"><a></a>    <span class="at">xlim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>xmin, storms_bbox<span class="sc">$</span>xmax),</span>
+<span id="cb34-11"><a></a>    <span class="at">ylim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>ymin, storms_bbox<span class="sc">$</span>ymax),</span>
+<span id="cb34-12"><a></a>    <span class="at">crs =</span> <span class="st">"EPSG:3035"</span></span>
+<span id="cb34-13"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<div class="cell-output-display">
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'coastline' not found</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>Try adding a scale:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"YlOrRd"</span>, <span class="at">na.value =</span> <span class="st">"gray60"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3"></a></span>
-<span id="cb29-4"><a href="#cb29-4"></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">scale_color_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"YlOrRd"</span>, <span class="at">na.value =</span> <span class="st">"gray60"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<div class="cell-output-display">
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>Now try adding some labels:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">labs</span>(</span>
-<span id="cb30-3"><a href="#cb30-3"></a>    <span class="at">title =</span> <span class="st">"Atlantic hurricanes by category, 1975-2021"</span>,</span>
-<span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">caption =</span> <span class="st">"Data: NOAA Atlantic hurricane database best track data via the {dplyr package}"</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a>  )</span>
-<span id="cb30-6"><a href="#cb30-6"></a></span>
-<span id="cb30-7"><a href="#cb30-7"></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-3"><a></a>    <span class="at">title =</span> <span class="st">"Atlantic hurricanes by category, 1975-2021"</span>,</span>
+<span id="cb42-4"><a></a>    <span class="at">caption =</span> <span class="st">"Data: NOAA Atlantic hurricane database best track data via the {dplyr package}"</span></span>
+<span id="cb42-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<div class="cell-output-display">
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>storms_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
 <p>Lastly, we can adjust the theme:</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>storms_map <span class="sc">+</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">theme</span>(</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>storms_map <span class="sc">+</span></span>
+<span id="cb46-2"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb46-3"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb46-4"><a></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb46-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<div class="cell-output-display">
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'storms_map' not found</code></pre>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -2288,8 +1247,7 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 </div><div class="column" style="width:60%;">
 <p>“It’s true that there are better and worse ways to make a map but <strong>no one way to make an excellent map</strong>.”</p>
 <p>Gretchen N. Peterson in GIS Cartography: A Guide to Effective Map Design</p>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level4">
 
@@ -2330,9 +1288,11 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <li>Scaling</li>
 </ul>
 
+<div class="quarto-auto-generated-content">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</div>
 </div>
 </section></section>
     </div>
@@ -2361,7 +1321,6 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2616,18 +1575,7 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2659,11 +1607,50 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/bldgspatialdata\.github\.io\/website\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2673,8 +1660,17 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -2688,7 +1684,11 @@ $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, N
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.56">
 
-  <meta name="dcterms.date" content="2023-11-29">
-  <title>GES 668 - Fall 2024 – Effective visualization with {ggplot2} and R</title>
+  <meta name="author" content="Your Name">
+  <title>GES 668 - Fall 2024 – GES668: Your Project Title</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,12 +29,77 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -244,7 +309,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -321,7 +385,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Effective visualization with {ggplot2} and R – GES 668 - Fall 2024">
+<meta property="og:title" content="GES668: Your Project Title – GES 668 - Fall 2024">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
 </head>
 <body class="quarto-light">
@@ -329,91 +393,79 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Effective visualization with <code>{ggplot2}</code> and R</h1>
+  <h1 class="title">GES668: Your Project Title</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Your Name 
+</div>
+</div>
 </div>
 
-  <p class="date">2023-11-29</p>
 </section>
-<section id="where-to-start" class="title-slide slide level2 center" data-number="1">
-<h2><span class="header-section-number">1</span> Where to start?</h2>
-<ul>
-<li>Know your goal</li>
-<li>Know your audience</li>
-<li>Know your format</li>
-</ul>
+<section id="using-this-template" class="slide level2">
+<h2>Using this template</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How to use this template</strong></p>
+</div>
+<div class="callout-content">
+<p>This template is based on the <a href="https://bldgspatialdata.github.io/website/final-project.html">the GES 668 Final Project instructions</a>. You should <em>replace</em> the questions or other instructions in this template with your own writing about the project. Link to your project README or other files in your repository to provide more detailed information where appropriate.</p>
+</div>
+</div>
+</div>
 </section>
+<section id="working-with-reveal.js" class="slide level2">
+<h2>Working with Reveal.js</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Remove this slide</strong></p>
+</div>
+<div class="callout-content">
+<p>This slide and the next three slides should be removed. They are only provided as a reference for working with <a href="https://quarto.org/docs/presentations/revealjs/">Reveal.js presentation format</a> in Quarto. Check <a href="https://quarto.org/docs/reference/formats/presentations/revealjs.html">the full list of options for the Reveal.js presentation format</a> in Quarto for more detailed information.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="working-with-reveal.js-1" class="slide level2">
+<h2>Working with Reveal.js</h2>
+<p>This slide includes a captioned image inserted with Markdown formatting.</p>
 
-<section id="what-next" class="title-slide slide level2 center" data-number="2">
-<h2><span class="header-section-number">2</span> What next?</h2>
-<ul>
-<li>Choosing appropriate graphic types</li>
-<li>Writing and formatting clear text</li>
-<li>Selecting appropriate and engaging colors</li>
-<li>Preparing your feature geometry appropriately</li>
-</ul>
-</section>
+<img data-src="https://bldgspatialdata.github.io/website/images/logo.png" class="r-stretch quarto-figure-right"><p class="caption">Building Spatial Datasets Course logo</p></section>
+<section id="working-with-reveal.js-2" class="slide level2">
+<h2>Working with Reveal.js</h2>
+<p>This slide includes a code block and presentation notes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `nc' from data source 
+  `/Users/elipousson/Library/R/arm64/4.4/library/sf/shape/nc.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 100 features and 14 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> nc, <span class="fu">aes</span>(<span class="at">fill =</span> NAME)) <span class="sc">+</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<section>
-<section id="choosing-appropriate-graphic-types" class="title-slide slide level2 center" data-number="3">
-<h2><span class="header-section-number">3</span> Choosing appropriate graphic types</h2>
-<ul>
-<li>What makes one graphic, chart, plot, or map “better” or “worse”?</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<p>What makes a bad map <em>bad</em>?</p>
-<p>For new map makers who might not know any better, it is often:</p>
-<ul>
-<li>Confusing or distracting layout</li>
-<li>Not enough color contrast for features</li>
-<li>Cluttered labels, legends, or features</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<p>What makes a fine map <em>just</em> fine?</p>
-<p>For more experienced map makers who might be in a hurry:</p>
-<ul>
-<li>Not enough thought on font sizes and styling</li>
-<li>No feature generalization (simplifying geometry where appropriate for the map scale or subject)</li>
-<li>Inappropriate color scales</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<p>There are many cartographic considerations that also apply to other all types of data visualization:</p>
-<ul>
-<li>Layout</li>
-<li>Fonts (Typography)</li>
-<li>Colors</li>
-<li>Output formats</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<p>But there are also some cartographic considerations that apply to maps in special and important ways:</p>
-<ul>
-<li>Feature geometry (and cartographic conventions)</li>
-<li>Projections</li>
-<li>Scaling</li>
-</ul>
-</section></section>
-<section id="items-attributes-marks-and-channels" class="title-slide slide level2 center" data-number="4">
-<h2><span class="header-section-number">4</span> Items, Attributes, Marks, and Channels</h2>
-<p>In <a href="https://www.cs.ubc.ca/~tmm/vadbook/">Visualization Analysis and Design</a> (2014), Tamara Munzner describes a set of useful concepts:</p>
-<ul>
-<li>items,</li>
-<li>attributes,</li>
-<li>links,</li>
-<li>marks,</li>
-<li>and channels</li>
-</ul>
-<aside class="notes">
-<p>Book website: https://www.cs.ubc.ca/~tmm/vadbook/</p>
-<p>via https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html</p>
+</div>
+<img data-src="final-project-presentation_files/figure-revealjs/example_code-block-1.png" width="960" class="r-stretch"><aside class="notes">
+<p>This is an example of how you add in presentation notes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -426,53 +478,564 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="working-with-reveal.js-3" class="slide level2">
+<h2>Working with Reveal.js</h2>
+<p>This slide includes a hidden code block and a custom footer. See the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto code cells reference</a> for more information.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="czimlfflkj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#czimlfflkj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-<section id="items-and-attributes" class="title-slide slide level2 center" data-number="5">
-<h2><span class="header-section-number">5</span> Items and Attributes</h2>
-<dl>
-<dt>Items</dt>
-<dd>
-<p>basic units on which data is collected</p>
-</dd>
-<dt>Attributes</dt>
-<dd>
-<p>numerical or categorical features of the data items we want to represent</p>
-</dd>
-<dt>Links</dt>
-<dd>
-<p>relations among items, e.g.&nbsp;months within a year, or countries within a continent.</p>
-</dd>
-</dl>
+#czimlfflkj thead, #czimlfflkj tbody, #czimlfflkj tfoot, #czimlfflkj tr, #czimlfflkj td, #czimlfflkj th {
+  border-style: none;
+}
+
+#czimlfflkj p {
+  margin: 0;
+  padding: 0;
+}
+
+#czimlfflkj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#czimlfflkj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#czimlfflkj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#czimlfflkj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#czimlfflkj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#czimlfflkj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#czimlfflkj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#czimlfflkj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#czimlfflkj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#czimlfflkj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#czimlfflkj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#czimlfflkj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#czimlfflkj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#czimlfflkj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#czimlfflkj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#czimlfflkj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#czimlfflkj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#czimlfflkj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#czimlfflkj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#czimlfflkj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#czimlfflkj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#czimlfflkj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#czimlfflkj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#czimlfflkj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#czimlfflkj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#czimlfflkj .gt_left {
+  text-align: left;
+}
+
+#czimlfflkj .gt_center {
+  text-align: center;
+}
+
+#czimlfflkj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#czimlfflkj .gt_font_normal {
+  font-weight: normal;
+}
+
+#czimlfflkj .gt_font_bold {
+  font-weight: bold;
+}
+
+#czimlfflkj .gt_font_italic {
+  font-style: italic;
+}
+
+#czimlfflkj .gt_super {
+  font-size: 65%;
+}
+
+#czimlfflkj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#czimlfflkj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#czimlfflkj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#czimlfflkj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#czimlfflkj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#czimlfflkj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#czimlfflkj .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="AREA" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AREA</th>
+<th id="PERIMETER" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">PERIMETER</th>
+<th id="NAME" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">NAME</th>
+<th id="FIPS" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">FIPS</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="AREA">0.114</td>
+<td class="gt_row gt_right" headers="PERIMETER">1.442</td>
+<td class="gt_row gt_left" headers="NAME">Ashe</td>
+<td class="gt_row gt_right" headers="FIPS">37009</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="AREA">0.061</td>
+<td class="gt_row gt_right" headers="PERIMETER">1.231</td>
+<td class="gt_row gt_left" headers="NAME">Alleghany</td>
+<td class="gt_row gt_right" headers="FIPS">37005</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="AREA">0.143</td>
+<td class="gt_row gt_right" headers="PERIMETER">1.630</td>
+<td class="gt_row gt_left" headers="NAME">Surry</td>
+<td class="gt_row gt_right" headers="FIPS">37171</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="footer">
+<p>This is an example of a custom footer.</p>
+</div>
 </section>
-
-<section id="marks-and-channels" class="title-slide slide level2 center" data-number="6">
-<h2><span class="header-section-number">6</span> Marks and Channels</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<ul>
+<li>Brief summary description of the project</li>
+</ul>
+</section>
+<section id="project-goals" class="slide level2">
+<h2>Project goals</h2>
+<ul>
+<li><p>What were your initial goals for the project?</p></li>
+<li><p>How did they change or develop as you worked on your project?</p></li>
+</ul>
+</section>
+<section id="data-sources" class="slide level2">
+<h2>Data sources</h2>
+<p>More than one slide per data source is likely required for this section and basic information on each major data source used in your project. Make sure to answer:</p>
+<ul>
+<li><p>What data sources did you use?</p></li>
+<li><p>How, why, and where were they created?</p></li>
+</ul>
+</section>
+<section id="approach-and-methods-for-working-with-data" class="slide level2">
+<h2>Approach and methods for working with data</h2>
+<p>Briefly recap related information from your initial project proposal describing your approach. Make sure to answer:</p>
+<ul>
+<li><p>Did your approach involve mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches?</p></li>
+<li><p>Why did you select this approach and did you change apporach while completing your final project?</p></li>
+<li><p>What packages, templates, or other resources did you use in creating your final project?</p></li>
+</ul>
+</section>
+<section id="challenges-in-working-with-data" class="slide level2">
+<h2>Challenges in working with data</h2>
+<p>What challenges did you encounter in making use of these resources and this data?</p>
+<p>Challenges can be practical, e.g.&nbsp;“Difficulty identifying which key-value pairs needed to query OpenStreetMap data,” or conceptual, e.g.&nbsp;“Unsure appropriate level of geographical analysis to support a robust analysis.”</p>
+</section>
+<section id="successes-in-working-with-data" class="slide level2">
+<h2>Successes in working with data</h2>
+<p>What do you think your project does well?</p>
+<p>Your areas of success likely depend on your approach:</p>
+<ul>
+<li><p>If you completed a data analysis, what are your key findings?</p></li>
+<li><p>If you created a map, what does it communicate to people who see it?</p></li>
+</ul>
+</section>
+<section id="where-to-learn-more" class="slide level2">
+<h2>Where to learn more</h2>
+<div class="r-fit-text">
+<p>Add links or brief descriptions of how to find the required elements for your project repository.</p>
 <dl>
-<dt>Marks</dt>
+<dt>project data</dt>
 <dd>
-<p>geometric entities used to represent items: points, lines, areas.</p>
+source files or a script used for importing and processing the data before visualization or analysis. Students who are using {osmdata} or {tidycensus} should include scripts for downloading data.
 </dd>
-<dt>Visual channels</dt>
+<dt>project code</dt>
 <dd>
-<p>features of marks that can be used to reflect values of attributes.”</p>
+any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.
+</dd>
+<dt>output files</dt>
+<dd>
+including any processed data files or rendered PDF or HTML documents.
+</dd>
+<dt>README</dt>
+<dd>
+a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.
 </dd>
 </dl>
-<aside class="notes">
-<p>https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>These can be placeholder links as you still have time to complete the final project and some elements may be incomplete.</p>
+</div>
+<div class="footer">
+<p>This slide uses a <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fit-text">fit-text div</a> to make sure the text fits on a single slide. Learn more about <a href="https://quarto.org/docs/presentations/revealjs/advanced.html">Advanced Reveal features in the Quarto documentation</a>.</p>
+</div>
 
 <div class="quarto-auto-generated-content">
-<p><img src="../images/logo.png" class="slide-logo"></p>
+<p><img src="images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -482,19 +1045,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -529,7 +1092,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -688,6 +1251,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
