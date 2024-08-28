@@ -14,13 +14,14 @@ date: 2023-09-13
 - Introduction to data transformation with `{dplyr}`
 - Using `{dplyr}` with `sf` objects
 
-::: {.callout-note appearance="minimal" icon="true"}
 #### Key Objectives
 
--   Introduction to the concept of "tidy data"
--   Learn to subset data with `dplyr::filter()`
--   Learn to create new variables with `dplyr::mutate()`
-:::
+-   Review the concept of "tidy", analysis-friendly data
+-   Introduce the "verbs" of data wrangling with `{dplyr}`
+-   Practice subsetting rows with `dplyr::filter()` or `dplyr::slice()`
+-   Practice subsetting columns with `dplyr::select()`
+-   Practice using `{tidyselect}` helpers including `where()`, `all_of()`, `any_of()`, and `starts_with()`
+-   Practice creating new variables with `dplyr::mutate()` or `dplyr::summarise()`
 
 ## Prepare
 
