@@ -1,0 +1,86 @@
+---
+title: Preparing for the course
+---
+
+## Installing Git and setting up a GitHub account
+
+[Set up two-factor authentication](https://usethis.r-lib.org/articles/git-credentials.html#turn-on-two-factor-authentication). This is highly recommended!
+
+## Installing R packages
+
+Install the tidyverse and sf packages:
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+install.packages("sf")
+```
+
+We will use these packages more than anything else.
+
+Now, install `{pak}` to get a better than basic installing packages:
+
+```{r}
+#| eval: false
+install.packages("pak")
+```
+
+Here are all of the other packages we are using in this class.
+
+```{r}
+#| eval: false
+pak::pkg_install(
+  c("mapview", "usethis", "quarto", "sf", "tigris", "rnaturalearth", "spData", "arcgis")
+)
+```
+
+## Configuring RStudio
+
+Configuring RStudio is something we do together as a class during our first session. If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class
+
+### Required changes
+
+Options \> General
+
+-   Under Workspace Uncheck Restore .RData
+
+### Optional changes
+
+Options \> Appearance
+
+-   Customize theme
+-   Customize pane arrangement
+-   Customize fonts
+
+Options \> Pane Layout
+
+### Recommended Resources
+
+-   Review keyboard shortcuts.
+
+### Alternate IDEs
+
+-   Positron
+
+### Set up GitHub credentials in RStudio
+
+If you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your personal or course repositories.
+
+The `{usethis}` documentation [includes detailed article on connecting GitHub and R](https://usethis.r-lib.org/articles/git-credentials.html) but it is more detail than you may need. These instructions are a brief summary of that article.
+
+First, install the `{usethis}` package (if you don't have it installed already):
+
+```{r}
+#| eval: false
+install.packages("usethis")
+```
+
+There are three steps to connect GitHub and RStudio:
+
+1.  Run `usethis::create_github_token()` to [get a personal access token](https://usethis.r-lib.org/articles/git-credentials.html#get-a-personal-access-token-pat) and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won't need to refresh the token until after the end of this course.
+
+2.  Run `gitcreds::gitcreds_set()` to [put your PAT in your Git credential store](https://usethis.r-lib.org/articles/git-credentials.html#put-your-pat-into-the-local-git-credential-store).
+
+3.  **Restart your session** and run `usethis::gh_token_help()` to double-check that the token is saved in the right place.
+
+If you run into any trouble, you can run `usethis::git_sitrep()` for more feedback on what is set up correctly and what (if anything) might need to be fixed.
