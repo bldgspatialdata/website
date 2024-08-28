@@ -384,9 +384,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#accesssing-exercises-on-github" id="toc-accesssing-exercises-on-github" class="nav-link active" data-scroll-target="#accesssing-exercises-on-github"><span class="header-section-number">1</span> Accesssing exercises on GitHub</a>
+  <li><a href="#access-your-exercise-repository" id="toc-access-your-exercise-repository" class="nav-link active" data-scroll-target="#access-your-exercise-repository"><span class="header-section-number">1</span> Access your exercise repository</a>
   <ul class="collapse">
   <li><a href="#register-for-an-account-and-join-the-student-team" id="toc-register-for-an-account-and-join-the-student-team" class="nav-link" data-scroll-target="#register-for-an-account-and-join-the-student-team"><span class="header-section-number">1.1</span> Register for an account and join the student team</a></li>
+  <li><a href="#set-up-github-credentials-in-rstudio" id="toc-set-up-github-credentials-in-rstudio" class="nav-link" data-scroll-target="#set-up-github-credentials-in-rstudio"><span class="header-section-number">1.2</span> Set up GitHub credentials in RStudio</a></li>
   </ul></li>
   <li><a href="#download-or-update-your-exercise-repository" id="toc-download-or-update-your-exercise-repository" class="nav-link" data-scroll-target="#download-or-update-your-exercise-repository"><span class="header-section-number">2</span> Download or update your exercise repository</a>
   <ul class="collapse">
@@ -428,21 +429,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="accesssing-exercises-on-github" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="accesssing-exercises-on-github"><span class="header-section-number">1</span> Accesssing exercises on GitHub</h2>
+<section id="access-your-exercise-repository" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="access-your-exercise-repository"><span class="header-section-number">1</span> Access your exercise repository</h2>
 <section id="register-for-an-account-and-join-the-student-team" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="register-for-an-account-and-join-the-student-team"><span class="header-section-number">1.1</span> Register for an account and join the student team</h3>
 <ul>
 <li>You must <a href="https://github.com/signup">sign up for a GitHub user account</a> and share your GitHub username with me before I can create an exercise repository for you.</li>
-<li>You must have <a href="https://posit.co/download/rstudio-desktop/">installed R and RStudio</a> to complete exercises and have Git installed.</li>
-<li>Soon after I get your username, you should expect an email asking you to accept an invitation to the “2024_Students” Team in the class <a href="https://github.com/bldgspatialdata">GitHub organization</a>.</li>
-<li>You can also go to <a href="https://github.com/orgs/bldgspatialdata/repositories">the course repository list</a> and, if you are logged in and have access, you should find your repository there.</li>
+<li>Note that you must have <a href="https://posit.co/download/rstudio-desktop/">installed R and RStudio</a> to complete exercises and <a href="https://desktop.github.com/">installed GitHub Desktop</a> to submit exercises.</li>
+<li>Soon after I get your username, you should expect an email asking you to accept an invitation to the “2023_Students” Team in the class <a href="https://github.com/bldgspatialdata">GitHub organization</a>.</li>
+<li>This is a private repository just for <em>your</em> exercise assignments so the repository will be named: <strong>&lt;your first name&gt;_&lt;your last name&gt;</strong> and can be accessed at: <strong>https://github.com/bldgspatialdata/&lt;your first name&gt;_&lt;your last name&gt;</strong>. Don’t forget to replace the placeholder with your first and last name in lower case. You can also go to <a href="https://github.com/orgs/bldgspatialdata/repositories">the course repository list</a> and, if you are logged in and have access, you should find your repository there.</li>
 </ul>
-<p>Don’t forget to connect RStudio to GitHub before working on the class exercises! Review the <a href="course-prep">instructions on how to connect RStudio and GitHub</a> for more information.</p>
-</section>
-</section>
-<section id="download-or-update-your-exercise-repository" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="download-or-update-your-exercise-repository"><span class="header-section-number">2</span> Download or update your exercise repository</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -459,6 +455,26 @@ What is a repository?
 </div>
 </div>
 </div>
+</section>
+<section id="set-up-github-credentials-in-rstudio" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="set-up-github-credentials-in-rstudio"><span class="header-section-number">1.2</span> Set up GitHub credentials in RStudio</h3>
+<p>If you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your repositories. You</p>
+<p>The <code>{usethis}</code> documentation <a href="https://usethis.r-lib.org/articles/git-credentials.html">includes detailed article on connecting GitHub and R</a> but it is more detail than you may need. First, install the <code>{usethis}</code> package (if you don’t have it installed already):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pkg_install("usethis")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, there are four steps (the first step is optional):</p>
+<ol type="1">
+<li><p><a href="https://usethis.r-lib.org/articles/git-credentials.html#turn-on-two-factor-authentication">Set up two-factor authentication</a>. This is optional but recommended.</p></li>
+<li><p>Run <code>usethis::create_github_token()</code> to <a href="https://usethis.r-lib.org/articles/git-credentials.html#get-a-personal-access-token-pat">get a personal access token</a> and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won’t need to refresh the token until after the end of this course.</p></li>
+<li><p>Run <code>gitcreds::gitcreds_set()</code> to <a href="https://usethis.r-lib.org/articles/git-credentials.html#put-your-pat-into-the-local-git-credential-store">put your PAT in your Git credential store</a></p></li>
+<li><p><strong>Restart your session</strong> and run <code>usethis::gh_token_help()</code> to double-check that the token is saved in the right place.</p></li>
+</ol>
+<p>If you run into any trouble, you can also run <code>usethis::git_sitrep()</code> for more feedback on what is set up correctly and what (if anything) might need to be fixed.</p>
+</section>
+</section>
+<section id="download-or-update-your-exercise-repository" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="download-or-update-your-exercise-repository"><span class="header-section-number">2</span> Download or update your exercise repository</h2>
 <section id="downloading-a.k.a-cloning-your-exercise-repository" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="downloading-a.k.a-cloning-your-exercise-repository"><span class="header-section-number">2.1</span> Downloading (a.k.a “cloning”) your exercise repository</h3>
 <ul>
@@ -507,7 +523,7 @@ What is a Quarto document?
 <li>Complete the project by filling in the blank spaces, fixing any “broken” code in the document, or adding new code in the <a href="https://quarto.org/docs/computations/r.html#code-blocks">code blocks</a> that look like this:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span> <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
