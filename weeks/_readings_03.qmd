@@ -1,4 +1,10 @@
 ### Required readings
 
+-   [Chapter 3 Data Structure](https://datamgmtinedresearch.com/structure) in @lewisDataManagementLargeScale2024
 -   [Ch. 5 Data transformation](https://r4ds.hadley.nz/data-transform) in @wickhamDataScienceImport2023
--   [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA) in @loukissasAllDataAre2019
+-   [Ch. 3 Attribute data operations](https://r.geocompx.org/attr.html) in @lovelaceGeocomputation2022
+
+### Optional readings
+
+-   [Ch. 5 Attributes and Support](https://r-spatial.org/book/05-Attributes.html) in @pebesmaSpatialDataScience2023
+-   [dplyr base R](https://dplyr.tidyverse.org/articles/base.html) vignette for the `{dplyr}` package comparing dplyr functions to their base R equivalents.
