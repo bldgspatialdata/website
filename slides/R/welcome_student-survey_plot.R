@@ -1,7 +1,7 @@
 library(dplyr)
 library(ggplot2)
 
-url <- "https://docs.google.com/spreadsheets/d/1QrQ-oCTzHs9SB9Cu37gHRTj0WkhTt-EgewQDab36upo/edit?usp=sharing"
+url <- "https://docs.google.com/spreadsheets/d/1WS-2HR9MHTOKr-Bdz12vNnnGYCF6nZv8czeUucVCz48/edit?usp=sharing"
 
 survey <- googlesheets4::read_sheet(url)
 
@@ -54,7 +54,7 @@ survey |>
   )
 
 ggsave(
-  here::here("slides", "images", "2023-08-30_student-survey.png"),
+  here::here("slides", "images", "2024-08-28_student-survey.png"),
   width = 1050,
   height = 700,
   scale = 2.75,

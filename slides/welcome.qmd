@@ -1,7 +1,7 @@
 ---
 order: 0
 title: "Welcome to GES 668: Building Spatial Datasets"
-image: "images/2023-08-30_student-survey.png"
+image: "images/2024-08-28_student-survey.png"
 date: 2023-08-30
 format:
   revealjs: 
@@ -62,7 +62,7 @@ We'll come back to it later.
 
 ----
 
-![](images/2023-08-30_student-survey.png){width=100%}
+![](images/2024-08-28_student-survey.png){width=100%}
 
 ::: {.notes}
 What experiences do you bring?
@@ -146,13 +146,17 @@ We are all learning! No prior programming experience is required and we should a
 
 You *can* participate online if you need to. We can screen share sessions to Discord and record lectures if needed.
 
+### Using ChatGPT or other LLM for writing
+
+- Don't do it!
+
 ### Using ChatGPT or other LLM for coding
 
-- You *are* allowed to use ChatGPT or other large language models to help with your project or, if desired, assignments.
+- This is *not* recommended but you are *allowed* to use ChatGPT or other large language models to help with your project or, if desired, assignments.
 
 - You *must* include information about when and how you use it including your specific prompts and tools used.
 
-- You *should* use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don't let this tool stand in the way of developing your own understanding of R and how it works.
+- You *must* use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don't let this tool stand in the way of developing your own understanding of R and how it works.
 
 ## Welcome again!
 
