@@ -2,7 +2,7 @@
 title: "Week 2"
 order: 2
 subtitle: "Visualizing spatial data with `{ggplot2}`"
-date: 2023-09-06
+date: 2024-09-04
 ---
 
 ```{r}
@@ -41,4 +41,4 @@ This week is all about making plots and maps using the `{ggplot}` package. Learn
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise__0{{< meta order >}}.qmd)
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.qmd)

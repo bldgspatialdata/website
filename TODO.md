@@ -13,6 +13,8 @@
 
 - Double-check that the key objectives are appropriately matched to the reading for the week
 - Fill in list of key skills for week 3+
+- Finish fixing dates!
+
 
 ### Exercises
 
@@ -24,6 +26,9 @@
 - Make sure there are no incomplete sentences, duplicate headings, issues w/ missing slide breaks, unattributed quotes, outdated code (anything using superseded functions)
 - Make sure all of the figure outputs appear at an appropriate size, resolution, and location
 - Fill in missing preview images for slide overview page
+- Fix warning from `metadata.qmd`: [WARNING] Div at line 307 column 1 unclosed at line 401 column 1, closing implicitly.
+- Fix multiple warnings from `data-visualization.qmd`: WARNING (/Applications/quarto/share/filters/main.lua:15830) output-location is only valid for cells that echo their code
+
 
 # Optional Ideas
 

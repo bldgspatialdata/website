@@ -2,7 +2,7 @@
 title: "Week 1"
 order: 1
 subtitle: "Getting started with spatial data using `{sf}` and the tidyverse"
-date: 2023-08-30
+date: 2024-08-28
 ---
 
 ## Overview

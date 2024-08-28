@@ -2,7 +2,7 @@
 title: "Week 6"
 order: 6
 subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
-date: 2023-09-27
+date: 2024-10-02
 ---
 
 ## Overview
