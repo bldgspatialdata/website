@@ -5,5 +5,5 @@
 .obsidian
 _site
 /.quarto/
-
+dev/
 docs/
