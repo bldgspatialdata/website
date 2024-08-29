@@ -8,16 +8,49 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
+  arcgislayers,
+  attachment,
   dplyr,
-  forcats,
+  fs,
   ggplot2,
+  ghclass,
+  googlesheets4,
   gt,
-  tidyr,
-  sf,
-  stringr
-Suggests:
-  ggrepel,
-  ggtext,
+  here,
+  hrbrthemes,
+  lubridate,
+  lwgeom,
+  mapbaltimore,
+  maplayer,
+  mapmaryland,
+  mapview,
+  nycflights13,
+  osmdata,
+  packageRank,
   patchwork,
-  smoothr,
-  spData
+  pilot,
+  purrr,
+  rlang,
+  rnaturalearth,
+  scales,
+  sf,
+  sfext,
+  skimr,
+  spData,
+  stringr,
+  tibble,
+  tidycensus,
+  tidygeocoder,
+  tidyr,
+  tidyselect,
+  tidyverse,
+  tigris,
+  Tmisc,
+  units,
+  usethis,
+  ymlthis
+Remotes:
+  elipousson/mapbaltimore
+  elipousson/maplayer
+  elipousson/mapmaryland
+  elipousson/sfext
