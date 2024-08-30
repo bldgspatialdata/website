@@ -10,7 +10,7 @@ plot_cranDownloads_data <- function(
     to = "2024-07-31",
     plot_title = "Package downloads from CRAN",
     save = TRUE,
-    plot_filename = "pkg-downloads_08-2018_07-2023.png") {
+    plot_filename = "pkg-downloads_08-2018_07-2024.png") {
   if (is.null(data)) {
     pkg_downloads <- packageRank::cranDownloads(
       packages = packages,
@@ -62,7 +62,7 @@ plot_cranDownloads_data <- function(
     ggplot2::guides(
       color = ggplot2::guide_legend(
         title = "Package name",
-        position = "top"
+        position = "bottom"
       )
     ) +
     ggplot2::theme(
