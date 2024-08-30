@@ -5,7 +5,7 @@ date-due: 2023-11-13
 date-modified: last-modified
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
+::: {.callout-important appearance="minimal"}
 Exercise due on {{< meta date-due >}}
 :::
 

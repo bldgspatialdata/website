@@ -30,7 +30,8 @@ Here are all of the other packages we are using in this class.
 ```{r}
 #| eval: false
 pak::pkg_install(
-  c("mapview", "usethis", "quarto", "sf", "tigris", "rnaturalearth", "spData", "arcgis")
+  c("mapview", "usethis", "quarto", "sf",
+    "tigris", "rnaturalearth", "spData", "arcgis")
 )
 ```
 
