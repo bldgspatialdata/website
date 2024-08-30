@@ -67,10 +67,11 @@ plot_cranDownloads_data <- function(
     ) +
     ggplot2::theme(
       plot.title = ggplot2::element_text(size = 14),
+      plot.title.position = "plot",
       legend.text = ggplot2::element_text(size = 11),
       legend.location = "plot",
       legend.title.position = "left",
-      legend.justification.top = "left",
+      legend.justification.bottom = "left",
       # margin turned off for alignment
       # https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/
       legend.margin = ggplot2::margin(0, 0, 0, 0)
