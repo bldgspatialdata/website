@@ -1,0 +1,12 @@
+Here is a quick summary of what we learned this week:
+
+-   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane (check out the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf) for a quick reference)
+-   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
+-   How `sf` objects are structured around attributes and geometries
+- How R code is executed within a development environment where packages or objects are loaded
+-   How and when to restart an R session to reset the environment
+
+Here are a few questions for additional reflection:
+
+-   How does coding in R or other languages support reproducible spatial data analysis?
+-   Why use R for working with spatial data?
