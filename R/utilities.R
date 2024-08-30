@@ -39,7 +39,8 @@ rename_files <- function(path,
   fs::file_move(path, new_path)
 }
 
-# Function for renaming files ----
+#' Update the YAML keys for a file with `{ymlthis}`
+#'
 update_file_yml <- function(path,
                             ...,
                             method = "add") {
@@ -73,4 +74,74 @@ update_file_yml <- function(path,
 
     writeLines(updated_txt, con = x)
   }
+}
+
+#' Use lightparser::split_to_tbl to read YAML keys from one or more Quarto
+#' document
+#'
+#' Created 2024-08-29 to reconcile the file names and schedule of the slides,
+#' week overview pages, and exercises.
+read_qmd_params <- function(path,
+                            ...,
+                            recurse = FALSE,
+                            keys = c("order",
+                                     "title",
+                                     "subtitle",
+                                     "date",
+                                     "date-due",
+                                     "date-modified",
+                                     "image",
+                                     "abstract"),
+                            regex = "qmd$",
+                            perl = TRUE) {
+  files <- path
+
+  if (fs::is_dir(path)) {
+    files <- fs::dir_ls(
+      path,
+      regexp = paste0("^", path ,"/_"),
+      invert = TRUE,
+      type = "file"
+    )
+
+    files <- stringr::str_subset(
+      files,
+      pattern = "^_",
+      negate = TRUE
+    )
+  }
+
+  files <- rlang::set_names(files, files)
+
+  file_tbl <- purrr::map(
+    files,
+    \(x) {
+      tbl <- withCallingHandlers(
+        lightparser::split_to_tbl(x),
+        error = NULL
+      )
+
+      if (is.null(tbl)) {
+        return(NULL)
+      }
+
+      params <- tbl |>
+        dplyr::filter(type == "yaml") |>
+        dplyr::pull(params)
+
+      # Select the frontmatter
+      params <- params[[1]][keys]
+
+      as.data.frame(vctrs::list_drop_empty(params))
+    }
+  )
+
+  file_tbl |>
+    purrr::list_rbind(
+      names_to = "path"
+    ) |>
+    dplyr::mutate(
+      filename = fs::path_ext(path),
+      .after = dplyr::all_of("path")
+    )
 }
