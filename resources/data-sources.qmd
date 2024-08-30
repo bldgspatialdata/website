@@ -20,8 +20,6 @@ Spatial data is available in a wide range of formats at the local, national, and
 
 -   [Vital Signs Open Data Portal](https://vital-signs-bniajfi.hub.arcgis.com/)
 
--   [Maryland Food Systems Open Data Portal](https://data-clf.hub.arcgis.com/)
-
 -   [Maryland ArcGIS REST API Services Index](https://docs.google.com/spreadsheets/d/1c829bZdNqvbpoizulBU_XE5jVeNNck2kHkS-smpQ52s/edit?usp=sharing)
 
 ## National data sources for the U.S. 🇺🇸
