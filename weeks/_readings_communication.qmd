@@ -1,0 +1,8 @@
+### Required readings
+
+-   [6. The Numbers Don’t Speak for Themselves](https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3) in @dignazioDataFeminism2020
+-   @boukPrimerPowerfulNumbers2022
+
+### Optional resources
+
+- [How to Talk About the Thing You Made](https://www.youtube.com/watch?v=gIkrlaII3OY) talk by Lyzi Diamond (Salesforce) for the NACIS 2023 Annual Meeting
