@@ -8,8 +8,6 @@ URL: https://github.com/bldgspatialdata/website/
 BugReports: https://github.com/bldgspatialdata/website/issues
 Imports:
     arcgislayers,
-    attachment,
-    clipr,
     dplyr,
     fs,
     ggplot2,
@@ -20,9 +18,6 @@ Imports:
     hrbrthemes,
     lubridate,
     lwgeom,
-    mapbaltimore,
-    maplayer,
-    mapmaryland,
     nycflights13,
     packageRank,
     patchwork,
@@ -32,7 +27,6 @@ Imports:
     rnaturalearth,
     scales,
     sf,
-    sfext,
     skimr,
     spData,
     stringr,
@@ -45,11 +39,18 @@ Imports:
     units,
     usethis,
     ymlthis
+Suggests:
+    attachment,
+    clipr,
+    mapbaltimore,
+    mapmaryland,
+    maplayer,
+    sfext
 Remotes:
-  elipousson/mapbaltimore
-  elipousson/maplayer
-  elipousson/mapmaryland
-  elipousson/sfext
+    elipousson/mapbaltimore
+    elipousson/maplayer
+    elipousson/mapmaryland
+    elipousson/sfext
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
