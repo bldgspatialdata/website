@@ -1,8 +1,8 @@
 ---
 order: 0
 title: "Welcome to GES 668: Building Spatial Datasets"
-image: "images/2023-08-30_student-survey.png"
-date: 2023-08-30
+image: "images/2024-08-28_student-survey.png"
+date: 2024-08-28
 format:
   revealjs: 
     auto-animate-easing: ease-in-out
@@ -42,7 +42,7 @@ This isn't a metaphorical question.
 
 Let's make a map:
 
-- [Open this Felt map and trace a route for your commute to campus today](https://felt.com/map/UMBC-GES-668-Week-1-Map-wtdoPYAuTdSluuj1YzOuQD?loc=39.24098,-76.71654,14.97z)
+- [Open this Felt map and trace a route for your commute to campus today](https://felt.com/map/GES668-Fall-2024-Student-Commutes-16Td7dMHQGiZTkkbsHLEpC?loc=39.3041,-76.6123,11.71z)
 - Start as close or far from home as you like
 - Use the "Details" tab to add a "name" attribute (with your name) and a "mode" attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)
 
@@ -62,10 +62,13 @@ We'll come back to it later.
 
 ----
 
-![](images/2023-08-30_student-survey.png){width=100%}
+![](images/2024-08-28_student-survey.png){width=100%}
 
 ::: {.notes}
 What experiences do you bring?
+
+NOTE: Make sure to regenerate the plot using `plot_ges668_student_survey()`
+
 :::
 
 ## Why am I here?
@@ -127,6 +130,10 @@ The proposal and presentation will both be built with [Quarto](https://quarto.or
 ### Geocomputation with R
 
 ![](https://geocompx.org/static/img/book_cover.jpg)
+
+::: footer
+Note that this book also includes extensive information on raster data. This is *not* a topic covered in any detail as part of this class and can be skipped.
+:::
 
 ### All Data are Local
 
