@@ -1,7 +1,7 @@
 ### Required readings
 
 -   [Ch. 26 Functions](https://r4ds.hadley.nz/functions) in @wickhamDataScienceImport2023
--   [Ch. 11 Scripts, algorithms and functions](https://r.geocompx.org/algorithms) in @lovelaceGeocomputation2022
+-   [Ch. 11 Scripts, algorithms and functions](https://r.geocompx.org/algorithms) in @lovelaceGeocomputation2025
 -   [Ch. 29 Quarto](https://r4ds.hadley.nz/quarto) in @wickhamDataScienceImport2023
 
 ### Optional readings

@@ -2,4 +2,4 @@
 
 <!-- TODO: Consider moving this reading on Joins to the session on tidy data -->
 -   [Ch. 20 Joins](https://r4ds.hadley.nz/joins) in @wickhamDataScienceImport2023
--   [Ch. 5 Geometry operations](https://r.geocompx.org/geometry-operations) in @lovelaceGeocomputation2022
+-   [Ch. 5 Geometry operations](https://r.geocompx.org/geometry-operations) in @lovelaceGeocomputation2025

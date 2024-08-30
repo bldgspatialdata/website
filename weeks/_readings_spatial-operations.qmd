@@ -1,4 +1,4 @@
 ### Required readings
 
 -   @pebesmaManipulatingSimpleFeature2016
--   [Ch. 4 Spatial data operations](https://r.geocompx.org/spatial-operations) in @lovelaceGeocomputation2022
+-   [Ch. 4 Spatial data operations](https://r.geocompx.org/spatial-operations) in @lovelaceGeocomputation2025
