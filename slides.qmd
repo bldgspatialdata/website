@@ -3,6 +3,7 @@ title: "Slides"
 listing:
   contents:
     - "slides/*.qmd"
+  sort: order
   type: grid
   filter-ui: true
 ---
