@@ -2,32 +2,20 @@
 title: "Exercise 01"
 subtitle: "Coding basics and exploring `sf` objects"
 order: 1
-status: Available
-date-due: 2023-09-06
+status: available
+date-due: 2024-09-06
 date-modified: last-modified
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
-Exercise due on {{< meta date-due >}}
-:::
+{{< include _include-website-exercise.qmd >}}
 
-ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0{{< meta order >}}.html) for related slides and readings
-
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 ## Practice these skills
 
 -   Confirm that you understand some coding basics
 -   Use the `?` operator to access function and package documentation
 -   Use `class()`, `names()`, `attributes()`, and `summary()` functions to explore `sf` and `sfc` objects
--   Use the base `plot()` or `ggplot2::geom_sf()` function to visualize a `sf` object
--   Bonus: use the `mapview::mapview()` function to look at data using an interactive map
-:::
-
-::: {.callout-note collapse="false" appearance="default" icon="true"}
-## Think about these questions
-
--   What are parts of a simple feature object? What may be some benefits or limitations of this data structure?
--   What about using R helps with "reproducibility" compared to a desktop GIS?
+-   Use the base `plot()` function to visualize a `sf` object
 :::
 
 ----
@@ -50,7 +38,7 @@ You also need data from the `{sf}` package:
 nc <- st_read(system.file("shape/nc.shp", package = "sf"), as_tibble = TRUE)
 ```
 
-You *will* need the `{mapview}` and `{spData}` packages but don't load them yet. If they aren't installed, install them now using `{pak}` (a faster option than `install.packages()`).
+You *will* need the `{spData}` package but don't load them yet. If they aren't installed, install them now using `{pak}` (a faster option than `install.packages()`).
 
 Copy the following lines (without the `#` character) into the console to install all three packages (don't forget to restart your session afterwards):
 
@@ -106,7 +94,7 @@ What type of object does `sf::st_geometry()` return? \_\_\_\_
 
 What is one *other* function documented on the same page? \_\_\_\_
 
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 Review [Ch. 9 Workflow: getting help](https://r4ds.hadley.nz/workflow-help) in R for Data Science (2e) for more information about getting help when you struggle with a package, function, or project.
 :::
 
@@ -209,19 +197,3 @@ Can you use `plot()` to make a map of states color-coded by region?
 ```{r}
 plot(____)
 ```
-
-Can you make a map of `us_states` using `ggplot()` and `geom_sf()`?
-
-```{r}
-ggplot(data = ____) +
-  geom_sf()
-```
-
-Can you make a map `us_states` you made with `geom_sf()` and have states are color-coded by total population in 2015?
-
-```{r}
-ggplot(data = ____) +
-  geom_sf(aes(fill = ____))
-```
-
-Take a look at the documentation for `ggplot2::geom_sf()` for examples if you get stuck. You can also use `names()` or `summary()` with `us_states` to find out the column names of the different attributes.
