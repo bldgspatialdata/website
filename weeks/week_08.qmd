@@ -1,8 +1,8 @@
 ---
 title: "Week 8"
 order: 8
-subtitle: "Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`"
 date: 2024-10-16
+subtitle: "Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`"
 ---
 
 ## Overview

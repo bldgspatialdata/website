@@ -6,7 +6,7 @@ date-due: 2023-09-11
 date-modified: last-modified
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
+::: {.callout-important appearance="minimal"}
 Exercise due on {{< meta date-due >}}
 :::
 
@@ -14,7 +14,7 @@ Exercise due on {{< meta date-due >}}
 
 ## Overview
 
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 ## Practice these skills
 
 -   Build a layered plot using `ggplot()`, `aes()`, and different `geom_` functions
@@ -22,7 +22,7 @@ Exercise due on {{< meta date-due >}}
 -   Use `coord_sf()` to modify a plot created with `geom_sf()`
 :::
 
-::: {.callout-note collapse="false" appearance="default" icon="true"}
+::: {.callout-note collapse="false" appearance="default"}
 ## Think about these questions
 
 -   What makes a scale better or worse at visualizing data?
