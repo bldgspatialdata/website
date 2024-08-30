@@ -3,6 +3,7 @@ project:
   output-dir: "_site"
   render:
     - "*.qmd"
+    - "!exercise*sol.qmd"
     - "!dev/*"
     - "!TODO.md"
     - "!CHANGELOG.md"
