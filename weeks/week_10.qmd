@@ -1,13 +1,13 @@
 ---
 title: "Week 10"
 order: 10
+date: 2024-10-30
 subtitle: "Exploring American Community Survey data with `{tidycensus}`"
-date: 2023-11-01
 ---
 
 ## Prepare
 
-{{< include _readings_10.qmd >}}
+{{< include _readings_census.qmd >}}
 
 ## Participate
 

@@ -1,8 +1,10 @@
 ---
 title: "Week 2"
 order: 2
-subtitle: "Visualizing spatial data with `{ggplot2}`"
 date: 2024-09-04
+subtitle: "Visualizing spatial data with `{ggplot2}`"
+abstract: "Learn to make plots and maps using the `{ggplot}` package. Visualization is a key method in learning how to explore, tidy, and interpret data."
+image: ../files/ggplot2_hex_logo.png
 ---
 
 ```{r}
@@ -26,14 +28,14 @@ This week is all about making plots and maps using the `{ggplot}` package. Learn
 
 - Using keyboard shortcuts in RStudio (TODO: Add keyboard shortcut for a pipe and assignment operator)
 - Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
-- Mapping spatial data using `geom_sf()` and `coord_sf()`
-- Mapping spatial data using `mapview()`
+- Creating static maps using `geom_sf()` and `coord_sf()`
+- Creating interactive maps using `mapview()`
 - Using `theme_` functions to customize the appearance of a plot
 - Using `labs()` to add labels to a plot
 
 ## Prepare
 
-{{< include _readings_02.qmd >}}
+{{< include _readings_data-visualization.qmd >}}
 
 ## Participate
 
