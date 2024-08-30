@@ -1,8 +1,9 @@
 ---
 title: "Week 11"
 order: 11
+date: 2024-11-06
 subtitle: "Reading and writing spatial data files and services"
-date: 2023-11-08
+abstract: "This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services."
 ---
 
 ::: {.callout-important appearance="simple"}
@@ -11,13 +12,17 @@ Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}
 
 ## Overview
 
+File formats for spatial data have developed and changed over time with different file types serving different specialized needs. Spatial data can also be stored and made accessible through web services running on remote servers. It is helpful to learn how to access data in many different forms and places.
+
+### Key Objectives
+
 -   Review uses of common data file formats and web services
--   Downloading data from Socrata open data portals with [{RSocrata}](https://github.com/Chicago/RSocrata)
+-   Practice downloading spatial data using  [{RSocrata}](https://github.com/Chicago/RSocrata)
 
 ## Prepare
 
-{{< include _readings_11.qmd >}}
+{{< include _readings_read-write.qmd >}}
 
 ## Participate
 
-🖥️ [Reading and writing spatial data](/slides/spatial-data-io.html)
+🖥️ [Reading and writing spatial data](/slides/spatial-data-io.qmd)

@@ -25,8 +25,8 @@ This week includes a review of data visualization and mapping with `{ggplot}` re
 
 ## Participate
 
-🖥️ [Transforming data with `{dplyr}` and `{tidyr}`](/slides/data-transformation.html)
+🖥️ [Transforming data with `{dplyr}` and `{tidyr}`](/slides/data-transformation.qmd)
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.html)
+🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.qmd)
