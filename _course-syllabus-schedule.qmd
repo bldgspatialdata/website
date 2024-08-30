@@ -1,58 +1,58 @@
 ## Week 1
 
-{{< include weeks/_readings_01.qmd >}}
+{{< include weeks/_readings_intro.qmd >}}
 
 ## Week 2
 
-{{< include weeks/_readings_02.qmd >}}
+{{< include weeks/_readings_data-visualization.qmd >}}
 
 ## Week 3
 
-{{< include weeks/_readings_03.qmd >}}
+{{< include weeks/_readings_data-transformation.qmd >}}
 
 ## Week 4
 
-{{< include weeks/_readings_04.qmd >}}
+{{< include weeks/_readings_spatial-operations.qmd >}}
 
 ## Week 5
 
-{{< include weeks/_readings_05.qmd >}}
+{{< include weeks/_readings_tidy-data.qmd >}}
 
 ## Week 6
 
-{{< include weeks/_readings_06.qmd >}}
+{{< include weeks/_readings_geometry-operations.qmd >}}
 
 ## Week 7
 
-{{< include weeks/_readings_07.qmd >}}
+{{< include weeks/_readings_functions.qmd >}}
 
 ## Week 8
 
-{{< include weeks/_readings_08.qmd >}}
+{{< include weeks/_readings_eda.qmd >}}
 
 ## Week 9
 
-{{< include weeks/_readings_09.qmd >}}
+{{< include weeks/_readings_osm.qmd >}}
 
 ## Week 10
 
-{{< include weeks/_readings_10.qmd >}}
+{{< include weeks/_readings_census.qmd >}}
 
 ## Week 11
 
-{{< include weeks/_readings_11.qmd >}}
+{{< include weeks/_readings_read-write.qmd >}}
 
 ## Week 12
 
-{{< include weeks/_readings_12.qmd >}}
+{{< include weeks/_readings_metadata.qmd >}}
 
 ## Week 13
 
-{{< include weeks/_readings_13.qmd >}}
+{{< include weeks/_readings_local-data.qmd >}}
 
 ## Week 14
 
-No readings for this week.
+No readings for this week. Enjoy the holiday.
 
 ## Week 15
 
