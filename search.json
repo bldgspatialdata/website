@@ -1391,109 +1391,319 @@
     ]
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about",
-    "href": "slides/welcome.html#what-is-this-class-about",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?"
+    "objectID": "slides/open-street-map.html#overview",
+    "href": "slides/open-street-map.html#overview",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "1 Overview",
+    "text": "1 Overview\n\nWhat is OpenStreetMap?\nHow do you contribute to OpenStreetMap?\nHow do you download data from OpenStreetMap?\n\nThese slides on OpenStreetMap and exploring OSM data with the {osmdata} package are based on a March 10, 2020 presentation by Jonathan Dandois for MaptimeBmore and the CCBC GIS Capstone."
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-1",
-    "href": "slides/welcome.html#what-is-this-class-about-1",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data using R"
+    "objectID": "slides/open-street-map.html#what-is-openstreetmap",
+    "href": "slides/open-street-map.html#what-is-openstreetmap",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "2 What is OpenStreetMap?",
+    "text": "2 What is OpenStreetMap?\n\nCreated in 2004 in response to restrictive data sharing by the UK Ordnance Survey\nGrew as the “Wikipedia of maps” in response to increasing cost of commercial services like Google Maps after 2011 price hikes"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-2",
-    "href": "slides/welcome.html#what-is-this-class-about-2",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with data spatial data using R"
+    "objectID": "slides/open-street-map.html#using-openstreetmap",
+    "href": "slides/open-street-map.html#using-openstreetmap",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "3 Using OpenStreetMap",
+    "text": "3 Using OpenStreetMap\n\nOpenStreetMap isn’t just a map—it is a “global geodatabase of everything and anything that people add to the map”:\n\nroads, crosswalks, speed bumps, stop lights\nrestaurants, daycares, playgrounds, cannons\nforests, central business districts, boundaries\nland cover, gravestones, utility ROWs"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-3",
-    "href": "slides/welcome.html#what-is-this-class-about-3",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about places"
+    "objectID": "slides/open-street-map.html#who-is-using-openstreetmap",
+    "href": "slides/open-street-map.html#who-is-using-openstreetmap",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "4 Who is using OpenStreetMap?",
+    "text": "4 Who is using OpenStreetMap?\nIndividual users, developers, and researchers:\n\nApps and websites\nGames\nAdvocacy and policy"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-4",
-    "href": "slides/welcome.html#what-is-this-class-about-4",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data about people and places"
+    "objectID": "slides/open-street-map.html#who-is-using-openstreetmap-1",
+    "href": "slides/open-street-map.html#who-is-using-openstreetmap-1",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "5 Who is using OpenStreetMap?",
+    "text": "5 Who is using OpenStreetMap?"
   },
   {
-    "objectID": "slides/welcome.html#what-is-this-class-about-5",
-    "href": "slides/welcome.html#what-is-this-class-about-5",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What is this class about?",
-    "text": "What is this class about?\n\nWorking with spatial data local knowledge about people and places"
+    "objectID": "slides/open-street-map.html#contributing-to-open-street-map",
+    "href": "slides/open-street-map.html#contributing-to-open-street-map",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "6 Contributing to Open Street Map",
+    "text": "6 Contributing to Open Street Map\nDifferent editors have different reasons for contributing and contribute in different ways:\n\nIndividuals\nPublic agencies\nNon-profit organizations\nCorporations\n\n\nDifferent editors use different tools, focus on editing different resources.\nOther options include:\n\nArcGIS Editor for OpenStreetMap"
   },
   {
-    "objectID": "slides/welcome.html#why-are-you-here",
-    "href": "slides/welcome.html#why-are-you-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why are you here?",
-    "text": "Why are you here?"
+    "objectID": "slides/open-street-map.html#tracing-and-digitizing-imagery",
+    "href": "slides/open-street-map.html#tracing-and-digitizing-imagery",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "7 Tracing and digitizing imagery",
+    "text": "7 Tracing and digitizing imagery\nMost editors for OpenStreetMap use high-resolution aerial, satellite, and drone-based imagery to trace or digitize:\n\nPOIs, addresses (points)\nRoads, sidewalks, paths (lines)\nSchool areas, central business districts, parks, lakes, playgrounds (polygons)\n\nLearn more in Getting Started with OSM."
   },
   {
-    "objectID": "slides/welcome.html#how-did-you-get-here",
-    "href": "slides/welcome.html#how-did-you-get-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "How did you get here?",
-    "text": "How did you get here?\nThis isn’t a metaphorical question.\nLet’s make a map:\n\nOpen this Felt map and trace a route for your commute to campus today\nStart as close or far from home as you like\nUse the “Details” tab to add a “name” attribute (with your name) and a “mode” attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)"
+    "objectID": "slides/open-street-map.html#what-is-good-editing",
+    "href": "slides/open-street-map.html#what-is-good-editing",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "8 What is “good” editing?",
+    "text": "8 What is “good” editing?\nLearn more in the Good practice section of the OpenStreetMap Wiki."
   },
   {
-    "objectID": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "href": "slides/welcome.html#what-experiences-do-you-bring-with-you-today",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "What experiences do you bring with you today?",
-    "text": "What experiences do you bring with you today?"
+    "objectID": "slides/open-street-map.html#downloading-data-with-overpass-turbo",
+    "href": "slides/open-street-map.html#downloading-data-with-overpass-turbo",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "9 Downloading data with overpass turbo",
+    "text": "9 Downloading data with overpass turbo\n overpass turbo, a web-based data filtering tool for OpenStreetMap, can run Overpass API queries and analyze the resulting OSM data interactively on a map."
   },
   {
-    "objectID": "slides/welcome.html#why-am-i-here",
-    "href": "slides/welcome.html#why-am-i-here",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Why am I here?",
-    "text": "Why am I here?\nA few things about me:\n\nI first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007\nI started learning R as a student at the John Hopkins University School of Public Health in 2019\nI started developing R packages while working at the Neighborhood Design Center in 2020\nI work as a community planner at the Baltimore City Department of Planning (since June 2022)\n\n\nI believe in the potential of data to build power, inform collective action, and make change in the world"
+    "objectID": "slides/open-street-map.html#open-historical-map",
+    "href": "slides/open-street-map.html#open-historical-map",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "10 Open Historical Map",
+    "text": "10 Open Historical Map"
   },
   {
-    "objectID": "slides/welcome.html#communication",
-    "href": "slides/welcome.html#communication",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Communication 📬",
-    "text": "Communication 📬\n\nI am not always on top of my email.\nPlease post questions to the Discord if you think other students could help (or others may share your question).\nIf you don’t get a timely response by email, message me on Discord."
+    "objectID": "slides/open-street-map.html#section",
+    "href": "slides/open-street-map.html#section",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "11 ",
+    "text": "11"
   },
   {
-    "objectID": "slides/welcome.html#assignments",
-    "href": "slides/welcome.html#assignments",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Assignments",
-    "text": "Assignments\n\nWeekly check-in\nPractice exercises\nFinal project"
+    "objectID": "slides/open-street-map.html#downloading-data-with-osmdata",
+    "href": "slides/open-street-map.html#downloading-data-with-osmdata",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "12 Downloading data with {osmdata}",
+    "text": "12 Downloading data with {osmdata}\n\nosmdata is an R package for accessing the data underlying OpenStreetMap (OSM), delivered via the Overpass API.\nThe package is designed to allow access to small-to-medium-sized OSM datasets (see osmextract for an approach for reading-in bulk OSM data extracts)."
   },
   {
-    "objectID": "slides/welcome.html#readings",
-    "href": "slides/welcome.html#readings",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Readings 📚",
-    "text": "Readings 📚\n\nWhat are the readings?\nHow can you get the most out of the readings?"
+    "objectID": "slides/open-street-map.html#resources",
+    "href": "slides/open-street-map.html#resources",
+    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
+    "section": "13 Resources",
+    "text": "13 Resources\n\nOSM Wiki\nLearnOSM\nTeachOSM"
   },
   {
-    "objectID": "slides/welcome.html#miscellaneous",
-    "href": "slides/welcome.html#miscellaneous",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Miscellaneous",
-    "text": "Miscellaneous"
+    "objectID": "slides/effective-visualization.html#where-to-start",
+    "href": "slides/effective-visualization.html#where-to-start",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "1 Where to start?",
+    "text": "1 Where to start?\n\nKnow your goal\nKnow your audience\nKnow your format"
   },
   {
-    "objectID": "slides/welcome.html#welcome-again",
-    "href": "slides/welcome.html#welcome-again",
-    "title": "Welcome to GES 668: Building Spatial Datasets",
-    "section": "Welcome again!",
-    "text": "Welcome again!"
+    "objectID": "slides/effective-visualization.html#what-next",
+    "href": "slides/effective-visualization.html#what-next",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "2 What next?",
+    "text": "2 What next?\n\nChoosing appropriate graphic types\nWriting and formatting clear text\nSelecting appropriate and engaging colors\nPreparing your feature geometry appropriately"
+  },
+  {
+    "objectID": "slides/effective-visualization.html#choosing-appropriate-graphic-types",
+    "href": "slides/effective-visualization.html#choosing-appropriate-graphic-types",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "3 Choosing appropriate graphic types",
+    "text": "3 Choosing appropriate graphic types\n\nWhat makes one graphic, chart, plot, or map “better” or “worse”?"
+  },
+  {
+    "objectID": "slides/effective-visualization.html#items-attributes-marks-and-channels",
+    "href": "slides/effective-visualization.html#items-attributes-marks-and-channels",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "4 Items, Attributes, Marks, and Channels",
+    "text": "4 Items, Attributes, Marks, and Channels\nIn Visualization Analysis and Design (2014), Tamara Munzner describes a set of useful concepts:\n\nitems,\nattributes,\nlinks,\nmarks,\nand channels\n\n\nBook website: https://www.cs.ubc.ca/~tmm/vadbook/\nvia https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html"
+  },
+  {
+    "objectID": "slides/effective-visualization.html#items-and-attributes",
+    "href": "slides/effective-visualization.html#items-and-attributes",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "5 Items and Attributes",
+    "text": "5 Items and Attributes\n\nItems\n\nbasic units on which data is collected\n\nAttributes\n\nnumerical or categorical features of the data items we want to represent\n\nLinks\n\nrelations among items, e.g. months within a year, or countries within a continent."
+  },
+  {
+    "objectID": "slides/effective-visualization.html#marks-and-channels",
+    "href": "slides/effective-visualization.html#marks-and-channels",
+    "title": "Effective visualization with {ggplot2} and R",
+    "section": "6 Marks and Channels",
+    "text": "6 Marks and Channels\n\nMarks\n\ngeometric entities used to represent items: points, lines, areas.\n\nVisual channels\n\nfeatures of marks that can be used to reflect values of attributes.”\n\n\n\nhttps://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html"
+  },
+  {
+    "objectID": "resources/data-sources.html",
+    "href": "resources/data-sources.html",
+    "title": "Data sources",
+    "section": "",
+    "text": "Spatial data is available in a wide range of formats at the local, national, and international levels. Data is often published through larger data portals where you can find links to access data through a web service or options to download part of all of the data.",
+    "crumbs": [
+      "Resources 📋️",
+      "Data Sources"
+    ]
+  },
+  {
+    "objectID": "resources/data-sources.html#local-data-sources-for-baltimore-and-maryland",
+    "href": "resources/data-sources.html#local-data-sources-for-baltimore-and-maryland",
+    "title": "Data sources",
+    "section": "Local data sources for Baltimore and Maryland 🦀",
+    "text": "Local data sources for Baltimore and Maryland 🦀\n\nBaltimore City Open Data Hub\nBaltimore County GIS Open Data Portal\nBMC Regional GIS Data Center - Baltimore Metropolitan Council\nChesapeake Bay Open Data Portal\nMaryland’s GIS Data Catalog\nMaryland Open Data\nVital Signs Open Data Portal\nMaryland Food Systems Open Data Portal\nMaryland ArcGIS REST API Services Index",
+    "crumbs": [
+      "Resources 📋️",
+      "Data Sources"
+    ]
+  },
+  {
+    "objectID": "resources/data-sources.html#national-data-sources-for-the-u.s.",
+    "href": "resources/data-sources.html#national-data-sources-for-the-u.s.",
+    "title": "Data sources",
+    "section": "National data sources for the U.S. 🇺🇸",
+    "text": "National data sources for the U.S. 🇺🇸\n\nData.gov (Aggregates local, state, and federal open data catalogs)\nU.S. Department of Housing and Urban Development Geospatial Data Storefront\nGeospatial at BTS (Bureau of Transportation Statistics), U.S. Department of Transportation\nBTS Data Inventory (Bureau of Transportation Statistics), U.S. Department of Transportation\nEDGE Geodata (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics\nU.S. Geological Survey Science Data Catalog\nGeoPlatform.gov\nNational Ecological Observatory Network (NEON) Data Portal\nOpen Data Network (Socrata/Tyler Technologies)\nUrban Institute Data Catalog",
+    "crumbs": [
+      "Resources 📋️",
+      "Data Sources"
+    ]
+  },
+  {
+    "objectID": "resources/data-sources.html#global-data-sources",
+    "href": "resources/data-sources.html#global-data-sources",
+    "title": "Data sources",
+    "section": "Global data sources 🌏",
+    "text": "Global data sources 🌏\n\nNatural Earth\nOpenStreetMap (see the OSM Wiki for more on how data is organized on OSM)\nArcGIS Living Atlas of the World\nNASA Open Data Portal\nNOAA Data Discovery Portal\nWorld Bank Open Data\nHumanitarian Data Exchange\nData Portals (Open Knowledge Foundation)\nRegistry of Open Data on AWS",
+    "crumbs": [
+      "Resources 📋️",
+      "Data Sources"
+    ]
+  },
+  {
+    "objectID": "resources/data-sources.html#r-packages-for-data-access",
+    "href": "resources/data-sources.html#r-packages-for-data-access",
+    "title": "Data sources",
+    "section": "R packages for data access",
+    "text": "R packages for data access\n\nGeneral data access packages\nGeneral data access packages include:\n\n{arcgislayers} 📦 to access ArcGIS FeatureServer data\n{RSocrata} to access Socrata data portals\n{ckanr} to access CKAN data portals\n\n\n\nDomain-specific data access packages\nThere are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.\nA few broadly useful packages include:\n\n{tigris}: Download and use Census TIGER/Line shapefiles.\n{tidycensus}: Get US Census boundary and attribute data.\n{rnaturalearth}: Get Natural Earth data.\n{osmdata}: Get OpenStreetMap data.\n{geodata}: Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.\n{dataRetrieval}: Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.\n\nExplore the Data Access category on ROpenSci or search for packages on R-universe or CRAN to find the right package for your project or exercise.\n\n\nLocal data access packages\nI also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:\n\n{mapbaltimore}\n{bcpss}\n{mapmaryland}\n{marylandedu}",
+    "crumbs": [
+      "Resources 📋️",
+      "Data Sources"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_07.html",
+    "href": "exercises/exercise_07.html",
+    "title": "Exercise 07",
+    "section": "",
+    "text": "Exercise due on 2023-10-20\nℹ️ See week 7 for related slides and readings",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 07"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_07.html#setup",
+    "href": "exercises/exercise_07.html#setup",
+    "title": "Exercise 07",
+    "section": "1 Setup",
+    "text": "1 Setup\nTo start this week’s exercise, I have created a new folder named project in each of your class repositories (based on the new public project-template repository for our class). Sync your repository to make sure you have the latest files before you get started with the exercise.\nIn the folder you will find a new RStudio project file (.Rproj) named project.Rproj. Open the project and locate the file named example-functions.qmd.\nOpen example-functions.qmd and, in the editor pane of RStudio, click the “Render” button to turn the Quarto document into a rendered HTML document in the “Preview” pane.\nThis Quarto document is designed to review the topics we covered in last week’s class and to show some of the options for Quarto documents. You can review the document or, if you feel confident in the material, jump ahead to the exercise.",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 07"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_07.html#exercise",
+    "href": "exercises/exercise_07.html#exercise",
+    "title": "Exercise 07",
+    "section": "2 Exercise",
+    "text": "2 Exercise\nHere are the steps to complete this week’s exercise:\n\nUse the menu to create a new Quarto document (Go to File &gt; New File &gt; Quarto Document...). Fill in the title “Exercise 7” and your name as the author. After the new document opens, notice how the title and author appear in the front matter for the new document.\n\n\n\nSave the Quarto document using the file name exercise_07.qmd.\nInsert a new code block and add code to read spatial data into R. You can use sf::read_sf() to read data from a URL or file path or you can use one of the data functions we’ve tried in class, such as tigris::counties() or rnaturalearth::ne_countries(returnclass = \"sf\").\n\n\n\n\n\n\n\nImportant\n\n\n\n\n\nDon’t forget! If you are using a local file, the file size must be less than 50MB or your changes to the repository can’t be committed to GitHub. If your file is not a spatial data file (e.g. a CSV file) you should convert the object into a sf object using sf::st_as_sf().\n\n\n\n\nInsert a new code block and write a vector function (either a “mutate” or “summary” style function) that can take one or more attributes from your data as an input. Include one or more examples of how the function works.\nInsert a new code block and write a vector function (either a “mutate” or “summary” style function) that can take the feature geometry from your data as an input. This function should use one of the geometric unary or binary functions from the {sf} package. It doesn’t need to be complicated but take a look at the function reference or the sf cheatsheet and find a function that you are curious to try out. Include one or more examples of how the function works.\nInsert a new code block and write a mapping or plotting function. Remember, if you write a mapping function, it should probably include ggplot2::geom_sf() in the body of the function.\nFinally—render the Quarto document and make sure it can be knit as an HTML page without error! You can also run quarto::quarto_preview() in the console to keep a live preview running in the background while you complete the exercise.\n\n\n\n\n\n\n\nUse verbs for function names\n\n\n\n\n\nFor each part of this exercise, make sure to use function names that help you and anyone using your code understand what the function does. Using verbs is an easy way to do that.\n\n\n\nBetween each code block, please include a brief explanation of what question you are trying to answer with the functions.\nFor example, you could write: “This function takes data on storm observations and summarizes the average wind speed and air pressure by hurricane category so I can better understand the relationship between the continuous and categorical variables.”\nWhen you are done writing the functions (and examples!), there are just two steps left in this exercise to help you practice working with Quarto.\n\nAdd a link to your Exercise 7 document to the navigation menu of your Quarto website. Open the _quarto.yml project configuration file and look for the navbar section. Take a look at the Quarto guide to Website Navigation for more information.\nExplore the HTML theme options for your Quarto site. Try swapping the default cosmo theme for one of the other Bootswatch themes.",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 07"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_07.html#bonus-exercise",
+    "href": "exercises/exercise_07.html#bonus-exercise",
+    "title": "Exercise 07",
+    "section": "3 Bonus exercise",
+    "text": "3 Bonus exercise\nRead in more data and try using your mapping or plotting function with a different dataset.\nDoes the function still work they way you expect? Why or why not?\nWrite a few sentences explaining what happens and, if the functions do not work, try writing a new version that works with both your original data and the new version.",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 07"
+    ]
+  },
+  {
+    "objectID": "course-schedule.html",
+    "href": "course-schedule.html",
+    "title": "Schedule overview",
+    "section": "",
+    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\nWeek 5\n\n\nTidying and joining spatial data\n\n\n\n\n\nSep 25, 2024\n\n\n\n\n\n\n\nWeek 6\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\nOct 2, 2024\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\nOct 9, 2024\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\nOct 16, 2024\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_05.html",
+    "href": "exercises/exercise_05.html",
+    "title": "Exercise 05",
+    "section": "",
+    "text": "Exercise due on 2023-10-06\n\n\n\nℹ️ See week 5 for related slides and readings",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
+  },
+  {
+    "objectID": "final-project.html",
+    "href": "final-project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "The final project is an opportunity for you to practice the spatial data skills we’ve been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.\nYour project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:\n\nA data visualization or interactive that uses the data to tell a story or prompt reflection\nAn exploratory data analysis that uses the data to ask or answer questions\n\nThis project has three parts:\n\nA project proposal (due 2024-11-13)\nAn short recorded presentation about your project (due 2024-12-13)\nA project GitHub repository including code, data, output files, and a README (due 2024-12-20)\n\nYou are also expected to share peer feedback on two other project presentations completed by 2024-12-15 (updated).",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#overview",
+    "href": "final-project.html#overview",
+    "title": "Final Project",
+    "section": "",
+    "text": "The final project is an opportunity for you to practice the spatial data skills we’ve been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.\nYour project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:\n\nA data visualization or interactive that uses the data to tell a story or prompt reflection\nAn exploratory data analysis that uses the data to ask or answer questions\n\nThis project has three parts:\n\nA project proposal (due 2024-11-13)\nAn short recorded presentation about your project (due 2024-12-13)\nA project GitHub repository including code, data, output files, and a README (due 2024-12-20)\n\nYou are also expected to share peer feedback on two other project presentations completed by 2024-12-15 (updated).",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#project-proposal",
+    "href": "final-project.html#project-proposal",
+    "title": "Final Project",
+    "section": "Project proposal",
+    "text": "Project proposal\nYour project proposal needs to answer identify a data source and answer three main questions:\n\nWhat are your goals for the project?\nWhat data can you use to support your goal?\nWhat is your approach to using data to support your goal?\n\nYou should answer each question with a brief but considered response. If it helps to have a word count, try to answer all three questions in something between 700 and 1000 words.\nFormat your proposal as Quarto document with citations within the project folder of your class respository. Your proposal should include:\n\nlinks to any published data or related resources\nreproducible code blocks for any preliminary data analysis you completed to support your proposal\n\nDon’t forget to cite your sources! While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.\n\nIdentifying a data source\nStudents are strongly encouraged to build a project using data from:\n\nOpenStreetMap (accessed with the {osmdata} package),\nor American Community Survey data (accessed with the {tidycensus} package)\n\nSee the readings and materials from week 9 or week 10 for more background information on these sources.\n\n\n\n\n\n\nA caution about using different data source\n\n\n\nIf you do not using {tidycensus} or {osmdata}, I may not be able to provide the same level of assistance with trouble-shooting your code for the final project. Consider opportunities to use OpenStreetMap and American Community Survey data in combination with other sources.\n\n\nIf you are interested in working with some other data source, your project proposal should explain your reason for selecting the source and make sure to confirm that:\n\nyou know the data and goals are related (e.g. you have a question that can be answered using the data),\nyou have permission to use the data (e.g. the data is published under an open license),\nyou know the data is in an accessible format (e.g. CSV, ArcGIS Feature Server, GeoPackage file),\nand you know there are no major data quality issues (e.g. location accuracy, completeness) that you can’t address as part of the project.\n\n\n\nWhat are your goals for the project?\nYour goals could include answering a research question, making the case for a public policy change, or building an interface to help people better understand an issue in their community.\nYour goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.\nAsk yourself: Who might benefit from your proposed project? How can your project can avoid causing people harm?\nIn framing your project, look for opportunities to apply one or more of the six models of local practice described in Loukissas (2019):\n\nLook at the data setting, not just the data set\nMake place part of data presentation\nTake a comparative approach to data analysis\nCreate counterdata to challenge normative algorithms\nCreate interfaces that cause friction\nUse data to build relationships\n\nIs your project designed around what Loukissas calls the common “ambitions” for working data—orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?\nYour goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.\n\n\nWhat data can you use to support your goal?\nYour data could include any public spatial data or data that has a spatial attribute. You can even create data from scratch or collect your own data.\nAsk yourself: What is the “setting” for the data? Whose local knowledge does it represent? What communities participate in collecting or maintaining the data?\n\n\nWhat is your approach to using data to support your goal?\nYour approach could include mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches.\nYou don’t need to reinvent the wheel. You can adapt an existing approach (reproducing an existing using new data or geography) or propose a few options you hope to try and compare.\nAsk yourself: Is your proposed approach feasible in the time you have available this semester? What challenges do you anticipate in using this data?\n\n\n\n\n\n\nCiting sources with RStudio and Zotero\n\n\n\nCiting sources in RStudio is a little different than Microsoft Word so I strongly recommend using the Zotero citation manager in combination with the Better Bibtex extension. If a single R package is a big part of your proposed approach, make sure to also include a citation for the package. Read How to Cite R and R Packages by Steffi LaZerte for more background on how and why you should cite R packages.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#project-presentation",
+    "href": "final-project.html#project-presentation",
+    "title": "Final Project",
+    "section": "Project presentation",
+    "text": "Project presentation\nYour in-class presentation should be around five minutes and address these key questions:\n\nWhat were your initial goals for the project? How did they change or develop as you worked on your project?\nWhat data sources did you use? How, why, and where were they created?\nWhat packages, templates, or other resources did you use in creating your final project?\nWhat challenges did you encounter in making use of these resources and this data?\nWhat do you think your project does well?\n\n\n\n\n\n\n\nCreating presentations with Quarto and reveal.js\n\n\n\nUse the Quarto reveal.js presentation format for your presentation. This format can be tricky to learn but allows you to easily incorporate data visualizations or other materials from your project into your presentation.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#final-project-repository",
+    "href": "final-project.html#final-project-repository",
+    "title": "Final Project",
+    "section": "Final project repository",
+    "text": "Final project repository\nYour final project should be submitted as a GitHub repository. A private repository can be provided to you as part of the course organization or you can set up your own repository on your personal GitHub account.\nThe repository must include:\n\nproject data (if needed): including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using {osmdata} or {tidycensus} should include scripts for downloading data but do not include the source data.\nproject code: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.\noutput files: including any processed data files or rendered PDF or HTML documents.\nREADME: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.\nadditional materials: including any data collection materials (e.g. survey forms), reference data used by the project code, or other related materials.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Getting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with scripts, functions, and Quarto\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nAug 31, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Course information",
+      "Slides"
+    ]
   },
   {
     "objectID": "slides/metadata.html#what-are-we-talking-about-metadata",
@@ -1690,321 +1900,6 @@
     "title": "Metadata, geospatial metadata, and READMEs",
     "section": "28 FAIR and CARE in Practice",
     "text": "28 FAIR and CARE in Practice\n\n\n\nFig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/2"
-  },
-  {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Slides",
-    "section": "",
-    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nOct 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with scripts, functions, and Quarto\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Course information",
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "final-project.html",
-    "href": "final-project.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "The final project is an opportunity for you to practice the spatial data skills we’ve been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.\nYour project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:\n\nA data visualization or interactive that uses the data to tell a story or prompt reflection\nAn exploratory data analysis that uses the data to ask or answer questions\n\nThis project has three parts:\n\nA project proposal (due 2024-11-13)\nAn short recorded presentation about your project (due 2024-12-13)\nA project GitHub repository including code, data, output files, and a README (due 2024-12-20)\n\nYou are also expected to share peer feedback on two other project presentations completed by 2024-12-15 (updated).",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
-    "objectID": "final-project.html#overview",
-    "href": "final-project.html#overview",
-    "title": "Final Project",
-    "section": "",
-    "text": "The final project is an opportunity for you to practice the spatial data skills we’ve been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.\nYour project should focus on a topic area or dataset that is relevant to your personal and professional interests. Typically, the final project should fit into one of two categories:\n\nA data visualization or interactive that uses the data to tell a story or prompt reflection\nAn exploratory data analysis that uses the data to ask or answer questions\n\nThis project has three parts:\n\nA project proposal (due 2024-11-13)\nAn short recorded presentation about your project (due 2024-12-13)\nA project GitHub repository including code, data, output files, and a README (due 2024-12-20)\n\nYou are also expected to share peer feedback on two other project presentations completed by 2024-12-15 (updated).",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
-    "objectID": "final-project.html#project-proposal",
-    "href": "final-project.html#project-proposal",
-    "title": "Final Project",
-    "section": "Project proposal",
-    "text": "Project proposal\nYour project proposal needs to answer identify a data source and answer three main questions:\n\nWhat are your goals for the project?\nWhat data can you use to support your goal?\nWhat is your approach to using data to support your goal?\n\nYou should answer each question with a brief but considered response. If it helps to have a word count, try to answer all three questions in something between 700 and 1000 words.\nFormat your proposal as Quarto document with citations within the project folder of your class respository. Your proposal should include:\n\nlinks to any published data or related resources\nreproducible code blocks for any preliminary data analysis you completed to support your proposal\n\nDon’t forget to cite your sources! While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.\n\nIdentifying a data source\nStudents are strongly encouraged to build a project using data from:\n\nOpenStreetMap (accessed with the {osmdata} package),\nor American Community Survey data (accessed with the {tidycensus} package)\n\nSee the readings and materials from week 9 or week 10 for more background information on these sources.\n\n\n\n\n\n\nA caution about using different data source\n\n\n\nIf you do not using {tidycensus} or {osmdata}, I may not be able to provide the same level of assistance with trouble-shooting your code for the final project. Consider opportunities to use OpenStreetMap and American Community Survey data in combination with other sources.\n\n\nIf you are interested in working with some other data source, your project proposal should explain your reason for selecting the source and make sure to confirm that:\n\nyou know the data and goals are related (e.g. you have a question that can be answered using the data),\nyou have permission to use the data (e.g. the data is published under an open license),\nyou know the data is in an accessible format (e.g. CSV, ArcGIS Feature Server, GeoPackage file),\nand you know there are no major data quality issues (e.g. location accuracy, completeness) that you can’t address as part of the project.\n\n\n\nWhat are your goals for the project?\nYour goals could include answering a research question, making the case for a public policy change, or building an interface to help people better understand an issue in their community.\nYour goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.\nAsk yourself: Who might benefit from your proposed project? How can your project can avoid causing people harm?\nIn framing your project, look for opportunities to apply one or more of the six models of local practice described in Loukissas (2019):\n\nLook at the data setting, not just the data set\nMake place part of data presentation\nTake a comparative approach to data analysis\nCreate counterdata to challenge normative algorithms\nCreate interfaces that cause friction\nUse data to build relationships\n\nIs your project designed around what Loukissas calls the common “ambitions” for working data—orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?\nYour goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.\n\n\nWhat data can you use to support your goal?\nYour data could include any public spatial data or data that has a spatial attribute. You can even create data from scratch or collect your own data.\nAsk yourself: What is the “setting” for the data? Whose local knowledge does it represent? What communities participate in collecting or maintaining the data?\n\n\nWhat is your approach to using data to support your goal?\nYour approach could include mapping, exploratory analysis, documentation, visualization, or a combination of multiple approaches.\nYou don’t need to reinvent the wheel. You can adapt an existing approach (reproducing an existing using new data or geography) or propose a few options you hope to try and compare.\nAsk yourself: Is your proposed approach feasible in the time you have available this semester? What challenges do you anticipate in using this data?\n\n\n\n\n\n\nCiting sources with RStudio and Zotero\n\n\n\nCiting sources in RStudio is a little different than Microsoft Word so I strongly recommend using the Zotero citation manager in combination with the Better Bibtex extension. If a single R package is a big part of your proposed approach, make sure to also include a citation for the package. Read How to Cite R and R Packages by Steffi LaZerte for more background on how and why you should cite R packages.",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
-    "objectID": "final-project.html#project-presentation",
-    "href": "final-project.html#project-presentation",
-    "title": "Final Project",
-    "section": "Project presentation",
-    "text": "Project presentation\nYour in-class presentation should be around five minutes and address these key questions:\n\nWhat were your initial goals for the project? How did they change or develop as you worked on your project?\nWhat data sources did you use? How, why, and where were they created?\nWhat packages, templates, or other resources did you use in creating your final project?\nWhat challenges did you encounter in making use of these resources and this data?\nWhat do you think your project does well?\n\n\n\n\n\n\n\nCreating presentations with Quarto and reveal.js\n\n\n\nUse the Quarto reveal.js presentation format for your presentation. This format can be tricky to learn but allows you to easily incorporate data visualizations or other materials from your project into your presentation.",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
-    "objectID": "final-project.html#final-project-repository",
-    "href": "final-project.html#final-project-repository",
-    "title": "Final Project",
-    "section": "Final project repository",
-    "text": "Final project repository\nYour final project should be submitted as a GitHub repository. A private repository can be provided to you as part of the course organization or you can set up your own repository on your personal GitHub account.\nThe repository must include:\n\nproject data (if needed): including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using {osmdata} or {tidycensus} should include scripts for downloading data but do not include the source data.\nproject code: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.\noutput files: including any processed data files or rendered PDF or HTML documents.\nREADME: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.\nadditional materials: including any data collection materials (e.g. survey forms), reference data used by the project code, or other related materials.",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
-    "objectID": "exercises/exercise_05.html",
-    "href": "exercises/exercise_05.html",
-    "title": "Exercise 05",
-    "section": "",
-    "text": "Exercise due on 2023-10-06\n\n\n\nℹ️ See week 5 for related slides and readings",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
-  },
-  {
-    "objectID": "course-schedule.html",
-    "href": "course-schedule.html",
-    "title": "Schedule overview",
-    "section": "",
-    "text": "Week 1\n\n\nGetting started with spatial data using {sf} and the tidyverse\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing spatial data with {ggplot2}\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\nSep 11, 2024\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\nSep 18, 2024\n\n\n\n\n\n\n\nWeek 5\n\n\nTidying and joining spatial data\n\n\n\n\n\nSep 25, 2024\n\n\n\n\n\n\n\nWeek 6\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\nOct 2, 2024\n\n\n\n\n\n\n\nWeek 7\n\n\nBuilding functions in R and literate programming with Quarto\n\n\n\n\n\nOct 9, 2024\n\n\n\n\n\n\n\nWeek 8\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\nOct 16, 2024\n\n\n\n\n\n\n\nWeek 9\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\nWeek 10\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\nNov 1, 2023\n\n\n\n\n\n\n\nWeek 11\n\n\nReading and writing spatial data files and services\n\n\n\n\n\nNov 8, 2023\n\n\n\n\n\n\n\nWeek 12\n\n\nCreating and managing spatial metadata\n\n\n\n\n\nNov 15, 2023\n\n\n\n\n\n\n\nWeek 13\n\n\nProject check-in meetings\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n\nWeek 14\n\n\nSpecial topics and project work session\n\n\n\n\n\nNov 29, 2023\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal project presentations\n\n\n\n\n\nDec 6, 2023\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "exercises/exercise_07.html",
-    "href": "exercises/exercise_07.html",
-    "title": "Exercise 07",
-    "section": "",
-    "text": "Exercise due on 2023-10-20\nℹ️ See week 7 for related slides and readings",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 07"
-    ]
-  },
-  {
-    "objectID": "exercises/exercise_07.html#setup",
-    "href": "exercises/exercise_07.html#setup",
-    "title": "Exercise 07",
-    "section": "1 Setup",
-    "text": "1 Setup\nTo start this week’s exercise, I have created a new folder named project in each of your class repositories (based on the new public project-template repository for our class). Sync your repository to make sure you have the latest files before you get started with the exercise.\nIn the folder you will find a new RStudio project file (.Rproj) named project.Rproj. Open the project and locate the file named example-functions.qmd.\nOpen example-functions.qmd and, in the editor pane of RStudio, click the “Render” button to turn the Quarto document into a rendered HTML document in the “Preview” pane.\nThis Quarto document is designed to review the topics we covered in last week’s class and to show some of the options for Quarto documents. You can review the document or, if you feel confident in the material, jump ahead to the exercise.",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 07"
-    ]
-  },
-  {
-    "objectID": "exercises/exercise_07.html#exercise",
-    "href": "exercises/exercise_07.html#exercise",
-    "title": "Exercise 07",
-    "section": "2 Exercise",
-    "text": "2 Exercise\nHere are the steps to complete this week’s exercise:\n\nUse the menu to create a new Quarto document (Go to File &gt; New File &gt; Quarto Document...). Fill in the title “Exercise 7” and your name as the author. After the new document opens, notice how the title and author appear in the front matter for the new document.\n\n\n\nSave the Quarto document using the file name exercise_07.qmd.\nInsert a new code block and add code to read spatial data into R. You can use sf::read_sf() to read data from a URL or file path or you can use one of the data functions we’ve tried in class, such as tigris::counties() or rnaturalearth::ne_countries(returnclass = \"sf\").\n\n\n\n\n\n\n\nImportant\n\n\n\n\n\nDon’t forget! If you are using a local file, the file size must be less than 50MB or your changes to the repository can’t be committed to GitHub. If your file is not a spatial data file (e.g. a CSV file) you should convert the object into a sf object using sf::st_as_sf().\n\n\n\n\nInsert a new code block and write a vector function (either a “mutate” or “summary” style function) that can take one or more attributes from your data as an input. Include one or more examples of how the function works.\nInsert a new code block and write a vector function (either a “mutate” or “summary” style function) that can take the feature geometry from your data as an input. This function should use one of the geometric unary or binary functions from the {sf} package. It doesn’t need to be complicated but take a look at the function reference or the sf cheatsheet and find a function that you are curious to try out. Include one or more examples of how the function works.\nInsert a new code block and write a mapping or plotting function. Remember, if you write a mapping function, it should probably include ggplot2::geom_sf() in the body of the function.\nFinally—render the Quarto document and make sure it can be knit as an HTML page without error! You can also run quarto::quarto_preview() in the console to keep a live preview running in the background while you complete the exercise.\n\n\n\n\n\n\n\nUse verbs for function names\n\n\n\n\n\nFor each part of this exercise, make sure to use function names that help you and anyone using your code understand what the function does. Using verbs is an easy way to do that.\n\n\n\nBetween each code block, please include a brief explanation of what question you are trying to answer with the functions.\nFor example, you could write: “This function takes data on storm observations and summarizes the average wind speed and air pressure by hurricane category so I can better understand the relationship between the continuous and categorical variables.”\nWhen you are done writing the functions (and examples!), there are just two steps left in this exercise to help you practice working with Quarto.\n\nAdd a link to your Exercise 7 document to the navigation menu of your Quarto website. Open the _quarto.yml project configuration file and look for the navbar section. Take a look at the Quarto guide to Website Navigation for more information.\nExplore the HTML theme options for your Quarto site. Try swapping the default cosmo theme for one of the other Bootswatch themes.",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 07"
-    ]
-  },
-  {
-    "objectID": "exercises/exercise_07.html#bonus-exercise",
-    "href": "exercises/exercise_07.html#bonus-exercise",
-    "title": "Exercise 07",
-    "section": "3 Bonus exercise",
-    "text": "3 Bonus exercise\nRead in more data and try using your mapping or plotting function with a different dataset.\nDoes the function still work they way you expect? Why or why not?\nWrite a few sentences explaining what happens and, if the functions do not work, try writing a new version that works with both your original data and the new version.",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 07"
-    ]
-  },
-  {
-    "objectID": "resources/data-sources.html",
-    "href": "resources/data-sources.html",
-    "title": "Data sources",
-    "section": "",
-    "text": "Spatial data is available in a wide range of formats at the local, national, and international levels. Data is often published through larger data portals where you can find links to access data through a web service or options to download part of all of the data.",
-    "crumbs": [
-      "Resources 📋️",
-      "Data Sources"
-    ]
-  },
-  {
-    "objectID": "resources/data-sources.html#local-data-sources-for-baltimore-and-maryland",
-    "href": "resources/data-sources.html#local-data-sources-for-baltimore-and-maryland",
-    "title": "Data sources",
-    "section": "Local data sources for Baltimore and Maryland 🦀",
-    "text": "Local data sources for Baltimore and Maryland 🦀\n\nBaltimore City Open Data Hub\nBaltimore County GIS Open Data Portal\nBMC Regional GIS Data Center - Baltimore Metropolitan Council\nChesapeake Bay Open Data Portal\nMaryland’s GIS Data Catalog\nMaryland Open Data\nVital Signs Open Data Portal\nMaryland Food Systems Open Data Portal\nMaryland ArcGIS REST API Services Index",
-    "crumbs": [
-      "Resources 📋️",
-      "Data Sources"
-    ]
-  },
-  {
-    "objectID": "resources/data-sources.html#national-data-sources-for-the-u.s.",
-    "href": "resources/data-sources.html#national-data-sources-for-the-u.s.",
-    "title": "Data sources",
-    "section": "National data sources for the U.S. 🇺🇸",
-    "text": "National data sources for the U.S. 🇺🇸\n\nData.gov (Aggregates local, state, and federal open data catalogs)\nU.S. Department of Housing and Urban Development Geospatial Data Storefront\nGeospatial at BTS (Bureau of Transportation Statistics), U.S. Department of Transportation\nBTS Data Inventory (Bureau of Transportation Statistics), U.S. Department of Transportation\nEDGE Geodata (Education Demographic and Geographic Estimates), U.S. Department of Education, National Center for Education Statistics\nU.S. Geological Survey Science Data Catalog\nGeoPlatform.gov\nNational Ecological Observatory Network (NEON) Data Portal\nOpen Data Network (Socrata/Tyler Technologies)\nUrban Institute Data Catalog",
-    "crumbs": [
-      "Resources 📋️",
-      "Data Sources"
-    ]
-  },
-  {
-    "objectID": "resources/data-sources.html#global-data-sources",
-    "href": "resources/data-sources.html#global-data-sources",
-    "title": "Data sources",
-    "section": "Global data sources 🌏",
-    "text": "Global data sources 🌏\n\nNatural Earth\nOpenStreetMap (see the OSM Wiki for more on how data is organized on OSM)\nArcGIS Living Atlas of the World\nNASA Open Data Portal\nNOAA Data Discovery Portal\nWorld Bank Open Data\nHumanitarian Data Exchange\nData Portals (Open Knowledge Foundation)\nRegistry of Open Data on AWS",
-    "crumbs": [
-      "Resources 📋️",
-      "Data Sources"
-    ]
-  },
-  {
-    "objectID": "resources/data-sources.html#r-packages-for-data-access",
-    "href": "resources/data-sources.html#r-packages-for-data-access",
-    "title": "Data sources",
-    "section": "R packages for data access",
-    "text": "R packages for data access\n\nGeneral data access packages\nGeneral data access packages include:\n\n{arcgislayers} 📦 to access ArcGIS FeatureServer data\n{RSocrata} to access Socrata data portals\n{ckanr} to access CKAN data portals\n\n\n\nDomain-specific data access packages\nThere are many different data access R packages for interacting with APIs and web services relevant to specific domains of research or practice.\nA few broadly useful packages include:\n\n{tigris}: Download and use Census TIGER/Line shapefiles.\n{tidycensus}: Get US Census boundary and attribute data.\n{rnaturalearth}: Get Natural Earth data.\n{osmdata}: Get OpenStreetMap data.\n{geodata}: Get climate, elevation, soil, crop, species occurrence, and administrative boundary data.\n{dataRetrieval}: Get USGS or EPA water quality sample data, streamflow data, and metadata directly from web services.\n\nExplore the Data Access category on ROpenSci or search for packages on R-universe or CRAN to find the right package for your project or exercise.\n\n\nLocal data access packages\nI also maintain a few R packages for open data access in Baltimore and Maryland that students working on local projects may find helpful:\n\n{mapbaltimore}\n{bcpss}\n{mapmaryland}\n{marylandedu}",
-    "crumbs": [
-      "Resources 📋️",
-      "Data Sources"
-    ]
-  },
-  {
-    "objectID": "slides/effective-visualization.html#where-to-start",
-    "href": "slides/effective-visualization.html#where-to-start",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "1 Where to start?",
-    "text": "1 Where to start?\n\nKnow your goal\nKnow your audience\nKnow your format"
-  },
-  {
-    "objectID": "slides/effective-visualization.html#what-next",
-    "href": "slides/effective-visualization.html#what-next",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "2 What next?",
-    "text": "2 What next?\n\nChoosing appropriate graphic types\nWriting and formatting clear text\nSelecting appropriate and engaging colors\nPreparing your feature geometry appropriately"
-  },
-  {
-    "objectID": "slides/effective-visualization.html#choosing-appropriate-graphic-types",
-    "href": "slides/effective-visualization.html#choosing-appropriate-graphic-types",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "3 Choosing appropriate graphic types",
-    "text": "3 Choosing appropriate graphic types\n\nWhat makes one graphic, chart, plot, or map “better” or “worse”?"
-  },
-  {
-    "objectID": "slides/effective-visualization.html#items-attributes-marks-and-channels",
-    "href": "slides/effective-visualization.html#items-attributes-marks-and-channels",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "4 Items, Attributes, Marks, and Channels",
-    "text": "4 Items, Attributes, Marks, and Channels\nIn Visualization Analysis and Design (2014), Tamara Munzner describes a set of useful concepts:\n\nitems,\nattributes,\nlinks,\nmarks,\nand channels\n\n\nBook website: https://www.cs.ubc.ca/~tmm/vadbook/\nvia https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html"
-  },
-  {
-    "objectID": "slides/effective-visualization.html#items-and-attributes",
-    "href": "slides/effective-visualization.html#items-and-attributes",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "5 Items and Attributes",
-    "text": "5 Items and Attributes\n\nItems\n\nbasic units on which data is collected\n\nAttributes\n\nnumerical or categorical features of the data items we want to represent\n\nLinks\n\nrelations among items, e.g. months within a year, or countries within a continent."
-  },
-  {
-    "objectID": "slides/effective-visualization.html#marks-and-channels",
-    "href": "slides/effective-visualization.html#marks-and-channels",
-    "title": "Effective visualization with {ggplot2} and R",
-    "section": "6 Marks and Channels",
-    "text": "6 Marks and Channels\n\nMarks\n\ngeometric entities used to represent items: points, lines, areas.\n\nVisual channels\n\nfeatures of marks that can be used to reflect values of attributes.”\n\n\n\nhttps://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html"
-  },
-  {
-    "objectID": "slides/open-street-map.html#overview",
-    "href": "slides/open-street-map.html#overview",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "1 Overview",
-    "text": "1 Overview\n\nWhat is OpenStreetMap?\nHow do you contribute to OpenStreetMap?\nHow do you download data from OpenStreetMap?\n\nThese slides on OpenStreetMap and exploring OSM data with the {osmdata} package are based on a March 10, 2020 presentation by Jonathan Dandois for MaptimeBmore and the CCBC GIS Capstone."
-  },
-  {
-    "objectID": "slides/open-street-map.html#what-is-openstreetmap",
-    "href": "slides/open-street-map.html#what-is-openstreetmap",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "2 What is OpenStreetMap?",
-    "text": "2 What is OpenStreetMap?\n\nCreated in 2004 in response to restrictive data sharing by the UK Ordnance Survey\nGrew as the “Wikipedia of maps” in response to increasing cost of commercial services like Google Maps after 2011 price hikes"
-  },
-  {
-    "objectID": "slides/open-street-map.html#using-openstreetmap",
-    "href": "slides/open-street-map.html#using-openstreetmap",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "3 Using OpenStreetMap",
-    "text": "3 Using OpenStreetMap\n\nOpenStreetMap isn’t just a map—it is a “global geodatabase of everything and anything that people add to the map”:\n\nroads, crosswalks, speed bumps, stop lights\nrestaurants, daycares, playgrounds, cannons\nforests, central business districts, boundaries\nland cover, gravestones, utility ROWs"
-  },
-  {
-    "objectID": "slides/open-street-map.html#who-is-using-openstreetmap",
-    "href": "slides/open-street-map.html#who-is-using-openstreetmap",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "4 Who is using OpenStreetMap?",
-    "text": "4 Who is using OpenStreetMap?\nIndividual users, developers, and researchers:\n\nApps and websites\nGames\nAdvocacy and policy"
-  },
-  {
-    "objectID": "slides/open-street-map.html#who-is-using-openstreetmap-1",
-    "href": "slides/open-street-map.html#who-is-using-openstreetmap-1",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "5 Who is using OpenStreetMap?",
-    "text": "5 Who is using OpenStreetMap?"
-  },
-  {
-    "objectID": "slides/open-street-map.html#contributing-to-open-street-map",
-    "href": "slides/open-street-map.html#contributing-to-open-street-map",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "6 Contributing to Open Street Map",
-    "text": "6 Contributing to Open Street Map\nDifferent editors have different reasons for contributing and contribute in different ways:\n\nIndividuals\nPublic agencies\nNon-profit organizations\nCorporations\n\n\nDifferent editors use different tools, focus on editing different resources.\nOther options include:\n\nArcGIS Editor for OpenStreetMap"
-  },
-  {
-    "objectID": "slides/open-street-map.html#tracing-and-digitizing-imagery",
-    "href": "slides/open-street-map.html#tracing-and-digitizing-imagery",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "7 Tracing and digitizing imagery",
-    "text": "7 Tracing and digitizing imagery\nMost editors for OpenStreetMap use high-resolution aerial, satellite, and drone-based imagery to trace or digitize:\n\nPOIs, addresses (points)\nRoads, sidewalks, paths (lines)\nSchool areas, central business districts, parks, lakes, playgrounds (polygons)\n\nLearn more in Getting Started with OSM."
-  },
-  {
-    "objectID": "slides/open-street-map.html#what-is-good-editing",
-    "href": "slides/open-street-map.html#what-is-good-editing",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "8 What is “good” editing?",
-    "text": "8 What is “good” editing?\nLearn more in the Good practice section of the OpenStreetMap Wiki."
-  },
-  {
-    "objectID": "slides/open-street-map.html#downloading-data-with-overpass-turbo",
-    "href": "slides/open-street-map.html#downloading-data-with-overpass-turbo",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "9 Downloading data with overpass turbo",
-    "text": "9 Downloading data with overpass turbo\n overpass turbo, a web-based data filtering tool for OpenStreetMap, can run Overpass API queries and analyze the resulting OSM data interactively on a map."
-  },
-  {
-    "objectID": "slides/open-street-map.html#open-historical-map",
-    "href": "slides/open-street-map.html#open-historical-map",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "10 Open Historical Map",
-    "text": "10 Open Historical Map"
-  },
-  {
-    "objectID": "slides/open-street-map.html#section",
-    "href": "slides/open-street-map.html#section",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "11 ",
-    "text": "11"
-  },
-  {
-    "objectID": "slides/open-street-map.html#downloading-data-with-osmdata",
-    "href": "slides/open-street-map.html#downloading-data-with-osmdata",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "12 Downloading data with {osmdata}",
-    "text": "12 Downloading data with {osmdata}\n\nosmdata is an R package for accessing the data underlying OpenStreetMap (OSM), delivered via the Overpass API.\nThe package is designed to allow access to small-to-medium-sized OSM datasets (see osmextract for an approach for reading-in bulk OSM data extracts)."
-  },
-  {
-    "objectID": "slides/open-street-map.html#resources",
-    "href": "slides/open-street-map.html#resources",
-    "title": "Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package",
-    "section": "13 Resources",
-    "text": "13 Resources\n\nOSM Wiki\nLearnOSM\nTeachOSM"
   },
   {
     "objectID": "weeks/week_14.html",
