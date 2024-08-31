@@ -5,11 +5,10 @@ order: 1
 status: available
 date-due: 2024-09-06
 date-modified: last-modified
+error: true
 ---
 
-{{< include _include-website-exercise.qmd >}}
-
-::: {.callout-tip collapse="false" appearance="default"}
+::: callout-tip
 ## Practice these skills
 
 -   Confirm that you understand some coding basics
@@ -20,36 +19,38 @@ date-modified: last-modified
 
 ----
 
-## Setup
+## Getting started
 
-To complete this exercise, you need to load two libraries that we already installed in class:
+### Packages
+
+You need the `{sf}`, `{tidyverse}`, and `{spData}` packages installed to complete this exercise. If they aren't installed, install them now by copying the following lines into the console to install all three packages (don't forget to restart your session afterwards):
+
+```
+install.packages(c("tidyverse", "sf", "spData"))
+```
+
+After restarting make sure to load the `sf` and `tidyverse` library:
 
 ```{r}
 #| eval: true
-#| message: false
+library(tidyverse)
 library(sf)
-library(ggplot2)
 ```
 
-You also need data from the `{sf}` package:
+### Datas
+
+This exercise uses the `nc` North Carolina SIDS dataset that is included with the sf package. We can use the `sf::st_read()` function to load it from a shapefile:
 
 ```{r}
 #| eval: true
-nc <- st_read(system.file("shape/nc.shp", package = "sf"), as_tibble = TRUE)
+nc <- sf::st_read(system.file("shape/nc.shp", package = "sf"), as_tibble = TRUE)
 ```
 
-You *will* need the `{spData}` package but don't load them yet. If they aren't installed, install them now using `{pak}` (a faster option than `install.packages()`).
-
-Copy the following lines (without the `#` character) into the console to install all three packages (don't forget to restart your session afterwards):
-
-```{r}
-# install.packages("pak")
-# pak::pkg_install(c("mapview", "spData"))
-```
+## Exercises
 
 This week's exercise is mostly "fill in the blank" questions and coding exercises. You can expect fewer hints and more freedom to experiment in future exercises!
 
-## Exercises
+There are periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub as you complete the exercise. You should have at least three commits with meaningful commit messages by the end of the assignment. Take a look at the [RStudio documentation on version control](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html#getting-started) for more details on how to commit and push changes.
 
 ### Coding basics
 
@@ -83,6 +84,12 @@ What happens? ____
 How can you get to the same place using the menus? ____
 
 ------------------------------------------------------------------------
+
+::: callout-tip
+Render, commit, and push your changes to GitHub with the commit message "Added answers for coding basics questions".
+
+Make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
 
 ### Look up documentation
 
@@ -180,6 +187,12 @@ Review the results and try to answer the following:
 -   What is the coordinate reference system? \_\_\_\_
 -   How many features? \_\_\_\_
 
+::: callout-tip
+Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.
+
+Once again, make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
+
 ### Visualize `sf` objects
 
 Some packages come with data we can use as soon as the package is loaded.
@@ -197,3 +210,16 @@ Can you use `plot()` to make a map of states color-coded by region?
 ```{r}
 plot(____)
 ```
+
+**Optional:** can you use `ggplot()` and `geom_sf()` to create a plot of `us_states` color-coded by total population in 2015? Here is part of the code to start with:
+
+```{r}
+ggplot() +
+  geom_sf()
+```
+
+::: callout-tip
+Render, commit, and push your final changes to GitHub with a meaningful commit message.
+
+Make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
