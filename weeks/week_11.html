@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-11-08">
+<meta name="author" content="Eli Pousson">
+<meta name="dcterms.date" content="2024-11-06">
 
 <title>Week 11 – GES 668 - Fall 2024</title>
 <style>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 11 – GES 668 - Fall 2024">
-<meta property="og:description" content="Reading and writing spatial data files and services">
+<meta property="og:description" content="This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services.">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
 </head>
 
@@ -351,7 +352,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
+  </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
@@ -359,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_11.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -381,13 +385,19 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 8, 2023</p>
+      <p class="date">November 6, 2024</p>
     </div>
   </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Summary</div>
+    This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services.
+  </div>
+</div>
 
 
 </header>
@@ -405,23 +415,28 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>File formats for spatial data have developed and changed over time with different file types serving different specialized needs. Spatial data can also be stored and made accessible through web services running on remote servers. It is helpful to learn how to access data in many different forms and places.</p>
+<section id="key-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
 <ul>
 <li>Review uses of common data file formats and web services</li>
-<li>Downloading data from Socrata open data portals with <a href="https://github.com/Chicago/RSocrata">{RSocrata}</a></li>
+<li>Practice downloading spatial data using <a href="https://github.com/Chicago/RSocrata">{RSocrata}</a></li>
 </ul>
+</section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><a href="https://r.geocompx.org/read-write.html">Ch. 8 Geographic data I/O</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd (WIP)., 2022, <a href="https://r.geocompx.org/" role="doc-biblioref">https://r.geocompx.org/</a>.</span></li>
-<li><a href="https://r4ds.hadley.nz/spreadsheets">Ch. 21 Spreadsheets</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/read-write">Ch. 8 Geographic data I/O</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org" role="doc-biblioref">https://r.geocompx.org</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/spreadsheets">Ch. 20 Spreadsheets</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
 </ul>
 </section>
 <section id="optional-readings" class="level3">
 <h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
 <ul>
+<li><a href="https://r4ds.hadley.nz/databases">Ch. 21 Databases</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
 <li><span class="citation" data-cites="macwrightMoreYouEver2015">Tom MacWright <span>“More Than You Ever Wanted to Know about <span>GeoJSON</span>”</span> (Tom MacWright, March 23, 2015), <a href="https://macwright.com/2015/03/23/geojson-second-bite.html" role="doc-biblioref">https://macwright.com/2015/03/23/geojson-second-bite.html</a>.</span></li>
 <li><span class="citation" data-cites="opengeolabsSwitchShapefile2017">OpenGeoLabs <span>“Switch from <span>Shapefile</span>,”</span> October 5, 2017, <a href="http://switchfromshapefile.org/" role="doc-biblioref">http://switchfromshapefile.org/</a>.</span></li>
 <li><span class="citation" data-cites="spatialdataonthewebworkinggroupSpatialDataWeb2017">Spatial Data on the Web Working Group <span>“Spatial <span>Data</span> on the <span>Web Best Practices</span>,”</span> September 28, 2017, <a href="https://www.w3.org/TR/sdw-bp/" role="doc-biblioref">https://www.w3.org/TR/sdw-bp/</a>.</span></li>
@@ -436,8 +451,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1003,4 +1016,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_11.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -22,20 +22,22 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/slides/welcome.html",
       "/slides/spatial-data.html",
-      "/slides/tidy-data.html",
       "/slides/data-visualization.html",
       "/slides/data-transformation.html",
       "/slides/spatial-data-attributes.html",
       "/slides/feature-geometry.html",
+      "/slides/tidy-data.html",
       "/slides/functions.html",
       "/slides/exploratory-analysis.html",
       "/slides/open-street-map.html",
-      "/slides/metadata.html",
       "/slides/spatial-data-io.html",
-      "/slides/coding-basics.html",
+      "/slides/metadata.html",
       "/slides/effective-visualization.html",
-      "/slides/fall-2023.html"
+      "/slides/coding-basics.html",
+      "/slides/fall-2023.html",
+      "/slides/quarto.html"
     ]
   }
 ]

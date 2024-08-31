@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-11-15">
+<meta name="author" content="Eli Pousson">
+<meta name="dcterms.date" content="2024-11-13">
 
 <title>Week 12 – GES 668 - Fall 2024</title>
 <style>
@@ -73,8 +74,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 12 – GES 668 - Fall 2024">
-<meta property="og:description" content="Creating and managing spatial metadata">
+<meta property="og:description" content="Learn about both the basics of metadata and specialized spatial metadata standards. Review examples of READMEs and other types of project documentation.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
+<meta property="og:image:height" content="1230">
+<meta property="og:image:width" content="1845">
 </head>
 
 <body class="nav-sidebar docked">
@@ -352,6 +356,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
@@ -359,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_12.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -381,13 +386,19 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2023</p>
+      <p class="date">November 13, 2024</p>
     </div>
   </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Summary</div>
+    Learn about both the basics of metadata and specialized spatial metadata standards. Review examples of READMEs and other types of project documentation.
+  </div>
+</div>
 
 
 </header>
@@ -395,10 +406,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This session introduces the basics of metadata and specialized spatial metadata standards. We will also explore how to write READMEs for both data and project documentation.</p>
+</section>
+<section id="key-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="key-objectives">Key Objectives</h2>
 <ul>
-<li>Introduction to metadata and spatial metadata standards</li>
-<li>Writing metadata, READMEs, and documentation for projects, workflows, and data</li>
-<li>Working with data dictionaries and the <a href="https://larmarange.github.io/labelled/">{labelled}</a> package</li>
+<li>Review examples of READMEs for data sets and projects</li>
+<li>Practice working with data dictionaries and the <a href="https://larmarange.github.io/labelled/">{labelled} package</a>.</li>
 </ul>
 </section>
 <section id="prepare" class="level2">
@@ -406,9 +420,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
+<li><a href="https://datamgmtinedresearch.com/document.html">Ch. 8 Documentation</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/" role="doc-biblioref">https://datamgmtinedresearch.com/</a>.</span></li>
 <li><a href="https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3">Ch. 7 Show Your Work</a> in <span class="citation" data-cites="dignazioDataFeminism2020">Catherine D’Ignazio and Lauren F. Klein <em>Data <span>Feminism</span></em> (The MIT Press, 2020), <a href="https://data-feminism.mitpress.mit.edu/" role="doc-biblioref">https://data-feminism.mitpress.mit.edu/</a>.</span></li>
 <li><span class="citation" data-cites="pileggiCaseVariableLabels2022">Shannon Pileggi <span>“The Case for Variable Labels in <span>R</span>”</span> (Piping Hot Data, September 13, 2022), <a href="https://www.pipinghotdata.com/posts/2022-09-13-the-case-for-variable-labels-in-r/" role="doc-biblioref">https://www.pipinghotdata.com/posts/2022-09-13-the-case-for-variable-labels-in-r/</a>.</span></li>
-<li><span class="citation" data-cites="Dataprimers2019"><span>“Data-Primers”</span> (DataCurationNetwork, 2019), <a href="https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3" role="doc-biblioref">https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3</a>.</span></li>
 </ul>
 </section>
 <section id="optional-readngs" class="level3">
@@ -416,19 +430,18 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><span class="citation" data-cites="GuideWritingReadme"><span>“Guide to Writing "Readme" Style Metadata”</span> (Research Data Management Service Group), accessed August 27, 2022, <a href="https://data.research.cornell.edu/content/readme" role="doc-biblioref">https://data.research.cornell.edu/content/readme</a>.</span></li>
 <li><span class="citation" data-cites="riedererColumnNamesContracts2020">Emily Riederer <span>“Column <span>Names</span> as <span>Contracts</span>”</span> (Emily Riederer, September 6, 2020), <a href="https://emilyriederer.netlify.app/post/column-name-contracts/" role="doc-biblioref">https://emilyriederer.netlify.app/post/column-name-contracts/</a>.</span></li>
+<li><span class="citation" data-cites="Dataprimers2019"><span>“Data-Primers”</span> (DataCurationNetwork, 2019), <a href="https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3" role="doc-biblioref">https://github.com/DataCurationNetwork/data-primers/tree/c6ec438e76fea49eaaf2806bc79ec2c8c12de7f3</a>.</span></li>
 </ul>
 </section>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/spatial-metadata.html">Creating and managing spatial metadata</a></p>
+<p>🖥️ <a href="../slides/spatial-metadata.qmd">Creating and managing spatial metadata</a></p>
 
 
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -994,4 +1007,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_12.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

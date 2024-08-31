@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="dcterms.date" content="2023-09-06">
+  <meta name="dcterms.date" content="2024-08-29">
   <title>GES 668 - Fall 2024 – Getting started with spatial data using {sf} and the {tidyverse}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -402,7 +402,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-09-06</p>
+  <p class="date">2024-08-29</p>
 </section>
 <section id="overview" class="title-slide slide level2 center" data-number="1">
 <h2><span class="header-section-number">1</span> Overview</h2>
@@ -418,7 +418,7 @@
 <h2><span class="header-section-number">2</span> What is R?</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>R is best known for as a <em>statistical</em> programming language often used in data science and research.</p>
+<p>R is best known as a <em>statistical</em> programming language often used in data science and research.</p>
 <p>Like Python or C++, R is an <strong>object-oriented, functional programming language</strong> where the base set of features can be extended through open-source packages or libraries.</p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/R_logo.png"></p>
@@ -458,7 +458,7 @@
 <p>S ran on VAX 11/780 computers like the mainframe above.</p>
 </div>
 <aside class="notes">
-<p>R turns 30 years old this month and is based on a language called S first created at Bell Labs in 1976. S ran on machines like this one.</p>
+<p>R is over 30 years old. It is based on a language called S first created at Bell Labs in 1976. S ran on machines like this one.</p>
 <p>R has included support for a variety of spatial data analysis tasks since 2000.</p>
 <p>The sf package (short for simple features) was first published to CRAN in 2016.</p>
 <style type="text/css">
@@ -605,16 +605,19 @@
 <p>The geometry for a <code>sf</code> data frame is known as a simple feature collection (<code>sfc</code>) object. A <code>sfc</code> object is made up of <code>sfg</code> objects.</p>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="how-are-sf-objects-organized-1" class="title-slide slide level3 center">
+<h3>How are <code>sf</code> objects organized</h3>
+<p>The <code>sf</code> vignette <a href="https://r-spatial.github.io/sf/articles/sf1.html#how-simple-features-in-r-are-organized">Simple Feature for R</a> explains:</p>
 <ul>
 <li><code>sf</code>, the table (data.frame) with feature attributes and “sticky” feature geometries, which <strong>contains</strong></li>
 <li><code>sfc</code>, the list-column with the geometries for each feature (record), which is <strong>composed of</strong></li>
+<li><code>sfg</code>, the feature geometry of an individual simple feature.</li>
 </ul>
-<p>From <a href="https://r-spatial.github.io/sf/articles/sf1.html#how-simple-features-in-r-are-organized">Simple Feature for R</a></p>
 </section>
-<section class="slide level4">
 
+<section id="reading-a-sf-object-from-a-file" class="title-slide slide level3 center">
+<h3>Reading a <code>sf</code> object from a file</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -663,8 +666,9 @@ First 10 features:
 <p><code>&lt;-</code> and <code>=</code> both work as <strong>assignment operators</strong> that <em>assign</em> an object or the output from a function into a new object.</p>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="pulling-out-the-sfc-list" class="title-slide slide level3 center">
+<h3>Pulling out the <code>sfc</code> list</h3>
 <p>You can take a look at the geometry (the <code>sfc</code> list-column) using <code>st_geometry()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">st_geometry</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -693,8 +697,9 @@ First 5 geometries:</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="listing-the-sfc-object-attributes" class="title-slide slide level3 center">
+<h3>Listing the <code>sfc</code> object attributes</h3>
 <p><code>sfc</code> objects have attributes for the coordinate reference system (<code>crs</code>), bounding box (<code>bbox</code>), precision, and number of empty geometries (<code>n_empty</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">attributes</span>(<span class="fu">st_geometry</span>(nc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -733,15 +738,17 @@ $bbox
 </div>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="pulling-out-a-sfg-object" class="title-slide slide level3 center">
+<h3>Pulling out a <code>sfg</code> object</h3>
 <p><code>sfc</code> objects are composed of <code>sfg</code> objects. Each object hold the feature geometry of an individual simple feature.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">st_geometry</span>(nc)[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="creating-sfg-objects-from-scratch" class="title-slide slide level3 center">
+<h3>Creating <code>sfg</code> objects from scratch</h3>
 <p>The <code>{sf}</code> package also includes functions that allow you to build feature geometry from scratch using <code>st_point()</code>, <code>st_linestring()</code>, and other functions:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
@@ -756,27 +763,30 @@ $bbox
 <section>
 <section id="take-a-look-at-sf-and-the-tidyverse-in-action" class="title-slide slide level2 center" data-number="4">
 <h2><span class="header-section-number">4</span> Take a look at <code>{sf}</code> and the tidyverse in action</h2>
+
+</section>
+<section id="installing-packages" class="title-slide slide level3 center">
+<h3>Installing packages</h3>
 <p>Packages are simple to install:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"sf"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>And to load:</p>
+</section>
+
+<section id="loading-packages" class="title-slide slide level3 center">
+<h3>Loading packages</h3>
+<p>And simple to load:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">library</span>(sf)</span>
 <span id="cb17-2"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb17-3"><a></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="slide level4">
 
-</section>
 <section id="tidyverse-packages-are-used-for-everyday-data-analyses" class="title-slide slide level3 center">
 <h3>tidyverse packages are used for everyday data analyses</h3>
 
 <img data-src="images/whole-game.png" class="r-stretch quarto-figure-center"><p class="caption">Courtesy <a href="https://r4ds.hadley.nz/whole-game.html#fig-ds-whole-game">R for Data Science</a></p></section>
-<section class="slide level4">
-
-</section>
 
 <section id="import-spatial-data-from-a-file" class="title-slide slide level3 center">
 <h3>Import spatial data from a file</h3>
@@ -795,8 +805,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="dropping-geometry" class="title-slide slide level3 center">
+<h3>Dropping geometry</h3>
 <p>Or, if you drop the geometry, a <code>sf</code> object is just like a spreadsheet:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">st_drop_geometry</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -879,8 +890,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="ploting-sf-objects" class="title-slide slide level3 center">
+<h3>Ploting <code>sf</code> objects</h3>
 <p>You can plot data with R’s built-in <code>plot()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">plot</span>(md[, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -890,8 +902,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 <p>Square brackets (<code>[]</code>) are an easy way to subset rows and columns.</p>
 </div>
 </section>
-<section class="slide level4">
 
+<section id="summarizing-data-frames-with-summary" class="title-slide slide level3 center">
+<h3>Summarizing data frames with <code>summary()</code></h3>
 <p>You can summarize data using the <code>summary()</code> function:</p>
 <div class="cell" name="summary">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">summary</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -968,16 +981,14 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level4">
-
-</section>
 
 <section id="transform-and-visualize" class="title-slide slide level3 center">
 <h3>Transform and visualize</h3>
 <p>tidyverse packages work well with <code>{sf}</code> for transforming and visualizing spatial data.</p>
 </section>
-<section class="slide level4">
 
+<section id="mapping-with-geom_sf" class="title-slide slide level3 center">
+<h3>Mapping with <code>geom_sf()</code></h3>
 <p>For example, we can use <code>geom_sf()</code> from <code>{ggplot2}</code> to make a simple map:</p>
 <div class="cell" name="geom_sf">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>md_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
@@ -988,7 +999,8 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 </div>
 
 </section>
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide" name="geom_sf">
+
+<section id="mapping-with-geom_sf-output" class="title-slide slide level3 output-location-slide center"><h3>Mapping with <code>geom_sf()</code></h3><div class="cell output-location-slide" name="geom_sf">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -996,8 +1008,8 @@ Projected CRS: WGS 84 / Pseudo-Mercator</code></pre>
 </figure>
 </div>
 </div>
-</div></section><section class="slide level4">
-
+</div></section><section id="get-a-glimpse-of-your-data" class="title-slide slide level3 center">
+<h3>Get a glimpse of your data</h3>
 <p>Take a peek at the values of the data with the <code>glimpse()</code> function from <code>{dplyr}</code>:</p>
 <div class="cell" name="glimpse">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">glimpse</span>(md)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1025,8 +1037,9 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 </div>
 </div>
 </section>
-<section id="using-sf-for-spatial-transformations" class="slide level4">
-<h4>Using <code>{sf}</code> for spatial transformations</h4>
+
+<section id="use-sf-for-spatial-transformations" class="title-slide slide level3 center">
+<h3>Use <code>{sf}</code> for spatial transformations</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><code>{sf}</code> includes a range of spatial transformation functions with names matching the spatial functions of <a href="https://postgis.net/">PostGIS</a>.</p>
@@ -1040,7 +1053,7 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
 </div>
 </div></div>
 <aside class="notes">
-<p>that you might usually do <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm">geoprocessing tools from ArcGIS Pro</a> or the <a href="https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html">QGIS Processing Toolbox</a> at included with the <code>{sf}</code>, <code>{lwgeom}</code>, or another R package.</p>
+<p>Examples of tasks you might usually do <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm">geoprocessing tools from ArcGIS Pro</a> or the <a href="https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html">QGIS Processing Toolbox</a> at included with the <code>{sf}</code>, <code>{lwgeom}</code>, or another R package.</p>
 <ul>
 <li>Get a center point for Baltimore City with <code>st_centroid()</code></li>
 <li>Apply a 25 mile buffer using <code>st_buffer()</code> and <code>as_units()</code> from the <code>{units}</code> package</li>
@@ -1059,8 +1072,9 @@ $ geom     &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8380505 45..., MULTIPOLYGON
           display:block!important;
       }</style></aside>
 </section>
-<section id="using-sf-for-spatial-transformations-1" class="slide level4" data-auto-animate="true">
-<h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
+
+<section id="using-sf-for-spatial-transformations" class="title-slide slide level3 center" data-auto-animate="true">
+<h3 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
 <span id="cb28-2" class="hljs-ln-code"><a></a></span>
@@ -1080,8 +1094,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 </div>
 </div>
 </section>
-<section id="using-sf-for-spatial-transformations-2" class="slide level4" data-auto-animate="true">
-<h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
+
+<section id="using-sf-for-spatial-transformations-1" class="title-slide slide level3 center" data-auto-animate="true">
+<h3 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
 <span id="cb30-2" class="hljs-ln-code"><a></a></span>
@@ -1103,8 +1118,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 </div>
 </div>
 </section>
-<section id="using-sf-for-spatial-transformations-3" class="slide level4" data-auto-animate="true">
-<h4 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h4>
+
+<section id="using-sf-for-spatial-transformations-2" class="title-slide slide level3 center" data-auto-animate="true">
+<h3 data-id="quarto-animate-title">Using <code>{sf}</code> for spatial transformations</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a></a>balt_center <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(md[<span class="dv">3</span>, ])</span>
 <span id="cb32-2" class="hljs-ln-code"><a></a></span>
@@ -1152,8 +1168,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 </div>
 </div>
 </section>
-<section id="using-sf-for-spatial-transformations-4" class="slide level4">
-<h4>Using <code>{sf}</code> for spatial transformations</h4>
+
+<section id="using-sf-for-spatial-transformations-3" class="title-slide slide level3 center">
+<h3>Using <code>{sf}</code> for spatial transformations</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> md) <span class="sc">+</span></span>
 <span id="cb34-2"><a></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
@@ -1176,7 +1193,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           display:block!important;
       }</style></aside>
 </section>
-<section id="using-sf-for-spatial-transformations-4-output" class="slide level4 output-location-slide"><h4>Using <code>{sf}</code> for spatial transformations</h4><div class="cell output-location-slide">
+<section id="using-sf-for-spatial-transformations-3-output" class="title-slide slide level3 output-location-slide center"><h3>Using <code>{sf}</code> for spatial transformations</h3><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -1188,8 +1205,8 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <section id="related-resources" class="title-slide slide level2 center" data-number="5">
 <h2><span class="header-section-number">5</span> Related resources</h2>
 <ul>
-<li>Week 1 <a href="https://bldgspatialdata.github.io/website/weeks/week_01.html#required-readings">Required readings</a> and <a href="https://bldgspatialdata.github.io/website/weeks/week_01.html#optional-readings">Optional readings</a></li>
-<li><a href="https://bldgspatialdata.github.io/website/exercises/exercise_01.html">Exercise 1</a></li>
+<li>Week 1 <a href="../weeks/week_01.html#required-readings">Required readings</a> and <a href="../weeks/week_01.html#optional-readings">Optional readings</a></li>
+<li><a href="../exercises/exercise_01.html">Exercise 1</a></li>
 </ul>
 
 <div class="quarto-auto-generated-content">

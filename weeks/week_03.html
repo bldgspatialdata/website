@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eli Pousson">
 <meta name="dcterms.date" content="2024-09-11">
 
 <title>Week 3 – GES 668 - Fall 2024</title>
@@ -74,7 +75,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Week 3 – GES 668 - Fall 2024">
 <meta property="og:description" content="Transforming data with {dplyr}">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/whole-game.png">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
+<meta property="og:image:height" content="508">
+<meta property="og:image:width" content="1504">
 </head>
 
 <body class="nav-sidebar docked">
@@ -360,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_03.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -414,9 +418,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><a href="https://datamgmtinedresearch.com/structure">Chapter 3 Data Structure</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/" role="doc-biblioref">https://datamgmtinedresearch.com/</a>.</span></li>
-<li><a href="https://r4ds.hadley.nz/data-transform">Ch. 5 Data transformation</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r.geocompx.org/attr.html">Ch. 3 Attribute data operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd (WIP)., 2022, <a href="https://r.geocompx.org/" role="doc-biblioref">https://r.geocompx.org/</a>.</span></li>
+<li><a href="https://datamgmtinedresearch.com/structure">Ch. 3 Data Structure</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/" role="doc-biblioref">https://datamgmtinedresearch.com/</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/data-transform">Ch. 5 Data transformation</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/attr">Ch. 3 Attribute data operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org" role="doc-biblioref">https://r.geocompx.org</a>.</span></li>
 </ul>
 </section>
 <section id="optional-readings" class="level3">
@@ -439,8 +443,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1006,4 +1008,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_03.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

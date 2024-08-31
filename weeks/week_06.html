@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eli Pousson">
 <meta name="dcterms.date" content="2024-10-02">
 
 <title>Week 6 – GES 668 - Fall 2024</title>
@@ -73,7 +74,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 6 – GES 668 - Fall 2024">
-<meta property="og:description" content="Applying spatial transformations and geometric operations using {sf}">
+<meta property="og:description" content="This week we are learning more about the spatial, geometry, and geometric operations available through the {sf} package.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/GDALLogoColor.svg">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
 </head>
 
@@ -359,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_06.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -388,6 +390,12 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Summary</div>
+    This week we are learning more about the spatial, geometry, and geometric operations available through the <code>{sf}</code> package.
+  </div>
+</div>
 
 
 </header>
@@ -409,9 +417,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <section id="required-reading" class="level3">
 <h3 class="anchored" data-anchor-id="required-reading">Required reading</h3>
+<!-- TODO: Consider moving this reading on Joins to the session on tidy data -->
 <ul>
-<li><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r.geocompx.org/geometry-operations">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd (WIP)., 2022, <a href="https://r.geocompx.org/" role="doc-biblioref">https://r.geocompx.org/</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/geometry-operations">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org" role="doc-biblioref">https://r.geocompx.org</a>.</span></li>
 </ul>
 </section>
 </section>
@@ -427,8 +436,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -994,4 +1001,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_06.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

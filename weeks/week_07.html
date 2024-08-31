@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eli Pousson">
 <meta name="dcterms.date" content="2024-10-09">
 
 <title>Week 7 – GES 668 - Fall 2024</title>
@@ -73,8 +74,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 7 – GES 668 - Fall 2024">
-<meta property="og:description" content="Building functions in R and literate programming with Quarto">
+<meta property="og:description" content="This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/rforecology_functions-graphic.png">
 <meta property="og:site_name" content="GES 668 - Fall 2024">
+<meta property="og:image:height" content="1428">
+<meta property="og:image:width" content="2000">
 </head>
 
 <body class="nav-sidebar docked">
@@ -351,7 +355,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
+  </ul></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
   <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
@@ -359,7 +367,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_07.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -367,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_07.html">Week 7</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 7</h1>
-<p class="subtitle lead">Building functions in R and literate programming with Quarto</p>
+<p class="subtitle lead">Writing functions and pipelines</p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -388,18 +396,35 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Summary</div>
+    This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.
+  </div>
+</div>
 
 
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="key-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<ul>
+<li>Introduce process of refactoring code to write functions</li>
+<li>Practice naming functions and adding comments to functions</li>
+<li>Introduce the concept of reproducible data analysis pipelines</li>
+</ul>
+</section>
+</section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><a href="https://r4ds.hadley.nz/functions">Ch. 26 Functions</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition (WIP). (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r.geocompx.org/algorithms.html">Ch. 11 Scripts, algorithms and functions</a> in <span class="citation" data-cites="lovelaceGeocomputation2022">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd (WIP)., 2022, <a href="https://r.geocompx.org/" role="doc-biblioref">https://r.geocompx.org/</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/functions">Ch. 26 Functions</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/" role="doc-biblioref">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/algorithms">Ch. 11 Scripts, algorithms and functions</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org" role="doc-biblioref">https://r.geocompx.org</a>.</span></li>
 <li><a href="https://r4ds.hadley.nz/quarto">Ch. 29 Quarto</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
 </ul>
 </section>
@@ -409,11 +434,12 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="citation" data-cites="leonAccountingMethodsSpreadsheets2021">Sam Leon <span>“Accounting for <span>Methods</span>: <span>Spreadsheets</span>, <span>Scripts</span> and <span>Programming Notebooks</span>,”</span> in <em>The <span>Data Journalism Handbook</span>: <span>Towards A Critical Data Practice</span></em>, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:<a href="https://doi.org/10.2307/j.ctv1qr6smr" role="doc-biblioref">10.2307/j.ctv1qr6smr</a>.</span></li>
 <li><span class="citation" data-cites="mockWelcomeQuartoWorkshop2022"><em>Welcome to <span>Quarto Workshop</span>!</em> (Posit PBC, 2022), <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4" role="doc-biblioref">https://www.youtube.com/watch?v=yvi5uXQMvu4</a>.</span></li>
 </ul>
+<!-- TODO: Consider relocating the Quarto material to a supplement or a different week -->
 </section>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/functions.html">Working with scripts, functions, and Quarto</a></p>
+<p>🖥️ <a href="../slides/functions.html">Writing functions and pipelines</a></p>
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
@@ -423,8 +449,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<br><br>
-<div style="font-size: 0.875em;">Back to <a href="../course-schedule.html">course schedule</a> ⏎</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -990,4 +1014,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_07.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/bldgspatialdata/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
