@@ -3,24 +3,34 @@ project:
   output-dir: "_site"
   render:
     - "*.qmd"
+    - "!exercise*sol.qmd"
+    - "!dev/*"
     - "!TODO.md"
+    - "!CHANGELOG.md"
+
+freeze: auto
+
+csl: files/csl/chicago-author-date.csl
 
 logo: "images/logo.png"
+
+resource-path:
+  - "files"
+  - "images"
 
 website:
   page-navigation: true
   title: "GES 668 - Fall 2024"
   description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023."
-  site-url: "https://bldgspatialdata.github.io/website/"
+  site-url: https://bldgspatialdata.github.io/website/
+  repo-url: https://github.com/bldgspatialdata/website
+  repo-actions: [edit, source, issue]
   announcement:
     icon: info-circle
     dismissable: true
     content: "Note: The 2024 course website is a work-in-progress. Check back soon for updates!"
     type: info
     position: below-navbar
-
-  repo-url: https://github.com/bldgspatialdata/website
-  repo-actions: [edit, issue]
 
   open-graph: true
 
@@ -93,17 +103,17 @@ website:
 format:
   html:
     theme:
-      light: [zephyr, theme.scss]
-      dark:  [zephyr, theme-dark.scss]
+      light: [zephyr, files/theme.scss]
+      dark:  [zephyr, files/theme-dark.scss]
     mainfont: "Atkinson Hyperlegible"
     monofont: "Fira Code"
+    code-link: true
     code-copy: true
     code-overflow: wrap
     toc: true
     highlight-style: a11y
     df-print: tibble
-
-
-freeze: auto
-
-csl: files/csl/chicago-author-date.csl
+    # embed-resources: true
+    author-meta: "Eli Pousson"
+    callout-appearance: simple
+    abstract-title: "Summary"

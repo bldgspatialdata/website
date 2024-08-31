@@ -18,11 +18,11 @@ This week is to learn to use `{dplyr}` and `{sf}` in combination to create and m
 
 ## Prepare
 
-{{< include _readings_04.qmd >}}
+{{< include _readings_spatial-operations.qmd >}}
 
 ## Participate
 
-🖥️ [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.html)
+🖥️ [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.qmd)
 
 ## Practice
 

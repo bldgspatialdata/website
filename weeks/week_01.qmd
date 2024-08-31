@@ -1,15 +1,19 @@
 ---
 title: "Week 1"
 order: 1
-subtitle: "Getting started with spatial data using `{sf}` and the tidyverse"
 date: 2024-08-28
+subtitle: "Welcome to GES668"
+abstract: "Review the course syllabus and structure. Get started with spatial data using `{sf}` and the tidyverse."
+image: /slides/images/allison-horst_sf-illustration.jpeg
 ---
 
 ## Overview
 
-Welcome to Building Spatial Datasets! Our first class starts with a broad introduction to the class, an introduction to the fundamental concepts and skills of reproducible data analysis, and an introduction to using R for working with spatial data.
+Welcome to Building Spatial Datasets!
 
-#### Key Objectives
+Our first session starts with a general introduction to the course and a quick introduction to using R for working with spatial data.
+
+### Key Objectives
 
 -   Provide an overview of the scope and schedule of the course
 -   Introduce the concept of **reproducibility** and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work
@@ -28,47 +32,39 @@ Welcome to Building Spatial Datasets! Our first class starts with a broad introd
 -   Creating and editing Quarto documents with RStudio
 -   Using `sf::st_read()` to read a `sf` object from a file path or URL
 
-::: {.callout-tip appearance="minimal" icon="true"}
-#### Questions for reflection
+## Prepare
 
--   How does coding in R or other languages support reproducible spatial data analysis?
--   Why use R for working with spatial data?
-:::
+::: {.callout-tip appearance="minimal" icon="true" collapse="true"}
 
 ### Getting ready for the first class
 
-Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out [the Prerequisites section from R for Data Science](https://r4ds.hadley.nz/intro#prerequisites) (one of a few books we'll use in our class).
+Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out [the Prerequisites section from R for Data Science](https://r4ds.hadley.nz/intro#prerequisites) (one of a few books we'll use in our class).
 
-Install Git on your computer. The easiest option is to [install the GitHub Desktop application](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) (which installs Git at the same time). Alternatively, [Happy Git and GitHub for the useR](https://happygitwithr.com/install-git) details a few different ways to install Git on Windows, OSX, or Linux.
+Install Git on your computer. The easiest option is to [install the GitHub Desktop application](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) (which installs Git at the same time). Alternatively, [Happy Git and GitHub for the useR](https://happygitwithr.com/install-git) details a few different ways to install Git on Windows, OSX, or Linux.
 
-[Sign up for a GitHub user account](https://github.com/signup). I use GitHub to distribute assignments and you will use GitHub to submit assignments. [GitHub](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) makes it easier to use Git for version control and is the most popular platform for collaborative development work. People use GitHub for everything from writing R packages to textbooks!
+[Sign up for a GitHub user account](https://github.com/signup). I use GitHub to distribute assignments and you will use GitHub to submit assignments. [GitHub](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) makes it easier to use Git for version control and is the most popular platform for collaborative development work. People use GitHub for everything from writing R packages to textbooks!
 
 [Join our course Discord](https://discord.gg/k7JkwD6R). I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.
 
 [Complete the student survey](https://docs.google.com/forms/d/e/1FAIpQLScRg0oOK9y50PrwhRAvux0-ANVvi6vkeebATHX9iH4Lia5fbA/viewform?usp=sf_link). This is how you share your GitHub username. I'd also love to know more about what experiences you're bringing to the class and what you hope to learn.
 
-If you have not done any programming before, I'd recommend taking some time to review [The Very Basics](https://rstudio-education.github.io/hopr/basics.html) and [Packages and Help Pages](https://rstudio-education.github.io/hopr/packages.html) (section 2 and 3 from [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)).
+If you have not done any programming before, I'd recommend taking some time to review [The Very Basics](https://rstudio-education.github.io/hopr/basics.html) and [Packages and Help Pages](https://rstudio-education.github.io/hopr/packages.html) (section 2 and 3 from [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)).
+:::
 
-## Prepare
-
-{{< include _readings_01.qmd >}}
+{{< include _readings_intro.qmd >}}
 
 ## Participate
 
-🖥️ [Welcome to GES 668](/slides/welcome.html)
+🖥️ [Welcome to GES 668](/slides/welcome.qmd)
 
-🖥️ [Introduction to Spatial Data with R](/slides/spatial-data.html)
+🖥️ [Introduction to Spatial Data with R](/slides/spatial-data.qmd)
 
 ## Practice
 
-🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0{{< meta order >}}.html)
+🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0{{< meta order >}}.qmd)
 
+<!--
 ### Review
 
-Here is a quick summary of what we learned this week:
-
--   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane (check out the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf) for a quick reference)
--   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
--   How `sf` objects are structured around attributes and geometries
-- How R code is executed within a development environment where packages or objects are loaded
--   How and when to restart an R session to reset the environment
+{{< include _review_intro.qmd >}}
+-->

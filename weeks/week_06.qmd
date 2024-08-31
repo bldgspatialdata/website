@@ -1,8 +1,10 @@
 ---
 title: "Week 6"
 order: 6
-subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
 date: 2024-10-02
+subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
+abstract: "This week we are learning more about the spatial, geometry, and geometric operations available through the `{sf}` package."
+image: /slides/images/GDALLogoColor.svg
 ---
 
 ## Overview
@@ -16,11 +18,11 @@ date: 2024-10-02
 
 ## Prepare
 
-{{< include _readings_06.qmd >}}
+{{< include _readings_geometry-operations.qmd >}}
 
 ## Participate
 
-🖥️ [Getting started with spatial data using sf and the tidyverse](/slides/spatial-data.html)
+🖥️ [Getting started with spatial data using sf and the tidyverse](/slides/spatial-data.qmd)
 
 ## Practice
 

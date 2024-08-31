@@ -1,0 +1,11 @@
+### Required readings
+
+-   [Ch. 8 Geographic data I/O](https://r.geocompx.org/read-write) in @lovelaceGeocomputation2025
+-   [Ch. 20 Spreadsheets](https://r4ds.hadley.nz/spreadsheets) in @wickhamDataScienceImport2023
+
+### Optional readings
+
+-   [Ch. 21 Databases](https://r4ds.hadley.nz/databases) in @wickhamDataScienceImport2023
+-   @macwrightMoreYouEver2015
+-   @opengeolabsSwitchShapefile2017
+-   @spatialdataonthewebworkinggroupSpatialDataWeb2017

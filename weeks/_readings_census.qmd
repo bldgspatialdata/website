@@ -1,7 +1,6 @@
 ### Required readings
 
 -   [Ch. 5 Census Geographic Data and Applications in R](https://walker-data.com/census-r/census-geographic-data-and-applications-in-r.html) in @walkerAnalyzingUSCensus2022
--   @boukPrimerPowerfulNumbers2022
 -   @walkerSpatialAnalysisUS2021
 
 ### Optional readings

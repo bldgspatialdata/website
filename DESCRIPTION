@@ -4,20 +4,53 @@ Authors@R:
     person("Eli", "Pousson", , "eli.pousson@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8280-1706"))
 Description: Course website for GES668
+URL: https://github.com/bldgspatialdata/website/
+BugReports: https://github.com/bldgspatialdata/website/issues
+Imports:
+    arcgislayers,
+    dplyr,
+    fs,
+    ggplot2,
+    ghclass,
+    googlesheets4,
+    gt,
+    here,
+    hrbrthemes,
+    lubridate,
+    lwgeom,
+    nycflights13,
+    packageRank,
+    patchwork,
+    pilot,
+    purrr,
+    rlang,
+    rnaturalearth,
+    scales,
+    sf,
+    skimr,
+    spData,
+    stringr,
+    tibble,
+    tidyr,
+    tidyselect,
+    tidyverse,
+    tigris,
+    Tmisc,
+    units,
+    usethis,
+    ymlthis
+Suggests:
+    attachment,
+    clipr,
+    mapbaltimore,
+    mapmaryland,
+    maplayer,
+    sfext
+Remotes:
+    elipousson/mapbaltimore
+    elipousson/maplayer
+    elipousson/mapmaryland
+    elipousson/sfext
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports:
-  dplyr,
-  forcats,
-  ggplot2,
-  gt,
-  tidyr,
-  sf,
-  stringr
-Suggests:
-  ggrepel,
-  ggtext,
-  patchwork,
-  smoothr,
-  spData

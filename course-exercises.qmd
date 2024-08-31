@@ -18,7 +18,7 @@ Don't forget to connect RStudio to GitHub before working on the class exercises!
 
 ## Download or update your exercise repository
 
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 ### What is a repository?
 
 A repository is a collection of files where changes can be tracked and managed using a version control system. Git is a version control system. GitHub is a web service that makes it easier to manage version-controlled repositories and collaborate with others. For more background, read [Ch. 1 Why Git? Why GitHub?](https://happygitwithr.com/big-picture) from Happy Git and GitHub for the useR by Jenny Bryan.
@@ -45,7 +45,7 @@ The process for completing will be mostly the same for each week of the class.
 -   Using the "Files" tab pane, locate the `exercise_01.qmd` file (or the number exercise file for this week) and open it. The file extension (`.qmd`) is short for Quarto Markdown document.
 -   If you can't find this week's exercise file, you may have forgotten to update the repository. Go back and check @sec-update-repo
 
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 ### What is a Quarto document?
 
 A Quarto document is a format that lets you mix blocks (also known as "chunks") of R code with sections of text formatted using [Markdown formatting](https://quarto.org/docs/authoring/markdown-basics.html). This format is similar to an older format known as RMarkdown (`.Rmd`). [Quarto](https://quarto.org/) comes installed with RStudio but it is a separate command line application that can turn a `qmd` document into a standalone [website](https://quarto.org/docs/websites/), a [formatted PDF](https://quarto.org/docs/output-formats/pdf-basics.html), a [presentation](https://quarto.org/docs/presentations/), and more. This course website, for example, is built with Quarto.
@@ -75,7 +75,7 @@ The [Hello, Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.h
 
 -   Remember, you don't need to get everything right and it is OK if your document won't render. Just try your best with each part of the exercise.
 
-::: {.callout-tip collapse="false" appearance="default" icon="true"}
+::: {.callout-tip collapse="false" appearance="default"}
 ## Tips for completing exercises
 
 -   Complete this exercise from top to bottom. Blocks of code at the end of the document may depend on blocks from the beginning or middle so avoid skipping around.
@@ -108,7 +108,7 @@ Here is the step-by-step process (adapted from [Connect RStudio to Git and GitHu
 -   Click "Commit".
 -   Finally, click the green "Push" button to send your local changes to GitHub.
 
-::: {.callout-note collapse="false" appearance="default" icon="true"}
+::: {.callout-note collapse="false" appearance="default"}
 ### When should you commit your changes?
 
 You don't need to wait until you are 100% finished with the exercise to commit your changes. You may want to commit the changes every time you work on the exercise. Please make sure to change the "status" for the exercise from "Available" to "Complete" when your exercise is complete and ready for evaluation. I will typically evaluate the last week's exercises on the Tuesday before each class session. Committing changes as you go can also avoid conflicts if I need to make corrections or additions to some part of the assignment after you started working on it.

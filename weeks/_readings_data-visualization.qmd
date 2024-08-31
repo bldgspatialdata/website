@@ -8,4 +8,4 @@
 
 -   @bentleyWebMediumData2021
 -   ggplot2 workshop [part 1](https://www.youtube.com/watch?v=h29g21z0a68) and [part 2](https://www.youtube.com/watch?v=0m4yywqNPVY) with Thomas Lin Pedersen, 2020
--   [Ch. 9 Mapping](https://r.geocompx.org/mapping) in @lovelaceGeocomputation2022
+-   [Ch. 9 Mapping](https://r.geocompx.org/mapping) in @lovelaceGeocomputation2025

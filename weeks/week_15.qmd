@@ -1,8 +1,8 @@
 ---
 title: "Week 15"
 order: 15
-subtitle: "Final project presentations"
-date: 2023-12-06
+date: 2024-12-04
+subtitle: "Final Project Presentations"
 ---
 
 ::: {.callout-important appearance="simple"}

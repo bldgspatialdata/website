@@ -1,17 +1,27 @@
 ---
 title: "Week 7"
 order: 7
-subtitle: "Building functions in R and literate programming with Quarto"
 date: 2024-10-09
+subtitle: "Writing functions and pipelines"
+abstract: "This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines."
+image: /slides/images/rforecology_functions-graphic.png
 ---
+
+## Overview
+
+### Key Objectives
+
+- Introduce process of refactoring code to write functions
+- Practice naming functions and adding comments to functions
+- Introduce the concept of reproducible data analysis pipelines
 
 ## Prepare
 
-{{< include _readings_07.qmd >}}
+{{< include _readings_functions.qmd >}}
 
 ## Participate
 
-🖥️ [Working with scripts, functions, and Quarto](/slides/functions.html)
+🖥️ [Writing functions and pipelines](/slides/functions.qmd)
 
 ## Practice
 

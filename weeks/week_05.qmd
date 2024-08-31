@@ -1,9 +1,11 @@
 ---
 title: "Week 5"
 order: 5
-subtitle: "Tidying and joining spatial data"
-unit: "Getting started"
 date: 2024-09-25
+subtitle: "Tidying and joining spatial data"
+abstract: "This week we are learning to use `{dplyr}` and `{tidyr}` to join tables and switching data between a wide and long format."
+unit: "Getting started"
+image: /slides/images/st_intersects_postgis-intro.png
 ---
 
 ## Overview
@@ -16,7 +18,7 @@ date: 2024-09-25
 
 ## Prepare
 
-{{< include _readings_05.qmd >}}
+{{< include _readings_tidy-data.qmd >}}
 
 ## Participate
 

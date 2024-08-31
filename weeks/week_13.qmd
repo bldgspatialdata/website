@@ -1,22 +1,16 @@
 ---
 title: "Week 13"
 order: 13
+date: 2024-11-20
 subtitle: "Project check-in meetings"
-date: 2023-11-22
 ---
 
+<!--
 ::: {.callout-important appearance="simple"}
 Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
 :::
-
-::: {.callout-important appearance="simple"}
-Reminder! We have no in-person class on November 22.
-:::
+-->
 
 ## Prepare
 
-{{< include _readings_13.qmd >}}
-
-## Practice
-
-There are no more practice exercises!
+{{< include _readings_local-data.qmd >}}

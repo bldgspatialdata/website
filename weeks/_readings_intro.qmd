@@ -1,7 +1,7 @@
 ### Required readings
 
--   [Ch. 1 Introduction](https://r.geocompx.org/intro) in @lovelaceGeocomputation2022
--   [Ch. 2 Geographic data in R](https://r.geocompx.org/spatial-class) in @lovelaceGeocomputation2022
+-   [Ch. 1 Introduction](https://r.geocompx.org/intro) in @lovelaceGeocomputation2025
+-   [Ch. 2 Geographic data in R](https://r.geocompx.org/spatial-class) in @lovelaceGeocomputation2025
 -   @brunsdonOpeningPracticeSupporting2021
 -   @wilsonGoodEnoughPractices2017
 

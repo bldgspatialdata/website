@@ -1,7 +1,9 @@
 ---
 title: "GES 668: Course Syllabus"
 date-modified: last-modified
-format: 
+format:
+  typst:
+    mainfont: Atkinson Hyperlegible
   html: default
 bibliography: weeks/files/readings.bib
 csl: weeks/files/chicago-syllabus.csl
@@ -73,11 +75,13 @@ All three books are available for free online or available for purchase. Additio
 
 ## Assessment
 
-Assessment for this course includes three parts:
+Assessment for this course includes four parts:
 
 -   **weekly check-ins**,
 
 -   **practice exercises**,
+
+-   **in-class activities**,
 
 -   and a **final project**
 
@@ -104,32 +108,35 @@ Exercises are graded based on completion---so an effort to attempt all parts of 
 -   1: Assignment is submitted but incomplete
 -   0: Assignment not submitted
 
-Students are expected to **submit at least 10 exercises** during the term so may skip up to 2 exercises without penalty. Practice exercises are due the Monday before each class session. For example, the first exercise is introduced on Wednesday, August 30 and should be completed by 11:59 PM on Monday, September 4.
+Students are expected to **submit at least 10 exercises** during the term so may skip up to 2 exercises without penalty. Practice exercises are due the Monday before each class session. For example, if an exercise is introduced on Wednesday, August 30 and should be completed by 11:59 PM on Monday, September 4.
+
+### In-class activities
+
+Class sessions may include short quizzes or collaborative learning activities. These activities, including quizzes, are graded based on completion—not on correct or incorrect answers. If you are unable to participate in an in-class activity, bonus act
 
 ### Final project
 
-All students will participate in a final project that can be completed independently or in collaboration with other students in the class. The project must use data from:
+All students will participate in a final project that can be completed independently or in collaboration with other students in the class.
 
--   OpenStreetMap (accessed with the `{osmdata}` package),
--   American Community Survey data (accessed with the `{tidycensus}` package),
--   or a combination of these and other sources.
+The final project is an opportunity for students to focus on the "models of local practice" described in *All Data Are Local*.
 
-The final project is an opportunity for students to focus on the "models of local practice" described in All Data Are Local---with a special focus on how we can "make place part of data presentation."
+Students are encouraged to connect their project to the Baltimore area (or some place within the Baltimore area).
 
 Typically, the final project should fit into one of two categories:
 
--   A data visualization or interactive that uses the data to tell a story or prompt reflection
+-   A data visualization or interactive that offers a interpretive or descriptive data to understand the data
 
--   An exploratory data analysis that uses the data to ask or answer questions
+-   An exploratory data analysis that asks questions about a dataset
+
+[Learn more about the final project](final-project.qmd).
 
 ### Key dates and deliverables
 
-The assessment of the project is based on four parts:
+The assessment of the project is based on three pieces:
 
 -   A **project proposal** (1-2 pages in length) must be submitted by **November 13 (updated)**.
--   **Peer feedback** on two other proposals completed by **November 22 (updated)**.
 -   An **project presentation** delivered in-class on **December 6 - tentative**.
--   A **project GitHub repository** completed by **December 14 - tentative**.
+-   A **project repository** completed by **December 14 - tentative**.
 
 Evaluation of the final project will be based on both self-assessment by the individual student or group and an instructor assessment. The instructor can also offer bonus points in recognition of exceptional work or, if necessary, adjust points awarded through the student self-assessment.
 
@@ -137,17 +144,18 @@ Evaluation of the final project will be based on both self-assessment by the ind
 
 Assessment in this course is intended to help you focus on completing assignments and keeping up with the material---not getting everything perfect along the way.
 
-You can earn up to a total of 100 points in this class by submitting at least 10 weekly check-ins (30 points), completing 10 exercises (20 points), and completing all four parts of the final project (50 points).
+You can earn up to a total of 100 points in this class by completing in-class activities (15 point), submitting at least 10 weekly check-ins (15 points), completing practice exercises (20 points), and completing all four parts of the final project (50 points).
 
 | Assessment                             | Points |
 |----------------------------------------|--------|
-| Weekly questions                       | 30     |
+| In-class activities                    | 15     |
+| Weekly check-in                        | 15     |
 | Practice exercises                     | 20     |
 | *Final project*                        |        |
-| Project proposal                       | 10     |
-| Peer feedback on two project proposals | 10     |
+| Project proposal                       | 5      |
 | Presentation                           | 10     |
-| Project repository                     | 20     |
+| Project repository                     | 25     |
+| Project self-assessment                | 10     |
 
 ## Policies & Resources
 

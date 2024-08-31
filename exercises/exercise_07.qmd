@@ -5,7 +5,7 @@ date-due: 2023-10-20
 date-modified: last-modified
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
+::: {.callout-important appearance="minimal"}
 Exercise due on {{< meta date-due >}}
 :::
 
@@ -33,7 +33,7 @@ Here are the steps to complete this week's exercise:
 
 3. Insert a new code block and add code to read spatial data into R. You can use `sf::read_sf()` to read data from a URL or file path or you can use one of the data functions we've tried in class, such as `tigris::counties()` or `rnaturalearth::ne_countries(returnclass = "sf")`.
 
-:::{.callout-important collapse=false appearance='default' icon=true}
+:::{.callout-important collapse=false icon=true}
 Don't forget! If you are using a local file, the file size _must_ be less than 50MB or your changes to the repository can't be committed to GitHub. If your file is not a spatial data file (e.g. a CSV file) you should convert the object into a sf object using `sf::st_as_sf()`.
 :::
 
@@ -45,7 +45,7 @@ Don't forget! If you are using a local file, the file size _must_ be less than
 
 7. Finally—render the Quarto document and make sure it can be knit as an HTML page without error! You can also run `quarto::quarto_preview()` in the console to keep a live preview running in the background while you complete the exercise.
 
-:::{.callout-tip collapse=false appearance='default' icon=true}
+:::{.callout-tip collapse=false icon=true}
 ## Use verbs for function names
 
 For each part of this exercise, make sure to use function names that help you and anyone using your code understand what the function does. Using verbs is an easy way to do that.

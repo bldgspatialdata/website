@@ -1,0 +1,165 @@
+---
+order: 0
+title: "Welcome to GES 668: Building Spatial Datasets"
+image: "images/2024-08-28_student-survey.png"
+date: 2024-08-28
+format:
+  revealjs: 
+    auto-animate-easing: ease-in-out
+    auto-animate-unmatched: false
+    preview-links: auto
+    number-sections: false
+---
+
+## What is this class about?
+
+
+## What is this class about?
+
+- Working with data using R
+
+## What is this class about? {auto-animate=true}
+
+- Working with ~~data~~ spatial data using R
+
+## What is this class about? {auto-animate=true}
+
+- Working with spatial data *about places*
+
+## What is this class about? {auto-animate=true}
+
+- Working with spatial data *about **people and** places*
+
+## What is this class about? {auto-animate=true}
+
+- Working with ~~spatial data~~ **local knowledge** about people and places
+
+## Why are you here?
+
+## How did you get here?
+
+This isn't a metaphorical question.
+
+Let's make a map:
+
+- [Open this Felt map and trace a route for your commute to campus today](https://felt.com/map/GES668-Fall-2024-Student-Commutes-16Td7dMHQGiZTkkbsHLEpC?loc=39.3041,-76.6123,11.71z)
+- Start as close or far from home as you like
+- Use the "Details" tab to add a "name" attribute (with your name) and a "mode" attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)
+
+----
+
+::: {.r-fit-text}
+🥳 Congratulations!
+
+We just built some spatial data.
+:::
+
+::: {.smaller}
+We'll come back to it later.
+:::
+
+## What experiences do you bring with you today?
+
+----
+
+![](images/2024-08-28_student-survey.png){width=100%}
+
+::: {.notes}
+What experiences do you bring?
+
+NOTE: Make sure to regenerate the plot using `plot_ges668_student_survey()`
+
+:::
+
+## Why am I here?
+
+A few things about me:
+
+-   I first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007
+-   I started learning R as a student at the John Hopkins University School of Public Health in 2019
+-   I started developing R packages while working at the Neighborhood Design Center in 2020
+-   I work as a community planner at the Baltimore City Department of Planning (since June 2022)
+
+::: {.notes}
+I believe in the potential of data to build power, inform collective action, and make change in the world
+:::
+
+## Communication 📬
+
+- I am not always on top of my email.
+- Please post questions to the Discord if you think other students could help (or others may share your question).
+- If you don't get a timely response by email, message me on Discord.
+
+## Assignments
+
+1. Weekly check-in
+2. Practice exercises
+3. Final project
+
+### Weekly check-in 📝
+
+- The goal of the weekly check-in is to help you stay on top of the reading and get your questions out for everyone to benefit from.
+
+### Practice exercises 🛠️
+
+- Each practice exercise will include a mix of questions and coding prompts excerpted or adapted from R for Data Science, Geocomputation with R, and other resources.
+
+-  Questions may include both close-ended "fill in the blank" style questions and more open-ended prompts.
+
+- Feedback on the exercises is welcome!
+
+### Final project 
+
+The final project includes a few elements:
+
+- A proposal
+- A presentation
+- A reproducible project repository
+
+The proposal and presentation will both be built with [Quarto](https://quarto.org/) using the [HTML document](https://quarto.org/docs/output-formats/html-basics.html) and [Reveal.js presentation](https://quarto.org/docs/presentations/revealjs/) formats.
+
+## Readings 📚
+
+- What are the readings?
+- How can you get the most out of the readings?
+
+### R for Data Science
+
+![](https://r4ds.hadley.nz/cover.jpg)
+
+### Geocomputation with R
+
+![](https://geocompx.org/static/img/book_cover.jpg)
+
+::: footer
+Note that this book also includes extensive information on raster data. This is *not* a topic covered in any detail as part of this class and can be skipped.
+:::
+
+### All Data are Local
+
+![](https://mit-press-us.imgix.net/covers/9780262545174.jpg?auto=format&w=298&dpr=2&q=20)
+
+## Miscellaneous
+
+### Make this a safe and mutually supportive space 
+
+We are all learning! No prior programming experience is required and we should all work to make this an inclusive experienced for everyone.
+
+### Attendance and remote participation
+
+**Do come to class.** You'll get the most out of this semester if you are present and participating.
+
+**Don't come to class sick!** Please prioritize your health and well-being if you are sick or need to care for someone else.
+
+You *can* participate online if you need to. We can screen share sessions to Discord and record lectures if needed.
+
+### Using ChatGPT or other LLM for coding
+
+- You *are* allowed to use ChatGPT or other large language models to help with your project or, if desired, assignments.
+
+- You *must* include information about when and how you use it including your specific prompts and tools used.
+
+- You *should* use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don't let this tool stand in the way of developing your own understanding of R and how it works.
+
+## Welcome again!
+

@@ -1,9 +1,9 @@
 ---
-order: 1
 title: "Getting started with spatial data using `{sf}` and the `{tidyverse}`"
 subtitle: "Session {{< meta order >}}"
 image: "images/allison-horst_sf-illustration.jpeg"
-date: 2023-09-06
+order: 1
+date: 2024-08-29
 ---
 
 ```{r}
@@ -11,14 +11,7 @@ date: 2023-09-06
 #| message: false
 library(tidyverse)
 library(sf)
-library(mapview)
 library(units)
-library(mapboxapi)
-library(tidygeocoder)
-library(tidycensus)
-library(getACS)
-library(gt)
-library(osmdata)
 options("tigris_use_cache" = TRUE)
 ```
 
@@ -32,7 +25,7 @@ options("tigris_use_cache" = TRUE)
 
 ::: columns
 ::: {.column width="70%"}
-R is best known for as a *statistical* programming language often used in data science and research.
+R is best known as a *statistical* programming language often used in data science and research.
 
 Like Python or C++, R is an **object-oriented, functional programming language** where the base set of features can be extended through open-source packages or libraries.
 :::
@@ -67,7 +60,7 @@ S ran on VAX 11/780 computers like the mainframe above.
 :::
 
 ::: notes
-R turns 30 years old this month and is based on a language called S first created at Bell Labs in 1976. S ran on machines like this one.
+R is over 30 years old. It is based on a language called S first created at Bell Labs in 1976. S ran on machines like this one.
 
 R has included support for a variety of spatial data analysis tasks since 2000.
 
@@ -181,14 +174,15 @@ Simple feature objects are a data frame attached to a "sticky" geometry column (
 The geometry for a `sf` data frame is known as a simple feature collection (`sfc`) object. A `sfc` object is made up of `sfg` objects.
 :::
 
-------------------------------------------------------------------------
+### How are `sf` objects organized
+
+The `sf` vignette [Simple Feature for R](https://r-spatial.github.io/sf/articles/sf1.html#how-simple-features-in-r-are-organized) explains:
 
 -   `sf`, the table (data.frame) with feature attributes and "sticky" feature geometries, which **contains**
 -   `sfc`, the list-column with the geometries for each feature (record), which is **composed of**
+- `sfg`, the feature geometry of an individual simple feature.
 
-From [Simple Feature for R](https://r-spatial.github.io/sf/articles/sf1.html#how-simple-features-in-r-are-organized)
-
-------------------------------------------------------------------------
+### Reading a `sf` object from a file
 
 ```{r}
 nc <- st_read(system.file("shape/nc.shp", package = "sf"))
@@ -200,7 +194,7 @@ nc
 `<-` and `=` both work as **assignment operators** that *assign* an object or the output from a function into a new object.
 :::
 
-------------------------------------------------------------------------
+### Pulling out the `sfc` list
 
 You can take a look at the geometry (the `sfc` list-column) using `st_geometry()`:
 
@@ -209,7 +203,7 @@ You can take a look at the geometry (the `sfc` list-column) using `st_geometry()
 st_geometry(nc)
 ```
 
-------------------------------------------------------------------------
+### Listing the `sfc` object attributes
 
 `sfc` objects have attributes for the coordinate reference system (`crs`), bounding box (`bbox`), precision, and number of empty geometries (`n_empty`).
 
@@ -217,7 +211,7 @@ st_geometry(nc)
 attributes(st_geometry(nc))
 ```
 
-------------------------------------------------------------------------
+### Pulling out a `sfg` object
 
 `sfc` objects are composed of `sfg` objects. Each object hold the feature geometry of an individual simple feature.
 
@@ -225,7 +219,7 @@ attributes(st_geometry(nc))
 st_geometry(nc)[[1]]
 ```
 
-------------------------------------------------------------------------
+### Creating `sfg` objects from scratch
 
 The `{sf}` package also includes functions that allow you to build feature geometry from scratch using `st_point()`, `st_linestring()`, and other functions:
 
@@ -239,6 +233,8 @@ st_linestring(matrix(c(0, 0, 1, 1), , 2))
 
 ## Take a look at `{sf}` and the tidyverse in action
 
+### Installing packages
+
 Packages are simple to install:
 
 ```{r}
@@ -246,7 +242,9 @@ Packages are simple to install:
 install.packages(c("sf", "ggplot2", "dplyr"))
 ```
 
-And to load:
+### Loading packages
+
+And simple to load:
 
 ```{r}
 #| eval: false
@@ -255,13 +253,9 @@ library(ggplot2)
 library(dplyr)
 ```
 
-------------------------------------------------------------------------
-
 ### tidyverse packages are used for everyday data analyses
 
 ![Courtesy [R for Data Science](https://r4ds.hadley.nz/whole-game.html#fig-ds-whole-game)](images/whole-game.png)
-
-------------------------------------------------------------------------
 
 ### Import spatial data from a file
 
@@ -273,7 +267,7 @@ Using the `{sf}` package, you can use `st_read()` to read data into R from a loc
 md <- st_read("files/md_counties.gpkg")
 ```
 
-------------------------------------------------------------------------
+### Dropping geometry
 
 Or, if you drop the geometry, a `sf` object is just like a spreadsheet:
 
@@ -281,7 +275,7 @@ Or, if you drop the geometry, a `sf` object is just like a spreadsheet:
 st_drop_geometry(md)
 ```
 
-------------------------------------------------------------------------
+### Ploting `sf` objects 
 
 You can plot data with R's built-in `plot()` function:
 
@@ -293,7 +287,7 @@ plot(md[, 2])
 Square brackets (`[]`) are an easy way to subset rows and columns.
 :::
 
-------------------------------------------------------------------------
+### Summarizing data frames with `summary()`
 
 You can summarize data using the `summary()` function:
 
@@ -330,13 +324,11 @@ Notably, the development of these packages is supported by Posit---but they are 
 sf works well with tidyverse packages and I use them extensively in my own work.
 :::
 
-------------------------------------------------------------------------
-
 ### Transform and visualize
 
 tidyverse packages work well with `{sf}` for transforming and visualizing spatial data.
 
-------------------------------------------------------------------------
+### Mapping with `geom_sf()`
 
 For example, we can use `geom_sf()` from `{ggplot2}` to make a simple map:
 
@@ -350,7 +342,7 @@ md_map <- ggplot(data = md) +
 md_map
 ```
 
-------------------------------------------------------------------------
+### Get a glimpse of your data
 
 Take a peek at the values of the data with the `glimpse()` function from `{dplyr}`:
 
@@ -359,9 +351,7 @@ Take a peek at the values of the data with the `glimpse()` function from `{dplyr
 glimpse(md)
 ```
 
-------------------------------------------------------------------------
-
-#### Using `{sf}` for spatial transformations
+### Use `{sf}` for spatial transformations
 
 ::: columns
 ::: {.column width="60%"}
@@ -376,7 +366,8 @@ To show how this works, we can get the center of Baltimore City, buffer by 25 mi
 :::
 
 ::: notes
-that you might usually do [geoprocessing tools from ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm) or the [QGIS Processing Toolbox](https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html) at included with the `{sf}`, `{lwgeom}`, or another R package.
+
+Examples of tasks you might usually do [geoprocessing tools from ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm) or the [QGIS Processing Toolbox](https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html) at included with the `{sf}`, `{lwgeom}`, or another R package.
 
 -   Get a center point for Baltimore City with `st_centroid()`
 -   Apply a 25 mile buffer using `st_buffer()` and `as_units()` from the `{units}` package
@@ -384,7 +375,7 @@ that you might usually do [geoprocessing tools from ArcGIS Pro](https://pro.arcg
 -   Now we can combine our earlier map with the transformed data
 :::
 
-#### Using `{sf}` for spatial transformations {auto-animate="true"}
+### Using `{sf}` for spatial transformations {auto-animate="true"}
 
 ```{r}
 balt_center <- st_centroid(md[3, ])
@@ -392,7 +383,7 @@ balt_center <- st_centroid(md[3, ])
 balt_center
 ```
 
-#### Using `{sf}` for spatial transformations {auto-animate="true"}
+### Using `{sf}` for spatial transformations {auto-animate="true"}
 
 ```{r}
 balt_center <- st_centroid(md[3, ])
@@ -402,7 +393,7 @@ balt_area <- st_buffer(balt_center, dist = as_units(25, "mi"))
 balt_area
 ```
 
-#### Using `{sf}` for spatial transformations {auto-animate="true"}
+### Using `{sf}` for spatial transformations {auto-animate="true"}
 
 ```{r}
 balt_center <- st_centroid(md[3, ])
@@ -414,7 +405,7 @@ balt_area_counties <- st_filter(md, balt_area, .predicate = st_intersects)
 balt_area_counties
 ```
 
-#### Using `{sf}` for spatial transformations
+### Using `{sf}` for spatial transformations
 
 ```{r}
 #| output-location: slide
@@ -431,5 +422,5 @@ Visual checks remain an important part of a workflow even when using a non-graph
 
 ## Related resources
 
--   Week 1 [Required readings](https://bldgspatialdata.github.io/website/weeks/week_01.html#required-readings) and [Optional readings](https://bldgspatialdata.github.io/website/weeks/week_01.html#optional-readings)
--   [Exercise 1](https://bldgspatialdata.github.io/website/exercises/exercise_01.html)
+-   Week 1 [Required readings](/weeks/week_01.html#required-readings) and [Optional readings](/weeks/week_01.html#optional-readings)
+-   [Exercise 1](/exercises/exercise_01.html)

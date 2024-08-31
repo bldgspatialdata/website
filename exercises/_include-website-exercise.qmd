@@ -1,0 +1,5 @@
+::: {.callout-important appearance="minimal" icon="true"}
+Exercise due on {{< meta date-due >}}
+:::
+
+ℹ️ See [week {{< meta order >}}](../weeks/week_0{{< meta order >}}.qmd) for related slides and readings

@@ -1,6 +1,6 @@
 ---
 title: "Effective visualization with `{ggplot2}` and R"
-date: 2023-11-29
+order: 15
 ---
 
 ## Where to start?
@@ -56,7 +56,6 @@ But there are also some cartographic considerations that apply to maps in specia
 -   Feature geometry (and cartographic conventions)
 -   Projections
 -   Scaling
-
 
 ## Items, Attributes, Marks, and Channels
 

@@ -1,53 +1,16 @@
 ---
 order: 7
-title: "Working with scripts, functions, and Quarto"
+title: "Writing functions and pipelines"
 subtitle: "Session {{< meta order >}}"
-date: 2023-10-11
-image: "images/rforecology_functions-graphic.png"
+image: images/rforecology_functions-graphic.png
 ---
+
+# Functions
 
 ```{r}
 #| echo: false
 library(tidyverse)
 ```
-
-### Accounting for Methods
-
-This first part of the lecture is based on the *Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks* chapter by Sam Leon from *The Data Journalism Handbook: Towards A Critical Data Practice.*
-
-------------------------------------------------------------------------
-
-How you that the sources you have used is reliable and that the work done to derive your conclusions is sound?
-
-::: notes
-"Reproducibility is widely regarded as a pillar of the modern scientif ic method. It aids in the process of corroborating results and identifying and addressing problematic findings or questionable theories."
-:::
-
-------------------------------------------------------------------------
-
-*What is the issue?*
-
-Common tools like Excel "[hide] much of the process of working with data by design."
-
-------------------------------------------------------------------------
-
-*What is the alternative?*
-
-Literate programming: "an approach to writing computer code where the author intersperses code with ordinary human language explaining the steps taken."
-
-------------------------------------------------------------------------
-
-> The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. (Knuth, 1984)
-
-------------------------------------------------------------------------
-
-> He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other. (Knuth, 1984)
-
-------------------------------------------------------------------------
-
-Publishing code can also aid collaboration between organizations!
-
-## Functions
 
 ![How to create a custom function in R](images/rforecology_functions-graphic.png){.r-stretch}
 
@@ -62,6 +25,19 @@ Source: [How to create your own function in R](https://www.rforecology.com/post/
 2.  Update code in one place, instead of many
 3.  Reduce chance of making copy and paste mistakes
 4.  Reuse work from project-to-project
+
+### What is refactoring?
+
+Refactoring is the process of making code:
+
+- easier to understand
+- cheaper to modify
+
+...without changing behavior.
+
+::: footer
+Source: [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels) (2018)
+:::
 
 ### Types of functions
 
@@ -116,25 +92,9 @@ row_adder()
 permutation()
 ```
 
-### Formatting functions
-
-```{r}
-# Good
-alphabet <- function(A = 1,
-                     B = 2,
-                     C = 3,
-                     D = 4,
-                     E = 5,
-                     case = "upper",
-                     ...) {
-  ...
-}
-
-# Bad
-alphabet <- function(A = 1, B = 2, C = 3, D = 4, E = 5, case = "upper", ...) {
-  ...
-}
-```
+::: footer
+Source: [Functions](https://style.tidyverse.org/functions.html#naming) from [The tidyverse style guide](https://style.tidyverse.org/index.html).
+:::
 
 ### Using `return()`
 
@@ -166,9 +126,17 @@ is_it_wednesday <- function(x) {
 }
 ```
 
+::: footer
+Source: [Functions](https://style.tidyverse.org/functions.html#return) from [The tidyverse style guide](https://style.tidyverse.org/index.html).
+:::
+
 ### Using comments
 
 Use comments to explain the "why" not the "what" or "how".
+
+::: footer
+Source: [Functions](https://style.tidyverse.org/functions.html) from [The tidyverse style guide](https://style.tidyverse.org/index.html).
+:::
 
 ### Types of vector functions
 
@@ -183,6 +151,15 @@ If a function is type-stable it satisfies two conditions:
 
 -   If the function uses ..., the order of arguments in does not affect the output type.
 
+::: footer
+Source: [Type-stability](https://design.tidyverse.org/out-type-stability.html) from [The tidyverse style guide](https://style.tidyverse.org/index.html).
+:::
+
+<!--
+### Refactoring
+
+-->
+
 ### Designing a "tidy" function
 
 Four guiding principles for the "tidyverse":
@@ -192,7 +169,14 @@ Four guiding principles for the "tidyverse":
 3.  composable
 4.  inclusive
 
+::: footer
+From [Unifying principles](https://design.tidyverse.org/unifying.html) in [Tidy design principles](https://design.tidyverse.org/) (WIP)
+:::
+
 ::: notes
+
+Notes excerpted from Tidy design principles:
+
 1.  It is human centered, i.e. the tidyverse is designed specifically to support the activities of a human data analyst.
 
 2.  It is consistent, so that what you learn about one function or package can be applied to another, and the number of special cases that you need to remember is as small as possible.
@@ -202,42 +186,5 @@ Four guiding principles for the "tidyverse":
 4.  It is inclusive, because the tidyverse is not just the collection of packages, but it is also the community of people who use them.
 :::
 
-### Why Quarto?
+# Pipelines
 
-1.  communicating to decision-makers
-2.  collaborating with other data scientists
-3.  as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.
-
-It contains three important types of content:
-
-1.  An (optional) YAML header surrounded by `---`s.
-2.  Chunks of R code surrounded by ````` ```` `````.
-3.  Text mixed with simple text formatting like `# heading` and `_italics_`.
-
-### What happens when you render a Quarto document?
-
-![](https://r4ds.hadley.nz/images/quarto-flow.png)
-
-::: notes
-When you render the document, Quarto sends the `.qmd` file to **knitr**, <https://yihui.org/knitr/>, which executes all of the code chunks and creates a new markdown (`.md`) document which includes the code and its output. The markdown file generated by knitr is then processed by **pandoc**, [https://pandoc.org](https://pandoc.org/), which is responsible for creating the finished file.
-:::
-
-### How do you maximize reproducibility with Quarto?
-
-![](https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/fig/01-fig4.png)
-
-------------------------------------------------------------------------
-
-https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/08-code-chunks/index.html#key-points
-
--   Learn how to externally source code `source()`
-
--   Learn how to modularize your code to make it more reproducible
-
--   Use a chunk at the beginning of your document to load libraries and data globally to make your document more efficient.
-
-### How do you insert citations into a Quarto document?
-
-Write a function for calculating the "roundness" of a POLYGON geometry. [Take a look at Wikipedia](https://en.wikipedia.org/wiki/Roundness) for details but use the formula:
-
-Roundness = (4π × Area) / Perimeter\^2

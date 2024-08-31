@@ -1,10 +1,8 @@
 ---
-order: 12
 title: "Reading and writing spatial data"
 subtitle: "Session {{< meta order >}}"
-date: 2023-11-08
-error: true
-image: "images/2016-11-29_openeo_gdal-diagram.png"
+order: 11
+image: images/2016-11-29_openeo_gdal-diagram.png
 ---
 
 ## Spatial data is everywhere

@@ -1,8 +1,8 @@
 ### Required readings
 
--   [Chapter 3 Data Structure](https://datamgmtinedresearch.com/structure) in @lewisDataManagementLargeScale2024
+-   [Ch. 3 Data Structure](https://datamgmtinedresearch.com/structure) in @lewisDataManagementLargeScale2024
 -   [Ch. 5 Data transformation](https://r4ds.hadley.nz/data-transform) in @wickhamDataScienceImport2023
--   [Ch. 3 Attribute data operations](https://r.geocompx.org/attr.html) in @lovelaceGeocomputation2022
+-   [Ch. 3 Attribute data operations](https://r.geocompx.org/attr) in @lovelaceGeocomputation2025
 
 ### Optional readings
 

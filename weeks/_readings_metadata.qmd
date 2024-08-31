@@ -1,11 +1,11 @@
 ### Required readings
 
+-   [Ch. 8 Documentation](https://datamgmtinedresearch.com/document.html) in @lewisDataManagementLargeScale2024
 -   [Ch. 7 Show Your Work](https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3) in @dignazioDataFeminism2020
 -   @pileggiCaseVariableLabels2022
--   @Dataprimers2019
 
 ### Optional readngs
 
 -   @GuideWritingReadme
 -   @riedererColumnNamesContracts2020
-
+-   @Dataprimers2019

@@ -22,7 +22,11 @@ This project has three parts:
 2.  An short *recorded* presentation about your project (due **{{< var dates.project.presentation >}}**)
 3.  A project GitHub repository including code, data, output files, and a README (due **{{< var dates.project.repo >}}**)
 
+You are also expected to complete a final self-assessment reflecting on your project by **{{< var dates.project.self >}}** .
+
+<!--
 You are also expected to share peer feedback on two other project presentations completed by **{{< var dates.project.feedback >}}** (updated).
+-->
 
 ## Project proposal
 
