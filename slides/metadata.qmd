@@ -322,6 +322,8 @@ Created in October 2015, the [International Open Data Charter](https://opendatac
 ![Cover of the International Open Data Charter](images/opendatacharter-charter_cover.png)
 :::
 
+::::
+
 ::: notes
 1.  Open By Default This represents a real shift in how government operates and how it interacts with citizens. At the moment we often have to ask officials for the specific information we want. Open by default turns this on its head and says that there should be a presumption of publication for all. Governments need to justify data that's kept closed, for example for security or data protection reasons. To make this work, citizens must also feel confident that open data will not compromise their right to privacy.
 
