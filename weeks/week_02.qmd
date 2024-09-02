@@ -22,11 +22,15 @@ This week is all about making plots and maps using the `{ggplot}` package. Learn
 -   Introduce the concept of a "pipe" (`%>%` or `|>`) and how and when to use it
 -   Introduce the concept of the "grammar of graphics"
 -   Practice plotting and mapping data with `{ggplot2}`
--   Practice mapping data with `{mapview}` (TODO: Make sure interactive maps are included in the slides/exercise)
+-   Practice mapping data with `{mapview}`
+
+<!--
+TODO: Make sure interactive maps are included in the slides/exercise
+-->
 
 ### Key Skills
 
-- Using keyboard shortcuts in RStudio (TODO: Add keyboard shortcut for a pipe and assignment operator)
+- Using keyboard shortcuts in RStudio
 - Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
 - Creating static maps using `geom_sf()` and `coord_sf()`
 - Creating interactive maps using `mapview()`

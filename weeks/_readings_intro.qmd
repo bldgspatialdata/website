@@ -4,6 +4,7 @@
 -   [Ch. 2 Geographic data in R](https://r.geocompx.org/spatial-class) in @lovelaceGeocomputation2025
 -   @brunsdonOpeningPracticeSupporting2021
 -   @wilsonGoodEnoughPractices2017
+-   [Ch. 3 Workflow: basics](https://r4ds.hadley.nz/workflow-basics) in @wickhamDataScienceImport2023
 
 ### Optional readings
 

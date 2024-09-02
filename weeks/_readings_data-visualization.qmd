@@ -1,11 +1,20 @@
 ### Required readings
 
 -   [Ch. 2 Data visualization](https://r4ds.hadley.nz/data-visualize) in @wickhamDataScienceImport2023
--   [Ch. 3 Workflow: basics](https://r4ds.hadley.nz/workflow-basics) in @wickhamDataScienceImport2023
 -   [Ch. 6 Maps](https://ggplot2-book.org/maps.html) in @wickhamGgplot2ElegantGraphics2023
+-   [Ch. 6 Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts) in @wickhamDataScienceImport2023
 
 ### Optional readings
 
--   @bentleyWebMediumData2021
+Additional resources on data visualization and mapping with R:
+
 -   ggplot2 workshop [part 1](https://www.youtube.com/watch?v=h29g21z0a68) and [part 2](https://www.youtube.com/watch?v=0m4yywqNPVY) with Thomas Lin Pedersen, 2020
 -   [Ch. 9 Mapping](https://r.geocompx.org/mapping) in @lovelaceGeocomputation2025
+
+Additional reading on data visualization:
+
+-   @bentleyWebMediumData2021
+
+Additional resources on working with projects:
+
+- [R-Ladies STL: Project Oriented Workflows](https://www.youtube.com/watch?v=T4V1SMVllvY) with Shannon Pileggi (September 11, 2023) - [Slides](https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides/#/title-slide)
