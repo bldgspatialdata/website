@@ -30,8 +30,10 @@ Here are all of the other packages we are using in this class.
 ```{r}
 #| eval: false
 pak::pkg_install(
-  c("mapview", "usethis", "quarto", "sf",
-    "tigris", "rnaturalearth", "spData", "arcgis")
+  c(
+    "mapview", "usethis", "quarto", "sf",
+    "tigris", "rnaturalearth", "spData", "arcgis"
+  )
 )
 ```
 
@@ -41,19 +43,18 @@ Configuring RStudio is something we do together as a class during our first sess
 
 ### Required changes
 
-Options \> General
+Select `Tools \> Global Options` from the menu then:
 
--   Under Workspace Uncheck Restore .RData
+- Under the "Workspace heading", uncheck the "Restore .RData" box.
+- Under the same heading, "Save workspace to .RData on exit." select "Never" from the drop-down.
+- Select the Code panel, then check the box "Use native pipe operator, |> (requires R 4.1+)"
 
 ### Optional changes
 
-Options \> Appearance
+Select `Tools \> Global Options` from the menu then:
 
--   Customize theme
--   Customize pane arrangement
--   Customize fonts
-
-Options \> Pane Layout
+-   Select the "Pane Layout" options. I recommend placing the console in the top-right pane and the help and plot viewer in the bottom left. This is a personal preference and you can try a few options to see what works best for you.
+- Select the "Appearance" options. This is the place you can customize the theme, code editor font, and code editor color scheme. Many programmers find a dark color scheme more readable. You may also want to try installing a "nerd font" or "programming" font. I use a font called [FiraCode](https://github.com/tonsky/FiraCode) but you can find a wide variety of free fonts for [download on this website](https://www.nerdfonts.com/font-downloads).
 
 ### Recommended Resources
 

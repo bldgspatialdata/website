@@ -7,16 +7,51 @@ image: "images/qcbis_workshop03_gglayers-graphic.png"
 format: 
   revealjs:
     output-location: column-fragment
+code-fold: true
 ---
 
 ```{r}
+#| label: setup
 #| echo: false
-
-library(ggplot2)
-library(dplyr)
+#| message: false
+library(tidyverse)
 library(gt)
-```
 
+source(here::here("_common.R"))
+
+gt_theme_ges668_class2 <- function(data) {
+  data |>
+    tab_style(
+      style = cell_text(font = google_font("Atkinson Hyperlegible")),
+      location = cells_body()
+    ) |>
+    tab_style(
+      style = cell_text(font = google_font("Atkinson Hyperlegible"), weight = "bold"),
+      location = cells_column_labels()
+    ) |>
+    tab_style(
+      locations = cells_body(
+        columns = starts_with("set")
+      ),
+      style = cell_fill(color = "gray", alpha = 0.25)
+    ) |>
+    tab_style(
+      locations = cells_body(
+        columns = starts_with("set")
+      ),
+      style = cell_text(size = "small", weight = "bold")
+    )
+}
+
+ges668_plot_theme <- hrbrthemes::theme_ipsum_pub(
+  base_family = "Atkinson Hyperlegible",
+  plot_title_family = "Atkinson Hyperlegible",
+  caption_family = "Atkinson Hyperlegible",
+  axis_title_size = 16,
+  axis_text_size = 16,
+  strip_text_size = 20
+)
+```
 
 # Overview
 
@@ -26,9 +61,9 @@ library(gt)
     -   build layered data visualizations
     -   visualize spatial data
 
-# Why and how do we visualize spatial data?
+## Why and how do we visualize spatial data?
 
-## Why do we visualize spatial data?
+### Why do we visualize spatial data?
 
 Why do we visualize spatial data?
 
@@ -36,48 +71,33 @@ Why do we visualize spatial data?
 - Exploration
 - Communication
 
-----
+### Why do we visualize data?
 
-## Anscombe's quartet
+Why do we visualize data?
 
-To illustrate why visualization is essential, let's look at the Anscombe's Quartet data:
+- Validation
+- Exploration
+- Communication
+
+### Anscombe's quartet
 
 ```{r}
 #| echo: false
 Tmisc::quartet |>
-  dplyr::group_nest(set, keep = TRUE) |>
-  dplyr::pull(data) |>
+  group_nest(set, keep = TRUE) |>
+  pull(data) |>
   purrr::list_cbind(name_repair = "universal") |>
-  gt::gt() |>
-  gt::cols_label(
+  gt() |>
+  cols_label(
     starts_with("set") ~ "",
     starts_with("x") ~ "x",
     starts_with("y") ~ "y"
   ) |>
-  gt::tab_style(
-    style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
-    location = cells_body()
-  ) |>
-  gt::tab_style(
-    style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
-    location = cells_column_labels()
-  ) |>
-  gt::tab_style(
-    locations = cells_body(
-      columns = starts_with("set")
-    ),
-    style = cell_fill(color = "gray", alpha = 0.25)
-  ) |>
-  gt::tab_style(
-    locations = cells_body(
-      columns = starts_with("set")
-    ),
-    style = cell_text(size = "small", weight = "bold")
-  )
+  gt_theme_ges668_class2()
 ```
 
 ::: footer
-This data is from the `{Tmisc}` package but can be found in many places.
+To understand how visualization supports validation, we can take at the Anscombe's Quartet data from the `{Tmisc}`.
 :::
 
 ----
@@ -97,26 +117,9 @@ Tmisc::quartet |>
     sd_y = sd(y),
     r = cor(x, y)
   ) |>
-  gt::gt(groupname_col = "set", row_group_as_column = TRUE) |>
-  gt::fmt_number() |>
-  gt::tab_style(
-    style = cell_text(font = gt::google_font("Atkinson Hyperlegible")),
-    location = cells_body()
-  ) |>
-  gt::tab_style(
-    style = cell_text(font = gt::google_font("Atkinson Hyperlegible"), weight = "bold"),
-    location = cells_column_labels()
-  ) |>
-  gt::tab_style(
-    locations = cells_body(
-      columns = starts_with("set")
-    ),
-    style = cell_text(size = "small", weight = "bold")
-  ) |>
-  gt::tab_style(
-    locations = cells_row_groups(),
-    style = cell_text(size = "small", weight = "bold")
-  )
+  gt(groupname_col = "set", row_group_as_column = TRUE) |>
+  fmt_number() |>
+  gt_theme_ges668_class2()
 ```
 
 ----
@@ -126,20 +129,14 @@ Now, take another look using a plot:
 ```{r}
 #| echo: false
 #| message: false
-ggplot(data = Tmisc::quartet, aes(x, y, color = set)) +
+Tmisc::quartet |>
+  ggplot(aes(x, y, color = set)) +
   geom_smooth(method = "lm", alpha = 0.5, color = "gray30", linewidth = 0.25) +
   geom_point() +
   facet_wrap(~set) +
   scale_color_brewer(palette = "Dark2", type = "qual") +
   guides(color = "none") +
-  hrbrthemes::theme_ipsum_pub(
-    base_family = "Atkinson Hyperlegible",
-    plot_title_family = "Atkinson Hyperlegible",
-    caption_family = "Atkinson Hyperlegible",
-    axis_title_size = 16,
-    axis_text_size = 16,
-    strip_text_size = 20
-  )
+  ges668_plot_theme
 ```
 
 What do you *see*?
@@ -155,7 +152,7 @@ A map is a special type of data visualization for spatial data but it isn't the 
 :::
 
 ::: {.column width='50%'}
-![Key for interpreting Sanborn fire insurance maps courtesy [Library of Congress](https://www.loc.gov/collections/sanborn-maps/about-this-collection/)](https://www.loc.gov/rr/geogmap/sanborn/images/sankey22c.jpg)
+![Key for interpreting Sanborn fire insurance maps courtesy [Library of Congress](https://www.loc.gov/collections/sanborn-maps/about-this-collection/)](https://www.loc.gov/static/collections/sanborn-maps/images/sankey_in2.jpg)
 :::
 
 ::::
@@ -165,7 +162,9 @@ A map is a special type of data visualization for spatial data but it isn't the 
 :::: {.columns}
 
 ::: {.column width='40%'}
-Graphics can be further transformed using **animation** and **interactivity**. Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
+Visuals can be further transformed using **animation** and **interactivity**.
+
+Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
 
 :::
 
@@ -177,9 +176,11 @@ Graphics can be further transformed using **animation** and **interactivity**. M
 
 # What is the "grammar of graphics"?
 
-![Image adapted from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](images/qcbis_workshop03_gglayers-graphic.png)
+## Grammar of graphics {.unnumbered}
 
-----
+![Image from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](images/qcbis_workshop03_gglayers-graphic.png)
+
+## Grammar of graphics {.unnumbered}
 
 - Data
 - Mapping
@@ -286,17 +287,45 @@ We usually think about the [cartesian coordinate system](https://en.wikipedia.or
 -   build layered data visualizations
 -   visualize spatial data
 
-# Build layered data visualizations
+::: notes
 
-## Setup packages
+considerations when visualizing spatial data with ggplot2:
 
-For this session, we are going to use the `{ggplot2}` and `{dplyr}` packages:
+  - feature geometry and aesthetics are related
+  - spatial data benefits from reference geography
+  - other cartographic needs
+
+how to visualize spatial data with ggplot2:
+
+  - make a map with `geom_sf`
+  - change CRS with `coord_sf`
+  - "zoom" to an area with `st_bbox` and `coord_sf`
+  - modify geometry type `st_centroid`
+
+how to visualize spatial data with mapview:
+
+  - make a map with `mapview`
+  - make a color-coded map with the `zcol` argument
+  - make a map with multiple layers by passing a list to `mapview`
+
+:::
+
+## Cheatsheets
+
+- [ggplot2 data visualization cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+## Build layered data visualizations
+
+## Setup
+
+For this session, we are going to use the `{ggplot2}` and `{dplyr}` packages along with `{sf}` and `{rnaturalearth}`:
 
 ```{r}
 #| output-location: default
 library(ggplot2)
 library(dplyr)
 library(sf)
+library(rnaturalearth)
 ```
 
 ## Setup data
@@ -311,7 +340,7 @@ glimpse(storms)
 ```
 
 ::: footer
-When we use `storms`, it is important to remember that each row is an **observation** of a storm, not a summary feature for an individual storm.
+Remember that each row is an **observation** of a storm, not a individual storm.
 :::
 
 ----
@@ -358,6 +387,8 @@ Before we can see any data, we need to tell `ggplot()` how we want to represent 
 
 ::: notes
 The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.
+
+Note that the storms data is *not* spatial at this point.
 :::
 
 ----
@@ -599,9 +630,9 @@ However, to really show the potential, we need some more data. Install and load 
 # pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))
 library(rnaturalearth)
 
-coastline <- ne_coastline(returnclass = "sf")
+coastline <- ne_coastline()
 
-countries <- ne_countries(returnclass = "sf")
+countries <- ne_countries()
 ```
 
 ----
@@ -690,9 +721,7 @@ Gretchen N. Peterson in GIS Cartography: A Guide to Effective Map Design
 
 ::::
 
-----
-
-What makes a bad map *bad*?
+### What makes a bad map *bad*?
 
 For new map makers who might not know any better, it is often:
 
@@ -700,9 +729,7 @@ For new map makers who might not know any better, it is often:
 - Not enough color contrast for features
 - Cluttered labels, legends, or features
 
-----
-
-What makes a fine map *just* fine?
+### What makes a fine map *just* fine?
 
 For more experienced map makers who might be in a hurry:
 
@@ -710,7 +737,7 @@ For more experienced map makers who might be in a hurry:
 - No feature generalization (simplifying geometry where appropriate for the map scale or subject)
 - Inappropriate color scales
 
-----
+### Other related considerations
 
 There are many cartographic considerations that also apply to other all types of data visualization:
 
@@ -719,7 +746,7 @@ There are many cartographic considerations that also apply to other all types of
 - Colors
 - Output formats
 
-----
+### Other cartography considerations
 
 But there are also some cartographic considerations that apply to maps in special and important ways: 
 
