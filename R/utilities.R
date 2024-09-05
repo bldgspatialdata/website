@@ -84,14 +84,16 @@ update_file_yml <- function(path,
 read_qmd_params <- function(path,
                             ...,
                             recurse = FALSE,
-                            keys = c("order",
-                                     "title",
-                                     "subtitle",
-                                     "date",
-                                     "date-due",
-                                     "date-modified",
-                                     "image",
-                                     "abstract"),
+                            keys = c(
+                              "order",
+                              "title",
+                              "subtitle",
+                              "date",
+                              "date-due",
+                              "date-modified",
+                              "image",
+                              "abstract"
+                            ),
                             regex = "qmd$",
                             perl = TRUE) {
   files <- path
@@ -99,7 +101,7 @@ read_qmd_params <- function(path,
   if (fs::is_dir(path)) {
     files <- fs::dir_ls(
       path,
-      regexp = paste0("^", path ,"/_"),
+      regexp = paste0("^", path, "/_"),
       invert = TRUE,
       type = "file"
     )

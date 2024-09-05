@@ -55,12 +55,9 @@ if (FALSE) {
 
 # Review the YAML frontmatter for all of the pages
 if (FALSE) {
-
   dplyr::bind_rows(
     read_qmd_params("exercises"),
     read_qmd_params("slides"),
     read_qmd_params("weeks")
   )
-
-
 }
