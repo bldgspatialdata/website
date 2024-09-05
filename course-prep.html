@@ -439,9 +439,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here are all of the other packages we are using in this class.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"mapview"</span>, <span class="st">"usethis"</span>, <span class="st">"quarto"</span>, <span class="st">"sf"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tigris"</span>, <span class="st">"rnaturalearth"</span>, <span class="st">"spData"</span>, <span class="st">"arcgis"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mapview"</span>, <span class="st">"usethis"</span>, <span class="st">"quarto"</span>, <span class="st">"sf"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tigris"</span>, <span class="st">"rnaturalearth"</span>, <span class="st">"spData"</span>, <span class="st">"arcgis"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="configuring-rstudio" class="level2">
@@ -449,20 +451,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Configuring RStudio is something we do together as a class during our first session. If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class</p>
 <section id="required-changes" class="level3">
 <h3 class="anchored" data-anchor-id="required-changes">Required changes</h3>
-<p>Options &gt; General</p>
+<p>Select <code>Tools \&gt; Global Options</code> from the menu then:</p>
 <ul>
-<li>Under Workspace Uncheck Restore .RData</li>
+<li>Under the “Workspace heading”, uncheck the “Restore .RData” box.</li>
+<li>Under the same heading, “Save workspace to .RData on exit.” select “Never” from the drop-down.</li>
+<li>Select the Code panel, then check the box “Use native pipe operator, |&gt; (requires R 4.1+)”</li>
 </ul>
 </section>
 <section id="optional-changes" class="level3">
 <h3 class="anchored" data-anchor-id="optional-changes">Optional changes</h3>
-<p>Options &gt; Appearance</p>
+<p>Select <code>Tools \&gt; Global Options</code> from the menu then:</p>
 <ul>
-<li>Customize theme</li>
-<li>Customize pane arrangement</li>
-<li>Customize fonts</li>
+<li>Select the “Pane Layout” options. I recommend placing the console in the top-right pane and the help and plot viewer in the bottom left. This is a personal preference and you can try a few options to see what works best for you.</li>
+<li>Select the “Appearance” options. This is the place you can customize the theme, code editor font, and code editor color scheme. Many programmers find a dark color scheme more readable. You may also want to try installing a “nerd font” or “programming” font. I use a font called <a href="https://github.com/tonsky/FiraCode">FiraCode</a> but you can find a wide variety of free fonts for <a href="https://www.nerdfonts.com/font-downloads">download on this website</a>.</li>
 </ul>
-<p>Options &gt; Pane Layout</p>
 </section>
 <section id="recommended-resources" class="level3">
 <h3 class="anchored" data-anchor-id="recommended-resources">Recommended Resources</h3>

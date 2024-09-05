@@ -1,136 +1,157 @@
 [
   {
-    "objectID": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
-    "href": "slides/data-visualization.html#why-do-we-visualize-spatial-data",
+    "objectID": "slides/data-visualization.html#why-and-how-do-we-visualize-spatial-data",
+    "href": "slides/data-visualization.html#why-and-how-do-we-visualize-spatial-data",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "2.1 Why do we visualize spatial data?",
-    "text": "2.1 Why do we visualize spatial data?\nWhy do we visualize spatial data?\n\nValidation\nExploration\nCommunication"
-  },
-  {
-    "objectID": "slides/data-visualization.html#anscombes-quartet",
-    "href": "slides/data-visualization.html#anscombes-quartet",
-    "title": "Visualizing spatial data with ggplot2",
-    "section": "2.2 Anscombe’s quartet",
-    "text": "2.2 Anscombe’s quartet\nTo illustrate why visualization is essential, let’s look at the Anscombe’s Quartet data:\n\n\nError in loadNamespace(x): there is no package called 'Tmisc'\n\n\n\nThis data is from the {Tmisc} package but can be found in many places."
+    "section": "1.1 Why and how do we visualize spatial data?",
+    "text": "1.1 Why and how do we visualize spatial data?"
   },
   {
     "objectID": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
     "href": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "2.3 How do we visualize spatial data?",
-    "text": "2.3 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
+    "section": "1.2 How do we visualize spatial data?",
+    "text": "1.2 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
+  },
+  {
+    "objectID": "slides/data-visualization.html#grammar-of-graphics",
+    "href": "slides/data-visualization.html#grammar-of-graphics",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\nImage from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series"
+  },
+  {
+    "objectID": "slides/data-visualization.html#grammar-of-graphics-1",
+    "href": "slides/data-visualization.html#grammar-of-graphics-1",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\n\nData\nMapping\nStatistics\nScales\nGeometries\nFacets\nCoordinates\nTheme\n\n\nThis introduction to the “grammar of graphics” is based largely on a 2020 ggplot2 workshop (part 1) by Thomas Lin Pedersen."
   },
   {
     "objectID": "slides/data-visualization.html#data",
     "href": "slides/data-visualization.html#data",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.1 Data",
-    "text": "3.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
+    "section": "2.1 Data",
+    "text": "2.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
   },
   {
     "objectID": "slides/data-visualization.html#mapping",
     "href": "slides/data-visualization.html#mapping",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.2 Mapping",
-    "text": "3.2 Mapping\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
+    "section": "2.2 Mapping",
+    "text": "2.2 Mapping\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
   },
   {
     "objectID": "slides/data-visualization.html#statistics",
     "href": "slides/data-visualization.html#statistics",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.3 Statistics",
-    "text": "3.3 Statistics\n\nData may not represent the displayed values\nStatistics transform input variables into displayed values, e.g.\n\nCounting the number of observations by category\nCalculating summary statistics for a boxplot\n\n\n\nStatistics can be used prior to plotting data or used by a plotting function directly."
+    "section": "2.3 Statistics",
+    "text": "2.3 Statistics\n\nData may not represent the displayed values\nStatistics transform input variables into displayed values, e.g.\n\nCounting the number of observations by category\nCalculating summary statistics for a boxplot\n\n\n\nStatistics can be used prior to plotting data or used by a plotting function directly."
   },
   {
     "objectID": "slides/data-visualization.html#scales",
     "href": "slides/data-visualization.html#scales",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.4 Scales",
-    "text": "3.4 Scales\n\nScales translate between value ranges and graphical properties, e.g.\n\nCategories -&gt; Colors\nNumbers -&gt; Position\n\nScales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.\n\n\nIn the not too common case where data directly represents a graphical property, e.g. a “color” column, you can use a special type of scale called an “identity” scale."
+    "section": "2.4 Scales",
+    "text": "2.4 Scales\n\nScales translate between value ranges and graphical properties, e.g.\n\nCategories -&gt; Colors\nNumbers -&gt; Position\n\nScales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.\n\n\nIn the not too common case where data directly represents a graphical property, e.g. a “color” column, you can use a special type of scale called an “identity” scale."
   },
   {
     "objectID": "slides/data-visualization.html#geometries",
     "href": "slides/data-visualization.html#geometries",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.5 Geometries",
-    "text": "3.5 Geometries\n\nHow translate aesthetics into graphical representations\nBasic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)\nTypically, the geometries are the same as the “type” of plot"
+    "section": "2.5 Geometries",
+    "text": "2.5 Geometries\n\nHow translate aesthetics into graphical representations\nBasic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)\nTypically, the geometries are the same as the “type” of plot"
   },
   {
     "objectID": "slides/data-visualization.html#facets",
     "href": "slides/data-visualization.html#facets",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.6 Facets",
-    "text": "3.6 Facets\n\nDefines how data is split across multiple panels"
+    "section": "2.6 Facets",
+    "text": "2.6 Facets\n\nDefines how data is split across multiple panels"
   },
   {
     "objectID": "slides/data-visualization.html#coordinates",
     "href": "slides/data-visualization.html#coordinates",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.7 Coordinates",
-    "text": "3.7 Coordinates\n\nPositional aesthetics must be interpreted by a coordinate system\nDefines the physical mapping of aesthetics to the paper\n\n\nWe usually think about the cartesian coordinate system—but there are a lot of different kinds of coordinate systems."
+    "section": "2.7 Coordinates",
+    "text": "2.7 Coordinates\n\nPositional aesthetics must be interpreted by a coordinate system\nDefines the physical mapping of aesthetics to the paper\n\n\nWe usually think about the cartesian coordinate system—but there are a lot of different kinds of coordinate systems."
   },
   {
     "objectID": "slides/data-visualization.html#theme",
     "href": "slides/data-visualization.html#theme",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "3.8 Theme",
-    "text": "3.8 Theme\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
+    "section": "2.8 Theme",
+    "text": "2.8 Theme\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
   },
   {
-    "objectID": "slides/data-visualization.html#setup-packages",
-    "href": "slides/data-visualization.html#setup-packages",
+    "objectID": "slides/data-visualization.html#cheatsheets",
+    "href": "slides/data-visualization.html#cheatsheets",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "5.1 Setup packages",
-    "text": "5.1 Setup packages\nFor this session, we are going to use the {ggplot2} and {dplyr} packages:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)"
+    "section": "3.1 Cheatsheets",
+    "text": "3.1 Cheatsheets\n\nggplot2 data visualization cheatsheet"
+  },
+  {
+    "objectID": "slides/data-visualization.html#build-layered-data-visualizations",
+    "href": "slides/data-visualization.html#build-layered-data-visualizations",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "3.2 Build layered data visualizations",
+    "text": "3.2 Build layered data visualizations"
+  },
+  {
+    "objectID": "slides/data-visualization.html#setup",
+    "href": "slides/data-visualization.html#setup",
+    "title": "Visualizing spatial data with ggplot2",
+    "section": "3.3 Setup",
+    "text": "3.3 Setup\nFor this session, we are going to use the {ggplot2} and {dplyr} packages along with {sf} and {rnaturalearth}:\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)\nlibrary(rnaturalearth)"
   },
   {
     "objectID": "slides/data-visualization.html#setup-data",
     "href": "slides/data-visualization.html#setup-data",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "5.2 Setup data",
-    "text": "5.2 Setup data\nWe are also going to use the storms data included with {dplyr}.\nTake a quick look at storms using glimpse():\n\nglimpse(storms)\n\n\n\nRows: 19,537\nColumns: 13\n$ name                         &lt;chr&gt; \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\",…\n$ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 1975,…\n$ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…\n$ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 2…\n$ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, 18,…\n$ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33.3,…\n$ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78.7,…\n$ status                       &lt;fct&gt; tropical depression, tropical depression,…\n$ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n$ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40, 4…\n$ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 1011,…\n$ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n$ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…\n\n\n\nWhen we use storms, it is important to remember that each row is an observation of a storm, not a summary feature for an individual storm."
+    "section": "3.4 Setup data",
+    "text": "3.4 Setup data\nWe are also going to use the storms data included with {dplyr}.\nTake a quick look at storms using glimpse():\n\n\nCode\nglimpse(storms)\n#&gt; Rows: 19,537\n#&gt; Columns: 13\n#&gt; $ name                         &lt;chr&gt; \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Am…\n#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…\n#&gt; $ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…\n#&gt; $ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29…\n#&gt; $ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, …\n#&gt; $ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33…\n#&gt; $ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78…\n#&gt; $ status                       &lt;fct&gt; tropical depression, tropical depressi…\n#&gt; $ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40…\n#&gt; $ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 10…\n#&gt; $ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n\n\n\n\n\n\nRemember that each row is an observation of a storm, not a individual storm."
   },
   {
     "objectID": "slides/data-visualization.html#create-a-ggplot",
     "href": "slides/data-visualization.html#create-a-ggplot",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "5.3 Create a ggplot",
-    "text": "5.3 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\nggplot(data = storms)\n\n\n\n\n\n\n\n\n\n\n\nWell, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later."
+    "section": "3.5 Create a ggplot",
+    "text": "3.5 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\n\nCode\nggplot(data = storms)\n\n\n\n\n\n\n\n\n\n\n. . . ::: {.smaller} Well, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later. :::"
   },
   {
     "objectID": "slides/data-visualization.html#add-aesthetics-and-layers",
     "href": "slides/data-visualization.html#add-aesthetics-and-layers",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "5.4 Add aesthetics and layers",
-    "text": "5.4 Add aesthetics and layers"
+    "section": "3.6 Add aesthetics and layers",
+    "text": "3.6 Add aesthetics and layers"
   },
   {
     "objectID": "slides/data-visualization.html#visualizing-distributions",
     "href": "slides/data-visualization.html#visualizing-distributions",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "6.1 Visualizing distributions",
-    "text": "6.1 Visualizing distributions"
+    "section": "4.1 Visualizing distributions",
+    "text": "4.1 Visualizing distributions"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable",
     "href": "slides/data-visualization.html#distribution-of-one-numeric-variable",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "6.2 Distribution of one numeric variable",
-    "text": "6.2 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
+    "section": "4.2 Distribution of one numeric variable",
+    "text": "4.2 Distribution of one numeric variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
     "href": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "6.3 Distribution of one numeric variable",
-    "text": "6.3 Distribution of one numeric variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
+    "section": "4.3 Distribution of one numeric variable",
+    "text": "4.3 Distribution of one numeric variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-categorical-variable",
     "href": "slides/data-visualization.html#distribution-of-one-categorical-variable",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "6.4 Distribution of one categorical variable",
-    "text": "6.4 Distribution of one categorical variable\n\n\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
+    "section": "4.4 Distribution of one categorical variable",
+    "text": "4.4 Distribution of one categorical variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
   },
   {
     "objectID": "exercises/exercise_02.html",
@@ -1600,7 +1621,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Course information",
       "Slides"
@@ -2391,7 +2412,7 @@
     "href": "course-prep.html#installing-r-packages",
     "title": "Preparing for the course",
     "section": "Installing R packages",
-    "text": "Installing R packages\nInstall the tidyverse and sf packages:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"sf\")\n\nWe will use these packages more than anything else.\nNow, install {pak} to get a better than basic installing packages:\n\ninstall.packages(\"pak\")\n\nHere are all of the other packages we are using in this class.\n\npak::pkg_install(\n  c(\"mapview\", \"usethis\", \"quarto\", \"sf\",\n    \"tigris\", \"rnaturalearth\", \"spData\", \"arcgis\")\n)",
+    "text": "Installing R packages\nInstall the tidyverse and sf packages:\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"sf\")\n\nWe will use these packages more than anything else.\nNow, install {pak} to get a better than basic installing packages:\n\ninstall.packages(\"pak\")\n\nHere are all of the other packages we are using in this class.\n\npak::pkg_install(\n  c(\n    \"mapview\", \"usethis\", \"quarto\", \"sf\",\n    \"tigris\", \"rnaturalearth\", \"spData\", \"arcgis\"\n  )\n)",
     "crumbs": [
       "Course information",
       "Prep"
@@ -2402,7 +2423,7 @@
     "href": "course-prep.html#configuring-rstudio",
     "title": "Preparing for the course",
     "section": "Configuring RStudio",
-    "text": "Configuring RStudio\nConfiguring RStudio is something we do together as a class during our first session. If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class\n\nRequired changes\nOptions &gt; General\n\nUnder Workspace Uncheck Restore .RData\n\n\n\nOptional changes\nOptions &gt; Appearance\n\nCustomize theme\nCustomize pane arrangement\nCustomize fonts\n\nOptions &gt; Pane Layout\n\n\nRecommended Resources\n\nReview keyboard shortcuts.\n\n\n\nAlternate IDEs\n\nPositron\n\n\n\nSet up GitHub credentials in RStudio\nIf you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your personal or course repositories.\nThe {usethis} documentation includes detailed article on connecting GitHub and R but it is more detail than you may need. These instructions are a brief summary of that article.\nFirst, install the {usethis} package (if you don’t have it installed already):\n\ninstall.packages(\"usethis\")\n\nThere are three steps to connect GitHub and RStudio:\n\nRun usethis::create_github_token() to get a personal access token and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won’t need to refresh the token until after the end of this course.\nRun gitcreds::gitcreds_set() to put your PAT in your Git credential store.\nRestart your session and run usethis::gh_token_help() to double-check that the token is saved in the right place.\n\nIf you run into any trouble, you can run usethis::git_sitrep() for more feedback on what is set up correctly and what (if anything) might need to be fixed.",
+    "text": "Configuring RStudio\nConfiguring RStudio is something we do together as a class during our first session. If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class\n\nRequired changes\nSelect Tools \\&gt; Global Options from the menu then:\n\nUnder the “Workspace heading”, uncheck the “Restore .RData” box.\nUnder the same heading, “Save workspace to .RData on exit.” select “Never” from the drop-down.\nSelect the Code panel, then check the box “Use native pipe operator, |&gt; (requires R 4.1+)”\n\n\n\nOptional changes\nSelect Tools \\&gt; Global Options from the menu then:\n\nSelect the “Pane Layout” options. I recommend placing the console in the top-right pane and the help and plot viewer in the bottom left. This is a personal preference and you can try a few options to see what works best for you.\nSelect the “Appearance” options. This is the place you can customize the theme, code editor font, and code editor color scheme. Many programmers find a dark color scheme more readable. You may also want to try installing a “nerd font” or “programming” font. I use a font called FiraCode but you can find a wide variety of free fonts for download on this website.\n\n\n\nRecommended Resources\n\nReview keyboard shortcuts.\n\n\n\nAlternate IDEs\n\nPositron\n\n\n\nSet up GitHub credentials in RStudio\nIf you are using RStudio instead of GitHub Desktop to update your repository, you also need to set up some local credentials so GitHub knows that RStudio is allowed to make changes to your personal or course repositories.\nThe {usethis} documentation includes detailed article on connecting GitHub and R but it is more detail than you may need. These instructions are a brief summary of that article.\nFirst, install the {usethis} package (if you don’t have it installed already):\n\ninstall.packages(\"usethis\")\n\nThere are three steps to connect GitHub and RStudio:\n\nRun usethis::create_github_token() to get a personal access token and copy the token to your clipboard. Make sure you are signed in to GitHub in your browser first! I also suggest setting the expiration to 90 days so you won’t need to refresh the token until after the end of this course.\nRun gitcreds::gitcreds_set() to put your PAT in your Git credential store.\nRestart your session and run usethis::gh_token_help() to double-check that the token is saved in the right place.\n\nIf you run into any trouble, you can run usethis::git_sitrep() for more feedback on what is set up correctly and what (if anything) might need to be fixed.",
     "crumbs": [
       "Course information",
       "Prep"
