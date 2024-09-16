@@ -1,17 +1,15 @@
 ---
 title: "Exercise 03"
 order: 3
-status: Available
-date-due: 2023-09-18
-date-modified	: last-modified
+status: available
+date-due: 2024-09-20
+date-modified: last-modified
+error: true
 ---
 
 ::: {.callout-important appearance="minimal"}
 Exercise due on {{< meta date-due >}}
 :::
-
-ℹ️ See [week
-{{< meta order >}}](../weeks/week__0{{< meta order >}}.qmd) for related slides and readings
 
 ## Overview
 
@@ -32,8 +30,8 @@ pak::pkg_install("nycflights13")
 In addition to nycflights13, you will also need `{dplyr}` and `{ggplot2}`. Load the tidyverse library to make sure you have everything you need:
 
 ```{r}
-library(nycflights13)
 library(tidyverse)
+library(nycflights13)
 ```
 
 ## Exercises
@@ -44,10 +42,40 @@ In a single pipeline for each condition, find all flights that meet the
 condition:
 
 -   Had an arrival delay of two or more hours
+
+```{r}
+flights |> 
+  ____
+```
+
 -   Flew to Houston (`IAH` or `HOU`)
+
+```{r}
+flights |> 
+  ____
+```
+
 -   Were operated by United, American, or Delta
+
+```{r}
+flights |> 
+  ____
+```
+
 -   Departed in summer (July, August, and September)
+
+```{r}
+flights |> 
+  ____
+```
+
 -   Arrived more than two hours late, but didn't leave late
+
+```{r}
+flights |> 
+  ____
+```
+
 -   Were delayed by at least an hour, but made up over 30 minutes in
     flight
 
@@ -72,20 +100,13 @@ flights |>
   ____
 ```
 
-Was there a flight on every day of 2013?
+Answer the following questions including code blocks showing the code used in determining your answer.
 
-```{r}
-flights |> 
-  ____
-```
+Was there a flight on every day of 2013? \_\_\_\_
 
-Which flights traveled the farthest distance? Which traveled the least
-distance?
+Which flights traveled the farthest distance?  \_\_\_\_
 
-```{r}
-flights |> 
-  ____
-```
+Which traveled the least distance?  \_\_\_\_
 
 Does it matter what order you used
 [`filter()`](https://dplyr.tidyverse.org/reference/filter.html) and
@@ -94,6 +115,12 @@ you're using both? Why/why not? Think about the results and how much
 work the functions would have to do.
 
 \_\_\_\_
+
+::: callout-tip
+Now is a good time to render, commit, and push your changes to GitHub with an informative commit message.
+
+Make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
 
 ### Working with columns
 
@@ -149,10 +176,14 @@ flights |>
   arrange(arr_delay)
 ```
 
+::: callout-tip
+Don't forget to render, commit, and push your changes to GitHub with an informative commit message.
+:::
+
 ### Working with groups
 
 Which carrier has the worst average delays? Challenge: can you
-disentangle the effects of bad airports vs. bad carriers? Why/why not?
+disentangle the effects of bad airports vs. bad carriers? Why/why not?
 (Hint: think about
 `flights |> group_by(carrier, dest) |> summarize(n())`)
 
@@ -191,3 +222,9 @@ count(flights, ____)
 
 count(flights, ____, sort = ____)
 ```
+
+::: callout-tip
+Render, commit, and push your final changes to GitHub with a meaningful commit message.
+
+Make sure to commit and push all changed files so that your Git pane is empty afterwards.
+:::
