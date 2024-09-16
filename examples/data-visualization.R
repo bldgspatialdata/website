@@ -64,7 +64,7 @@ ggplot(storms, aes(long, lat)) +
 ggplot(storms, aes(long, lat)) +
   geom_point(aes(color = status == "hurricane"))
 
-ggplot(storms_sf) +
+ggplot(storms) +
   geom_sf()
 
 # convert storms to sf object with st_as_sf
@@ -149,7 +149,7 @@ ggplot(data = storms_sf) +
 
 storms_bbox_lambert <- storms_bbox |>
   st_as_sfc() |>
-  st_transform("ESRI:102009") |>
+  st_transform("EPSG:3035") |>
   st_bbox()
 
 ggplot(data = storms_sf) +
@@ -159,7 +159,7 @@ ggplot(data = storms_sf) +
   coord_sf(
     xlim = storms_bbox_lambert[c("xmin", "xmax")],
     ylim = storms_bbox_lambert[c("ymin", "ymax")],
-    crs = "ESRI:102009"
+    crs = "EPSG:3035"
   ) +
   scale_color_brewer()
 
@@ -183,7 +183,9 @@ ggplot(storm_tracks) +
 
 ggplot(storm_tracks) +
   geom_sf(
-    data = \(x) {filter(x, !is.na(category))},
+    data = \(x) {
+      filter(x, !is.na(category))
+    },
     mapping = aes(color = category),
     alpha = 0.25
   )
