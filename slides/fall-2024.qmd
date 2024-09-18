@@ -1,0 +1,119 @@
+---
+title: "Weekly Updates"
+editor: visual
+date: 2024-09-04
+number-sections: false
+---
+
+## Week 4
+
+- Exercise 2 solutions
+- Data transformation with dplyr
+- Parsons Problems
+
+### Parsons Problems with {dplyr}
+
+----
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+  wind > 130
+storms |>
+filter(
+library(dplyr)
+  year == 2010,
+)
+```
+
+```{r}
+#| echo: false
+#| output: false
+library(dplyr)
+
+storms |>
+  filter(
+    year == 2010,
+    wind > 130
+  )
+```
+
+----
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+slice_head(n = 10)
+library(dplyr)
+arrange(desc(wind_load)) |>
+distinct(year, name, .keep_all = TRUE) |>
+storms |>
+mutate(wind_load = pressure * wind^2) |>
+```
+
+```{r}
+#| echo: false
+#| output: false
+library(dplyr)
+storms |>
+  mutate(wind_load = pressure * wind^2) |> 
+  arrange(desc(wind_load)) |> 
+  distinct(year, name, .keep_all = TRUE) |> 
+  slice_head(n = 10)
+```
+
+----
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+ggplot(aes(x = category, y = avg_wind)) +
+storms |>
+summarise(avg_wind = mean(wind)) |>
+library(tidyverse)
+filter(!is.na(category)) |>
+geom_point()
+group_by(category) |>
+```
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+
+storms |>
+  filter(!is.na(category)) |>
+  group_by(category) |>
+  summarise(avg_wind = mean(wind)) |>
+  ggplot(aes(x = category, y = avg_wind)) +
+  geom_point()
+```
+
+----
+
+## Week 3
+
+-   Exercise submission process
+-   Exercise 1 solutions
+-   Mapping with ggplot2
+-   Data transformation with dplyr
+-   Questions
+
+## Week 2
+
+-   Syllabus updates
+-   Cheat sheets
+-   Check-in on exercise 1 and GitHub Classroom
+-   Week 2 in-class quiz
+-   Visualizing spatial data with ggplot2
+
+### Syllabus updates
+
+-   In-class exercises
+-   No class on November 27
+
+## Cheat sheets
+
+-   RStudio
+-   sf
+-   ggplot2
