@@ -433,7 +433,7 @@
 <section>
 <section id="exploratory-data-analysis" class="title-slide slide level1 center" data-number="2">
 <h1><span class="header-section-number">2</span> Exploratory data analysis</h1>
-<p>This next section is straight from <a href="https://r4ds.hadley.nz/eda#introduction">R for Data Science (2e) - 11&nbsp; Exploratory data analysis</a>.</p>
+<p>This next section is largely excerpted from <a href="https://r4ds.hadley.nz/eda#introduction">R for Data Science (2e) - 11&nbsp; Exploratory data analysis</a>.</p>
 </section>
 <section id="what-do-you-do-when-you-do-exploratory-data-analysis" class="title-slide slide level2 center scrollable" data-number="2.1">
 <h2><span class="header-section-number">2.1</span> What do you <em>do</em> when you <em>do</em> exploratory data analysis?</h2>
@@ -484,20 +484,55 @@
 </section>
 <section id="general-summary" class="title-slide slide level3 center">
 <h3>General summary</h3>
-<p>When you start with a dataset, you might do something where you look at the general summary, using functions such as:</p>
+<p>When you start with a dataset, you might do something where you look at the general summary using:</p>
 <ul>
 <li><a href="https://rdrr.io/r/base/summary.html"><code>summary()</code></a></li>
 <li><a href="https://rdrr.io/r/utils/str.html"><code>str()</code></a></li>
 <li><a href="https://github.com/ropensci/skimr"><code>skimr::skim()</code></a>, or</li>
 <li><a href="https://pillar.r-lib.org/reference/glimpse.html"><code>dplyr::glimpse()</code></a></li>
 </ul>
+<aside class="notes">
 <p>“These work really well when you’ve got a small amount of data, but when you have more data, you are generally limited by how much you can read.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 
-<section id="variation" class="title-slide slide level2 center" data-number="2.5">
-<h2><span class="header-section-number">2.5</span> Variation</h2>
+<section id="tabular-summaries" class="title-slide slide level2 center" data-number="2.5">
+<h2><span class="header-section-number">2.5</span> Tabular summaries</h2>
+<ul>
+<li><code>janitor::tabyl()</code>: Generate a frequency table (1-, 2-, or 3-way)</li>
+<li><a href="https://gt.rstudio.com/">gt</a>: Easily generate information-rich, publication-quality tables from R</li>
+<li><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a>: Presentation-Ready Data Summary and Analytic Result Tables</li>
+</ul>
+</section>
 
+<section id="automated-summaries" class="title-slide slide level2 center" data-number="2.6">
+<h2><span class="header-section-number">2.6</span> Automated summaries</h2>
+<ul>
+<li><a href="https://boxuancui.github.io/DataExplorer/">DataExplorer</a>: Automate Data Exploration and Treatment</li>
+<li><a href="https://docs.ropensci.org/visdat/">visdat</a>: Preliminary Exploratory Visualisation of Data</li>
+<li><a href="https://dreamrs.github.io/esquisse/">esquisse</a>: RStudio add-in to make plots interactively with ggplot2</li>
+</ul>
+</section>
+
+<section id="variation" class="title-slide slide level2 center" data-number="2.7">
+<h2><span class="header-section-number">2.7</span> Variation</h2>
+<p>Types of values to explore:</p>
+<ul>
+<li>Typical values</li>
+<li>Unusual values</li>
+<li>Missing values*</li>
+</ul>
 </section>
 <section id="typical-values" class="title-slide slide level3 center">
 <h3>Typical values</h3>
@@ -511,17 +546,13 @@
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>smaller <span class="ot">&lt;-</span> diamonds <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a></a>  <span class="fu">filter</span>(carat <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'diamonds' not found</code></pre>
+<span id="cb1-2"><a></a>  <span class="fu">filter</span>(carat <span class="sc">&lt;</span> <span class="dv">3</span>)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">ggplot</span>(smaller, <span class="fu">aes</span>(<span class="at">x =</span> carat)) <span class="sc">+</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(smaller, <span class="fu">aes</span>(<span class="at">x =</span> carat)) <span class="sc">+</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(smaller, aes(x = carat)): could not find function "ggplot"</code></pre>
-</div>
-</div>
-</section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="sub-groups" class="slide level4">
 <h4>Sub-groups</h4>
 <p>To understand the subgroups, ask:</p>
@@ -537,28 +568,25 @@
 <h3>Unusual values</h3>
 <p>What makes a value unusual?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> y)) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(diamonds, aes(x = y)): could not find function "ggplot"</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> y)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
+</div>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+
+<section id="unusual-values-1" class="title-slide slide level3 center">
+<h3>Unusual values</h3>
 <p>Handling unusual values can include:</p>
 <ul>
 <li>Dropping observations with unusual values</li>
 <li>Replacing unusual values with missing values</li>
 </ul>
-</section>
-<section class="slide level4">
-
+<p>If unusual values are the result of a issue with the data import or original data collection, these issues can be addressed by re-coding or cleaning data.</p>
 </section>
 
 
-<section id="covariation" class="title-slide slide level2 center" data-number="2.6">
-<h2><span class="header-section-number">2.6</span> Covariation</h2>
+<section id="covariation" class="title-slide slide level2 center" data-number="2.8">
+<h2><span class="header-section-number">2.8</span> Covariation</h2>
 <aside class="notes">
 <blockquote>
 <p><strong>Covariation</strong>&nbsp;is the tendency for the values of two or more variables to vary together in a related way. The best way to spot covariation is to visualize the relationship between two or more variables.</p>
@@ -578,43 +606,36 @@
 <section id="a-categorical-and-a-numerical-variable" class="title-slide slide level3 center">
 <h3>A categorical and a numerical variable</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="fu">aes</span>(<span class="at">color =</span> cut), <span class="at">binwidth =</span> <span class="dv">500</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(diamonds, aes(x = price)): could not find function "ggplot"</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="fu">aes</span>(<span class="at">color =</span> cut), <span class="at">binwidth =</span> <span class="dv">500</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 
 <section id="two-categorical-variables" class="title-slide slide level3 center">
 <h3>Two categorical variables</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> color)) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(diamonds, aes(x = cut, y = color)): could not find function "ggplot"</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> color)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 
 <section id="two-numerical-variables" class="title-slide slide level3 center">
 <h3>Two numerical variables</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(smaller, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in ggplot(smaller, aes(x = carat, y = price)): could not find function "ggplot"</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(smaller, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 
 
-<section id="patterns-and-models" class="title-slide slide level2 center" data-number="2.7">
-<h2><span class="header-section-number">2.7</span> Patterns and models</h2>
+<section id="patterns-and-models" class="title-slide slide level2 center" data-number="2.9">
+<h2><span class="header-section-number">2.9</span> Patterns and models</h2>
 <p>If a systematic relationship exists between two variables it will appear as a pattern in the data. If you spot a pattern, ask yourself:</p>
 <ul>
-<li>Could this pattern be due to coincidence (i.e.&nbsp;random chance)?<br>
-</li>
+<li>Could this pattern be due to coincidence (i.e.&nbsp;random chance)?</li>
 <li>How can you describe the relationship implied by the pattern?</li>
 <li>How strong is the relationship implied by the pattern?</li>
 <li>What other variables might affect the relationship?</li>
@@ -622,9 +643,25 @@
 </ul>
 </section>
 
-<section id="tools-for-data-exploration" class="title-slide slide level2 center" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Tools for data exploration</h2>
+<section id="exploratory-data-analysis-checklist" class="title-slide slide level2 center scrollable" data-number="2.10">
+<h2><span class="header-section-number">2.10</span> Exploratory Data Analysis Checklist</h2>
+<p>From <a href="https://bookdown.org/rdpeng/artofdatascience/">The Art of Data Science</a> (2017) by Roger D. Peng and Elizabeth Matsui:</p>
+<ol type="1">
+<li><p>Formulate your question</p></li>
+<li><p>Read in your data</p></li>
+<li><p>Check the packaging</p></li>
+<li><p>Look at the top and the bottom of your data</p></li>
+<li><p>Check your “n”s</p></li>
+<li><p>Validate with at least one external data source</p></li>
+<li><p>Make a plot</p></li>
+<li><p>Try the easy solution first</p></li>
+<li><p>Follow up</p></li>
+</ol>
+</section>
 
+<section id="tools-for-exploring-data-with-visualizations" class="title-slide slide level2 center" data-number="2.11">
+<h2><span class="header-section-number">2.11</span> Tools for exploring data with visualizations</h2>
+<p>Specialty packages for working with data.</p>
 </section>
 <section id="missing-data" class="title-slide slide level3 center">
 <h3>Missing data</h3>
@@ -648,8 +685,8 @@
 </section>
 
 
-<section id="communicating" class="title-slide slide level2 center" data-number="2.9">
-<h2><span class="header-section-number">2.9</span> Communicating</h2>
+<section id="communicating" class="title-slide slide level2 center" data-number="2.12">
+<h2><span class="header-section-number">2.12</span> Communicating</h2>
 
 </section>
 <section id="codebooks" class="title-slide slide level3 center">
@@ -658,7 +695,6 @@
 <blockquote>
 <p>The&nbsp;<code>codebookr</code>&nbsp;package is intended to make it easy for users to create codebooks (also called data dictionaries) directly from an R data frame.</p>
 </blockquote>
-<p><a href="https://gt.rstudio.com/reference/opt_interactive.html">Option to put interactive elements in an HTML table — opt_interactive • gt</a></p>
 </section>
 
 <section id="additional-packages" class="title-slide slide level3 center">
