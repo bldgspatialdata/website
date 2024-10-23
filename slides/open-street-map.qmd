@@ -2,7 +2,7 @@
 order: 9
 title: "Editing OpenStreetMap and exploring OpenStreetMap data with the `{osmdata}` package"
 subtitle: "Session {{< meta order >}}"
-date: 2023-10-25
+date: 2024-10-23
 image: "images/umbc-area-open-street-map.png"
 ---
 
@@ -10,9 +10,13 @@ image: "images/umbc-area-open-street-map.png"
 
 -   What is OpenStreetMap?
 -   How do you contribute to OpenStreetMap?
+-   **Practice**: Editing with the iD Editor
 -   How do you download data from OpenStreetMap?
+-   **Practice**: Downloading data with `{osmdata}`
 
+::: footer
 These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` package are based on a March 10, 2020 presentation by [Jonathan Dandois](https://twitter.com/jondandois) for MaptimeBmore and the CCBC GIS Capstone.
+:::
 
 ## What is OpenStreetMap?
 
@@ -20,9 +24,11 @@ These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` packag
 
 -   Grew as the "Wikipedia of maps" in response to increasing cost of commercial services like Google Maps after 2011 price hikes
 
-## Using OpenStreetMap
+---
 
 ![](images/umbc-area-open-street-map.png)
+
+## Using OpenStreetMap
 
 OpenStreetMap isn't just a map---it is a "**global geodatabase** of everything and anything that people add to the map":
 
@@ -38,8 +44,6 @@ Individual users, developers, and researchers:
 -   Apps and websites
 -   Games
 -   Advocacy and policy
-
-## Who is using OpenStreetMap?
 
 ### Microsoft Flight Simulator
 
@@ -82,6 +86,14 @@ Learn more in [Getting Started with OSM](https://maptimebmore.github.io/ccbc-osm
 
 Learn more in the [Good practice section](https://wiki.openstreetmap.org/wiki/Good_practice) of the OpenStreetMap Wiki.
 
+::: notes
+
+- Verifiability
+- Not temporary
+- Map what is on the ground
+
+:::
+
 ### Contributing with the iD Editor
 
 ![](images/umbc-area-open-street-map-editor.png) Learn [how to use the iD Editor](https://learnosm.org/en/beginner/id-editor/).
@@ -102,6 +114,9 @@ Try out [JOSM](https://live.osgeo.org/en/overview/josm_overview.html)---the desk
 
 Learn [about StreetComplete](https://streetcomplete.app/).
 
+## Practice editing data with the iD Editor
+
+
 ## Downloading data with overpass turbo
 
 ![](images/overpass-turbo-screenshot.png) [*overpass turbo*](https://overpass-turbo.eu), a web-based data filtering tool for [OpenStreetMap](http://www.openstreetmap.org/), can run Overpass API queries and analyze the resulting OSM data interactively on a map.
@@ -114,6 +129,8 @@ Learn [about StreetComplete](https://streetcomplete.app/).
 
 -   [`osmdata`](https://docs.ropensci.org/osmdata/) is an R package for accessing the data underlying OpenStreetMap (OSM), delivered via the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
 -   The package is designed to allow access to small-to-medium-sized OSM datasets (see [`osmextract`](https://github.com/ropensci/osmextract) for an approach for reading-in bulk OSM data extracts).
+
+## Practice downloading data with `{osmdata}`
 
 ## Resources
 
