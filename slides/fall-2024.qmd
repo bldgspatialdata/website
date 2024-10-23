@@ -5,15 +5,49 @@ date: 2024-09-04
 number-sections: false
 ---
 
+## Week 9
+
+- Exercise 5 due next Friday, Nov. 1
+- Office hours on Tuesday, Oct. 29
+- Final project proposal due Wednesday, Nov. 13
+- Lessons from McConchie and Boeing
+- Open Street Map Lecture & Practice
+
+### Lessons McConchie (2016)
+
+McConchie introduces the concept of **map-gardening:** "the editing tasks that keep OSM going... the things that happen after that fun trailblazing phase of mapping all the streets in your neighborhood."
+
+McConchie asks: "How do we make sure that OSM is a healthy community that has gardening, has people who enjoy maintenance?
+
+---
+
+{{< video https://www.youtube.com/watch?v=7sC83j6vzjo >}}
+
+### Lessons from Boeing (2020)
+
+Why did Boeing make OSMnx open source? Making the tool open source:
+
+-   "makes empirical work easier to review and reproduce."
+-   "allows anyone else to contribute to the tool’s ongoing development."
+-   "empowers others working in urban science and planning to advance their empirical research on real-world spatial networks with a reusable, accessible, theoretically-sound tool."
+
+---
+
+Why did Boeing use OpenStreetMap data?
+
+-   Google Maps data is unavailable (or un-affordable)
+-   TIGER/Line roads shapefiles don't include topological details
+-   Open Street Map is free and has global coverage
+
 ## Week 4
 
-- Exercise 2 solutions
-- Data transformation with dplyr
-- Parsons Problems
+-   Exercise 2 solutions
+-   Data transformation with dplyr
+-   Parsons Problems
 
 ### Parsons Problems with {dplyr}
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 #| eval: false
@@ -38,7 +72,7 @@ storms |>
   )
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 #| eval: false
@@ -62,7 +96,7 @@ storms |>
   slice_head(n = 10)
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 #| eval: false
@@ -89,7 +123,7 @@ storms |>
   geom_point()
 ```
 
-----
+------------------------------------------------------------------------
 
 ## Week 3
 
