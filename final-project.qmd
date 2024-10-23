@@ -43,14 +43,16 @@ Format your proposal as [Quarto document](https://quarto.org/) with citations wi
 - links to any published data or related resources
 - reproducible code blocks for any preliminary data analysis you completed to support your proposal
 
-**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.
+**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. [Zotero](https://www.zotero.org/) is a recommended citation management tool that is [easy to use with RStudio](https://quarto.org/docs/visual-editor/technical.html#citations) when editing Quarto documents. 
 
 ### Identifying a data source
 
-Students are strongly encouraged to build a project using data from:
+Students are encouraged to build a project using data from a well-documented and supported source, such as:
 
 -   OpenStreetMap (accessed with the `{osmdata}` package),
--   or American Community Survey data (accessed with the `{tidycensus}` package)
+-   American Community Survey data (accessed with the `{tidycensus}` package)
+
+Accessing the data should be a reproducible process so make sure your data does not have any restrictions that prevent you to include the data as part of your project repository.
 
 See the readings and materials from [week 9](https://bldgspatialdata.github.io/website/weeks/week_09.html) or [week 10](https://bldgspatialdata.github.io/website/weeks/week_10.html) for more background information on these sources.
 
@@ -133,7 +135,7 @@ Your final project should be submitted as a GitHub repository. A private reposit
 
 The repository must include:
 
--   **project data (if needed)**: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using `{osmdata}` or `{tidycensus}` should include scripts for downloading data but *do not* include the source data.
+-   **project data (if needed)**: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using `{osmdata}` or `{tidycensus}` should include scripts for downloading data but are *not* required to include the source data.
 
 -   **project code**: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.
 
