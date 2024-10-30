@@ -31,7 +31,22 @@ gardens <- q |>
 
 gardens <- unique_osmdata(gardens)
 
+# Combine
+bind_rows(
+  gardens$osm_points,
+  gardens$osm_lines,
+  gardens$osm_polygons,
+  gardens$osm_multipolygons
+)
+
+# Does not work
+ggplot() +
+  geom_sf(data = gardens)
+
 # Plot gardens
+ggplot() +
+  geom_sf(data = gardens$osm_polygons)
+
 ggplot() +
   geom_sf(data = sf::st_centroid(gardens$osm_polygons))
 
@@ -56,4 +71,10 @@ open_space <- q |>
 
 open_space <- unique_osmdata(open_space)
 
-
+# Example
+q <- getbb("Baltimore city, Maryland") |>
+  opq () %>%
+  add_osm_features (features = list (
+    "leisure" = "park",
+    "leisure" = "garden"
+  ))
