@@ -5,6 +5,12 @@ order: 11
 image: images/2016-11-29_openeo_gdal-diagram.png
 ---
 
+## Overview
+
+- Spatial data is everywhere
+- Specifications, file formats, and services
+- Working with common spatial file formats
+
 ## Spatial data is everywhere
 
 - Shapefiles, GeoJSON files, and other spatial data files
@@ -35,6 +41,21 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 - Read and write related data files
 - Read from and write to web services
 
+## Standards and specifications
+
+[Open Geospatial Consortium (OGC) Standards](https://www.ogc.org/publications/) are organized into categories:
+
+- APIs (e.g. [Moving Features API](https://www.ogc.org/publications/standard/ogc-api-moving-features/))
+- Web Services (e.g. [Web Feature Service](https://www.ogc.org/publications/standard/wfs/))
+- Data Models and Encodings (e.g. [GeoTIFF](https://www.ogc.org/publications/standard/geotiff/))
+- and more (Sensors, Publish-Subscribe, Syndication & Context, Discovery, Containers, Abstract Specifications)
+
+::: notes
+
+
+:::
+
+
 ## Common spatial file formats
 
 - Shapefile (`.shp`)
@@ -42,6 +63,7 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 - GeoPackage (`.gpkg`)
 - KML - Keyhole Markup Language (`.kml`)
 - Esri File Geodatabase (`.gdb`)
+- GPX - GPS Exchange Format (`.gpx`)
 
 ::: notes
 
@@ -56,11 +78,32 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 These file formats vary in:
 
 - Types of geometry that they support
-- Constraints or limits (e.g. shapefiles limit the lenghth of column names, GeoJSON can only use one coordinate reference system)
+- Constraints or limits of specification (e.g. shapefiles limit the length of column names, GeoJSON can only use one coordinate reference system)
 - File size
 - Speed of input or output
 - Compatibility with different tools or systems
 - And more!
+
+## Specialized spatial file formats
+
+- Raster data
+  - Digital Elevation Model (DEM)
+  - GeoTIFF
+- Map tiles
+  - MBTiles
+  - [PMTiles](https://docs.protomaps.com/pmtiles/)
+- Columnar data formats
+  - [GeoParquet](https://geoparquet.org/)
+  - [GeoArrow](https://geoarrow.org/)
+- Databases
+  - [PostGIS](https://postgis.net/)
+- Other
+  - [FlatGeobuf](https://flatgeobuf.org/)
+  
+::: notes
+- DEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications
+- Mapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/
+:::
 
 ## Read spatial data files with R
 
