@@ -5,13 +5,37 @@ date: 2024-09-04
 number-sections: false
 ---
 
+## Week 11
+
+### Questions
+
+----
+
+What is the `source()` function and how does it work?
+
+You can use `source()` to load and execute R code from a file. It is helpful for including combining code in multiple files as part of a single script or document.  
+
+----
+
+How is osmextract different from osmdata, on a technical level?
+
+You can use osmdata to access the [Overpass API](https://overpass-api.de/). Use osmextract to download a prepared file from a [processed OSM data provider](https://wiki.openstreetmap.org/wiki/Processed_data_providers).
+
+----
+
+Are there cheat-sheets for reading in data as well, or is it simply something you have to remember for yourself depending on what data formats you are using?
+
+**Yes!** See this [Posit cheatsheet on data import](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf).
+
+
+
 ## Week 9
 
-- Exercise 5 due next Friday, Nov. 1
-- Office hours on Tuesday, Oct. 29
-- Final project proposal due Wednesday, Nov. 13
-- Lessons from McConchie and Boeing
-- Open Street Map Lecture & Practice
+-   Exercise 5 due next Friday, Nov. 1
+-   Office hours on Tuesday, Oct. 29
+-   Final project proposal due Wednesday, Nov. 13
+-   Lessons from McConchie and Boeing
+-   Open Street Map Lecture & Practice
 
 ### Lessons McConchie (2016)
 
@@ -19,7 +43,7 @@ McConchie introduces the concept of **map-gardening:** "the editing tasks that k
 
 McConchie asks: "How do we make sure that OSM is a healthy community that has gardening, has people who enjoy maintenance?
 
----
+------------------------------------------------------------------------
 
 {{< video https://www.youtube.com/watch?v=7sC83j6vzjo >}}
 
@@ -31,7 +55,7 @@ Why did Boeing make OSMnx open source? Making the tool open source:
 -   "allows anyone else to contribute to the tool’s ongoing development."
 -   "empowers others working in urban science and planning to advance their empirical research on real-world spatial networks with a reusable, accessible, theoretically-sound tool."
 
----
+------------------------------------------------------------------------
 
 Why did Boeing use OpenStreetMap data?
 
