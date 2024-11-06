@@ -419,14 +419,15 @@ You are also expected to share peer feedback on two other project presentations 
 <li>links to any published data or related resources</li>
 <li>reproducible code blocks for any preliminary data analysis you completed to support your proposal</li>
 </ul>
-<p><strong>Don’t forget to cite your sources!</strong> While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project.</p>
+<p><strong>Don’t forget to cite your sources!</strong> While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. <a href="https://www.zotero.org/">Zotero</a> is a recommended citation management tool that is <a href="https://quarto.org/docs/visual-editor/technical.html#citations">easy to use with RStudio</a> when editing Quarto documents.</p>
 <section id="identifying-a-data-source" class="level3">
 <h3 class="anchored" data-anchor-id="identifying-a-data-source">Identifying a data source</h3>
-<p>Students are strongly encouraged to build a project using data from:</p>
+<p>Students are encouraged to build a project using data from a well-documented and supported source, such as:</p>
 <ul>
 <li>OpenStreetMap (accessed with the <code>{osmdata}</code> package),</li>
-<li>or American Community Survey data (accessed with the <code>{tidycensus}</code> package)</li>
+<li>American Community Survey data (accessed with the <code>{tidycensus}</code> package)</li>
 </ul>
+<p>Accessing the data should be a reproducible process so make sure your data does not have any restrictions that prevent you to include the data as part of your project repository.</p>
 <p>See the readings and materials from <a href="https://bldgspatialdata.github.io/website/weeks/week_09.html">week 9</a> or <a href="https://bldgspatialdata.github.io/website/weeks/week_10.html">week 10</a> for more background information on these sources.</p>
 <div class="callout callout-style-simple callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -520,7 +521,7 @@ Creating presentations with Quarto and reveal.js
 <p>Your final project should be submitted as a GitHub repository. A private repository can be provided to you as part of the course organization or you can set up your own repository on your personal GitHub account.</p>
 <p>The repository must include:</p>
 <ul>
-<li><p><strong>project data (if needed)</strong>: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using <code>{osmdata}</code> or <code>{tidycensus}</code> should include scripts for downloading data but <em>do not</em> include the source data.</p></li>
+<li><p><strong>project data (if needed)</strong>: including the source files or, if files exceed the 50MB maximum size allowed on GitHub, a script used for importing and processing the data before visualization or analysis. Students who are using <code>{osmdata}</code> or <code>{tidycensus}</code> should include scripts for downloading data but are <em>not</em> required to include the source data.</p></li>
 <li><p><strong>project code</strong>: including any R scripts, RMarkdown, or Quarto files used to read, tidy, transform, analyze, visualize or map the selected data.</p></li>
 <li><p><strong>output files</strong>: including any processed data files or rendered PDF or HTML documents.</p></li>
 <li><p><strong>README</strong>: a public-facing summary of the project explaining your process for processing the data and any relevant information another person may need to work with the data or your code.</p></li>

@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="dcterms.date" content="2023-10-25">
+  <meta name="dcterms.date" content="2024-10-23">
   <title>GES 668 - Fall 2024 – Editing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -339,18 +339,23 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-10-25</p>
+  <p class="date">2024-10-23</p>
 </section>
 <section id="overview" class="title-slide slide level2 center" data-number="1">
 <h2><span class="header-section-number">1</span> Overview</h2>
 <ul>
 <li>What is OpenStreetMap?</li>
 <li>How do you contribute to OpenStreetMap?</li>
+<li><strong>Practice</strong>: Editing with the iD Editor</li>
 <li>How do you download data from OpenStreetMap?</li>
+<li><strong>Practice</strong>: Downloading data with <code>{osmdata}</code></li>
 </ul>
+<div class="footer">
 <p>These slides on OpenStreetMap and exploring OSM data with the <code>{osmdata}</code> package are based on a March 10, 2020 presentation by <a href="https://twitter.com/jondandois">Jonathan Dandois</a> for MaptimeBmore and the CCBC GIS Capstone.</p>
+</div>
 </section>
 
+<section>
 <section id="what-is-openstreetmap" class="title-slide slide level2 center" data-number="2">
 <h2><span class="header-section-number">2</span> What is OpenStreetMap?</h2>
 <ul>
@@ -358,11 +363,13 @@
 <li><p>Grew as the “Wikipedia of maps” in response to increasing cost of commercial services like Google Maps after 2011 price hikes</p></li>
 </ul>
 </section>
+<section class="slide level4">
 
+
+<img data-src="images/umbc-area-open-street-map.png" class="r-stretch"></section></section>
 <section id="using-openstreetmap" class="title-slide slide level2 center" data-number="3">
 <h2><span class="header-section-number">3</span> Using OpenStreetMap</h2>
-
-<img data-src="images/umbc-area-open-street-map.png" class="r-stretch"><p>OpenStreetMap isn’t just a map—it is a&nbsp;“<strong>global geodatabase</strong>&nbsp;of everything&nbsp;and&nbsp;anything&nbsp;that people add to the map”:</p>
+<p>OpenStreetMap isn’t just a map—it is a&nbsp;“<strong>global geodatabase</strong>&nbsp;of everything&nbsp;and&nbsp;anything&nbsp;that people add to the map”:</p>
 <ul>
 <li>roads, crosswalks, speed bumps, stop lights</li>
 <li>restaurants, daycares, playgrounds, cannons</li>
@@ -371,6 +378,7 @@
 </ul>
 </section>
 
+<section>
 <section id="who-is-using-openstreetmap" class="title-slide slide level2 center" data-number="4">
 <h2><span class="header-section-number">4</span> Who is using OpenStreetMap?</h2>
 <p>Individual users, developers, and researchers:</p>
@@ -379,12 +387,6 @@
 <li>Games</li>
 <li>Advocacy and policy</li>
 </ul>
-</section>
-
-<section>
-<section id="who-is-using-openstreetmap-1" class="title-slide slide level2 center" data-number="5">
-<h2><span class="header-section-number">5</span> Who is using OpenStreetMap?</h2>
-
 </section>
 <section id="microsoft-flight-simulator" class="title-slide slide level3 center">
 <h3>Microsoft Flight Simulator</h3>
@@ -397,8 +399,8 @@
 <img data-src="images/cityratings-people-for-bikes.png" class="r-stretch"><p>The Bike Network Analysis (BNA) is a data analysis tool that measures how well bike networks connect people with the places they want to go and is used for the <a href="https://cityratings.peopleforbikes.org/">PeopleForBikes 2023 City Ratings</a>. The <a href="https://cityratings.peopleforbikes.org/about/methodology">methodology is described online</a> and the <a href="https://github.com/PeopleForBikes">PeopleForBikes · GitHub</a> includes the full code for the analysis.</p>
 </section>
 </section>
-<section id="contributing-to-open-street-map" class="title-slide slide level2 center" data-number="6">
-<h2><span class="header-section-number">6</span> Contributing to Open Street Map</h2>
+<section id="contributing-to-open-street-map" class="title-slide slide level2 center" data-number="5">
+<h2><span class="header-section-number">5</span> Contributing to Open Street Map</h2>
 <p>Different editors have different reasons for contributing and contribute in different ways:</p>
 <ul>
 <li>Individuals</li>
@@ -425,8 +427,8 @@
       }</style></aside>
 </section>
 
-<section id="tracing-and-digitizing-imagery" class="title-slide slide level2 center" data-number="7">
-<h2><span class="header-section-number">7</span> Tracing and digitizing imagery</h2>
+<section id="tracing-and-digitizing-imagery" class="title-slide slide level2 center" data-number="6">
+<h2><span class="header-section-number">6</span> Tracing and digitizing imagery</h2>
 <p>Most editors for OpenStreetMap use high-resolution aerial, satellite, and drone-based imagery to trace or digitize:</p>
 <ul>
 <li>POIs, addresses (<strong>points</strong>)</li>
@@ -437,9 +439,26 @@
 </section>
 
 <section>
-<section id="what-is-good-editing" class="title-slide slide level2 center" data-number="8">
-<h2><span class="header-section-number">8</span> What is “good” editing?</h2>
+<section id="what-is-good-editing" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> What is “good” editing?</h2>
 <p>Learn more in the <a href="https://wiki.openstreetmap.org/wiki/Good_practice">Good practice section</a> of the OpenStreetMap Wiki.</p>
+<aside class="notes">
+<ul>
+<li>Verifiability</li>
+<li>Not temporary</li>
+<li>Map what is on the ground</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="contributing-with-the-id-editor" class="title-slide slide level3 center">
 <h3>Contributing with the iD Editor</h3>
@@ -463,6 +482,11 @@
 <img data-src="images/street-complete-screenshots.png" class="r-stretch"><p>Learn <a href="https://streetcomplete.app/">about StreetComplete</a>.</p>
 </section>
 </section>
+<section id="practice-editing-data-with-the-id-editor" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> Practice editing data with the iD Editor</h2>
+
+</section>
+
 <section id="downloading-data-with-overpass-turbo" class="title-slide slide level2 center" data-number="9">
 <h2><span class="header-section-number">9</span> Downloading data with overpass turbo</h2>
 <p><img data-src="images/overpass-turbo-screenshot.png"> <a href="https://overpass-turbo.eu"><em>overpass turbo</em></a>, a web-based data filtering tool for&nbsp;<a href="http://www.openstreetmap.org/">OpenStreetMap</a>, can run&nbsp;Overpass API&nbsp;queries and analyze the resulting OSM data interactively on a map.</p>
@@ -486,9 +510,14 @@
 </ul>
 </section>
 
+<section id="practice-downloading-data-with-osmdata" class="title-slide slide level2 center" data-number="13">
+<h2><span class="header-section-number">13</span> Practice downloading data with <code>{osmdata}</code></h2>
+
+</section>
+
 <section>
-<section id="resources" class="title-slide slide level2 center" data-number="13">
-<h2><span class="header-section-number">13</span> Resources</h2>
+<section id="resources" class="title-slide slide level2 center" data-number="14">
+<h2><span class="header-section-number">14</span> Resources</h2>
 <ul>
 <li><a href="https://wiki.openstreetmap.org/">OSM Wiki</a></li>
 <li><a href="https://learnosm.org/">LearnOSM</a></li>

@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="dcterms.date" content="2024-10-22">
+  <meta name="dcterms.date" content="2024-11-06">
   <title>GES 668 - Fall 2024 – Reading and writing spatial data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -404,10 +404,19 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-10-22</p>
+  <p class="date">2024-11-06</p>
 </section>
-<section id="spatial-data-is-everywhere" class="title-slide slide level2 center" data-number="1">
-<h2><span class="header-section-number">1</span> Spatial data is everywhere</h2>
+<section id="overview" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Overview</h2>
+<ul>
+<li>Spatial data is everywhere</li>
+<li>Specifications, file formats, and services</li>
+<li>Working with common spatial file formats</li>
+</ul>
+</section>
+
+<section id="spatial-data-is-everywhere" class="title-slide slide level2 center" data-number="2">
+<h2><span class="header-section-number">2</span> Spatial data is everywhere</h2>
 <ul>
 <li>Shapefiles, GeoJSON files, and other spatial data files</li>
 <li>Spatial data editing and hosting services, e.g.&nbsp;<a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/overview">ArcGIS Online</a> or <a href="https://felt.com/maps/recent">Felt</a>)</li>
@@ -415,8 +424,8 @@
 </ul>
 </section>
 
-<section id="spatial-data-is-everywhere-1" class="title-slide slide level2 center" data-number="2">
-<h2><span class="header-section-number">2</span> Spatial data is everywhere</h2>
+<section id="spatial-data-is-everywhere-1" class="title-slide slide level2 center" data-number="3">
+<h2><span class="header-section-number">3</span> Spatial data is everywhere</h2>
 <ul>
 <li>Google Maps, Apple Maps, Waze, and navigation apps (on your phone or <a href="https://support.google.com/googleappsincar/answer/9941814?hl=en">in your vehicle</a>)</li>
 <li>Biking and running apps (Strava publishes a <a href="https://www.strava.com/heatmap#11.21/-76.64618/39.34348/hot/all">global user activity heatmap</a>)</li>
@@ -424,16 +433,16 @@
 </ul>
 </section>
 
-<section id="spatial-data-is-everywhere-2" class="title-slide slide level2 center" data-number="3">
-<h2><span class="header-section-number">3</span> Spatial data is everywhere</h2>
+<section id="spatial-data-is-everywhere-2" class="title-slide slide level2 center" data-number="4">
+<h2><span class="header-section-number">4</span> Spatial data is everywhere</h2>
 <ul>
 <li>Phone camera photos (stored in the EXIF metadata)</li>
 <li>Calendars (<a href="https://en.wikipedia.org/wiki/ICalendar">iCal</a>), contacts (<a href="https://en.wikipedia.org/wiki/VCard">vCard</a>), and emails (using <a href="https://en.wikipedia.org/wiki/Internet_geolocation">IP address</a> locations)</li>
 </ul>
 </section>
 
-<section id="creating-spatial-data-is-easy" class="title-slide slide level2 center" data-number="4">
-<h2><span class="header-section-number">4</span> Creating spatial data is “easy”</h2>
+<section id="creating-spatial-data-is-easy" class="title-slide slide level2 center" data-number="5">
+<h2><span class="header-section-number">5</span> Creating spatial data is “easy”</h2>
 <ul>
 <li>GIS Desktop applications, e.g.&nbsp;<a href="https://qgis.org/">QGIS</a></li>
 <li>Web mapping applications (e.g.&nbsp;<a href="https://geojson.io/#map=2/0/20">geojson.io</a>, <a href="https://felt.com/">Felt</a>)</li>
@@ -442,8 +451,8 @@
 </ul>
 </section>
 
-<section id="what-can-we-do-with-it-all" class="title-slide slide level2 center" data-number="5">
-<h2><span class="header-section-number">5</span> What can we do with it all?</h2>
+<section id="what-can-we-do-with-it-all" class="title-slide slide level2 center" data-number="6">
+<h2><span class="header-section-number">6</span> What can we do with it all?</h2>
 <ul>
 <li>Read and write spatial data files</li>
 <li>Read and write related data files</li>
@@ -451,14 +460,39 @@
 </ul>
 </section>
 
-<section id="common-spatial-file-formats" class="title-slide slide level2 center" data-number="6">
-<h2><span class="header-section-number">6</span> Common spatial file formats</h2>
+<section id="standards-and-specifications" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> Standards and specifications</h2>
+<p><a href="https://www.ogc.org/publications/">Open Geospatial Consortium (OGC) Standards</a> are organized into categories:</p>
+<ul>
+<li>APIs (e.g.&nbsp;<a href="https://www.ogc.org/publications/standard/ogc-api-moving-features/">Moving Features API</a>)</li>
+<li>Web Services (e.g.&nbsp;<a href="https://www.ogc.org/publications/standard/wfs/">Web Feature Service</a>)</li>
+<li>Data Models and Encodings (e.g.&nbsp;<a href="https://www.ogc.org/publications/standard/geotiff/">GeoTIFF</a>)</li>
+<li>and more (Sensors, Publish-Subscribe, Syndication &amp; Context, Discovery, Containers, Abstract Specifications)</li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="common-spatial-file-formats" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> Common spatial file formats</h2>
 <ul>
 <li>Shapefile (<code>.shp</code>)</li>
 <li>GeoJSON (<code>.json</code>, <code>.geojson</code>)</li>
 <li>GeoPackage (<code>.gpkg</code>)</li>
 <li>KML - Keyhole Markup Language (<code>.kml</code>)</li>
 <li>Esri File Geodatabase (<code>.gdb</code>)</li>
+<li>GPX - GPS Exchange Format (<code>.gpx</code>)</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -479,12 +513,12 @@
       }</style></aside>
 </section>
 
-<section id="common-spatial-file-formats-1" class="title-slide slide level2 center" data-number="7">
-<h2><span class="header-section-number">7</span> Common spatial file formats</h2>
+<section id="common-spatial-file-formats-1" class="title-slide slide level2 center" data-number="9">
+<h2><span class="header-section-number">9</span> Common spatial file formats</h2>
 <p>These file formats vary in:</p>
 <ul>
 <li>Types of geometry that they support</li>
-<li>Constraints or limits (e.g.&nbsp;shapefiles limit the lenghth of column names, GeoJSON can only use one coordinate reference system)</li>
+<li>Constraints or limits of specification (e.g.&nbsp;shapefiles limit the length of column names, GeoJSON can only use one coordinate reference system)</li>
 <li>File size</li>
 <li>Speed of input or output</li>
 <li>Compatibility with different tools or systems</li>
@@ -492,8 +526,53 @@
 </ul>
 </section>
 
-<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center" data-number="8">
-<h2><span class="header-section-number">8</span> Read spatial data files with R</h2>
+<section id="specialized-spatial-file-formats" class="title-slide slide level2 center" data-number="10">
+<h2><span class="header-section-number">10</span> Specialized spatial file formats</h2>
+<ul>
+<li>Raster data
+<ul>
+<li>Digital Elevation Model (DEM)</li>
+<li>GeoTIFF</li>
+</ul></li>
+<li>Map tiles
+<ul>
+<li>MBTiles</li>
+<li><a href="https://docs.protomaps.com/pmtiles/">PMTiles</a></li>
+</ul></li>
+<li>Columnar data formats
+<ul>
+<li><a href="https://geoparquet.org/">GeoParquet</a></li>
+<li><a href="https://geoarrow.org/">GeoArrow</a></li>
+</ul></li>
+<li>Databases
+<ul>
+<li><a href="https://postgis.net/">PostGIS</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="https://flatgeobuf.org/">FlatGeobuf</a></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>DEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications</li>
+<li>Mapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center" data-number="11">
+<h2><span class="header-section-number">11</span> Read spatial data files with R</h2>
 <p>The <code>dsn</code> or data source name for <code>sf::read_sf()</code> can include:</p>
 <ul>
 <li>a file name</li>
@@ -504,13 +583,13 @@
 </ul>
 </section>
 
-<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center" data-number="9">
-<h2><span class="header-section-number">9</span> Read spatial data files with R</h2>
+<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center" data-number="12">
+<h2><span class="header-section-number">12</span> Read spatial data files with R</h2>
 <p>You can use the <code>query</code> parameter of <code>sf::read_sf()</code> to use a SQL query to select records from a file (or select a specific geographical extent).</p>
 </section>
 
-<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center" data-number="10">
-<h2><span class="header-section-number">10</span> Many file formats <em>can</em> include spatial data</h2>
+<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center" data-number="13">
+<h2><span class="header-section-number">13</span> Many file formats <em>can</em> include spatial data</h2>
 <ul>
 <li>Excel files (<code>xlsx</code> or <code>xls</code>)<br>
 </li>
@@ -519,8 +598,8 @@
 </ul>
 </section>
 
-<section id="reading-data-into-r" class="title-slide slide level2 center" data-number="11">
-<h2><span class="header-section-number">11</span> Reading data into R</h2>
+<section id="reading-data-into-r" class="title-slide slide level2 center" data-number="14">
+<h2><span class="header-section-number">14</span> Reading data into R</h2>
 <ul>
 <li>Read data using <code>{sf}</code></li>
 <li>Read data using a package that returns a <code>sf</code> object</li>
@@ -528,8 +607,8 @@
 </ul>
 </section>
 
-<section id="writing-data-from-r" class="title-slide slide level2 center" data-number="12">
-<h2><span class="header-section-number">12</span> Writing data from R</h2>
+<section id="writing-data-from-r" class="title-slide slide level2 center" data-number="15">
+<h2><span class="header-section-number">15</span> Writing data from R</h2>
 <ul>
 <li>Write data to a spatial file using <code>{sf}</code></li>
 <li>Write data a a non-spatial file using a different package</li>
@@ -537,26 +616,26 @@
 <p>When you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text.</p>
 </section>
 
-<section id="read-data-using-sf" class="title-slide slide level2 center" data-number="13">
-<h2><span class="header-section-number">13</span> Read data using <code>{sf}</code></h2>
+<section id="read-data-using-sf" class="title-slide slide level2 center" data-number="16">
+<h2><span class="header-section-number">16</span> Read data using <code>{sf}</code></h2>
 <p>First load <code>{sf}</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
-<section id="read-data-using-sf-1" class="title-slide slide level2 center" data-number="14">
-<h2><span class="header-section-number">14</span> Read data using <code>{sf}</code></h2>
+<section id="read-data-using-sf-1" class="title-slide slide level2 center" data-number="17">
+<h2><span class="header-section-number">17</span> Read data using <code>{sf}</code></h2>
 
 <img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section>
 
-<section id="read-data-using-sf-2" class="title-slide slide level2 center" data-number="15">
-<h2><span class="header-section-number">15</span> Read data using <code>{sf}</code></h2>
+<section id="read-data-using-sf-2" class="title-slide slide level2 center" data-number="18">
+<h2><span class="header-section-number">18</span> Read data using <code>{sf}</code></h2>
 
 <img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"></section>
 
-<section id="read-data-using-sf-3" class="title-slide slide level2 center" data-number="16">
-<h2><span class="header-section-number">16</span> Read data using <code>{sf}</code></h2>
+<section id="read-data-using-sf-3" class="title-slide slide level2 center" data-number="19">
+<h2><span class="header-section-number">19</span> Read data using <code>{sf}</code></h2>
 <p><code>{sf}</code> can use any available drivers to read data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>drivers <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_drivers</span>()</span>
@@ -784,8 +863,8 @@ HTTP                TRUE      TRUE FALSE</code></pre>
 </section>
 
 <section>
-<section id="read-data-from-a-url-using-sf" class="title-slide slide level2 center" data-number="17">
-<h2><span class="header-section-number">17</span> Read data from a URL using <code>{sf}</code></h2>
+<section id="read-data-from-a-url-using-sf" class="title-slide slide level2 center" data-number="20">
+<h2><span class="header-section-number">20</span> Read data from a URL using <code>{sf}</code></h2>
 <p><code>read_sf()</code> works well with a direct link to a spatial data file:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># GeoJSON (geojson)</span></span>
@@ -985,8 +1064,8 @@ Geodetic CRS:  WGS 84
 </div>
 </div>
 </section></section>
-<section id="read-spatial-data-with-other-packages" class="title-slide slide level2 center" data-number="18">
-<h2><span class="header-section-number">18</span> Read spatial data with other packages</h2>
+<section id="read-spatial-data-with-other-packages" class="title-slide slide level2 center" data-number="21">
+<h2><span class="header-section-number">21</span> Read spatial data with other packages</h2>
 <p>There are a wide variety of packages that you can use to supplement <code>{sf}</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(arcgislayers)</span>
@@ -1050,8 +1129,8 @@ First 10 features:
 </section>
 
 <section>
-<section id="examples" class="title-slide slide level2 center" data-number="19">
-<h2><span class="header-section-number">19</span> Examples</h2>
+<section id="examples" class="title-slide slide level2 center" data-number="22">
+<h2><span class="header-section-number">22</span> Examples</h2>
 
 <img data-src="https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg" class="r-stretch"><aside class="notes">
 <p>Census data</p>
