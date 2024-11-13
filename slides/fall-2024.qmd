@@ -62,7 +62,22 @@ Are there cheat-sheets for reading in data as well, or is it simply something yo
 
 **Yes!** See this [Posit cheatsheet on data import](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf).
 
+## Week 10
 
+-   Reminders
+    -   Exercise 5 due next Friday, Nov. 1
+    -   Final project proposal due Wednesday, Nov. 13
+-   tidycensus
+
+## Week 9
+
+-   Reminders
+    -   Exercise 5 due next Friday, Nov. 1
+    -   Office hours on Tuesday, Oct. 29
+    -   Final project proposal due Wednesday, Nov. 13
+-   Lessons from McConchie and Boeing
+-   Open Street Map Lecture & Practice
+-   Questions
 
 ## Week 9
 
