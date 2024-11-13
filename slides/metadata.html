@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="dcterms.date" content="2024-11-06">
+  <meta name="dcterms.date" content="2024-11-13">
   <title>GES 668 - Fall 2024 – Metadata, geospatial metadata, and READMEs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -337,10 +337,22 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-11-06</p>
+  <p class="date">2024-11-13</p>
 </section>
-<section id="what-are-we-talking-about-metadata" class="title-slide slide level2 center scrollable" data-number="1">
-<h2><span class="header-section-number">1</span> What are we talking about metadata?</h2>
+<section id="introduction-to-documentation" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Introduction to documentation</h2>
+<p>Many different types (or levels) of documentation:</p>
+<ul>
+<li>Community or team documentation</li>
+<li>Project-level documentation</li>
+<li>Process documentation</li>
+<li>Systems documentation</li>
+<li>Data documentation (aka metadata)</li>
+</ul>
+</section>
+
+<section id="what-are-we-talking-about-metadata" class="title-slide slide level2 center scrollable" data-number="2">
+<h2><span class="header-section-number">2</span> What are we talking about metadata?</h2>
 <ol type="1">
 <li><p>What is metadata and why does it matter?</p></li>
 <li><p>What is geospatial metadata?</p></li>
@@ -364,7 +376,7 @@
 </ul></li>
 <li><p>Metadata DIY</p>
 <ul>
-<li>Diﬀerent levels of data</li>
+<li>Different levels of data</li>
 <li>Common elements to include in metadata</li>
 <li>Writing a READMEs</li>
 <li>Using data dictionaries</li>
@@ -383,8 +395,8 @@
       }</style></aside>
 </section>
 
-<section id="what-is-metadata" class="title-slide slide level2 center" data-number="2">
-<h2><span class="header-section-number">2</span> What is metadata?</h2>
+<section id="what-is-metadata" class="title-slide slide level2 center" data-number="3">
+<h2><span class="header-section-number">3</span> What is metadata?</h2>
 <ul>
 <li>What is metadata?</li>
 <li>Why does metadata matter?</li>
@@ -393,16 +405,16 @@
 </ul>
 </section>
 
-<section id="what-is-metadata-1" class="title-slide slide level2 center" data-number="3">
-<h2><span class="header-section-number">3</span> What is metadata?</h2>
+<section id="what-is-metadata-1" class="title-slide slide level2 center" data-number="4">
+<h2><span class="header-section-number">4</span> What is metadata?</h2>
 <blockquote>
 <p>Metadata is data about data. It describes information like who collected it, when, for what purpose, and the level of quality… You can think of metadata as <strong>little messengers to the future</strong>.</p>
 </blockquote>
 <p>– Sarah Wakamiya (Inventory &amp; Monitoring Program Data Manager), National Park Service from <a href="https://www.nps.gov/articles/what-in-the-world-is-metadata.htm">What in the World is Metadata and Why Should I Care?</a></p>
 </section>
 
-<section id="what-is-metadata-2" class="title-slide slide level2 center" data-number="4">
-<h2><span class="header-section-number">4</span> What is metadata?</h2>
+<section id="what-is-metadata-2" class="title-slide slide level2 center" data-number="5">
+<h2><span class="header-section-number">5</span> What is metadata?</h2>
 <ul>
 <li>Metadata provides <strong>context</strong></li>
 <li>Metadata has <strong>structure</strong></li>
@@ -410,23 +422,23 @@
 </ul>
 </section>
 
-<section id="what-is-metadata-3" class="title-slide slide level2 center" data-number="5">
-<h2><span class="header-section-number">5</span> What is metadata?</h2>
+<section id="what-is-metadata-3" class="title-slide slide level2 center" data-number="6">
+<h2><span class="header-section-number">6</span> What is metadata?</h2>
 <blockquote>
 <p>“the metadata is collected so that it can fulﬁll a useful purpose, and sorted into known categories. It is this notion of structure that turns <em>raw information</em> into <em>actionable metadata</em>.”</p>
 </blockquote>
 <p>– <a href="https://www.niso.org/publications/understanding-metadata-2017">Jenn Riley, NISO,</a> from Understanding Metadata: What is Metadata, and What is it For?: A Primer, 2017</p>
 </section>
 
-<section id="why-does-metadata-matter" class="title-slide slide level2 center" data-number="6">
-<h2><span class="header-section-number">6</span> Why does metadata matter?</h2>
+<section id="why-does-metadata-matter" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> Why does metadata matter?</h2>
 <p>Metadata makes your data more <em>discoverable</em> and <em>understandable</em></p>
 <p>Good metadata helps others trust, validate, reuse and build upon your data.</p>
 </section>
 
 <section>
-<section id="what-are-metadata-standards" class="title-slide slide level2 center" data-number="7">
-<h2><span class="header-section-number">7</span> What are metadata standards?</h2>
+<section id="what-are-metadata-standards" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> What are metadata standards?</h2>
 <p>A metadata standard is a set of rules, or an agreement, that set the minimum amount of information that should be documented about a dataset (and how).</p>
 <p>A metadata syntax is a set of rules for the structure and format of the metadata.</p>
 <p>Standardizing content and syntax makes it easier for both <strong>humans</strong> and <strong>computers</strong> to ﬁnd and understand your data!</p>
@@ -516,13 +528,13 @@
       }</style></aside>
 </section>
 </section>
-<section id="geospatial-metadata" class="title-slide slide level2 center" data-number="8">
-<h2><span class="header-section-number">8</span> Geospatial Metadata</h2>
+<section id="geospatial-metadata" class="title-slide slide level2 center" data-number="9">
+<h2><span class="header-section-number">9</span> Geospatial Metadata</h2>
 <p>Geospatial metadata is just metadata about geospatial datasets, projects, or workflows.</p>
 </section>
 
-<section id="what-elements-are-in-most-geospatial-metadata-standards" class="title-slide slide level2 center" data-number="9">
-<h2><span class="header-section-number">9</span> What elements are in most geospatial metadata standards?</h2>
+<section id="what-elements-are-in-most-geospatial-metadata-standards" class="title-slide slide level2 center" data-number="10">
+<h2><span class="header-section-number">10</span> What elements are in most geospatial metadata standards?</h2>
 <ul>
 <li>Bounding box</li>
 <li>Geographic location (often a identifier or controlled vocabulary, e.g.&nbsp;<a href="https://www.geonames.org/">GeoName</a>)</li>
@@ -545,8 +557,8 @@
 </div>
 </section>
 
-<section id="what-else-is-included-in-a-geospatial-metadata-standard" class="title-slide slide level2 center" data-number="10">
-<h2><span class="header-section-number">10</span> What <em>else</em> is included in a geospatial metadata standard?</h2>
+<section id="what-else-is-included-in-a-geospatial-metadata-standard" class="title-slide slide level2 center" data-number="11">
+<h2><span class="header-section-number">11</span> What <em>else</em> is included in a geospatial metadata standard?</h2>
 <ul>
 <li>Geoprocessing tools used to create data</li>
 <li>Maintenance schedule (if data will be updated)</li>
@@ -555,8 +567,8 @@
 </ul>
 </section>
 
-<section id="different-levels-of-data-to-document" class="title-slide slide level2 center" data-number="11">
-<h2><span class="header-section-number">11</span> Different Levels of Data to Document</h2>
+<section id="different-levels-of-data-to-document" class="title-slide slide level2 center" data-number="12">
+<h2><span class="header-section-number">12</span> Different Levels of Data to Document</h2>
 <ul>
 <li>Data file or layer</li>
 <li>Collection of files or layers</li>
@@ -565,13 +577,13 @@
 </ul>
 </section>
 
-<section id="metadata-policies-maryland-imap" class="title-slide slide level2 center" data-number="12">
-<h2><span class="header-section-number">12</span> Metadata Policies: Maryland iMAP</h2>
+<section id="metadata-policies-maryland-imap" class="title-slide slide level2 center" data-number="13">
+<h2><span class="header-section-number">13</span> Metadata Policies: Maryland iMAP</h2>
 
 <img data-src="images/2023-05-08_md-imap_screenshot.png" class="r-stretch"></section>
 
-<section id="metadata-policies-maryland-imap-1" class="title-slide slide level2 center" data-number="13">
-<h2><span class="header-section-number">13</span> Metadata Policies: Maryland iMAP</h2>
+<section id="metadata-policies-maryland-imap-1" class="title-slide slide level2 center" data-number="14">
+<h2><span class="header-section-number">14</span> Metadata Policies: Maryland iMAP</h2>
 <dl>
 <dt><strong>How do you get data published on MD iMAP?</strong></dt>
 <dd>
@@ -588,8 +600,8 @@
 </dl>
 </section>
 
-<section id="metadata-policies" class="title-slide slide level2 center" data-number="14">
-<h2><span class="header-section-number">14</span> Metadata Policies</h2>
+<section id="metadata-policies" class="title-slide slide level2 center" data-number="15">
+<h2><span class="header-section-number">15</span> Metadata Policies</h2>
 
 <img data-src="images/EPA-Metadata-Technical-Specification.png" class="r-stretch"><dl>
 <dt><strong>How do you ensure the integrity of data for environmental regulation?</strong></dt>
@@ -599,8 +611,8 @@
 </dl>
 </section>
 
-<section id="metadata-schemas" class="title-slide slide level2 center" data-number="15">
-<h2><span class="header-section-number">15</span> Metadata Schemas</h2>
+<section id="metadata-schemas" class="title-slide slide level2 center" data-number="16">
+<h2><span class="header-section-number">16</span> Metadata Schemas</h2>
 
 <img data-src="https://www.fgdc.gov/metadata/images/iso-geo-standard-diagram.png" class="r-stretch"><dl>
 <dt><strong>How do you share data across the federal government?</strong></dt>
@@ -624,8 +636,8 @@
 </section>
 
 <section>
-<section id="geospatial-metadata-schemas" class="title-slide slide level2 center" data-number="16">
-<h2><span class="header-section-number">16</span> Geospatial Metadata Schemas</h2>
+<section id="geospatial-metadata-schemas" class="title-slide slide level2 center" data-number="17">
+<h2><span class="header-section-number">17</span> Geospatial Metadata Schemas</h2>
 <ul>
 <li><a href="https://knowledge-base.inspire.ec.europa.eu/index_en">INSPIRE</a> (Infrastructure for Spatial Information in Europe)</li>
 <li><a href="https://opengeometadata.org/docs/ogm-aardvark">OpenGeoMetadata</a></li>
@@ -636,8 +648,8 @@
 
 <img data-src="images/2023-11-28_GeoBlacklight.png" class="r-stretch"></section>
 </section>
-<section id="what-can-you-do-with-geospatial-metadata" class="title-slide slide level2 center" data-number="17">
-<h2><span class="header-section-number">17</span> What can you do with geospatial metadata?</h2>
+<section id="what-can-you-do-with-geospatial-metadata" class="title-slide slide level2 center" data-number="18">
+<h2><span class="header-section-number">18</span> What can you do with geospatial metadata?</h2>
 <ul>
 <li><strong>Search and discovery</strong> for maps and data</li>
 <li><strong>Gazetteers</strong> and controlled vocabularies</li>
@@ -663,25 +675,9 @@
       }</style></aside>
 </section>
 
-<section id="what-can-you-build-to-work-with-spatial-metadata" class="title-slide slide level2 center" data-number="18">
-<h2><span class="header-section-number">18</span> What can you build to work with spatial metadata?</h2>
-<ul>
-<li>READMEs</li>
-<li>Data dictionaries</li>
-<li>Conventions and controlled vocabularies</li>
-</ul>
-<p>Varied tools can support the creation of different elements of metadata.</p>
-</section>
-
-<section id="useful-how-to-resources" class="title-slide slide level2 center" data-number="19">
-<h2><span class="header-section-number">19</span> Useful how to resources</h2>
-
-<img data-src="images/USGS-Metadata-Creation.png" class="r-stretch"><p><a href="https://www.usgs.gov/data-management/metadata-creation">USGS Metadata Creation Guide</a></p>
-</section>
-
 <section>
-<section id="search-and-discovery" class="title-slide slide level2 center" data-number="20">
-<h2><span class="header-section-number">20</span> Search and discovery</h2>
+<section id="search-and-discovery" class="title-slide slide level2 center" data-number="19">
+<h2><span class="header-section-number">19</span> Search and discovery</h2>
 <ul>
 <li><a href="https://geoblacklight.org">GeoBlacklight</a></li>
 <li><a href="https://openindexmaps.org">OpenIndexMaps</a></li>
@@ -711,8 +707,8 @@
       }</style></aside>
 </section>
 </section>
-<section id="gazetteers" class="title-slide slide level2 center" data-number="21">
-<h2><span class="header-section-number">21</span> Gazetteers</h2>
+<section id="gazetteers" class="title-slide slide level2 center" data-number="20">
+<h2><span class="header-section-number">20</span> Gazetteers</h2>
 <ul>
 <li><a href="https://whosonfirst.org/what/">Who’s On First</a>: a big list of places, each with a stable identifier and some number of descriptive properties about that location.</li>
 <li><a href="https://pleiades.stoa.org/">Pleiades</a>: a community-built gazetteer and graph of ancient places.</li>
@@ -720,11 +716,41 @@
 </ul>
 </section>
 
-<section id="tips-for-documentation" class="title-slide slide level2 center" data-number="22">
-<h2><span class="header-section-number">22</span> Tips for Documentation</h2>
+<section id="what-tools-help-you-work-with-spatial-metadata" class="title-slide slide level2 center" data-number="21">
+<h2><span class="header-section-number">21</span> What tools help you work with spatial metadata?</h2>
 <ul>
-<li><p>READMEs are your best friend</p></li>
-<li><p>Document your data along the way - saves you time at the end</p></li>
+<li>READMEs</li>
+<li>Data dictionaries</li>
+<li>Conventions and controlled vocabularies</li>
+<li>Built-in file and project-level metadata</li>
+</ul>
+<p>Varied tools can support the creation of different elements of metadata.</p>
+</section>
+
+<section id="useful-how-to-resources" class="title-slide slide level2 center" data-number="22">
+<h2><span class="header-section-number">22</span> Useful how-to resources</h2>
+
+<img data-src="images/USGS-Metadata-Creation.png" class="r-stretch"><p><a href="https://www.usgs.gov/data-management/metadata-creation">USGS Metadata Creation Guide</a></p>
+</section>
+
+<section id="useful-how-to-resources-1" class="title-slide slide level2 center" data-number="23">
+<h2><span class="header-section-number">23</span> Useful how-to resources</h2>
+<p><a href="https://howtofair.dk/">How to FAIR</a>: “how you can make your research data more FAIR by taking you through six FAIRification practices:”</p>
+<ul>
+<li>Documentation</li>
+<li>File formats</li>
+<li>Metadata</li>
+<li>Access to data</li>
+<li>Persistent identifiers</li>
+<li>Data licences</li>
+</ul>
+</section>
+
+<section id="tips-for-documentation" class="title-slide slide level2 center" data-number="24">
+<h2><span class="header-section-number">24</span> Tips for Documentation</h2>
+<ul>
+<li><p>READMEs and data dictionaries are your best friends</p></li>
+<li><p>Document your data along the way - saves you time at the end!</p></li>
 <li><p>Use descriptive file names</p></li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -742,22 +768,22 @@
 </div>
 </section>
 
-<section id="what-is-a-readme" class="title-slide slide level2 center" data-number="23">
-<h2><span class="header-section-number">23</span> What is a README?</h2>
+<section id="what-is-a-readme" class="title-slide slide level2 center" data-number="25">
+<h2><span class="header-section-number">25</span> What is a README?</h2>
 <p>A README file is a text file containing key information about your data which gives the reader a general understanding of the purpose and history of your data set, how it is organized, and how it can be used. You can think of a README file as a manual for your data.</p>
 <p>You can use it to capture components of your data that are not adequately captured in the metadata contained with your geoprocessing application.</p>
 </section>
 
-<section id="what-write-a-readme" class="title-slide slide level2 center" data-number="24">
-<h2><span class="header-section-number">24</span> What write a README?</h2>
+<section id="what-write-a-readme" class="title-slide slide level2 center" data-number="26">
+<h2><span class="header-section-number">26</span> What write a README?</h2>
 <p>While some of the information contained within your README file may overlap with the content you entered in the metadata within your geoprocessing tool, it is still a good idea to create a separate file that lives outside of your geospatial file.</p>
 <p>This is helpful for not only if you share your data with others, but is also beneﬁcial to yourself if you need to revisit your data in the future.</p>
 <p>Furthermore, some geospatial formats (e.g.&nbsp;GeoJSON) or other formats you might save your file as (csv) just can’t store metadata like a shapefile or GeoPackage.</p>
 <p>Cover all your bases.</p>
 </section>
 
-<section id="readme-files---what-to-include" class="title-slide slide level2 center" data-number="25">
-<h2><span class="header-section-number">25</span> README Files - What to include?</h2>
+<section id="readme-files---what-to-include" class="title-slide slide level2 center" data-number="27">
+<h2><span class="header-section-number">27</span> README Files - What to include?</h2>
 <ul>
 <li><p>Use templates and checklists!</p></li>
 <li><p>High-level and essential information, e.g.&nbsp;purpose of the data set, where the files can be found</p></li>
@@ -768,8 +794,13 @@
 <p><a href="https://data.research.cornell.edu/content/readme">Guide to writing “readme” style metadata</a></p>
 </section>
 
-<section id="open-data-charter-2015" class="title-slide slide level2 center scrollable" data-number="26">
-<h2><span class="header-section-number">26</span> Open Data Charter (2015)</h2>
+<section id="practice-using-the-labelled-package" class="title-slide slide level2 center" data-number="28">
+<h2><span class="header-section-number">28</span> Practice: Using the <code>{labelled}</code> package</h2>
+<p>Practice using the <code>{labelled}</code> package to label variables with <code>labelled::set_variable_labels()</code> and generate a data dictionary with <code>labelled::generate_dictionary()</code>.</p>
+</section>
+
+<section id="open-data-charter-2015" class="title-slide slide level2 center scrollable" data-number="29">
+<h2><span class="header-section-number">29</span> Open Data Charter (2015)</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Created in October 2015, the <a href="https://opendatacharter.net/principles/">International Open Data Charter</a> developed six principles on how to publish data that can be freely used, reused, and redistributed by anyone, anytime, anywhere:</p>
@@ -811,8 +842,8 @@
       }</style></aside>
 </section>
 
-<section id="fair-and-care" class="title-slide slide level2 center" data-number="27">
-<h2><span class="header-section-number">27</span> FAIR and CARE</h2>
+<section id="fair-and-care" class="title-slide slide level2 center" data-number="30">
+<h2><span class="header-section-number">30</span> FAIR and CARE</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><a href="https://www.go-fair.org/fair-principles/">FAIR</a> Guiding Principles (2016):</p>
@@ -822,16 +853,30 @@
 <li>Interoperable,</li>
 <li>and Reusable</li>
 </ul>
-<p><a href="https://www.gida-global.org/care">CARE</a> Principles for Indigenous Data Governance (2019):</p>
-<ul>
+<div class="column" style="width:40%;">
+<p><img data-src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png"></p>
+</div></div><aside class="notes">
+<p>Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside><hr><p><a href="https://www.gida-global.org/care">CARE</a> Principles for Indigenous Data Governance (2019):</p><ul>
 <li>Collective benefit,</li>
 <li>Authority to control,</li>
 <li>Responsibility,</li>
 <li>and Ethics</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div>
+<div class="column" style="width:40%;">
 <p><img data-src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png"></p>
-</div></div>
+</div><p>:::</p>
 <aside class="notes">
 <p>Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1</p>
 <style type="text/css">
@@ -847,27 +892,19 @@
       }</style></aside>
 </section>
 
-<section id="fair-and-care-in-practice" class="title-slide slide level2 center" data-number="28">
-<h2><span class="header-section-number">28</span> FAIR and CARE in Practice</h2>
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig2_HTML.png?as=webp"></p>
-<figcaption>Fig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures</figcaption>
-</figure>
-</div>
-<aside class="notes">
-<p>Image: https://www.nature.com/articles/s41597-021-00892-0/figures/2</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="practice-is-this-data-fair" class="title-slide slide level2 center" data-number="31">
+<h2><span class="header-section-number">31</span> Practice: Is this data FAIR?</h2>
+<p>Take a look at the prompt in our running course notes document and try evaluating whether a dataset is FAIR (Findable, Accessible, Interoperable, and Reusable).</p>
+</section>
+
+<section id="extra-create-your-orcid-id" class="title-slide slide level2 center" data-number="32">
+<h2><span class="header-section-number">32</span> Extra: Create your ORCID iD</h2>
+<p>Persistent identifiers are not just for datasets. They can also help to identify individual researchers or developers. The ORCID iD is one commonly used persistent identifier for researchers: <a href="https://orcid.org/register">register to sign up and get your own ORCID iD</a>.</p>
+<!-- ## FAIR and CARE in Practice -->
+<!-- ![Fig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig2_HTML.png?as=webp) -->
+<!-- ::: notes -->
+<!-- Image: https://www.nature.com/articles/s41597-021-00892-0/figures/2 -->
+<!-- ::: -->
 
 <div class="quarto-auto-generated-content">
 <p><img src="../images/logo.png" class="slide-logo"></p>

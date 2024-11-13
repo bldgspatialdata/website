@@ -402,11 +402,47 @@
   <p class="date">2024-09-04</p>
 </section>
 <section>
+<section id="week-12" class="title-slide slide level2 center">
+<h2>Week 12</h2>
+<ul>
+<li>Baltimore City GIS Day (see the Discord for details!)</li>
+<li>Final Project Proposal Extension: Friday, Nov.&nbsp;15</li>
+<li>Questions</li>
+<li>Lecture: Geospatial metadata and documentation</li>
+<li>Practice: Labelling variables and making data dictionaries with <code>{labelled}</code></li>
+<li>Practice: Is this data FAIR?</li>
+</ul>
+</section>
+<section id="questions" class="title-slide slide level3 center">
+<h3>Questions</h3>
+
+</section>
+<section class="slide level4">
+
+<p><strong>Are there any tips for transforming spreadsheet data structures that might not be tidy when importing into R?</strong></p>
+<p>The <a href="https://nacnudus.github.io/spreadsheet-munging-strategies/">Spreadsheet Munging Strategies</a> book by Duncan Garmonsway and the related packages <a href="https://nacnudus.github.io/tidyxl/">tidyxl</a> and <a href="https://nacnudus.github.io/unpivotr/">unpivotr</a>.</p>
+<p>This blog post by <a href="https://www.sophieheloisebennett.com/posts/excel-sheet-cleaning/">Sophie Bennet</a> is a helpful resource with tips on common issues: column names in multiple rows, variables in multiple columns, data in multiple sheets, and inconsistencies between sheets.</p>
+<p>Helpful functions for cleaning messy spreadsheet data include <code>dplyr::coalesce()</code> (combining values from muliple columns into one), <code>tidyr::fill()</code> for copying values down across rows, and <code>tidyr::separate_wider_delim()</code> for splitting columns.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>Is there any way to label a subset of items (instead of everything) with ggplot2?</strong></p>
+<p>You can pass a function in place of the data argument for any <code>geom_</code> function to subset your data. You can also create manual annotations with the <code>annotation()</code> function or use a dedicated package like <a href="https://yutannihilation.github.io/gghighlight/">gghighlight</a>. <a href="https://ggrepel.slowkow.com/">ggrepel</a> is a more advanced labelling package that doesn’t have dedicated <code>sf</code> friendly functions — but can still work.</p>
+</section>
+<section class="slide level4">
+
+<p>How can a team decide which documents are most critical to maintain if they have limited resources for documentation?</p>
+</section>
+<section class="slide level4">
+
+</section>
+</section>
+<section>
 <section id="week-11" class="title-slide slide level2 center">
 <h2>Week 11</h2>
 
 </section>
-<section id="questions" class="title-slide slide level3 center">
+<section id="questions-1" class="title-slide slide level3 center">
 <h3>Questions</h3>
 
 </section>

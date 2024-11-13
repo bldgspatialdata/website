@@ -655,6 +655,13 @@
     "text": "Storing and organizing spatial data takes planning\nPlanning for the structure and organization of your data can be supported using a variety of tools:\n\nDiagram drawing applications (e.g. draw.io)\nEntity-relationship diagram tools (e.g. drawDB)\nLow-code, visual database applications (e.g. Airtable)"
   },
   {
+    "objectID": "slides/fall-2024.html#week-12",
+    "href": "slides/fall-2024.html#week-12",
+    "title": "Weekly Updates",
+    "section": "Week 12",
+    "text": "Week 12\n\nBaltimore City GIS Day (see the Discord for details!)\nFinal Project Proposal Extension: Friday, Nov. 15\nQuestions\nLecture: Geospatial metadata and documentation\nPractice: Labelling variables and making data dictionaries with {labelled}\nPractice: Is this data FAIR?"
+  },
+  {
     "objectID": "slides/fall-2024.html#week-11",
     "href": "slides/fall-2024.html#week-11",
     "title": "Weekly Updates",
@@ -1842,207 +1849,235 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nNov 6, 2024\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Course information",
       "Slides"
     ]
   },
   {
+    "objectID": "slides/metadata.html#introduction-to-documentation",
+    "href": "slides/metadata.html#introduction-to-documentation",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "1 Introduction to documentation",
+    "text": "1 Introduction to documentation\nMany different types (or levels) of documentation:\n\nCommunity or team documentation\nProject-level documentation\nProcess documentation\nSystems documentation\nData documentation (aka metadata)"
+  },
+  {
     "objectID": "slides/metadata.html#what-are-we-talking-about-metadata",
     "href": "slides/metadata.html#what-are-we-talking-about-metadata",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "1 What are we talking about metadata?",
-    "text": "1 What are we talking about metadata?\n\nWhat is metadata and why does it matter?\nWhat is geospatial metadata?\nHow can you make metadata?\n\n\nPortions of these are adapted or inspired by a fall 2022 lecture by Reina Chano Murray (repo / Google Slides).\n\n\n\nIntroduction to metadata:\n\nWhat is metadata?\nWhy does metadata matter?\nWhat are metadata standards?\n\nGeospatial metadata\n\nGeospatial metadata standards\nGeospatial metadata schemas\n\nMetadata DIY\n\nDiﬀerent levels of data\nCommon elements to include in metadata\nWriting a READMEs\nUsing data dictionaries"
+    "section": "2 What are we talking about metadata?",
+    "text": "2 What are we talking about metadata?\n\nWhat is metadata and why does it matter?\nWhat is geospatial metadata?\nHow can you make metadata?\n\n\nPortions of these are adapted or inspired by a fall 2022 lecture by Reina Chano Murray (repo / Google Slides).\n\n\n\nIntroduction to metadata:\n\nWhat is metadata?\nWhy does metadata matter?\nWhat are metadata standards?\n\nGeospatial metadata\n\nGeospatial metadata standards\nGeospatial metadata schemas\n\nMetadata DIY\n\nDifferent levels of data\nCommon elements to include in metadata\nWriting a READMEs\nUsing data dictionaries"
   },
   {
     "objectID": "slides/metadata.html#what-is-metadata",
     "href": "slides/metadata.html#what-is-metadata",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "2 What is metadata?",
-    "text": "2 What is metadata?\n\nWhat is metadata?\nWhy does metadata matter?\nWhat is a metadata standard?\nWhat is a schema?"
+    "section": "3 What is metadata?",
+    "text": "3 What is metadata?\n\nWhat is metadata?\nWhy does metadata matter?\nWhat is a metadata standard?\nWhat is a schema?"
   },
   {
     "objectID": "slides/metadata.html#what-is-metadata-1",
     "href": "slides/metadata.html#what-is-metadata-1",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "3 What is metadata?",
-    "text": "3 What is metadata?\n\nMetadata is data about data. It describes information like who collected it, when, for what purpose, and the level of quality… You can think of metadata as little messengers to the future.\n\n– Sarah Wakamiya (Inventory & Monitoring Program Data Manager), National Park Service from What in the World is Metadata and Why Should I Care?"
+    "section": "4 What is metadata?",
+    "text": "4 What is metadata?\n\nMetadata is data about data. It describes information like who collected it, when, for what purpose, and the level of quality… You can think of metadata as little messengers to the future.\n\n– Sarah Wakamiya (Inventory & Monitoring Program Data Manager), National Park Service from What in the World is Metadata and Why Should I Care?"
   },
   {
     "objectID": "slides/metadata.html#what-is-metadata-2",
     "href": "slides/metadata.html#what-is-metadata-2",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "4 What is metadata?",
-    "text": "4 What is metadata?\n\nMetadata provides context\nMetadata has structure\nMetadata makes it easier to find, use, or manage related data"
+    "section": "5 What is metadata?",
+    "text": "5 What is metadata?\n\nMetadata provides context\nMetadata has structure\nMetadata makes it easier to find, use, or manage related data"
   },
   {
     "objectID": "slides/metadata.html#what-is-metadata-3",
     "href": "slides/metadata.html#what-is-metadata-3",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "5 What is metadata?",
-    "text": "5 What is metadata?\n\n“the metadata is collected so that it can fulﬁll a useful purpose, and sorted into known categories. It is this notion of structure that turns raw information into actionable metadata.”\n\n– Jenn Riley, NISO, from Understanding Metadata: What is Metadata, and What is it For?: A Primer, 2017"
+    "section": "6 What is metadata?",
+    "text": "6 What is metadata?\n\n“the metadata is collected so that it can fulﬁll a useful purpose, and sorted into known categories. It is this notion of structure that turns raw information into actionable metadata.”\n\n– Jenn Riley, NISO, from Understanding Metadata: What is Metadata, and What is it For?: A Primer, 2017"
   },
   {
     "objectID": "slides/metadata.html#why-does-metadata-matter",
     "href": "slides/metadata.html#why-does-metadata-matter",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "6 Why does metadata matter?",
-    "text": "6 Why does metadata matter?\nMetadata makes your data more discoverable and understandable\nGood metadata helps others trust, validate, reuse and build upon your data."
+    "section": "7 Why does metadata matter?",
+    "text": "7 Why does metadata matter?\nMetadata makes your data more discoverable and understandable\nGood metadata helps others trust, validate, reuse and build upon your data."
   },
   {
     "objectID": "slides/metadata.html#what-are-metadata-standards",
     "href": "slides/metadata.html#what-are-metadata-standards",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "7 What are metadata standards?",
-    "text": "7 What are metadata standards?\nA metadata standard is a set of rules, or an agreement, that set the minimum amount of information that should be documented about a dataset (and how).\nA metadata syntax is a set of rules for the structure and format of the metadata.\nStandardizing content and syntax makes it easier for both humans and computers to ﬁnd and understand your data!\n\nProvides agreement on the meaning and semantics of the data."
+    "section": "8 What are metadata standards?",
+    "text": "8 What are metadata standards?\nA metadata standard is a set of rules, or an agreement, that set the minimum amount of information that should be documented about a dataset (and how).\nA metadata syntax is a set of rules for the structure and format of the metadata.\nStandardizing content and syntax makes it easier for both humans and computers to ﬁnd and understand your data!\n\nProvides agreement on the meaning and semantics of the data."
   },
   {
     "objectID": "slides/metadata.html#geospatial-metadata",
     "href": "slides/metadata.html#geospatial-metadata",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "8 Geospatial Metadata",
-    "text": "8 Geospatial Metadata\nGeospatial metadata is just metadata about geospatial datasets, projects, or workflows."
+    "section": "9 Geospatial Metadata",
+    "text": "9 Geospatial Metadata\nGeospatial metadata is just metadata about geospatial datasets, projects, or workflows."
   },
   {
     "objectID": "slides/metadata.html#what-elements-are-in-most-geospatial-metadata-standards",
     "href": "slides/metadata.html#what-elements-are-in-most-geospatial-metadata-standards",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "9 What elements are in most geospatial metadata standards?",
-    "text": "9 What elements are in most geospatial metadata standards?\n\nBounding box\nGeographic location (often a identifier or controlled vocabulary, e.g. GeoName)\nGeometry type (a.k.a. spatial representation)\nProjection/coordinate reference system\nProvenance (how the data was made)\n\n\n\n\n\n\n\nImportant\n\n\nSome elements can be generated by a GIS application—but some require manual entry."
+    "section": "10 What elements are in most geospatial metadata standards?",
+    "text": "10 What elements are in most geospatial metadata standards?\n\nBounding box\nGeographic location (often a identifier or controlled vocabulary, e.g. GeoName)\nGeometry type (a.k.a. spatial representation)\nProjection/coordinate reference system\nProvenance (how the data was made)\n\n\n\n\n\n\n\nImportant\n\n\nSome elements can be generated by a GIS application—but some require manual entry."
   },
   {
     "objectID": "slides/metadata.html#what-else-is-included-in-a-geospatial-metadata-standard",
     "href": "slides/metadata.html#what-else-is-included-in-a-geospatial-metadata-standard",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "10 What else is included in a geospatial metadata standard?",
-    "text": "10 What else is included in a geospatial metadata standard?\n\nGeoprocessing tools used to create data\nMaintenance schedule (if data will be updated)\nSystem/software environment (e.g. software and software version used to create data)\nGeospatial metadata schema"
+    "section": "11 What else is included in a geospatial metadata standard?",
+    "text": "11 What else is included in a geospatial metadata standard?\n\nGeoprocessing tools used to create data\nMaintenance schedule (if data will be updated)\nSystem/software environment (e.g. software and software version used to create data)\nGeospatial metadata schema"
   },
   {
     "objectID": "slides/metadata.html#different-levels-of-data-to-document",
     "href": "slides/metadata.html#different-levels-of-data-to-document",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "11 Different Levels of Data to Document",
-    "text": "11 Different Levels of Data to Document\n\nData file or layer\nCollection of files or layers\nMap or data presentation\nProject"
+    "section": "12 Different Levels of Data to Document",
+    "text": "12 Different Levels of Data to Document\n\nData file or layer\nCollection of files or layers\nMap or data presentation\nProject"
   },
   {
     "objectID": "slides/metadata.html#metadata-policies-maryland-imap",
     "href": "slides/metadata.html#metadata-policies-maryland-imap",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "12 Metadata Policies: Maryland iMAP",
-    "text": "12 Metadata Policies: Maryland iMAP"
+    "section": "13 Metadata Policies: Maryland iMAP",
+    "text": "13 Metadata Policies: Maryland iMAP"
   },
   {
     "objectID": "slides/metadata.html#metadata-policies-maryland-imap-1",
     "href": "slides/metadata.html#metadata-policies-maryland-imap-1",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "13 Metadata Policies: Maryland iMAP",
-    "text": "13 Metadata Policies: Maryland iMAP\n\nHow do you get data published on MD iMAP?\n\nMD iMAP Data Submission Policy (Jan. 2015): “organizations can submit data for inclusion in MD iMAP using the guidelines in this document.”\n\nHow should state agencies use ArcGIS Online?\n\nPolicy and Standards for Esri ArcGIS Online (Mar. 2021): “policy and guidance on standards and the use of ArcGIS Online for Maryland (AGOL) by State agencies.”\n\nWhat can people who use MD iMAP expect?\n\nMD iMAP Data Management Plan (Jan. 2015): “standards and specifications” to improve “data consistency and availability of information.”"
+    "section": "14 Metadata Policies: Maryland iMAP",
+    "text": "14 Metadata Policies: Maryland iMAP\n\nHow do you get data published on MD iMAP?\n\nMD iMAP Data Submission Policy (Jan. 2015): “organizations can submit data for inclusion in MD iMAP using the guidelines in this document.”\n\nHow should state agencies use ArcGIS Online?\n\nPolicy and Standards for Esri ArcGIS Online (Mar. 2021): “policy and guidance on standards and the use of ArcGIS Online for Maryland (AGOL) by State agencies.”\n\nWhat can people who use MD iMAP expect?\n\nMD iMAP Data Management Plan (Jan. 2015): “standards and specifications” to improve “data consistency and availability of information.”"
   },
   {
     "objectID": "slides/metadata.html#metadata-policies",
     "href": "slides/metadata.html#metadata-policies",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "14 Metadata Policies",
-    "text": "14 Metadata Policies\n\n\nHow do you ensure the integrity of data for environmental regulation?\n\nEPA Metadata Specifications. See also Ecological Metadata Language (EML)"
+    "section": "15 Metadata Policies",
+    "text": "15 Metadata Policies\n\n\nHow do you ensure the integrity of data for environmental regulation?\n\nEPA Metadata Specifications. See also Ecological Metadata Language (EML)"
   },
   {
     "objectID": "slides/metadata.html#metadata-schemas",
     "href": "slides/metadata.html#metadata-schemas",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "15 Metadata Schemas",
-    "text": "15 Metadata Schemas\n\n\nHow do you share data across the federal government?\n\nFederal agencies are encouraged to use ISO 19115: Geographic information - Metadata (a standard developed from 1999 to 2003 to make the 1998 Content Standard for Digital Geospatial Metadata (CSDGM) work with “other formal and defacto standards that support the documentation of geospatial data and services.”\n\n\n\nISO Standards Diagram via FGDC"
+    "section": "16 Metadata Schemas",
+    "text": "16 Metadata Schemas\n\n\nHow do you share data across the federal government?\n\nFederal agencies are encouraged to use ISO 19115: Geographic information - Metadata (a standard developed from 1999 to 2003 to make the 1998 Content Standard for Digital Geospatial Metadata (CSDGM) work with “other formal and defacto standards that support the documentation of geospatial data and services.”\n\n\n\nISO Standards Diagram via FGDC"
   },
   {
     "objectID": "slides/metadata.html#geospatial-metadata-schemas",
     "href": "slides/metadata.html#geospatial-metadata-schemas",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "16 Geospatial Metadata Schemas",
-    "text": "16 Geospatial Metadata Schemas\n\nINSPIRE (Infrastructure for Spatial Information in Europe)\nOpenGeoMetadata"
+    "section": "17 Geospatial Metadata Schemas",
+    "text": "17 Geospatial Metadata Schemas\n\nINSPIRE (Infrastructure for Spatial Information in Europe)\nOpenGeoMetadata"
   },
   {
     "objectID": "slides/metadata.html#what-can-you-do-with-geospatial-metadata",
     "href": "slides/metadata.html#what-can-you-do-with-geospatial-metadata",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "17 What can you do with geospatial metadata?",
-    "text": "17 What can you do with geospatial metadata?\n\nSearch and discovery for maps and data\nGazetteers and controlled vocabularies\nBuild tools and references\n\n\n\ninput form\nstructured attributes (author, subject, topic)\nunstructured attributes (description, keywords, tags)\nsupplementary reference information"
-  },
-  {
-    "objectID": "slides/metadata.html#what-can-you-build-to-work-with-spatial-metadata",
-    "href": "slides/metadata.html#what-can-you-build-to-work-with-spatial-metadata",
-    "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "18 What can you build to work with spatial metadata?",
-    "text": "18 What can you build to work with spatial metadata?\n\nREADMEs\nData dictionaries\nConventions and controlled vocabularies\n\nVaried tools can support the creation of different elements of metadata."
-  },
-  {
-    "objectID": "slides/metadata.html#useful-how-to-resources",
-    "href": "slides/metadata.html#useful-how-to-resources",
-    "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "19 Useful how to resources",
-    "text": "19 Useful how to resources\n\nUSGS Metadata Creation Guide"
+    "section": "18 What can you do with geospatial metadata?",
+    "text": "18 What can you do with geospatial metadata?\n\nSearch and discovery for maps and data\nGazetteers and controlled vocabularies\nBuild tools and references\n\n\n\ninput form\nstructured attributes (author, subject, topic)\nunstructured attributes (description, keywords, tags)\nsupplementary reference information"
   },
   {
     "objectID": "slides/metadata.html#search-and-discovery",
     "href": "slides/metadata.html#search-and-discovery",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "20 Search and discovery",
-    "text": "20 Search and discovery\n\nGeoBlacklight\nOpenIndexMaps\nAllmaps: Curating, georeferencing and exploring for IIIF maps"
+    "section": "19 Search and discovery",
+    "text": "19 Search and discovery\n\nGeoBlacklight\nOpenIndexMaps\nAllmaps: Curating, georeferencing and exploring for IIIF maps"
   },
   {
     "objectID": "slides/metadata.html#gazetteers",
     "href": "slides/metadata.html#gazetteers",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "21 Gazetteers",
-    "text": "21 Gazetteers\n\nWho’s On First: a big list of places, each with a stable identifier and some number of descriptive properties about that location.\nPleiades: a community-built gazetteer and graph of ancient places.\nWorld Historical Gazetteer"
+    "section": "20 Gazetteers",
+    "text": "20 Gazetteers\n\nWho’s On First: a big list of places, each with a stable identifier and some number of descriptive properties about that location.\nPleiades: a community-built gazetteer and graph of ancient places.\nWorld Historical Gazetteer"
+  },
+  {
+    "objectID": "slides/metadata.html#what-tools-help-you-work-with-spatial-metadata",
+    "href": "slides/metadata.html#what-tools-help-you-work-with-spatial-metadata",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "21 What tools help you work with spatial metadata?",
+    "text": "21 What tools help you work with spatial metadata?\n\nREADMEs\nData dictionaries\nConventions and controlled vocabularies\nBuilt-in file and project-level metadata\n\nVaried tools can support the creation of different elements of metadata."
+  },
+  {
+    "objectID": "slides/metadata.html#useful-how-to-resources",
+    "href": "slides/metadata.html#useful-how-to-resources",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "22 Useful how-to resources",
+    "text": "22 Useful how-to resources\n\nUSGS Metadata Creation Guide"
+  },
+  {
+    "objectID": "slides/metadata.html#useful-how-to-resources-1",
+    "href": "slides/metadata.html#useful-how-to-resources-1",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "23 Useful how-to resources",
+    "text": "23 Useful how-to resources\nHow to FAIR: “how you can make your research data more FAIR by taking you through six FAIRification practices:”\n\nDocumentation\nFile formats\nMetadata\nAccess to data\nPersistent identifiers\nData licences"
   },
   {
     "objectID": "slides/metadata.html#tips-for-documentation",
     "href": "slides/metadata.html#tips-for-documentation",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "22 Tips for Documentation",
-    "text": "22 Tips for Documentation\n\nREADMEs are your best friend\nDocument your data along the way - saves you time at the end\nUse descriptive file names\n\n\n\n\n\n\n\nUse GIS applications to make metadata\n\n\nIf you’re using geospatial desktop software or web GIS, create your metadata in the platform/software you start in (inheritance). You can usually export the metadata as XML."
+    "section": "24 Tips for Documentation",
+    "text": "24 Tips for Documentation\n\nREADMEs and data dictionaries are your best friends\nDocument your data along the way - saves you time at the end!\nUse descriptive file names\n\n\n\n\n\n\n\nUse GIS applications to make metadata\n\n\nIf you’re using geospatial desktop software or web GIS, create your metadata in the platform/software you start in (inheritance). You can usually export the metadata as XML."
   },
   {
     "objectID": "slides/metadata.html#what-is-a-readme",
     "href": "slides/metadata.html#what-is-a-readme",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "23 What is a README?",
-    "text": "23 What is a README?\nA README file is a text file containing key information about your data which gives the reader a general understanding of the purpose and history of your data set, how it is organized, and how it can be used. You can think of a README file as a manual for your data.\nYou can use it to capture components of your data that are not adequately captured in the metadata contained with your geoprocessing application."
+    "section": "25 What is a README?",
+    "text": "25 What is a README?\nA README file is a text file containing key information about your data which gives the reader a general understanding of the purpose and history of your data set, how it is organized, and how it can be used. You can think of a README file as a manual for your data.\nYou can use it to capture components of your data that are not adequately captured in the metadata contained with your geoprocessing application."
   },
   {
     "objectID": "slides/metadata.html#what-write-a-readme",
     "href": "slides/metadata.html#what-write-a-readme",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "24 What write a README?",
-    "text": "24 What write a README?\nWhile some of the information contained within your README file may overlap with the content you entered in the metadata within your geoprocessing tool, it is still a good idea to create a separate file that lives outside of your geospatial file.\nThis is helpful for not only if you share your data with others, but is also beneﬁcial to yourself if you need to revisit your data in the future.\nFurthermore, some geospatial formats (e.g. GeoJSON) or other formats you might save your file as (csv) just can’t store metadata like a shapefile or GeoPackage.\nCover all your bases."
+    "section": "26 What write a README?",
+    "text": "26 What write a README?\nWhile some of the information contained within your README file may overlap with the content you entered in the metadata within your geoprocessing tool, it is still a good idea to create a separate file that lives outside of your geospatial file.\nThis is helpful for not only if you share your data with others, but is also beneﬁcial to yourself if you need to revisit your data in the future.\nFurthermore, some geospatial formats (e.g. GeoJSON) or other formats you might save your file as (csv) just can’t store metadata like a shapefile or GeoPackage.\nCover all your bases."
   },
   {
     "objectID": "slides/metadata.html#readme-files---what-to-include",
     "href": "slides/metadata.html#readme-files---what-to-include",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "25 README Files - What to include?",
-    "text": "25 README Files - What to include?\n\nUse templates and checklists!\nHigh-level and essential information, e.g. purpose of the data set, where the files can be found\nGeospatial-speciﬁc elements, e.g. coordinate reference system, geometry type\nWorkﬂow/software environment, e.g. software version, data manipulations which occurred outside of your geoprocessing tool, data version history\nFile naming and organization, e.g. purpose of key files and file naming scheme\n\nGuide to writing “readme” style metadata"
+    "section": "27 README Files - What to include?",
+    "text": "27 README Files - What to include?\n\nUse templates and checklists!\nHigh-level and essential information, e.g. purpose of the data set, where the files can be found\nGeospatial-speciﬁc elements, e.g. coordinate reference system, geometry type\nWorkﬂow/software environment, e.g. software version, data manipulations which occurred outside of your geoprocessing tool, data version history\nFile naming and organization, e.g. purpose of key files and file naming scheme\n\nGuide to writing “readme” style metadata"
+  },
+  {
+    "objectID": "slides/metadata.html#practice-using-the-labelled-package",
+    "href": "slides/metadata.html#practice-using-the-labelled-package",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "28 Practice: Using the {labelled} package",
+    "text": "28 Practice: Using the {labelled} package\nPractice using the {labelled} package to label variables with labelled::set_variable_labels() and generate a data dictionary with labelled::generate_dictionary()."
   },
   {
     "objectID": "slides/metadata.html#open-data-charter-2015",
     "href": "slides/metadata.html#open-data-charter-2015",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "26 Open Data Charter (2015)",
-    "text": "26 Open Data Charter (2015)\n\n\nCreated in October 2015, the International Open Data Charter developed six principles on how to publish data that can be freely used, reused, and redistributed by anyone, anytime, anywhere:\n\nOpen by Default\nTimely and Comprehensive\nAccessible and Usable\nComparable and Interoperable\nFor Improved Governance and Citizen Engagement\nFor Inclusive Development and Innovation\n\n\n\n\n\nCover of the International Open Data Charter\n\n\n\n\n\nOpen By Default This represents a real shift in how government operates and how it interacts with citizens. At the moment we often have to ask officials for the specific information we want. Open by default turns this on its head and says that there should be a presumption of publication for all. Governments need to justify data that’s kept closed, for example for security or data protection reasons. To make this work, citizens must also feel confident that open data will not compromise their right to privacy.\nTimely and Comprehensive Open data is only valuable if it’s still relevant. Getting information published quickly and in a comprehensive way is central to its potential for success. As much as possible governments should provide data in its original, unmodified form.\nAccessible and Usable Ensuring that data is machine readable and easy to find will make data go further. Portals are one way of achieving this. But it’s also important to think about the user experience of those accessing data, including the file formats that information is provided. Data should be free of charge, under an open license, for example, those developed by Creative Commons.\nComparable and Interoperable Data has a multiplier effect. The more quality datasets you have access to, and the easier it is for them to talk to each other, the more potential value you can get from them. Commonly-agreed data standards play a crucial role in making this happen.\nFor Improved Governance & Citizen Engagement Open data has the capacity to let citizens (and others in government) have a better idea of what officials and politicians are doing. This transparency can improve public services and help hold governments to account.\nFor Inclusive Development and Innovation Finally, open data can help spur inclusive economic development. For example, greater access to data can make farming more efficient, or it can be used to tackle climate change. Finally, we often think of open data as just about improving government performance, but there’s a whole universe out there of entrepreneurs making money off the back of open data."
+    "section": "29 Open Data Charter (2015)",
+    "text": "29 Open Data Charter (2015)\n\n\nCreated in October 2015, the International Open Data Charter developed six principles on how to publish data that can be freely used, reused, and redistributed by anyone, anytime, anywhere:\n\nOpen by Default\nTimely and Comprehensive\nAccessible and Usable\nComparable and Interoperable\nFor Improved Governance and Citizen Engagement\nFor Inclusive Development and Innovation\n\n\n\n\n\nCover of the International Open Data Charter\n\n\n\n\n\nOpen By Default This represents a real shift in how government operates and how it interacts with citizens. At the moment we often have to ask officials for the specific information we want. Open by default turns this on its head and says that there should be a presumption of publication for all. Governments need to justify data that’s kept closed, for example for security or data protection reasons. To make this work, citizens must also feel confident that open data will not compromise their right to privacy.\nTimely and Comprehensive Open data is only valuable if it’s still relevant. Getting information published quickly and in a comprehensive way is central to its potential for success. As much as possible governments should provide data in its original, unmodified form.\nAccessible and Usable Ensuring that data is machine readable and easy to find will make data go further. Portals are one way of achieving this. But it’s also important to think about the user experience of those accessing data, including the file formats that information is provided. Data should be free of charge, under an open license, for example, those developed by Creative Commons.\nComparable and Interoperable Data has a multiplier effect. The more quality datasets you have access to, and the easier it is for them to talk to each other, the more potential value you can get from them. Commonly-agreed data standards play a crucial role in making this happen.\nFor Improved Governance & Citizen Engagement Open data has the capacity to let citizens (and others in government) have a better idea of what officials and politicians are doing. This transparency can improve public services and help hold governments to account.\nFor Inclusive Development and Innovation Finally, open data can help spur inclusive economic development. For example, greater access to data can make farming more efficient, or it can be used to tackle climate change. Finally, we often think of open data as just about improving government performance, but there’s a whole universe out there of entrepreneurs making money off the back of open data."
   },
   {
     "objectID": "slides/metadata.html#fair-and-care",
     "href": "slides/metadata.html#fair-and-care",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "27 FAIR and CARE",
-    "text": "27 FAIR and CARE\n\n\nFAIR Guiding Principles (2016):\n\nFindable,\nAccessible,\nInteroperable,\nand Reusable\n\nCARE Principles for Indigenous Data Governance (2019):\n\nCollective benefit,\nAuthority to control,\nResponsibility,\nand Ethics\n\n\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1"
+    "section": "30 FAIR and CARE",
+    "text": "30 FAIR and CARE\n\n\nFAIR Guiding Principles (2016):\n\nFindable,\nAccessible,\nInteroperable,\nand Reusable\n\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1\nCARE Principles for Indigenous Data Governance (2019):\nCollective benefit,\nAuthority to control,\nResponsibility,\nand Ethics\n\n\n\n\n:::\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1"
   },
   {
-    "objectID": "slides/metadata.html#fair-and-care-in-practice",
-    "href": "slides/metadata.html#fair-and-care-in-practice",
+    "objectID": "slides/metadata.html#practice-is-this-data-fair",
+    "href": "slides/metadata.html#practice-is-this-data-fair",
     "title": "Metadata, geospatial metadata, and READMEs",
-    "section": "28 FAIR and CARE in Practice",
-    "text": "28 FAIR and CARE in Practice\n\n\n\nFig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/2"
+    "section": "31 Practice: Is this data FAIR?",
+    "text": "31 Practice: Is this data FAIR?\nTake a look at the prompt in our running course notes document and try evaluating whether a dataset is FAIR (Findable, Accessible, Interoperable, and Reusable)."
+  },
+  {
+    "objectID": "slides/metadata.html#extra-create-your-orcid-id",
+    "href": "slides/metadata.html#extra-create-your-orcid-id",
+    "title": "Metadata, geospatial metadata, and READMEs",
+    "section": "32 Extra: Create your ORCID iD",
+    "text": "32 Extra: Create your ORCID iD\nPersistent identifiers are not just for datasets. They can also help to identify individual researchers or developers. The ORCID iD is one commonly used persistent identifier for researchers: register to sign up and get your own ORCID iD."
   },
   {
     "objectID": "weeks/week_14.html",
