@@ -1,7 +1,7 @@
 ---
 title: "Exercise 05"
 order: 5
-date-due: 2023-10-06
+date-due: 2024-10-23
 date-modified: last-modified
 ---
 
@@ -10,3 +10,107 @@ Exercise due on {{< meta date-due >}}
 :::
 
 ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0{{< meta order >}}.html) for related slides and readings
+
+## Overview
+
+This week's exercises are excerpted from [Ch. 25 Functions](https://r4ds.hadley.nz/functions.html) in R for Data Science. This exercise is practice for writing three types of functions:
+
+-   Mutate (or vector) functions
+-   Data frame functions
+-   Plotting functions
+
+## Mutate (or vector) functions
+
+Practice turning the following code snippets into functions. Think about what each function does. What would you call it? How many arguments does it need?
+
+```{r}
+mean(is.na(x))
+mean(is.na(y))
+mean(is.na(z))
+
+x / sum(x, na.rm = TRUE)
+y / sum(y, na.rm = TRUE)
+z / sum(z, na.rm = TRUE)
+
+round(x / sum(x, na.rm = TRUE) * 100, 1)
+round(y / sum(y, na.rm = TRUE) * 100, 1)
+round(z / sum(z, na.rm = TRUE) * 100, 1)
+```
+
+Given a vector of birthdates, write a function to compute the age in years.
+
+```{r}
+
+```
+
+::: callout-tip
+The `{lubridate}` package makes working with dates in R much easier. Take a look at the package [Getting started guide](https://lubridate.tidyverse.org/articles/lubridate.html) or [Ch. 17 Dates and Times](https://r4ds.hadley.nz/datetimes) from R4DS for more information.
+:::
+
+## Data frame functions
+
+Using the datasets from `{nycflights13}`, write a function that:
+
+1.  Finds all flights that were cancelled (i.e. `is.na(arr_time)`) or delayed by more than an hour.
+
+```{r}
+#| eval: false
+flights |> filter_severe()
+```
+
+2.  Counts the number of cancelled flights and the number of flights delayed by more than an hour.
+
+```{r}
+#| eval: false
+flights |> group_by(dest) |> summarize_severe()
+```
+
+3.  Finds all flights that were cancelled or delayed by more than a user supplied number of hours:
+
+```{r}
+#| eval: false
+flights |> filter_severe(hours = 2)
+```
+
+4.  Summarizes the weather to compute the minimum, mean, and maximum, of a user supplied variable:
+
+```{r}
+#| eval: false
+weather |> summarize_weather(temp)
+```
+
+5.  Converts the user supplied variable that uses clock time (e.g., `dep_time`, `arr_time`, etc.) into a decimal time (i.e. hours + (minutes / 60)).
+
+```{r}
+#| eval: false
+flights |> standardize_time(sched_dep_time)
+```
+
+::: callout-tip
+Question 4 and 5 may require an understanding of [tidy evaluation](https://r4ds.hadley.nz/functions#indirection-and-tidy-evaluation) using the "embracing" syntax. Go back and review our reading if you are not sure how this works!
+:::
+
+## Plotting functions
+
+Build up a rich plotting function by incrementally implementing each of the steps below:
+
+1. Draw a map using an `sf` object.
+
+2. Map an variable from the data to a single aesthetic attribute, such as `fill`, `color`, or `size`.
+
+3. Add annotation to the map using `geom_sf_text()` or `geom_sf_label()`. You could add labels to the highest or lowest values or add labels based on a second variable.
+
+4. **Optional:** Apply a spatial or geometric transformation function, e.g. `sf::st_centroid()`, `sf::st_filter()`, or `sf::st_buffer()`, to part or all of the input data before plotting. Consider how spatial transformation can be part of the process of visualizing spatial data.
+
+5. Add a title and labels. Your function should allow a use to customize the labels as needed.
+
+Please give your function an appropriate name and provide one or more examples showing how your function works with different input data sources.
+
+```{r}
+plot_function <- function(
+  # Function arguments
+  ...
+  ) {
+  # Body of the function
+}
+```

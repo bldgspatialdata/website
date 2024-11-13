@@ -5,6 +5,16 @@ fig-align: left
 image: images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png
 ---
 
+## Introduction to documentation
+
+Many different types (or levels) of documentation:
+
+- Community or team documentation
+- Project-level documentation
+- Process documentation
+- Systems documentation
+- Data documentation (aka metadata)
+
 ## What are we talking about metadata?
 
 1.  What is metadata and why does it matter?
@@ -31,7 +41,7 @@ Portions of these are adapted or inspired by a fall 2022 lecture by [Reina Chano
 
 3.  Metadata DIY
 
-    -   Diﬀerent levels of data
+    -   Different levels of data
     -   Common elements to include in metadata
     -   Writing a READMEs
     -   Using data dictionaries
@@ -222,20 +232,6 @@ ISO Standards Diagram via [FGDC](https://www.fgdc.gov/metadata/iso-standards)
 -   supplementary reference information
 :::
 
-## What can you build to work with spatial metadata?
-
--   READMEs
--   Data dictionaries
--   Conventions and controlled vocabularies
-
-Varied tools can support the creation of different elements of metadata.
-
-## Useful how to resources
-
-![](images/USGS-Metadata-Creation.png)
-
-[USGS Metadata Creation Guide](https://www.usgs.gov/data-management/metadata-creation)
-
 ## Search and discovery
 
 -   [GeoBlacklight](https://geoblacklight.org)
@@ -260,11 +256,37 @@ Varied tools can support the creation of different elements of metadata.
 -   [Pleiades](https://pleiades.stoa.org/): a community-built gazetteer and graph of ancient places.
 -   [World Historical Gazetteer](https://whgazetteer.org/)
 
+## What tools help you work with spatial metadata?
+
+-   READMEs
+-   Data dictionaries
+-   Conventions and controlled vocabularies
+-   Built-in file and project-level metadata
+
+Varied tools can support the creation of different elements of metadata.
+
+## Useful how-to resources
+
+![](images/USGS-Metadata-Creation.png)
+
+[USGS Metadata Creation Guide](https://www.usgs.gov/data-management/metadata-creation)
+
+## Useful how-to resources
+
+[How to FAIR](https://howtofair.dk/): "how you can make your research data more FAIR by taking you through six FAIRification practices:"
+
+- Documentation 
+- File formats
+- Metadata 
+- Access to data 
+- Persistent identifiers 
+- Data licences 
+
 ## Tips for Documentation
 
--   READMEs are your best friend
+-   READMEs and data dictionaries are your best friends
 
--   Document your data along the way - saves you time at the end
+-   Document your data along the way - saves you time at the end!
 
 -   Use descriptive file names
 
@@ -302,6 +324,10 @@ Cover all your bases.
 -   File naming and organization, e.g. purpose of key files and file naming scheme
 
 [Guide to writing “readme” style metadata](https://data.research.cornell.edu/content/readme)
+
+## Practice: Using the `{labelled}` package
+
+Practice using the `{labelled}` package to label variables with `labelled::set_variable_labels()` and generate a data dictionary with `labelled::generate_dictionary()`.
 
 ## Open Data Charter (2015)
 
@@ -349,12 +375,24 @@ Created in October 2015, the [International Open Data Charter](https://opendatac
 -   Interoperable,
 -   and Reusable
 
+::: {.column width="40%"}
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png)
+:::
+:::
+
+::: notes
+Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1
+:::
+
+----
+
 [CARE](https://www.gida-global.org/care) Principles for Indigenous Data Governance (2019):
 
 -   Collective benefit,
 -   Authority to control,
 -   Responsibility,
 -   and Ethics
+
 :::
 
 ::: {.column width="40%"}
@@ -366,10 +404,20 @@ Created in October 2015, the [International Open Data Charter](https://opendatac
 Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1
 :::
 
-## FAIR and CARE in Practice
+## Practice: Is this data FAIR?
 
-![Fig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig2_HTML.png?as=webp)
+Take a look at the prompt in our running course notes document and try evaluating whether a dataset is FAIR (Findable, Accessible, Interoperable, and Reusable).
 
-::: notes
-Image: https://www.nature.com/articles/s41597-021-00892-0/figures/2
-:::
+## Extra: Create your ORCID iD
+
+Persistent identifiers are not just for datasets. They can also help to identify individual researchers or developers. The ORCID iD is one commonly used persistent identifier for researchers: [register to sign up and get your own ORCID iD](https://orcid.org/register).
+
+<!-- ## FAIR and CARE in Practice -->
+
+<!-- ![Fig. 2 from Operationalizing the CARE and FAIR Principles for Indigenous data futures](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig2_HTML.png?as=webp) -->
+
+<!-- ::: notes -->
+<!-- Image: https://www.nature.com/articles/s41597-021-00892-0/figures/2 -->
+<!-- ::: -->
+
+

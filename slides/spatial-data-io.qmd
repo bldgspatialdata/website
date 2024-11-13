@@ -3,7 +3,17 @@ title: "Reading and writing spatial data"
 subtitle: "Session {{< meta order >}}"
 order: 11
 image: images/2016-11-29_openeo_gdal-diagram.png
+format: 
+  revealjs: 
+    number-sections: false
 ---
+
+## Overview
+
+- Spatial data is everywhere
+- Navigating specifications, file formats, and services
+- Working with common spatial file formats
+- Working with popular spatial web services
 
 ## Spatial data is everywhere
 
@@ -27,13 +37,37 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 - GIS Desktop applications, e.g. [QGIS](https://qgis.org/)
 - Web mapping applications (e.g. [geojson.io](https://geojson.io/#map=2/0/20), [Felt](https://felt.com/))
 - Spreadsheet applications (e.g. [Google Sheets](https://sheets.google.com/))
-- Database builders (e.g. [Airtable](https://airtable.com/) or [Microsoft Lists](https://support.microsoft.com/en-us/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7))
+- Low-code data tools (e.g. [Airtable](https://airtable.com/) or [Microsoft Lists](https://support.microsoft.com/en-us/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7))
 
 ## What can we do with it all?
 
 - Read and write spatial data files
 - Read and write related data files
 - Read from and write to web services
+
+## Standards and specifications
+
+[Open Geospatial Consortium (OGC) Standards](https://www.ogc.org/publications/) are organized into categories:
+
+- APIs (e.g. [Moving Features API](https://www.ogc.org/publications/standard/ogc-api-moving-features/))
+- Web Services (e.g. [Web Feature Service](https://www.ogc.org/publications/standard/wfs/))
+- Data Models and Encodings (e.g. [GeoTIFF](https://www.ogc.org/publications/standard/geotiff/))
+- and more (Sensors, Publish-Subscribe, Syndication & Context, Discovery, Containers, Abstract Specifications)
+
+::: notes
+
+
+:::
+
+## Standards and specifications
+
+![](https://imgs.xkcd.com/comics/standards.png)
+
+Source: [xkcd: Standards](https://xkcd.com/927/) (CC BY-NC 2.5)
+
+::: notes
+
+:::
 
 ## Common spatial file formats
 
@@ -42,6 +76,7 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 - GeoPackage (`.gpkg`)
 - KML - Keyhole Markup Language (`.kml`)
 - Esri File Geodatabase (`.gdb`)
+- GPX - GPS Exchange Format (`.gpx`)
 
 ::: notes
 
@@ -55,12 +90,88 @@ image: images/2016-11-29_openeo_gdal-diagram.png
 
 These file formats vary in:
 
-- Types of geometry that they support
-- Constraints or limits (e.g. shapefiles limit the lenghth of column names, GeoJSON can only use one coordinate reference system)
+- How geometry is stored
+- Input/output speed
 - File size
-- Speed of input or output
-- Compatibility with different tools or systems
+- Compatibility with tools/systems
+- Other constraints or limits
 - And more!
+
+## Specialized spatial file formats
+
+- Raster data
+  - Digital Elevation Model (DEM)
+  - [GeoTIFF](https://www.ogc.org/publications/standard/geotiff/)
+- Map tiles
+  - [MBTiles](https://github.com/mapbox/mbtiles-spec)
+  - [PMTiles](https://docs.protomaps.com/pmtiles/)
+  
+## Specialized spatial file formats
+
+- Columnar data formats
+  - [GeoParquet](https://geoparquet.org/)
+  - [GeoArrow](https://geoarrow.org/)
+- Databases
+  - [PostGIS](https://postgis.net/)
+- Other
+  - [FlatGeobuf](https://flatgeobuf.org/)
+  
+::: notes
+- DEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications
+- Mapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/
+:::
+
+<!-- ## Examples -->
+
+<!-- ![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg) -->
+
+<!-- ::: notes -->
+<!-- Census data -->
+
+<!-- ::: -->
+
+<!-- --- -->
+
+<!-- ![](https://i0.wp.com/transportgeography.org/wp-content/uploads/esri_shapefile_model.png?w=1800&ssl=1) -->
+
+<!-- ::: notes -->
+
+<!-- Shapefile model -->
+<!-- ::: -->
+
+<!-- ---- -->
+
+<!-- ![](https://developers.google.com/static/kml/documentation/images/classTree52.gif) -->
+
+<!-- ::: notes -->
+
+<!-- KML -->
+
+<!-- Source: https://developers.google.com/kml/documentation/kmlreference -->
+<!-- ::: -->
+
+<!-- ---- -->
+
+<!-- ![](https://wiki.openstreetmap.org/w/images/thumb/1/10/ERD_of_OSM_DB.svg/1280px-ERD_of_OSM_DB.svg.png){.lightbox} -->
+
+<!-- ::: notes -->
+
+<!-- Open Street Map -->
+
+<!-- SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg -->
+<!-- ::: -->
+
+## Historically, many tools and formats did not work together
+
+![](https://r-spatial.org/images/gis2.png)
+
+## Now, GDAL supports translation between *many* different formats
+
+![](https://r-spatial.org/images/gis3.png)
+
+::: notes
+GDAL is a translator library for raster and vector geospatial data formats.
+:::
 
 ## Read spatial data files with R
 
@@ -78,7 +189,9 @@ You can use the `query` parameter of `sf::read_sf()` to use a SQL query to selec
   
 ## Many file formats *can* include spatial data
 
-- Excel files (`xlsx` or `xls`)  
+Non-spatial files can still be used to store Well Known Text (WKT) strings, coordinate values, or addresses (convertible to spatial data):
+
+- Excel files (`xlsx` or `xls`)
 - vCard or VCF (Virtual Contact File)
 - EXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file
 
@@ -105,15 +218,6 @@ library(sf)
 
 ## Read data using `{sf}`
 
-![](https://r-spatial.org/images/gis2.png)
-
-## Read data using `{sf}`
-
-![](https://r-spatial.org/images/gis3.png)
-
-
-## Read data using `{sf}`
-
 `{sf}` can use any available drivers to read data:
 
 ```{r}
@@ -124,7 +228,9 @@ drivers
 
 ## Read data from a URL using `{sf}`
 
-`read_sf()` works well with a direct link to a spatial data file:
+`read_sf()` works well with a direct link to a spatial data file.
+
+Read a GeoJSON file:
 
 ```{r}
 # GeoJSON (geojson)
@@ -133,12 +239,16 @@ read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/california
 
 ----
 
+Read a KML file:
+
 ```{r}
 # Keyhole Markup Language (kml)
 read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml")
 ```
 
 ----
+
+Read a GeoPackage file:
 
 ```{r}
 # GeoPackage (gpkg)
@@ -164,7 +274,7 @@ read_sf("https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enr
 
 ----
 
-However, multifile format like a shapefile does *not* work as a URL:
+A multifile format like a shapefile does *not* work as a URL:
 
 ```{r}
 # Shapefile (shp)
@@ -177,7 +287,24 @@ But it *does* work if you provide a local file path (`system.file()` returns a f
 read_sf(system.file("shape/nc.shp", package = "sf"))
 ```
 
-----
+## Working with web services
+
+Examples of common web services for working with spatial data include:
+
+- Spatial data sharing and discovery
+- Spatial data visualization
+- Routing
+- Geocoding
+
+## Considerations when working with web services
+
+Using a web service often requires:
+
+- Creating an account for authentication and billing
+- Dedicating funding for usage
+- Understanding data privacy implications
+
+## Example: Feature Services
 
 An ArcGIS FeatureServer URL does *not* work:
 
@@ -191,8 +318,6 @@ But a FeatureServer URL that includes the output format *does* work:
 read_sf("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
 ```
 
-## Read spatial data with other packages
-
 There are a wide variety of packages that you can use to supplement  `{sf}`.
 
 ```{r}
@@ -203,43 +328,45 @@ feature_layer <- arc_open("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/r
 arc_select(feature_layer)
 ```
 
-## Examples
-
-![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg)
-
 ::: notes
-Census data
+
+- Practice writing a query with arc_select
 
 :::
 
----
+## Example: Mapbox API
 
-![](https://i0.wp.com/transportgeography.org/wp-content/uploads/esri_shapefile_model.png?w=1800&ssl=1)
+`mapboxapi::mb_isochrone()` allows access to the [Mapbox Isochrone API](https://docs.mapbox.com/api/navigation/isochrone/):
 
-::: notes
+```{r}
+library(mapboxapi)
 
-Shapefile model
-:::
+walk_5min <- mb_isochrone(
+  "100 Holliday St, Baltimore, MD 21202",
+  profile = "walking",
+  time = 5
+)
 
-----
+walk_5min
+```
 
-![](https://developers.google.com/static/kml/documentation/images/classTree52.gif)
-::: notes
+## Example: Mapbox API
 
-KML
+`mapboxapi::addMapboxTiles()` provides easy access to the [Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/static-tiles/): 
 
-Source: https://developers.google.com/kml/documentation/kmlreference
-:::
+```{r}
+library(leaflet)
 
-![](https://wiki.openstreetmap.org/w/images/thumb/1/10/ERD_of_OSM_DB.svg/1280px-ERD_of_OSM_DB.svg.png)
+leaflet(walk_5min) %>%
+  addMapboxTiles(style_id = "streets-v11",
+                 username = "mapbox") %>%
+  addPolygons()
+```
 
-::: notes
+## Storing and organizing spatial data takes planning
 
-Open Street Map
+Planning for the structure and organization of your data can be supported using a variety of tools:
 
-SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg
-:::
-
-----
-
-![](https://www.e-education.psu.edu/geog583/sites/www.e-education.psu.edu.geog583/files/OGC_Standards.jpg)
+- Diagram drawing applications (e.g. [draw.io](https://www.drawio.com/))
+- Entity-relationship diagram tools (e.g. [drawDB](https://www.drawdb.app/))
+- Low-code, visual database applications (e.g. [Airtable](https://airtable.com/)) 
