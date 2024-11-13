@@ -3,7 +3,42 @@ title: "Weekly Updates"
 editor: visual
 date: 2024-09-04
 number-sections: false
+scrollable: true
 ---
+
+## Week 12
+
+- Baltimore City GIS Day (see the Discord for details!)
+- Final Project Proposal Extension: Friday, Nov. 15
+- Questions
+- Lecture: Geospatial metadata and documentation
+- Practice: Labelling variables and making data dictionaries with `{labelled}`
+- Practice: Is this data FAIR?
+
+### Questions
+
+----
+
+**Are there any tips for transforming spreadsheet data structures that might not be tidy when importing into R?**
+
+The [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/) book by Duncan Garmonsway and the related packages [tidyxl](https://nacnudus.github.io/tidyxl/) and [unpivotr](https://nacnudus.github.io/unpivotr/).
+
+This blog post by [Sophie Bennet](https://www.sophieheloisebennett.com/posts/excel-sheet-cleaning/) is a helpful resource with tips on common issues: column names in multiple rows, variables in multiple columns, data in multiple sheets, and inconsistencies between sheets.
+
+Helpful functions for cleaning messy spreadsheet data include `dplyr::coalesce()` (combining values from muliple columns into one), `tidyr::fill()` for copying values down across rows, and `tidyr::separate_wider_delim()` for splitting columns.
+
+----
+
+**Is there any way to label a subset of items (instead of everything) with ggplot2?**
+
+You can pass a function in place of the data argument for any `geom_` function to subset your data. You can also create manual annotations with the `annotation()` function or use a dedicated package like [gghighlight](https://yutannihilation.github.io/gghighlight/). [ggrepel](https://ggrepel.slowkow.com/) is a more advanced labelling package that doesn't have dedicated `sf` friendly functions — but can still work.
+
+----
+
+How can a team decide which documents are most critical to maintain if they have limited resources for documentation?
+
+----
+
 
 ## Week 11
 
