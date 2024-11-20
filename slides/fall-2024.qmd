@@ -6,6 +6,35 @@ number-sections: false
 scrollable: true
 ---
 
+## Week 13
+
+- Final project feedback
+  - Use formatting thoughtfully to organize your writing and code (including removing the instructions from the template)
+  - Make sure to test your code (especially if you use ChatGPT or another LLM)
+  - Don't assume your data is good and tidy data (even if it comes from a reputable source)
+  - A little bit of research is a good idea!
+- More tips
+  - Try using `mapview::mapview()`
+  - Good folder organization! Use a `data` folder and an `R` folder
+  - Think about the spatial units and entity model
+- Combining multiple datasets
+  - Make sure they share the same CRS
+  - Make sure they share valid join columns
+  
+- ggplot2 (part 2) and ggplot2 extension packages
+- interactive mapping packages
+
+----
+
+```{r}
+#| eval: false
+
+data <- sf::st_read("path to too big dataset - email file link in Drive to Eli")
+
+```
+
+
+
 ## Week 12
 
 - Baltimore City GIS Day (see the Discord for details!)
