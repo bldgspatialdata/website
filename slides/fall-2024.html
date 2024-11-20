@@ -402,6 +402,38 @@
   <p class="date">2024-09-04</p>
 </section>
 <section>
+<section id="week-13" class="title-slide slide level2 center">
+<h2>Week 13</h2>
+<ul>
+<li>Final project feedback
+<ul>
+<li>Use formatting thoughtfully to organize your writing and code (including removing the instructions from the template)</li>
+<li>Make sure to test your code (especially if you use ChatGPT or another LLM)</li>
+<li>Don’t assume your data is good and tidy data (even if it comes from a reputable source)</li>
+<li>A little bit of research is a good idea!</li>
+</ul></li>
+<li>More tips
+<ul>
+<li>Try using <code>mapview::mapview()</code></li>
+<li>Good folder organization! Use a <code>data</code> folder and an <code>R</code> folder</li>
+<li>Think about the spatial units and entity model</li>
+</ul></li>
+<li>Combining multiple datasets
+<ul>
+<li>Make sure they share the same CRS</li>
+<li>Make sure they share valid join columns</li>
+</ul></li>
+<li>ggplot2 (part 2) and ggplot2 extension packages</li>
+<li>interactive mapping packages</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>data <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_read</span>(<span class="st">"path to too big dataset - email file link in Drive to Eli"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
 <section id="week-12" class="title-slide slide level2 center">
 <h2>Week 12</h2>
 <ul>
@@ -462,8 +494,35 @@
 <p><strong>Yes!</strong> See this <a href="https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf">Posit cheatsheet on data import</a>.</p>
 </section>
 </section>
-<section>
+<section id="week-10" class="title-slide slide level2 center">
+<h2>Week 10</h2>
+<ul>
+<li>Reminders
+<ul>
+<li>Exercise 5 due next Friday, Nov.&nbsp;1</li>
+<li>Final project proposal due Wednesday, Nov.&nbsp;13</li>
+</ul></li>
+<li>tidycensus</li>
+</ul>
+</section>
+
 <section id="week-9" class="title-slide slide level2 center">
+<h2>Week 9</h2>
+<ul>
+<li>Reminders
+<ul>
+<li>Exercise 5 due next Friday, Nov.&nbsp;1</li>
+<li>Office hours on Tuesday, Oct.&nbsp;29</li>
+<li>Final project proposal due Wednesday, Nov.&nbsp;13</li>
+</ul></li>
+<li>Lessons from McConchie and Boeing</li>
+<li>Open Street Map Lecture &amp; Practice</li>
+<li>Questions</li>
+</ul>
+</section>
+
+<section>
+<section id="week-9-1" class="title-slide slide level2 center">
 <h2>Week 9</h2>
 <ul>
 <li>Exercise 5 due next Friday, Nov.&nbsp;1</li>
@@ -518,35 +577,35 @@
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>  wind <span class="sc">&gt;</span> <span class="dv">130</span></span>
-<span id="cb1-2"><a></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a></a><span class="fu">filter</span>(</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-5"><a></a>  year <span class="sc">==</span> <span class="dv">2010</span>,</span>
-<span id="cb1-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>  wind <span class="sc">&gt;</span> <span class="dv">130</span></span>
+<span id="cb2-2"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a><span class="fu">filter</span>(</span>
+<span id="cb2-4"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-5"><a></a>  year <span class="sc">==</span> <span class="dv">2010</span>,</span>
+<span id="cb2-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-3"><a></a><span class="fu">arrange</span>(<span class="fu">desc</span>(wind_load)) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a></a><span class="fu">distinct</span>(year, name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb2-6"><a></a><span class="fu">mutate</span>(<span class="at">wind_load =</span> pressure <span class="sc">*</span> wind<span class="sc">^</span><span class="dv">2</span>) <span class="sc">|&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb3-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a></a><span class="fu">arrange</span>(<span class="fu">desc</span>(wind_load)) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a></a><span class="fu">distinct</span>(year, name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a></a><span class="fu">mutate</span>(<span class="at">wind_load =</span> pressure <span class="sc">*</span> wind<span class="sc">^</span><span class="dv">2</span>) <span class="sc">|&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> avg_wind)) <span class="sc">+</span></span>
-<span id="cb3-2"><a></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a></a><span class="fu">summarise</span>(<span class="at">avg_wind =</span> <span class="fu">mean</span>(wind)) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-5"><a></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a></a><span class="fu">geom_point</span>()</span>
-<span id="cb3-7"><a></a><span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> avg_wind)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a><span class="fu">summarise</span>(<span class="at">avg_wind =</span> <span class="fu">mean</span>(wind)) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-5"><a></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(category)) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a></a><span class="fu">geom_point</span>()</span>
+<span id="cb4-7"><a></a><span class="fu">group_by</span>(category) <span class="sc">|&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level4">

@@ -459,200 +459,11 @@
     ]
   },
   {
-    "objectID": "slides/spatial-data-io.html#overview",
-    "href": "slides/spatial-data-io.html#overview",
-    "title": "Reading and writing spatial data",
-    "section": "Overview",
-    "text": "Overview\n\nSpatial data is everywhere\nNavigating specifications, file formats, and services\nWorking with common spatial file formats\nWorking with popular spatial web services"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere",
-    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere",
-    "title": "Reading and writing spatial data",
-    "section": "Spatial data is everywhere",
-    "text": "Spatial data is everywhere\n\nShapefiles, GeoJSON files, and other spatial data files\nSpatial data editing and hosting services, e.g. ArcGIS Online or Felt)\nOpen data portals serving spatial and non-spatial data, e.g. data.gov"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere-1",
-    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere-1",
-    "title": "Reading and writing spatial data",
-    "section": "Spatial data is everywhere",
-    "text": "Spatial data is everywhere\n\nGoogle Maps, Apple Maps, Waze, and navigation apps (on your phone or in your vehicle)\nBiking and running apps (Strava publishes a global user activity heatmap)\nWeb browsers on your phone and desktop application"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere-2",
-    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere-2",
-    "title": "Reading and writing spatial data",
-    "section": "Spatial data is everywhere",
-    "text": "Spatial data is everywhere\n\nPhone camera photos (stored in the EXIF metadata)\nCalendars (iCal), contacts (vCard), and emails (using IP address locations)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#creating-spatial-data-is-easy",
-    "href": "slides/spatial-data-io.html#creating-spatial-data-is-easy",
-    "title": "Reading and writing spatial data",
-    "section": "Creating spatial data is “easy”",
-    "text": "Creating spatial data is “easy”\n\nGIS Desktop applications, e.g. QGIS\nWeb mapping applications (e.g. geojson.io, Felt)\nSpreadsheet applications (e.g. Google Sheets)\nLow-code data tools (e.g. Airtable or Microsoft Lists)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#what-can-we-do-with-it-all",
-    "href": "slides/spatial-data-io.html#what-can-we-do-with-it-all",
-    "title": "Reading and writing spatial data",
-    "section": "What can we do with it all?",
-    "text": "What can we do with it all?\n\nRead and write spatial data files\nRead and write related data files\nRead from and write to web services"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#standards-and-specifications",
-    "href": "slides/spatial-data-io.html#standards-and-specifications",
-    "title": "Reading and writing spatial data",
-    "section": "Standards and specifications",
-    "text": "Standards and specifications\nOpen Geospatial Consortium (OGC) Standards are organized into categories:\n\nAPIs (e.g. Moving Features API)\nWeb Services (e.g. Web Feature Service)\nData Models and Encodings (e.g. GeoTIFF)\nand more (Sensors, Publish-Subscribe, Syndication & Context, Discovery, Containers, Abstract Specifications)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#standards-and-specifications-1",
-    "href": "slides/spatial-data-io.html#standards-and-specifications-1",
-    "title": "Reading and writing spatial data",
-    "section": "Standards and specifications",
-    "text": "Standards and specifications\n\nSource: xkcd: Standards (CC BY-NC 2.5)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#common-spatial-file-formats",
-    "href": "slides/spatial-data-io.html#common-spatial-file-formats",
-    "title": "Reading and writing spatial data",
-    "section": "Common spatial file formats",
-    "text": "Common spatial file formats\n\nShapefile (.shp)\nGeoJSON (.json, .geojson)\nGeoPackage (.gpkg)\nKML - Keyhole Markup Language (.kml)\nEsri File Geodatabase (.gdb)\nGPX - GPS Exchange Format (.gpx)\n\n\n\nVector spatial: Shapefile, GeoJSON, KML\nRaster spatial: GeoTIFF,\nTabular data with geometry: CSV, Microsoft Excel, delimited text with coordinates or WKT (well known text)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#common-spatial-file-formats-1",
-    "href": "slides/spatial-data-io.html#common-spatial-file-formats-1",
-    "title": "Reading and writing spatial data",
-    "section": "Common spatial file formats",
-    "text": "Common spatial file formats\nThese file formats vary in:\n\nHow geometry is stored\nInput/output speed\nFile size\nCompatibility with tools/systems\nOther constraints or limits\nAnd more!"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#specialized-spatial-file-formats",
-    "href": "slides/spatial-data-io.html#specialized-spatial-file-formats",
-    "title": "Reading and writing spatial data",
-    "section": "Specialized spatial file formats",
-    "text": "Specialized spatial file formats\n\nRaster data\n\nDigital Elevation Model (DEM)\nGeoTIFF\n\nMap tiles\n\nMBTiles\nPMTiles"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#specialized-spatial-file-formats-1",
-    "href": "slides/spatial-data-io.html#specialized-spatial-file-formats-1",
-    "title": "Reading and writing spatial data",
-    "section": "Specialized spatial file formats",
-    "text": "Specialized spatial file formats\n\nColumnar data formats\n\nGeoParquet\nGeoArrow\n\nDatabases\n\nPostGIS\n\nOther\n\nFlatGeobuf\n\n\n\n\nDEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications\nMapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#historically-many-tools-and-formats-did-not-work-together",
-    "href": "slides/spatial-data-io.html#historically-many-tools-and-formats-did-not-work-together",
-    "title": "Reading and writing spatial data",
-    "section": "Historically, many tools and formats did not work together",
-    "text": "Historically, many tools and formats did not work together"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#now-gdal-supports-translation-between-many-different-formats",
-    "href": "slides/spatial-data-io.html#now-gdal-supports-translation-between-many-different-formats",
-    "title": "Reading and writing spatial data",
-    "section": "Now, GDAL supports translation between many different formats",
-    "text": "Now, GDAL supports translation between many different formats\n\n\nGDAL is a translator library for raster and vector geospatial data formats."
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#read-spatial-data-files-with-r",
-    "href": "slides/spatial-data-io.html#read-spatial-data-files-with-r",
-    "title": "Reading and writing spatial data",
-    "section": "Read spatial data files with R",
-    "text": "Read spatial data files with R\nThe dsn or data source name for sf::read_sf() can include:\n\na file name\na URL\na folder\nthe name and access credentials of a database\na character string with the contents of a GeoJSON file"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#read-spatial-data-files-with-r-1",
-    "href": "slides/spatial-data-io.html#read-spatial-data-files-with-r-1",
-    "title": "Reading and writing spatial data",
-    "section": "Read spatial data files with R",
-    "text": "Read spatial data files with R\nYou can use the query parameter of sf::read_sf() to use a SQL query to select records from a file (or select a specific geographical extent)."
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#many-file-formats-can-include-spatial-data",
-    "href": "slides/spatial-data-io.html#many-file-formats-can-include-spatial-data",
-    "title": "Reading and writing spatial data",
-    "section": "Many file formats can include spatial data",
-    "text": "Many file formats can include spatial data\nNon-spatial files can still be used to store Well Known Text (WKT) strings, coordinate values, or addresses (convertible to spatial data):\n\nExcel files (xlsx or xls)\nvCard or VCF (Virtual Contact File)\nEXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#reading-data-into-r",
-    "href": "slides/spatial-data-io.html#reading-data-into-r",
-    "title": "Reading and writing spatial data",
-    "section": "Reading data into R",
-    "text": "Reading data into R\n\nRead data using {sf}\nRead data using a package that returns a sf object\nRead data and use {sf} to convert to a sf object"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#writing-data-from-r",
-    "href": "slides/spatial-data-io.html#writing-data-from-r",
-    "title": "Reading and writing spatial data",
-    "section": "Writing data from R",
-    "text": "Writing data from R\n\nWrite data to a spatial file using {sf}\nWrite data a a non-spatial file using a different package\n\nWhen you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text."
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#read-data-using-sf",
-    "href": "slides/spatial-data-io.html#read-data-using-sf",
-    "title": "Reading and writing spatial data",
-    "section": "Read data using {sf}",
-    "text": "Read data using {sf}\nFirst load {sf}:\n\nlibrary(sf)"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#read-data-using-sf-1",
-    "href": "slides/spatial-data-io.html#read-data-using-sf-1",
-    "title": "Reading and writing spatial data",
-    "section": "Read data using {sf}",
-    "text": "Read data using {sf}\n{sf} can use any available drivers to read data:\n\ndrivers &lt;- sf::st_drivers()\n\ndrivers\n\n                         name\nESRIC                   ESRIC\nPCIDSK                 PCIDSK\nnetCDF                 netCDF\nPDS4                     PDS4\nVICAR                   VICAR\nJP2OpenJPEG       JP2OpenJPEG\nPDF                       PDF\nMBTiles               MBTiles\nBAG                       BAG\nEEDA                     EEDA\nOGCAPI                 OGCAPI\nESRI Shapefile ESRI Shapefile\nMapInfo File     MapInfo File\nUK .NTF               UK .NTF\nLVBAG                   LVBAG\nOGR_SDTS             OGR_SDTS\nS57                       S57\nDGN                       DGN\nOGR_VRT               OGR_VRT\nMemory                 Memory\nCSV                       CSV\nGML                       GML\nGPX                       GPX\nKML                       KML\nGeoJSON               GeoJSON\nGeoJSONSeq         GeoJSONSeq\nESRIJSON             ESRIJSON\nTopoJSON             TopoJSON\nOGR_GMT               OGR_GMT\nGPKG                     GPKG\nSQLite                 SQLite\nODBC                     ODBC\nWAsP                     WAsP\nPGeo                     PGeo\nMSSQLSpatial     MSSQLSpatial\nPostgreSQL         PostgreSQL\nOpenFileGDB       OpenFileGDB\nDXF                       DXF\nCAD                       CAD\nFlatGeobuf         FlatGeobuf\nGeoconcept         Geoconcept\nGeoRSS                 GeoRSS\nVFK                       VFK\nPGDUMP                 PGDUMP\nOSM                       OSM\nGPSBabel             GPSBabel\nOGR_PDS               OGR_PDS\nWFS                       WFS\nOAPIF                   OAPIF\nEDIGEO                 EDIGEO\nSVG                       SVG\nIdrisi                 Idrisi\nXLS                       XLS\nODS                       ODS\nXLSX                     XLSX\nElasticsearch   Elasticsearch\nCarto                   Carto\nAmigoCloud         AmigoCloud\nSXF                       SXF\nSelafin               Selafin\nJML                       JML\nPLSCENES             PLSCENES\nCSW                       CSW\nVDV                       VDV\nMVT                       MVT\nNGW                       NGW\nMapML                   MapML\nTIGER                   TIGER\nAVCBin                 AVCBin\nAVCE00                 AVCE00\nHTTP                     HTTP\n                                                          long_name write  copy\nESRIC                                            Esri Compact Cache FALSE FALSE\nPCIDSK                                         PCIDSK Database File  TRUE FALSE\nnetCDF                                   Network Common Data Format  TRUE  TRUE\nPDS4                                   NASA Planetary Data System 4  TRUE  TRUE\nVICAR                                               MIPL VICAR file  TRUE  TRUE\nJP2OpenJPEG              JPEG-2000 driver based on OpenJPEG library FALSE  TRUE\nPDF                                                  Geospatial PDF  TRUE  TRUE\nMBTiles                                                     MBTiles  TRUE  TRUE\nBAG                                      Bathymetry Attributed Grid  TRUE  TRUE\nEEDA                                          Earth Engine Data API FALSE FALSE\nOGCAPI                                                       OGCAPI FALSE FALSE\nESRI Shapefile                                       ESRI Shapefile  TRUE FALSE\nMapInfo File                                           MapInfo File  TRUE FALSE\nUK .NTF                                                     UK .NTF FALSE FALSE\nLVBAG                                   Kadaster LV BAG Extract 2.0 FALSE FALSE\nOGR_SDTS                                                       SDTS FALSE FALSE\nS57                                                  IHO S-57 (ENC)  TRUE FALSE\nDGN                                                Microstation DGN  TRUE FALSE\nOGR_VRT                                    VRT - Virtual Datasource FALSE FALSE\nMemory                                                       Memory  TRUE FALSE\nCSV                                    Comma Separated Value (.csv)  TRUE FALSE\nGML                                 Geography Markup Language (GML)  TRUE FALSE\nGPX                                                             GPX  TRUE FALSE\nKML                                   Keyhole Markup Language (KML)  TRUE FALSE\nGeoJSON                                                     GeoJSON  TRUE FALSE\nGeoJSONSeq                                         GeoJSON Sequence  TRUE FALSE\nESRIJSON                                                   ESRIJSON FALSE FALSE\nTopoJSON                                                   TopoJSON FALSE FALSE\nOGR_GMT                                    GMT ASCII Vectors (.gmt)  TRUE FALSE\nGPKG                                                     GeoPackage  TRUE  TRUE\nSQLite                                          SQLite / Spatialite  TRUE FALSE\nODBC                                                                FALSE FALSE\nWAsP                                               WAsP .map format  TRUE FALSE\nPGeo                                      ESRI Personal GeoDatabase FALSE FALSE\nMSSQLSpatial                  Microsoft SQL Server Spatial Database  TRUE FALSE\nPostgreSQL                                       PostgreSQL/PostGIS  TRUE FALSE\nOpenFileGDB                                            ESRI FileGDB FALSE FALSE\nDXF                                                     AutoCAD DXF  TRUE FALSE\nCAD                                                  AutoCAD Driver FALSE FALSE\nFlatGeobuf                                               FlatGeobuf  TRUE FALSE\nGeoconcept                                               Geoconcept  TRUE FALSE\nGeoRSS                                                       GeoRSS  TRUE FALSE\nVFK                            Czech Cadastral Exchange Data Format FALSE FALSE\nPGDUMP                                          PostgreSQL SQL dump  TRUE FALSE\nOSM                                       OpenStreetMap XML and PBF FALSE FALSE\nGPSBabel                                                   GPSBabel  TRUE FALSE\nOGR_PDS                                Planetary Data Systems TABLE FALSE FALSE\nWFS                                   OGC WFS (Web Feature Service) FALSE FALSE\nOAPIF                                            OGC API - Features FALSE FALSE\nEDIGEO                                French EDIGEO exchange format FALSE FALSE\nSVG                                        Scalable Vector Graphics FALSE FALSE\nIdrisi                                         Idrisi Vector (.vct) FALSE FALSE\nXLS                                                 MS Excel format FALSE FALSE\nODS            Open Document/ LibreOffice / OpenOffice Spreadsheet   TRUE FALSE\nXLSX                                 MS Office Open XML spreadsheet  TRUE FALSE\nElasticsearch                                        Elastic Search  TRUE FALSE\nCarto                                                         Carto  TRUE FALSE\nAmigoCloud                                               AmigoCloud  TRUE FALSE\nSXF                                     Storage and eXchange Format FALSE FALSE\nSelafin                                                     Selafin  TRUE FALSE\nJML                                                    OpenJUMP JML  TRUE FALSE\nPLSCENES                                     Planet Labs Scenes API FALSE FALSE\nCSW                          OGC CSW (Catalog  Service for the Web) FALSE FALSE\nVDV                             VDV-451/VDV-452/INTREST Data Format  TRUE FALSE\nMVT                                             Mapbox Vector Tiles  TRUE FALSE\nNGW                                                     NextGIS Web  TRUE  TRUE\nMapML                                                         MapML  TRUE FALSE\nTIGER                                        U.S. Census TIGER/Line FALSE FALSE\nAVCBin                                     Arc/Info Binary Coverage FALSE FALSE\nAVCE00                                Arc/Info E00 (ASCII) Coverage FALSE FALSE\nHTTP                                          HTTP Fetching Wrapper FALSE FALSE\n               is_raster is_vector   vsi\nESRIC               TRUE      TRUE  TRUE\nPCIDSK              TRUE      TRUE  TRUE\nnetCDF              TRUE      TRUE FALSE\nPDS4                TRUE      TRUE  TRUE\nVICAR               TRUE      TRUE  TRUE\nJP2OpenJPEG         TRUE      TRUE  TRUE\nPDF                 TRUE      TRUE FALSE\nMBTiles             TRUE      TRUE  TRUE\nBAG                 TRUE      TRUE  TRUE\nEEDA               FALSE      TRUE FALSE\nOGCAPI              TRUE      TRUE  TRUE\nESRI Shapefile     FALSE      TRUE  TRUE\nMapInfo File       FALSE      TRUE  TRUE\nUK .NTF            FALSE      TRUE  TRUE\nLVBAG              FALSE      TRUE  TRUE\nOGR_SDTS           FALSE      TRUE  TRUE\nS57                FALSE      TRUE  TRUE\nDGN                FALSE      TRUE  TRUE\nOGR_VRT            FALSE      TRUE  TRUE\nMemory             FALSE      TRUE FALSE\nCSV                FALSE      TRUE  TRUE\nGML                FALSE      TRUE  TRUE\nGPX                FALSE      TRUE  TRUE\nKML                FALSE      TRUE  TRUE\nGeoJSON            FALSE      TRUE  TRUE\nGeoJSONSeq         FALSE      TRUE  TRUE\nESRIJSON           FALSE      TRUE  TRUE\nTopoJSON           FALSE      TRUE  TRUE\nOGR_GMT            FALSE      TRUE  TRUE\nGPKG                TRUE      TRUE  TRUE\nSQLite             FALSE      TRUE  TRUE\nODBC               FALSE      TRUE FALSE\nWAsP               FALSE      TRUE  TRUE\nPGeo               FALSE      TRUE FALSE\nMSSQLSpatial       FALSE      TRUE FALSE\nPostgreSQL         FALSE      TRUE FALSE\nOpenFileGDB        FALSE      TRUE  TRUE\nDXF                FALSE      TRUE  TRUE\nCAD                 TRUE      TRUE  TRUE\nFlatGeobuf         FALSE      TRUE  TRUE\nGeoconcept         FALSE      TRUE  TRUE\nGeoRSS             FALSE      TRUE  TRUE\nVFK                FALSE      TRUE FALSE\nPGDUMP             FALSE      TRUE  TRUE\nOSM                FALSE      TRUE  TRUE\nGPSBabel           FALSE      TRUE FALSE\nOGR_PDS            FALSE      TRUE  TRUE\nWFS                FALSE      TRUE  TRUE\nOAPIF              FALSE      TRUE FALSE\nEDIGEO             FALSE      TRUE  TRUE\nSVG                FALSE      TRUE  TRUE\nIdrisi             FALSE      TRUE  TRUE\nXLS                FALSE      TRUE FALSE\nODS                FALSE      TRUE  TRUE\nXLSX               FALSE      TRUE  TRUE\nElasticsearch      FALSE      TRUE FALSE\nCarto              FALSE      TRUE FALSE\nAmigoCloud         FALSE      TRUE FALSE\nSXF                FALSE      TRUE  TRUE\nSelafin            FALSE      TRUE  TRUE\nJML                FALSE      TRUE  TRUE\nPLSCENES            TRUE      TRUE FALSE\nCSW                FALSE      TRUE FALSE\nVDV                FALSE      TRUE  TRUE\nMVT                FALSE      TRUE  TRUE\nNGW                 TRUE      TRUE FALSE\nMapML              FALSE      TRUE  TRUE\nTIGER              FALSE      TRUE  TRUE\nAVCBin             FALSE      TRUE  TRUE\nAVCE00             FALSE      TRUE  TRUE\nHTTP                TRUE      TRUE FALSE"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#read-data-from-a-url-using-sf",
-    "href": "slides/spatial-data-io.html#read-data-from-a-url-using-sf",
-    "title": "Reading and writing spatial data",
-    "section": "Read data from a URL using {sf}",
-    "text": "Read data from a URL using {sf}\nread_sf() works well with a direct link to a spatial data file.\nRead a GeoJSON file:\n\n# GeoJSON (geojson)\nread_sf(\"https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson\")\n\nSimple feature collection with 1 feature and 11 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -124.4096 ymin: 32.53416 xmax: -114.1315 ymax: 42.00952\nGeodetic CRS:  WGS 84\n# A tibble: 1 × 12\n  name       abbreviation capital    city   population   area waterarea landarea\n  &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;     &lt;int&gt;    &lt;int&gt;\n1 California CA           Sacramento Los A…   38332521 423968     20502   403466\n# ℹ 4 more variables: houseseats &lt;int&gt;, statehood &lt;date&gt;, group &lt;chr&gt;,\n#   geometry &lt;MULTIPOLYGON [°]&gt;"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#working-with-web-services",
-    "href": "slides/spatial-data-io.html#working-with-web-services",
-    "title": "Reading and writing spatial data",
-    "section": "Working with web services",
-    "text": "Working with web services\nExamples of common web services for working with spatial data include:\n\nSpatial data sharing and discovery\nSpatial data visualization\nRouting\nGeocoding"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#considerations-when-working-with-web-services",
-    "href": "slides/spatial-data-io.html#considerations-when-working-with-web-services",
-    "title": "Reading and writing spatial data",
-    "section": "Considerations when working with web services",
-    "text": "Considerations when working with web services\nUsing a web service often requires:\n\nCreating an account for authentication and billing\nDedicating funding for usage\nUnderstanding data privacy implications"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#example-feature-services",
-    "href": "slides/spatial-data-io.html#example-feature-services",
-    "title": "Reading and writing spatial data",
-    "section": "Example: Feature Services",
-    "text": "Example: Feature Services\nAn ArcGIS FeatureServer URL does not work:\n\nread_sf(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\")\n\nError: Cannot open \"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\"; The file doesn't seem to exist.\n\n\nBut a FeatureServer URL that includes the output format does work:\n\nread_sf(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\")\n\nSimple feature collection with 24 features and 17 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -79.48731 ymin: 37.88654 xmax: -75.0492 ymax: 39.72288\nGeodetic CRS:  WGS 84\n# A tibble: 24 × 18\n   OBJECTID COUNTY_NAME     COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS\n      &lt;int&gt; &lt;chr&gt;                    &lt;int&gt; &lt;chr&gt;                          &lt;int&gt;\n 1        1 Prince George's             16 PG                                16\n 2        2 Cecil                        7 CE                                 7\n 3        3 Howard                      13 HO                                13\n 4        4 Talbot                      20 TA                                20\n 5        5 Garrett                     11 GA                                11\n 6        6 Baltimore City              24 BC                                24\n 7        7 Carroll                      6 CL                                 6\n 8        8 Washington                  21 WA                                21\n 9        9 Worcester                   23 WO                                23\n10       10 Frederick                   10 FR                                10\n# ℹ 14 more rows\n# ℹ 13 more variables: COUNTY_2DIGITCAPS &lt;chr&gt;, DISTRICT_NAME &lt;chr&gt;,\n#   DISTRICT_NUMBER &lt;int&gt;, COUNTY_FIP &lt;int&gt;, COUNTYNUM &lt;int&gt;, TSD_ID &lt;int&gt;,\n#   COUNTY &lt;chr&gt;, DISTRICT &lt;int&gt;, Shape__Area &lt;dbl&gt;, Shape__Length &lt;dbl&gt;,\n#   COUNTY_ALLCAPS &lt;chr&gt;, Region &lt;chr&gt;, geometry &lt;POLYGON [°]&gt;\n\n\nThere are a wide variety of packages that you can use to supplement {sf}.\n\nlibrary(arcgislayers)\n\nfeature_layer &lt;- arc_open(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\")\n\narc_select(feature_layer)\n\nSimple feature collection with 24 features and 17 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 607669.3 ymin: 80997.33 xmax: 1870976 ymax: 757701.4\nProjected CRS: NAD83(HARN) / Maryland (ftUS)\nFirst 10 features:\n   OBJECTID     COUNTY_NAME COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS\n1         1 Prince George's             16                  PG               16\n2         2           Cecil              7                  CE                7\n3         3          Howard             13                  HO               13\n4         4          Talbot             20                  TA               20\n5         5         Garrett             11                  GA               11\n6         6  Baltimore City             24                  BC               24\n7         7         Carroll              6                  CL                6\n8         8      Washington             21                  WA               21\n9         9       Worcester             23                  WO               23\n10       10       Frederick             10                  FR               10\n   COUNTY_2DIGITCAPS DISTRICT_NAME DISTRICT_NUMBER COUNTY_FIP COUNTYNUM TSD_ID\n1                 16    District 3               3         33        16      3\n2                 07    District 2               2         15         7     21\n3                 13    District 7               7         27        13     10\n4                 20    District 2               2         41        20     18\n5                 11    District 6               6         23        11      4\n6                 24   No District               0        510        24     23\n7                 06    District 7               7         13         6      1\n8                 21    District 6               6         43        21   1060\n9                 23    District 1               1         47        23      2\n10                10    District 7               7         21        10     24\n            COUNTY DISTRICT Shape__Area Shape__Length  COUNTY_ALLCAPS Region\n1  Prince George's        3 13902243040      720691.0 PRINCE GEORGE'S   &lt;NA&gt;\n2            Cecil        2 11643675836      494670.7           CECIL   &lt;NA&gt;\n3           Howard        7  7056288549      471922.1          HOWARD   &lt;NA&gt;\n4           Talbot        2 13193323636      657963.0          TALBOT   &lt;NA&gt;\n5          Garrett        6 18339518744      680782.9         GARRETT   &lt;NA&gt;\n6   Baltimore City        0  2562810672      207145.0  BALTIMORE CITY   &lt;NA&gt;\n7          Carroll        7 12623420879      651107.6         CARROLL   &lt;NA&gt;\n8       Washington        6 13031238277      948164.4      WASHINGTON   &lt;NA&gt;\n9        Worcester        1 16297527948      694972.5       WORCESTER   &lt;NA&gt;\n10       Frederick        7 18613257293      683407.8       FREDERICK   &lt;NA&gt;\n                         geometry\n1  POLYGON ((1313442 476110.4,...\n2  POLYGON ((1660741 628728.5,...\n3  POLYGON ((1391417 567919.8,...\n4  POLYGON ((1611348 457521.9,...\n5  POLYGON ((769889 754580.7, ...\n6  POLYGON ((1445534 565803.6,...\n7  POLYGON ((1371781 748182.4,...\n8  POLYGON ((936016.4 751530.6...\n9  POLYGON ((1870321 284172.9,...\n10 POLYGON ((1213130 747989.9,...\n\n\n\n\nPractice writing a query with arc_select"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#example-mapbox-api",
-    "href": "slides/spatial-data-io.html#example-mapbox-api",
-    "title": "Reading and writing spatial data",
-    "section": "Example: Mapbox API",
-    "text": "Example: Mapbox API\nmapboxapi::mb_isochrone() allows access to the Mapbox Isochrone API:\n\nlibrary(mapboxapi)\n\nwalk_5min &lt;- mb_isochrone(\n  \"100 Holliday St, Baltimore, MD 21202\",\n  profile = \"walking\",\n  time = 5\n)\n\nwalk_5min\n\nSimple feature collection with 1 feature and 1 field\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -76.61453 ymin: 39.28688 xmax: -76.6056 ymax: 39.29477\nGeodetic CRS:  WGS 84\n# A tibble: 1 × 2\n   time                                                                 geometry\n  &lt;int&gt;                                                            &lt;POLYGON [°]&gt;\n1     5 ((-76.60768 39.29392, -76.60868 39.2939, -76.6098 39.29477, -76.6115 39…"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#example-mapbox-api-1",
-    "href": "slides/spatial-data-io.html#example-mapbox-api-1",
-    "title": "Reading and writing spatial data",
-    "section": "Example: Mapbox API",
-    "text": "Example: Mapbox API\nmapboxapi::addMapboxTiles() provides easy access to the Mapbox Static Tiles API:\n\nlibrary(leaflet)\n\nleaflet(walk_5min) %&gt;%\n  addMapboxTiles(style_id = \"streets-v11\",\n                 username = \"mapbox\") %&gt;%\n  addPolygons()"
-  },
-  {
-    "objectID": "slides/spatial-data-io.html#storing-and-organizing-spatial-data-takes-planning",
-    "href": "slides/spatial-data-io.html#storing-and-organizing-spatial-data-takes-planning",
-    "title": "Reading and writing spatial data",
-    "section": "Storing and organizing spatial data takes planning",
-    "text": "Storing and organizing spatial data takes planning\nPlanning for the structure and organization of your data can be supported using a variety of tools:\n\nDiagram drawing applications (e.g. draw.io)\nEntity-relationship diagram tools (e.g. drawDB)\nLow-code, visual database applications (e.g. Airtable)"
+    "objectID": "slides/fall-2024.html#week-13",
+    "href": "slides/fall-2024.html#week-13",
+    "title": "Weekly Updates",
+    "section": "Week 13",
+    "text": "Week 13\n\nFinal project feedback\n\nUse formatting thoughtfully to organize your writing and code (including removing the instructions from the template)\nMake sure to test your code (especially if you use ChatGPT or another LLM)\nDon’t assume your data is good and tidy data (even if it comes from a reputable source)\nA little bit of research is a good idea!\n\nMore tips\n\nTry using mapview::mapview()\nGood folder organization! Use a data folder and an R folder\nThink about the spatial units and entity model\n\nCombining multiple datasets\n\nMake sure they share the same CRS\nMake sure they share valid join columns\n\nggplot2 (part 2) and ggplot2 extension packages\ninteractive mapping packages"
   },
   {
     "objectID": "slides/fall-2024.html#week-12",
@@ -669,8 +480,22 @@
     "text": "Week 11"
   },
   {
+    "objectID": "slides/fall-2024.html#week-10",
+    "href": "slides/fall-2024.html#week-10",
+    "title": "Weekly Updates",
+    "section": "Week 10",
+    "text": "Week 10\n\nReminders\n\nExercise 5 due next Friday, Nov. 1\nFinal project proposal due Wednesday, Nov. 13\n\ntidycensus"
+  },
+  {
     "objectID": "slides/fall-2024.html#week-9",
     "href": "slides/fall-2024.html#week-9",
+    "title": "Weekly Updates",
+    "section": "Week 9",
+    "text": "Week 9\n\nReminders\n\nExercise 5 due next Friday, Nov. 1\nOffice hours on Tuesday, Oct. 29\nFinal project proposal due Wednesday, Nov. 13\n\nLessons from McConchie and Boeing\nOpen Street Map Lecture & Practice\nQuestions"
+  },
+  {
+    "objectID": "slides/fall-2024.html#week-9-1",
+    "href": "slides/fall-2024.html#week-9-1",
     "title": "Weekly Updates",
     "section": "Week 9",
     "text": "Week 9\n\nExercise 5 due next Friday, Nov. 1\nOffice hours on Tuesday, Oct. 29\nFinal project proposal due Wednesday, Nov. 13\nLessons from McConchie and Boeing\nOpen Street Map Lecture & Practice"
@@ -702,6 +527,61 @@
     "title": "Weekly Updates",
     "section": "Cheat sheets",
     "text": "Cheat sheets\n\nRStudio\nsf\nggplot2"
+  },
+  {
+    "objectID": "exercises/exercise_05.html",
+    "href": "exercises/exercise_05.html",
+    "title": "Exercise 05",
+    "section": "",
+    "text": "Exercise due on 2024-10-23\nℹ️ See week 5 for related slides and readings",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_05.html#overview",
+    "href": "exercises/exercise_05.html#overview",
+    "title": "Exercise 05",
+    "section": "1 Overview",
+    "text": "1 Overview\nThis week’s exercises are excerpted from Ch. 25 Functions in R for Data Science. This exercise is practice for writing three types of functions:\n\nMutate (or vector) functions\nData frame functions\nPlotting functions",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_05.html#mutate-or-vector-functions",
+    "href": "exercises/exercise_05.html#mutate-or-vector-functions",
+    "title": "Exercise 05",
+    "section": "2 Mutate (or vector) functions",
+    "text": "2 Mutate (or vector) functions\nPractice turning the following code snippets into functions. Think about what each function does. What would you call it? How many arguments does it need?\n\nmean(is.na(x))\nmean(is.na(y))\nmean(is.na(z))\n\nx / sum(x, na.rm = TRUE)\ny / sum(y, na.rm = TRUE)\nz / sum(z, na.rm = TRUE)\n\nround(x / sum(x, na.rm = TRUE) * 100, 1)\nround(y / sum(y, na.rm = TRUE) * 100, 1)\nround(z / sum(z, na.rm = TRUE) * 100, 1)\n\nGiven a vector of birthdates, write a function to compute the age in years.\n\n\n\n\n\n\nThe {lubridate} package makes working with dates in R much easier. Take a look at the package Getting started guide or Ch. 17 Dates and Times from R4DS for more information.",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_05.html#data-frame-functions",
+    "href": "exercises/exercise_05.html#data-frame-functions",
+    "title": "Exercise 05",
+    "section": "3 Data frame functions",
+    "text": "3 Data frame functions\nUsing the datasets from {nycflights13}, write a function that:\n\nFinds all flights that were cancelled (i.e. is.na(arr_time)) or delayed by more than an hour.\n\n\nflights |&gt; filter_severe()\n\n\nCounts the number of cancelled flights and the number of flights delayed by more than an hour.\n\n\nflights |&gt; group_by(dest) |&gt; summarize_severe()\n\n\nFinds all flights that were cancelled or delayed by more than a user supplied number of hours:\n\n\nflights |&gt; filter_severe(hours = 2)\n\n\nSummarizes the weather to compute the minimum, mean, and maximum, of a user supplied variable:\n\n\nweather |&gt; summarize_weather(temp)\n\n\nConverts the user supplied variable that uses clock time (e.g., dep_time, arr_time, etc.) into a decimal time (i.e. hours + (minutes / 60)).\n\n\nflights |&gt; standardize_time(sched_dep_time)\n\n\n\n\n\n\n\nQuestion 4 and 5 may require an understanding of tidy evaluation using the “embracing” syntax. Go back and review our reading if you are not sure how this works!",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
+  },
+  {
+    "objectID": "exercises/exercise_05.html#plotting-functions",
+    "href": "exercises/exercise_05.html#plotting-functions",
+    "title": "Exercise 05",
+    "section": "4 Plotting functions",
+    "text": "4 Plotting functions\nBuild up a rich plotting function by incrementally implementing each of the steps below:\n\nDraw a map using an sf object.\nMap an variable from the data to a single aesthetic attribute, such as fill, color, or size.\nAdd annotation to the map using geom_sf_text() or geom_sf_label(). You could add labels to the highest or lowest values or add labels based on a second variable.\nOptional: Apply a spatial or geometric transformation function, e.g. sf::st_centroid(), sf::st_filter(), or sf::st_buffer(), to part or all of the input data before plotting. Consider how spatial transformation can be part of the process of visualizing spatial data.\nAdd a title and labels. Your function should allow a use to customize the labels as needed.\n\nPlease give your function an appropriate name and provide one or more examples showing how your function works with different input data sources.\n\nplot_function &lt;- function(\n  # Function arguments\n  ...\n  ) {\n  # Body of the function\n}",
+    "crumbs": [
+      "Exercises 🛠️",
+      "Exercise 05"
+    ]
   },
   {
     "objectID": "slides/exploratory-analysis.html#why-open-your-work",
@@ -1849,7 +1729,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nNov 13, 2024\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Course information",
       "Slides"
@@ -2583,59 +2463,200 @@
     ]
   },
   {
-    "objectID": "exercises/exercise_05.html",
-    "href": "exercises/exercise_05.html",
-    "title": "Exercise 05",
-    "section": "",
-    "text": "Exercise due on 2024-10-23\nℹ️ See week 5 for related slides and readings",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
+    "objectID": "slides/spatial-data-io.html#overview",
+    "href": "slides/spatial-data-io.html#overview",
+    "title": "Reading and writing spatial data",
+    "section": "Overview",
+    "text": "Overview\n\nSpatial data is everywhere\nNavigating specifications, file formats, and services\nWorking with common spatial file formats\nWorking with popular spatial web services"
   },
   {
-    "objectID": "exercises/exercise_05.html#overview",
-    "href": "exercises/exercise_05.html#overview",
-    "title": "Exercise 05",
-    "section": "1 Overview",
-    "text": "1 Overview\nThis week’s exercises are excerpted from Ch. 25 Functions in R for Data Science. This exercise is practice for writing three types of functions:\n\nMutate (or vector) functions\nData frame functions\nPlotting functions",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
+    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere",
+    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere",
+    "title": "Reading and writing spatial data",
+    "section": "Spatial data is everywhere",
+    "text": "Spatial data is everywhere\n\nShapefiles, GeoJSON files, and other spatial data files\nSpatial data editing and hosting services, e.g. ArcGIS Online or Felt)\nOpen data portals serving spatial and non-spatial data, e.g. data.gov"
   },
   {
-    "objectID": "exercises/exercise_05.html#mutate-or-vector-functions",
-    "href": "exercises/exercise_05.html#mutate-or-vector-functions",
-    "title": "Exercise 05",
-    "section": "2 Mutate (or vector) functions",
-    "text": "2 Mutate (or vector) functions\nPractice turning the following code snippets into functions. Think about what each function does. What would you call it? How many arguments does it need?\n\nmean(is.na(x))\nmean(is.na(y))\nmean(is.na(z))\n\nx / sum(x, na.rm = TRUE)\ny / sum(y, na.rm = TRUE)\nz / sum(z, na.rm = TRUE)\n\nround(x / sum(x, na.rm = TRUE) * 100, 1)\nround(y / sum(y, na.rm = TRUE) * 100, 1)\nround(z / sum(z, na.rm = TRUE) * 100, 1)\n\nGiven a vector of birthdates, write a function to compute the age in years.\n\n\n\n\n\n\nThe {lubridate} package makes working with dates in R much easier. Take a look at the package Getting started guide or Ch. 17 Dates and Times from R4DS for more information.",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
+    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere-1",
+    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere-1",
+    "title": "Reading and writing spatial data",
+    "section": "Spatial data is everywhere",
+    "text": "Spatial data is everywhere\n\nGoogle Maps, Apple Maps, Waze, and navigation apps (on your phone or in your vehicle)\nBiking and running apps (Strava publishes a global user activity heatmap)\nWeb browsers on your phone and desktop application"
   },
   {
-    "objectID": "exercises/exercise_05.html#data-frame-functions",
-    "href": "exercises/exercise_05.html#data-frame-functions",
-    "title": "Exercise 05",
-    "section": "3 Data frame functions",
-    "text": "3 Data frame functions\nUsing the datasets from {nycflights13}, write a function that:\n\nFinds all flights that were cancelled (i.e. is.na(arr_time)) or delayed by more than an hour.\n\n\nflights |&gt; filter_severe()\n\n\nCounts the number of cancelled flights and the number of flights delayed by more than an hour.\n\n\nflights |&gt; group_by(dest) |&gt; summarize_severe()\n\n\nFinds all flights that were cancelled or delayed by more than a user supplied number of hours:\n\n\nflights |&gt; filter_severe(hours = 2)\n\n\nSummarizes the weather to compute the minimum, mean, and maximum, of a user supplied variable:\n\n\nweather |&gt; summarize_weather(temp)\n\n\nConverts the user supplied variable that uses clock time (e.g., dep_time, arr_time, etc.) into a decimal time (i.e. hours + (minutes / 60)).\n\n\nflights |&gt; standardize_time(sched_dep_time)\n\n\n\n\n\n\n\nQuestion 4 and 5 may require an understanding of tidy evaluation using the “embracing” syntax. Go back and review our reading if you are not sure how this works!",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
+    "objectID": "slides/spatial-data-io.html#spatial-data-is-everywhere-2",
+    "href": "slides/spatial-data-io.html#spatial-data-is-everywhere-2",
+    "title": "Reading and writing spatial data",
+    "section": "Spatial data is everywhere",
+    "text": "Spatial data is everywhere\n\nPhone camera photos (stored in the EXIF metadata)\nCalendars (iCal), contacts (vCard), and emails (using IP address locations)"
   },
   {
-    "objectID": "exercises/exercise_05.html#plotting-functions",
-    "href": "exercises/exercise_05.html#plotting-functions",
-    "title": "Exercise 05",
-    "section": "4 Plotting functions",
-    "text": "4 Plotting functions\nBuild up a rich plotting function by incrementally implementing each of the steps below:\n\nDraw a map using an sf object.\nMap an variable from the data to a single aesthetic attribute, such as fill, color, or size.\nAdd annotation to the map using geom_sf_text() or geom_sf_label(). You could add labels to the highest or lowest values or add labels based on a second variable.\nOptional: Apply a spatial or geometric transformation function, e.g. sf::st_centroid(), sf::st_filter(), or sf::st_buffer(), to part or all of the input data before plotting. Consider how spatial transformation can be part of the process of visualizing spatial data.\nAdd a title and labels. Your function should allow a use to customize the labels as needed.\n\nPlease give your function an appropriate name and provide one or more examples showing how your function works with different input data sources.\n\nplot_function &lt;- function(\n  # Function arguments\n  ...\n  ) {\n  # Body of the function\n}",
-    "crumbs": [
-      "Exercises 🛠️",
-      "Exercise 05"
-    ]
+    "objectID": "slides/spatial-data-io.html#creating-spatial-data-is-easy",
+    "href": "slides/spatial-data-io.html#creating-spatial-data-is-easy",
+    "title": "Reading and writing spatial data",
+    "section": "Creating spatial data is “easy”",
+    "text": "Creating spatial data is “easy”\n\nGIS Desktop applications, e.g. QGIS\nWeb mapping applications (e.g. geojson.io, Felt)\nSpreadsheet applications (e.g. Google Sheets)\nLow-code data tools (e.g. Airtable or Microsoft Lists)"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#what-can-we-do-with-it-all",
+    "href": "slides/spatial-data-io.html#what-can-we-do-with-it-all",
+    "title": "Reading and writing spatial data",
+    "section": "What can we do with it all?",
+    "text": "What can we do with it all?\n\nRead and write spatial data files\nRead and write related data files\nRead from and write to web services"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#standards-and-specifications",
+    "href": "slides/spatial-data-io.html#standards-and-specifications",
+    "title": "Reading and writing spatial data",
+    "section": "Standards and specifications",
+    "text": "Standards and specifications\nOpen Geospatial Consortium (OGC) Standards are organized into categories:\n\nAPIs (e.g. Moving Features API)\nWeb Services (e.g. Web Feature Service)\nData Models and Encodings (e.g. GeoTIFF)\nand more (Sensors, Publish-Subscribe, Syndication & Context, Discovery, Containers, Abstract Specifications)"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#standards-and-specifications-1",
+    "href": "slides/spatial-data-io.html#standards-and-specifications-1",
+    "title": "Reading and writing spatial data",
+    "section": "Standards and specifications",
+    "text": "Standards and specifications\n\nSource: xkcd: Standards (CC BY-NC 2.5)"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#common-spatial-file-formats",
+    "href": "slides/spatial-data-io.html#common-spatial-file-formats",
+    "title": "Reading and writing spatial data",
+    "section": "Common spatial file formats",
+    "text": "Common spatial file formats\n\nShapefile (.shp)\nGeoJSON (.json, .geojson)\nGeoPackage (.gpkg)\nKML - Keyhole Markup Language (.kml)\nEsri File Geodatabase (.gdb)\nGPX - GPS Exchange Format (.gpx)\n\n\n\nVector spatial: Shapefile, GeoJSON, KML\nRaster spatial: GeoTIFF,\nTabular data with geometry: CSV, Microsoft Excel, delimited text with coordinates or WKT (well known text)"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#common-spatial-file-formats-1",
+    "href": "slides/spatial-data-io.html#common-spatial-file-formats-1",
+    "title": "Reading and writing spatial data",
+    "section": "Common spatial file formats",
+    "text": "Common spatial file formats\nThese file formats vary in:\n\nHow geometry is stored\nInput/output speed\nFile size\nCompatibility with tools/systems\nOther constraints or limits\nAnd more!"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#specialized-spatial-file-formats",
+    "href": "slides/spatial-data-io.html#specialized-spatial-file-formats",
+    "title": "Reading and writing spatial data",
+    "section": "Specialized spatial file formats",
+    "text": "Specialized spatial file formats\n\nRaster data\n\nDigital Elevation Model (DEM)\nGeoTIFF\n\nMap tiles\n\nMBTiles\nPMTiles"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#specialized-spatial-file-formats-1",
+    "href": "slides/spatial-data-io.html#specialized-spatial-file-formats-1",
+    "title": "Reading and writing spatial data",
+    "section": "Specialized spatial file formats",
+    "text": "Specialized spatial file formats\n\nColumnar data formats\n\nGeoParquet\nGeoArrow\n\nDatabases\n\nPostGIS\n\nOther\n\nFlatGeobuf\n\n\n\n\nDEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications\nMapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#historically-many-tools-and-formats-did-not-work-together",
+    "href": "slides/spatial-data-io.html#historically-many-tools-and-formats-did-not-work-together",
+    "title": "Reading and writing spatial data",
+    "section": "Historically, many tools and formats did not work together",
+    "text": "Historically, many tools and formats did not work together"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#now-gdal-supports-translation-between-many-different-formats",
+    "href": "slides/spatial-data-io.html#now-gdal-supports-translation-between-many-different-formats",
+    "title": "Reading and writing spatial data",
+    "section": "Now, GDAL supports translation between many different formats",
+    "text": "Now, GDAL supports translation between many different formats\n\n\nGDAL is a translator library for raster and vector geospatial data formats."
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#read-spatial-data-files-with-r",
+    "href": "slides/spatial-data-io.html#read-spatial-data-files-with-r",
+    "title": "Reading and writing spatial data",
+    "section": "Read spatial data files with R",
+    "text": "Read spatial data files with R\nThe dsn or data source name for sf::read_sf() can include:\n\na file name\na URL\na folder\nthe name and access credentials of a database\na character string with the contents of a GeoJSON file"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#read-spatial-data-files-with-r-1",
+    "href": "slides/spatial-data-io.html#read-spatial-data-files-with-r-1",
+    "title": "Reading and writing spatial data",
+    "section": "Read spatial data files with R",
+    "text": "Read spatial data files with R\nYou can use the query parameter of sf::read_sf() to use a SQL query to select records from a file (or select a specific geographical extent)."
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#many-file-formats-can-include-spatial-data",
+    "href": "slides/spatial-data-io.html#many-file-formats-can-include-spatial-data",
+    "title": "Reading and writing spatial data",
+    "section": "Many file formats can include spatial data",
+    "text": "Many file formats can include spatial data\nNon-spatial files can still be used to store Well Known Text (WKT) strings, coordinate values, or addresses (convertible to spatial data):\n\nExcel files (xlsx or xls)\nvCard or VCF (Virtual Contact File)\nEXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#reading-data-into-r",
+    "href": "slides/spatial-data-io.html#reading-data-into-r",
+    "title": "Reading and writing spatial data",
+    "section": "Reading data into R",
+    "text": "Reading data into R\n\nRead data using {sf}\nRead data using a package that returns a sf object\nRead data and use {sf} to convert to a sf object"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#writing-data-from-r",
+    "href": "slides/spatial-data-io.html#writing-data-from-r",
+    "title": "Reading and writing spatial data",
+    "section": "Writing data from R",
+    "text": "Writing data from R\n\nWrite data to a spatial file using {sf}\nWrite data a a non-spatial file using a different package\n\nWhen you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text."
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#read-data-using-sf",
+    "href": "slides/spatial-data-io.html#read-data-using-sf",
+    "title": "Reading and writing spatial data",
+    "section": "Read data using {sf}",
+    "text": "Read data using {sf}\nFirst load {sf}:\n\nlibrary(sf)"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#read-data-using-sf-1",
+    "href": "slides/spatial-data-io.html#read-data-using-sf-1",
+    "title": "Reading and writing spatial data",
+    "section": "Read data using {sf}",
+    "text": "Read data using {sf}\n{sf} can use any available drivers to read data:\n\ndrivers &lt;- sf::st_drivers()\n\ndrivers\n\n                         name\nESRIC                   ESRIC\nPCIDSK                 PCIDSK\nnetCDF                 netCDF\nPDS4                     PDS4\nVICAR                   VICAR\nJP2OpenJPEG       JP2OpenJPEG\nPDF                       PDF\nMBTiles               MBTiles\nBAG                       BAG\nEEDA                     EEDA\nOGCAPI                 OGCAPI\nESRI Shapefile ESRI Shapefile\nMapInfo File     MapInfo File\nUK .NTF               UK .NTF\nLVBAG                   LVBAG\nOGR_SDTS             OGR_SDTS\nS57                       S57\nDGN                       DGN\nOGR_VRT               OGR_VRT\nMemory                 Memory\nCSV                       CSV\nGML                       GML\nGPX                       GPX\nKML                       KML\nGeoJSON               GeoJSON\nGeoJSONSeq         GeoJSONSeq\nESRIJSON             ESRIJSON\nTopoJSON             TopoJSON\nOGR_GMT               OGR_GMT\nGPKG                     GPKG\nSQLite                 SQLite\nODBC                     ODBC\nWAsP                     WAsP\nPGeo                     PGeo\nMSSQLSpatial     MSSQLSpatial\nPostgreSQL         PostgreSQL\nOpenFileGDB       OpenFileGDB\nDXF                       DXF\nCAD                       CAD\nFlatGeobuf         FlatGeobuf\nGeoconcept         Geoconcept\nGeoRSS                 GeoRSS\nVFK                       VFK\nPGDUMP                 PGDUMP\nOSM                       OSM\nGPSBabel             GPSBabel\nOGR_PDS               OGR_PDS\nWFS                       WFS\nOAPIF                   OAPIF\nEDIGEO                 EDIGEO\nSVG                       SVG\nIdrisi                 Idrisi\nXLS                       XLS\nODS                       ODS\nXLSX                     XLSX\nElasticsearch   Elasticsearch\nCarto                   Carto\nAmigoCloud         AmigoCloud\nSXF                       SXF\nSelafin               Selafin\nJML                       JML\nPLSCENES             PLSCENES\nCSW                       CSW\nVDV                       VDV\nMVT                       MVT\nNGW                       NGW\nMapML                   MapML\nTIGER                   TIGER\nAVCBin                 AVCBin\nAVCE00                 AVCE00\nHTTP                     HTTP\n                                                          long_name write  copy\nESRIC                                            Esri Compact Cache FALSE FALSE\nPCIDSK                                         PCIDSK Database File  TRUE FALSE\nnetCDF                                   Network Common Data Format  TRUE  TRUE\nPDS4                                   NASA Planetary Data System 4  TRUE  TRUE\nVICAR                                               MIPL VICAR file  TRUE  TRUE\nJP2OpenJPEG              JPEG-2000 driver based on OpenJPEG library FALSE  TRUE\nPDF                                                  Geospatial PDF  TRUE  TRUE\nMBTiles                                                     MBTiles  TRUE  TRUE\nBAG                                      Bathymetry Attributed Grid  TRUE  TRUE\nEEDA                                          Earth Engine Data API FALSE FALSE\nOGCAPI                                                       OGCAPI FALSE FALSE\nESRI Shapefile                                       ESRI Shapefile  TRUE FALSE\nMapInfo File                                           MapInfo File  TRUE FALSE\nUK .NTF                                                     UK .NTF FALSE FALSE\nLVBAG                                   Kadaster LV BAG Extract 2.0 FALSE FALSE\nOGR_SDTS                                                       SDTS FALSE FALSE\nS57                                                  IHO S-57 (ENC)  TRUE FALSE\nDGN                                                Microstation DGN  TRUE FALSE\nOGR_VRT                                    VRT - Virtual Datasource FALSE FALSE\nMemory                                                       Memory  TRUE FALSE\nCSV                                    Comma Separated Value (.csv)  TRUE FALSE\nGML                                 Geography Markup Language (GML)  TRUE FALSE\nGPX                                                             GPX  TRUE FALSE\nKML                                   Keyhole Markup Language (KML)  TRUE FALSE\nGeoJSON                                                     GeoJSON  TRUE FALSE\nGeoJSONSeq                                         GeoJSON Sequence  TRUE FALSE\nESRIJSON                                                   ESRIJSON FALSE FALSE\nTopoJSON                                                   TopoJSON FALSE FALSE\nOGR_GMT                                    GMT ASCII Vectors (.gmt)  TRUE FALSE\nGPKG                                                     GeoPackage  TRUE  TRUE\nSQLite                                          SQLite / Spatialite  TRUE FALSE\nODBC                                                                FALSE FALSE\nWAsP                                               WAsP .map format  TRUE FALSE\nPGeo                                      ESRI Personal GeoDatabase FALSE FALSE\nMSSQLSpatial                  Microsoft SQL Server Spatial Database  TRUE FALSE\nPostgreSQL                                       PostgreSQL/PostGIS  TRUE FALSE\nOpenFileGDB                                            ESRI FileGDB FALSE FALSE\nDXF                                                     AutoCAD DXF  TRUE FALSE\nCAD                                                  AutoCAD Driver FALSE FALSE\nFlatGeobuf                                               FlatGeobuf  TRUE FALSE\nGeoconcept                                               Geoconcept  TRUE FALSE\nGeoRSS                                                       GeoRSS  TRUE FALSE\nVFK                            Czech Cadastral Exchange Data Format FALSE FALSE\nPGDUMP                                          PostgreSQL SQL dump  TRUE FALSE\nOSM                                       OpenStreetMap XML and PBF FALSE FALSE\nGPSBabel                                                   GPSBabel  TRUE FALSE\nOGR_PDS                                Planetary Data Systems TABLE FALSE FALSE\nWFS                                   OGC WFS (Web Feature Service) FALSE FALSE\nOAPIF                                            OGC API - Features FALSE FALSE\nEDIGEO                                French EDIGEO exchange format FALSE FALSE\nSVG                                        Scalable Vector Graphics FALSE FALSE\nIdrisi                                         Idrisi Vector (.vct) FALSE FALSE\nXLS                                                 MS Excel format FALSE FALSE\nODS            Open Document/ LibreOffice / OpenOffice Spreadsheet   TRUE FALSE\nXLSX                                 MS Office Open XML spreadsheet  TRUE FALSE\nElasticsearch                                        Elastic Search  TRUE FALSE\nCarto                                                         Carto  TRUE FALSE\nAmigoCloud                                               AmigoCloud  TRUE FALSE\nSXF                                     Storage and eXchange Format FALSE FALSE\nSelafin                                                     Selafin  TRUE FALSE\nJML                                                    OpenJUMP JML  TRUE FALSE\nPLSCENES                                     Planet Labs Scenes API FALSE FALSE\nCSW                          OGC CSW (Catalog  Service for the Web) FALSE FALSE\nVDV                             VDV-451/VDV-452/INTREST Data Format  TRUE FALSE\nMVT                                             Mapbox Vector Tiles  TRUE FALSE\nNGW                                                     NextGIS Web  TRUE  TRUE\nMapML                                                         MapML  TRUE FALSE\nTIGER                                        U.S. Census TIGER/Line FALSE FALSE\nAVCBin                                     Arc/Info Binary Coverage FALSE FALSE\nAVCE00                                Arc/Info E00 (ASCII) Coverage FALSE FALSE\nHTTP                                          HTTP Fetching Wrapper FALSE FALSE\n               is_raster is_vector   vsi\nESRIC               TRUE      TRUE  TRUE\nPCIDSK              TRUE      TRUE  TRUE\nnetCDF              TRUE      TRUE FALSE\nPDS4                TRUE      TRUE  TRUE\nVICAR               TRUE      TRUE  TRUE\nJP2OpenJPEG         TRUE      TRUE  TRUE\nPDF                 TRUE      TRUE FALSE\nMBTiles             TRUE      TRUE  TRUE\nBAG                 TRUE      TRUE  TRUE\nEEDA               FALSE      TRUE FALSE\nOGCAPI              TRUE      TRUE  TRUE\nESRI Shapefile     FALSE      TRUE  TRUE\nMapInfo File       FALSE      TRUE  TRUE\nUK .NTF            FALSE      TRUE  TRUE\nLVBAG              FALSE      TRUE  TRUE\nOGR_SDTS           FALSE      TRUE  TRUE\nS57                FALSE      TRUE  TRUE\nDGN                FALSE      TRUE  TRUE\nOGR_VRT            FALSE      TRUE  TRUE\nMemory             FALSE      TRUE FALSE\nCSV                FALSE      TRUE  TRUE\nGML                FALSE      TRUE  TRUE\nGPX                FALSE      TRUE  TRUE\nKML                FALSE      TRUE  TRUE\nGeoJSON            FALSE      TRUE  TRUE\nGeoJSONSeq         FALSE      TRUE  TRUE\nESRIJSON           FALSE      TRUE  TRUE\nTopoJSON           FALSE      TRUE  TRUE\nOGR_GMT            FALSE      TRUE  TRUE\nGPKG                TRUE      TRUE  TRUE\nSQLite             FALSE      TRUE  TRUE\nODBC               FALSE      TRUE FALSE\nWAsP               FALSE      TRUE  TRUE\nPGeo               FALSE      TRUE FALSE\nMSSQLSpatial       FALSE      TRUE FALSE\nPostgreSQL         FALSE      TRUE FALSE\nOpenFileGDB        FALSE      TRUE  TRUE\nDXF                FALSE      TRUE  TRUE\nCAD                 TRUE      TRUE  TRUE\nFlatGeobuf         FALSE      TRUE  TRUE\nGeoconcept         FALSE      TRUE  TRUE\nGeoRSS             FALSE      TRUE  TRUE\nVFK                FALSE      TRUE FALSE\nPGDUMP             FALSE      TRUE  TRUE\nOSM                FALSE      TRUE  TRUE\nGPSBabel           FALSE      TRUE FALSE\nOGR_PDS            FALSE      TRUE  TRUE\nWFS                FALSE      TRUE  TRUE\nOAPIF              FALSE      TRUE FALSE\nEDIGEO             FALSE      TRUE  TRUE\nSVG                FALSE      TRUE  TRUE\nIdrisi             FALSE      TRUE  TRUE\nXLS                FALSE      TRUE FALSE\nODS                FALSE      TRUE  TRUE\nXLSX               FALSE      TRUE  TRUE\nElasticsearch      FALSE      TRUE FALSE\nCarto              FALSE      TRUE FALSE\nAmigoCloud         FALSE      TRUE FALSE\nSXF                FALSE      TRUE  TRUE\nSelafin            FALSE      TRUE  TRUE\nJML                FALSE      TRUE  TRUE\nPLSCENES            TRUE      TRUE FALSE\nCSW                FALSE      TRUE FALSE\nVDV                FALSE      TRUE  TRUE\nMVT                FALSE      TRUE  TRUE\nNGW                 TRUE      TRUE FALSE\nMapML              FALSE      TRUE  TRUE\nTIGER              FALSE      TRUE  TRUE\nAVCBin             FALSE      TRUE  TRUE\nAVCE00             FALSE      TRUE  TRUE\nHTTP                TRUE      TRUE FALSE"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#read-data-from-a-url-using-sf",
+    "href": "slides/spatial-data-io.html#read-data-from-a-url-using-sf",
+    "title": "Reading and writing spatial data",
+    "section": "Read data from a URL using {sf}",
+    "text": "Read data from a URL using {sf}\nread_sf() works well with a direct link to a spatial data file.\nRead a GeoJSON file:\n\n# GeoJSON (geojson)\nread_sf(\"https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson\")\n\nSimple feature collection with 1 feature and 11 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -124.4096 ymin: 32.53416 xmax: -114.1315 ymax: 42.00952\nGeodetic CRS:  WGS 84\n# A tibble: 1 × 12\n  name       abbreviation capital    city   population   area waterarea landarea\n  &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;     &lt;int&gt;    &lt;int&gt;\n1 California CA           Sacramento Los A…   38332521 423968     20502   403466\n# ℹ 4 more variables: houseseats &lt;int&gt;, statehood &lt;date&gt;, group &lt;chr&gt;,\n#   geometry &lt;MULTIPOLYGON [°]&gt;"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#working-with-web-services",
+    "href": "slides/spatial-data-io.html#working-with-web-services",
+    "title": "Reading and writing spatial data",
+    "section": "Working with web services",
+    "text": "Working with web services\nExamples of common web services for working with spatial data include:\n\nSpatial data sharing and discovery\nSpatial data visualization\nRouting\nGeocoding"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#considerations-when-working-with-web-services",
+    "href": "slides/spatial-data-io.html#considerations-when-working-with-web-services",
+    "title": "Reading and writing spatial data",
+    "section": "Considerations when working with web services",
+    "text": "Considerations when working with web services\nUsing a web service often requires:\n\nCreating an account for authentication and billing\nDedicating funding for usage\nUnderstanding data privacy implications"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#example-feature-services",
+    "href": "slides/spatial-data-io.html#example-feature-services",
+    "title": "Reading and writing spatial data",
+    "section": "Example: Feature Services",
+    "text": "Example: Feature Services\nAn ArcGIS FeatureServer URL does not work:\n\nread_sf(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\")\n\nError: Cannot open \"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\"; The file doesn't seem to exist.\n\n\nBut a FeatureServer URL that includes the output format does work:\n\nread_sf(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson\")\n\nSimple feature collection with 24 features and 17 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -79.48731 ymin: 37.88654 xmax: -75.0492 ymax: 39.72288\nGeodetic CRS:  WGS 84\n# A tibble: 24 × 18\n   OBJECTID COUNTY_NAME     COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS\n      &lt;int&gt; &lt;chr&gt;                    &lt;int&gt; &lt;chr&gt;                          &lt;int&gt;\n 1        1 Prince George's             16 PG                                16\n 2        2 Cecil                        7 CE                                 7\n 3        3 Howard                      13 HO                                13\n 4        4 Talbot                      20 TA                                20\n 5        5 Garrett                     11 GA                                11\n 6        6 Baltimore City              24 BC                                24\n 7        7 Carroll                      6 CL                                 6\n 8        8 Washington                  21 WA                                21\n 9        9 Worcester                   23 WO                                23\n10       10 Frederick                   10 FR                                10\n# ℹ 14 more rows\n# ℹ 13 more variables: COUNTY_2DIGITCAPS &lt;chr&gt;, DISTRICT_NAME &lt;chr&gt;,\n#   DISTRICT_NUMBER &lt;int&gt;, COUNTY_FIP &lt;int&gt;, COUNTYNUM &lt;int&gt;, TSD_ID &lt;int&gt;,\n#   COUNTY &lt;chr&gt;, DISTRICT &lt;int&gt;, Shape__Area &lt;dbl&gt;, Shape__Length &lt;dbl&gt;,\n#   COUNTY_ALLCAPS &lt;chr&gt;, Region &lt;chr&gt;, geometry &lt;POLYGON [°]&gt;\n\n\nThere are a wide variety of packages that you can use to supplement {sf}.\n\nlibrary(arcgislayers)\n\nfeature_layer &lt;- arc_open(\"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0\")\n\narc_select(feature_layer)\n\nSimple feature collection with 24 features and 17 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 607669.3 ymin: 80997.33 xmax: 1870976 ymax: 757701.4\nProjected CRS: NAD83(HARN) / Maryland (ftUS)\nFirst 10 features:\n   OBJECTID     COUNTY_NAME COUNTY_INTEGER COUNTY_ABBREVIATION COUNTY_DIGITCAPS\n1         1 Prince George's             16                  PG               16\n2         2           Cecil              7                  CE                7\n3         3          Howard             13                  HO               13\n4         4          Talbot             20                  TA               20\n5         5         Garrett             11                  GA               11\n6         6  Baltimore City             24                  BC               24\n7         7         Carroll              6                  CL                6\n8         8      Washington             21                  WA               21\n9         9       Worcester             23                  WO               23\n10       10       Frederick             10                  FR               10\n   COUNTY_2DIGITCAPS DISTRICT_NAME DISTRICT_NUMBER COUNTY_FIP COUNTYNUM TSD_ID\n1                 16    District 3               3         33        16      3\n2                 07    District 2               2         15         7     21\n3                 13    District 7               7         27        13     10\n4                 20    District 2               2         41        20     18\n5                 11    District 6               6         23        11      4\n6                 24   No District               0        510        24     23\n7                 06    District 7               7         13         6      1\n8                 21    District 6               6         43        21   1060\n9                 23    District 1               1         47        23      2\n10                10    District 7               7         21        10     24\n            COUNTY DISTRICT Shape__Area Shape__Length  COUNTY_ALLCAPS Region\n1  Prince George's        3 13902243040      720691.0 PRINCE GEORGE'S   &lt;NA&gt;\n2            Cecil        2 11643675836      494670.7           CECIL   &lt;NA&gt;\n3           Howard        7  7056288549      471922.1          HOWARD   &lt;NA&gt;\n4           Talbot        2 13193323636      657963.0          TALBOT   &lt;NA&gt;\n5          Garrett        6 18339518744      680782.9         GARRETT   &lt;NA&gt;\n6   Baltimore City        0  2562810672      207145.0  BALTIMORE CITY   &lt;NA&gt;\n7          Carroll        7 12623420879      651107.6         CARROLL   &lt;NA&gt;\n8       Washington        6 13031238277      948164.4      WASHINGTON   &lt;NA&gt;\n9        Worcester        1 16297527948      694972.5       WORCESTER   &lt;NA&gt;\n10       Frederick        7 18613257293      683407.8       FREDERICK   &lt;NA&gt;\n                         geometry\n1  POLYGON ((1313442 476110.4,...\n2  POLYGON ((1660741 628728.5,...\n3  POLYGON ((1391417 567919.8,...\n4  POLYGON ((1611348 457521.9,...\n5  POLYGON ((769889 754580.7, ...\n6  POLYGON ((1445534 565803.6,...\n7  POLYGON ((1371781 748182.4,...\n8  POLYGON ((936016.4 751530.6...\n9  POLYGON ((1870321 284172.9,...\n10 POLYGON ((1213130 747989.9,...\n\n\n\n\nPractice writing a query with arc_select"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#example-mapbox-api",
+    "href": "slides/spatial-data-io.html#example-mapbox-api",
+    "title": "Reading and writing spatial data",
+    "section": "Example: Mapbox API",
+    "text": "Example: Mapbox API\nmapboxapi::mb_isochrone() allows access to the Mapbox Isochrone API:\n\nlibrary(mapboxapi)\n\nwalk_5min &lt;- mb_isochrone(\n  \"100 Holliday St, Baltimore, MD 21202\",\n  profile = \"walking\",\n  time = 5\n)\n\nwalk_5min\n\nSimple feature collection with 1 feature and 1 field\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -76.61453 ymin: 39.28688 xmax: -76.6056 ymax: 39.29477\nGeodetic CRS:  WGS 84\n# A tibble: 1 × 2\n   time                                                                 geometry\n  &lt;int&gt;                                                            &lt;POLYGON [°]&gt;\n1     5 ((-76.60768 39.29392, -76.60868 39.2939, -76.6098 39.29477, -76.6115 39…"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#example-mapbox-api-1",
+    "href": "slides/spatial-data-io.html#example-mapbox-api-1",
+    "title": "Reading and writing spatial data",
+    "section": "Example: Mapbox API",
+    "text": "Example: Mapbox API\nmapboxapi::addMapboxTiles() provides easy access to the Mapbox Static Tiles API:\n\nlibrary(leaflet)\n\nleaflet(walk_5min) %&gt;%\n  addMapboxTiles(style_id = \"streets-v11\",\n                 username = \"mapbox\") %&gt;%\n  addPolygons()"
+  },
+  {
+    "objectID": "slides/spatial-data-io.html#storing-and-organizing-spatial-data-takes-planning",
+    "href": "slides/spatial-data-io.html#storing-and-organizing-spatial-data-takes-planning",
+    "title": "Reading and writing spatial data",
+    "section": "Storing and organizing spatial data takes planning",
+    "text": "Storing and organizing spatial data takes planning\nPlanning for the structure and organization of your data can be supported using a variety of tools:\n\nDiagram drawing applications (e.g. draw.io)\nEntity-relationship diagram tools (e.g. drawDB)\nLow-code, visual database applications (e.g. Airtable)"
   },
   {
     "objectID": "slides/fall-2023.html#week-12-agenda",

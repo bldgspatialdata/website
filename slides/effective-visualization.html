@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="dcterms.date" content="2024-11-13">
+  <meta name="dcterms.date" content="2024-11-20">
   <title>GES 668 - Fall 2024 – Effective visualization with {ggplot2} and R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -334,7 +334,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-11-13</p>
+  <p class="date">2024-11-20</p>
 </section>
 <section id="where-to-start" class="title-slide slide level2 center" data-number="1">
 <h2><span class="header-section-number">1</span> Where to start?</h2>
@@ -345,6 +345,7 @@
 </ul>
 </section>
 
+<section>
 <section id="what-next" class="title-slide slide level2 center" data-number="2">
 <h2><span class="header-section-number">2</span> What next?</h2>
 <ul>
@@ -354,7 +355,70 @@
 <li>Preparing your feature geometry appropriately</li>
 </ul>
 </section>
+<section class="slide level4">
 
+<p>Focus for today:</p>
+<ul>
+<li>Working with <code>theme()</code> (and custom theme packages like <a href="https://hrbrmstr.github.io/hrbrthemes/">hrbrthemes</a>) to customize plot appearance</li>
+<li>Using <a href="https://ragg.r-lib.org/">ragg</a> to use custom fonts with ggplot2</li>
+<li>Working with <a href="https://scales.r-lib.org/">scales</a> and <code>scale_</code> functions</li>
+<li>Working with the <a href="https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/">new legends features</a></li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Resources for ggplot2:</p>
+<ul>
+<li><a href="https://github.com/thomasp85/ggplot2_workshop">“Drawing Anything with ggplot2” workshop materials</a> (2020)</li>
+<li><a href="https://posit.co/resources/videos/best-practices-for-programming-with-ggplot2/">Best practices for programming with ggplot2 - Posit</a> (2020)</li>
+<li><a href="https://rstudio-conf-2022.github.io/ggplot2-graphic-design/">Graphic Design with ggplot2 - Graphic Design with ggplot2</a> (2022)</li>
+<li><a href="https://posit-conf-2023.github.io/dataviz-ggplot2/">Engaging and Beautiful Data Visualizations with ggplot2</a> (2023)</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Additional packages:</p>
+<ul>
+<li><a href="https://patchwork.data-imaginist.com/">patchwork</a></li>
+<li><a href="https://ggforce.data-imaginist.com/">ggforce</a></li>
+<li><a href="https://exts.ggplot2.tidyverse.org/gallery/">ggplot2 extensions</a></li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Packages for interactive and animated plots:</p>
+<ul>
+<li><a href="https://gganimate.com/">gganimate</a></li>
+<li><a href="https://plotly.com/r/">plotly</a></li>
+<li><a href="https://davidgohel.github.io/ggiraph/">ggiraph</a></li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Packages for interactive maps:</p>
+<ul>
+<li><a href="https://qfes.github.io/rdeck/">rdeck</a></li>
+<li><a href="https://walker-data.com/mapgl/">mapgl</a></li>
+<li><a href="https://rstudio.github.io/leaflet/">leaflet</a></li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Packages for working with text:</p>
+<ul>
+<li><a href="https://wilkelab.org/ggtext/">ggtext</a></li>
+<li><a href="https://marquee.r-lib.org/index.html">marquee</a></li>
+<li><a href="https://ggrepel.slowkow.com/">ggrepel</a></li>
+<li><a href="https://github.com/MattCowgill/ggannotate">ggannotate</a> (for interactively setting annotation locations)</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Packages for 3D data visualization:</p>
+<ul>
+<li><a href="https://www.rayshader.com/">rayshader</a></li>
+</ul>
+</section></section>
 <section>
 <section id="choosing-appropriate-graphic-types" class="title-slide slide level2 center" data-number="3">
 <h2><span class="header-section-number">3</span> Choosing appropriate graphic types</h2>
