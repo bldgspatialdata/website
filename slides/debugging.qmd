@@ -1,0 +1,159 @@
+---
+title: "Questions, Source Code, and Debugging"
+---
+
+## Asking Good Questions
+
+Good questions:
+
+- are easy for the person to answer
+
+- get you the information you're asking for
+
+
+::: footer
+Excerpted from [So you want to be a wizard](https://wizardzines.com/zines/wizard/), ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)) by Julia Evans.
+:::
+
+## Strategies for Asking Good Questions
+
+- State what you know.
+- Guess what the answer might be.
+- Choose who to ask. (The person who knows the *most* isn't always the best person to ask! Often someone who learned it more recently will remember better what it was like to not understand.)
+- Find a good time.
+- Do some research ("If I spend some time doing research first, I can ask a *way better* question.")
+- Ask yes/no questions.
+
+::: footer
+Adapted from [So you want to be a wizard](https://wizardzines.com/zines/wizard/), ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)) by Julia Evans.
+:::
+
+----
+
+## Practice: How to make a reprex
+
+What is a `reprex`? It’s a **repr**oducible **ex**ample, as coined by Romain Francois in a tweet from 2014.
+
+1. Copy code
+2. Run `reprex()`
+3. Admire, locally.
+4. Paste into target.
+5. Wait for help.
+
+::: footer
+Adapted from [reprex: Reproducible Examples with R](https://speakerdeck.com/jennybc/reprex-reproducible-examples-with-r) by Jenny Bryan (CC-BY-SA 4.0).
+:::
+
+## When to make a reprex?
+
+1. Seek help on [Posit Community](https://forum.posit.co/)
+2. Asking questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/r)
+3. Report a bug (or start a discussion) on GitHub.
+4. Talk about R in a message or email to a friend or colleague.
+
+::: notes
+reprex is a "workflow package" (use it interactively, not in scripts, RMarkdown, Quarto documents, packages, or apps)
+:::
+
+::: footer
+Adapted from [reprex: Reproducible Examples with R](https://speakerdeck.com/jennybc/reprex-reproducible-examples-with-r) by Jenny Bryan (CC-BY-SA 4.0).
+:::
+
+## Why make a reprex?
+
+Conversations about code are more productive with:
+
+1. Code that actually runs
+2. Code that I don't have to run.
+3. Code that I can easily run.
+
+
+::: footer
+This slide and the following slides on reproducible examples are adapted from [reprex: Reproducible Examples with R](https://speakerdeck.com/jennybc/reprex-reproducible-examples-with-r) by Jenny Bryan (CC-BY-SA 4.0).
+:::
+
+## Code that actually runs
+
+Code is run in a new R session So, it must be self-contained.
+
+- You *must* load the required packages.
+- You *must* create all required objects.
+
+## Code that actually runs
+
+Use the smallest, simplest, most built-in data possible.
+
+Standard tricks for the inline creation of a small data frame.
+
+- `data.frame()`
+- `tribble()`
+- [datapasta](https://milesmcbain.github.io/datapasta/)
+
+## Code that I don't have to run
+
+Many readers... can often get the point w/o running code, especially if they can see the output.
+
+## Code that I can easily run
+
+- do not copy/paste from the R console (it takes fiddly edits to reproduce)
+
+- do not take a screenshot of your R session (it takes re-typing everything to reproduce)
+
+## Why make a reprex?
+
+How you ever helped a relative with a computer problem?
+
+That is how it feels to answer a programming question based on a prose narrative.
+
+## Do you have to make a reprex?
+
+"Making a good reprex is a lot of work!"
+
+Yes! You are asking other people to experience your pain. Meet them halfway.
+
+## Do you have to make a reprex?
+
+Making a good reprex often leads to solving your own problem. In private.
+
+## Read the Source Code
+
+- Search for the error message
+- Read the whole thing
+- Edit the code
+
+::: footer
+Adapted from [So You Want to be a Wizard](https://jvns.ca/wizard-zine.pdf) by Julia Evans.
+:::
+
+## Debugging
+
+"Love Your Bugs"
+
+- Debugging is a *great* way to learn.
+- Fixing bugs is also a good way to learn to write more reliable code.
+- Nobody writes great code without writing and fixing lots of bugs.
+
+::: footer
+Adapted from [So You Want to be a Wizard](https://jvns.ca/wizard-zine.pdf) by Julia Evans building on [Love your bugs](https://akaptur.com/blog/2017/11/12/love-your-bugs/) by Allison Kaptur.
+:::
+
+## How I got better at debugging
+
+- Remember the bug is happening for a logical reason.
+- Be confident I can fix it.
+- Talk to my co-workers.
+- Know my debugging toolkit.
+- *Most importantly*: I learned to like it.
+
+::: footer
+From [So You Want to be a Wizard](https://jvns.ca/wizard-zine.pdf) by Julia Evans building on [Love your bugs](https://akaptur.com/blog/2017/11/12/love-your-bugs/) by Allison Kaptur.
+:::
+
+## Resources: Debugging with R
+
+- [Debugging R code – What They Forgot to Teach You About R](https://rstats.wtf/debugging-r)
+
+## Resources: Debugging Quarto
+
+- [Troubleshooting – Quarto](https://quarto.org/docs/troubleshooting/)
+- [Common Problems with Quarto (and some solutions)](https://qmd4sci.njtierney.com/common-problems.html) from Quarto for Scientists
