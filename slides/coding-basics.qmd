@@ -23,12 +23,14 @@ A container for:
 Use `install.packages()` to install a package from [CRAN](https://cran.r-project.org/) (Comprehensive R Archive Network):
 
 ```{r}
+#| eval: false
 install.packages("sf")
 ```
 
 But, remember, this does not work:
 
 ```{r}
+#| error: true
 install.packages(sf)
 ```
 
