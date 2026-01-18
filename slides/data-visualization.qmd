@@ -359,7 +359,7 @@ We can start by using the function `ggplot()` to define a plot object. Set `stor
 ggplot(data = storms)
 ```
 
-. . .
+...
 
 ::: {.smaller}
 Well, that doesn't look like much. 🤔
