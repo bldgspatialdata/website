@@ -18,7 +18,8 @@ maryland <- filter(us_states, NAME == "Maryland")
 
 maryland_smaller <- st_buffer(
   maryland,
-  dist = units::set_units(-5000, "m"))
+  dist = units::set_units(-5000, "m")
+)
 
 md_counties <- counties("MD")
 

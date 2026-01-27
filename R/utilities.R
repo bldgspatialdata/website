@@ -20,11 +20,13 @@ read_yml <- function(path, remove = FALSE) {
 }
 
 # Function for renaming files ----
-rename_files <- function(path,
-                         pattern = "-",
-                         replacement = "_",
-                         glob = "*.qmd",
-                         ...) {
+rename_files <- function(
+  path,
+  pattern = "-",
+  replacement = "_",
+  glob = "*.qmd",
+  ...
+) {
   if (fs::is_dir(path)) {
     path_info <- fs::dir_info(path = path, glob = glob)
     path <- path_info[["path"]]
@@ -41,9 +43,7 @@ rename_files <- function(path,
 
 #' Update the YAML keys for a file with `{ymlthis}`
 #'
-update_file_yml <- function(path,
-                            ...,
-                            method = "add") {
+update_file_yml <- function(path, ..., method = "add") {
   if (fs::is_dir(path)) {
     path_info <- fs::dir_info(path = path, glob = glob)
     path <- path_info[["path"]]
@@ -66,7 +66,6 @@ update_file_yml <- function(path,
       )
     }
 
-
     updated_txt <- c(
       ymlthis:::capture_yml(new_yml),
       txt
@@ -81,21 +80,23 @@ update_file_yml <- function(path,
 #'
 #' Created 2024-08-29 to reconcile the file names and schedule of the slides,
 #' week overview pages, and exercises.
-read_qmd_params <- function(path,
-                            ...,
-                            recurse = FALSE,
-                            keys = c(
-                              "order",
-                              "title",
-                              "subtitle",
-                              "date",
-                              "date-due",
-                              "date-modified",
-                              "image",
-                              "abstract"
-                            ),
-                            regex = "qmd$",
-                            perl = TRUE) {
+read_qmd_params <- function(
+  path,
+  ...,
+  recurse = FALSE,
+  keys = c(
+    "order",
+    "title",
+    "subtitle",
+    "date",
+    "date-due",
+    "date-modified",
+    "image",
+    "abstract"
+  ),
+  regex = "qmd$",
+  perl = TRUE
+) {
   files <- path
 
   if (fs::is_dir(path)) {

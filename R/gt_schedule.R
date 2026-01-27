@@ -1,9 +1,11 @@
 #' Create a gt table from a course schedule data frame
 #'
 #' @param main_font,icon_font Passed to `name` argument of [gt::google_font()]
-gt_schedule <- function(data,
-                        main_font = "Atkinson Hyperlegible",
-                        icon_font = "Noto Color Emoji") {
+gt_schedule <- function(
+  data,
+  main_font = "Atkinson Hyperlegible",
+  icon_font = "Noto Color Emoji"
+) {
   stopifnot(
     is.data.frame(data),
     all(hasName(data, c("Week", "Date", "Slides", "Exercise")))

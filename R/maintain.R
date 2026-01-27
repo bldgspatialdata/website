@@ -52,7 +52,6 @@ if (FALSE) {
 #   must.exist = FALSE
 # )
 
-
 # Review the YAML frontmatter for all of the pages
 if (FALSE) {
   dplyr::bind_rows(

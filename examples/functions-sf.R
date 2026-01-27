@@ -15,10 +15,11 @@ us_states_df
 
 # Filter states by name *or* region
 filter_states <- function(
-    states,
-    name = NULL,
-    region = NULL,
-    ...) {
+  states,
+  name = NULL,
+  region = NULL,
+  ...
+) {
   # Check if states is a data frame and name and region are not both provided
   stopifnot(
     is.data.frame(states),
@@ -67,6 +68,3 @@ plot_states <- function(data, name = NULL, region = NULL) {
     ggplot() +
     geom_sf()
 }
-
-
-

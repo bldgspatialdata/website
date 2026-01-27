@@ -104,7 +104,9 @@ drivers <- st_drivers()
 
 st_read()
 
-california <- st_read("https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson")
+california <- st_read(
+  "https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson"
+)
 
 poa <- st_read(
   "https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml"
@@ -124,18 +126,26 @@ enrollment <- st_read(url)
 
 read_csv(url)
 
-st_read("https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/Cenus_Tracts/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
+st_read(
+  "https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/Cenus_Tracts/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+)
 
-nc <- st_read(system.file("shape/nc.shp", package="sf"))
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
 
-county_wkt <- nc[1,] |>
+county_wkt <- nc[1, ] |>
   st_buffer(10000) |>
   st_geometry() |>
   st_as_text()
 
-nc <- st_read(system.file("shape/nc.shp", package="sf"), wkt_filter = county_wkt)
+nc <- st_read(
+  system.file("shape/nc.shp", package = "sf"),
+  wkt_filter = county_wkt
+)
 
-nc <- st_read(system.file("shape/nc.shp", package="sf"), query = "SELECT NAME, AREA FROM \"nc\" WHERE AREA < 0.1")
+nc <- st_read(
+  system.file("shape/nc.shp", package = "sf"),
+  query = "SELECT NAME, AREA FROM \"nc\" WHERE AREA < 0.1"
+)
 
 library(arcgislayers)
 

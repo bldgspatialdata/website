@@ -80,6 +80,3 @@ storms_sf |>
     .predicate = st_covered_by
   ) |>
   mapview::mapview()
-
-
-

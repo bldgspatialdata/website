@@ -4,7 +4,7 @@ if (FALSE) {
   # exercise_dir <- "~/exercises"
 
   roster <- tibble::tribble(
-    ~repository,
+    ~repository ,
     ""
   )
 
@@ -42,7 +42,6 @@ if (FALSE) {
     }
   )
 
-
   # Add users who have joined the team to their repo
   # NOTE: I ended up doing a lot of this manually after the initial setup as a
   # large share students had not joined the Team prior to setup
@@ -61,15 +60,16 @@ if (FALSE) {
     }
   )
 
-
   # Updates ----
 
-  roster_add_file <- function(roster = NULL,
-                              repos = NULL,
-                              file = NULL,
-                              repo_folder = "exercises",
-                              path = NULL,
-                              skip = NULL) {
+  roster_add_file <- function(
+    roster = NULL,
+    repos = NULL,
+    file = NULL,
+    repo_folder = "exercises",
+    path = NULL,
+    skip = NULL
+  ) {
     if (!is.null(roster)) {
       repos <- roster[["repository"]]
     }
