@@ -1,9 +1,9 @@
 ---
-title: "Week 6"
+title: Week 6
 order: 6
-date: 2024-10-02
-subtitle: "Applying spatial transformations and geometric operations using `{sf}`"
-abstract: "This week we are learning more about the spatial, geometry, and geometric operations available through the `{sf}` package."
+date: 2026-03-04
+subtitle: Applying spatial transformations and geometric operations using `{sf}`
+abstract: This week we are learning more about the spatial, geometry, and geometric operations available through the `{sf}` package.
 image: /slides/images/GDALLogoColor.svg
 ---
 

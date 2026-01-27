@@ -1,9 +1,16 @@
 ---
-title: "Week 8"
+title: Week 8
 order: 8
-date: 2024-10-16
-subtitle: "Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`"
+date: 2026-03-18
+subtitle: Spring Break
 ---
+::: {.callout-important appearance="minimal" icon="true"}
+Spring break is March 14-22, 2026
+
+No class during UMBC Spring Break.
+:::
+<!--
+subtitle: Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`
 
 ## Overview
 
@@ -12,3 +19,4 @@ How do you understand a dataset? Descriptive statistics, tables, and interactive
 ## Prepare
 
 {{< include _readings_eda.qmd >}}
+-->

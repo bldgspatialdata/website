@@ -1,14 +1,15 @@
 ---
-title: "Week 11"
+title: Week 11
 order: 11
-date: 2024-11-06
-subtitle: "Reading and writing spatial data files and services"
-abstract: "This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services."
+date: 2026-04-08
+subtitle: Reading and writing spatial data files and services
+abstract: This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services.
 ---
-
+<!--
 ::: {.callout-important appearance="simple"}
 Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}.
 :::
+-->
 
 ## Overview
 

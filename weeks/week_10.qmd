@@ -1,9 +1,15 @@
 ---
-title: "Week 10"
+title: Week 10
 order: 10
-date: 2024-10-30
-subtitle: "Exploring American Community Survey data with `{tidycensus}`"
+date: 2026-04-01
+subtitle: Exploring American Community Survey data with `{tidycensus}`
 ---
+
+::: {.callout-important appearance="minimal" icon="true"}
+Deadline to withdraw from a course
+
+Friday, April 3 is the last day to withdraw from individual courses.
+:::
 
 ## Prepare
 

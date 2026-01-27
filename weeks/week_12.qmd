@@ -1,7 +1,7 @@
 ---
 title: "Week 12"
 order: 12
-date: 2024-11-13
+date: 2026-04-15
 subtitle: "Creating and managing spatial metadata"
 abstract: "Learn about both the basics of metadata and specialized spatial metadata standards. Review examples of READMEs and other types of project documentation."
 image: /slides/images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png

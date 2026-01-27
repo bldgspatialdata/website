@@ -1,9 +1,9 @@
 ---
-title: "Week 9"
+title: Week 9
 order: 9
-subtitle: "Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`"
-abstract: "Learn about OpenStreetMap, how to edit OSM, and how to access OSM data using the `{osmdata}` package." 
-date: 2024-10-23
+subtitle: Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`
+abstract: Learn about OpenStreetMap, how to edit OSM, and how to access OSM data using the `{osmdata}` package.
+date: 2026-03-25
 image: /slides/images/umbc-area-open-street-map-editor.png
 ---
 

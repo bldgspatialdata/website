@@ -1,8 +1,8 @@
 ---
-title: "Week 4"
+title: Week 4
 order: 4
-subtitle: "Transforming spatial data attributes"
-date: 2024-09-18
+subtitle: Transforming spatial data attributes
+date: 2026-02-18
 ---
 
 ## Overview

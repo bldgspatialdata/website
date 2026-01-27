@@ -1,9 +1,9 @@
 ---
-title: "Week 7"
+title: Week 7
 order: 7
-date: 2024-10-09
-subtitle: "Writing functions and pipelines"
-abstract: "This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines."
+date: 2026-03-11
+subtitle: Writing functions and pipelines
+abstract: This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.
 image: /slides/images/rforecology_functions-graphic.png
 ---
 
