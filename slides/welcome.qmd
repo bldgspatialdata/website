@@ -4,124 +4,176 @@ title: "Welcome to GES 668: Building Spatial Datasets"
 image: "images/2024-08-28_student-survey.png"
 date: 2024-08-28
 format:
-  revealjs: 
+  revealjs:
     auto-animate-easing: ease-in-out
     auto-animate-unmatched: false
     preview-links: auto
     number-sections: false
 ---
 
+## Our goals
+
+::: {.incremental}
+- ask and answer questions with data
+- ask and answer questions with *spatial* data
+- *reproducibly* ask and answer questions with spatial data
+- use *modern tools and methods* to reproducibly ask and answer questions with spatial data
+- *collaboratively* use modern tools and methods to reproducibly ask and answer questions with data
+:::
+
+::: notes
+Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit-r/u1-d02-toolkit-r#2>
+:::
+
+## What is a *reproducible* data analysis?
+
+- Can you get the same results every time you do the analysis?
+- Can others get the same results?
+- Can you use get the same results when you do the analysis with similar data?
+
+::: notes
+Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit-r/u1-d02-toolkit-r#11>
+:::
+
+<!--
 ## What is this class about?
 
-
 ## What is this class about?
 
-- Working with data using R
+-   Working with data using R
 
-## What is this class about? {auto-animate=true}
+## What is this class about? {auto-animate="true"}
 
-- Working with ~~data~~ spatial data using R
+-   Working with ~~data~~ spatial data using R
 
-## What is this class about? {auto-animate=true}
+## What is this class about? {auto-animate="true"}
 
-- Working with spatial data *about places*
+-   Working with spatial data *about places*
 
-## What is this class about? {auto-animate=true}
+## What is this class about? {auto-animate="true"}
 
-- Working with spatial data *about **people and** places*
+-   Working with spatial data *about **people and** places*
 
-## What is this class about? {auto-animate=true}
+## What is this class about? {auto-animate="true"}
 
-- Working with ~~spatial data~~ **local knowledge** about people and places
+-   Working with ~~spatial data~~ **local knowledge** about people and places
+-->
 
 ## Why are you here?
 
+<!-- FIXME: See if I want to replace the Felt exercise w/ something else -->
+<!--
 ## How did you get here?
 
 This isn't a metaphorical question.
 
 Let's make a map:
 
-- [Open this Felt map and trace a route for your commute to campus today](https://felt.com/map/GES668-Fall-2024-Student-Commutes-16Td7dMHQGiZTkkbsHLEpC?loc=39.3041,-76.6123,11.71z)
-- Start as close or far from home as you like
-- Use the "Details" tab to add a "name" attribute (with your name) and a "mode" attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)
+-   [Open this Felt map and trace a route for your commute to campus today](https://felt.com/map/GES668-Fall-2024-Student-Commutes-16Td7dMHQGiZTkkbsHLEpC?loc=39.3041,-76.6123,11.71z)
+-   Start as close or far from home as you like
+-   Use the "Details" tab to add a "name" attribute (with your name) and a "mode" attribute (e.g. UMBC Shuttle, Car or truck, Bike, etc.)
 
-----
+------------------------------------------------------------------------
 
-::: {.r-fit-text}
+::: r-fit-text
 🥳 Congratulations!
 
 We just built some spatial data.
 :::
 
-::: {.smaller}
+::: smaller
 We'll come back to it later.
 :::
+-->
 
 ## What experiences do you bring with you today?
 
-----
+------------------------------------------------------------------------
 
-![](images/2024-08-28_student-survey.png){width=100%}
+![](images/student-survey.png){width="100%"}
 
-::: {.notes}
+::: notes
 What experiences do you bring?
 
-NOTE: Make sure to regenerate the plot using `plot_ges668_student_survey()`
-
+NOTE: Make sure to regenerate the plot using `plot_ges668_student_survey()
 :::
 
 ## Why am I here?
 
 A few things about me:
 
--   I first started using GIS tools as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007
+-   I first started using GIS as a student studying anthropology and historic preservation at the University of Maryland College Park around 2007
 -   I started learning R as a student at the John Hopkins University School of Public Health in 2019
 -   I started developing R packages while working at the Neighborhood Design Center in 2020
--   I work as a community planner at the Baltimore City Department of Planning (since June 2022)
+-   I started work as a planner at the Baltimore City Department of Planning in 2022 and agency data lead in 2024
 
-::: {.notes}
+::: notes
 I believe in the potential of data to build power, inform collective action, and make change in the world
+:::
+
+## What are our toolkit for this class?
+
+- Programming tools
+  - R (a programming language)
+  - RStudio (an Integrated Development Environment - IDE)
+  - tidyverse (a family of R packages)
+  - sf (a R package for spatial data)
+  - Quarto (a open-source publishing system for mixing text and code)
+- Reproducibility tools
+  - Git
+  - GitHub
+- Learning tools
+  - Course website
+  - GitHub classroom
+  - Discord
+
+::: notes
+Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit-r/u1-d02-toolkit-r#2>
 :::
 
 ## Communication 📬
 
-- I am not always on top of my email.
-- Please post questions to the Discord if you think other students could help (or others may share your question).
-- If you don't get a timely response by email, message me on Discord.
+-   I am not always on top of my email.
+-   Please post questions to the Discord if you think other students could help (or others may share your question).
+-   If you don't get a timely response by email, message me on Discord.
 
 ## Assignments
 
-1. Weekly check-in
-2. Practice exercises
-3. Final project
+1.  Weekly check-in
+2.  Practice exercises
+3.  Final project
 
 ### Weekly check-in 📝
 
-- The goal of the weekly check-in is to help you stay on top of the reading and get your questions out for everyone to benefit from.
+-   The goal of the weekly check-in is to help you stay on top of the reading and get your questions out for everyone to benefit from.
 
 ### Practice exercises 🛠️
 
-- Each practice exercise will include a mix of questions and coding prompts excerpted or adapted from R for Data Science, Geocomputation with R, and other resources.
+<!-- FIXME: Are practice exercises optional or required? How wiill they be graded? -->
+-   Each practice exercise will include a mix of questions and coding prompts excerpted or adapted from R for Data Science, Geocomputation with R, and other resources.
 
--  Questions may include both close-ended "fill in the blank" style questions and more open-ended prompts.
+-   Questions may include both close-ended "fill in the blank" style questions and more open-ended prompts.
 
-- Feedback on the exercises is welcome!
+-   Feedback on the exercises is welcome!
 
-### Final project 
+<!--
+### Final project
 
 The final project includes a few elements:
 
-- A proposal
-- A presentation
-- A reproducible project repository
+-   A proposal
+-   A presentation
+-   A reproducible project repository
 
 The proposal and presentation will both be built with [Quarto](https://quarto.org/) using the [HTML document](https://quarto.org/docs/output-formats/html-basics.html) and [Reveal.js presentation](https://quarto.org/docs/presentations/revealjs/) formats.
+-->
+<!-- FIXME: What is happening with the final project? -->
 
 ## Readings 📚
 
-- What are the readings?
-- How can you get the most out of the readings?
+-   What are the readings?
+-   What is the difference between required and optional readings?
+-   How can you get the most out of the readings?
 
 ### R for Data Science
 
@@ -129,19 +181,37 @@ The proposal and presentation will both be built with [Quarto](https://quarto.or
 
 ### Geocomputation with R
 
-![](https://geocompx.org/static/img/book_cover.jpg)
+![](images/book_cover_r2.jpg)
 
 ::: footer
 Note that this book also includes extensive information on raster data. This is *not* a topic covered in any detail as part of this class and can be skipped.
 :::
 
-### All Data are Local
+### Other readings and resources
 
-![](https://mit-press-us.imgix.net/covers/9780262545174.jpg?auto=format&w=298&dpr=2&q=20)
+- Vignettes and other R package documentation
+- Recorded presentations
+- Journal articles
+
+<!-- ### All Data are Local
+
+![](https://mit-press-us.imgix.net/covers/9780262545174.jpg?auto=format&w=298&dpr=2&q=20) -->
+
+### Required vs. Optional
+
+- Optional readings may include whole books or websites. These are recommended if you are interested in learning more about a topic—but may be infeasible
+
+### Getting the most out of readings
+
+Take notes on questions or observations while you reading. Use these notes to submit your weekly check-in.
+
+Readings on coding in R should be done at a computer with RStudio open. Try re-typing code from the text into RStudio and running the code to see how it works.
 
 ## Miscellaneous
 
-### Make this a safe and mutually supportive space 
+### What can you expect during class
+
+### Make this a safe and mutually supportive space
 
 We are all learning! No prior programming experience is required and we should all work to make this an inclusive experienced for everyone.
 
@@ -153,13 +223,12 @@ We are all learning! No prior programming experience is required and we should a
 
 You *can* participate online if you need to. We can screen share sessions to Discord and record lectures if needed.
 
-### Using ChatGPT or other LLM for coding
+### Using ChatGPT or other LLMs
 
-- You *are* allowed to use ChatGPT or other large language models to help with your project or, if desired, assignments.
+-   You *are* strongly discouraged from using ChatGPT, Claude, or other large language models to help with your project or, if desired, assignments.
 
-- You *must* include information about when and how you use it including your specific prompts and tools used.
+-   You *must* include information about when and how you use it including your specific prompts and tools used.
 
-- You *should* use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don't let this tool stand in the way of developing your own understanding of R and how it works.
+-   You *should* use these tools with caution. They provide non-working code and describe non-existent functions and packages. Don't let this tool stand in the way of developing your own understanding of R and how it works.
 
 ## Welcome again!
-
