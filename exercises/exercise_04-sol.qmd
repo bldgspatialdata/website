@@ -1,7 +1,6 @@
 ---
 title: "Exercise 04 (Solutions)"
 order: 4
-date-due: 2023-10-03
 date-modified: last-modified
 ---
 

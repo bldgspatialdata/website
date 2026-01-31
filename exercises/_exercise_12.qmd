@@ -1,12 +1,7 @@
 ---
 title: "Exercise 12"
 order: 12
-date-due: 2023-11-20
 date-modified: last-modified
 ---
-
-::: {.callout-important appearance="minimal"}
-Exercise due on {{< meta date-due >}}
-:::
 
 ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_{{< meta order >}}.html) for related slides and readings
