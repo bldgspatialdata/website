@@ -20,17 +20,17 @@ resource-path:
 
 website:
   page-navigation: true
-  title: "GES 668 - Fall 2024"
-  description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Fall 2023."
+  title: "GES 668 - Spring 2026"
+  description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Spring 2026."
   site-url: https://bldgspatialdata.github.io/website/
   repo-url: https://github.com/bldgspatialdata/website
   repo-actions: [edit, source, issue]
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "Note: The 2024 course website is a work-in-progress. Check back soon for updates!"
-    type: info
-    position: below-navbar
+  # announcement:
+  #   icon: info-circle
+  #   dismissable: true
+  #   content: "Note: The 2024 course website is a work-in-progress. Check back soon for updates!"
+  #   type: info
+  #   position: below-navbar
 
   open-graph: true
 
