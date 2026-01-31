@@ -1,26 +1,14 @@
 ---
-title: Week 9
+title: "Week 9"
 order: 9
-subtitle: Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`
-abstract: Learn about OpenStreetMap, how to edit OSM, and how to access OSM data using the `{osmdata}` package.
 date: 2026-03-25
-image: /slides/images/umbc-area-open-street-map-editor.png
+subtitle: Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`
 ---
 
 ## Overview
 
-OpenStreetMap is both the largest community-created map of the world and a free, open-source geographic database. We will learn to edit OpenStreetMap and accessing OSM data using R for visualization and analysis.
-
-### Key Objectives
-
-- Introduce OpenStreetMap and concept of volunteered geographic information (VGI)
-- Practice editing OpenStreetMap
-- Practice accessing OpenStreetMap using the `{osmdata}` package
+How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.
 
 ## Prepare
 
-:::{.callout-tip collapse=false icon=true}
-Editing OpenStreetMap, requires an OSM account. If you don't have an OSM account already, please [set up an account](https://www.openstreetmap.org/user/new) before class this Wednesday and share your username as part of your weekly check-in response.
-:::
-
-{{< include _readings_osm.qmd >}}
+{{< include _readings_eda.qmd >}}

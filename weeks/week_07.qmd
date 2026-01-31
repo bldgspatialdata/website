@@ -5,6 +5,9 @@ date: 2026-03-11
 subtitle: Writing functions and pipelines
 abstract: This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.
 image: /slides/images/rforecology_functions-graphic.png
+slides:
+  title: Writing functions and pipelines
+  file: functions.qmd
 ---
 
 ## Overview
@@ -21,8 +24,4 @@ image: /slides/images/rforecology_functions-graphic.png
 
 ## Participate
 
-🖥️ [Writing functions and pipelines](/slides/functions.qmd)
-
-## Practice
-
-Details on week 7 exercise to be provided.
+{{< include /_includes/_week_slides.qmd >}}

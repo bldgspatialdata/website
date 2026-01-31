@@ -12,6 +12,10 @@ FIXME: The topic for this session needs to be updated if I'm dropping the final 
 
 <!--
 ::: {.callout-important appearance="simple"}
-Reminder! Your **final project presentation** is due on {{< var dates.project.presentation >}}
+Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
 :::
 -->
+
+::: {.callout-important appearance="simple"}
+Reminder! Your **final project presentation** is due on {{< var dates.project.presentation >}}
+:::

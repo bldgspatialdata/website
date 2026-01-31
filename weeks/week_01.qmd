@@ -6,6 +6,12 @@ subtitle: "Welcome to GES668"
 abstract: "Review the course syllabus and structure. Get started with spatial data using `{sf}` and the tidyverse."
 image: /slides/images/allison-horst_sf-illustration.jpeg
 show_review: false
+slides:
+  title: Introduction to Spatial Data with R
+  file: spatial-data.qmd
+exercise:
+  title: Exercise 01
+  file: exercise_01.qmd
 ---
 
 ## Overview
@@ -58,11 +64,9 @@ Our first session starts with a general introduction to the course and a hands-o
 
 🖥️ [Welcome to GES 668](/slides/welcome.qmd)
 
-🖥️ [Introduction to Spatial Data with R](/slides/spatial-data.qmd)
+{{< include /_includes/_week_slides.qmd >}}
 
-## Practice
-
-🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0{{< meta order >}}.qmd)
+{{< include /_includes/_week_exercises.qmd >}}
 
 <!--
 ### Review

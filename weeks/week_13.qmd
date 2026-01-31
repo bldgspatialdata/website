@@ -2,15 +2,27 @@
 title: "Week 13"
 order: 13
 date: 2026-04-22
-subtitle: "Project check-in meetings"
+subtitle: "Creating and managing spatial metadata"
+abstract: "Learn about both the basics of metadata and specialized spatial metadata standards. Review examples of READMEs and other types of project documentation."
+image: /slides/images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png
+slides:
+  title: Creating and managing spatial metadata
+  file: spatial-metadata.qmd
 ---
 
-<!--
-::: {.callout-important appearance="simple"}
-Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
-:::
--->
+## Overview
+
+This session introduces the basics of metadata and specialized spatial metadata standards. We will also explore how to write READMEs for both data and project documentation.
+
+## Key Objectives
+
+-   Review examples of READMEs for data sets and projects
+-   Practice working with data dictionaries and the [{labelled} package](https://larmarange.github.io/labelled/).
 
 ## Prepare
 
-{{< include _readings_local-data.qmd >}}
+{{< include _readings_metadata.qmd >}}
+
+## Participate
+
+{{< include /_includes/_week_slides.qmd >}}

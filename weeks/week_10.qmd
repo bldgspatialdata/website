@@ -1,36 +1,33 @@
 ---
 title: Week 10
 order: 10
-date: 2026-04-01
-subtitle: Exploring American Community Survey data with `{tidycensus}`
+subtitle: Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`
+abstract: Learn about OpenStreetMap, how to edit OSM, and how to access OSM data using the `{osmdata}` package.
+date: 2026-03-25
+image: /slides/images/umbc-area-open-street-map-editor.png
+slides:
+  title: Editing and exploring OpenStreetMap
+  file: open-steet-map.qmd
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
-Deadline to withdraw from a course
+## Overview
 
-Friday, April 3 is the last day to withdraw from individual courses.
-:::
+OpenStreetMap is both the largest community-created map of the world and a free, open-source geographic database. We will learn to edit OpenStreetMap and accessing OSM data using R for visualization and analysis.
+
+### Key Objectives
+
+- Introduce OpenStreetMap and concept of volunteered geographic information (VGI)
+- Practice editing OpenStreetMap
+- Practice accessing OpenStreetMap using the `{osmdata}` package
 
 ## Prepare
 
-{{< include _readings_census.qmd >}}
+:::{.callout-tip collapse=false icon=true}
+Editing OpenStreetMap, requires an OSM account. If you don't have an OSM account already, please [set up an account](https://www.openstreetmap.org/user/new) before class this Wednesday and share your username as part of your weekly check-in response.
+:::
+
+{{< include _readings_osm.qmd >}}
 
 ## Participate
 
-During class, we will review this sample code as an exercise.
-
-```{r}
-#| file: samples/week_10_practice-code-sample.R
-#| eval: false
-#| code-fold: true
-#| code-summary: "Practice exercise"
-```
-
-Solutions for this sample code are now available here.
-
-```{r}
-#| file: samples/week_10_demo-code-sample.R
-#| eval: false
-#| code-fold: true
-#| code-summary: "Practice solutions"
-```
+{{< include /_includes/_week_slides.qmd >}}

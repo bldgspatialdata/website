@@ -5,18 +5,7 @@ date: 2026-03-18
 subtitle: Spring Break
 ---
 ::: {.callout-important appearance="minimal" icon="true"}
-Spring break is March 14-22, 2026
+### Spring break is March 14-22, 2026
 
 No class during UMBC Spring Break.
 :::
-<!--
-subtitle: Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`
-
-## Overview
-
-How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.
-
-## Prepare
-
-{{< include _readings_eda.qmd >}}
--->

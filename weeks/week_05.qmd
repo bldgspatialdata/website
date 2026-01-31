@@ -6,6 +6,9 @@ subtitle: Tidying and joining spatial data
 abstract: This week we are learning to use `{dplyr}` and `{tidyr}` to join tables and switching data between a wide and long format.
 unit: Getting started
 image: /slides/images/st_intersects_postgis-intro.png
+slides:
+  title: Tidying and joining data
+  file: tidy-data.qmd
 ---
 
 ## Overview
@@ -22,8 +25,4 @@ image: /slides/images/st_intersects_postgis-intro.png
 
 ## Participate
 
-🖥️ [Tidying and joining data](../slides/tidy-data)
-
-## Practice
-
-Exercise details to be provided.
+{{< include /_includes/_week_slides.qmd >}}

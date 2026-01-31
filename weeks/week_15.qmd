@@ -5,8 +5,6 @@ date: 2026-05-06
 subtitle: "Final Project Presentations"
 ---
 
-<!--
 ::: {.callout-important appearance="simple"}
 Reminder! Your final project repository is due on {{< var dates.project.repo >}}
 :::
--->
