@@ -24,7 +24,7 @@ These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` packag
 
 -   Grew as the "Wikipedia of maps" in response to increasing cost of commercial services like Google Maps after 2011 price hikes
 
----
+------------------------------------------------------------------------
 
 ![](images/umbc-area-open-street-map.png)
 
@@ -87,11 +87,9 @@ Learn more in [Getting Started with OSM](https://maptimebmore.github.io/ccbc-osm
 Learn more in the [Good practice section](https://wiki.openstreetmap.org/wiki/Good_practice) of the OpenStreetMap Wiki.
 
 ::: notes
-
-- Verifiability
-- Not temporary
-- Map what is on the ground
-
+-   Verifiability
+-   Not temporary
+-   Map what is on the ground
 :::
 
 ### Contributing with the iD Editor
@@ -115,7 +113,6 @@ Try out [JOSM](https://live.osgeo.org/en/overview/josm_overview.html)---the desk
 Learn [about StreetComplete](https://streetcomplete.app/).
 
 ## Practice editing data with the iD Editor
-
 
 ## Downloading data with overpass turbo
 
