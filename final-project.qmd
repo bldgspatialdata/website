@@ -6,6 +6,14 @@ suppress-bibliography: true
 link-citations: false
 ---
 
+
+::: {.callout-important}
+### Details for the final project are a work-in-progress
+
+The details for the final project are still being finalized for the spring 2026 semester. Please consider this preliminary guidance and look out for additional instructions.
+:::
+
+
 ## Overview
 
 The final project is an opportunity for you to practice the spatial data skills we've been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.
@@ -18,11 +26,11 @@ Your project should focus on a topic area or dataset that is relevant to your pe
 
 This project has three parts:
 
-1.  A project proposal (due **{{< var dates.project.proposal >}}**)
-2.  An short *recorded* presentation about your project (due **{{< var dates.project.presentation >}}**)
-3.  A project GitHub repository including code, data, output files, and a README (due **{{< var dates.project.repo >}}**)
+1.  A project proposal <!-- (due **{{< var dates.project.proposal >}}**) -->
+2.  An short *recorded* presentation about your project <!-- (due **{{< var dates.project.presentation >}}**) -->
+3.  A project GitHub repository including code, data, output files, and a README <!-- (due **{{< var dates.project.repo >}}**) -->
 
-You are also expected to complete a final self-assessment reflecting on your project by **{{< var dates.project.self >}}** .
+<!-- You are also expected to complete a final self-assessment reflecting on your project by **{{< var dates.project.self >}}** . -->
 
 <!--
 You are also expected to share peer feedback on two other project presentations completed by **{{< var dates.project.feedback >}}** (updated).
@@ -54,7 +62,7 @@ Students are encouraged to build a project using data from a well-documented and
 
 Accessing the data should be a reproducible process so make sure your data does not have any restrictions that prevent you to include the data as part of your project repository.
 
-See the readings and materials from [week 9](https://bldgspatialdata.github.io/website/weeks/week_09.html) or [week 10](https://bldgspatialdata.github.io/website/weeks/week_10.html) for more background information on these sources.
+<!-- See the readings and materials from [week 9](/weeks/week_09.qmd) or [week 10](/weeks/week_10.qmd) for more background information on these sources. -->
 
 :::{.callout-important appearance='simple' icon=true}
 ### A caution about using different data source
