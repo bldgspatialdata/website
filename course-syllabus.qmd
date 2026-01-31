@@ -36,10 +36,12 @@ Last updated: {{< meta date-modified >}}
 
 By the end of the semester, you will be able to:
 
+-   use R and RStudio to read, write, and edit R code
+-   use GitHub for version control and collaboration
 -   read and write spatial data from a wide range of file formats and web services
--   tidy, transform, and visualize spatial data to understand the spatial and non-spatial distribution of attributes
+-   tidy, transform, and visualize data to understand the spatial and non-spatial attributes
 -   measure the spatial attributes or relationships between features and transform feature geometry
--   use Quarto to create presentations and reproducible reports and use GitHub for version control and collaboration.
+-   use Quarto to create presentations and reproducible reports
 
 ## Communication
 
@@ -69,9 +71,8 @@ Most of the reading for this class will come from these three books:
 
 -   [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garret Grolemund
 -   [Geocomputation with R](https://r.geocompx.org/) by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow
--   [All Data Are Local: Thinking Critically in a Data-Driven Society](https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data) by Yanni Alexander Loukissas
 
-All three books are available for free online or available for purchase. Additional readings are listed on the page for each week's session.
+Both books are available for free online or available for purchase as a physical copy from online retailers. Additional open access readings are listed on the page for each week's session.
 
 ## Assessment
 
