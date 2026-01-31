@@ -43,7 +43,7 @@ Format your proposal as [Quarto document](https://quarto.org/) with citations wi
 - links to any published data or related resources
 - reproducible code blocks for any preliminary data analysis you completed to support your proposal
 
-**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. [Zotero](https://www.zotero.org/) is a recommended citation management tool that is [easy to use with RStudio](https://quarto.org/docs/visual-editor/technical.html#citations) when editing Quarto documents. 
+**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. [Zotero](https://www.zotero.org/) is a recommended citation management tool that is [easy to use with RStudio](https://quarto.org/docs/visual-editor/technical.html#citations) when editing Quarto documents.
 
 ### Identifying a data source
 
@@ -74,8 +74,9 @@ Your goals could include answering a research question, making the case for a pu
 
 Your goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.
 
-**Ask yourself:** Who might benefit from your proposed project? How can your project can avoid causing people harm?
+**Always ask yourself:** Who might benefit from your proposed project? How can your project can avoid causing people harm?
 
+<!--
 In framing your project, look for opportunities to apply one or more of the six models of local practice described in @loukissasAllDataAre2019:
 
 -   Look at the data setting, not just the data set
@@ -86,6 +87,7 @@ In framing your project, look for opportunities to apply one or more of the six 
 -   Use data to build relationships
 
 Is your project designed around what Loukissas calls the common "ambitions" for working data---orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?
+-->
 
 Your goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.
 
