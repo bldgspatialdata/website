@@ -1,7 +1,7 @@
 ---
 title: Week 12
 order: 12
-date: 2026-04-08
+date: 2026-04-15
 subtitle: Reading and writing spatial data files and services
 abstract: This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services.
 slides:

@@ -1,9 +1,9 @@
 ---
 title: Week 10
 order: 10
+date: 2026-04-01
 subtitle: Editing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`
 abstract: Learn about OpenStreetMap, how to edit OSM, and how to access OSM data using the `{osmdata}` package.
-date: 2026-03-25
 image: /slides/images/umbc-area-open-street-map-editor.png
 slides:
   title: Editing and exploring OpenStreetMap
