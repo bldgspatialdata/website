@@ -3,7 +3,6 @@ title: "Exercise 01"
 subtitle: "Coding basics and exploring `sf` objects"
 order: 1
 status: available
-date-due: 2024-09-06
 date-modified: last-modified
 error: true
 ---
@@ -70,7 +69,7 @@ Tweak each of the following R commands so that they run correctly:
 ```{r}
 libary(todyverse)
 
-ggplot(dTA = mpg) + 
+ggplot(dTA = mpg) +
   geom_point(maping = aes(x = displ y = hwy)) +
   geom_smooth(method = "lm)
 ```

@@ -1,13 +1,8 @@
 ---
 title: "Exercise 04"
 order: 4
-date-due: 2023-10-03
 date-modified: last-modified
 ---
-
-::: {.callout-important appearance="minimal"}
-Exercise due on {{< meta date-due >}}
-:::
 
 ℹ️ See [week {{< meta order >}}](../weeks/week_0{{< meta order >}}.qmd) for related slides and readings
 
@@ -50,14 +45,14 @@ Note that the `us_states` loaded for this exercise is different than the `us_sta
 Find all states that belong to the West region, have an area below 250,000 km2and in 2015 a population greater than 5,000,000 residents (**Hint:** you may need to use the function `units::set_units()` or `as.numeric()`).
 
 ```{r}
-us_states |> 
+us_states |>
   ____
 ```
 
 Find all states that belong to the South region, had an area larger than 150,000 km2 or a total population in 2015 larger than 7,000,000 residents.
 
 ```{r}
-us_states |> 
+us_states |>
   ____
 ```
 
@@ -66,7 +61,7 @@ us_states |>
 What was the total population in 2015 in the `us_states` dataset? What was the minimum and maximum total population in 2015?
 
 ```{r}
-us_states |> 
+us_states |>
   ____
 ```
 
@@ -79,7 +74,7 @@ Add variables from `us_states_df` to `us_states`, and create a new object called
 Tip: we are covering joins in more detail next week---check out [the R for Data Science chapter on Joins](https://r4ds.hadley.nz/joins) for more information.
 
 ```{r}
-us_states_stats <- us_states |> 
+us_states_stats <- us_states |>
   ____
 ```
 
@@ -129,7 +124,7 @@ Section [4.2](https://r.geocompx.org/spatial-operations#spatial-vec) (in Geocomp
 canterbury <- nz |>
   filter(Name == "Canterbury")
 
-nz_height |> 
+nz_height |>
   ____
 ```
 
@@ -144,7 +139,7 @@ See the help page `?ggplot2::shape` and run the examples to see an illustration 
 Which region has the second highest number of `nz_height` points, and how many does it have?
 
 ```{r}
-nz_height |> 
+nz_height |>
   ____
 ```
 
@@ -163,7 +158,7 @@ Generalizing the question to all regions: how many of New Zealand's 16 regions c
 Using [`st_buffer()`](https://r-spatial.github.io/sf/reference/geos_unary.html), how many points in `nz_height` are within 100 km of Canterbury?
 
 ```{r}
-nz_height |> 
+nz_height |>
   st_buffer(____, dist = ____)
 ```
 
@@ -208,6 +203,6 @@ How far is the geographic centroid of Maryland from the geographic centroid of C
 Calculate the length of the boundary lines of US states in meters. Which state has the longest border and which has the shortest? **Hint:** The `st_length` function computes the length of a `LINESTRING` or `MULTILINESTRING` geometry.
 
 ```{r}
-us_states |> 
+us_states |>
   ____
 ```
