@@ -28,32 +28,34 @@
 
 ## Week 8
 
-{{< include weeks/_readings_eda.qmd >}}
+Spring Break.
 
 ## Week 9
 
-{{< include weeks/_readings_osm.qmd >}}
+{{< include weeks/_readings_eda.qmd >}}
 
 ## Week 10
 
-{{< include weeks/_readings_census.qmd >}}
+{{< include weeks/_readings_osm.qmd >}}
 
 ## Week 11
 
-{{< include weeks/_readings_read-write.qmd >}}
+{{< include weeks/_readings_census.qmd >}}
 
 ## Week 12
 
-{{< include weeks/_readings_metadata.qmd >}}
+{{< include weeks/_readings_read-write.qmd >}}
 
 ## Week 13
 
-{{< include weeks/_readings_local-data.qmd >}}
+{{< include weeks/_readings_metadata.qmd >}}
 
 ## Week 14
 
-No readings for this week. Enjoy the holiday.
+<!-- FIXME: Readings TK -->
+No readings for this week.
 
 ## Week 15
 
+<!-- FIXME: Readings TK -->
 No readings for this week.
