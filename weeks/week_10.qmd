@@ -7,7 +7,7 @@ abstract: Learn about OpenStreetMap, how to edit OSM, and how to access OSM data
 image: /slides/images/umbc-area-open-street-map-editor.png
 slides:
   title: Editing and exploring OpenStreetMap
-  file: open-steet-map.qmd
+  file: open-street-map.qmd
 ---
 
 ## Overview

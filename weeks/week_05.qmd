@@ -9,6 +9,9 @@ image: /slides/images/st_intersects_postgis-intro.png
 slides:
   title: Tidying and joining data
   file: tidy-data.qmd
+exercise:
+  title: Exercise 05
+  file: exercise_05.qmd
 ---
 
 ## Overview
@@ -26,3 +29,5 @@ slides:
 ## Participate
 
 {{< include /_includes/_week_slides.qmd >}}
+
+{{< include /_includes/_week_exercises.qmd >}}

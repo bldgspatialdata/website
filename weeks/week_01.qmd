@@ -2,7 +2,7 @@
 title: "Week 1"
 order: 1
 date: 2025-01-28
-subtitle: "Welcome to GES668"
+subtitle: "Welcome to GES668 / Get started with spatial data in R"
 abstract: "Review the course syllabus and structure. Get started with spatial data using `{sf}` and the tidyverse."
 image: /slides/images/allison-horst_sf-illustration.jpeg
 show_review: false

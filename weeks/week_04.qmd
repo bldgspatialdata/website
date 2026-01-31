@@ -6,6 +6,9 @@ date: 2026-02-18
 slides:
   title: Creating and manipulating attributes for spatial data
   file: spatial-data-attributes.qmd
+exercise:
+  title: Exercise 04
+  file: exercise_04.qmd
 ---
 
 ## Overview
@@ -26,3 +29,5 @@ This week is to learn to use `{dplyr}` and `{sf}` in combination to create and m
 ## Participate
 
 {{< include /_includes/_week_slides.qmd >}}
+
+{{< include /_includes/_week_exercises.qmd >}}

@@ -3,6 +3,9 @@ title: "Week 9"
 order: 9
 date: 2026-03-25
 subtitle: Developing an exploratory data analysis with `{sf}` and the `{tidyverse}`
+slides:
+  title: Exploratory analysis with R
+  file: exploratory-analysis.qmd
 ---
 
 ## Overview
@@ -12,3 +15,5 @@ How do you understand a dataset? Descriptive statistics, tables, and interactive
 ## Prepare
 
 {{< include _readings_eda.qmd >}}
+
+{{< include /_includes/_week_slides.qmd >}}

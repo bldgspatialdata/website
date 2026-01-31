@@ -7,7 +7,7 @@ abstract: "Learn about both the basics of metadata and specialized spatial metad
 image: /slides/images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png
 slides:
   title: Creating and managing spatial metadata
-  file: spatial-metadata.qmd
+  file: metadata.qmd
 ---
 
 ## Overview

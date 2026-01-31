@@ -2,7 +2,7 @@
 title: Week 8
 order: 8
 date: 2026-03-18
-subtitle: Spring Break
+subtitle: 🏝️ Spring Break 🏝️
 ---
 ::: {.callout-important appearance="minimal" icon="true"}
 ### Spring break is March 14-22, 2026
