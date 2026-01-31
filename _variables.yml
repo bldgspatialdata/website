@@ -7,9 +7,10 @@ instructor:
   contact_policy: "Please contact me by email and I will get back to you with one to two days."
 
 course:
-  number: "GES 668"
-  semester: "Spring 2026"
-  days: "Wednesdays"
+  number: GES 668
+  name: Building Spatial Datasets
+  semester: Spring 2026
+  days: Wednesdays
   time: "6:00–8:30 PM"
   location: "Sondheim Hall 001 (Cartography Lab), University of Maryland, Baltimore County, 1099 Hilltop Road, Baltimore, MD 21250"
   dates: "January 28 – May 6, 2026"
