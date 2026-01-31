@@ -6,6 +6,10 @@ date: 2024-10-23
 image: "images/umbc-area-open-street-map.png"
 ---
 
+## Credit
+
+These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` package are based on a March 10, 2020 presentation by [Jonathan Dandois](https://twitter.com/jondandois) for MaptimeBmore and the CCBC GIS Capstone.
+
 ## Overview
 
 -   What is OpenStreetMap?
@@ -13,10 +17,6 @@ image: "images/umbc-area-open-street-map.png"
 -   **Practice**: Editing with the iD Editor
 -   How do you download data from OpenStreetMap?
 -   **Practice**: Downloading data with `{osmdata}`
-
-::: footer
-These slides on OpenStreetMap and exploring OSM data with the `{osmdata}` package are based on a March 10, 2020 presentation by [Jonathan Dandois](https://twitter.com/jondandois) for MaptimeBmore and the CCBC GIS Capstone.
-:::
 
 ## What is OpenStreetMap?
 
@@ -39,11 +39,11 @@ OpenStreetMap isn't just a map---it is a "**global geodatabase** of everything
 
 ## Who is using OpenStreetMap?
 
-Individual users, developers, and researchers:
+Individual users, developers, and researchers are using OSM data for:
 
 -   Apps and websites
 -   Games
--   Advocacy and policy
+-   Advocacy and planning
 
 ### Microsoft Flight Simulator
 
@@ -84,7 +84,7 @@ Learn more in [Getting Started with OSM](https://maptimebmore.github.io/ccbc-osm
 
 ## What is "good" editing?
 
-Learn more in the [Good practice section](https://wiki.openstreetmap.org/wiki/Good_practice) of the OpenStreetMap Wiki.
+Learn more in the [Good practice section](https://wiki.openstreetmap.org/wiki/Good_practice) of the [OpenStreetMap Wiki](https://wiki.openstreetmap.org/).
 
 ::: notes
 -   Verifiability
@@ -120,7 +120,7 @@ Learn [about StreetComplete](https://streetcomplete.app/).
 
 ## Open Historical Map
 
-## ![](images/open-historical-map.png)
+![](images/open-historical-map.png)
 
 ## Downloading data with `{osmdata}`
 
