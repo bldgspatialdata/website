@@ -2,7 +2,7 @@
 title: "Tidying and joining data"
 subtitle: "Session {{< meta order >}}"
 order: 6
-format: 
+format:
   revealjs:
     output-location: column-fragment
 image: images/r4ds_tidy-1.png
@@ -48,7 +48,7 @@ from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html
 
 ## How would this look if we turn it into tidy data?
 
-| City                | 2000   | 2010   | 2020   |
+| City                     | 2000   | 2010   | 2020   |
 |--------------------------|--------|--------|--------|
 | Baltimore city, Maryland | 300000 | 290000 | 285000 |
 | Washington, DC           | 300000 | 315000 | 330000 |
@@ -56,7 +56,7 @@ from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html
 
 ------------------------------------------------------------------------
 
-| City                | Year | Value  |
+| City                     | Year | Value  |
 |--------------------------|------|--------|
 | Baltimore city, Maryland | 2000 | 300000 |
 | Baltimore city, Maryland | 2010 | 290000 |
@@ -111,20 +111,20 @@ pivot_longer(
 
 ### What are the benefits of careful data organization in spreadsheets?
 
-- reduce errors
-- ease later analyses
+-   reduce errors
+-   ease later analyses
 
 ### What are the practical approaches for data organization in spreadsheets?
 
-1. be consistent,
-2. write dates like YYYY-MM-DD,
-3. do not leave any cells empty, 
-4. put just one thing in a cell,
-5. organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row),
-6. create a data dictionary,
-7. do not include calculations in the raw data files,
-8. do not use font color or highlighting as data,
-9. choose good names for things,
-10. make backups, 
+1.  be consistent,
+2.  write dates like YYYY-MM-DD,
+3.  do not leave any cells empty,
+4.  put just one thing in a cell,
+5.  organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row),
+6.  create a data dictionary,
+7.  do not include calculations in the raw data files,
+8.  do not use font color or highlighting as data,
+9.  choose good names for things,
+10. make backups,
 11. use data validation to avoid data entry errors,
 12. and save the data in plain text files.
