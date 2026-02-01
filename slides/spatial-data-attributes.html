@@ -6,17 +6,17 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-<meta name="dcterms.date" content="2023-09-20">
-<title>GES 668 - Spring 2026 – Creating and manipulating attributes for spatial data</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <meta name="dcterms.date" content="2023-09-20">
+  <title>GES 668 - Spring 2026 – Creating and manipulating attributes for spatial data</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +95,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -195,43 +195,57 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Creating and manipulating attributes for spatial data</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Creating and manipulating attributes for spatial data</h1>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-09-20</p>
-</section><section><section id="setup" class="title-slide slide level2 center" data-number="1"><h2>
-<span class="header-section-number">1</span> Setup</h2>
-<p>Today, we are going to use the <a href="https://tidyverse.tidyverse.org">tidyverse</a> along with <a href="https://r-spatial.github.io/sf/">sf</a> and two related packages: <a href="https://r-spatial.github.io/lwgeom/">lwgeom</a> and <a href="https://r-quantities.github.io/units/">units</a>.</p>
+</section>
+<section>
+<section id="setup" class="title-slide slide level2 center" data-number="1">
+<h2><span class="header-section-number">1</span> Setup</h2>
+<p>Today, we are going to use the <code>{tidyverse}</code> along with <code>{sf}</code> and two related packages: <code>{lwgeom}</code> and <code>{units}</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-3"><a></a><span class="fu">library</span>(lwgeom)</span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(units)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section class="slide level4"></section></section><section><section id="getting-started" class="title-slide slide level2 center" data-number="2"><h2>
-<span class="header-section-number">2</span> Getting started</h2>
-<p>For this session, we also need some data to look at. We are going to load data from the U.S. Census Bureau using the <a href="https://github.com/walkerke/tigris">tigris</a> package:</p>
+</section>
+<section class="slide level4">
+
+</section></section>
+<section>
+<section id="getting-started" class="title-slide slide level2 center" data-number="2">
+<h2><span class="header-section-number">2</span> Getting started</h2>
+<p>For this session, we also need some data to look at. We are going to load data from the U.S. Census Bureau using the <code>{tigris}</code> package:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tigris)</span>
 <span id="cb2-2"><a></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section class="slide level4"><p>Use <code>states()</code> to load data on U.S. states and <code>primary_roads()</code> to load data on U.S. highways:</p>
+</section>
+<section class="slide level4">
+
+<p>Use <code>states()</code> to load data on U.S. states and <code>primary_roads()</code> to load data on U.S. highways:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">states</span>()</span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a>us_highways <span class="ot">&lt;-</span> <span class="fu">primary_roads</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section id="things-to-remember-about-spatial-data" class="title-slide slide level2 center" data-number="3"><h2>
-<span class="header-section-number">3</span> Things to remember about spatial data</h2>
+</section></section>
+<section id="things-to-remember-about-spatial-data" class="title-slide slide level2 center" data-number="3">
+<h2><span class="header-section-number">3</span> Things to remember about spatial data</h2>
 <ul>
 <li>Fields</li>
 <li>Objects</li>
 </ul>
 <p>Check out the <a href="https://en.wikipedia.org/wiki/Data_model_(GIS)">Wikipedia article on data models in GIS</a> for more background on this topic.</p>
-</section><section id="things-to-remember-about-sf-and-sfc-objects" class="title-slide slide level2 center" data-number="4"><h2>
-<span class="header-section-number">4</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
+</section>
+
+<section id="things-to-remember-about-sf-and-sfc-objects" class="title-slide slide level2 center" data-number="4">
+<h2><span class="header-section-number">4</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
 <p>A <code>sf</code> object is a data frame with a <code>sfc</code> list-column.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>us_states<span class="sc">$</span>geometry</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -244,12 +258,19 @@ Geodetic CRS:  NAD83
 First 5 geometries:</code></pre>
 </div>
 </div>
-</section><section><section id="things-to-remember-about-sf-and-sfc-objects-1" class="title-slide slide level2 center" data-number="5"><h2>
-<span class="header-section-number">5</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
+</section>
+
+<section>
+<section id="things-to-remember-about-sf-and-sfc-objects-1" class="title-slide slide level2 center" data-number="5">
+<h2><span class="header-section-number">5</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
 <ul>
 <li>a <code>sf</code> object is a data frame with a <code>sfc</code> list-column</li>
-<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code><a href="https://rdrr.io/r/base/attributes.html">attributes()</a></code> to take a look)</li>
-</ul></section><section class="slide level4"><div class="cell">
+<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code>attributes()</code> to take a look)</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">attributes</span>(us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$names
@@ -279,14 +300,19 @@ $tigris
 [1] "state"</code></pre>
 </div>
 </div>
-</section></section><section><section id="things-to-remember-about-sf-and-sfc-objects-2" class="title-slide slide level2 center" data-number="6"><h2>
-<span class="header-section-number">6</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
+</section></section>
+<section>
+<section id="things-to-remember-about-sf-and-sfc-objects-2" class="title-slide slide level2 center" data-number="6">
+<h2><span class="header-section-number">6</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
 <ul>
 <li>a <code>sf</code> object is a data frame with a <code>sfc</code> list-column</li>
-<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code><a href="https://rdrr.io/r/base/attributes.html">attributes()</a></code> to take a look)</li>
-<li>
-<code>sf</code> and <code>sfc</code> objects use a coordinate reference system</li>
-</ul></section><section class="slide level4"><div class="cell">
+<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code>attributes()</code> to take a look)</li>
+<li><code>sf</code> and <code>sfc</code> objects use a coordinate reference system</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">st_crs</span>(us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
@@ -328,15 +354,20 @@ GEOGCRS["NAD83",
     ID["EPSG",4269]]</code></pre>
 </div>
 </div>
-</section></section><section><section id="things-to-remember-about-sf-and-sfc-objects-3" class="title-slide slide level2 center" data-number="7"><h2>
-<span class="header-section-number">7</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
+</section></section>
+<section>
+<section id="things-to-remember-about-sf-and-sfc-objects-3" class="title-slide slide level2 center" data-number="7">
+<h2><span class="header-section-number">7</span> Things to remember about <code>sf</code> and <code>sfc</code> objects</h2>
 <ul>
 <li>a <code>sf</code> object is a data frame with a <code>sfc</code> list-column</li>
-<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code><a href="https://rdrr.io/r/base/attributes.html">attributes()</a></code> to take a look)</li>
-<li>
-<code>sf</code> and <code>sfc</code> objects use a coordinate reference system</li>
+<li>a <code>sf</code> object has a <code>sf_column</code> attribute (it isn’t always named geometry—use <code>attributes()</code> to take a look)</li>
+<li><code>sf</code> and <code>sfc</code> objects use a coordinate reference system</li>
 <li>working with <code>sf</code> objects is <em>slower</em> than working with data frames—so drop the geometry if you don’t need it</li>
-</ul></section><section class="slide level4"><div class="cell">
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">st_drop_geometry</span>(us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   REGION DIVISION STATEFP  STATENS GEOID STUSPS
@@ -512,30 +543,39 @@ GEOGCRS["NAD83",
 56 2.943659e+11    853990728 +34.2039362 -111.6063449</code></pre>
 </div>
 </div>
-</section></section><section><section id="things-to-remember-about-coordinate-reference-systems" class="title-slide slide level2 center" data-number="8"><h2>
-<span class="header-section-number">8</span> Things to remember about coordinate reference systems</h2>
+</section></section>
+<section>
+<section id="things-to-remember-about-coordinate-reference-systems" class="title-slide slide level2 center" data-number="8">
+<h2><span class="header-section-number">8</span> Things to remember about coordinate reference systems</h2>
 <ul>
 <li>objects <em>must</em> share the same coordinate reference system if you are using them together</li>
 <li>coordinate reference systems are stored as attributes for <code>sfc</code> and <code>sf</code> objects (<code>sfg</code> objects don’t have a CRS)</li>
-<li>coordinate reference systems have <em>units</em>
-</li>
+<li>coordinate reference systems have <em>units</em></li>
 <li>geographic and projected coordinate reference systems are <em>not</em> the same</li>
 <li>coordinate reference systems can be missing and they can be wrong</li>
-</ul></section><section class="slide level4"><div class="cell">
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># bad: assigning a CRS that doesn't match the geometry</span></span>
 <span id="cb14-2"><a></a><span class="fu">st_crs</span>(us_states) <span class="ot">&lt;-</span> <span class="dv">3857</span></span>
 <span id="cb14-3"><a></a></span>
 <span id="cb14-4"><a></a><span class="co"># good: using st_transform to convert the geometry to a new CRS</span></span>
 <span id="cb14-5"><a></a><span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section class="slide level4"><p>Get the objects into the same CRS before we continue:</p>
+</section>
+<section class="slide level4">
+
+<p>Get the objects into the same CRS before we continue:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_states, <span class="at">crs =</span> <span class="dv">3857</span>)</span>
 <span id="cb15-2"><a></a></span>
 <span id="cb15-3"><a></a>us_highways <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(us_highways, <span class="at">crs =</span> <span class="dv">3857</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section id="things-to-think-about" class="title-slide slide level2 center" data-number="9"><h2>
-<span class="header-section-number">9</span> Things to think about</h2>
+</section></section>
+<section id="things-to-think-about" class="title-slide slide level2 center" data-number="9">
+<h2><span class="header-section-number">9</span> Things to think about</h2>
 <ul>
 <li><p><code>sf</code> objects are <em>not</em> the only way to represent spatial data in R</p></li>
 <li><p>If you are working with more than one <code>sf</code> or <code>sfc</code>, the objects must use the <em>same</em> coordinate reference system to use them together.</p></li>
@@ -543,16 +583,21 @@ GEOGCRS["NAD83",
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># state</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section><section id="what-is-an-attribute-in-gis" class="title-slide slide level2 center" data-number="10"><h2>
-<span class="header-section-number">10</span> What is an “attribute” in GIS?</h2>
+</section>
+
+<section>
+<section id="what-is-an-attribute-in-gis" class="title-slide slide level2 center" data-number="10">
+<h2><span class="header-section-number">10</span> What is an “attribute” in GIS?</h2>
 <p>Within a GIS desktop application, an <strong>attribute</strong> may be known as a <strong>field</strong>.</p>
 <p>When we talk about tidy data frames, an attribute is equivalent to a <strong>variable</strong> which is represented as a <strong>column</strong> in a data frame.</p>
-<aside class="notes"><p>https://support.esri.com/en-us/gis-dictionary/attribute</p>
+<aside class="notes">
+<p>https://support.esri.com/en-us/gis-dictionary/attribute</p>
 <ul>
 <li>[data models] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.</li>
 <li>[data models] In raster datasets, information associated with each unique value of a raster cell.</li>
 <li>[graphics (map display)] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling.</li>
-</ul><style type="text/css">
+</ul>
+<style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -562,18 +607,30 @@ GEOGCRS["NAD83",
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level4"><p><strong>But!</strong> Feature geometry is also stored as a column.</p>
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p><strong>But!</strong> Feature geometry is also stored as a column.</p>
 <p>A single <code>sfc</code> object (or list-column) can contain more than one feature (shapefiles can’t do this BTW!) using MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, or GEOMETRYCOLLECTION geometry types.</p>
-</section><section class="slide level4"><p><strong>And!</strong> Objects in R can also have attributes and these are <em>not</em> the same thing as attributes for spatial data. Try not to get them mixed up.</p>
-</section></section><section id="what-is-an-attribute" class="title-slide slide level2 center" data-number="11"><h2>
-<span class="header-section-number">11</span> What is an attribute?</h2>
+</section>
+<section class="slide level4">
+
+<p><strong>And!</strong> Objects in R can also have attributes and these are <em>not</em> the same thing as attributes for spatial data. Try not to get them mixed up.</p>
+</section></section>
+<section id="what-is-an-attribute" class="title-slide slide level2 center" data-number="11">
+<h2><span class="header-section-number">11</span> What is an attribute?</h2>
 <p>So (to recap) an <em>attribute</em> in GIS can also be called a…</p>
 <ul>
 <li>…<strong>field</strong> in a desktop GIS application</li>
 <li>…<strong>variable</strong> in tidy data</li>
 <li>…<strong>column</strong> in a data frame</li>
-</ul></section><section><section id="what-types-of-attributes-exist" class="title-slide slide level2 center" data-number="12"><h2>
-<span class="header-section-number">12</span> What types of attributes exist?</h2>
+</ul>
+</section>
+
+<section>
+<section id="what-types-of-attributes-exist" class="title-slide slide level2 center" data-number="12">
+<h2><span class="header-section-number">12</span> What types of attributes exist?</h2>
 <p>Attributes are “properties of features (‘things’) that do not describe the feature’s geometry”.</p>
 <p>Here are the attributes for <code>us_states</code>:</p>
 <div class="cell">
@@ -597,19 +654,26 @@ $ INTPTLAT &lt;chr&gt; "+38.6472854", "+28.3989775", "+40.1028754", "+46.3159573
 $ INTPTLON &lt;chr&gt; "-080.6183274", "-082.5143005", "-089.1526108", "-094.1996043…</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Attributes can have:</p>
+</section>
+<section class="slide level4">
+
+<p>Attributes can have:</p>
 <ul>
-<li>
-<strong>point support:</strong> the value applies to every point <em>individually</em>, or</li>
-<li>
-<strong>block support:</strong> the value is a summary for <em>all</em> points in the geometry</li>
-</ul></section><section class="slide level4"><p>The relationship between attributes and geometry can be described as:</p>
+<li><strong>point support:</strong> the value applies to every point <em>individually</em>, or</li>
+<li><strong>block support:</strong> the value is a summary for <em>all</em> points in the geometry</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>The relationship between attributes and geometry can be described as:</p>
 <ul>
-<li>
-<strong>constant:</strong> the value is valid everywhere in or over the geometry</li>
-<li>
-<strong>aggregate:</strong> the value is associated with the entire geometry</li>
-</ul></section><section class="slide level4"><p>What is an example of an attribute with a constant relationship?</p>
+<li><strong>constant:</strong> the value is valid everywhere in or over the geometry</li>
+<li><strong>aggregate:</strong> the value is associated with the entire geometry</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>What is an example of an attribute with a constant relationship?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">glimpse</span>(us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -632,11 +696,13 @@ $ INTPTLON &lt;chr&gt; "-080.6183274", "-082.5143005", "-089.1526108", "-094.199
 $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON (((…</code></pre>
 </div>
 </div>
-<aside class="notes"><ul>
+<aside class="notes">
+<ul>
 <li>NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name</li>
 <li>ALAND: No - this is an aggregate value</li>
 <li>INTPTLAT: No - this is a summary value</li>
-</ul><style type="text/css">
+</ul>
+<style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -646,7 +712,11 @@ $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level4"><p>What is an example with an aggregate relationship?</p>
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p>What is an example with an aggregate relationship?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">glimpse</span>(us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -669,7 +739,8 @@ $ INTPTLON &lt;chr&gt; "-080.6183274", "-082.5143005", "-089.1526108", "-094.199
 $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON (((…</code></pre>
 </div>
 </div>
-<aside class="notes"><ul>
+<aside class="notes">
+<ul>
 <li>NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name</li>
 <li>ALAND or AWATER: Yes - this is an aggregate value - if the shape of the state changed, the land area would change</li>
 <li>INTPTLAT or INTPTLON: Yes - this is a summary value - if the shape of the state changed, the interior latitude/longitude point would change</li>
@@ -685,15 +756,23 @@ $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level4"><p>Attributes can be:</p>
+      }</style></aside>
+</section>
+<section class="slide level4">
+
+<p>Attributes can be:</p>
 <ul>
 <li>extensive: corresponding to amounts, associated with a physical size (length, area, volume, counts of items)</li>
 <li>intensive:</li>
-</ul></section></section><section id="what-is-an-attribute-domain" class="title-slide slide level2 center" data-number="13"><h2>
-<span class="header-section-number">13</span> What is an “attribute domain”?</h2>
-<aside class="notes"><ul>
+</ul>
+</section></section>
+<section id="what-is-an-attribute-domain" class="title-slide slide level2 center" data-number="13">
+<h2><span class="header-section-number">13</span> What is an “attribute domain”?</h2>
+<aside class="notes">
+<ul>
 <li>[data structures] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes.</li>
-</ul><style type="text/css">
+</ul>
+<style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -703,24 +782,33 @@ $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="what-are-we-working-with" class="title-slide slide level2 center" data-number="14"><h2>
-<span class="header-section-number">14</span> What are we working with?</h2>
-<p>When we do data analysis using <a href="https://dplyr.tidyverse.org">dplyr</a>, there are three types of functions we use most often:</p>
+      }</style></aside>
+</section>
+
+<section id="what-are-we-working-with" class="title-slide slide level2 center" data-number="14">
+<h2><span class="header-section-number">14</span> What are we working with?</h2>
+<p>When we do data analysis using <code>{dplyr}</code>, there are three types of functions we use most often:</p>
 <ul>
 <li>Boolean operators or predicates</li>
 <li>Window or vector functions</li>
 <li>Summary or analysis functions</li>
 </ul>
 <p>There are similar</p>
-</section><section><section id="predicate-functions-for-geometries-with-sf" class="title-slide slide level2 center" data-number="15"><h2>
-<span class="header-section-number">15</span> Predicate functions for geometries with <code>{sf}</code>
-</h2>
-<p><a href="https://r-spatial.github.io/sf/">sf</a> includes “vectorized” logical operators or tests that work with geometry including:</p>
+</section>
+
+<section>
+<section id="predicate-functions-for-geometries-with-sf" class="title-slide slide level2 center" data-number="15">
+<h2><span class="header-section-number">15</span> Predicate functions for geometries with <code>{sf}</code></h2>
+<p><code>{sf}</code> includes “vectorized” logical operators or tests that work with geometry including:</p>
 <ul>
 <li><code>st_is()</code></li>
 <li><code>st_is_valid()</code></li>
 <li><code>st_is_empty()</code></li>
-</ul></section><section class="slide level4"><div class="cell">
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">st_is</span>(us_states, <span class="st">"POLYGON"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
@@ -737,20 +825,27 @@ $ geometry &lt;MULTIPOLYGON [m]&gt; MULTIPOLYGON (((-8655578 47..., MULTIPOLYGON
 [46] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
 </div>
 </div>
-</section></section><section id="predicate-functions-for-geometries-with-sf-1" class="title-slide slide level2 center" data-number="16"><h2>
-<span class="header-section-number">16</span> Predicate functions for geometries with <code>{sf}</code>
-</h2>
-<p><a href="https://r-spatial.github.io/sf/">sf</a> also includes more than a dozen predicate functions for working with <em>pairs</em> of simple geometries including:</p>
+</section></section>
+<section id="predicate-functions-for-geometries-with-sf-1" class="title-slide slide level2 center" data-number="16">
+<h2><span class="header-section-number">16</span> Predicate functions for geometries with <code>{sf}</code></h2>
+<p><code>{sf}</code> also includes more than a dozen predicate functions for working with <em>pairs</em> of simple geometries including:</p>
 <ul>
 <li><code>st_intersects</code></li>
 <li><code>st_disjoint</code></li>
 <li><code>st_contains</code></li>
 <li><code>st_covers</code></li>
 <li><code>st_is_within_distance</code></li>
-</ul></section><section><section id="using-predicate-functions-for-spatial-joins-and-filters" class="title-slide slide level2 center" data-number="17"><h2>
-<span class="header-section-number">17</span> Using predicate functions for spatial joins and filters</h2>
+</ul>
+</section>
+
+<section>
+<section id="using-predicate-functions-for-spatial-joins-and-filters" class="title-slide slide level2 center" data-number="17">
+<h2><span class="header-section-number">17</span> Using predicate functions for spatial joins and filters</h2>
 <p><code>st_filter()</code> and <code>st_join()</code> are two functions that rely on these predicate functions to work.</p>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>maryland <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span>
 <span id="cb27-2"><a></a></span>
 <span id="cb27-3"><a></a><span class="fu">st_filter</span>(us_highways, maryland)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -774,7 +869,10 @@ First 10 features:
 10 1102166635559 Salisbury Byp     M S1100 LINESTRING (-8412583 463576...</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">st_filter</span>(us_states, maryland, <span class="at">.predicate =</span> st_disjoint)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 50 features and 14 fields
@@ -818,8 +916,9 @@ First 10 features:
 10 MULTIPOLYGON (((-11473113 3...</code></pre>
 </div>
 </div>
-</section></section><section id="creating-new-variables-with-geometry" class="title-slide slide level2 center" data-number="18"><h2>
-<span class="header-section-number">18</span> Creating new variables with geometry</h2>
+</section></section>
+<section id="creating-new-variables-with-geometry" class="title-slide slide level2 center" data-number="18">
+<h2><span class="header-section-number">18</span> Creating new variables with geometry</h2>
 <ul>
 <li>Measuring feature geometries</li>
 <li>Comparing feature geometries</li>
@@ -828,24 +927,25 @@ First 10 features:
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>maryland <span class="ot">&lt;-</span> <span class="fu">filter</span>(us_states, NAME <span class="sc">==</span> <span class="st">"Maryland"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="measuring-geometries-with-sf" class="title-slide slide level2 center" data-number="19"><h2>
-<span class="header-section-number">19</span> Measuring geometries with <code>{sf}</code>
-</h2>
+</section>
 
-</section><section id="measuring-geometries-with-sf-1" class="title-slide slide level2 center" data-number="20"><h2>
-<span class="header-section-number">20</span> Measuring geometries with <code>{sf}</code>
-</h2>
-<p><a href="https://r-spatial.github.io/sf/">sf</a> includes a few different functions for measuring geometries:</p>
+<section id="measuring-geometries-with-sf" class="title-slide slide level2 center" data-number="19">
+<h2><span class="header-section-number">19</span> Measuring geometries with <code>{sf}</code></h2>
+
+</section>
+
+<section id="measuring-geometries-with-sf-1" class="title-slide slide level2 center" data-number="20">
+<h2><span class="header-section-number">20</span> Measuring geometries with <code>{sf}</code></h2>
+<p><code>{sf}</code> includes a few different functions for measuring geometries:</p>
 <ul>
-<li>
-<code>st_area()</code> (only works with POLYGON and MULTIPOLYGON geometries)</li>
-<li>
-<code>st_length()</code> (only wrks with LINESTRING and MULTILINSTRING geometries)</li>
-<li>
-<code>st_distance()</code> (requires a pair of objects)</li>
-</ul></section><section id="measuring-geometries-with-sf-2" class="title-slide slide level2 center" data-number="21"><h2>
-<span class="header-section-number">21</span> Measuring geometries with <code>{sf}</code>
-</h2>
+<li><code>st_area()</code> (only works with POLYGON and MULTIPOLYGON geometries)</li>
+<li><code>st_length()</code> (only wrks with LINESTRING and MULTILINSTRING geometries)</li>
+<li><code>st_distance()</code> (requires a pair of objects)</li>
+</ul>
+</section>
+
+<section id="measuring-geometries-with-sf-2" class="title-slide slide level2 center" data-number="21">
+<h2><span class="header-section-number">21</span> Measuring geometries with <code>{sf}</code></h2>
 <p>All of these functions are <em>vectorized</em> meaning that they can operate independently on each feature in a <code>sf</code> or <code>sfc</code> object.</p>
 <p>They support both <code>sf</code> inputs (data frames) <em>and</em> <code>sfc</code> inputs (lists)—but they always return a vector:</p>
 <div class="cell">
@@ -858,10 +958,11 @@ First 10 features:
 <pre><code>53204014058 [m^2]</code></pre>
 </div>
 </div>
-</section><section id="measuring-geometries-with-sf-3" class="title-slide slide level2 center" data-number="22"><h2>
-<span class="header-section-number">22</span> Measuring geometries with <code>{sf}</code>
-</h2>
-<p>But, remember, <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> is designed to work with vectorized functions so you can do us a measurement function inside <code>mutate()</code>:</p>
+</section>
+
+<section id="measuring-geometries-with-sf-3" class="title-slide slide level2 center" data-number="22">
+<h2><span class="header-section-number">22</span> Measuring geometries with <code>{sf}</code></h2>
+<p>But, remember, <code>dplyr::mutate()</code> is designed to work with vectorized functions so you can do us a measurement function inside <code>mutate()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>maryland <span class="sc">|&gt;</span></span>
 <span id="cb36-2"><a></a>  <span class="fu">mutate</span>(</span>
@@ -881,9 +982,11 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 1 MULTIPOLYGON (((-8433120 47... 53204014058 [m^2]</code></pre>
 </div>
 </div>
-</section><section><section id="measuring-geometries-with-sf-4" class="title-slide slide level2 center" data-number="23"><h2>
-<span class="header-section-number">23</span> Measuring geometries with <code>{sf}</code>
-</h2>
+</section>
+
+<section>
+<section id="measuring-geometries-with-sf-4" class="title-slide slide level2 center" data-number="23">
+<h2><span class="header-section-number">23</span> Measuring geometries with <code>{sf}</code></h2>
 <p>You can even work with multiple geometries using this same approach:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>us_states <span class="sc">|&gt;</span></span>
@@ -961,7 +1064,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 10 9               5 MULTIPOLYGON (((-19000283 2939831, -19000200 2940106, -190…</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb42-3"><a></a>  <span class="fu">summarise</span>(</span>
@@ -972,7 +1078,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb42-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="spatial-data-attributes_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section><section class="slide level4"><p>This doesn’t entirely work (yet):</p>
+<img data-src="spatial-data-attributes_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<section class="slide level4">
+
+<p>This doesn’t entirely work (yet):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb43-2"><a></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
@@ -1001,7 +1110,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 10 9               5 MULTIPOLYGON (((-19000283 2939831, -19000200 2940106, -190…</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>But <em>this</em> (explicitly unioning the geometry) does work:</p>
+</section>
+<section class="slide level4">
+
+<p>But <em>this</em> (explicitly unioning the geometry) does work:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb45-2"><a></a>  <span class="fu">summarise</span>(</span>
@@ -1028,7 +1140,10 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 10        0        5 MULTIPOLYGON (((-18726019 -...</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb47-2"><a></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb47-3"><a></a>  <span class="fu">summarise</span>(</span>
@@ -1041,28 +1156,34 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb47-10"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="spatial-data-attributes_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section></section><section id="measuring-geometries-with-sf-5" class="title-slide slide level2 center" data-number="24"><h2>
-<span class="header-section-number">24</span> Measuring geometries with <code>{sf}</code>
-</h2>
+<img data-src="spatial-data-attributes_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section></section>
+<section id="measuring-geometries-with-sf-5" class="title-slide slide level2 center" data-number="24">
+<h2><span class="header-section-number">24</span> Measuring geometries with <code>{sf}</code></h2>
 <p>Not all functions work with all geometry types!</p>
 <ul>
-<li>
-<code>st_area()</code> only works with POLYGON and MULTIPOLYGON geometries</li>
-<li>
-<code>st_length()</code> only works with LINESTRING and MULTILINSTRING geometries</li>
-</ul></section><section id="measuring-geometries-with-sf-6" class="title-slide slide level2 center" data-number="25"><h2>
-<span class="header-section-number">25</span> Measuring geometries with <code>{sf}</code>
-</h2>
+<li><code>st_area()</code> only works with POLYGON and MULTIPOLYGON geometries</li>
+<li><code>st_length()</code> only works with LINESTRING and MULTILINSTRING geometries</li>
+</ul>
+</section>
+
+<section id="measuring-geometries-with-sf-6" class="title-slide slide level2 center" data-number="25">
+<h2><span class="header-section-number">25</span> Measuring geometries with <code>{sf}</code></h2>
 <ul>
-<li>
-<code>st_distance()</code> requires at least two objects</li>
-</ul></section><section><section id="measuring-geometries-with-lwgeom-and-geosphere" class="title-slide slide level2 center" data-number="26"><h2>
-<span class="header-section-number">26</span> Measuring geometries with <code>{lwgeom}</code> and <code>{geosphere}</code>
-</h2>
+<li><code>st_distance()</code> requires at least two objects</li>
+</ul>
+</section>
+
+<section>
+<section id="measuring-geometries-with-lwgeom-and-geosphere" class="title-slide slide level2 center" data-number="26">
+<h2><span class="header-section-number">26</span> Measuring geometries with <code>{lwgeom}</code> and <code>{geosphere}</code></h2>
 <ul>
 <li><code>lwgeom::st_perimeter()</code></li>
 <li><code>geosphere::bearing()</code></li>
-</ul></section><section class="slide level4"><div class="cell">
+</ul>
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>us_states <span class="sc">|&gt;</span></span>
 <span id="cb48-2"><a></a>  <span class="fu">group_by</span>(DIVISION) <span class="sc">|&gt;</span></span>
 <span id="cb48-3"><a></a>  <span class="fu">summarise</span>(</span>
@@ -1092,7 +1213,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 
 
 </section></section>
-</div>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1100,7 +1221,23 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1291,7 +1428,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1326,7 +1465,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1494,6 +1635,6 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         }
       });
       </script>
-
+    
 
 </body></html>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Eli Pousson">
 <meta name="dcterms.date" content="2025-02-04">
+
 <title>Week 2 – GES 668 - Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,6 +23,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
+
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -36,10 +40,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b754b9fd3853d7e56faef54c29c5d52b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-74096ca8da15808ba270029fb7c3900d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-75f1b72db743617b68b714e3f5bac9c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -66,6 +71,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+
 <meta property="og:title" content="Week 2 – GES 668 - Spring 2026">
 <meta property="og:description" content="Learn to make plots and maps using the {ggplot} package. Visualization is a key method in learning how to explore, tidy, and interpret data.">
 <meta property="og:image" content="https://bldgspatialdata.github.io/website//files/ggplot2_hex_logo.png">
@@ -73,10 +80,13 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:image:height" content="768">
 <meta property="og:image:width" content="665">
 </head>
+
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">GES 668 - Spring 2026</span>
@@ -86,7 +96,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -97,11 +109,17 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
+      <img src="../images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -110,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
@@ -118,8 +136,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -150,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -159,8 +177,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
@@ -251,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -260,8 +278,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise How-to</span></a>
@@ -297,8 +315,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Exercise 05</span></a>
   </div>
 </li>
-      </ul>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercises/exercise_07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise 07</span></a>
+  </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../final-project.html" class="sidebar-item-text sidebar-link">
@@ -313,8 +337,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../resources/data-sources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Sources</span></a>
@@ -327,37 +351,39 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-<li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
   <li><a href="#key-skills" id="toc-key-skills" class="nav-link" data-scroll-target="#key-skills">Key Skills</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
+  </ul></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
-<li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
+  <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
   <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_02.html">Week 2</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_02.html">Week 2</a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title">Week 2</h1>
-<p class="subtitle lead">Visualizing data and making maps with <a href="https://ggplot2.tidyverse.org">ggplot2</a></p>
+<p class="subtitle lead">Visualizing data and making maps with <code>{ggplot2}</code></p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -386,48 +412,52 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-</header><section id="overview" class="level2"><h2 class="anchored" data-anchor-id="overview">Overview</h2>
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>This week is all about making plots and maps using the <code>{ggplot}</code> package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.</p>
-<section id="key-objectives" class="level3"><h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<section id="key-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
 <ul>
 <li>Introduce the concept of a “pipe” (<code>%&gt;%</code> or <code>|&gt;</code>) and how and when to use it</li>
 <li>Introduce the concept of the “grammar of graphics”</li>
-<li>Practice plotting and mapping data with <a href="https://ggplot2.tidyverse.org">ggplot2</a>
-</li>
-<li>Practice mapping data with <a href="https://github.com/r-spatial/mapview">mapview</a>
-</li>
+<li>Practice plotting and mapping data with <code>{ggplot2}</code></li>
+<li>Practice mapping data with <code>{mapview}</code></li>
 </ul>
 <!--
 TODO: Make sure interactive maps are included in the slides/exercise
---></section><section id="key-skills" class="level3"><h3 class="anchored" data-anchor-id="key-skills">Key Skills</h3>
+-->
+</section>
+<section id="key-skills" class="level3">
+<h3 class="anchored" data-anchor-id="key-skills">Key Skills</h3>
 <ul>
 <li>Using keyboard shortcuts in RStudio</li>
 <li>Creating plots using <code>ggplot()</code>, <code>aes()</code>, and <code>geom_()</code> functions</li>
-<li>Creating static maps using <code>geom_sf()</code> and <code>coord_sf()</code>
-</li>
-<li>Creating interactive maps using <code>mapview()</code>
-</li>
+<li>Creating static maps using <code>geom_sf()</code> and <code>coord_sf()</code></li>
+<li>Creating interactive maps using <code>mapview()</code></li>
 <li>Using <code>theme_</code> functions to customize the appearance of a plot</li>
 <li>Using <code>labs()</code> to add labels to a plot</li>
-</ul></section></section><section id="prepare" class="level2"><h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<section id="required-readings" class="level3"><h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
+</ul>
+</section>
+</section>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<section id="required-readings" class="level3">
+<h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li>
-<a href="https://r4ds.hadley.nz/data-visualize">Ch. 2 Data visualization</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span>
-</li>
-<li>
-<a href="https://ggplot2-book.org/maps.html">Ch. 6 Maps</a> in <span class="citation" data-cites="wickhamGgplot2ElegantGraphics2023">Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen <em>Ggplot2: <span>Elegant Graphics</span> for <span>Data Analysis</span></em>, 3rd (WIP)., Use <span>R</span>! (Springer, 2023), <a href="https://ggplot2-book.org/index.html">https://ggplot2-book.org/index.html</a>.</span>
-</li>
-<li>
-<a href="https://r4ds.hadley.nz/workflow-scripts">Ch. 6 Workflow: scripts and projects</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span>
-</li>
-</ul></section><section id="optional-readings" class="level3"><h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
+<li><a href="https://r4ds.hadley.nz/data-visualize">Ch. 2 Data visualization</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://ggplot2-book.org/maps.html">Ch. 6 Maps</a> in <span class="citation" data-cites="wickhamGgplot2ElegantGraphics2023">Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen <em>Ggplot2: <span>Elegant Graphics</span> for <span>Data Analysis</span></em>, 3rd (WIP)., Use <span>R</span>! (Springer, 2023), <a href="https://ggplot2-book.org/index.html">https://ggplot2-book.org/index.html</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/workflow-scripts">Ch. 6 Workflow: scripts and projects</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
+</ul>
+</section>
+<section id="optional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
 <p>Additional resources on data visualization and mapping with R:</p>
 <ul>
 <li>ggplot2 workshop <a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a> and <a href="https://www.youtube.com/watch?v=0m4yywqNPVY">part 2</a> with Thomas Lin Pedersen, 2020</li>
-<li>
-<a href="https://r.geocompx.org/mapping">Ch. 9 Mapping</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span>
-</li>
+<li><a href="https://r.geocompx.org/mapping">Ch. 9 Mapping</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
 </ul>
 <p>Additional reading on data visualization:</p>
 <ul>
@@ -435,16 +465,23 @@ TODO: Make sure interactive maps are included in the slides/exercise
 </ul>
 <p>Additional resources on working with projects:</p>
 <ul>
-<li>
-<a href="https://www.youtube.com/watch?v=T4V1SMVllvY">R-Ladies STL: Project Oriented Workflows</a> with Shannon Pileggi (September 11, 2023) - <a href="https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides/#/title-slide">Slides</a>
-</li>
-</ul></section></section><section id="participate" class="level2"><h2 class="anchored" data-anchor-id="participate">Participate</h2>
+<li><a href="https://www.youtube.com/watch?v=T4V1SMVllvY">R-Ladies STL: Project Oriented Workflows</a> with Shannon Pileggi (September 11, 2023) - <a href="https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides/#/title-slide">Slides</a></li>
+</ul>
+</section>
+</section>
+<section id="participate" class="level2">
+<h2 class="anchored" data-anchor-id="participate">Participate</h2>
 <p>🖥️ <a href="../slides/data-visualization.html">Visualizing spatial data with <code>{ggplot2}</code></a></p>
-</section><section id="practice" class="level2"><h2 class="anchored" data-anchor-id="practice">Practice</h2>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
 <p>🛠️️ <a href="../exercises/exercise_02.html">Exercise 02</a></p>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -827,7 +864,9 @@ TODO: Make sure interactive maps are included in the slides/exercise
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="../weeks/week_01.html" class="pagination-link" aria-label="Week 1">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 1</span>
       </a>          
@@ -839,6 +878,7 @@ TODO: Make sure interactive maps are included in the slides/exercise
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

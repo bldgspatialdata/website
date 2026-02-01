@@ -6,17 +6,17 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-<meta name="dcterms.date" content="2026-02-01">
-<title>GES 668 - Spring 2026 – Writing functions and pipelines</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <meta name="dcterms.date" content="2026-02-01">
+  <title>GES 668 - Spring 2026 – Writing functions and pipelines</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +95,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -199,15 +199,18 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Writing functions and pipelines</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Writing functions and pipelines</h1>
   <p class="subtitle">Session 7</p>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2026-02-01</p>
-</section><section><section id="functions" class="title-slide slide level1 center" data-number="1"><h1>
-<span class="header-section-number">1</span> Functions</h1>
+</section>
+<section>
+<section id="functions" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Functions</h1>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -226,13 +229,19 @@
 <img data-src="images/rforecology_functions-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">How to create a custom function in R</p><div class="footer">
 <p>Source: <a href="https://www.rforecology.com/post/how-to-create-your-own-function-in-r/">How to create your own function in R</a> (R for Ecology)</p>
 </div>
-</section><section id="why-functions" class="title-slide slide level3 center scrollable"><h3>Why functions?</h3>
+</section>
+<section id="why-functions" class="title-slide slide level3 center scrollable">
+<h3>Why functions?</h3>
 <ol type="1">
 <li>Make your code easier to understand</li>
 <li>Update code in one place, instead of many</li>
 <li>Reduce chance of making copy and paste mistakes</li>
 <li>Reuse work from project-to-project</li>
-</ol></section><section id="what-is-refactoring" class="title-slide slide level3 center"><h3>What is refactoring?</h3>
+</ol>
+</section>
+
+<section id="what-is-refactoring" class="title-slide slide level3 center">
+<h3>What is refactoring?</h3>
 <p>Refactoring is the process of making code:</p>
 <ul>
 <li>easier to understand</li>
@@ -242,41 +251,59 @@
 <div class="footer">
 <p>Source: <a href="https://github.com/jennybc/code-smells-and-feels">Code Smells and Feels</a> (2018)</p>
 </div>
-</section><section id="types-of-functions" class="title-slide slide level3 center scrollable"><h3>Types of functions</h3>
+</section>
+
+<section id="types-of-functions" class="title-slide slide level3 center scrollable">
+<h3>Types of functions</h3>
 <ol type="1">
-<li>
-<strong>Vector functions</strong> take one or more vectors as input and return a vector as output.</li>
-<li>
-<strong>Data frame functions</strong> take a data frame as input and return a data frame as output.</li>
-<li>
-<strong>Plot functions</strong> that take a data frame as input and return a plot as output.</li>
-</ol></section><section id="writing-a-function" class="title-slide slide level3 center"><h3>Writing a function</h3>
+<li><strong>Vector functions</strong> take one or more vectors as input and return a vector as output.</li>
+<li><strong>Data frame functions</strong> take a data frame as input and return a data frame as output.</li>
+<li><strong>Plot functions</strong> that take a data frame as input and return a plot as output.</li>
+</ol>
+</section>
+
+<section id="writing-a-function" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <ul>
 <li>Look for repeated sections of code.</li>
 <li>What parts are constant?</li>
 <li>What parts vary?</li>
-</ul></section><section id="writing-a-function-1" class="title-slide slide level3 center scrollable"><h3>Writing a function</h3>
+</ul>
+</section>
+
+<section id="writing-a-function-1" class="title-slide slide level3 center scrollable">
+<h3>Writing a function</h3>
 <p>To turn code into a function you need three things:</p>
 <ol type="1">
 <li>A name.</li>
 <li>The arguments.</li>
 <li>The body.</li>
-</ol></section><section id="writing-a-function-2" class="title-slide slide level3 center"><h3>Writing a function</h3>
+</ol>
+</section>
+
+<section id="writing-a-function-2" class="title-slide slide level3 center">
+<h3>Writing a function</h3>
 <p>To turn code into a function you need three things:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
 <span id="cb2-2"><a></a>  body</span>
 <span id="cb2-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="writing-a-function-3" class="title-slide slide level3 center scrollable"><h3>Writing a function</h3>
+</section>
+
+<section id="writing-a-function-3" class="title-slide slide level3 center scrollable">
+<h3>Writing a function</h3>
 <p>Adapted from <a href="https://style.tidyverse.org/functions.html">the tidyverse style guide</a>:</p>
 <ol type="1">
 <li>Naming functions</li>
 <li>Formatting functions</li>
-<li>Using <code><a href="https://rdrr.io/r/base/function.html">return()</a></code>
-</li>
+<li>Using <code>return()</code></li>
 <li>Using comments</li>
-</ol></section><section id="naming-functions" class="title-slide slide level3 center"><h3>Naming functions</h3>
+</ol>
+</section>
+
+<section id="naming-functions" class="title-slide slide level3 center">
+<h3>Naming functions</h3>
 <p>Strive to use verbs for function names:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Good</span></span>
@@ -305,9 +332,11 @@
 <div class="footer">
 <p>Source: <a href="https://style.tidyverse.org/functions.html#naming">Functions</a> from <a href="https://style.tidyverse.org/index.html">The tidyverse style guide</a>.</p>
 </div>
-</section><section id="using-return" class="title-slide slide level3 center"><h3>Using <code>return()</code>
-</h3>
-<p>Only use <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> for early returns.</p>
+</section>
+
+<section id="using-return" class="title-slide slide level3 center">
+<h3>Using <code>return()</code></h3>
+<p>Only use <code>return()</code> for early returns.</p>
 <p>Use early returns to avoid <code>else</code> and “nested” logic.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Good</span></span>
@@ -335,18 +364,26 @@
 <div class="footer">
 <p>Source: <a href="https://style.tidyverse.org/functions.html#return">Functions</a> from <a href="https://style.tidyverse.org/index.html">The tidyverse style guide</a>.</p>
 </div>
-</section><section id="using-comments" class="title-slide slide level3 center"><h3>Using comments</h3>
+</section>
+
+<section id="using-comments" class="title-slide slide level3 center">
+<h3>Using comments</h3>
 <p>Use comments to explain the “why” not the “what” or “how”.</p>
 <div class="footer">
 <p>Source: <a href="https://style.tidyverse.org/functions.html">Functions</a> from <a href="https://style.tidyverse.org/index.html">The tidyverse style guide</a>.</p>
 </div>
-</section><section id="types-of-vector-functions" class="title-slide slide level3 center"><h3>Types of vector functions</h3>
+</section>
+
+<section id="types-of-vector-functions" class="title-slide slide level3 center">
+<h3>Types of vector functions</h3>
 <ul>
-<li>
-<strong>“mutate” functions:</strong> functions that work well inside of <code>mutate()</code> and <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> because they return an output of the same length as the input.</li>
-<li>
-<strong>summary functions:</strong> functions that return a single value for use in <code>summarize()</code>.</li>
-</ul></section><section id="example-of-vector-functions" class="title-slide slide level3 center"><h3>Example of vector functions</h3>
+<li><strong>“mutate” functions:</strong> functions that work well inside of <code>mutate()</code> and <code>filter()</code> because they return an output of the same length as the input.</li>
+<li><strong>summary functions:</strong> functions that return a single value for use in <code>summarize()</code>.</li>
+</ul>
+</section>
+
+<section id="example-of-vector-functions" class="title-slide slide level3 center">
+<h3>Example of vector functions</h3>
 <p>If a function is type-stable it satisfies two conditions:</p>
 <ul>
 <li><p>You can predict the output type based only on the input types (not their values).</p></li>
@@ -359,7 +396,10 @@
 ### Refactoring
 
 -->
-</section><section id="designing-a-tidy-function" class="title-slide slide level3 center scrollable"><h3>Designing a “tidy” function</h3>
+</section>
+
+<section id="designing-a-tidy-function" class="title-slide slide level3 center scrollable">
+<h3>Designing a “tidy” function</h3>
 <p>Four guiding principles for the “tidyverse”:</p>
 <ol type="1">
 <li>human centered</li>
@@ -370,13 +410,15 @@
 <div class="footer">
 <p>From <a href="https://design.tidyverse.org/unifying.html">Unifying principles</a> in <a href="https://design.tidyverse.org/">Tidy design principles</a> (WIP)</p>
 </div>
-<aside class="notes"><p>Notes excerpted from Tidy design principles:</p>
+<aside class="notes">
+<p>Notes excerpted from Tidy design principles:</p>
 <ol type="1">
 <li><p>It is human centered, i.e.&nbsp;the tidyverse is designed specifically to support the activities of a human data analyst.</p></li>
 <li><p>It is consistent, so that what you learn about one function or package can be applied to another, and the number of special cases that you need to remember is as small as possible.</p></li>
 <li><p>It is composable, allowing you to solve complex problems by breaking them down into small pieces, supporting a rapid cycle of exploratory iteration to find the best solution.</p></li>
 <li><p>It is inclusive, because the tidyverse is not just the collection of packages, but it is also the community of people who use them.</p></li>
-</ol><style type="text/css">
+</ol>
+<style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -386,12 +428,15 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section></section><section id="pipelines" class="title-slide slide level1 center" data-number="2"><h1>
-<span class="header-section-number">2</span> Pipelines</h1>
+      }</style></aside>
+</section>
+</section>
+<section id="pipelines" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> Pipelines</h1>
 
 
 </section>
-</div>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -399,7 +444,23 @@
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -590,7 +651,8 @@
           RevealZoom
         ]
       });
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -758,6 +820,6 @@
         }
       });
       </script>
-
+    
 
 </body></html>
