@@ -24,7 +24,7 @@ website:
   description: "Homepage for GES 668 Building Spatial Datasets at University of Maryland Baltimore County, Spring 2026."
   site-url: https://bldgspatialdata.github.io/website/
   repo-url: https://github.com/bldgspatialdata/website
-  repo-actions: [edit, source, issue]
+  repo-actions: [edit, source]
   # announcement:
   #   icon: info-circle
   #   dismissable: true
@@ -34,8 +34,12 @@ website:
 
   open-graph: true
 
+  navbar:
+    background: secondary
+    search: true
+
   sidebar:
-    background: "#d9e3e4"
+    # background: "#d9e3e4"
     logo: "images/logo.png"
     pinned: true
     align: center
@@ -85,7 +89,7 @@ website:
           - href: exercises/exercise_04.qmd
           - href: exercises/exercise_05.qmd
           - href: exercises/exercise_06.qmd
-          - href: exercises/exercise_07.qmd
+          # - href: exercises/exercise_07.qmd
           # - href: exercises/exercise_08.qmd
           # - href: exercises/exercise_09.qmd
           # - href: exercises/exercise_10.qmd
@@ -104,12 +108,13 @@ format:
   html:
     theme:
       light: [zephyr, files/theme.scss]
-      dark:  [zephyr, files/theme-dark.scss]
+      # dark:  [zephyr, files/theme-dark.scss]
     mainfont: "Atkinson Hyperlegible"
     monofont: "Fira Code"
     code-link: true
     code-copy: true
     code-overflow: wrap
+    # respect-user-color-scheme: true
     toc: true
     highlight-style: a11y
     df-print: tibble
