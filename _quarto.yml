@@ -88,8 +88,8 @@ website:
           - href: exercises/exercise_03.qmd
           - href: exercises/exercise_04.qmd
           - href: exercises/exercise_05.qmd
-          - href: exercises/exercise_06.qmd
-          # - href: exercises/exercise_07.qmd
+          # - href: exercises/exercise_06.qmd
+          - href: exercises/exercise_07.qmd
           # - href: exercises/exercise_08.qmd
           # - href: exercises/exercise_09.qmd
           # - href: exercises/exercise_10.qmd
