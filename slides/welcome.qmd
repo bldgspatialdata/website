@@ -2,7 +2,6 @@
 order: 0
 title: "Welcome to GES 668: Building Spatial Datasets"
 image: "images/2024-08-28_student-survey.png"
-date: 2024-08-28
 format:
   revealjs:
     auto-animate-easing: ease-in-out
@@ -13,12 +12,12 @@ format:
 
 ## Our goals
 
-::: {.incremental}
-- ask and answer questions with data
-- ask and answer questions with *spatial* data
-- *reproducibly* ask and answer questions with spatial data
-- use *modern tools and methods* to reproducibly ask and answer questions with spatial data
-- *collaboratively* use modern tools and methods to reproducibly ask and answer questions with data
+::: incremental
+-   ask and answer questions with data
+-   ask and answer questions with *spatial* data
+-   *reproducibly* ask and answer questions with spatial data
+-   use *modern tools and methods* to reproducibly ask and answer questions with spatial data
+-   *collaboratively* use modern tools and methods to reproducibly ask and answer questions with data
 :::
 
 ::: notes
@@ -27,14 +26,15 @@ Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit
 
 ## What is a *reproducible* data analysis?
 
-- Can you get the same results every time you do the analysis?
-- Can others get the same results?
-- Can you use get the same results when you do the analysis with similar data?
+-   Can you get the same results every time you do the analysis?
+-   Can others get the same results?
+-   Can you use get the same results when you do the analysis with similar data?
 
 ::: notes
 Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit-r/u1-d02-toolkit-r#11>
 :::
 
+```{=html}
 <!--
 ## What is this class about?
 
@@ -58,10 +58,13 @@ Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit
 
 -   Working with ~~spatial data~~ **local knowledge** about people and places
 -->
+```
 
 ## Why are you here?
 
 <!-- FIXME: See if I want to replace the Felt exercise w/ something else -->
+
+```{=html}
 <!--
 ## How did you get here?
 
@@ -85,6 +88,7 @@ We just built some spatial data.
 We'll come back to it later.
 :::
 -->
+```
 
 ## What experiences do you bring with you today?
 
@@ -95,7 +99,7 @@ We'll come back to it later.
 ::: notes
 What experiences do you bring?
 
-NOTE: Make sure to regenerate the plot using `plot_ges668_student_survey()
+NOTE: Make sure to regenerate the plot using \`plot_ges668_student_survey()
 :::
 
 ## Why am I here?
@@ -113,23 +117,27 @@ I believe in the potential of data to build power, inform collective action, and
 
 ## What are our toolkit for this class?
 
-- Programming tools
-  - R (a programming language)
-  - RStudio (an Integrated Development Environment - IDE)
-  - tidyverse (a family of R packages)
-  - sf (a R package for spatial data)
-  - Quarto (a open-source publishing system for mixing text and code)
-- Reproducibility tools
-  - Git
-  - GitHub
-- Learning tools
-  - Course website
-  - GitHub classroom
-  - Discord
+-   Programming tools
+    -   R (a programming language)
+    -   RStudio (an Integrated Development Environment - IDE)
+    -   tidyverse (a family of R packages)
+    -   sf (a R package for spatial data)
+    -   Quarto (a open-source publishing system for mixing text and code)
+-   Reproducibility tools
+    -   Git
+    -   GitHub
+-   Learning tools
+    -   Course website
+    -   GitHub classroom
+    -   Discord
 
 ::: notes
 Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit-r/u1-d02-toolkit-r#2>
 :::
+
+## RStudio IDE
+
+![](images/paste-2.png)
 
 ## Communication 📬
 
@@ -150,12 +158,14 @@ Adapted from <https://datasciencebox.org/course-materials/_slides/u1-d02-toolkit
 ### Practice exercises 🛠️
 
 <!-- FIXME: Are practice exercises optional or required? How wiill they be graded? -->
+
 -   Each practice exercise will include a mix of questions and coding prompts excerpted or adapted from R for Data Science, Geocomputation with R, and other resources.
 
 -   Questions may include both close-ended "fill in the blank" style questions and more open-ended prompts.
 
 -   Feedback on the exercises is welcome!
 
+```{=html}
 <!--
 ### Final project
 
@@ -167,6 +177,8 @@ The final project includes a few elements:
 
 The proposal and presentation will both be built with [Quarto](https://quarto.org/) using the [HTML document](https://quarto.org/docs/output-formats/html-basics.html) and [Reveal.js presentation](https://quarto.org/docs/presentations/revealjs/) formats.
 -->
+```
+
 <!-- FIXME: What is happening with the final project? -->
 
 ## Readings 📚
@@ -189,17 +201,19 @@ Note that this book also includes extensive information on raster data. This is 
 
 ### Other readings and resources
 
-- Vignettes and other R package documentation
-- Recorded presentations
-- Journal articles
+-   Vignettes and other R package documentation
+-   Recorded presentations
+-   Journal articles
 
+```{=html}
 <!-- ### All Data are Local
 
 ![](https://mit-press-us.imgix.net/covers/9780262545174.jpg?auto=format&w=298&dpr=2&q=20) -->
+```
 
 ### Required vs. Optional
 
-- Optional readings may include whole books or websites. These are recommended if you are interested in learning more about a topic—but may be infeasible
+-   Optional readings may include whole books or websites. These are recommended if you are interested in learning more about a topic—but may be infeasible
 
 ### Getting the most out of readings
 
