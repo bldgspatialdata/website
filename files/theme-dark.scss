@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300&family=Public+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
 $font-family: "Atkinson Hyperlegible", sans-serif;
+$font-family-emoji: "Noto Color Emoji";
 
 // Base document colors
 $body-bg: #181818;
@@ -25,33 +26,49 @@ $popover-bg: #242424;
 // Bootstrap inputs
 $input-bg: #242424;
 
-
 /*-- scss:rules --*/
 
 .layout-example {
   background: $gray-700;
 }
 
-.render-commit-push {
-  padding: 0.5em 0.5em 0em 3em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background: #181818 5px center/3em no-repeat;
-  border-top: 1px solid #adadad;
-  border-bottom: 1px solid #adadad;
-  background-image: url("images/render-commit-push.png");
-  background-size: 2em;
-  background-position: 0.5em 0.5em;
+// Adapted from https: //stackoverflow.com/a/79571362
+// Posted by TarJae, modified by community.
+// Retrieved 2026-01-31,
+// License - CC BY-SA 4.0
+
+/* Fallback for system preference */
+/* Explicitly handle Quarto's theme toggle */
+@media (prefers-color-scheme: dark) {
+  .gt_table {
+    background-color: $body-bg !important;
+    color: $body-color !important;
+
+    th {
+      background-color: $popover-bg !important;
+      color: $body-color !important;
+    }
+
+    td {
+      background-color: $body-bg !important;
+      color: $body-color !important;
+    }
+  }
 }
 
-.pull {
-  padding: 0.5em 0.5em 0em 3em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background: #181818 5px center/3em no-repeat;
-  border-top: 1px solid #adadad;
-  border-bottom: 1px solid #adadad;
-  background-image: url("images/pull.png");
-  background-size: 2em;
-  background-position: 0.5em 0.5em;
+.quarto-dark {
+  .gt_table {
+    background-color: $body-bg !important;
+    color: $body-color !important;
+
+    th {
+      background-color: $popover-bg !important;
+      color: $body-color !important;
+    }
+
+    td {
+      background-color: $body-bg !important;
+      color: $body-color !important;
+    }
+  }
 }
