@@ -28,7 +28,7 @@ Spatial data is available in a wide range of formats at the local, national, and
 
 -   [U.S. Department of Housing and Urban Development Geospatial Data Storefront](https://hudgis-hud.opendata.arcgis.com/)
 
--   [Geospatial at BTS (Bureau of Transportation Statistics)](https://data-usdot.opendata.arcgis.com/), U.S. Department of Transportation
+-   [National Transportation Atlas Database](https://data-usdot.opendata.arcgis.com/), U.S. Department of Transportation
 
 -   [BTS Data Inventory](https://data.bts.gov/) (Bureau of Transportation Statistics), U.S. Department of Transportation
 
