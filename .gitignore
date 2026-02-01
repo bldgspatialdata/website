@@ -7,3 +7,5 @@ _site
 /.quarto/
 dev/
 docs/
+
+**/*.quarto_ipynb

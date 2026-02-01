@@ -4,7 +4,7 @@ title: "Visualizing spatial data with ggplot2"
 subtitle: "Session {{< meta order >}}"
 date: 2023-09-06
 image: "images/qcbis_workshop03_gglayers-graphic.png"
-format: 
+format:
   revealjs:
     output-location: column-fragment
 code-fold: true
@@ -67,17 +67,17 @@ ges668_plot_theme <- hrbrthemes::theme_ipsum_pub(
 
 Why do we visualize spatial data?
 
-- Validation
-- Exploration
-- Communication
+-   Validation
+-   Exploration
+-   Communication
 
 ### Why do we visualize data?
 
 Why do we visualize data?
 
-- Validation
-- Exploration
-- Communication
+-   Validation
+-   Exploration
+-   Communication
 
 ### Anscombe's quartet
 
@@ -100,7 +100,7 @@ Tmisc::quartet |>
 To understand how visualization supports validation, we can take at the Anscombe's Quartet data from the `{Tmisc}`.
 :::
 
-----
+------------------------------------------------------------------------
 
 Hard to make sense of all those numbers at once.
 
@@ -122,7 +122,7 @@ Tmisc::quartet |>
   gt_theme_ges668_class2()
 ```
 
-----
+------------------------------------------------------------------------
 
 Now, take another look using a plot:
 
@@ -143,36 +143,31 @@ What do you *see*?
 
 ## How do we visualize spatial data?
 
-:::: {.columns}
-
-::: {.column width='50%'}
+::::: columns
+::: {.column width="50%"}
 A map is a special type of data visualization for spatial data but it isn't the only one.
 
 **Plots** and **tables** are two other common ways to visualize spatial data.
 :::
 
-::: {.column width='50%'}
+::: {.column width="50%"}
 ![Key for interpreting Sanborn fire insurance maps courtesy [Library of Congress](https://www.loc.gov/collections/sanborn-maps/about-this-collection/)](https://www.loc.gov/static/collections/sanborn-maps/images/sankey_in2.jpg)
 :::
+:::::
 
-::::
+------------------------------------------------------------------------
 
-----
-
-:::: {.columns}
-
-::: {.column width='40%'}
+::::: columns
+::: {.column width="40%"}
 Visuals can be further transformed using **animation** and **interactivity**.
 
 Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
-
 :::
 
-::: {.column width='60%'}
+::: {.column width="60%"}
 ![](https://media.giphy.com/media/xUA7aUs09Brz1ZED72/giphy.gif)
 :::
-
-::::
+:::::
 
 # What is the "grammar of graphics"?
 
@@ -182,14 +177,14 @@ Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
 
 ## Grammar of graphics {.unnumbered}
 
-- Data
-- Mapping
-- Statistics
-- Scales
-- Geometries
-- Facets
-- Coordinates
-- Theme
+-   Data
+-   Mapping
+-   Statistics
+-   Scales
+-   Geometries
+-   Facets
+-   Coordinates
+-   Theme
 
 ::: footer
 This introduction to the "grammar of graphics" is based largely on a 2020 ggplot2 workshop ([part 1](https://www.youtube.com/watch?v=h29g21z0a68)) by Thomas Lin Pedersen.
@@ -197,10 +192,10 @@ This introduction to the "grammar of graphics" is based largely on a 2020 ggplot
 
 ## Data
 
-- Structure and representation of data determines what you can and can't do with it
-- Data is expected to be in a "tidy" format (also known as long format data)
+-   Structure and representation of data determines what you can and can't do with it
+-   Data is expected to be in a "tidy" format (also known as long format data)
 
-----
+------------------------------------------------------------------------
 
 A few definitions (from [Ch. 2 of R for Data Science](https://r4ds.hadley.nz/data-visualize)):
 
@@ -209,7 +204,7 @@ A few definitions (from [Ch. 2 of R for Data Science](https://r4ds.hadley.nz/dat
 -   observation: a set of measurements made under similar conditions
 -   tabular data: a set of values, each associated with a variable and an observation.
 
-----
+------------------------------------------------------------------------
 
 What works best with the grammar of graphics is **tidy data**:
 
@@ -219,32 +214,32 @@ What works best with the grammar of graphics is **tidy data**:
 
 ## Mapping
 
-- Allow data to be understood by the graphics system through:
+-   Allow data to be understood by the graphics system through:
 
-  - Aesthetic mapping: variables -> graphical properties in the geometry
-  - Facet mapping: variables -> panels in layout
+    -   Aesthetic mapping: variables -\> graphical properties in the geometry
+    -   Facet mapping: variables -\> panels in layout
 
 ## Statistics
 
-- Data may not represent the displayed values
+-   Data may not represent the displayed values
 
-- Statistics transform input variables into displayed values, e.g.
+-   Statistics transform input variables into displayed values, e.g.
 
-  - Counting the number of observations by category
-  - Calculating summary statistics for a boxplot
-  
+    -   Counting the number of observations by category
+    -   Calculating summary statistics for a boxplot
+
 ::: footer
 Statistics can be used prior to plotting data or used by a plotting function directly.
 :::
 
 ## Scales
 
-- Scales translate between value ranges and graphical properties, e.g.
+-   Scales translate between value ranges and graphical properties, e.g.
 
-  - Categories -> Colors
-  - Numbers -> Position
-  
-- Scales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.
+    -   Categories -\> Colors
+    -   Numbers -\> Position
+
+-   Scales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.
 
 ::: footer
 In the not too common case where data directly represents a graphical property, e.g. a "color" column, you can use a special type of scale called an "identity" scale.
@@ -252,21 +247,21 @@ In the not too common case where data directly represents a graphical property, 
 
 ## Geometries
 
-- How translate aesthetics into graphical representations
+-   How translate aesthetics into graphical representations
 
-- Basic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)
+-   Basic geometries (e.g. points, lines, polygons) can be combined into more complex geometries (e.g. box plot, map)
 
-- Typically, the geometries are the same as the "type" of plot
+-   Typically, the geometries are the same as the "type" of plot
 
 ## Facets
 
-- Defines how data is split across multiple panels
+-   Defines how data is split across multiple panels
 
 ## Coordinates
 
-- Positional aesthetics must be interpreted by a coordinate system
+-   Positional aesthetics must be interpreted by a coordinate system
 
-- Defines the physical mapping of aesthetics to the paper
+-   Defines the physical mapping of aesthetics to the paper
 
 ::: footer
 We usually think about the [cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)—but there are a lot of different kinds of coordinate systems.
@@ -274,13 +269,13 @@ We usually think about the [cartesian coordinate system](https://en.wikipedia.or
 
 ## Theme
 
-- Every part of the graphic that *isn't* linked to the data:
+-   Every part of the graphic that *isn't* linked to the data:
 
-  - Fonts
-  - Spacing
-  - Colors 
-  - Weights
-  - etc.
+    -   Fonts
+    -   Spacing
+    -   Colors
+    -   Weights
+    -   etc.
 
 # How to to use `{ggplot2}` to...
 
@@ -288,31 +283,29 @@ We usually think about the [cartesian coordinate system](https://en.wikipedia.or
 -   visualize spatial data
 
 ::: notes
-
 considerations when visualizing spatial data with ggplot2:
 
-  - feature geometry and aesthetics are related
-  - spatial data benefits from reference geography
-  - other cartographic needs
+-   feature geometry and aesthetics are related
+-   spatial data benefits from reference geography
+-   other cartographic needs
 
 how to visualize spatial data with ggplot2:
 
-  - make a map with `geom_sf`
-  - change CRS with `coord_sf`
-  - "zoom" to an area with `st_bbox` and `coord_sf`
-  - modify geometry type `st_centroid`
+-   make a map with `geom_sf`
+-   change CRS with `coord_sf`
+-   "zoom" to an area with `st_bbox` and `coord_sf`
+-   modify geometry type `st_centroid`
 
 how to visualize spatial data with mapview:
 
-  - make a map with `mapview`
-  - make a color-coded map with the `zcol` argument
-  - make a map with multiple layers by passing a list to `mapview`
-
+-   make a map with `mapview`
+-   make a color-coded map with the `zcol` argument
+-   make a map with multiple layers by passing a list to `mapview`
 :::
 
 ## Cheatsheets
 
-- [ggplot2 data visualization cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+-   [ggplot2 data visualization cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
 
 ## Build layered data visualizations
 
@@ -321,7 +314,6 @@ how to visualize spatial data with mapview:
 For this session, we are going to use the `{ggplot2}` and `{dplyr}` packages along with `{sf}` and `{rnaturalearth}`:
 
 ```{r}
-#| output-location: default
 library(ggplot2)
 library(dplyr)
 library(sf)
@@ -343,7 +335,7 @@ glimpse(storms)
 Remember that each row is an **observation** of a storm, not a individual storm.
 :::
 
-----
+------------------------------------------------------------------------
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif)
 
@@ -361,7 +353,7 @@ ggplot(data = storms)
 
 ...
 
-::: {.smaller}
+::: smaller
 Well, that doesn't look like much. 🤔
 
 This is the first step in creating a plot that we can add layers to. Parameters set with `ggplot()` can be "inherited" by layers added later.
@@ -391,7 +383,7 @@ The mapping argument of the ggplot() function defines how variables in your data
 Note that the storms data is *not* spatial at this point.
 :::
 
-----
+------------------------------------------------------------------------
 
 Layers in `{ggplot2}` are most often added using "geoms" (short for geometry) functions like `geom_point()`, `geom_col()`, or `geom_histogram()`.
 
@@ -408,7 +400,7 @@ ggplot(
   geom_point()
 ```
 
-----
+------------------------------------------------------------------------
 
 You can define the `data` and `mapping` parameters globally using `ggplot()` or locally for a single geom function. This code does the exact same thing as the prior block:
 
@@ -423,7 +415,7 @@ ggplot() +
   )
 ```
 
-----
+------------------------------------------------------------------------
 
 ### What is this `+` operator?
 
@@ -431,7 +423,7 @@ Notice that we are combining the `ggplot()` and `geom_point()` functions using t
 
 Next week, we will introduce a similar function known as a pipe, `%>%` or `|>` that works to pass the output from one function (or line of code) into the next line as the first parameter in a function.
 
-----
+------------------------------------------------------------------------
 
 For example, see how we can use a series of pipes to operate on the storms data:
 
@@ -440,7 +432,7 @@ storms |>
   distinct(name)
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 storms |>
@@ -448,7 +440,7 @@ storms |>
   nrow()
 ```
 
-----
+------------------------------------------------------------------------
 
 The prior block is the same as the following block:
 
@@ -461,7 +453,7 @@ nrow(storm_names)
 Using pipes can help avoid the need for intermediate objects like `storm_names` that might only exist to move the output of one function to the input for another function.
 :::
 
-----
+------------------------------------------------------------------------
 
 The first parameter for `ggplot()` is `data` and the first parameter for all geom functions is `mapping` so you often see these passed as unnnamed parameters:
 
@@ -475,7 +467,7 @@ ggplot(storms) +
   )
 ```
 
----
+------------------------------------------------------------------------
 
 You can even leave off the x and y parameter names:
 
@@ -484,7 +476,7 @@ ggplot(storms) +
   geom_point(aes(long, lat))
 ```
 
-----
+------------------------------------------------------------------------
 
 # Mapping variables are not strings!
 
@@ -492,7 +484,7 @@ The variables passed to `aes()` don't have quotes around them! This is because `
 
 TLDR: only put quotes around your aesthetic mappings when you want to pass a literal string.
 
-----
+------------------------------------------------------------------------
 
 Next we can map one of the variables (`status` or storm classification) to an aesthetic (`color`):
 
@@ -503,8 +495,7 @@ ggplot(storms) +
 
 Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a "positional aesthetic" we can't easily interpret the meaning of the graphic without a legend, labels, or annotations.
 
-
-----
+------------------------------------------------------------------------
 
 In addition to having mapped aesthetics, we can also have "fixed" aesthetics (fixed because the same value is used for every observation in the plot). When you have a lot of overlapping features (known as overplotting), you may want to reduce the `alpha` (or transparency) of the features:
 
@@ -522,7 +513,7 @@ ggplot(storms) +
 
 Fixed aesthetics should be defined for each geom—they are ignored if you pass them to `ggplot()`.
 
-----
+------------------------------------------------------------------------
 
 Aesthetics can also be defined using a function. In this example, we are using the boolean operator `==` to compare the values from "status" to the string "hurricane":
 
@@ -537,7 +528,6 @@ ggplot(
 ) +
   geom_point()
 ```
-
 
 ## Visualizing distributions
 
@@ -583,12 +573,13 @@ storms_sf <- sf::st_as_sf(
 )
 ```
 
-:::{.callout-tip collapse=false appearance='default' icon=true}
+::: {.callout-tip collapse="false" appearance="default" icon="true"}
 # Always supply coordinates with longitude before latitude!
+
 `sf::st_as_sf()` requires that you supply coordinates in lon lat order. This is also the standard order for GeoJSON files, Shapefiles, and KML files. Check out [lon lat lat lon by Tom MacWright](https://macwright.com/lonlat/) for more information.
 :::
 
-----
+------------------------------------------------------------------------
 
 Finally, we can look at these observations on a map:
 
@@ -597,7 +588,7 @@ ggplot(data = storms_sf) +
   geom_sf(aes(color = status))
 ```
 
-----
+------------------------------------------------------------------------
 
 That first map may not look much different.
 
@@ -609,7 +600,7 @@ ggplot(data = storms_sf) +
   coord_sf(crs = "EPSG:3035")
 ```
 
-----
+------------------------------------------------------------------------
 
 This is equivalent to converting the coordinate reference system in advance using `st_transform()`:
 
@@ -622,7 +613,7 @@ storms_sf |>
 
 Note, that this is another example of how we can use the pipe (`|>`) to move data between functions in R.
 
-----
+------------------------------------------------------------------------
 
 However, to really show the potential, we need some more data. Install and load the `{rnaturalearth}` package and then load data for the coastline and countries:
 
@@ -635,7 +626,7 @@ coastline <- ne_coastline()
 countries <- ne_countries()
 ```
 
-----
+------------------------------------------------------------------------
 
 Put them together and we are starting to get somehwere:
 
@@ -645,7 +636,7 @@ ggplot() +
   geom_sf(data = coastline, color = "white")
 ```
 
-----
+------------------------------------------------------------------------
 
 But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of `coord_sf()` to "zoom" in on a smaller area:
 
@@ -667,7 +658,7 @@ storms_map <- ggplot() +
 storms_map
 ```
 
-----
+------------------------------------------------------------------------
 
 Try adding a scale:
 
@@ -678,7 +669,7 @@ storms_map <- storms_map +
 storms_map
 ```
 
-----
+------------------------------------------------------------------------
 
 Now try adding some labels:
 
@@ -692,7 +683,7 @@ storms_map <- storms_map +
 storms_map
 ```
 
-----
+------------------------------------------------------------------------
 
 Lastly, we can adjust the theme:
 
@@ -704,52 +695,49 @@ storms_map +
   )
 ```
 
+------------------------------------------------------------------------
 
-----
-
-:::: {.columns}
-
-::: {.column width='40%'}
+::::: columns
+::: {.column width="40%"}
 ![](https://images.routledge.com/common/jackets/amazon/978036749/9780367494759.jpg)
 :::
 
-::: {.column width='60%'}
+::: {.column width="60%"}
 "It's true that there are better and worse ways to make a map but **no one way to make an excellent map**."
 
 Gretchen N. Peterson in GIS Cartography: A Guide to Effective Map Design
 :::
-
-::::
+:::::
 
 ### What makes a bad map *bad*?
 
 For new map makers who might not know any better, it is often:
 
-- Confusing or distracting layout
-- Not enough color contrast for features
-- Cluttered labels, legends, or features
+-   Confusing or distracting layout
+-   Not enough color contrast for features
+-   Cluttered labels, legends, or features
 
 ### What makes a fine map *just* fine?
 
 For more experienced map makers who might be in a hurry:
 
-- Not enough thought on font sizes and styling
-- No feature generalization (simplifying geometry where appropriate for the map scale or subject)
-- Inappropriate color scales
+-   Not enough thought on font sizes and styling
+-   No feature generalization (simplifying geometry where appropriate for the map scale or subject)
+-   Inappropriate color scales
 
 ### Other related considerations
 
 There are many cartographic considerations that also apply to other all types of data visualization:
 
-- Layout
-- Fonts (Typography)
-- Colors
-- Output formats
+-   Layout
+-   Fonts (Typography)
+-   Colors
+-   Output formats
 
 ### Other cartography considerations
 
-But there are also some cartographic considerations that apply to maps in special and important ways: 
+But there are also some cartographic considerations that apply to maps in special and important ways:
 
-- Feature geometry (and cartographic conventions)
-- Projections
-- Scaling
+-   Feature geometry (and cartographic conventions)
+-   Projections
+-   Scaling
