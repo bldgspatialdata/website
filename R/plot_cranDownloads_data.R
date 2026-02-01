@@ -4,14 +4,17 @@
 #' daily downloads by month.
 #'
 plot_cranDownloads_data <- function(
-    data = NULL,
-    packages = c("sp", "sf", "dplyr", "ggplot2"),
-    from = "2018-08-01",
-    to = "2024-07-31",
-    plot_title = "Package downloads from CRAN",
-    save = TRUE,
-    plot_filename = "pkg-downloads_08-2018_07-2024.png") {
+  data = NULL,
+  packages = c("sp", "sf", "dplyr", "ggplot2"),
+  from = "2018-08-01",
+  to = "2025-12-31",
+  plot_title = "Package downloads from CRAN",
+  save = TRUE,
+  plot_filename = "pkg-downloads.png"
+) {
   if (is.null(data)) {
+    rlang::check_installed("packageRank")
+
     pkg_downloads <- packageRank::cranDownloads(
       packages = packages,
       from = from,
@@ -48,7 +51,8 @@ plot_cranDownloads_data <- function(
       "Downloads",
       labels = scales::label_number()
     ) +
-    pilot::scale_color_pilot() +
+    cols4all::scale_color_discrete_c4a_cat() +
+    # pilot::scale_color_pilot() +
     ggplot2::labs(
       title = plot_title,
       caption = "Source: CRAN via {packageRank} package."

@@ -1,14 +1,20 @@
 ---
 title: "Week 14"
 order: 14
-date: 2024-11-27
+date: 2026-04-29
 subtitle: "Final Project Work Session"
 abstract: "Don't forget to reach out if you need any assistance with your final project."
 ---
 
+<!--
+FIXME: The topic for this session needs to be updated if I'm dropping the final project.
+-->
+
+<!--
 ::: {.callout-important appearance="simple"}
-Reminder! We have no in-person class to allow students time to travel for Thanksgiving Day and American Indian Heritage Day.
+Reminder! **Peer feedback on project proposals** is due by {{< var dates.project.feedback >}}.
 :::
+-->
 
 ::: {.callout-important appearance="simple"}
 Reminder! Your **final project presentation** is due on {{< var dates.project.presentation >}}

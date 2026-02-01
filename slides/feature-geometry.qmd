@@ -4,7 +4,7 @@ title: "Working with spatial and geometric operations in `{sf}`"
 subtitle: "Session {{< meta order >}}"
 date: 2023-09-27
 image: "images/st_intersects_postgis-intro.png"
-format: 
+format:
   revealjs:
     output-location: column-fragment
 ---
@@ -19,19 +19,31 @@ library(tigris)
 options(tigris_use_cache = TRUE)
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 options("tigris_use_cache" = TRUE)
 us_states <- states()
 us_highways <- primary_roads()
 maryland <- filter(us_states, NAME == "Maryland")
-lower48 <- filter(us_states, !(NAME %in% c("United States Virgin Islands", "Commonwealth of the Northern Mariana Islands", "Guam", "Alaska", "American Samoa", "Puerto Rico", "Hawaii")))
+lower48 <- filter(
+  us_states,
+  !(NAME %in%
+    c(
+      "United States Virgin Islands",
+      "Commonwealth of the Northern Mariana Islands",
+      "Guam",
+      "Alaska",
+      "American Samoa",
+      "Puerto Rico",
+      "Hawaii"
+    ))
+)
 ```
 
 ## Converting objects between types
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 sfg <- st_point(c(-76.712838, 39.253383))
@@ -39,13 +51,13 @@ sfg <- st_point(c(-76.712838, 39.253383))
 sfg
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 st_as_sfc(list(sfg))
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 sfc <- st_as_sfc(list(sfg), crs = 4326)
@@ -53,13 +65,13 @@ sfc <- st_as_sfc(list(sfg), crs = 4326)
 sfc
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 st_as_sf(sfc)
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 sf_df <- data.frame(
@@ -68,44 +80,55 @@ sf_df <- data.frame(
   lat = 39.253383
 )
 
-sf <- st_as_sf(sf_df, coords = c("lon", "lat"), crs = 4326)
+sf <- st_as_sf(
+  sf_df,
+  coords = c("lon", "lat"),
+  crs = 4326
+)
 
 sf
 ```
 
 ## Types of spatial operations
 
-- Spatial filtering and topological relations
-- Spatial joins and non-overlapping joins
-- Spatial aggregation
+-   Spatial filtering and topological relations
+-   Spatial joins and non-overlapping joins
+-   Spatial aggregation
 
 ### Spatial filtering and topological relations
 
-`st_filter()` efaults to intersecting geometries:
+`st_filter()` defaults to intersecting geometries:
 
 ```{r}
-st_filter(us_states, maryland)
+st_filter(
+  us_states,
+  maryland
+)
 ```
 
------
+------------------------------------------------------------------------
 
 `st_filter()` can also support alternate topological relations:
 
 ```{r}
-st_filter(us_states, maryland, .predicate = st_disjoint)
+st_filter(
+  us_states,
+  maryland,
+  .predicate = st_disjoint
+)
 ```
 
------
+------------------------------------------------------------------------
 
 ![](https://r.geocompx.org/04-spatial-operations_files/figure-html/relations-1.png)
 
-### Spatial joins and non-overlapping joins
+### Spatial joins
 
 ```{r}
 st_join(maryland, us_highways)
 ```
 
-----
+### Non-overlapping joins
 
 `st_is_within_distance()` is an example of a non-overlapping join:
 
@@ -113,21 +136,34 @@ st_join(maryland, us_highways)
 st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi"))
 ```
 
-----
+### Filtering with spatial joins
 
 You can use these joins for spatial filters using the base R syntax:
 
 ```{r}
-is_hwy_within_dist <- st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi"), sparse = FALSE)
+is_hwy_within_dist <- st_is_within_distance(
+  us_highways,
+  maryland,
+  dist = units::set_units(100, "mi"),
+  sparse = FALSE
+)
 us_highways[is_hwy_within_dist, ]
 ```
 
-----
+### Filtering with spatial joins
 
 Or using `filter()` if you use the name of the geomtery column (and convert the matrix output into a logical vector):
 
 ```{r}
-filter(us_highways, as.logical(st_is_within_distance(geometry, maryland, dist = units::set_units(100, "mi"), sparse = FALSE)))
+filter(
+  us_highways,
+  as.logical(st_is_within_distance(
+    geometry,
+    maryland,
+    dist = units::set_units(100, "mi"),
+    sparse = FALSE
+  ))
+)
 ```
 
 ### Spatial aggregation
@@ -144,16 +180,22 @@ plot(us_states_combine[, 1])
 
 ## Types of geometric operations
 
-- Simplification
-- Centroids
-- Buffers
-- Clipping (with or without subsetting)
-- Unions
-- Type transformations
+-   Simplification
+-   Centroids
+-   Buffers
+-   Clipping (with or without subsetting)
+-   Unions
+-   Type transformations
 
 ### Simplification
 
 ```{r}
+#| execure: false
+st_simplify(lower48, dTolerance = 100000)[, 1]
+```
+
+```{r}
+#| echo: false
 plot(st_simplify(lower48, dTolerance = 100000)[, 1])
 ```
 
@@ -169,7 +211,7 @@ plot(st_centroid(lower48)[, 1])
 plot(st_buffer(lower48, dist = 100)[, 1])
 ```
 
------
+------------------------------------------------------------------------
 
 ```{r}
 plot(st_buffer(lower48, dist = units::set_units(100, "mi"))[, 1])
@@ -198,4 +240,3 @@ plot(us_highways_union[, 1])
 ```{r}
 plot(st_cast(us_highways[1, ], to = "POINT"))
 ```
-

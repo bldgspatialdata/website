@@ -59,11 +59,13 @@ baltimore_city <- filter(
 )
 
 # Query parks and gardens with the City spatial bbox
-q <- opq (sf::st_bbox(baltimore_city)) %>%
-  add_osm_features (features = list (
-    "leisure" = "park",
-    "leisure" = "garden"
-  ))
+q <- opq(sf::st_bbox(baltimore_city)) %>%
+  add_osm_features(
+    features = list(
+      "leisure" = "park",
+      "leisure" = "garden"
+    )
+  )
 
 # Execute the query
 open_space <- q |>
@@ -73,8 +75,10 @@ open_space <- unique_osmdata(open_space)
 
 # Example
 q <- getbb("Baltimore city, Maryland") |>
-  opq () %>%
-  add_osm_features (features = list (
-    "leisure" = "park",
-    "leisure" = "garden"
-  ))
+  opq() %>%
+  add_osm_features(
+    features = list(
+      "leisure" = "park",
+      "leisure" = "garden"
+    )
+  )

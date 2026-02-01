@@ -31,15 +31,33 @@ Here are some of the other packages we are using in this class.
 #| eval: false
 pak::pkg_install(
   c(
-    "mapview", "usethis", "reprex", "quarto", "sf",
-    "tigris", "rnaturalearth", "spData", "arcgis", "tidycensus", "osmdata"
+    "arcgis",
+    "gt",
+    "lwgeom",
+    "mapview",
+    "nycflights13",
+    "osmdata",
+    "quarto",
+    "reprex",
+    "rnaturalearth",
+    "sf",
+    "spData",
+    "tidycensus",
+    "tidyverse",
+    "tigris",
+    "tmap",
+    "usethis"
   )
 )
 ```
 
+Always restart your session after installing new packages to make sure you are using the latest version and can access the package documentation.
+
 ## Configuring RStudio
 
-Configuring RStudio is something we do together as a class during our first session. If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class
+Configuring RStudio is something we do together as a class during our first session.
+
+If you missed the first session, please review the instructions below to make sure your setup is the same as other members of the class.
 
 ### Required changes
 
@@ -58,11 +76,19 @@ Select `Tools \> Global Options` from the menu then:
 
 ### Recommended Resources
 
--   Review keyboard shortcuts.
+-   The [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html) (available as a printable [PDF](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf)) is a handy quick reference for navigating the panes and tools within the application as well as useful [keyboard shortcuts](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE).
+
+-  You can add new features to RStudio by [installing Add-ins](https://docs.posit.co/ide/user/ide/guide/productivity/add-ins.html). I strongly recommend using the [datapasta add-in](https://milesmcbain.github.io/datapasta/) and the styler add-in for code formatting.
 
 ### Alternate IDEs
 
--   Positron
+There are several alternate IDEs you could try:
+
+-   [Positron](https://positron.posit.co/) is an IDE created by Posit (the company that also developed RStudio) to support data science work in both Python and R. The application is based on VS Code and many VS Code extensions have been adapted to work with Positron. If you want to give it a try, you may find this [Getting Started with Positron: A Quick Tour video](https://www.youtube.com/watch?v=mru9z50IOhI) helpful.
+
+-   [VS Code](https://code.visualstudio.com/) is a popular IDE with a wide variety of extensions. It does not have the built-in support for Quarto and RMarkdown out of the box so it may take some configuration to get it working. Check out the [R in Visual Studio Code](https://code.visualstudio.com/docs/languages/r) guide or the [guide to using Quarto in VS Code](https://quarto.org/docs/tools/vscode/index.html) for more information.
+
+For this class, I recommend sticking with RStudio to ensure you are completing the exercises and project in the same environment that we are using during in-class sessions.
 
 ### Set up GitHub credentials in RStudio
 

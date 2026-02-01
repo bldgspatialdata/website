@@ -2,14 +2,9 @@
 title: "Exercise 03"
 order: 3
 status: available
-date-due: 2024-09-20
 date-modified: last-modified
 error: true
 ---
-
-::: {.callout-important appearance="minimal"}
-Exercise due on {{< meta date-due >}}
-:::
 
 ## Overview
 
@@ -44,35 +39,35 @@ condition:
 -   Had an arrival delay of two or more hours
 
 ```{r}
-flights |> 
+flights |>
   filter(arr_delay >= 120)
 ```
 
 -   Flew to Houston (`IAH` or `HOU`)
 
 ```{r}
-flights |> 
+flights |>
   filter(dest %in% c("IAH", "HOU"))
 ```
 
 -   Were operated by United, American, or Delta
 
 ```{r}
-flights |> 
+flights |>
   filter(carrier %in% c("UA", "AA", "DL"))
 ```
 
 -   Departed in summer (July, August, and September)
 
 ```{r}
-flights |> 
+flights |>
   filter(between(month, 7, 9))
 ```
 
 -   Arrived more than two hours late, but didn't leave late
 
 ```{r}
-flights |> 
+flights |>
   filter(arr_delay > 120, dep_delay <= 0)
 ```
 
@@ -80,7 +75,7 @@ flights |>
     flight
 
 ```{r}
-flights |> 
+flights |>
   # FIXME: but made up over 30 minutes in flight?
   filter(dep_delay >= 60, (dep_delay - arr_delay) < 30)
 ```
@@ -89,10 +84,10 @@ Sort `flights` to find the flights with longest departure delays. Find
 the flights that left earliest in the morning.
 
 ```{r}
-flights |> 
+flights |>
   arrange(desc(dep_delay))
 
-flights |> 
+flights |>
   arrange(dep_time)
 ```
 
@@ -100,7 +95,7 @@ Sort `flights` to find the fastest flights. (Hint: Try including a math
 calculation inside of your function.)
 
 ```{r}
-flights |> 
+flights |>
   arrange(distance / air_time)
 ```
 
@@ -109,8 +104,8 @@ Answer the following questions including code blocks showing the code used in de
 Was there a flight on every day of 2013? Yes. There are 365 days in a year and 365 distinct month-day combinations in the flight data.
 
 ```{r}
-flights |> 
-  filter(year == 2013) |> 
+flights |>
+  filter(year == 2013) |>
   distinct(month, day)
 ```
 
@@ -118,7 +113,7 @@ flights |>
 Which flights traveled the farthest distance?  Flights from JFK to Honolulu airport.
 
 ```{r}
-flights |> 
+flights |>
   arrange(desc(distance))
 ```
 
@@ -126,7 +121,7 @@ flights |>
 Which traveled the least distance?  The flight that was scheduled to travel the least distance was a 17 mile flight from the Newark airport (EWR) to La Gaurdia (LGA) but that flight never departed the airport. The flight that actually traveled the least distance was from Newark to Philadelphia International—a distance of 80 miles.
 
 ```{r}
-flights |> 
+flights |>
   arrange(distance)
 ```
 
@@ -198,18 +193,18 @@ Rename `air_time` to `air_time_min` to indicate units of measurement and
 move it to the beginning of the data frame.
 
 ```{r}
-flights |> 
-  rename(air_time_min = air_time) |> 
+flights |>
+  rename(air_time_min = air_time) |>
   relocate(air_time_min, .before = everything())
 ```
 
 Why doesn't the following work, and what does the error mean?
 
-It doesn't work because the arr_delay column is dropped by select before calling arrange. 
+It doesn't work because the arr_delay column is dropped by select before calling arrange.
 
 ```{r}
-flights |> 
-  select(tailnum) |> 
+flights |>
+  select(tailnum) |>
   arrange(arr_delay)
 ```
 
@@ -225,12 +220,12 @@ disentangle the effects of bad airports vs. bad carriers? Why/why not?
 `flights |> group_by(carrier, dest) |> summarize(n())`)
 
 ```{r}
-flights |> 
+flights |>
   group_by(carrier, dest) |>
   summarize(
-   arr_delay_avg = mean(arr_delay, na.rm = TRUE)
-  ) |> 
-  ungroup() |> 
+    arr_delay_avg = mean(arr_delay, na.rm = TRUE)
+  ) |>
+  ungroup() |>
   mutate(
     arr_delay_carrier_avg = mean(arr_delay_avg, na.rm = TRUE),
     .by = carrier
@@ -241,7 +236,7 @@ Find the flights that are most delayed upon departure from each
 destination.
 
 ```{r}
-flights |> 
+flights |>
   slice_max(dep_delay, by = dest)
 ```
 
@@ -249,24 +244,24 @@ How do delays vary over the course of the day. Illustrate your answer
 with a plot.
 
 ```{r}
-flights |> 
+flights |>
   summarise(
     dep_delay = sum(dep_delay, na.rm = TRUE),
     arr_delay = sum(arr_delay, na.rm = TRUE),
     .by = hour
-  ) |> 
+  ) |>
   ggplot(aes(hour, dep_delay / 60)) +
   geom_step() +
   # geom_smooth() +
   scale_y_log10(labels = scales::label_number())
-  geom_violin(aes(hour, dep_delay, group = hour)) +
+geom_violin(aes(hour, dep_delay, group = hour)) +
   geom_boxplot(aes(hour, dep_delay, group = hour)) +
   summarise(
     arr_delay = sum(arr_delay, na.rm = TRUE),
     dep_delay = sum(dep_delay, na.rm = TRUE),
     .by = hour
-  ) |> 
-  geom_area(aes(hour, dep_delay / 60), fill = "blue") +
+  ) |>
+    geom_area(aes(hour, dep_delay / 60), fill = "blue") +
   geom_area(aes(hour, arr_delay / 60))
 ```
 

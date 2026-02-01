@@ -1,16 +1,9 @@
-#' Plot results from the GES 668 student welcome survey
-#'
-#' Created for Fall 2023 semester. Updated for fall 2024 with the addition of a
-#' level between none and some.
-#'
-plot_ges668_student_survey <- function(
-    url = "https://docs.google.com/spreadsheets/d/1WS-2HR9MHTOKr-Bdz12vNnnGYCF6nZv8czeUucVCz48/edit?usp=sharing",
-    plot_caption = "Source: GES 668 Fall 2024 Student Survey",
-    plot_filename = "2024-08-28_student-survey.png",
-    save = TRUE) {
+read_ges668_student_survey <- function(
+  url = "https://docs.google.com/spreadsheets/d/1a40Q7l43Dw017EzJCyH6j24WEfsZAAzWFSpmDFfY_v4/edit?usp=sharing"
+) {
   survey <- googlesheets4::read_sheet(url)
 
-  experience_results <- survey |>
+  survey |>
     dplyr::select(tidyselect::starts_with("How much")) |>
     tidyr::pivot_longer(
       tidyselect::everything()
@@ -30,6 +23,25 @@ plot_ges668_student_survey <- function(
       experience = factor(experience, c("None", "A little", "Some", "A lot"))
     ) |>
     dplyr::filter(!is.na(experience))
+}
+
+#' Plot results from the GES 668 student welcome survey
+#'
+#' Created for Fall 2023 semester. Updated for fall 2024 with the addition of a
+#' level between none and some.
+#'
+plot_ges668_student_survey <- function(
+  url = "https://docs.google.com/spreadsheets/d/1a40Q7l43Dw017EzJCyH6j24WEfsZAAzWFSpmDFfY_v4/edit?usp=sharing",
+  data = NULL,
+  plot_caption = "Source: GES 668 Spring 2026 Student Survey",
+  plot_filename = "student-survey.png",
+  save = TRUE
+) {
+  if (is.null(data)) {
+    experience_results <- read_ges668_student_survey(url)
+  } else {
+    experience_results <- data
+  }
 
   experience_plot <- experience_results |>
     ggplot2::ggplot() +
@@ -39,7 +51,7 @@ plot_ges668_student_survey <- function(
     ) +
     ggplot2::facet_wrap(~tool) +
     # scale_fill_viridis_d("Experience") +
-    pilot::scale_fill_pilot() +
+    cols4all::scale_fill_discrete_c4a_cat() +
     hrbrthemes::theme_ipsum_pub(
       base_family = "Atkinson Hyperlegible",
       plot_title_family = "Atkinson Hyperlegible",
@@ -76,4 +88,6 @@ plot_ges668_student_survey <- function(
     units = "px",
     bg = "white"
   )
+
+  experience_plot
 }

@@ -20,58 +20,58 @@ order: 15
 
 Focus for today:
 
-- Working with `theme()` (and custom theme packages like [hrbrthemes](https://hrbrmstr.github.io/hrbrthemes/)) to customize plot appearance
-- Using [ragg](https://ragg.r-lib.org/) to use custom fonts with ggplot2
-- Working with [scales](https://scales.r-lib.org/) and `scale_` functions
-- Working with the [new legends features](https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/)
+-   Working with `theme()` (and custom theme packages like [hrbrthemes](https://hrbrmstr.github.io/hrbrthemes/)) to customize plot appearance
+-   Using [ragg](https://ragg.r-lib.org/) to use custom fonts with ggplot2
+-   Working with [scales](https://scales.r-lib.org/) and `scale_` functions
+-   Working with the [new legends features](https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0-legends/)
 
 ------------------------------------------------------------------------
 
 Resources for ggplot2:
 
-- ["Drawing Anything with ggplot2" workshop materials](https://github.com/thomasp85/ggplot2_workshop) (2020)
-- [Best practices for programming with ggplot2 - Posit](https://posit.co/resources/videos/best-practices-for-programming-with-ggplot2/) (2020)
-- [Graphic Design with ggplot2 - Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) (2022)
-- [Engaging and Beautiful Data Visualizations with ggplot2](https://posit-conf-2023.github.io/dataviz-ggplot2/) (2023)
+-   ["Drawing Anything with ggplot2" workshop materials](https://github.com/thomasp85/ggplot2_workshop) (2020)
+-   [Best practices for programming with ggplot2 - Posit](https://posit.co/resources/videos/best-practices-for-programming-with-ggplot2/) (2020)
+-   [Graphic Design with ggplot2 - Graphic Design with ggplot2](https://rstudio-conf-2022.github.io/ggplot2-graphic-design/) (2022)
+-   [Engaging and Beautiful Data Visualizations with ggplot2](https://posit-conf-2023.github.io/dataviz-ggplot2/) (2023)
 
 ------------------------------------------------------------------------
 
 Additional packages:
 
-- [patchwork](https://patchwork.data-imaginist.com/)
-- [ggforce](https://ggforce.data-imaginist.com/)
-- [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/gallery/)
+-   [patchwork](https://patchwork.data-imaginist.com/)
+-   [ggforce](https://ggforce.data-imaginist.com/)
+-   [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/gallery/)
 
 ------------------------------------------------------------------------
 
 Packages for interactive and animated plots:
 
-- [gganimate](https://gganimate.com/)
-- [plotly](https://plotly.com/r/)
-- [ggiraph](https://davidgohel.github.io/ggiraph/)
+-   [gganimate](https://gganimate.com/)
+-   [plotly](https://plotly.com/r/)
+-   [ggiraph](https://davidgohel.github.io/ggiraph/)
 
 ------------------------------------------------------------------------
 
 Packages for interactive maps:
 
-- [rdeck](https://qfes.github.io/rdeck/)
-- [mapgl](https://walker-data.com/mapgl/)
-- [leaflet](https://rstudio.github.io/leaflet/)
+-   [rdeck](https://qfes.github.io/rdeck/)
+-   [mapgl](https://walker-data.com/mapgl/)
+-   [leaflet](https://rstudio.github.io/leaflet/)
 
 ------------------------------------------------------------------------
 
 Packages for working with text:
 
-- [ggtext](https://wilkelab.org/ggtext/)
-- [marquee](https://marquee.r-lib.org/index.html)
-- [ggrepel](https://ggrepel.slowkow.com/)
-- [ggannotate](https://github.com/MattCowgill/ggannotate) (for interactively setting annotation locations)
+-   [ggtext](https://wilkelab.org/ggtext/)
+-   [marquee](https://marquee.r-lib.org/index.html)
+-   [ggrepel](https://ggrepel.slowkow.com/)
+-   [ggannotate](https://github.com/MattCowgill/ggannotate) (for interactively setting annotation locations)
 
 ------------------------------------------------------------------------
 
 Packages for 3D data visualization:
 
-- [rayshader](https://www.rayshader.com/)
+-   [rayshader](https://www.rayshader.com/)
 
 ## Choosing appropriate graphic types
 
@@ -157,4 +157,3 @@ Visual channels
 ::: notes
 https://homepage.divms.uiowa.edu/\~luke/classes/STAT4580/percep.html
 :::
-

@@ -2,7 +2,6 @@
 title: "Exercise 02"
 order: 2
 status: available
-date-due: 2024-09-13
 date-modified: last-modified
 error: true
 ---
@@ -50,11 +49,11 @@ We are going to use `ne_download()` to download the `countries` dataset and then
 # Download data from Natural Earth
 countries_ne <- ne_download(scale = "medium", type = "countries")
 
-countries <- countries_ne |> 
+countries <- countries_ne |>
   # Drop unused columns
   select(
     !starts_with(c("ISO", "ADM0", "FCLASS", "NAME", "MAPCOLOR"))
-  ) |> 
+  ) |>
   # Exclude Antarctica
   filter(
     SOVEREIGNT != "Antarctica"

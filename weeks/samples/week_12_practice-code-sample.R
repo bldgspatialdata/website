@@ -1,4 +1,10 @@
-pkg_install(c("labelled", "googlesheets4", "DataEditR", "gtsummary", "pointblank"))
+pkg_install(c(
+  "labelled",
+  "googlesheets4",
+  "DataEditR",
+  "gtsummary",
+  "pointblank"
+))
 
 # Load required packages ----
 library(tidyverse)
@@ -42,7 +48,9 @@ gs4_browse(ss)
 
 ## Setting variable labels ----
 
-updated_data_dict <- read_sheet("https://docs.google.com/spreadsheets/d/1NdOJ-_zpVjTH3bqrH1vp4u5VqEHkVw2oXDt5c5kcp1s/edit?usp=sharing")
+updated_data_dict <- read_sheet(
+  "https://docs.google.com/spreadsheets/d/1NdOJ-_zpVjTH3bqrH1vp4u5VqEHkVw2oXDt5c5kcp1s/edit?usp=sharing"
+)
 
 print(updated_data_dict$label)
 

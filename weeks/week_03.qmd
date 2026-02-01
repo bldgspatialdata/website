@@ -1,10 +1,23 @@
 ---
-title: "Week 3"
+title: Week 3
 order: 3
-subtitle: "Transforming data with `{dplyr}`"
-date: 2024-09-11
+subtitle: Transforming data with `{dplyr}`
+date: 2026-02-11
 image: /slides/images/whole-game.png
+slides:
+  title: Transforming data with `{dplyr}` and `{tidyr}`
+  file: data-transformation.qmd
+exercise:
+  title: Exercise 03
+  file: exercise_03.qmd
 ---
+
+::: {.callout-important appearance="minimal" icon="true"}
+### Reminder! Schedule adjustment deadline is February 13.
+
+Friday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.
+:::
+
 
 ## Overview
 
@@ -25,8 +38,6 @@ This week includes a review of data visualization and mapping with `{ggplot}` re
 
 ## Participate
 
-🖥️ [Transforming data with `{dplyr}` and `{tidyr}`](/slides/data-transformation.qmd)
+{{< include /_includes/_week_slides.qmd >}}
 
-## Practice
-
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.qmd)
+{{< include /_includes/_week_exercises.qmd >}}

@@ -23,7 +23,7 @@ options("tigris_use_cache" = TRUE)
 
 ## What is R?
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 R is best known as a *statistical* programming language often used in data science and research.
 
@@ -33,7 +33,7 @@ Like Python or C++, R is an **object-oriented, functional programming language**
 ::: {.column width="30%"}
 ![](images/R_logo.png)
 :::
-:::
+:::::
 
 ::: notes
 > A package is a bundle of code that a generous person has written, tested, and then given away. Most of the time packages are designed to solve a specific problem, so they to pull together functions related to a particular data science problem (e.g., data wrangling, visualisation, inference).
@@ -43,7 +43,7 @@ From [BasicBasics 2](https://rladiessydney.org/courses/ryouwithme/01-basicbasics
 
 ### R has been around a while 📜
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 R turns 30 years old this month 🎂
 
@@ -53,7 +53,7 @@ R is based an S---a language created at Bell Labs in 1976 to support exploratory
 ::: {.column width="60%"}
 ![Digital Equipment Corporation VAX 11/780 mainframe computer. Source: Boston Public Library [Copyright Spencer Grant](https://www.digitalcommonwealth.org/search/commonwealth:sn00b088z)](images/14085834343_552d1d3197_h.jpg)
 :::
-:::
+:::::
 
 ::: footer
 S ran on VAX 11/780 computers like the mainframe above.
@@ -99,7 +99,7 @@ It helps that R and RStudio are both free, most packages are open-source, and th
 
 ### R is flexible 🛠️
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 There can't be packages for everything---but sometimes it feels that way.
 
@@ -109,7 +109,7 @@ Packages let you work with everything from Microsoft Word documents to 3D render
 ::: {.column width="40%"}
 ![Created with `{rayshader}`](https://www.rayshader.com/reference/figures/smallhobart.gif){fig-alt="Animated loop showing a mountain with lighting from different directions."}
 :::
-:::
+:::::
 
 ::: footer
 If a package doesn't exist already, there are also packages like `{usethis}` or `{devtools}` that help *you* build it.
@@ -117,8 +117,8 @@ If a package doesn't exist already, there are also packages like `{usethis}` or 
 
 ## How does R work with spatial data?
 
-::: columns
-::: {.column width="65%"}
+:::::: columns
+:::: {.column width="65%"}
 The `{sf}` package, first published in 2016, is the most popular R package for spatial data.
 
 ::: {style="font-size: 80%;"}
@@ -128,19 +128,19 @@ Extension packages include:
 -   [stars](https://github.com/r-spatial/stars/) for raster data, and raster or vector data cubes (spatial time series)
 -   [sfnetworks](https://luukvdmeer.github.io/sfnetworks/) for geospatial network data
 :::
-:::
+::::
 
 ::: {.column width="35%"}
 ![](https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif){fig-alt="sf package logo" fig-align="center"}
 
 ![](https://luukvdmeer.github.io/sfnetworks/reference/figures/logo.png){fig-alt="sfnetworks package logo" fig-align="center" width="200"}
 :::
-:::
+::::::
 
 ### `{sf}` is built on open source libraries
 
-::: columns
-::: {.column width="65%"}
+:::::: columns
+:::: {.column width="65%"}
 Like QGIS, `{sf}` rests on a foundation of open source libraries:
 
 ::: {style="font-size: 80%;"}
@@ -149,16 +149,16 @@ Like QGIS, `{sf}` rests on a foundation of open source libraries:
 -   [PROJ](https://proj.org/en/9.2/index.html) (a coordinate transformation software library),
 -   and [GEOS](https://libgeos.org/) (a C/C++ library for computational geometry).
 :::
-:::
+::::
 
 ::: {.column width="35%"}
 ![](images/GDALLogoColor.svg){fig-alt="GDAL logo"}
 :::
-:::
+::::::
 
 ### How are `sf` objects organized
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 `sf` objects are an implementation of the simple feature standard.
 
@@ -168,7 +168,7 @@ Simple feature objects are a data frame attached to a "sticky" geometry column (
 ::: {.column width="60%"}
 ![Illustration (c) 2018 by [Allison Horst](https://twitter.com/allison_horst/status/1071456081308614656)](images/allison-horst_sf-illustration.jpeg)
 :::
-:::
+:::::
 
 ::: footer
 The geometry for a `sf` data frame is known as a simple feature collection (`sfc`) object. A `sfc` object is made up of `sfg` objects.
@@ -180,7 +180,7 @@ The `sf` vignette [Simple Feature for R](https://r-spatial.github.io/sf/articles
 
 -   `sf`, the table (data.frame) with feature attributes and "sticky" feature geometries, which **contains**
 -   `sfc`, the list-column with the geometries for each feature (record), which is **composed of**
-- `sfg`, the feature geometry of an individual simple feature.
+-   `sfg`, the feature geometry of an individual simple feature.
 
 ### Reading a `sf` object from a file
 
@@ -275,7 +275,7 @@ Or, if you drop the geometry, a `sf` object is just like a spreadsheet:
 st_drop_geometry(md)
 ```
 
-### Ploting `sf` objects 
+### Ploting `sf` objects
 
 You can plot data with R's built-in `plot()` function:
 
@@ -302,8 +302,8 @@ The `sf` package adds S3 methods for the base `plot()` and `summary()` functions
 
 ### Using `{sf}` with tidyverse packages
 
-::: columns
-::: {.column width="65%"}
+:::::: columns
+:::: {.column width="65%"}
 The [tidyverse](https://www.tidyverse.org/) family of R packages developed by [Posit](https://posit.co) (formerly known as RStudio) including:
 
 ::: {style="font-size: 80%;"}
@@ -311,12 +311,12 @@ The [tidyverse](https://www.tidyverse.org/) family of R packages developed by [P
 -   [dplyr](https://dplyr.tidyverse.org/) for common data manipulation challenges, such as filtering, re-arranging, or summarizing data
 -   [readr](https://readr.tidyverse.org/) for reading rectangular data in a fast and friendly way
 :::
-:::
+::::
 
 ::: {.column width="35%"}
 ![](images/tidyverse-packages.png){fig-alt="Tidyverse packages"}
 :::
-:::
+::::::
 
 ::: notes
 Notably, the development of these packages is supported by Posit---but they are fully open-source and include contributions from quite literally *hundreds* of individual developers (291 for ggplot2 and 260 for dplyr).
@@ -353,7 +353,7 @@ glimpse(md)
 
 ### Use `{sf}` for spatial transformations
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 `{sf}` includes a range of spatial transformation functions with names matching the spatial functions of [PostGIS](https://postgis.net/).
 
@@ -363,10 +363,9 @@ To show how this works, we can get the center of Baltimore City, buffer by 25 mi
 ::: {.column width="40%"}
 ![ST_intersects relationships with different geometry types](images/st_intersects_postgis-intro.png)
 :::
-:::
+:::::
 
 ::: notes
-
 Examples of tasks you might usually do [geoprocessing tools from ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/tool-reference/main/arcgis-pro-tool-reference.htm) or the [QGIS Processing Toolbox](https://docs.qgis.org/3.28/en/docs/user_manual/processing/toolbox.html) at included with the `{sf}`, `{lwgeom}`, or another R package.
 
 -   Get a center point for Baltimore City with `st_centroid()`

@@ -7,7 +7,10 @@ options(tigris_use_cache = TRUE)
 
 theme_set(theme_void())
 
-update_geom_defaults(ggplot2::GeomSf, list(color = "white", alpha = 0.85, linewidth = 0.05))
+update_geom_defaults(
+  ggplot2::GeomSf,
+  list(color = "white", alpha = 0.85, linewidth = 0.05)
+)
 
 state_name <- "Maryland"
 county_name <- c("Baltimore city", "Baltimore County")
@@ -47,7 +50,7 @@ edu_birth_place_src <- get_acs(
 edu_birth_place_wide <- get_acs(
   geography = "tract",
   state = state_name,
-  variables =  c(
+  variables = c(
     "Total_" = "B06009_001",
     "Less than HS_" = "B06009_002",
     "HS or equivalent_" = "B06009_003",
@@ -114,7 +117,6 @@ var2 <- get_acs(
 )
 
 # etc.
-
 
 select_tables <- c(
   "B06009",

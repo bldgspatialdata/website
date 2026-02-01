@@ -36,10 +36,12 @@ Last updated: {{< meta date-modified >}}
 
 By the end of the semester, you will be able to:
 
+-   use R and RStudio to read, write, and edit R code
+-   use GitHub for version control and collaboration
 -   read and write spatial data from a wide range of file formats and web services
--   tidy, transform, and visualize spatial data to understand the spatial and non-spatial distribution of attributes
+-   tidy, transform, and visualize data to understand the spatial and non-spatial attributes
 -   measure the spatial attributes or relationships between features and transform feature geometry
--   use Quarto to create presentations and reproducible reports and use GitHub for version control and collaboration.
+-   use Quarto to create presentations and reproducible reports
 
 ## Communication
 
@@ -69,9 +71,8 @@ Most of the reading for this class will come from these three books:
 
 -   [R for Data Science](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garret Grolemund
 -   [Geocomputation with R](https://r.geocompx.org/) by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow
--   [All Data Are Local: Thinking Critically in a Data-Driven Society](https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data) by Yanni Alexander Loukissas
 
-All three books are available for free online or available for purchase. Additional readings are listed on the page for each week's session.
+Both books are available for free online or available for purchase as a physical copy from online retailers. Additional open access readings are listed on the page for each week's session.
 
 ## Assessment
 
@@ -116,9 +117,15 @@ Class sessions may include short quizzes or collaborative learning activities. T
 
 ### Final project
 
+::: {.callout-important}
+### Spring 2026 Work in progress
+
+The details of the final project may change in the next few weeks. Please look out for updates.
+:::
+
 All students will participate in a final project that can be completed independently or in collaboration with other students in the class.
 
-The final project is an opportunity for students to focus on the "models of local practice" described in *All Data Are Local*.
+<!-- The final project is an opportunity for students to focus on the "models of local practice" described in *All Data Are Local*. -->
 
 Students are encouraged to connect their project to the Baltimore area (or some place within the Baltimore area).
 
@@ -134,28 +141,28 @@ Typically, the final project should fit into one of two categories:
 
 The assessment of the project is based on three pieces:
 
--   A **project proposal** (1-2 pages in length) must be submitted by **November 13 (updated)**.
--   An **project presentation** delivered in-class on **December 6 - tentative**.
--   A **project repository** completed by **December 14 - tentative**.
+-   A **project proposal** (1-2 pages in length) <!-- must be submitted by **November 13 (updated)**.-->
+-   An recorded **project presentation** <!-- delivered in-class on **December 6 - tentative**.-->
+-   A **project repository** <!-- completed by **December 14 - tentative**. -->
 
-Evaluation of the final project will be based on both self-assessment by the individual student or group and an instructor assessment. The instructor can also offer bonus points in recognition of exceptional work or, if necessary, adjust points awarded through the student self-assessment.
+Evaluation of the final project will be based on both self-assessment and an instructor assessment. The instructor can also offer bonus points in recognition of exceptional work or, if necessary, adjust points awarded through the student self-assessment.
 
 ### Grading
 
 Assessment in this course is intended to help you focus on completing assignments and keeping up with the material---not getting everything perfect along the way.
 
-You can earn up to a total of 100 points in this class by completing in-class activities (15 point), submitting at least 10 weekly check-ins (15 points), completing practice exercises (20 points), and completing all four parts of the final project (50 points).
+You can earn up to a total of 100 points in this class by attending and completing in-class activities (25 points), submitting weekly check-ins (15 points), completing practice exercises (20 points), and completing all four parts of the final project (40 points).
 
 | Assessment                             | Points |
 |----------------------------------------|--------|
-| In-class activities                    | 15     |
+| Attendance/In-class activities         | 25     |
 | Weekly check-in                        | 15     |
 | Practice exercises                     | 20     |
 | *Final project*                        |        |
 | Project proposal                       | 5      |
 | Presentation                           | 10     |
-| Project repository                     | 25     |
-| Project self-assessment                | 10     |
+| Project repository                     | 20     |
+| Project self-assessment                | 5      |
 
 ## Policies & Resources
 
@@ -193,13 +200,13 @@ Other Resources:
 :::
 
 ::: {.callout-important appearance="minimal"}
-### [Child Abuse and Neglect](https://oei.umbc.edu/child-protection/)
+### Child Abuse and Neglect
 
 Please note that Maryland law and [UMBC policy](https://oei.umbc.edu/child-protection/) require that faculty report all disclosures or suspicions of child abuse or neglect to the Department of Social Services and/or the police even if the person who experienced the abuse or neglect is now over 18.
 :::
 
 ::: {.callout-important appearance="minimal"}
-### [Parenting and Pregnant Students](https://www2.ed.gov/about/offices/list/ocr/docs/pregnancy.html)
+### Parenting and Pregnant Students
 
 UMBC's [Policy on Sexual Misconduct, Sexual Harassment and Gender Discrimination](https://ecr.umbc.edu/policy-on-sexual-misconduct-sexual-harassment-and-gender-discrimination/) expressly prohibits all forms of Discrimination and Harassment on the basis of sex, including pregnancy.[Resources for pregnant, parenting and breastfeeding students](https://ecr.umbc.edu/students/) are available through the University's Office of Equity and Civil Rights.  Pregnant and parenting students are encouraged to contact the Title IX Coordinator to discuss plans and ensure ongoing access to their academic program with respect to a leave of absence or return following leave related to pregnancy, delivery, adoption, breastfeeding and/or the early months of parenting.
 
@@ -212,7 +219,7 @@ In addition, students who are pregnant and have an impairment related to their p
 
 [UMBC Policy](https://provost.umbc.edu/wp-content/uploads/sites/46/2022/08/Religious-Observance-Academic-Policy-2022_2023.pdf) provides that students should not be penalized because of observances of their religious beliefs, and that students shall be given an opportunity, whenever feasible, to make up within a reasonable time any academic assignment that is missed due to individual participation in religious observances. It is the responsibility of the student to inform the instructor of any intended absences or requested modifications for religious observances in advance, and as early as possible.
 
-For questions or guidance regarding religious observance accommodations, please contact the Office of Equity and Civil Rights at [ecr\@umbc.edu](mailto:ecr@umbc.edu).
+For questions or guidance regarding religious observance accommodations, please contact the Office of Equity and Civil Rights (ECR) at [ecr\@umbc.edu](mailto:ecr@umbc.edu).
 
 ### Plagiarism
 

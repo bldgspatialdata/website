@@ -2,7 +2,7 @@
 
 -   [Ch. 6 Data tidying](https://r4ds.hadley.nz/data-tidy.html) in @wickhamDataScienceImport2023
 -  [Ch. 14 Data cleaning](https://datamgmtinedresearch.com/clean) in @lewisDataManagementLargeScale2024
--   [Ch. 1 Local Origins](https://direct.mit.edu/books/oa-monograph/4323/chapter/181048/LOCAL-ORIGINS), [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA), and [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019
+<!-- -   [Ch. 1 Local Origins](https://direct.mit.edu/books/oa-monograph/4323/chapter/181048/LOCAL-ORIGINS), [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA), and [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019 -->
 
 ### Optional readings
 

@@ -1,28 +1,38 @@
 ---
-title: "Week 11"
+title: Week 11
 order: 11
-date: 2024-11-06
-subtitle: "Reading and writing spatial data files and services"
-abstract: "This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services."
+date: 2026-04-08
+subtitle: Exploring American Community Survey data with `{tidycensus}`
 ---
 
-::: {.callout-important appearance="simple"}
-Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}.
+::: {.callout-important}
+### Deadline to withdraw from a course
+
+Friday, April 3 is the last day to withdraw from individual courses.
 :::
-
-## Overview
-
-File formats for spatial data have developed and changed over time with different file types serving different specialized needs. Spatial data can also be stored and made accessible through web services running on remote servers. It is helpful to learn how to access data in many different forms and places.
-
-### Key Objectives
-
--   Review uses of common data file formats and web services
--   Practice downloading spatial data using  [{RSocrata}](https://github.com/Chicago/RSocrata)
 
 ## Prepare
 
-{{< include _readings_read-write.qmd >}}
+{{< include _readings_census.qmd >}}
 
 ## Participate
 
-🖥️ [Reading and writing spatial data](/slides/spatial-data-io.qmd)
+During class, we will review this sample code as an exercise.
+
+```{r}
+#| file: samples/week_10_practice-code-sample.R
+#| eval: false
+#| code-fold: true
+#| code-summary: "Practice exercise"
+```
+
+<!--
+Solutions for this sample code are now available here.
+
+```{r}
+#| file: samples/week_10_demo-code-sample.R
+#| eval: false
+#| code-fold: true
+#| code-summary: "Practice solutions"
+```
+-->

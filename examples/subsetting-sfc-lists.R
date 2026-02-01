@@ -18,4 +18,3 @@ geometry <- nc[["geometry"]]
 geometry[1]
 
 class(geometry[[1]])
-

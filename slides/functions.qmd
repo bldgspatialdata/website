@@ -16,7 +16,6 @@ library(tidyverse)
 
 ::: footer
 Source: [How to create your own function in R](https://www.rforecology.com/post/how-to-create-your-own-function-in-r/) (R for Ecology)
-
 :::
 
 ### Why functions?
@@ -30,8 +29,8 @@ Source: [How to create your own function in R](https://www.rforecology.com/post/
 
 Refactoring is the process of making code:
 
-- easier to understand
-- cheaper to modify
+-   easier to understand
+-   cheaper to modify
 
 ...without changing behavior.
 
@@ -174,7 +173,6 @@ From [Unifying principles](https://design.tidyverse.org/unifying.html) in [Tidy 
 :::
 
 ::: notes
-
 Notes excerpted from Tidy design principles:
 
 1.  It is human centered, i.e. the tidyverse is designed specifically to support the activities of a human data analyst.
@@ -187,4 +185,3 @@ Notes excerpted from Tidy design principles:
 :::
 
 # Pipelines
-

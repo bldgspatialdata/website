@@ -1,10 +1,16 @@
 ---
-title: "Week 2"
+title: Week 2
 order: 2
-date: 2024-09-04
-subtitle: "Visualizing spatial data with `{ggplot2}`"
-abstract: "Learn to make plots and maps using the `{ggplot}` package. Visualization is a key method in learning how to explore, tidy, and interpret data."
+date: 2025-02-04
+subtitle: Visualizing data and making maps with `{ggplot2}`
+abstract: Learn to make plots and maps using the `{ggplot}` package. Visualization is a key method in learning how to explore, tidy, and interpret data.
 image: /files/ggplot2_hex_logo.png
+slides:
+  title: Visualizing spatial data with `{ggplot2}`
+  file: data-visualization.qmd
+exercise:
+  title: Exercise 02
+  file: exercise_02.qmd
 ---
 
 ```{r}
@@ -24,18 +30,20 @@ This week is all about making plots and maps using the `{ggplot}` package. Learn
 -   Practice plotting and mapping data with `{ggplot2}`
 -   Practice mapping data with `{mapview}`
 
+```{=html}
 <!--
 TODO: Make sure interactive maps are included in the slides/exercise
 -->
+```
 
 ### Key Skills
 
-- Using keyboard shortcuts in RStudio
-- Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
-- Creating static maps using `geom_sf()` and `coord_sf()`
-- Creating interactive maps using `mapview()`
-- Using `theme_` functions to customize the appearance of a plot
-- Using `labs()` to add labels to a plot
+-   Using keyboard shortcuts in RStudio
+-   Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
+-   Creating static maps using `geom_sf()` and `coord_sf()`
+-   Creating interactive maps using `mapview()`
+-   Using `theme_` functions to customize the appearance of a plot
+-   Using `labs()` to add labels to a plot
 
 ## Prepare
 
@@ -43,8 +51,6 @@ TODO: Make sure interactive maps are included in the slides/exercise
 
 ## Participate
 
-🖥️ [Visualizing spatial data with `{ggplot2}`](../slides/data-visualization)
+{{< include /_includes/_week_slides.qmd >}}
 
-## Practice
-
-🛠️️ [Exercise 0{{< meta order >}}](../exercises/exercise_0{{< meta order >}}.qmd)
+{{< include /_includes/_week_exercises.qmd >}}

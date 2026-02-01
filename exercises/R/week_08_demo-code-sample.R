@@ -61,9 +61,12 @@ us_states |>
 us_states |>
   pivot_longer(
     cols = c(
-      "total_pop_10", "total_pop_15",
-      "median_income_10", "median_income_15",
-      "poverty_level_10", "poverty_level_15"
+      "total_pop_10",
+      "total_pop_15",
+      "median_income_10",
+      "median_income_15",
+      "poverty_level_10",
+      "poverty_level_15"
     ),
     names_to = "variable"
   ) |>
@@ -174,7 +177,8 @@ us_states |>
   geom_jitter(
     # Mapping color (or fill) to region may reveal new patterns
     aes(x = variable, y = value, color = REGION),
-    size = 2, alpha = 0.7
+    size = 2,
+    alpha = 0.7
   ) +
   # facet_wrap with "free" scales creates a panel for each different variable
   # this is only possible because we converted our data into a long format
@@ -219,10 +223,12 @@ us_states |>
   )
 
 # Because this code is more generalizable it is easy to wrap in a function
-plot_us_states_variable <- function(data,
-                                    demographic = "median_income",
-                                    year = 2015,
-                                    alpha = 0.75) {
+plot_us_states_variable <- function(
+  data,
+  demographic = "median_income",
+  year = 2015,
+  alpha = 0.75
+) {
   data |>
     pivot_us_states_longer() |>
     filter(variable == demographic, year == year) |>
@@ -283,7 +289,9 @@ us_states_2015_changes <- us_states_longer |>
   # year
   filter(year == 2015) |>
   select(
-    "NAME", "REGION", starts_with("change_")
+    "NAME",
+    "REGION",
+    starts_with("change_")
   )
 
 # gt supports grouped data nicely for making a basic table
@@ -297,7 +305,7 @@ us_states_2015_changes |>
   group_by(REGION) |>
   gt() |>
   cols_label_with(
-    fn = \(x){
+    fn = \(x) {
       x |>
         str_remove("change_") |>
         str_replace("_", " ") |>

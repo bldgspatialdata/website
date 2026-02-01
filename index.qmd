@@ -1,6 +1,10 @@
----
-title: "GES 668: Building Spatial Datasets (Fall 2024)"
----
+```{r}
+#| output: asis
+#| echo: false
+cat(
+  '---\ntitle: "{{< var course.number >}}: {{< var course.name >}} {{< var course.semester >}}"\n---'
+)
+```
 
 {{< include _summary.qmd >}}
 

@@ -6,6 +6,14 @@ suppress-bibliography: true
 link-citations: false
 ---
 
+
+::: {.callout-important}
+### Details for the final project are a work-in-progress
+
+The details for the final project are still being finalized for the spring 2026 semester. Please consider this preliminary guidance and look out for additional instructions.
+:::
+
+
 ## Overview
 
 The final project is an opportunity for you to practice the spatial data skills we've been working on in this course while also exploring your interests and the potential for spatial data to support real-world goals.
@@ -18,11 +26,11 @@ Your project should focus on a topic area or dataset that is relevant to your pe
 
 This project has three parts:
 
-1.  A project proposal (due **{{< var dates.project.proposal >}}**)
-2.  An short *recorded* presentation about your project (due **{{< var dates.project.presentation >}}**)
-3.  A project GitHub repository including code, data, output files, and a README (due **{{< var dates.project.repo >}}**)
+1.  A project proposal <!-- (due **{{< var dates.project.proposal >}}**) -->
+2.  An short *recorded* presentation about your project <!-- (due **{{< var dates.project.presentation >}}**) -->
+3.  A project GitHub repository including code, data, output files, and a README <!-- (due **{{< var dates.project.repo >}}**) -->
 
-You are also expected to complete a final self-assessment reflecting on your project by **{{< var dates.project.self >}}** .
+<!-- You are also expected to complete a final self-assessment reflecting on your project by **{{< var dates.project.self >}}** . -->
 
 <!--
 You are also expected to share peer feedback on two other project presentations completed by **{{< var dates.project.feedback >}}** (updated).
@@ -43,7 +51,7 @@ Format your proposal as [Quarto document](https://quarto.org/) with citations wi
 - links to any published data or related resources
 - reproducible code blocks for any preliminary data analysis you completed to support your proposal
 
-**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. [Zotero](https://www.zotero.org/) is a recommended citation management tool that is [easy to use with RStudio](https://quarto.org/docs/visual-editor/technical.html#citations) when editing Quarto documents. 
+**Don't forget to cite your sources!** While an extensive literature review is unnecessary, reviewing how other researching and practitioners have used the same or similar spatial data may give you ideas for your own project. [Zotero](https://www.zotero.org/) is a recommended citation management tool that is [easy to use with RStudio](https://quarto.org/docs/visual-editor/technical.html#citations) when editing Quarto documents.
 
 ### Identifying a data source
 
@@ -54,7 +62,7 @@ Students are encouraged to build a project using data from a well-documented and
 
 Accessing the data should be a reproducible process so make sure your data does not have any restrictions that prevent you to include the data as part of your project repository.
 
-See the readings and materials from [week 9](https://bldgspatialdata.github.io/website/weeks/week_09.html) or [week 10](https://bldgspatialdata.github.io/website/weeks/week_10.html) for more background information on these sources.
+<!-- See the readings and materials from [week 9](/weeks/week_09.qmd) or [week 10](/weeks/week_10.qmd) for more background information on these sources. -->
 
 :::{.callout-important appearance='simple' icon=true}
 ### A caution about using different data source
@@ -74,8 +82,9 @@ Your goals could include answering a research question, making the case for a pu
 
 Your goals could also include developing your own ability to analyze a specific type of data or exploring an academic interest.
 
-**Ask yourself:** Who might benefit from your proposed project? How can your project can avoid causing people harm?
+**Always ask yourself:** Who might benefit from your proposed project? How can your project can avoid causing people harm?
 
+<!--
 In framing your project, look for opportunities to apply one or more of the six models of local practice described in @loukissasAllDataAre2019:
 
 -   Look at the data setting, not just the data set
@@ -86,6 +95,7 @@ In framing your project, look for opportunities to apply one or more of the six 
 -   Use data to build relationships
 
 Is your project designed around what Loukissas calls the common "ambitions" for working data---orientation, access, analysis, and optimization? Or, are you trying to promote critical reflection on the local conditions of data using strategies such as place making, restraint, reflexivity, or contestation?
+-->
 
 Your goals may change between your initial proposal and the completion of your project but your final presentation should include both an explanation of your goals and how your goals do or do not engage with critical approaches to spatial data.
 

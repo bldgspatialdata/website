@@ -1,17 +1,24 @@
 ---
 title: "Week 1"
 order: 1
-date: 2024-08-28
-subtitle: "Welcome to GES668"
+date: 2025-01-28
+subtitle: "Welcome to GES668 / Get started with spatial data in R"
 abstract: "Review the course syllabus and structure. Get started with spatial data using `{sf}` and the tidyverse."
 image: /slides/images/allison-horst_sf-illustration.jpeg
+show_review: false
+slides:
+  title: Introduction to Spatial Data with R
+  file: spatial-data.qmd
+exercise:
+  title: Exercise 01
+  file: exercise_01.qmd
 ---
 
 ## Overview
 
 Welcome to Building Spatial Datasets!
 
-Our first session starts with a general introduction to the course and a quick introduction to using R for working with spatial data.
+Our first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.
 
 ### Key Objectives
 
@@ -38,17 +45,17 @@ Our first session starts with a general introduction to the course and a quick i
 
 ### Getting ready for the first class
 
-Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out [the Prerequisites section from R for Data Science](https://r4ds.hadley.nz/intro#prerequisites) (one of a few books we'll use in our class).
+- [ ] Install [R and RStudio](https://posit.co/download/rstudio-desktop/) on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out [the Prerequisites section from R for Data Science](https://r4ds.hadley.nz/intro#prerequisites) (one of a few books we'll use in our class).
 
-Install Git on your computer. The easiest option is to [install the GitHub Desktop application](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) (which installs Git at the same time). Alternatively, [Happy Git and GitHub for the useR](https://happygitwithr.com/install-git) details a few different ways to install Git on Windows, OSX, or Linux.
+- [ ] [Sign up for a GitHub user account](https://github.com/signup). I use GitHub to distribute assignments and you will use GitHub to submit assignments. [GitHub](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) is one of the most popular platform for collaborative coding and makes using Git for version control easier. People use GitHub for everything from writing R packages to textbooks!
 
-[Sign up for a GitHub user account](https://github.com/signup). I use GitHub to distribute assignments and you will use GitHub to submit assignments. [GitHub](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) makes it easier to use Git for version control and is the most popular platform for collaborative development work. People use GitHub for everything from writing R packages to textbooks!
+- [ ] Install Git on your computer. One easy option is to [install the GitHub Desktop application](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) (which installs Git at the same time). Alternatively, [Happy Git and GitHub for the useR](https://happygitwithr.com/install-git) details a few different ways to [download and install](https://git-scm.com/install/) Git on Windows, OSX, or Linux.
 
-[Join our course Discord](https://discord.gg/k7JkwD6R). I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.
+- [ ] [Join our course Discord](https://discord.gg/k7JkwD6R). I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.
 
-[Complete the student survey](https://docs.google.com/forms/d/e/1FAIpQLScRg0oOK9y50PrwhRAvux0-ANVvi6vkeebATHX9iH4Lia5fbA/viewform?usp=sf_link). This is how you share your GitHub username. I'd also love to know more about what experiences you're bringing to the class and what you hope to learn.
+- [ ] [Complete the student survey](https://docs.google.com/forms/d/e/1FAIpQLScRg0oOK9y50PrwhRAvux0-ANVvi6vkeebATHX9iH4Lia5fbA/viewform?usp=sf_link). This is how you share your GitHub username. I'd also love to know more about what experiences you're bringing to the class and what you hope to learn.
 
-If you have not done any programming before, I'd recommend taking some time to review [The Very Basics](https://rstudio-education.github.io/hopr/basics.html) and [Packages and Help Pages](https://rstudio-education.github.io/hopr/packages.html) (section 2 and 3 from [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)).
+- [ ] If you have not done any programming before, I recommend taking some time to review [The Very Basics](https://rstudio-education.github.io/hopr/basics.html) and [Packages and Help Pages](https://rstudio-education.github.io/hopr/packages.html) (section 2 and 3 from [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)).
 :::
 
 {{< include _readings_intro.qmd >}}
@@ -57,11 +64,9 @@ If you have not done any programming before, I'd recommend taking some time to r
 
 🖥️ [Welcome to GES 668](/slides/welcome.qmd)
 
-🖥️ [Introduction to Spatial Data with R](/slides/spatial-data.qmd)
+{{< include /_includes/_week_slides.qmd >}}
 
-## Practice
-
-🛠️️ [Exercise 0{{< meta order >}}](/exercises/exercise_0{{< meta order >}}.qmd)
+{{< include /_includes/_week_exercises.qmd >}}
 
 <!--
 ### Review

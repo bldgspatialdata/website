@@ -2,14 +2,9 @@
 title: "Exercise 03"
 order: 3
 status: available
-date-due: 2024-09-20
 date-modified: last-modified
 error: true
 ---
-
-::: {.callout-important appearance="minimal"}
-Exercise due on {{< meta date-due >}}
-:::
 
 ## Overview
 
@@ -44,35 +39,35 @@ condition:
 -   Had an arrival delay of two or more hours
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
 -   Flew to Houston (`IAH` or `HOU`)
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
 -   Were operated by United, American, or Delta
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
 -   Departed in summer (July, August, and September)
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
 -   Arrived more than two hours late, but didn't leave late
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
@@ -80,7 +75,7 @@ flights |>
     flight
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
@@ -88,7 +83,7 @@ Sort `flights` to find the flights with longest departure delays. Find
 the flights that left earliest in the morning.
 
 ```{r}
-flights |> 
+flights |>
   arrange(____)
 ```
 
@@ -96,7 +91,7 @@ Sort `flights` to find the fastest flights. (Hint: Try including a math
 calculation inside of your function.)
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
@@ -164,15 +159,15 @@ Rename `air_time` to `air_time_min` to indicate units of measurement and
 move it to the beginning of the data frame.
 
 ```{r}
-flights |> 
+flights |>
   rename(____)
 ```
 
 Why doesn't the following work, and what does the error mean?
 
 ```{r}
-flights |> 
-  select(tailnum) |> 
+flights |>
+  select(tailnum) |>
   arrange(arr_delay)
 ```
 
@@ -188,7 +183,7 @@ disentangle the effects of bad airports vs. bad carriers? Why/why not?
 `flights |> group_by(carrier, dest) |> summarize(n())`)
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 
@@ -196,7 +191,7 @@ Find the flights that are most delayed upon departure from each
 destination.
 
 ```{r}
-flights |> 
+flights |>
   ____
 ```
 

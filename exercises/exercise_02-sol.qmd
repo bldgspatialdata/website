@@ -2,7 +2,6 @@
 title: "Exercise 02 (Solutions - Incomplete)"
 order: 2
 status: Available
-date-due: 2023-09-11
 date-modified: last-modified
 ---
 
@@ -28,7 +27,11 @@ library(rnaturalearth)
 We are going to use `ne_download()` to download the `countries` dataset and then use `st_centroid()` to make a version of this dataset where the features show the center of each country instead of the boundaries:
 
 ```{r}
-countries <- ne_download(scale = "medium", type = "countries", returnclass = "sf")
+countries <- ne_download(
+  scale = "medium",
+  type = "countries",
+  returnclass = "sf"
+)
 
 countries <- filter(countries, REGION_UN != "Antarctica")
 
@@ -39,7 +42,7 @@ countries_center <- st_centroid(countries)
 glimpse(countries)
 ```
 
-Some of the following exercises don't require a sf object. You can also use the `mpg` or `storms` dataset we looked at during this week's lecture: 
+Some of the following exercises don't require a sf object. You can also use the `mpg` or `storms` dataset we looked at during this week's lecture:
 
 ```{r}
 glimpse(mpg)
@@ -117,7 +120,10 @@ For this next section, you can continue to use `countries` as your dataset or lo
 ```{r}
 rnaturalearth::ne_find_vector_data()
 
-populated_places <- rnaturalearth::ne_download(type = "populated_places", returnclass = "sf")
+populated_places <- rnaturalearth::ne_download(
+  type = "populated_places",
+  returnclass = "sf"
+)
 ```
 
 First, find two continuous variables and create a scatter plot with `geom_point()`:
@@ -130,7 +136,10 @@ ggplot(data = populated_places) +
 Next, look in your data for one discrete and one continuous variable then use `aes()` to set those variables for `geom_col()`. The `geom_col()` function is similar to `geom_bar()` but you *must* provide *both* an x *and* a y variable:
 
 ```{r}
-north_central_america <- filter(countries, SUBREGION %in% c("Northern America", "Central America"))
+north_central_america <- filter(
+  countries,
+  SUBREGION %in% c("Northern America", "Central America")
+)
 
 ggplot(data = north_central_america) +
   geom_col(aes(POP_EST, NAME))
@@ -141,7 +150,7 @@ Now, use `geom_sf()` mapping your continuous variable to fill or color and your 
 ```{r}
 ggplot(data = countries) +
   geom_sf(aes(fill = POP_EST), color = NA) +
-  facet_wrap(~ TYPE)
+  facet_wrap(~TYPE)
 ```
 
 Finally, create a map using a different aesthetic that we haven't tried yet. Options could include `linewidth`, `size`, `alpha`, or `linetype`:
@@ -158,7 +167,7 @@ If so, why do you think it works well? If not, why does it *not* work well? ____
 ### Using scales and colors
 
  `{ggplot2}` uses naming conventions to organize the scale functions. This isn't the same for every function but they look something like: "scale_<aesthetic>_<color scheme>_<type of data>". So, `scale_fill_viridis_d()` applies the Viridis color scale to a discrete variable mapped to the fill aesthetic.
- 
+
 Use the data to create a plot and take a look at the colors set when you use `scale_color_viridis_c()`:
 
 ```{r}
@@ -238,7 +247,7 @@ We aren't doing much with interactivity in this class (or exercise) but I did wa
 ```{r}
 p <- ggplot(data = countries) +
   geom_point(aes(POP_EST, GDP_MD, color = REGION_UN))
-  
+
 plotly::ggplotly(
   p = p
 )
@@ -263,7 +272,7 @@ ggplot(data = countries) +
   geom_sf(color = "black", fill = NA) +
   theme(
     panel.grid = element_blank()
-    )
+  )
 ```
 
 Now, try "zooming" into a selected area of your map using the `xlim` and `ylim` arguments for `coord_sf()`:
@@ -321,7 +330,7 @@ ggplot() +
   geom_sf(
     data = usa,
     color = "orange"
-    ) +
+  ) +
   geom_sf(
     data = simple_usa,
     color = "purple"
@@ -340,7 +349,7 @@ ggplot() +
   geom_sf(
     data = usa,
     color = "orange"
-    ) +
+  ) +
   geom_sf(
     data = smooth_usa,
     color = "purple",

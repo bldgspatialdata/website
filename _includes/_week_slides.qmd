@@ -1,0 +1,1 @@
+🖥️ [{{< meta slides.title >}}](/slides/{{< meta slides.file >}})

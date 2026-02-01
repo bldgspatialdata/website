@@ -5,8 +5,8 @@ storms |>
     desc(year)
   ) |>
   filter(
-    name %in% c("Maria", "Marie", "Mary",
-                "Marcus", "Michael", "Mike", "Mortimer")
+    name %in%
+      c("Maria", "Marie", "Mary", "Marcus", "Michael", "Mike", "Mortimer")
   ) |>
   distinct(name, .keep_all = TRUE)
 

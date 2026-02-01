@@ -19,16 +19,18 @@ fips_codes <- fips_codes |>
 
 cb_counties_joined <- cb_counties |>
   left_join(
-  fips_codes,
-  by = join_by(GEOID)
-) |>
+    fips_codes,
+    by = join_by(GEOID)
+  ) |>
   mutate(
     NAME = str_to_upper(NAME),
     state = str_to_upper(state)
   ) |>
   st_drop_geometry() |>
   distinct(
-    NAME, state, .keep_all = TRUE
+    NAME,
+    state,
+    .keep_all = TRUE
   )
 
 loads |>
@@ -49,8 +51,3 @@ loads |>
       CNTYNAME == NAME
     )
   )
-
-
-
-
-

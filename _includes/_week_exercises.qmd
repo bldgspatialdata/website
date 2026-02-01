@@ -1,0 +1,3 @@
+## Practice
+
+🛠️️ [{{< meta exercise.title >}}](/exercises/{{< meta exercise.file >}})

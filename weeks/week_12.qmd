@@ -1,25 +1,32 @@
 ---
-title: "Week 12"
+title: Week 12
 order: 12
-date: 2024-11-13
-subtitle: "Creating and managing spatial metadata"
-abstract: "Learn about both the basics of metadata and specialized spatial metadata standards. Review examples of READMEs and other types of project documentation."
-image: /slides/images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png
+date: 2026-04-15
+subtitle: Reading and writing spatial data files and services
+abstract: This session is focused on learning to read and write a range of spatial data file types and to access spatial data through web services.
+slides:
+  title: Reading and writing spatial data
+  file: spatial-data-io.qmd
 ---
+<!--
+::: {.callout-important appearance="simple"}
+Reminder! Your **project proposal** is due by {{< var dates.project.proposal >}}.
+:::
+-->
 
 ## Overview
 
-This session introduces the basics of metadata and specialized spatial metadata standards. We will also explore how to write READMEs for both data and project documentation.
+File formats for spatial data have developed and changed over time with different file types serving different specialized needs. Spatial data can also be stored and made accessible through web services running on remote servers. It is helpful to learn how to access data in many different forms and places.
 
-## Key Objectives
+### Key Objectives
 
--   Review examples of READMEs for data sets and projects
--   Practice working with data dictionaries and the [{labelled} package](https://larmarange.github.io/labelled/).
+-   Review uses of common data file formats and web services
+-   Practice downloading spatial data using  [{RSocrata}](https://github.com/Chicago/RSocrata)
 
 ## Prepare
 
-{{< include _readings_metadata.qmd >}}
+{{< include _readings_read-write.qmd >}}
 
 ## Participate
 
-🖥️ [Creating and managing spatial metadata](/slides/spatial-metadata.qmd)
+{{< include /_includes/_week_slides.qmd >}}

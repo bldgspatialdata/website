@@ -51,4 +51,3 @@ ggplot(data) +
   aes(x = bill_length_mm, y = bill_depth_mm) +
   geom_point(colour = "#112446") +
   theme_minimal()
-

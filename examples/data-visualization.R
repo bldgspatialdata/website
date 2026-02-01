@@ -101,7 +101,6 @@ ggplot(data = storms_sf) +
 
 # NOTE: view defaults to max extent
 
-
 # coords_sf can be used to "zoom" map
 storms_bbox <- st_bbox(storms_sf)
 
@@ -218,7 +217,12 @@ storms_map <- ggplot() +
   )
 
 storms_map <- storms_map +
-  scale_color_distiller(type = "seq", direction = 1, palette = "YlOrRd", na.value = "gray60")
+  scale_color_distiller(
+    type = "seq",
+    direction = 1,
+    palette = "YlOrRd",
+    na.value = "gray60"
+  )
 
 storms_map <- storms_map +
   labs(
