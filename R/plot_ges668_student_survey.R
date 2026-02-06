@@ -60,6 +60,9 @@ plot_ges668_student_survey <- function(
       axis_text_size = 16,
       strip_text_size = 20
     ) +
+    ggplot2::scale_x_continuous(
+      labels = scales::label_number(accuracy = 1)
+    ) +
     ggplot2::theme(
       plot.margin = ggplot2::margin(0.1, 0.1, 0.1, 0.1, "in"),
       axis.title.x = ggplot2::element_text(hjust = 1, vjust = 0),
