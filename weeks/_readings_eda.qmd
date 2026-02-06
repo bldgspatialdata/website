@@ -1,9 +1,8 @@
 ### Required readings
 
--   [Ch. 11 Exploratory Data Analysis](https://r4ds.hadley.nz/eda) in @wickhamDataScienceImport2023
+-   [Ch. 11 Exploratory Data Analysis](https://r4ds.hadley.nz/EDA.html) in @wickhamDataScienceImport2023
 -   @mazotteWorkingOpenlyData2021
 
 ### Optional readings
 
--   [Ch. 12 Communication](https://r4ds.hadley.nz/communication) in @wickhamDataScienceImport2023
-
+-   [Ch. 12 Communication](https://r4ds.hadley.nz/communicate.html) in @wickhamDataScienceImport2023

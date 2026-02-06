@@ -1,8 +1,8 @@
 ### Required readings
 
--   [Ch. 2 Data visualization](https://r4ds.hadley.nz/data-visualize) in @wickhamDataScienceImport2023
+-   [Ch. 2 Data visualization](https://r4ds.hadley.nz/data-visualize.html) in @wickhamDataScienceImport2023
 -   [Ch. 6 Maps](https://ggplot2-book.org/maps.html) in @wickhamGgplot2ElegantGraphics2023
--   [Ch. 6 Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts) in @wickhamDataScienceImport2023
+-   [Ch. 6 Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts.html) in @wickhamDataScienceImport2023
 
 ### Optional readings
 
