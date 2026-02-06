@@ -32,7 +32,7 @@ Consider:
 
 # Exploratory data analysis
 
-This next section is largely excerpted from [R for Data Science (2e) - 11  Exploratory data analysis](https://r4ds.hadley.nz/eda#introduction).
+This next section is largely excerpted from [R for Data Science (2e) - 11  Exploratory data analysis](https://r4ds.hadley.nz/EDA.html#introduction).
 
 ## What do you *do* when you *do* exploratory data analysis?
 

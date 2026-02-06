@@ -4,7 +4,7 @@ order: 5
 date-modified: last-modified
 ---
 
-ℹ️ See [week {{< meta order >}}](https://bldgspatialdata.github.io/website/weeks/week_0{{< meta order >}}.html) for related slides and readings
+ℹ️ See [week {{< meta order >}}](/weeks/week_0{{< meta order >}}.qmd) for related slides and readings
 
 ## Overview
 
