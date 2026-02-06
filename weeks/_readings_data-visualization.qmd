@@ -9,7 +9,7 @@
 Additional resources on data visualization and mapping with R:
 
 -   ggplot2 workshop [part 1](https://www.youtube.com/watch?v=h29g21z0a68) and [part 2](https://www.youtube.com/watch?v=0m4yywqNPVY) with Thomas Lin Pedersen, 2020
--   [Ch. 9 Mapping](https://r.geocompx.org/mapping) in @lovelaceGeocomputation2025
+-   [Ch. 9 Making maps with R](https://r.geocompx.org/adv-map) in @lovelaceGeocomputation2025
 
 Additional reading on data visualization:
 
