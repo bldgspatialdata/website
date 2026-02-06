@@ -120,7 +120,7 @@ st_filter(
 
 ------------------------------------------------------------------------
 
-![](https://r.geocompx.org/04-spatial-operations_files/figure-html/relations-1.png)
+![](https://r.geocompx.org/figures/relations-1.png)
 
 ### Spatial joins
 
