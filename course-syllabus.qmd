@@ -96,20 +96,13 @@ Each week students are expected to submit a brief written check-in based on the 
 
 Your check-in response should be submitted via Google Forms before the start of each class session. You are also encouraged but not required to post your question to the class Discord where other students are able to reply. Partial credit will be awarded for incomplete check-in responses.
 
-Students are expected to **submit at least 10 weekly check-in responses** during the term so may skip up to 5 check-in responses without penalty. Weekly check-in assignments must be submitted before 11:59 am on the day *before* each class session. No late responses will be accepted for the weekly check-in.
+Weekly check-in assignments must be submitted before 11:59 am on the day *before* each class session. No late responses will be accepted for the weekly check-in.
 
 ### Practice exercises
 
 These exercises give you an opportunity to practice the application of concepts and code introduced in the readings and lectures. You may discuss lab assignments with other students; however, labs should be completed and submitted individually.
 
 Exercises are graded based on completion---so an effort to attempt all parts of the exercise will be awarded full credit. Some assignments may also include a bonus objective. An assignment with less than 80% of questions attempted will be considered incomplete. Incomplete assignments can be revised and resubmitted for full credit within a week of a student receiving my feedback.
-
--   3: Assignment is submitted, complete, and includes a complete bonus objective
--   2: Assignment is submitted and complete
--   1: Assignment is submitted but incomplete
--   0: Assignment not submitted
-
-Students are expected to **submit at least 10 exercises** during the term so may skip up to 2 exercises without penalty. Practice exercises are due the Monday before each class session. For example, if an exercise is introduced on Wednesday, August 30 and should be completed by 11:59 PM on Monday, September 4.
 
 ### In-class activities
 
