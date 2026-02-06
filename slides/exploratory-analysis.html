@@ -235,7 +235,7 @@
 <section>
 <section id="exploratory-data-analysis" class="title-slide slide level1 center" data-number="2">
 <h1><span class="header-section-number">2</span> Exploratory data analysis</h1>
-<p>This next section is largely excerpted from <a href="https://r4ds.hadley.nz/eda#introduction">R for Data Science (2e) - 11&nbsp; Exploratory data analysis</a>.</p>
+<p>This next section is largely excerpted from <a href="https://r4ds.hadley.nz/EDA.html#introduction">R for Data Science (2e) - 11&nbsp; Exploratory data analysis</a>.</p>
 </section>
 <section id="what-do-you-do-when-you-do-exploratory-data-analysis" class="title-slide slide level2 center scrollable" data-number="2.1">
 <h2><span class="header-section-number">2.1</span> What do you <em>do</em> when you <em>do</em> exploratory data analysis?</h2>
@@ -354,7 +354,7 @@
 <span id="cb1-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="exploratory-analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="sub-groups" class="slide level4">
 <h4>Sub-groups</h4>
 <p>To understand the subgroups, ask:</p>
@@ -374,7 +374,7 @@
 <span id="cb2-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="exploratory-analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 
 <section id="unusual-values-1" class="title-slide slide level3 center">
 <h3>Unusual values</h3>
@@ -412,7 +412,7 @@
 <span id="cb3-2"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="fu">aes</span>(<span class="at">color =</span> cut), <span class="at">binwidth =</span> <span class="dv">500</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="exploratory-analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 
 <section id="two-categorical-variables" class="title-slide slide level3 center">
 <h3>Two categorical variables</h3>
@@ -421,7 +421,7 @@
 <span id="cb4-2"><a></a>  <span class="fu">geom_count</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="exploratory-analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 
 <section id="two-numerical-variables" class="title-slide slide level3 center">
 <h3>Two numerical variables</h3>
@@ -430,7 +430,7 @@
 <span id="cb5-2"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="exploratory-analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" class="r-stretch"></section>
+<img data-src="exploratory-analysis_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 
 
 <section id="patterns-and-models" class="title-slide slide level2 center" data-number="2.9">
@@ -734,6 +734,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

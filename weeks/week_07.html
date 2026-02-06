@@ -74,11 +74,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 7 – GES 668 - Spring 2026">
-<meta property="og:description" content="This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.">
-<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/rforecology_functions-graphic.png">
+<meta property="og:description" content="This week we are learning more about the spatial, geometry, and geometric operations available through the {sf} package.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/GDALLogoColor.svg">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
-<meta property="og:image:height" content="1428">
-<meta property="og:image:width" content="2000">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -362,14 +360,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
-  </ul></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
-  <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
-  <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
+  <li><a href="#required-reading" id="toc-required-reading" class="nav-link" data-scroll-target="#required-reading">Required reading</a></li>
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   </ul>
@@ -381,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_07.html">Week 7</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 7</h1>
-<p class="subtitle lead">Writing functions and pipelines</p>
+<p class="subtitle lead">Applying spatial transformations and geometric operations using <code>{sf}</code></p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -405,7 +399,7 @@ ul.task-list li input[type="checkbox"] {
 <div>
   <div class="abstract">
     <div class="block-title">Summary</div>
-    This week is a more detailed look at functions as a key element of building reproducible data analysis pipelines.
+    This week we are learning more about the spatial, geometry, and geometric operations available through the <code>{sf}</code> package.
   </div>
 </div>
 
@@ -415,37 +409,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<section id="key-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<section id="key-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="key-objectives">Key Objectives</h4>
 <ul>
-<li>Introduce process of refactoring code to write functions</li>
-<li>Practice naming functions and adding comments to functions</li>
-<li>Introduce the concept of reproducible data analysis pipelines</li>
+<li>Introduce spatial, geometry, and geometric operations in <code>{sf}</code></li>
+<li>Practice using geometry operations for buffering or simplifying features</li>
+<li>Practice using geometric operations like union, intersection, and difference</li>
+<li>Practice using related functions including spatial joins and filters</li>
 </ul>
 </section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<section id="required-readings" class="level3">
-<h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
+<section id="required-reading" class="level3">
+<h3 class="anchored" data-anchor-id="required-reading">Required reading</h3>
+<!-- TODO: Consider moving this reading on Joins to the session on tidy data -->
 <ul>
-<li><a href="https://r4ds.hadley.nz/functions">Ch. 26 Functions</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r.geocompx.org/algorithms">Ch. 11 Scripts, algorithms and functions</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
-<li><a href="https://r4ds.hadley.nz/quarto">Ch. 29 Quarto</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
+<li><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/geometry-operations">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
 </ul>
-</section>
-<section id="optional-readings" class="level3">
-<h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
-<ul>
-<li><span class="citation" data-cites="leonAccountingMethodsSpreadsheets2021">Sam Leon <span>“Accounting for <span>Methods</span>: <span>Spreadsheets</span>, <span>Scripts</span> and <span>Programming Notebooks</span>,”</span> in <em>The <span>Data Journalism Handbook</span>: <span>Towards A Critical Data Practice</span></em>, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:<a href="https://doi.org/10.2307/j.ctv1qr6smr">10.2307/j.ctv1qr6smr</a>.</span></li>
-<li><span class="citation" data-cites="mockWelcomeQuartoWorkshop2022"><em>Welcome to <span>Quarto Workshop</span>!</em> (Posit PBC, 2022), <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">https://www.youtube.com/watch?v=yvi5uXQMvu4</a>.</span></li>
-</ul>
-<!-- TODO: Consider relocating the Quarto material to a supplement or a different week -->
 </section>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/functions.html">Writing functions and pipelines</a></p>
+<p>🖥️ <a href="../slides/feature-geometry.html">Working with spatial and geometric operations in <code>{sf}</code></a></p>
 
 
 </section>

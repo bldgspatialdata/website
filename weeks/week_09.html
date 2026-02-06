@@ -359,11 +359,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
   <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
+  <li><a href="#required-readings-1" id="toc-required-readings-1" class="nav-link" data-scroll-target="#required-readings-1">Required readings</a></li>
+  <li><a href="#optional-readings-1" id="toc-optional-readings-1" class="nav-link" data-scroll-target="#optional-readings-1">Optional readings</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_09.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -402,21 +403,41 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.</p>
-</section>
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<p>This week combines the topic originally scheduled for week 7 with the topic for week 9.</p>
+<p>On thee topic of functions:</p>
+<ul>
+<li>Introduce process of refactoring code to write functions</li>
+<li>Practice naming functions and adding comments to functions</li>
+<li>Introduce the concept of reproducible data analysis pipelines</li>
+</ul>
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><a href="https://r4ds.hadley.nz/eda">Ch. 11 Exploratory Data Analysis</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
-<li><span class="citation" data-cites="mazotteWorkingOpenlyData2021">Natalia Mazotte <span>“Working <span>Openly</span> in <span>Data Journalism</span>,”</span> in <em>The <span>Data Journalism Handbook</span>: <span>Towards A Critical Data Practice</span></em>, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:<a href="https://doi.org/10.2307/j.ctv1qr6smr">10.2307/j.ctv1qr6smr</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/functions">Ch. 26 Functions</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/algorithms">Ch. 11 Scripts, algorithms and functions</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/quarto">Ch. 29 Quarto</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
 </ul>
 </section>
 <section id="optional-readings" class="level3">
 <h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
 <ul>
-<li><a href="https://r4ds.hadley.nz/communication">Ch. 12 Communication</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
+<li><span class="citation" data-cites="leonAccountingMethodsSpreadsheets2021">Sam Leon <span>“Accounting for <span>Methods</span>: <span>Spreadsheets</span>, <span>Scripts</span> and <span>Programming Notebooks</span>,”</span> in <em>The <span>Data Journalism Handbook</span>: <span>Towards A Critical Data Practice</span></em>, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:<a href="https://doi.org/10.2307/j.ctv1qr6smr">10.2307/j.ctv1qr6smr</a>.</span></li>
+<li><span class="citation" data-cites="mockWelcomeQuartoWorkshop2022"><em>Welcome to <span>Quarto Workshop</span>!</em> (Posit PBC, 2022), <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">https://www.youtube.com/watch?v=yvi5uXQMvu4</a>.</span></li>
+</ul>
+<!-- TODO: Consider relocating the Quarto material to a supplement or a different week -->
+<p>How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.</p>
+</section>
+<section id="required-readings-1" class="level3">
+<h3 class="anchored" data-anchor-id="required-readings-1">Required readings</h3>
+<ul>
+<li><a href="https://r4ds.hadley.nz/EDA.html">Ch. 11 Exploratory Data Analysis</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
+<li><span class="citation" data-cites="mazotteWorkingOpenlyData2021">Natalia Mazotte <span>“Working <span>Openly</span> in <span>Data Journalism</span>,”</span> in <em>The <span>Data Journalism Handbook</span>: <span>Towards A Critical Data Practice</span></em>, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:<a href="https://doi.org/10.2307/j.ctv1qr6smr">10.2307/j.ctv1qr6smr</a>.</span></li>
+</ul>
+</section>
+<section id="optional-readings-1" class="level3">
+<h3 class="anchored" data-anchor-id="optional-readings-1">Optional readings</h3>
+<ul>
+<li><a href="https://r4ds.hadley.nz/communicate.html">Ch. 12 Communication</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Wickham, Grolemund, and Çetinkaya-Rundel <em>R for <span>Data Science</span></em>.</span></li>
 </ul>
 <p>🖥️ <a href="../slides/exploratory-analysis.html">Exploratory analysis with R</a></p>
 

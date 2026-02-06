@@ -74,8 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 1 – GES 668 - Spring 2026">
-<meta property="og:description" content="Review the course syllabus and structure. Get started with spatial data using {sf} and the tidyverse.">
-<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/allison-horst_sf-illustration.jpeg">
+<meta property="og:description" content="❄️ Campus Closed ❄️">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
 </head>
 
@@ -355,25 +354,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
-  <li><a href="#key-skills" id="toc-key-skills" class="nav-link" data-scroll-target="#key-skills">Key Skills</a></li>
-  </ul></li>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
-  <ul class="collapse">
-  <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
-  <li><a href="#optional-resources" id="toc-optional-resources" class="nav-link" data-scroll-target="#optional-resources">Optional resources</a></li>
-  </ul></li>
-  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_01.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -381,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_01.html">Week 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 1</h1>
-<p class="subtitle lead">Welcome to GES668 / Get started with spatial data in R</p>
+<p class="subtitle lead">❄️ Campus Closed ❄️</p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -402,120 +384,13 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Summary</div>
-    Review the course syllabus and structure. Get started with spatial data using <code>{sf}</code> and the tidyverse.
-  </div>
-</div>
 
 
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Welcome to Building Spatial Datasets!</p>
-<p>Our first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.</p>
-<section id="key-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
-<ul>
-<li>Provide an overview of the scope and schedule of the course</li>
-<li>Introduce the concept of <strong>reproducibility</strong> and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work</li>
-<li>Configure RStudio and create a RStudio project</li>
-<li>Introduce the concept of <strong>simple features</strong> and how the concept is implemented by the <code>{sf}</code> package</li>
-<li>Create a Quarto document to practice using the <code>{tidyverse}</code> and <code>{sf}</code> package</li>
-</ul>
-</section>
-<section id="key-skills" class="level3">
-<h3 class="anchored" data-anchor-id="key-skills">Key Skills</h3>
-<ul>
-<li>Creating self-contained projects with RStudio</li>
-<li>Installing packages with <code>install.packages()</code></li>
-<li>Loading packages with <code>library()</code></li>
-<li>Using the <code>?</code> operator to look up function documentation</li>
-<li>Using <code>str()</code> or <code>View()</code> to look at an object</li>
-<li>Using an assignment operator (<code>&lt;-</code> or <code>=</code>) to save an output to a new object</li>
-<li>Creating and editing Quarto documents with RStudio</li>
-<li>Using <code>sf::st_read()</code> to read a <code>sf</code> object from a file path or URL</li>
-</ul>
-</section>
-</section>
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Getting ready for the first class
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul class="task-list">
-<li><p><label><input type="checkbox">Install <a href="https://posit.co/download/rstudio-desktop/">R and RStudio</a> on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out <a href="https://r4ds.hadley.nz/intro#prerequisites">the Prerequisites section from R for Data Science</a> (one of a few books we’ll use in our class).</label></p></li>
-<li><p><label><input type="checkbox"><a href="https://github.com/signup">Sign up for a GitHub user account</a>. I use GitHub to distribute assignments and you will use GitHub to submit assignments. <a href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git">GitHub</a> is one of the most popular platform for collaborative coding and makes using Git for version control easier. People use GitHub for everything from writing R packages to textbooks!</label></p></li>
-<li><p><label><input type="checkbox">Install Git on your computer. One easy option is to <a href="https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop">install the GitHub Desktop application</a> (which installs Git at the same time). Alternatively, <a href="https://happygitwithr.com/install-git">Happy Git and GitHub for the useR</a> details a few different ways to <a href="https://git-scm.com/install/">download and install</a> Git on Windows, OSX, or Linux.</label></p></li>
-<li><p><label><input type="checkbox"><a href="https://discord.gg/k7JkwD6R">Join our course Discord</a>. I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.</label></p></li>
-<li><p><label><input type="checkbox"><a href="https://docs.google.com/forms/d/e/1FAIpQLScRg0oOK9y50PrwhRAvux0-ANVvi6vkeebATHX9iH4Lia5fbA/viewform?usp=sf_link">Complete the student survey</a>. This is how you share your GitHub username. I’d also love to know more about what experiences you’re bringing to the class and what you hope to learn.</label></p></li>
-<li><p><label><input type="checkbox">If you have not done any programming before, I recommend taking some time to review <a href="https://rstudio-education.github.io/hopr/basics.html">The Very Basics</a> and <a href="https://rstudio-education.github.io/hopr/packages.html">Packages and Help Pages</a> (section 2 and 3 from <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>).</label></p></li>
-</ul>
-</div>
-</div>
-</div>
-<section id="required-readings" class="level3">
-<h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
-<ul>
-<li><a href="https://r.geocompx.org/intro">Ch. 1 Introduction</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
-<li><a href="https://r.geocompx.org/spatial-class">Ch. 2 Geographic data in R</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Lovelace, Nowosad, and Muenchow <em>Geocomputation with <span>R</span></em>.</span> <!-- -   [Ch. 3 Workflow: basics](https://r4ds.hadley.nz/workflow-basics) in @wickhamDataScienceImport2023 --></li>
-<li><span class="citation" data-cites="brunsdonOpeningPracticeSupporting2021">Chris Brunsdon and Alexis Comber <span>“Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,”</span> <em>Journal of Geographical Systems</em> 23, no. 4 (October 1, 2021): 477–496, doi:<a href="https://doi.org/10.1007/s10109-020-00334-2">10.1007/s10109-020-00334-2</a>.</span> <!-- -   @wilsonGoodEnoughPractices2017 --></li>
-</ul>
-</section>
-<section id="optional-resources" class="level3">
-<h3 class="anchored" data-anchor-id="optional-resources">Optional resources</h3>
-<p>Additional readings on working with spatial data in R:</p>
-<ul>
-<li><a href="https://datacarpentry.org/organization-geospatial/index.html">Introduction to Geospatial Concepts</a> (Data Carpentry)</li>
-<li><a href="https://datacarpentry.org/r-intro-geospatial/">Introduction to R for Geospatial Data</a> (Data Carpentry)</li>
-<li><a href="https://r-spatial.org/book/03-Geometries.html">Ch. 3 Geometries</a> in <span class="citation" data-cites="pebesmaSpatialDataScience2023">Edzer Pebesma and Roger Bivand <em>Spatial <span>Data Science</span></em> (CRC Press, 2023), <a href="https://r-spatial.org/book/">https://r-spatial.org/book/</a>.</span></li>
-</ul>
-<p>Additional readings on reproducible practices:</p>
-<ul>
-<li><span class="citation" data-cites="bryanHowNameFiles2015">Jennifer Bryan <span>“How to Name Files,”</span> May 14, 2015, <a href="https://speakerdeck.com/jennybc/how-to-name-files">https://speakerdeck.com/jennybc/how-to-name-files</a>.</span> (or the more recent recorded talk <a href="https://www.youtube.com/watch?v=ES1LTlnpLMk">How to name files talk</a> for NormConf 2022)</li>
-</ul>
-</section>
-</section>
-<section id="participate" class="level2">
-<h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/welcome.html">Welcome to GES 668</a></p>
-<p>🖥️ <a href="../slides/spatial-data.html">Introduction to Spatial Data with R</a></p>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>🛠️️ <a href="../exercises/exercise_01.html">Exercise 01</a></p>
-<!--
-### Review
-
-Here is a quick summary of what we learned this week:
-
--   How the RStudio IDE interface is organized around a console, help pane, source pane, and environment pane (check out the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/rstudio-ide.pdf) for a quick reference)
--   How functions start with inputs (also known as arguments or parameters), produce side effects (e.g. informational messages), and return outputs (e.g. a character string or a `sf` object)
--   How `sf` objects are structured around attributes and geometries
-- How R code is executed within a development environment where packages or objects are loaded
--   How and when to restart an R session to reset the environment
-
-Here are a few questions for additional reflection:
-
--   How does coding in R or other languages support reproducible spatial data analysis?
--   Why use R for working with spatial data?
-
--->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -919,4 +794,4 @@ Here are a few questions for additional reflection:
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_01.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_01.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>

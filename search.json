@@ -103,7 +103,7 @@
     "href": "weeks/week_09.html",
     "title": "Week 9",
     "section": "",
-    "text": "How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.",
+    "text": "This week combines the topic originally scheduled for week 7 with the topic for week 9.\nOn thee topic of functions:\n\nIntroduce process of refactoring code to write functions\nPractice naming functions and adding comments to functions\nIntroduce the concept of reproducible data analysis pipelines\n\n\n\n\nCh. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4.\n\n\nHow do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.\n\n\n\n\nCh. 11 Exploratory Data Analysis in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nNatalia Mazotte “Working Openly in Data Journalism,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.\n\n\n\n\n\nCh. 12 Communication in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n🖥️ Exploratory analysis with R",
     "crumbs": [
       "Weeks 🗓️",
       "Week 9"
@@ -114,18 +114,7 @@
     "href": "weeks/week_09.html#overview",
     "title": "Week 9",
     "section": "",
-    "text": "How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 9"
-    ]
-  },
-  {
-    "objectID": "weeks/week_09.html#prepare",
-    "href": "weeks/week_09.html#prepare",
-    "title": "Week 9",
-    "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 11 Exploratory Data Analysis in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nNatalia Mazotte “Working Openly in Data Journalism,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.\n\n\n\nOptional readings\n\nCh. 12 Communication in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n🖥️ Exploratory analysis with R",
+    "text": "This week combines the topic originally scheduled for week 7 with the topic for week 9.\nOn thee topic of functions:\n\nIntroduce process of refactoring code to write functions\nPractice naming functions and adding comments to functions\nIntroduce the concept of reproducible data analysis pipelines\n\n\n\n\nCh. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\n\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4.\n\n\nHow do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.\n\n\n\n\nCh. 11 Exploratory Data Analysis in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nNatalia Mazotte “Working Openly in Data Journalism,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.\n\n\n\n\n\nCh. 12 Communication in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n🖥️ Exploratory analysis with R",
     "crumbs": [
       "Weeks 🗓️",
       "Week 9"
@@ -136,7 +125,7 @@
     "href": "weeks/week_07.html",
     "title": "Week 7",
     "section": "",
-    "text": "Introduce process of refactoring code to write functions\nPractice naming functions and adding comments to functions\nIntroduce the concept of reproducible data analysis pipelines",
+    "text": "Introduce spatial, geometry, and geometric operations in {sf}\nPractice using geometry operations for buffering or simplifying features\nPractice using geometric operations like union, intersection, and difference\nPractice using related functions including spatial joins and filters",
     "crumbs": [
       "Weeks 🗓️",
       "Week 7"
@@ -147,7 +136,7 @@
     "href": "weeks/week_07.html#overview",
     "title": "Week 7",
     "section": "",
-    "text": "Introduce process of refactoring code to write functions\nPractice naming functions and adding comments to functions\nIntroduce the concept of reproducible data analysis pipelines",
+    "text": "Introduce spatial, geometry, and geometric operations in {sf}\nPractice using geometry operations for buffering or simplifying features\nPractice using geometric operations like union, intersection, and difference\nPractice using related functions including spatial joins and filters",
     "crumbs": [
       "Weeks 🗓️",
       "Week 7"
@@ -158,7 +147,7 @@
     "href": "weeks/week_07.html#prepare",
     "title": "Week 7",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 26 Functions in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 11 Scripts, algorithms and functions in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4.",
+    "text": "Prepare\n\nRequired reading\n\n\nCh. 20 Joins in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 5 Geometry operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.",
     "crumbs": [
       "Weeks 🗓️",
       "Week 7"
@@ -169,7 +158,7 @@
     "href": "weeks/week_07.html#participate",
     "title": "Week 7",
     "section": "Participate",
-    "text": "Participate\n🖥️ Writing functions and pipelines",
+    "text": "Participate\n🖥️ Working with spatial and geometric operations in {sf}",
     "crumbs": [
       "Weeks 🗓️",
       "Week 7"
@@ -180,7 +169,7 @@
     "href": "weeks/week_05.html",
     "title": "Week 5",
     "section": "",
-    "text": "Practice joining tables by attribute with {dplyr}\nPractice converting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nPractice recoding categorical attribute data using the {forcats} package",
+    "text": "This week is to learn to use {dplyr} and {sf} in combination to create and manipulate attributes associated with spatial data.\n\n\n\nReview key concepts of simple features in R\nIntroduce key concepts for spatial attribute data (e.g. point vs. block support)\nPractice using {sf} functions for geometric confirmation (st_intersects(), st_disjoint()) and geometric measurement (st_area(), st_length(), st_distance())\nDiscuss ideas for final projects",
     "crumbs": [
       "Weeks 🗓️",
       "Week 5"
@@ -191,7 +180,7 @@
     "href": "weeks/week_05.html#overview",
     "title": "Week 5",
     "section": "",
-    "text": "Practice joining tables by attribute with {dplyr}\nPractice converting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nPractice recoding categorical attribute data using the {forcats} package",
+    "text": "This week is to learn to use {dplyr} and {sf} in combination to create and manipulate attributes associated with spatial data.\n\n\n\nReview key concepts of simple features in R\nIntroduce key concepts for spatial attribute data (e.g. point vs. block support)\nPractice using {sf} functions for geometric confirmation (st_intersects(), st_disjoint()) and geometric measurement (st_area(), st_length(), st_distance())\nDiscuss ideas for final projects",
     "crumbs": [
       "Weeks 🗓️",
       "Week 5"
@@ -202,7 +191,7 @@
     "href": "weeks/week_05.html#prepare",
     "title": "Week 5",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 6 Data tidying in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 14 Data cleaning in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/. \n\n\n\nOptional readings\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nKarl W. Broman and Kara H. Woo “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (January 2, 2018): 2–10, doi:10.1080/00031305.2017.1375989.",
+    "text": "Prepare\n\nRequired readings\n\nEdzer Pebesma “3. Manipulating Simple Feature Geometries” (sf, November 28, 2016), https://r-spatial.github.io/sf/articles/sf3.html.\nCh. 4 Spatial data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.",
     "crumbs": [
       "Weeks 🗓️",
       "Week 5"
@@ -213,7 +202,7 @@
     "href": "weeks/week_05.html#participate",
     "title": "Week 5",
     "section": "Participate",
-    "text": "Participate\n🖥️ Tidying and joining data",
+    "text": "Participate\n🖥️ Creating and manipulating attributes for spatial data",
     "crumbs": [
       "Weeks 🗓️",
       "Week 5"
@@ -224,7 +213,7 @@
     "href": "weeks/week_05.html#practice",
     "title": "Week 5",
     "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 05",
+    "text": "Practice\n🛠️️ Exercise 04",
     "crumbs": [
       "Weeks 🗓️",
       "Week 5"
@@ -235,7 +224,7 @@
     "href": "weeks/week_03.html",
     "title": "Week 3",
     "section": "",
-    "text": "ImportantReminder! Schedule adjustment deadline is February 13.\n\n\n\nFriday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.",
+    "text": "This week is all about making plots and maps using the {ggplot} package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.\n\n\n\nIntroduce the concept of a “pipe” (%&gt;% or |&gt;) and how and when to use it\nIntroduce the concept of the “grammar of graphics”\nPractice plotting and mapping data with {ggplot2}\nPractice mapping data with {mapview}\n\n\n\n\n\n\nUsing keyboard shortcuts in RStudio\nCreating plots using ggplot(), aes(), and geom_() functions\nCreating static maps using geom_sf() and coord_sf()\nCreating interactive maps using mapview()\nUsing theme_ functions to customize the appearance of a plot\nUsing labs() to add labels to a plot",
     "crumbs": [
       "Weeks 🗓️",
       "Week 3"
@@ -245,8 +234,8 @@
     "objectID": "weeks/week_03.html#overview",
     "href": "weeks/week_03.html#overview",
     "title": "Week 3",
-    "section": "Overview",
-    "text": "Overview\nThis week includes a review of data visualization and mapping with {ggplot} review, an introduction to data transformation with {dplyr}, and an initial discussion of using {dplyr} with sf objects.\n\nKey Objectives\n\nReview the concept of “tidy”, analysis-friendly data\nIntroduce the “verbs” of data wrangling with {dplyr}\nPractice subsetting rows with dplyr::filter() or dplyr::slice()\nPractice subsetting columns with dplyr::select()\nPractice using {tidyselect} helpers including where(), all_of(), any_of(), and starts_with()\nPractice creating new variables with dplyr::mutate() or dplyr::summarise()",
+    "section": "",
+    "text": "This week is all about making plots and maps using the {ggplot} package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.\n\n\n\nIntroduce the concept of a “pipe” (%&gt;% or |&gt;) and how and when to use it\nIntroduce the concept of the “grammar of graphics”\nPractice plotting and mapping data with {ggplot2}\nPractice mapping data with {mapview}\n\n\n\n\n\n\nUsing keyboard shortcuts in RStudio\nCreating plots using ggplot(), aes(), and geom_() functions\nCreating static maps using geom_sf() and coord_sf()\nCreating interactive maps using mapview()\nUsing theme_ functions to customize the appearance of a plot\nUsing labs() to add labels to a plot",
     "crumbs": [
       "Weeks 🗓️",
       "Week 3"
@@ -257,7 +246,7 @@
     "href": "weeks/week_03.html#prepare",
     "title": "Week 3",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 3 Data Structure in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/.\nCh. 5 Data transformation in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 3 Attribute data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\ndplyr base R vignette for the {dplyr} package comparing dplyr functions to their base R equivalents.",
+    "text": "Prepare\n\nRequired readings\n\nCh. 2 Data visualization in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 6 Workflow: scripts and projects in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\nAdditional resources on data visualization and mapping with R:\n\nggplot2 workshop part 1 and part 2 with Thomas Lin Pedersen, 2020\nCh. 9 Mapping in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\n\nAdditional reading on data visualization:\n\nElliot Bentley “The Web as Medium for Data Visualization,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.29.\n\nAdditional resources on working with projects:\n\nR-Ladies STL: Project Oriented Workflows with Shannon Pileggi (September 11, 2023) - Slides",
     "crumbs": [
       "Weeks 🗓️",
       "Week 3"
@@ -268,7 +257,7 @@
     "href": "weeks/week_03.html#participate",
     "title": "Week 3",
     "section": "Participate",
-    "text": "Participate\n🖥️ Transforming data with {dplyr} and {tidyr}",
+    "text": "Participate\n🖥️ Visualizing spatial data with {ggplot2}",
     "crumbs": [
       "Weeks 🗓️",
       "Week 3"
@@ -279,65 +268,10 @@
     "href": "weeks/week_03.html#practice",
     "title": "Week 3",
     "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 03",
+    "text": "Practice\n🛠️️ Exercise 02",
     "crumbs": [
       "Weeks 🗓️",
       "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week_01.html",
-    "href": "weeks/week_01.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to Building Spatial Datasets!\nOur first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.\n\n\n\nProvide an overview of the scope and schedule of the course\nIntroduce the concept of reproducibility and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work\nConfigure RStudio and create a RStudio project\nIntroduce the concept of simple features and how the concept is implemented by the {sf} package\nCreate a Quarto document to practice using the {tidyverse} and {sf} package\n\n\n\n\n\nCreating self-contained projects with RStudio\nInstalling packages with install.packages()\nLoading packages with library()\nUsing the ? operator to look up function documentation\nUsing str() or View() to look at an object\nUsing an assignment operator (&lt;- or =) to save an output to a new object\nCreating and editing Quarto documents with RStudio\nUsing sf::st_read() to read a sf object from a file path or URL",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week_01.html#overview",
-    "href": "weeks/week_01.html#overview",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to Building Spatial Datasets!\nOur first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.\n\n\n\nProvide an overview of the scope and schedule of the course\nIntroduce the concept of reproducibility and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work\nConfigure RStudio and create a RStudio project\nIntroduce the concept of simple features and how the concept is implemented by the {sf} package\nCreate a Quarto document to practice using the {tidyverse} and {sf} package\n\n\n\n\n\nCreating self-contained projects with RStudio\nInstalling packages with install.packages()\nLoading packages with library()\nUsing the ? operator to look up function documentation\nUsing str() or View() to look at an object\nUsing an assignment operator (&lt;- or =) to save an output to a new object\nCreating and editing Quarto documents with RStudio\nUsing sf::st_read() to read a sf object from a file path or URL",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week_01.html#prepare",
-    "href": "weeks/week_01.html#prepare",
-    "title": "Week 1",
-    "section": "Prepare",
-    "text": "Prepare\n\n\n\n\n\n\nTipGetting ready for the first class\n\n\n\n\n\n\nInstall R and RStudio on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out the Prerequisites section from R for Data Science (one of a few books we’ll use in our class).\nSign up for a GitHub user account. I use GitHub to distribute assignments and you will use GitHub to submit assignments. GitHub is one of the most popular platform for collaborative coding and makes using Git for version control easier. People use GitHub for everything from writing R packages to textbooks!\nInstall Git on your computer. One easy option is to install the GitHub Desktop application (which installs Git at the same time). Alternatively, Happy Git and GitHub for the useR details a few different ways to download and install Git on Windows, OSX, or Linux.\nJoin our course Discord. I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.\nComplete the student survey. This is how you share your GitHub username. I’d also love to know more about what experiences you’re bringing to the class and what you hope to learn.\nIf you have not done any programming before, I recommend taking some time to review The Very Basics and Packages and Help Pages (section 2 and 3 from Hands-On Programming with R).\n\n\n\n\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R. \nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2. \n\n\n\nOptional resources\nAdditional readings on working with spatial data in R:\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\n\nAdditional readings on reproducible practices:\n\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or the more recent recorded talk How to name files talk for NormConf 2022)",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week_01.html#participate",
-    "href": "weeks/week_01.html#participate",
-    "title": "Week 1",
-    "section": "Participate",
-    "text": "Participate\n🖥️ Welcome to GES 668\n🖥️ Introduction to Spatial Data with R",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week_01.html#practice",
-    "href": "weeks/week_01.html#practice",
-    "title": "Week 1",
-    "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 01",
-    "crumbs": [
-      "Weeks 🗓️",
-      "Week 1"
     ]
   },
   {
@@ -590,7 +524,7 @@
     "href": "slides/metadata.html#what-are-we-talking-about-metadata",
     "title": "Metadata, geospatial metadata, and READMEs",
     "section": "2 What are we talking about metadata?",
-    "text": "2 What are we talking about metadata?\n\nWhat is metadata and why does it matter?\nWhat is geospatial metadata?\nHow can you make metadata?\n\n\nPortions of these are adapted or inspired by a fall 2022 lecture by Reina Chano Murray (repo / Google Slides).\n\n\n\nIntroduction to metadata:\n\nWhat is metadata?\nWhy does metadata matter?\nWhat are metadata standards?\n\nGeospatial metadata\n\nGeospatial metadata standards\nGeospatial metadata schemas\n\nMetadata DIY\n\nDifferent levels of data\nCommon elements to include in metadata\nWriting a READMEs\nUsing data dictionaries"
+    "text": "2 What are we talking about metadata?\n\nWhat is metadata and why does it matter?\nWhat is geospatial metadata?\nHow can you make metadata?\n\n\nPortions of these are adapted or inspired by a fall 2022 lecture by Reina Chano Murray (repo).\n\n\n\nIntroduction to metadata:\n\nWhat is metadata?\nWhy does metadata matter?\nWhat are metadata standards?\n\nGeospatial metadata\n\nGeospatial metadata standards\nGeospatial metadata schemas\n\nMetadata DIY\n\nDifferent levels of data\nCommon elements to include in metadata\nWriting a READMEs\nUsing data dictionaries"
   },
   {
     "objectID": "slides/metadata.html#what-is-metadata",
@@ -786,7 +720,7 @@
     "href": "slides/metadata.html#fair-and-care",
     "title": "Metadata, geospatial metadata, and READMEs",
     "section": "30 FAIR and CARE",
-    "text": "30 FAIR and CARE\n\n\nFAIR Guiding Principles (2016):\n\nFindable,\nAccessible,\nInteroperable,\nand Reusable\n\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1\nCARE Principles for Indigenous Data Governance (2019):\nCollective benefit,\nAuthority to control,\nResponsibility,\nand Ethics\n\n\n\n\n:::\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1"
+    "text": "30 FAIR and CARE\n\n\nFAIR Guiding Principles (2016):\n\nFindable,\nAccessible,\nInteroperable,\nand Reusable\n\n\n\n\n\nImage: https://www.nature.com/articles/s41597-021-00892-0/figures/1"
   },
   {
     "objectID": "slides/metadata.html#practice-is-this-data-fair",
@@ -1538,7 +1472,7 @@
     "href": "course-syllabus.html#week-1",
     "title": "GES 668: Course Syllabus",
     "section": "Week 1",
-    "text": "Week 1\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R. \nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2. \n\n\n\nOptional resources\nAdditional readings on working with spatial data in R:\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\n\nAdditional readings on reproducible practices:\n\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or the more recent recorded talk How to name files talk for NormConf 2022)",
+    "text": "Week 1\nCampus closed for inclement weather.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1549,7 +1483,7 @@
     "href": "course-syllabus.html#week-2",
     "title": "GES 668: Course Syllabus",
     "section": "Week 2",
-    "text": "Week 2\n\nRequired readings\n\nCh. 2 Data visualization in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 6 Workflow: scripts and projects in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\nAdditional resources on data visualization and mapping with R:\n\nggplot2 workshop part 1 and part 2 with Thomas Lin Pedersen, 2020\nCh. 9 Mapping in Lovelace, Nowosad, and Muenchow Geocomputation with R.\n\nAdditional reading on data visualization:\n\nElliot Bentley “The Web as Medium for Data Visualization,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.29.\n\nAdditional resources on working with projects:\n\nR-Ladies STL: Project Oriented Workflows with Shannon Pileggi (September 11, 2023) - Slides",
+    "text": "Week 2\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R. \nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2. \n\n\n\nOptional resources\nAdditional readings on working with spatial data in R:\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\n\nAdditional readings on reproducible practices:\n\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or the more recent recorded talk How to name files talk for NormConf 2022)",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1560,7 +1494,7 @@
     "href": "course-syllabus.html#week-3",
     "title": "GES 668: Course Syllabus",
     "section": "Week 3",
-    "text": "Week 3\n\nRequired readings\n\nCh. 3 Data Structure in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/.\nCh. 5 Data transformation in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 3 Attribute data operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Pebesma and Bivand Spatial Data Science.\ndplyr base R vignette for the {dplyr} package comparing dplyr functions to their base R equivalents.",
+    "text": "Week 3\n\nRequired readings\n\nCh. 2 Data visualization in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 6 Workflow: scripts and projects in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\nAdditional resources on data visualization and mapping with R:\n\nggplot2 workshop part 1 and part 2 with Thomas Lin Pedersen, 2020\nCh. 9 Making maps with R in Lovelace, Nowosad, and Muenchow Geocomputation with R.\n\nAdditional reading on data visualization:\n\nElliot Bentley “The Web as Medium for Data Visualization,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.29.\n\nAdditional resources on working with projects:\n\nR-Ladies STL: Project Oriented Workflows with Shannon Pileggi (September 11, 2023) - Slides",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1571,7 +1505,7 @@
     "href": "course-syllabus.html#week-4",
     "title": "GES 668: Course Syllabus",
     "section": "Week 4",
-    "text": "Week 4\n\nRequired readings\n\nEdzer Pebesma “3. Manipulating Simple Feature Geometries” (sf, November 28, 2016), https://r-spatial.github.io/sf/articles/sf3.html.\nCh. 4 Spatial data operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.",
+    "text": "Week 4\n\nRequired readings\n\nCh. 3 Data Structure in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/.\nCh. 5 Data transformation in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 3 Attribute data operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Pebesma and Bivand Spatial Data Science.\ndplyr base R vignette for the {dplyr} package comparing dplyr functions to their base R equivalents.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1582,7 +1516,7 @@
     "href": "course-syllabus.html#week-5",
     "title": "GES 668: Course Syllabus",
     "section": "Week 5",
-    "text": "Week 5\n\nRequired readings\n\nCh. 6 Data tidying in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 14 Data cleaning in Lewis Data Management in Large-Scale Education Research. \n\n\n\nOptional readings\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.\nKarl W. Broman and Kara H. Woo “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (January 2, 2018): 2–10, doi:10.1080/00031305.2017.1375989.",
+    "text": "Week 5\n\nRequired readings\n\nEdzer Pebesma “3. Manipulating Simple Feature Geometries” (sf, November 28, 2016), https://r-spatial.github.io/sf/articles/sf3.html.\nCh. 4 Spatial data operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1593,7 +1527,7 @@
     "href": "course-syllabus.html#week-6",
     "title": "GES 668: Course Syllabus",
     "section": "Week 6",
-    "text": "Week 6\n\nRequired reading\n\n\nCh. 20 Joins in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 5 Geometry operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.",
+    "text": "Week 6\n\nRequired readings\n\nCh. 6 Data tidying in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 14 Data cleaning in Lewis Data Management in Large-Scale Education Research.\nKarl W. Broman and Kara H. Woo “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (January 2, 2018): 2–10, doi:10.1080/00031305.2017.1375989.\n\n\n\n\nOptional readings\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1604,7 +1538,7 @@
     "href": "course-syllabus.html#week-7",
     "title": "GES 668: Course Syllabus",
     "section": "Week 7",
-    "text": "Week 7\n\nRequired readings\n\nCh. 26 Functions in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 11 Scripts, algorithms and functions in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4.",
+    "text": "Week 7\n\nRequired reading\n\n\nCh. 20 Joins in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 5 Geometry operations in Lovelace, Nowosad, and Muenchow Geocomputation with R.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1626,7 +1560,7 @@
     "href": "course-syllabus.html#week-9",
     "title": "GES 668: Course Syllabus",
     "section": "Week 9",
-    "text": "Week 9\n\nRequired readings\n\nCh. 11 Exploratory Data Analysis in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nNatalia Mazotte “Working Openly in Data Journalism,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.\n\n\n\nOptional readings\n\nCh. 12 Communication in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.",
+    "text": "Week 9\nAdjusted for campus closure in week 1 by combining topics from week 7 with week 9.\n\nRequired readings\n\nCh. 26 Functions in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nCh. 11 Scripts, algorithms and functions in Lovelace, Nowosad, and Muenchow Geocomputation with R.\nCh. 29 Quarto in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\n\nSam Leon “Accounting for Methods: Spreadsheets, Scripts and Programming Notebooks,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 128–137, doi:10.2307/j.ctv1qr6smr.\nWelcome to Quarto Workshop! (Posit PBC, 2022), https://www.youtube.com/watch?v=yvi5uXQMvu4.\n\n\n\n\nRequired readings\n\nCh. 11 Exploratory Data Analysis in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\nNatalia Mazotte “Working Openly in Data Journalism,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.\n\n\n\nOptional readings\n\nCh. 12 Communication in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -1813,7 +1747,7 @@
     "href": "course-schedule.html",
     "title": "Schedule overview",
     "section": "",
-    "text": "Week 1\n\n\nWelcome to GES668 / Get started with spatial data in R\n\n\n\n\n\nJan 28, 2025\n\n\n\n\n\n\n\nWeek 2\n\n\nVisualizing data and making maps with {ggplot2}\n\n\n\n\n\nFeb 4, 2025\n\n\n\n\n\n\n\nWeek 3\n\n\nTransforming data with {dplyr}\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming spatial data attributes\n\n\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nTidying and joining spatial data\n\n\n\n\n\nFeb 25, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\nMar 4, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nWriting functions and pipelines\n\n\n\n\n\nMar 11, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\n🏝️ Spring Break 🏝️\n\n\n\n\n\nMar 18, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\nMar 25, 2026\n\n\n\n\n\n\n\nWeek 10\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\nApr 1, 2026\n\n\n\n\n\n\n\nWeek 11\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\nApr 8, 2026\n\n\n\n\n\n\n\nWeek 12\n\n\nReading and writing spatial data files and services\n\n\n\n\n\nApr 15, 2026\n\n\n\n\n\n\n\nWeek 13\n\n\nCreating and managing spatial metadata\n\n\n\n\n\nApr 22, 2026\n\n\n\n\n\n\n\nWeek 14\n\n\nFinal Project Work Session\n\n\n\n\n\nApr 29, 2026\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal Project Presentations\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\nNo matching items",
+    "text": "Week 1\n\n\n❄️ Campus Closed ❄️\n\n\n\n\n\nJan 28, 2025\n\n\n\n\n\n\n\nWeek 2\n\n\nWelcome to GES668 / Get started with spatial data in R\n\n\n\n\n\nFeb 4, 2025\n\n\n\n\n\n\n\nWeek 3\n\n\nVisualizing data and making maps with {ggplot2}\n\n\n\n\n\nFeb 11, 2025\n\n\n\n\n\n\n\nWeek 4\n\n\nTransforming data with {dplyr}\n\n\n\n\n\nFeb 18, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nTransforming spatial data attributes\n\n\n\n\n\nFeb 25, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nTidying and joining spatial data\n\n\n\n\n\nMar 4, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nApplying spatial transformations and geometric operations using {sf}\n\n\n\n\n\nMar 11, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\n🏝️ Spring Break 🏝️\n\n\n\n\n\nMar 18, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nDeveloping an exploratory data analysis with {sf} and the {tidyverse}\n\n\n\n\n\nMar 25, 2026\n\n\n\n\n\n\n\nWeek 10\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with {osmdata}\n\n\n\n\n\nApr 1, 2026\n\n\n\n\n\n\n\nWeek 11\n\n\nExploring American Community Survey data with {tidycensus}\n\n\n\n\n\nApr 8, 2026\n\n\n\n\n\n\n\nWeek 12\n\n\nReading and writing spatial data files and services\n\n\n\n\n\nApr 15, 2026\n\n\n\n\n\n\n\nWeek 13\n\n\nCreating and managing spatial metadata\n\n\n\n\n\nApr 22, 2026\n\n\n\n\n\n\n\nWeek 14\n\n\nFinal Project Work Session\n\n\n\n\n\nApr 29, 2026\n\n\n\n\n\n\n\nWeek 15\n\n\nFinal Project Presentations\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2040,7 +1974,7 @@
     "href": "index.html",
     "title": "GES 668: Building Spatial Datasets Spring 2026",
     "section": "",
-    "text": "In this course, students learn how to look critically at spatial data and use the R programming language to transform, visualize, and create spatial datasets. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data with the sf and tidyverse family of R packages.\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nExercise\n\n\n\n\n1\nTue, Jan 28\nWelcome to GES668 / Get started with spatial data in R\n📖\n📝\n\n\n2\nTue, Feb 4\nVisualizing data and making maps with `{ggplot2}`\n📖\n📝\n\n\n3\nWed, Feb 11\nTransforming data with `{dplyr}`\n📖\n📝\n\n\n4\nWed, Feb 18\nTransforming spatial data attributes\n📖\n📝\n\n\n5\nWed, Feb 25\nTidying and joining spatial data\n📖\n📝\n\n\n6\nWed, Mar 4\nApplying spatial transformations and geometric operations using `{sf}`\n📖\n—\n\n\n7\nWed, Mar 11\nWriting functions and pipelines\n📖\n—\n\n\n8\nWed, Mar 18\n🏝️ Spring Break 🏝️\n—\n—\n\n\n9\nWed, Mar 25\nDeveloping an exploratory data analysis with `{sf}` and the `{tidyverse}`\n📖\n—\n\n\n10\nWed, Apr 1\nEditing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`\n📖\n—\n\n\n11\nWed, Apr 8\nExploring American Community Survey data with `{tidycensus}`\n—\n—\n\n\n12\nWed, Apr 15\nReading and writing spatial data files and services\n📖\n—\n\n\n13\nWed, Apr 22\nCreating and managing spatial metadata\n📖\n—\n\n\n14\nWed, Apr 29\nFinal Project Work Session\n—\n—\n\n\n15\nWed, May 6\nFinal Project Presentations\n—\n—"
+    "text": "In this course, students learn how to look critically at spatial data and use the R programming language to transform, visualize, and create spatial datasets. Working with open-source tools, reproducible methods, and real world data, students develop skills in the fundamentals of reading and wrangling spatial data with the sf and tidyverse family of R packages.\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nExercise\n\n\n\n\n1\nTue, Jan 28\n❄️ Campus Closed ❄️\n—\n—\n\n\n2\nTue, Feb 4\nWelcome to GES668 / Get started with spatial data in R\n📖\n📝\n\n\n3\nTue, Feb 11\nVisualizing data and making maps with `{ggplot2}`\n📖\n📝\n\n\n4\nWed, Feb 18\nTransforming data with `{dplyr}`\n📖\n📝\n\n\n5\nWed, Feb 25\nTransforming spatial data attributes\n📖\n📝\n\n\n6\nWed, Mar 4\nTidying and joining spatial data\n📖\n📝\n\n\n7\nWed, Mar 11\nApplying spatial transformations and geometric operations using `{sf}`\n📖\n—\n\n\n8\nWed, Mar 18\n🏝️ Spring Break 🏝️\n—\n—\n\n\n9\nWed, Mar 25\nDeveloping an exploratory data analysis with `{sf}` and the `{tidyverse}`\n📖\n—\n\n\n10\nWed, Apr 1\nEditing OpenStreetMap and exploring OpenStreetMap data with `{osmdata}`\n📖\n—\n\n\n11\nWed, Apr 8\nExploring American Community Survey data with `{tidycensus}`\n—\n—\n\n\n12\nWed, Apr 15\nReading and writing spatial data files and services\n📖\n—\n\n\n13\nWed, Apr 22\nCreating and managing spatial metadata\n📖\n—\n\n\n14\nWed, Apr 29\nFinal Project Work Session\n—\n—\n\n\n15\nWed, May 6\nFinal Project Presentations\n—\n—"
   },
   {
     "objectID": "slides.html",
@@ -2842,7 +2776,7 @@
     "href": "weeks/week_02.html",
     "title": "Week 2",
     "section": "",
-    "text": "This week is all about making plots and maps using the {ggplot} package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.\n\n\n\nIntroduce the concept of a “pipe” (%&gt;% or |&gt;) and how and when to use it\nIntroduce the concept of the “grammar of graphics”\nPractice plotting and mapping data with {ggplot2}\nPractice mapping data with {mapview}\n\n\n\n\n\n\nUsing keyboard shortcuts in RStudio\nCreating plots using ggplot(), aes(), and geom_() functions\nCreating static maps using geom_sf() and coord_sf()\nCreating interactive maps using mapview()\nUsing theme_ functions to customize the appearance of a plot\nUsing labs() to add labels to a plot",
+    "text": "Welcome to Building Spatial Datasets!\nOur first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.\n\n\n\nProvide an overview of the scope and schedule of the course\nIntroduce the concept of reproducibility and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work\nConfigure RStudio and create a RStudio project\nIntroduce the concept of simple features and how the concept is implemented by the {sf} package\nCreate a Quarto document to practice using the {tidyverse} and {sf} package\n\n\n\n\n\nCreating self-contained projects with RStudio\nInstalling packages with install.packages()\nLoading packages with library()\nUsing the ? operator to look up function documentation\nUsing str() or View() to look at an object\nUsing an assignment operator (&lt;- or =) to save an output to a new object\nCreating and editing Quarto documents with RStudio\nUsing sf::st_read() to read a sf object from a file path or URL",
     "crumbs": [
       "Weeks 🗓️",
       "Week 2"
@@ -2853,7 +2787,7 @@
     "href": "weeks/week_02.html#overview",
     "title": "Week 2",
     "section": "",
-    "text": "This week is all about making plots and maps using the {ggplot} package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.\n\n\n\nIntroduce the concept of a “pipe” (%&gt;% or |&gt;) and how and when to use it\nIntroduce the concept of the “grammar of graphics”\nPractice plotting and mapping data with {ggplot2}\nPractice mapping data with {mapview}\n\n\n\n\n\n\nUsing keyboard shortcuts in RStudio\nCreating plots using ggplot(), aes(), and geom_() functions\nCreating static maps using geom_sf() and coord_sf()\nCreating interactive maps using mapview()\nUsing theme_ functions to customize the appearance of a plot\nUsing labs() to add labels to a plot",
+    "text": "Welcome to Building Spatial Datasets!\nOur first session starts with a general introduction to the course and a hands-on introduction to using R for working with spatial data.\n\n\n\nProvide an overview of the scope and schedule of the course\nIntroduce the concept of reproducibility and key reproducible practices for data management, programming, collaborating with colleagues, organizing projects, and tracking work\nConfigure RStudio and create a RStudio project\nIntroduce the concept of simple features and how the concept is implemented by the {sf} package\nCreate a Quarto document to practice using the {tidyverse} and {sf} package\n\n\n\n\n\nCreating self-contained projects with RStudio\nInstalling packages with install.packages()\nLoading packages with library()\nUsing the ? operator to look up function documentation\nUsing str() or View() to look at an object\nUsing an assignment operator (&lt;- or =) to save an output to a new object\nCreating and editing Quarto documents with RStudio\nUsing sf::st_read() to read a sf object from a file path or URL",
     "crumbs": [
       "Weeks 🗓️",
       "Week 2"
@@ -2864,7 +2798,7 @@
     "href": "weeks/week_02.html#prepare",
     "title": "Week 2",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nCh. 2 Data visualization in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 6 Maps in Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen Ggplot2: Elegant Graphics for Data Analysis, 3rd (WIP)., Use R! (Springer, 2023), https://ggplot2-book.org/index.html.\nCh. 6 Workflow: scripts and projects in Wickham, Grolemund, and Çetinkaya-Rundel R for Data Science.\n\n\n\nOptional readings\nAdditional resources on data visualization and mapping with R:\n\nggplot2 workshop part 1 and part 2 with Thomas Lin Pedersen, 2020\nCh. 9 Mapping in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\n\nAdditional reading on data visualization:\n\nElliot Bentley “The Web as Medium for Data Visualization,” in The Data Journalism Handbook: Towards A Critical Data Practice, ed. Liliana Bounegru and Jonathan Gray, 2nd ed. (Amsterdam University Press, 2021), 138–142, doi:10.2307/j.ctv1qr6smr.29.\n\nAdditional resources on working with projects:\n\nR-Ladies STL: Project Oriented Workflows with Shannon Pileggi (September 11, 2023) - Slides",
+    "text": "Prepare\n\n\n\n\n\n\nTipGetting ready for the first class\n\n\n\n\n\n\nInstall R and RStudio on your computer. If you already have R installed, please check to make sure your installation is up to date. For more details, check out the Prerequisites section from R for Data Science (one of a few books we’ll use in our class).\nSign up for a GitHub user account. I use GitHub to distribute assignments and you will use GitHub to submit assignments. GitHub is one of the most popular platform for collaborative coding and makes using Git for version control easier. People use GitHub for everything from writing R packages to textbooks!\nInstall Git on your computer. One easy option is to install the GitHub Desktop application (which installs Git at the same time). Alternatively, Happy Git and GitHub for the useR details a few different ways to download and install Git on Windows, OSX, or Linux.\nJoin our course Discord. I use Discord to share class announcements and encourage students to use the Discord to share links and questions throughout the semester.\nComplete the student survey. This is how you share your GitHub username. I’d also love to know more about what experiences you’re bringing to the class and what you hope to learn.\nIf you have not done any programming before, I recommend taking some time to review The Very Basics and Packages and Help Pages (section 2 and 3 from Hands-On Programming with R).\n\n\n\n\n\nRequired readings\n\nCh. 1 Introduction in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\nCh. 2 Geographic data in R in Lovelace, Nowosad, and Muenchow Geocomputation with R. \nChris Brunsdon and Alexis Comber “Opening Practice: Supporting Reproducibility and Critical Spatial Data Science,” Journal of Geographical Systems 23, no. 4 (October 1, 2021): 477–496, doi:10.1007/s10109-020-00334-2. \n\n\n\nOptional resources\nAdditional readings on working with spatial data in R:\n\nIntroduction to Geospatial Concepts (Data Carpentry)\nIntroduction to R for Geospatial Data (Data Carpentry)\nCh. 3 Geometries in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\n\nAdditional readings on reproducible practices:\n\nJennifer Bryan “How to Name Files,” May 14, 2015, https://speakerdeck.com/jennybc/how-to-name-files. (or the more recent recorded talk How to name files talk for NormConf 2022)",
     "crumbs": [
       "Weeks 🗓️",
       "Week 2"
@@ -2875,7 +2809,7 @@
     "href": "weeks/week_02.html#participate",
     "title": "Week 2",
     "section": "Participate",
-    "text": "Participate\n🖥️ Visualizing spatial data with {ggplot2}",
+    "text": "Participate\n🖥️ Welcome to GES 668\n🖥️ Introduction to Spatial Data with R",
     "crumbs": [
       "Weeks 🗓️",
       "Week 2"
@@ -2886,7 +2820,7 @@
     "href": "weeks/week_02.html#practice",
     "title": "Week 2",
     "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 02",
+    "text": "Practice\n🛠️️ Exercise 01",
     "crumbs": [
       "Weeks 🗓️",
       "Week 2"
@@ -2897,7 +2831,7 @@
     "href": "weeks/week_04.html",
     "title": "Week 4",
     "section": "",
-    "text": "This week is to learn to use {dplyr} and {sf} in combination to create and manipulate attributes associated with spatial data.\n\n\n\nReview key concepts of simple features in R\nIntroduce key concepts for spatial attribute data (e.g. point vs. block support)\nPractice using {sf} functions for geometric confirmation (st_intersects(), st_disjoint()) and geometric measurement (st_area(), st_length(), st_distance())\nDiscuss ideas for final projects",
+    "text": "ImportantReminder! Schedule adjustment deadline is February 13.\n\n\n\nFriday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.",
     "crumbs": [
       "Weeks 🗓️",
       "Week 4"
@@ -2907,8 +2841,8 @@
     "objectID": "weeks/week_04.html#overview",
     "href": "weeks/week_04.html#overview",
     "title": "Week 4",
-    "section": "",
-    "text": "This week is to learn to use {dplyr} and {sf} in combination to create and manipulate attributes associated with spatial data.\n\n\n\nReview key concepts of simple features in R\nIntroduce key concepts for spatial attribute data (e.g. point vs. block support)\nPractice using {sf} functions for geometric confirmation (st_intersects(), st_disjoint()) and geometric measurement (st_area(), st_length(), st_distance())\nDiscuss ideas for final projects",
+    "section": "Overview",
+    "text": "Overview\nThis week includes a review of data visualization and mapping with {ggplot} review, an introduction to data transformation with {dplyr}, and an initial discussion of using {dplyr} with sf objects.\n\nKey Objectives\n\nReview the concept of “tidy”, analysis-friendly data\nIntroduce the “verbs” of data wrangling with {dplyr}\nPractice subsetting rows with dplyr::filter() or dplyr::slice()\nPractice subsetting columns with dplyr::select()\nPractice using {tidyselect} helpers including where(), all_of(), any_of(), and starts_with()\nPractice creating new variables with dplyr::mutate() or dplyr::summarise()",
     "crumbs": [
       "Weeks 🗓️",
       "Week 4"
@@ -2919,7 +2853,7 @@
     "href": "weeks/week_04.html#prepare",
     "title": "Week 4",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired readings\n\nEdzer Pebesma “3. Manipulating Simple Feature Geometries” (sf, November 28, 2016), https://r-spatial.github.io/sf/articles/sf3.html.\nCh. 4 Spatial data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.",
+    "text": "Prepare\n\nRequired readings\n\nCh. 3 Data Structure in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/.\nCh. 5 Data transformation in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 3 Attribute data operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.\n\n\n\nOptional readings\n\nCh. 5 Attributes and Support in Edzer Pebesma and Roger Bivand Spatial Data Science (CRC Press, 2023), https://r-spatial.org/book/.\ndplyr base R vignette for the {dplyr} package comparing dplyr functions to their base R equivalents.",
     "crumbs": [
       "Weeks 🗓️",
       "Week 4"
@@ -2930,7 +2864,7 @@
     "href": "weeks/week_04.html#participate",
     "title": "Week 4",
     "section": "Participate",
-    "text": "Participate\n🖥️ Creating and manipulating attributes for spatial data",
+    "text": "Participate\n🖥️ Transforming data with {dplyr} and {tidyr}",
     "crumbs": [
       "Weeks 🗓️",
       "Week 4"
@@ -2941,7 +2875,7 @@
     "href": "weeks/week_04.html#practice",
     "title": "Week 4",
     "section": "Practice",
-    "text": "Practice\n🛠️️ Exercise 04",
+    "text": "Practice\n🛠️️ Exercise 03",
     "crumbs": [
       "Weeks 🗓️",
       "Week 4"
@@ -2952,7 +2886,7 @@
     "href": "weeks/week_06.html",
     "title": "Week 6",
     "section": "",
-    "text": "Introduce spatial, geometry, and geometric operations in {sf}\nPractice using geometry operations for buffering or simplifying features\nPractice using geometric operations like union, intersection, and difference\nPractice using related functions including spatial joins and filters",
+    "text": "Practice joining tables by attribute with {dplyr}\nPractice converting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nPractice recoding categorical attribute data using the {forcats} package",
     "crumbs": [
       "Weeks 🗓️",
       "Week 6"
@@ -2963,7 +2897,7 @@
     "href": "weeks/week_06.html#overview",
     "title": "Week 6",
     "section": "",
-    "text": "Introduce spatial, geometry, and geometric operations in {sf}\nPractice using geometry operations for buffering or simplifying features\nPractice using geometric operations like union, intersection, and difference\nPractice using related functions including spatial joins and filters",
+    "text": "Practice joining tables by attribute with {dplyr}\nPractice converting between wide and long data formats with dplyr::pivot_longer() and dplyr::pivot_wider()\nPractice recoding categorical attribute data using the {forcats} package",
     "crumbs": [
       "Weeks 🗓️",
       "Week 6"
@@ -2974,7 +2908,7 @@
     "href": "weeks/week_06.html#prepare",
     "title": "Week 6",
     "section": "Prepare",
-    "text": "Prepare\n\nRequired reading\n\n\nCh. 20 Joins in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 5 Geometry operations in Robin Lovelace, Jakub Nowosad, and Jannes Muenchow Geocomputation with R, 2nd ed. (CRC Press, 2025), https://r.geocompx.org.",
+    "text": "Prepare\n\nRequired readings\n\nCh. 6 Data tidying in Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), https://r4ds.hadley.nz/.\nCh. 14 Data cleaning in Crystal Lewis Data Management in Large-Scale Education Research, 1st ed. (Chapman & Hall, 2024), https://datamgmtinedresearch.com/.\nKarl W. Broman and Kara H. Woo “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (January 2, 2018): 2–10, doi:10.1080/00031305.2017.1375989.\n\n\n\n\nOptional readings\n\nCatherine D’Ignazio and Lauren Klein “Who Collects the Data? A Tale of Three Maps,” MIT Case Studies in Social and Ethical Responsibilities of Computing (February 5, 2021), doi:10.21428/2c646de5.fc6a97cc.",
     "crumbs": [
       "Weeks 🗓️",
       "Week 6"
@@ -2985,7 +2919,18 @@
     "href": "weeks/week_06.html#participate",
     "title": "Week 6",
     "section": "Participate",
-    "text": "Participate\n🖥️ Working with spatial and geometric operations in {sf}",
+    "text": "Participate\n🖥️ Tidying and joining data",
+    "crumbs": [
+      "Weeks 🗓️",
+      "Week 6"
+    ]
+  },
+  {
+    "objectID": "weeks/week_06.html#practice",
+    "href": "weeks/week_06.html#practice",
+    "title": "Week 6",
+    "section": "Practice",
+    "text": "Practice\n🛠️️ Exercise 05",
     "crumbs": [
       "Weeks 🗓️",
       "Week 6"

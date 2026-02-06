@@ -74,9 +74,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 6 – GES 668 - Spring 2026">
-<meta property="og:description" content="This week we are learning more about the spatial, geometry, and geometric operations available through the {sf} package.">
-<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/GDALLogoColor.svg">
+<meta property="og:description" content="This week we are learning to use {dplyr} and {tidyr} to join tables and switching data between a wide and long format.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/st_intersects_postgis-intro.png">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
+<meta property="og:image:height" content="550">
+<meta property="og:image:width" content="500">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -360,12 +362,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
+  </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
-  <li><a href="#required-reading" id="toc-required-reading" class="nav-link" data-scroll-target="#required-reading">Required reading</a></li>
+  <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
+  <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_06.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -375,7 +382,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_06.html">Week 6</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 6</h1>
-<p class="subtitle lead">Applying spatial transformations and geometric operations using <code>{sf}</code></p>
+<p class="subtitle lead">Tidying and joining spatial data</p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -399,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 <div>
   <div class="abstract">
     <div class="block-title">Summary</div>
-    This week we are learning more about the spatial, geometry, and geometric operations available through the <code>{sf}</code> package.
+    This week we are learning to use <code>{dplyr}</code> and <code>{tidyr}</code> to join tables and switching data between a wide and long format.
   </div>
 </div>
 
@@ -409,30 +416,40 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<section id="key-objectives" class="level4">
-<h4 class="anchored" data-anchor-id="key-objectives">Key Objectives</h4>
+<section id="key-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
 <ul>
-<li>Introduce spatial, geometry, and geometric operations in <code>{sf}</code></li>
-<li>Practice using geometry operations for buffering or simplifying features</li>
-<li>Practice using geometric operations like union, intersection, and difference</li>
-<li>Practice using related functions including spatial joins and filters</li>
+<li>Practice joining tables by attribute with <code>{dplyr}</code></li>
+<li>Practice converting between wide and long data formats with <code>dplyr::pivot_longer()</code> and <code>dplyr::pivot_wider()</code></li>
+<li>Practice recoding categorical attribute data using the <a href="https://forcats.tidyverse.org/">{forcats}</a> package</li>
 </ul>
 </section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<section id="required-reading" class="level3">
-<h3 class="anchored" data-anchor-id="required-reading">Required reading</h3>
-<!-- TODO: Consider moving this reading on Joins to the session on tidy data -->
+<section id="required-readings" class="level3">
+<h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><a href="https://r4ds.hadley.nz/joins">Ch. 20 Joins</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
-<li><a href="https://r.geocompx.org/geometry-operations">Ch. 5 Geometry operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://datamgmtinedresearch.com/clean">Ch. 14 Data cleaning</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/">https://datamgmtinedresearch.com/</a>.</span></li>
+<li><span class="citation" data-cites="bromanDataOrganizationSpreadsheets2018">Karl W. Broman and Kara H. Woo <span>“Data <span>Organization</span> in <span>Spreadsheets</span>,”</span> <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</span></li>
+</ul>
+<!-- -   [Ch. 1 Local Origins](https://direct.mit.edu/books/oa-monograph/4323/chapter/181048/LOCAL-ORIGINS), [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA), and [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019 -->
+</section>
+<section id="optional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
+<ul>
+<li><span class="citation" data-cites="dignazioWhoCollectsData2021">Catherine D’Ignazio and Lauren Klein <span>“Who <span>Collects</span> the <span>Data</span>? <span>A Tale</span> of <span>Three Maps</span>,”</span> <em>MIT Case Studies in Social and Ethical Responsibilities of Computing</em> (February 5, 2021), doi:<a href="https://doi.org/10.21428/2c646de5.fc6a97cc">10.21428/2c646de5.fc6a97cc</a>.</span></li>
 </ul>
 </section>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/feature-geometry.html">Working with spatial and geometric operations in <code>{sf}</code></a></p>
+<p>🖥️ <a href="../slides/tidy-data.html">Tidying and joining data</a></p>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>🛠️️ <a href="../exercises/exercise_05.html">Exercise 05</a></p>
 
 
 </section>

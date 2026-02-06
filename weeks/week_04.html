@@ -74,8 +74,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Week 4 – GES 668 - Spring 2026">
-<meta property="og:description" content="Transforming spatial data attributes">
+<meta property="og:description" content="Transforming data with {dplyr}">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/whole-game.png">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
+<meta property="og:image:height" content="508">
+<meta property="og:image:width" content="1504">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -359,13 +362,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
-  </ul></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
   <ul class="collapse">
   <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
+  <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
   </ul></li>
   <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
@@ -378,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week_01.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_04.html">Week 4</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 4</h1>
-<p class="subtitle lead">Transforming spatial data attributes</p>
+<p class="subtitle lead">Transforming data with <code>{dplyr}</code></p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -404,16 +405,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Reminder! Schedule adjustment deadline is February 13.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Friday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.</p>
+</div>
+</div>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This week is to learn to use <code>{dplyr}</code> and <code>{sf}</code> in combination to create and manipulate attributes associated with spatial data.</p>
-<section id="key-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<p>This week includes a review of data visualization and mapping with <code>{ggplot}</code> review, an introduction to data transformation with <code>{dplyr}</code>, and an initial discussion of using <code>{dplyr}</code> with <code>sf</code> objects.</p>
+<section id="key-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="key-objectives">Key Objectives</h4>
 <ul>
-<li>Review key concepts of simple features in R</li>
-<li>Introduce key concepts for spatial attribute data (e.g.&nbsp;point vs.&nbsp;block support)</li>
-<li>Practice using <code>{sf}</code> functions for <em>geometric confirmation</em> (<code>st_intersects()</code>, <code>st_disjoint()</code>) and <em>geometric measurement</em> (<code>st_area()</code>, <code>st_length()</code>, <code>st_distance()</code>)</li>
-<li>Discuss ideas for final projects</li>
+<li>Review the concept of “tidy”, analysis-friendly data</li>
+<li>Introduce the “verbs” of data wrangling with <code>{dplyr}</code></li>
+<li>Practice subsetting rows with <code>dplyr::filter()</code> or <code>dplyr::slice()</code></li>
+<li>Practice subsetting columns with <code>dplyr::select()</code></li>
+<li>Practice using <code>{tidyselect}</code> helpers including <code>where()</code>, <code>all_of()</code>, <code>any_of()</code>, and <code>starts_with()</code></li>
+<li>Practice creating new variables with <code>dplyr::mutate()</code> or <code>dplyr::summarise()</code></li>
 </ul>
 </section>
 </section>
@@ -422,18 +438,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="required-readings" class="level3">
 <h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
 <ul>
-<li><span class="citation" data-cites="pebesmaManipulatingSimpleFeature2016">Edzer Pebesma <span>“3. <span>Manipulating Simple Feature Geometries</span>”</span> (sf, November 28, 2016), <a href="https://r-spatial.github.io/sf/articles/sf3.html">https://r-spatial.github.io/sf/articles/sf3.html</a>.</span></li>
-<li><a href="https://r.geocompx.org/spatial-operations">Ch. 4 Spatial data operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
+<li><a href="https://datamgmtinedresearch.com/structure">Ch. 3 Data Structure</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/">https://datamgmtinedresearch.com/</a>.</span></li>
+<li><a href="https://r4ds.hadley.nz/data-transform">Ch. 5 Data transformation</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://r.geocompx.org/attr">Ch. 3 Attribute data operations</a> in <span class="citation" data-cites="lovelaceGeocomputation2025">Robin Lovelace, Jakub Nowosad, and Jannes Muenchow <em>Geocomputation with <span>R</span></em>, 2nd ed. (CRC Press, 2025), <a href="https://r.geocompx.org">https://r.geocompx.org</a>.</span></li>
+</ul>
+</section>
+<section id="optional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
+<ul>
+<li><a href="https://r-spatial.org/book/05-Attributes.html">Ch. 5 Attributes and Support</a> in <span class="citation" data-cites="pebesmaSpatialDataScience2023">Edzer Pebesma and Roger Bivand <em>Spatial <span>Data Science</span></em> (CRC Press, 2023), <a href="https://r-spatial.org/book/">https://r-spatial.org/book/</a>.</span></li>
+<li><a href="https://dplyr.tidyverse.org/articles/base.html">dplyr base R</a> vignette for the <code>{dplyr}</code> package comparing dplyr functions to their base R equivalents.</li>
 </ul>
 </section>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/spatial-data-attributes.html">Creating and manipulating attributes for spatial data</a></p>
+<p>🖥️ <a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code> and <code>{tidyr}</code></a></p>
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>🛠️️ <a href="../exercises/exercise_04.html">Exercise 04</a></p>
+<p>🛠️️ <a href="../exercises/exercise_03.html">Exercise 03</a></p>
 
 
 </section>
