@@ -24,7 +24,7 @@ Many different types (or levels) of documentation:
 3.  How can *you* make metadata?
 
 ::: footer
-Portions of these are adapted or inspired by a fall 2022 lecture by [Reina Chano Murray](https://github.com/reinacmurray/) ([repo](https://github.com/reinacmurray/documenting-spatial-data-class/) / [Google Slides](https://docs.google.com/presentation/d/1DF_OJP-wvxcUPL1Lbo7egtdoYUqEsdkLqd797zGAiq0/edit?usp=sharing)).
+Portions of these are adapted or inspired by a fall 2022 lecture by [Reina Chano Murray](https://github.com/reinacmurray/) ([repo](https://github.com/reinacmurray/documenting-spatial-data-class/)).
 :::
 
 ::: notes
@@ -92,7 +92,7 @@ Provides agreement on the meaning and semantics of the data.
 
 ### How many standards are there?
 
-![Excerpt from [Seeing Standards: A Visualization of the Metadata Universe](https://jennriley.com/metadatamap/) ([CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/)) (2010)](images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png){width="100%"}
+![Excerpt from [Seeing Standards: A Visualization of the Metadata Universe](https://jennriley.com/seeing-standards-a-visualization-of-the-metadata-universe/) ([CC BY-NC-SA 3.0 US](https://creativecommons.org/licenses/by-nc-sa/3.0/us/)) (2010)](images/Excerpt_2010_Seeing-Standards_Jenn-Riley_BY-NC-SA.png){width="100%"}
 
 ::: footer
 *So many standards*. See [Jenn Riley's Metadata Map](http://jennriley.com/metadatamap/).
@@ -213,7 +213,7 @@ ISO Standards Diagram via [FGDC](https://www.fgdc.gov/metadata/iso-standards)
 ## Geospatial Metadata Schemas
 
 -   [INSPIRE](https://knowledge-base.inspire.ec.europa.eu/index_en) (Infrastructure for Spatial Information in Europe)
--   [OpenGeoMetadata](https://opengeometadata.org/docs/ogm-aardvark)
+-   [OpenGeoMetadata](https://opengeometadata.org/ogm-aardvark/)
 
 ### OpenGeoMetadata
 
@@ -332,7 +332,7 @@ Practice using the `{labelled}` package to label variables with `labelled::set_v
 
 ## Open Data Charter (2015)
 
-::::: columns
+::: columns
 ::: {.column width="60%"}
 Created in October 2015, the [International Open Data Charter](https://opendatacharter.net/principles/) developed six principles on how to publish data that can be freely used, reused, and redistributed by anyone, anytime, anywhere:
 
@@ -347,7 +347,7 @@ Created in October 2015, the [International Open Data Charter](https://opendatac
 ::: {.column width="40%"}
 ![Cover of the International Open Data Charter](images/opendatacharter-charter_cover.png)
 :::
-:::::
+:::
 
 ::: notes
 1.  Open By Default This represents a real shift in how government operates and how it interacts with citizens. At the moment we often have to ask officials for the specific information we want. Open by default turns this on its head and says that there should be a presumption of publication for all. Governments need to justify data that's kept closed, for example for security or data protection reasons. To make this work, citizens must also feel confident that open data will not compromise their right to privacy.
@@ -365,19 +365,19 @@ Created in October 2015, the [International Open Data Charter](https://opendatac
 
 ## FAIR and CARE
 
-:::::: columns
-:::: {.column width="60%"}
+::: columns
+::: {.column width="60%"}
 [FAIR](https://www.go-fair.org/fair-principles/) Guiding Principles (2016):
 
 -   Findable,
 -   Accessible,
 -   Interoperable,
 -   and Reusable
-
+:::
 ::: {.column width="40%"}
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png)
 :::
-::::
+:::
 
 ::: notes
 Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1
@@ -385,18 +385,20 @@ Image: https://www.nature.com/articles/s41597-021-00892-0/figures/1
 
 ------------------------------------------------------------------------
 
+::: columns
+::: {.column width="60%"}
+
 [CARE](https://www.gida-global.org/care) Principles for Indigenous Data Governance (2019):
 
 -   Collective benefit,
 -   Authority to control,
 -   Responsibility,
 -   and Ethics
-::::::
+:::
 
 ::: {.column width="40%"}
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41597-021-00892-0/MediaObjects/41597_2021_892_Fig1_HTML.png)
 :::
-
 :::
 
 ::: notes
