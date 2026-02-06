@@ -1,36 +1,40 @@
 ## Week 1
 
-{{< include weeks/_readings_intro.qmd >}}
+Campus closed for inclement weather.
 
 ## Week 2
 
-{{< include weeks/_readings_data-visualization.qmd >}}
+{{< include weeks/_readings_intro.qmd >}}
 
 ## Week 3
 
-{{< include weeks/_readings_data-transformation.qmd >}}
+{{< include weeks/_readings_data-visualization.qmd >}}
 
 ## Week 4
 
-{{< include weeks/_readings_spatial-operations.qmd >}}
+{{< include weeks/_readings_data-transformation.qmd >}}
 
 ## Week 5
 
-{{< include weeks/_readings_tidy-data.qmd >}}
+{{< include weeks/_readings_spatial-operations.qmd >}}
 
 ## Week 6
 
-{{< include weeks/_readings_geometry-operations.qmd >}}
+{{< include weeks/_readings_tidy-data.qmd >}}
 
 ## Week 7
 
-{{< include weeks/_readings_functions.qmd >}}
+{{< include weeks/_readings_geometry-operations.qmd >}}
 
 ## Week 8
 
 Spring Break.
 
 ## Week 9
+
+Adjusted for campus closure in week 1 by combining topics from week 7 with week 9.
+
+{{< include weeks/_readings_functions.qmd >}}
 
 {{< include weeks/_readings_eda.qmd >}}
 

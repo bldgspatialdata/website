@@ -2,27 +2,32 @@
 title: Week 6
 order: 6
 date: 2026-03-04
-subtitle: Applying spatial transformations and geometric operations using `{sf}`
-abstract: This week we are learning more about the spatial, geometry, and geometric operations available through the `{sf}` package.
-image: /slides/images/GDALLogoColor.svg
+subtitle: Tidying and joining spatial data
+abstract: This week we are learning to use `{dplyr}` and `{tidyr}` to join tables and switching data between a wide and long format.
+unit: Getting started
+image: /slides/images/st_intersects_postgis-intro.png
 slides:
-  title: Working with spatial and geometric operations in `{sf}`
-  file: feature-geometry.qmd
+  title: Tidying and joining data
+  file: tidy-data.qmd
+exercise:
+  title: Exercise 05
+  file: exercise_05.qmd
 ---
 
 ## Overview
 
-#### Key Objectives
+### Key Objectives
 
-- Introduce spatial, geometry, and geometric operations in `{sf}`
-- Practice using geometry operations for buffering or simplifying features
-- Practice using geometric operations like union, intersection, and difference
-- Practice using related functions including spatial joins and filters
+-   Practice joining tables by attribute with `{dplyr}`
+-   Practice converting between wide and long data formats with `dplyr::pivot_longer()` and `dplyr::pivot_wider()`
+-   Practice recoding categorical attribute data using the [{forcats}](https://forcats.tidyverse.org/) package
 
 ## Prepare
 
-{{< include _readings_geometry-operations.qmd >}}
+{{< include _readings_tidy-data.qmd >}}
 
 ## Participate
 
 {{< include /_includes/_week_slides.qmd >}}
+
+{{< include /_includes/_week_exercises.qmd >}}

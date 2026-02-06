@@ -1,30 +1,30 @@
 ---
 title: Week 5
 order: 5
+subtitle: Transforming spatial data attributes
 date: 2026-02-25
-subtitle: Tidying and joining spatial data
-abstract: This week we are learning to use `{dplyr}` and `{tidyr}` to join tables and switching data between a wide and long format.
-unit: Getting started
-image: /slides/images/st_intersects_postgis-intro.png
 slides:
-  title: Tidying and joining data
-  file: tidy-data.qmd
+  title: Creating and manipulating attributes for spatial data
+  file: spatial-data-attributes.qmd
 exercise:
-  title: Exercise 05
-  file: exercise_05.qmd
+  title: Exercise 04
+  file: exercise_04.qmd
 ---
 
 ## Overview
 
+This week is to learn to use `{dplyr}` and `{sf}` in combination to create and manipulate attributes associated with spatial data.
+
 ### Key Objectives
 
--   Practice joining tables by attribute with `{dplyr}`
--   Practice converting between wide and long data formats with `dplyr::pivot_longer()` and `dplyr::pivot_wider()`
--   Practice recoding categorical attribute data using the [{forcats}](https://forcats.tidyverse.org/) package
+-   Review key concepts of simple features in R
+-   Introduce key concepts for spatial attribute data (e.g. point vs. block support)
+-   Practice using `{sf}` functions for *geometric confirmation* (`st_intersects()`, `st_disjoint()`) and *geometric measurement* (`st_area()`, `st_length()`, `st_distance()`)
+-   Discuss ideas for final projects
 
 ## Prepare
 
-{{< include _readings_tidy-data.qmd >}}
+{{< include _readings_spatial-operations.qmd >}}
 
 ## Participate
 

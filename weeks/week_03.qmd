@@ -1,40 +1,53 @@
 ---
 title: Week 3
 order: 3
-subtitle: Transforming data with `{dplyr}`
-date: 2026-02-11
-image: /slides/images/whole-game.png
+date: 2025-02-11
+subtitle: Visualizing data and making maps with `{ggplot2}`
+abstract: Learn to make plots and maps using the `{ggplot}` package. Visualization is a key method in learning how to explore, tidy, and interpret data.
+image: /files/ggplot2_hex_logo.png
 slides:
-  title: Transforming data with `{dplyr}` and `{tidyr}`
-  file: data-transformation.qmd
+  title: Visualizing spatial data with `{ggplot2}`
+  file: data-visualization.qmd
 exercise:
-  title: Exercise 03
-  file: exercise_03.qmd
+  title: Exercise 02
+  file: exercise_02.qmd
 ---
 
-::: {.callout-important appearance="minimal" icon="true"}
-### Reminder! Schedule adjustment deadline is February 13.
-
-Friday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.
-:::
-
+```{r}
+#| echo: false
+#| message: false
+library(ggplot2)
+```
 
 ## Overview
 
-This week includes a review of data visualization and mapping with `{ggplot}` review, an introduction to data transformation with `{dplyr}`, and an initial discussion of using `{dplyr}` with `sf` objects.
+This week is all about making plots and maps using the `{ggplot}` package. Learning to visualize data is a great place for start learning how to exploring data analytically and understanding the value of tidy data when working with R.
 
-#### Key Objectives
+### Key Objectives
 
--   Review the concept of "tidy", analysis-friendly data
--   Introduce the "verbs" of data wrangling with `{dplyr}`
--   Practice subsetting rows with `dplyr::filter()` or `dplyr::slice()`
--   Practice subsetting columns with `dplyr::select()`
--   Practice using `{tidyselect}` helpers including `where()`, `all_of()`, `any_of()`, and `starts_with()`
--   Practice creating new variables with `dplyr::mutate()` or `dplyr::summarise()`
+-   Introduce the concept of a "pipe" (`%>%` or `|>`) and how and when to use it
+-   Introduce the concept of the "grammar of graphics"
+-   Practice plotting and mapping data with `{ggplot2}`
+-   Practice mapping data with `{mapview}`
+
+```{=html}
+<!--
+TODO: Make sure interactive maps are included in the slides/exercise
+-->
+```
+
+### Key Skills
+
+-   Using keyboard shortcuts in RStudio
+-   Creating plots using `ggplot()`, `aes()`, and `geom_()` functions
+-   Creating static maps using `geom_sf()` and `coord_sf()`
+-   Creating interactive maps using `mapview()`
+-   Using `theme_` functions to customize the appearance of a plot
+-   Using `labs()` to add labels to a plot
 
 ## Prepare
 
-{{< include _readings_data-transformation.qmd >}}
+{{< include _readings_data-visualization.qmd >}}
 
 ## Participate
 

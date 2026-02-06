@@ -10,9 +10,17 @@ slides:
 
 ## Overview
 
-How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.
+This week combines the topic originally scheduled for week 7 with the topic for week 9.
 
-## Prepare
+On thee topic of functions:
+
+- Introduce process of refactoring code to write functions
+- Practice naming functions and adding comments to functions
+- Introduce the concept of reproducible data analysis pipelines
+
+{{< include _readings_functions.qmd >}}
+
+How do you understand a dataset? Descriptive statistics, tables, and interactive tools can be helpful in a preliminary analysis for any dataset.
 
 {{< include _readings_eda.qmd >}}
 

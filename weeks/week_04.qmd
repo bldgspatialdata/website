@@ -1,30 +1,40 @@
 ---
 title: Week 4
 order: 4
-subtitle: Transforming spatial data attributes
+subtitle: Transforming data with `{dplyr}`
 date: 2026-02-18
+image: /slides/images/whole-game.png
 slides:
-  title: Creating and manipulating attributes for spatial data
-  file: spatial-data-attributes.qmd
+  title: Transforming data with `{dplyr}` and `{tidyr}`
+  file: data-transformation.qmd
 exercise:
-  title: Exercise 04
-  file: exercise_04.qmd
+  title: Exercise 03
+  file: exercise_03.qmd
 ---
+
+::: {.callout-important appearance="minimal" icon="true"}
+### Reminder! Schedule adjustment deadline is February 13.
+
+Friday, February 13 is the last day to make changes to your schedule, to change grade method, or to drop a course without a W grade.
+:::
+
 
 ## Overview
 
-This week is to learn to use `{dplyr}` and `{sf}` in combination to create and manipulate attributes associated with spatial data.
+This week includes a review of data visualization and mapping with `{ggplot}` review, an introduction to data transformation with `{dplyr}`, and an initial discussion of using `{dplyr}` with `sf` objects.
 
-### Key Objectives
+#### Key Objectives
 
--   Review key concepts of simple features in R
--   Introduce key concepts for spatial attribute data (e.g. point vs. block support)
--   Practice using `{sf}` functions for *geometric confirmation* (`st_intersects()`, `st_disjoint()`) and *geometric measurement* (`st_area()`, `st_length()`, `st_distance()`)
--   Discuss ideas for final projects
+-   Review the concept of "tidy", analysis-friendly data
+-   Introduce the "verbs" of data wrangling with `{dplyr}`
+-   Practice subsetting rows with `dplyr::filter()` or `dplyr::slice()`
+-   Practice subsetting columns with `dplyr::select()`
+-   Practice using `{tidyselect}` helpers including `where()`, `all_of()`, `any_of()`, and `starts_with()`
+-   Practice creating new variables with `dplyr::mutate()` or `dplyr::summarise()`
 
 ## Prepare
 
-{{< include _readings_spatial-operations.qmd >}}
+{{< include _readings_data-transformation.qmd >}}
 
 ## Participate
 
