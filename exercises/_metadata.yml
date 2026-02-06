@@ -8,3 +8,6 @@ status: WIP
 execute:
   eval: false
   echo: true
+
+filters:
+  - linkrot
