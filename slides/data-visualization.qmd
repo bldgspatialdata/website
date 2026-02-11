@@ -4,19 +4,24 @@ title: "Visualizing spatial data with ggplot2"
 subtitle: "Session {{< meta order >}}"
 date: 2023-09-06
 image: "images/qcbis_workshop03_gglayers-graphic.png"
-format:
-  revealjs:
-    output-location: column-fragment
-code-fold: true
+# format:
+#  revealjs:
+#    output-location: column-fragment
+# code-fold: true
+fig-asp: 0.5625
 ---
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(tinytable)
+library(spData)
+```
 
 ```{r}
 #| label: setup
 #| echo: false
 #| message: false
-library(tidyverse)
-library(gt)
-
 source(here::here("_common.R"))
 
 gt_theme_ges668_class2 <- function(data) {
@@ -26,7 +31,10 @@ gt_theme_ges668_class2 <- function(data) {
       location = cells_body()
     ) |>
     tab_style(
-      style = cell_text(font = google_font("Atkinson Hyperlegible"), weight = "bold"),
+      style = cell_text(
+        font = google_font("Atkinson Hyperlegible"),
+        weight = "bold"
+      ),
       location = cells_column_labels()
     ) |>
     tab_style(
@@ -40,7 +48,8 @@ gt_theme_ges668_class2 <- function(data) {
         columns = starts_with("set")
       ),
       style = cell_text(size = "small", weight = "bold")
-    )
+    ) |>
+    gt::tab_options(table.width = pct(1))
 }
 
 ges668_plot_theme <- hrbrthemes::theme_ipsum_pub(
@@ -65,15 +74,11 @@ ges668_plot_theme <- hrbrthemes::theme_ipsum_pub(
 
 ### Why do we visualize spatial data?
 
-Why do we visualize spatial data?
-
 -   Validation
 -   Exploration
 -   Communication
 
 ### Why do we visualize data?
-
-Why do we visualize data?
 
 -   Validation
 -   Exploration
@@ -86,49 +91,46 @@ Why do we visualize data?
 Tmisc::quartet |>
   group_nest(set, keep = TRUE) |>
   pull(data) |>
-  purrr::list_cbind(name_repair = "universal") |>
-  gt() |>
-  cols_label(
-    starts_with("set") ~ "",
-    starts_with("x") ~ "x",
-    starts_with("y") ~ "y"
-  ) |>
-  gt_theme_ges668_class2()
+  list_cbind(name_repair = "universal") |>
+  tt(width = 0.9) |>
+  tt_style(i = 0, bold = TRUE) |>
+  setNames(rep(c("set", "x", "y"), 4))
 ```
 
-::: footer
+A little hard to read!
+
+::: notes
 To understand how visualization supports validation, we can take at the Anscombe's Quartet data from the `{Tmisc}`.
 :::
 
 ------------------------------------------------------------------------
 
-Hard to make sense of all those numbers at once.
-
-What if we use some summary statistics and get the mean, standard deviation, and Pearson correlation coefficient for x and y by set:
+Take a look at the data using some summary statistics:
 
 ```{r}
-#| echo: false
+#| fig-asp: 0.5625
 Tmisc::quartet |>
-  group_by(set) |>
   summarise(
-    mean_x = mean(x),
-    mean_y = mean(x),
-    sd_x = sd(x),
-    sd_y = sd(y),
-    r = cor(x, y)
+    across(c(x, y), c(mean = mean, sd = sd)),
+    r = cor(x, y),
+    .by = set
   ) |>
-  gt(groupname_col = "set", row_group_as_column = TRUE) |>
-  fmt_number() |>
-  gt_theme_ges668_class2()
+  relocate(ends_with("mean"), .after = set) |>
+  tt(width = 0.9) |>
+  tt_style(i = 0, bold = TRUE) |>
+  tt_format(digits = 2)
 ```
+
+::: notes
+Get the mean, standard deviation, and Pearson correlation coefficient for x and y.
+:::
 
 ------------------------------------------------------------------------
 
 Now, take another look using a plot:
 
 ```{r}
-#| echo: false
-#| message: false
+#| fig-asp: 0.5625
 Tmisc::quartet |>
   ggplot(aes(x, y, color = set)) +
   geom_smooth(method = "lm", alpha = 0.5, color = "gray30", linewidth = 0.25) +
@@ -136,18 +138,23 @@ Tmisc::quartet |>
   facet_wrap(~set) +
   scale_color_brewer(palette = "Dark2", type = "qual") +
   guides(color = "none") +
-  ges668_plot_theme
+  ges668_plot_theme +
+  theme(
+    plot.margin = margin(0)
+  )
 ```
 
+::: notes
 What do you *see*?
+:::
 
 ## How do we visualize spatial data?
 
 ::::: columns
 ::: {.column width="50%"}
-A map is a special type of data visualization for spatial data but it isn't the only one.
+A **map** is a special type of data visualization for spatial data but it isn't the only one.
 
-**Plots** and **tables** are two other common ways to visualize spatial data.
+**Plots** and **tables** are other common ways to visualize spatial data.
 :::
 
 ::: {.column width="50%"}
@@ -173,7 +180,11 @@ Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
 
 ## Grammar of graphics {.unnumbered}
 
-![Image from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series](images/qcbis_workshop03_gglayers-graphic.png)
+![From The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series.](images/qcbis_workshop03_gglayers-graphic.png)
+
+::: notes
+Concept from *Grammar of Graphics* book (1999), from Leland Wilkinson.
+:::
 
 ## Grammar of graphics {.unnumbered}
 
@@ -187,22 +198,26 @@ Maps, graphics, and tables also vary in **format**: print, web, mobile, etc.
 -   Theme
 
 ::: footer
-This introduction to the "grammar of graphics" is based largely on a 2020 ggplot2 workshop ([part 1](https://www.youtube.com/watch?v=h29g21z0a68)) by Thomas Lin Pedersen.
+Introduction to the "grammar of graphics" adapted from a 2020 ggplot2 workshop ([part 1](https://www.youtube.com/watch?v=h29g21z0a68)) by Thomas Lin Pedersen.
 :::
 
 ## Data
 
--   Structure and representation of data determines what you can and can't do with it
--   Data is expected to be in a "tidy" format (also known as long format data)
+-   Structure and representation of data determines what you *can* and *can't* do with it
+-   Data is expected to be in a "tidy" format (a.k.a. long format data)
 
 ------------------------------------------------------------------------
 
-A few definitions (from [Ch. 2 of R for Data Science](https://r4ds.hadley.nz/data-visualize)):
+A few definitions:
 
--   variable: a quantity, quality, or property that you can measure.
--   value: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.
--   observation: a set of measurements made under similar conditions
--   tabular data: a set of values, each associated with a variable and an observation.
+-   **variable**: a quantity, quality, or property that you can measure.
+-   **value**: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.
+-   **observation**: a set of measurements made under similar conditions
+-   **tabular data**: a set of values, each associated with a variable and an observation.
+
+::: aside
+Excerpted from [Ch. 2 of R for Data Science](https://r4ds.hadley.nz/data-visualize).
+:::
 
 ------------------------------------------------------------------------
 
@@ -212,12 +227,30 @@ What works best with the grammar of graphics is **tidy data**:
 -   each variable in its own column, and
 -   each observation in its own row.
 
+<!--
+Use `ggplot()` to set `data` for a plot:
+
+```{r}
+ggplot(data = us_states)
+```
+-->
+
 ## Mapping
 
--   Allow data to be understood by the graphics system through:
+-   Mapping allows data to be understood by the graphics system
 
-    -   Aesthetic mapping: variables -\> graphical properties in the geometry
-    -   Facet mapping: variables -\> panels in layout
+    -   **Aesthetic mapping**: variables -\> graphical properties in the geometry
+    -   **Facet mapping**: variables -\> panels in layout
+
+<!--
+
+Use the `aes()` function to define an aesthetic mapping for a plot:
+
+```{r}
+ggplot(data = us_states, aes(fill = total_pop_15))
+```
+
+-->
 
 ## Statistics
 
@@ -236,8 +269,8 @@ Statistics can be used prior to plotting data or used by a plotting function dir
 
 -   Scales translate between value ranges and graphical properties, e.g.
 
-    -   Categories -\> Colors
-    -   Numbers -\> Position
+    -   Categories -> Colors
+    -   Numbers -> Position
 
 -   Scales use a specific type of interpolation, e.g. discrete, continuous, etc., so not all scales work with all variables.
 
@@ -269,7 +302,7 @@ We usually think about the [cartesian coordinate system](https://en.wikipedia.or
 
 ## Theme
 
--   Every part of the graphic that *isn't* linked to the data:
+-   Every other part of the graphic that *isn't* linked to the data:
 
     -   Fonts
     -   Spacing
@@ -314,6 +347,7 @@ how to visualize spatial data with mapview:
 For this session, we are going to use the `{ggplot2}` and `{dplyr}` packages along with `{sf}` and `{rnaturalearth}`:
 
 ```{r}
+#| code-fold: false
 library(ggplot2)
 library(dplyr)
 library(sf)
@@ -322,41 +356,46 @@ library(rnaturalearth)
 
 ## Setup data
 
-We are also going to use the `storms` data included with `{dplyr}`.
+Next, we are going to use the `storms` data included with `{dplyr}`.
 
 Take a quick look at `storms` using `glimpse()`:
 
 ```{r}
-#| output-location: fragment
+#| code-fold: false
 glimpse(storms)
 ```
 
 ::: footer
-Remember that each row is an **observation** of a storm, not a individual storm.
+Remember! Each row is an *(observation** of a storm, not a individual storm.
 :::
 
 ------------------------------------------------------------------------
 
+`storms` is a subset of a larger [Atlantic hurricane database (HURDAT2)](https://www.nhc.noaa.gov/data/#hurdat) with data from 1851 to 2022.
+
+::: {.columns}
+::: {.column}
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif)
-
-::: footer
-`storms` is a subset of a larger [Atlantic hurricane database (HURDAT2)](https://www.nhc.noaa.gov/data/#hurdat) with data from 1851 to 2022. Since 1974, NOAA's [Geostationary Operational Environmental Satellite](https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite) program has played a key role in tracking storms and monitoring weather around the world.
 :::
+::: {.column}
+Since 1974, NOAA's [Geostationary Operational Environmental Satellite](https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite) program has played a key role in tracking storms and monitoring weather around the world.
+:::
+:::
+<!-- end columns -->
 
-## Create a ggplot
+## Create a `ggplot`
 
 We can start by using the function `ggplot()` to define a plot object. Set `storm` as the input data for `ggplot()`:
 
 ```{r}
+#| code-fold: false
 ggplot(data = storms)
 ```
 
-...
-
-::: smaller
 Well, that doesn't look like much. 🤔
 
-This is the first step in creating a plot that we can add layers to. Parameters set with `ggplot()` can be "inherited" by layers added later.
+::: footer
+This is the first step in creating a plot that we can add layers to. Parameters set with `ggplot()` are *inherited* by layers added later.
 :::
 
 ## Add aesthetics and layers
@@ -419,9 +458,11 @@ ggplot() +
 
 ### What is this `+` operator?
 
-Notice that we are combining the `ggplot()` and `geom_point()` functions using the `+` operator. This is a style of function or operator known as an [infix operator](https://en.wikipedia.org/wiki/Infix_notation).
+Notice that we are combining the `ggplot()` and `geom_point()` functions using the `+` operator.
 
-Next week, we will introduce a similar function known as a pipe, `%>%` or `|>` that works to pass the output from one function (or line of code) into the next line as the first parameter in a function.
+This is a style of function or operator known as an [infix operator](https://en.wikipedia.org/wiki/Infix_notation).
+
+This operator works is similar to the pipe operator, `%>%` or `|>` that passes the output from one function (or line of code) to the next line as the first parameter in a following function.
 
 ------------------------------------------------------------------------
 
@@ -458,6 +499,8 @@ Using pipes can help avoid the need for intermediate objects like `storm_names` 
 The first parameter for `ggplot()` is `data` and the first parameter for all geom functions is `mapping` so you often see these passed as unnnamed parameters:
 
 ```{r}
+#| output-location: slide
+#| code-fold: false
 ggplot(storms) +
   geom_point(
     aes(
@@ -467,28 +510,43 @@ ggplot(storms) +
   )
 ```
 
+::: notes
+See how the plot is now showing axis labels.
+:::
+
 ------------------------------------------------------------------------
 
 You can even leave off the x and y parameter names:
 
 ```{r}
+#| output-location: slide
+#| code-fold: false
 ggplot(storms) +
   geom_point(aes(long, lat))
 ```
 
+::: aside
+Function parameters can be specified by *position* as well as *name*.
+:::
+
 ------------------------------------------------------------------------
 
-# Mapping variables are not strings!
+::: callout-tip
+
+### Mapping variables are not strings!
 
 The variables passed to `aes()` don't have quotes around them! This is because `aes()` is a data-masking (also known as a quoting function) where the inputs are evaluated in the context of the data.
 
 TLDR: only put quotes around your aesthetic mappings when you want to pass a literal string.
+:::
 
 ------------------------------------------------------------------------
 
 Next we can map one of the variables (`status` or storm classification) to an aesthetic (`color`):
 
 ```{r}
+#| output-location: slide
+#| code-fold: false
 ggplot(storms) +
   geom_point(aes(long, lat, color = status))
 ```
@@ -497,9 +555,15 @@ Note that we now have a legend, added automatically when we defined a mapping to
 
 ------------------------------------------------------------------------
 
-In addition to having mapped aesthetics, we can also have "fixed" aesthetics (fixed because the same value is used for every observation in the plot). When you have a lot of overlapping features (known as overplotting), you may want to reduce the `alpha` (or transparency) of the features:
+In addition mapped aesthetics, we can set "fixed" aesthetics (called fixed because the same value is used for every observation in the plot).
+
+------------------------------------------------------------------------
+
+When you have a lot of overlapping features (known as *overplotting*), you may want to reduce the `alpha` (or transparency) of the features:
 
 ```{r}
+#| output-location: slide
+#| code-fold: false
 ggplot(storms) +
   geom_point(
     aes(
@@ -518,6 +582,8 @@ Fixed aesthetics should be defined for each geom—they are ignored if you pass 
 Aesthetics can also be defined using a function. In this example, we are using the boolean operator `==` to compare the values from "status" to the string "hurricane":
 
 ```{r}
+#| output-location: slide
+#| code-fold: false
 ggplot(
   data = storms,
   mapping = aes(
@@ -664,7 +730,12 @@ Try adding a scale:
 
 ```{r}
 storms_map <- storms_map +
-  scale_color_distiller(type = "seq", direction = 1, palette = "YlOrRd", na.value = "gray60")
+  scale_color_distiller(
+    type = "seq",
+    direction = 1,
+    palette = "YlOrRd",
+    na.value = "gray60"
+  )
 
 storms_map
 ```
