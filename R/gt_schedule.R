@@ -1,3 +1,36 @@
+week_frontmatter <- purrr::map(
+  fs::dir_ls(here::here("weeks"), regexp = "weeks/week"),
+  frontmatter::read_front_matter
+)
+
+week_schedule <- purrr::imap(
+  week_frontmatter,
+  \(x, nm) {
+    week <- x[["data"]]
+    slides <- week[["slides"]]
+    exercise <- week[["exercise"]]
+    week_path <- fs::path("weeks", fs::path_file(nm))
+
+    data.frame(
+      Week = glue::glue("[{week[['order']]}]({week_path})"),
+      Date = week[["date"]],
+      Topic = week[["subtitle"]],
+      Slides = if (is.null(slides)) {
+        NA_character_
+      } else {
+        glue::glue("[📖](slides/{slides[['file']]})")
+      },
+      Exercise = if (is.null(exercise)) {
+        NA_character_
+      } else {
+        glue::glue("[📝](exercises/{exercise[['file']]})")
+      }
+    )
+  }
+)
+
+course_schedule_tbl <- purrr::list_rbind(week_schedule)
+
 #' Create a gt table from a course schedule data frame
 #'
 #' @param main_font,icon_font Passed to `name` argument of [gt::google_font()]

@@ -24,35 +24,3 @@ options(
 )
 
 ggplot2::theme_set(ggplot2::theme_gray(12))
-
-week_frontmatter <- purrr::map(
-  fs::dir_ls("weeks", regexp = "^weeks/week"),
-  frontmatter::read_front_matter
-)
-
-week_schedule <- purrr::imap(
-  week_frontmatter,
-  \(x, nm) {
-    week <- x[["data"]]
-    slides <- week[["slides"]]
-    exercise <- week[["exercise"]]
-
-    data.frame(
-      Week = glue::glue("[{week[['order']]}]({nm})"),
-      Date = week[["date"]],
-      Topic = week[["subtitle"]],
-      Slides = if (is.null(slides)) {
-        NA_character_
-      } else {
-        glue::glue("[📖](slides/{slides[['file']]})")
-      },
-      Exercise = if (is.null(exercise)) {
-        NA_character_
-      } else {
-        glue::glue("[📝](exercises/{exercise[['file']]})")
-      }
-    )
-  }
-)
-
-course_schedule_tbl <- purrr::list_rbind(week_schedule)
