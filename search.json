@@ -993,35 +993,35 @@
     "href": "slides/data-visualization.html#how-do-we-visualize-spatial-data",
     "title": "Visualizing spatial data with ggplot2",
     "section": "1.2 How do we visualize spatial data?",
-    "text": "1.2 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are two other common ways to visualize spatial data.\n\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
+    "text": "1.2 How do we visualize spatial data?\n\n\nA map is a special type of data visualization for spatial data but it isn’t the only one.\nPlots and tables are other common ways to visualize spatial data.\n\n\n\n\nKey for interpreting Sanborn fire insurance maps courtesy Library of Congress"
   },
   {
     "objectID": "slides/data-visualization.html#grammar-of-graphics",
     "href": "slides/data-visualization.html#grammar-of-graphics",
     "title": "Visualizing spatial data with ggplot2",
     "section": "Grammar of graphics",
-    "text": "Grammar of graphics\n\nImage from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series"
+    "text": "Grammar of graphics\n\nFrom The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series.\nConcept from Grammar of Graphics book (1999), from Leland Wilkinson."
   },
   {
     "objectID": "slides/data-visualization.html#grammar-of-graphics-1",
     "href": "slides/data-visualization.html#grammar-of-graphics-1",
     "title": "Visualizing spatial data with ggplot2",
     "section": "Grammar of graphics",
-    "text": "Grammar of graphics\n\nData\nMapping\nStatistics\nScales\nGeometries\nFacets\nCoordinates\nTheme\n\n\nThis introduction to the “grammar of graphics” is based largely on a 2020 ggplot2 workshop (part 1) by Thomas Lin Pedersen."
+    "text": "Grammar of graphics\n\nData\nMapping\nStatistics\nScales\nGeometries\nFacets\nCoordinates\nTheme\n\n\nIntroduction to the “grammar of graphics” adapted from a 2020 ggplot2 workshop (part 1) by Thomas Lin Pedersen."
   },
   {
     "objectID": "slides/data-visualization.html#data",
     "href": "slides/data-visualization.html#data",
     "title": "Visualizing spatial data with ggplot2",
     "section": "2.1 Data",
-    "text": "2.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (also known as long format data)"
+    "text": "2.1 Data\n\nStructure and representation of data determines what you can and can’t do with it\nData is expected to be in a “tidy” format (a.k.a. long format data)"
   },
   {
     "objectID": "slides/data-visualization.html#mapping",
     "href": "slides/data-visualization.html#mapping",
     "title": "Visualizing spatial data with ggplot2",
     "section": "2.2 Mapping",
-    "text": "2.2 Mapping\n\nAllow data to be understood by the graphics system through:\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
+    "text": "2.2 Mapping\n\nMapping allows data to be understood by the graphics system\n\nAesthetic mapping: variables -&gt; graphical properties in the geometry\nFacet mapping: variables -&gt; panels in layout"
   },
   {
     "objectID": "slides/data-visualization.html#statistics",
@@ -1063,7 +1063,7 @@
     "href": "slides/data-visualization.html#theme",
     "title": "Visualizing spatial data with ggplot2",
     "section": "2.8 Theme",
-    "text": "2.8 Theme\n\nEvery part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
+    "text": "2.8 Theme\n\nEvery other part of the graphic that isn’t linked to the data:\n\nFonts\nSpacing\nColors\nWeights\netc."
   },
   {
     "objectID": "slides/data-visualization.html#cheatsheets",
@@ -1084,21 +1084,21 @@
     "href": "slides/data-visualization.html#setup",
     "title": "Visualizing spatial data with ggplot2",
     "section": "3.3 Setup",
-    "text": "3.3 Setup\nFor this session, we are going to use the {ggplot2} and {dplyr} packages along with {sf} and {rnaturalearth}:\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)\nlibrary(rnaturalearth)\n#&gt; Error in `library()`:\n#&gt; ! there is no package called 'rnaturalearth'"
+    "text": "3.3 Setup\nFor this session, we are going to use the {ggplot2} and {dplyr} packages along with {sf} and {rnaturalearth}:\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(sf)\nlibrary(rnaturalearth)"
   },
   {
     "objectID": "slides/data-visualization.html#setup-data",
     "href": "slides/data-visualization.html#setup-data",
     "title": "Visualizing spatial data with ggplot2",
     "section": "3.4 Setup data",
-    "text": "3.4 Setup data\nWe are also going to use the storms data included with {dplyr}.\nTake a quick look at storms using glimpse():\n\n\nCode\nglimpse(storms)\n#&gt; Rows: 19,537\n#&gt; Columns: 13\n#&gt; $ name                         &lt;chr&gt; \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Am…\n#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…\n#&gt; $ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…\n#&gt; $ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29…\n#&gt; $ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, …\n#&gt; $ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33…\n#&gt; $ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78…\n#&gt; $ status                       &lt;fct&gt; tropical depression, tropical depressi…\n#&gt; $ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40…\n#&gt; $ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 10…\n#&gt; $ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n\n\n\n\n\n\nRemember that each row is an observation of a storm, not a individual storm."
+    "text": "3.4 Setup data\nNext, we are going to use the storms data included with {dplyr}.\nTake a quick look at storms using glimpse():\n\nglimpse(storms)\n#&gt; Rows: 19,537\n#&gt; Columns: 13\n#&gt; $ name                         &lt;chr&gt; \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Amy\", \"Am…\n#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…\n#&gt; $ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…\n#&gt; $ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29…\n#&gt; $ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, …\n#&gt; $ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33…\n#&gt; $ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78…\n#&gt; $ status                       &lt;fct&gt; tropical depression, tropical depressi…\n#&gt; $ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40…\n#&gt; $ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 10…\n#&gt; $ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n#&gt; $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…\n\n\nRemember! Each row is an *(observation** of a storm, not a individual storm."
   },
   {
     "objectID": "slides/data-visualization.html#create-a-ggplot",
     "href": "slides/data-visualization.html#create-a-ggplot",
     "title": "Visualizing spatial data with ggplot2",
     "section": "3.5 Create a ggplot",
-    "text": "3.5 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\n\n\nCode\nggplot(data = storms)\n\n\n\n\n\n\n\n\n\n\n…\n\nWell, that doesn’t look like much. 🤔\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() can be “inherited” by layers added later."
+    "text": "3.5 Create a ggplot\nWe can start by using the function ggplot() to define a plot object. Set storm as the input data for ggplot():\n\nggplot(data = storms)\n\n\nWell, that doesn’t look like much. 🤔\n\nThis is the first step in creating a plot that we can add layers to. Parameters set with ggplot() are inherited by layers added later."
   },
   {
     "objectID": "slides/data-visualization.html#add-aesthetics-and-layers",
@@ -1111,29 +1111,29 @@
     "objectID": "slides/data-visualization.html#visualizing-distributions",
     "href": "slides/data-visualization.html#visualizing-distributions",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "4.1 Visualizing distributions",
-    "text": "4.1 Visualizing distributions"
+    "section": "3.7 Visualizing distributions",
+    "text": "3.7 Visualizing distributions"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable",
     "href": "slides/data-visualization.html#distribution-of-one-numeric-variable",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "4.2 Distribution of one numeric variable",
-    "text": "4.2 Distribution of one numeric variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
+    "section": "3.8 Distribution of one numeric variable",
+    "text": "3.8 Distribution of one numeric variable\n\nggplot(\n  data = storms,\n  mapping = aes(y = lat)\n) +\n  geom_histogram(bins = 90)"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
     "href": "slides/data-visualization.html#distribution-of-one-numeric-variable-1",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "4.3 Distribution of one numeric variable",
-    "text": "4.3 Distribution of one numeric variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
+    "section": "3.9 Distribution of one numeric variable",
+    "text": "3.9 Distribution of one numeric variable\n\nggplot(\n  data = storms,\n  mapping = aes(x = lat)\n) +\n  geom_freqpoly(binwidth = 1)"
   },
   {
     "objectID": "slides/data-visualization.html#distribution-of-one-categorical-variable",
     "href": "slides/data-visualization.html#distribution-of-one-categorical-variable",
     "title": "Visualizing spatial data with ggplot2",
-    "section": "4.4 Distribution of one categorical variable",
-    "text": "4.4 Distribution of one categorical variable\n\n\n\nCode\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
+    "section": "3.10 Distribution of one categorical variable",
+    "text": "3.10 Distribution of one categorical variable\n\nggplot(\n  data = storms,\n  mapping = aes(y = category)\n) +\n  geom_bar()"
   },
   {
     "objectID": "slides/coding-basics.html#week-1",
@@ -1981,7 +1981,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis with R\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\nQuestions, Source Code, and Debugging\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nFeb 6, 2026\n\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to GES 668: Building Spatial Datasets\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with spatial data using {sf} and the {tidyverse}\n\n\n\n\n\n\n\n\n\nAug 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing spatial data with ggplot2\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransforming data with {dplyr} and {tidyr}\n\n\n\n\n\n\n\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\nCreating and manipulating attributes for spatial data\n\n\n\n\n\n\n\n\n\nSep 20, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with spatial and geometric operations in {sf}\n\n\n\n\n\n\n\n\n\nSep 27, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidying and joining data\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWriting functions and pipelines\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory data analysis with R\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditing OpenStreetMap and exploring OpenStreetMap data with the {osmdata} package\n\n\n\n\n\n\n\n\n\nOct 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading and writing spatial data\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nMetadata, geospatial metadata, and READMEs\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nEffective visualization with {ggplot2} and R\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nCoding basics\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nQuestions, Source Code, and Debugging\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nFall 2023 Weekly Updates\n\n\n\n\n\n\n\n\n\nAug 30, 2023\n\n\n\n\n\n\n\n\n\n\n\nWeekly Updates\n\n\n\n\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\n\n\n\n\n\nWorking with Quarto\n\n\n\n\n\n\n\n\n\nFeb 11, 2026\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Course information",
       "Slides"

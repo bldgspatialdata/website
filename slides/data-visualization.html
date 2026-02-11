@@ -211,10 +211,9 @@
 <section class="slide level4">
 
 <div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! [ENOENT] Failed to search directory 'weeks': no such file or directory</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tinytable)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(spData)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section>
@@ -236,7 +235,6 @@
 </section>
 <section id="why-do-we-visualize-spatial-data" class="title-slide slide level3 center">
 <h3>Why do we visualize spatial data?</h3>
-<p>Why do we visualize spatial data?</p>
 <ul>
 <li>Validation</li>
 <li>Exploration</li>
@@ -246,7 +244,6 @@
 
 <section id="why-do-we-visualize-data" class="title-slide slide level3 center">
 <h3>Why do we visualize data?</h3>
-<p>Why do we visualize data?</p>
 <ul>
 <li>Validation</li>
 <li>Exploration</li>
@@ -257,30 +254,375 @@
 <section id="anscombes-quartet" class="title-slide slide level3 center">
 <h3>Anscombe’s quartet</h3>
 <div class="cell">
-<pre><code>#&gt; Error in `loadNamespace()`:
-#&gt; ! there is no package called 'Tmisc'</code></pre>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_jutj2bbujsh7dama65ci = TinyTable.createTableFunctions("tinytable_jutj2bbujsh7dama65ci");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 }, { i: '11', j: 4 }, { i: '11', j: 5 }, { i: '11', j: 6 }, { i: '11', j: 7 }, { i: '11', j: 8 }, { i: '11', j: 9 }, { i: '11', j: 10 }, { i: '11', j: 11 }, { i: '11', j: 12 } ], css_id: 'tinytable_css_no7e3g4d6g0141iejj7u',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 }, { i: '0', j: 10 }, { i: '0', j: 11 }, { i: '0', j: 12 } ], css_id: 'tinytable_css_d4qs43aq0irds585nnun',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_jutj2bbujsh7dama65ci.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_jutj2bbujsh7dama65ci td.tinytable_css_no7e3g4d6g0141iejj7u, #tinytable_jutj2bbujsh7dama65ci th.tinytable_css_no7e3g4d6g0141iejj7u {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_jutj2bbujsh7dama65ci td.tinytable_css_d4qs43aq0irds585nnun, #tinytable_jutj2bbujsh7dama65ci th.tinytable_css_d4qs43aq0irds585nnun {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_jutj2bbujsh7dama65ci" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">set</th>
+                <th scope="col" data-row="0" data-col="2">x</th>
+                <th scope="col" data-row="0" data-col="3">y</th>
+                <th scope="col" data-row="0" data-col="4">set</th>
+                <th scope="col" data-row="0" data-col="5">x</th>
+                <th scope="col" data-row="0" data-col="6">y</th>
+                <th scope="col" data-row="0" data-col="7">set</th>
+                <th scope="col" data-row="0" data-col="8">x</th>
+                <th scope="col" data-row="0" data-col="9">y</th>
+                <th scope="col" data-row="0" data-col="10">set</th>
+                <th scope="col" data-row="0" data-col="11">x</th>
+                <th scope="col" data-row="0" data-col="12">y</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">I</td>
+                  <td data-row="1" data-col="2">10</td>
+                  <td data-row="1" data-col="3">8.04</td>
+                  <td data-row="1" data-col="4">II</td>
+                  <td data-row="1" data-col="5">10</td>
+                  <td data-row="1" data-col="6">9.14</td>
+                  <td data-row="1" data-col="7">III</td>
+                  <td data-row="1" data-col="8">10</td>
+                  <td data-row="1" data-col="9">7.46</td>
+                  <td data-row="1" data-col="10">IV</td>
+                  <td data-row="1" data-col="11">8</td>
+                  <td data-row="1" data-col="12">6.58</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">I</td>
+                  <td data-row="2" data-col="2">8</td>
+                  <td data-row="2" data-col="3">6.95</td>
+                  <td data-row="2" data-col="4">II</td>
+                  <td data-row="2" data-col="5">8</td>
+                  <td data-row="2" data-col="6">8.14</td>
+                  <td data-row="2" data-col="7">III</td>
+                  <td data-row="2" data-col="8">8</td>
+                  <td data-row="2" data-col="9">6.77</td>
+                  <td data-row="2" data-col="10">IV</td>
+                  <td data-row="2" data-col="11">8</td>
+                  <td data-row="2" data-col="12">5.76</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">I</td>
+                  <td data-row="3" data-col="2">13</td>
+                  <td data-row="3" data-col="3">7.58</td>
+                  <td data-row="3" data-col="4">II</td>
+                  <td data-row="3" data-col="5">13</td>
+                  <td data-row="3" data-col="6">8.74</td>
+                  <td data-row="3" data-col="7">III</td>
+                  <td data-row="3" data-col="8">13</td>
+                  <td data-row="3" data-col="9">12.74</td>
+                  <td data-row="3" data-col="10">IV</td>
+                  <td data-row="3" data-col="11">8</td>
+                  <td data-row="3" data-col="12">7.71</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">I</td>
+                  <td data-row="4" data-col="2">9</td>
+                  <td data-row="4" data-col="3">8.81</td>
+                  <td data-row="4" data-col="4">II</td>
+                  <td data-row="4" data-col="5">9</td>
+                  <td data-row="4" data-col="6">8.77</td>
+                  <td data-row="4" data-col="7">III</td>
+                  <td data-row="4" data-col="8">9</td>
+                  <td data-row="4" data-col="9">7.11</td>
+                  <td data-row="4" data-col="10">IV</td>
+                  <td data-row="4" data-col="11">8</td>
+                  <td data-row="4" data-col="12">8.84</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">I</td>
+                  <td data-row="5" data-col="2">11</td>
+                  <td data-row="5" data-col="3">8.33</td>
+                  <td data-row="5" data-col="4">II</td>
+                  <td data-row="5" data-col="5">11</td>
+                  <td data-row="5" data-col="6">9.26</td>
+                  <td data-row="5" data-col="7">III</td>
+                  <td data-row="5" data-col="8">11</td>
+                  <td data-row="5" data-col="9">7.81</td>
+                  <td data-row="5" data-col="10">IV</td>
+                  <td data-row="5" data-col="11">8</td>
+                  <td data-row="5" data-col="12">8.47</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">I</td>
+                  <td data-row="6" data-col="2">14</td>
+                  <td data-row="6" data-col="3">9.96</td>
+                  <td data-row="6" data-col="4">II</td>
+                  <td data-row="6" data-col="5">14</td>
+                  <td data-row="6" data-col="6">8.10</td>
+                  <td data-row="6" data-col="7">III</td>
+                  <td data-row="6" data-col="8">14</td>
+                  <td data-row="6" data-col="9">8.84</td>
+                  <td data-row="6" data-col="10">IV</td>
+                  <td data-row="6" data-col="11">8</td>
+                  <td data-row="6" data-col="12">7.04</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">I</td>
+                  <td data-row="7" data-col="2">6</td>
+                  <td data-row="7" data-col="3">7.24</td>
+                  <td data-row="7" data-col="4">II</td>
+                  <td data-row="7" data-col="5">6</td>
+                  <td data-row="7" data-col="6">6.13</td>
+                  <td data-row="7" data-col="7">III</td>
+                  <td data-row="7" data-col="8">6</td>
+                  <td data-row="7" data-col="9">6.08</td>
+                  <td data-row="7" data-col="10">IV</td>
+                  <td data-row="7" data-col="11">8</td>
+                  <td data-row="7" data-col="12">5.25</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">I</td>
+                  <td data-row="8" data-col="2">4</td>
+                  <td data-row="8" data-col="3">4.26</td>
+                  <td data-row="8" data-col="4">II</td>
+                  <td data-row="8" data-col="5">4</td>
+                  <td data-row="8" data-col="6">3.10</td>
+                  <td data-row="8" data-col="7">III</td>
+                  <td data-row="8" data-col="8">4</td>
+                  <td data-row="8" data-col="9">5.39</td>
+                  <td data-row="8" data-col="10">IV</td>
+                  <td data-row="8" data-col="11">19</td>
+                  <td data-row="8" data-col="12">12.50</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">I</td>
+                  <td data-row="9" data-col="2">12</td>
+                  <td data-row="9" data-col="3">10.84</td>
+                  <td data-row="9" data-col="4">II</td>
+                  <td data-row="9" data-col="5">12</td>
+                  <td data-row="9" data-col="6">9.13</td>
+                  <td data-row="9" data-col="7">III</td>
+                  <td data-row="9" data-col="8">12</td>
+                  <td data-row="9" data-col="9">8.15</td>
+                  <td data-row="9" data-col="10">IV</td>
+                  <td data-row="9" data-col="11">8</td>
+                  <td data-row="9" data-col="12">5.56</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">I</td>
+                  <td data-row="10" data-col="2">7</td>
+                  <td data-row="10" data-col="3">4.82</td>
+                  <td data-row="10" data-col="4">II</td>
+                  <td data-row="10" data-col="5">7</td>
+                  <td data-row="10" data-col="6">7.26</td>
+                  <td data-row="10" data-col="7">III</td>
+                  <td data-row="10" data-col="8">7</td>
+                  <td data-row="10" data-col="9">6.42</td>
+                  <td data-row="10" data-col="10">IV</td>
+                  <td data-row="10" data-col="11">8</td>
+                  <td data-row="10" data-col="12">7.91</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">I</td>
+                  <td data-row="11" data-col="2">5</td>
+                  <td data-row="11" data-col="3">5.68</td>
+                  <td data-row="11" data-col="4">II</td>
+                  <td data-row="11" data-col="5">5</td>
+                  <td data-row="11" data-col="6">4.74</td>
+                  <td data-row="11" data-col="7">III</td>
+                  <td data-row="11" data-col="8">5</td>
+                  <td data-row="11" data-col="9">5.73</td>
+                  <td data-row="11" data-col="10">IV</td>
+                  <td data-row="11" data-col="11">8</td>
+                  <td data-row="11" data-col="12">6.89</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
-<div class="footer">
+</div>
+<p>A little hard to read!</p>
+<aside class="notes">
 <p>To understand how visualization supports validation, we can take at the Anscombe’s Quartet data from the <code>{Tmisc}</code>.</p>
-</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level4">
 
-<p>Hard to make sense of all those numbers at once.</p>
-<p>What if we use some summary statistics and get the mean, standard deviation, and Pearson correlation coefficient for x and y by set:</p>
+<p>Take a look at the data using some summary statistics:</p>
 <div class="cell">
-<pre><code>#&gt; Error in `loadNamespace()`:
-#&gt; ! there is no package called 'Tmisc'</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>Tmisc<span class="sc">::</span>quartet <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-3"><a></a>    <span class="fu">across</span>(<span class="fu">c</span>(x, y), <span class="fu">c</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)),</span>
+<span id="cb2-4"><a></a>    <span class="at">r =</span> <span class="fu">cor</span>(x, y),</span>
+<span id="cb2-5"><a></a>    <span class="at">.by =</span> set</span>
+<span id="cb2-6"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a></a>  <span class="fu">relocate</span>(<span class="fu">ends_with</span>(<span class="st">"mean"</span>), <span class="at">.after =</span> set) <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a></a>  <span class="fu">tt</span>(<span class="at">width =</span> <span class="fl">0.9</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a></a>  <span class="fu">tt_style</span>(<span class="at">i =</span> <span class="dv">0</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a></a>  <span class="fu">tt_format</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_e36d2eh9ptqj4wczgwqj = TinyTable.createTableFunctions("tinytable_e36d2eh9ptqj4wczgwqj");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 } ], css_id: 'tinytable_css_xu7v9eukclqqc1x58lzn',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 } ], css_id: 'tinytable_css_b2pvpgqf5uco2p6ruspq',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_e36d2eh9ptqj4wczgwqj.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_e36d2eh9ptqj4wczgwqj td.tinytable_css_xu7v9eukclqqc1x58lzn, #tinytable_e36d2eh9ptqj4wczgwqj th.tinytable_css_xu7v9eukclqqc1x58lzn {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_e36d2eh9ptqj4wczgwqj td.tinytable_css_b2pvpgqf5uco2p6ruspq, #tinytable_e36d2eh9ptqj4wczgwqj th.tinytable_css_b2pvpgqf5uco2p6ruspq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_e36d2eh9ptqj4wczgwqj" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1">set</th>
+                <th scope="col" data-row="0" data-col="2">x_mean</th>
+                <th scope="col" data-row="0" data-col="3">y_mean</th>
+                <th scope="col" data-row="0" data-col="4">x_sd</th>
+                <th scope="col" data-row="0" data-col="5">y_sd</th>
+                <th scope="col" data-row="0" data-col="6">r</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">I</td>
+                  <td data-row="1" data-col="2">9</td>
+                  <td data-row="1" data-col="3">7.5</td>
+                  <td data-row="1" data-col="4">3.3</td>
+                  <td data-row="1" data-col="5">2</td>
+                  <td data-row="1" data-col="6">0.82</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">II</td>
+                  <td data-row="2" data-col="2">9</td>
+                  <td data-row="2" data-col="3">7.5</td>
+                  <td data-row="2" data-col="4">3.3</td>
+                  <td data-row="2" data-col="5">2</td>
+                  <td data-row="2" data-col="6">0.82</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">III</td>
+                  <td data-row="3" data-col="2">9</td>
+                  <td data-row="3" data-col="3">7.5</td>
+                  <td data-row="3" data-col="4">3.3</td>
+                  <td data-row="3" data-col="5">2</td>
+                  <td data-row="3" data-col="6">0.82</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">IV</td>
+                  <td data-row="4" data-col="2">9</td>
+                  <td data-row="4" data-col="3">7.5</td>
+                  <td data-row="4" data-col="4">3.3</td>
+                  <td data-row="4" data-col="5">2</td>
+                  <td data-row="4" data-col="6">0.82</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
+</div>
+<aside class="notes">
+<p>Get the mean, standard deviation, and Pearson correlation coefficient for x and y.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level4">
 
 <p>Now, take another look using a plot:</p>
 <div class="cell">
-<pre><code>#&gt; Error in `loadNamespace()`:
-#&gt; ! there is no package called 'Tmisc'</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>Tmisc<span class="sc">::</span>quartet <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> set)) <span class="sc">+</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray30"</span>, <span class="at">linewidth =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>set) <span class="sc">+</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>, <span class="at">type =</span> <span class="st">"qual"</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a></a>  ges668_plot_theme <span class="sc">+</span></span>
+<span id="cb3-9"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-10"><a></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>)</span>
+<span id="cb3-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-4-1.png" width="576" class="r-stretch"><aside class="notes">
 <p>What do you <em>see</em>?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 
@@ -288,8 +630,8 @@
 <h2><span class="header-section-number">1.2</span> How do we visualize spatial data?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>A map is a special type of data visualization for spatial data but it isn’t the only one.</p>
-<p><strong>Plots</strong> and <strong>tables</strong> are two other common ways to visualize spatial data.</p>
+<p>A <strong>map</strong> is a special type of data visualization for spatial data but it isn’t the only one.</p>
+<p><strong>Plots</strong> and <strong>tables</strong> are other common ways to visualize spatial data.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -318,7 +660,20 @@
 <section id="grammar-of-graphics" class="title-slide slide level2 unnumbered center">
 <h2>Grammar of graphics</h2>
 
-<img data-src="images/qcbis_workshop03_gglayers-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">Image from The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series</p></section>
+<img data-src="images/qcbis_workshop03_gglayers-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">From The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series.</p><aside class="notes">
+<p>Concept from <em>Grammar of Graphics</em> book (1999), from Leland Wilkinson.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 
 <section id="grammar-of-graphics-1" class="title-slide slide level2 unnumbered center">
 <h2>Grammar of graphics</h2>
@@ -333,27 +688,30 @@
 <li>Theme</li>
 </ul>
 <div class="footer">
-<p>This introduction to the “grammar of graphics” is based largely on a 2020 ggplot2 workshop (<a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a>) by Thomas Lin Pedersen.</p>
+<p>Introduction to the “grammar of graphics” adapted from a 2020 ggplot2 workshop (<a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a>) by Thomas Lin Pedersen.</p>
 </div>
 </section>
 
 <section id="data" class="title-slide slide level2 center" data-number="2.1">
 <h2><span class="header-section-number">2.1</span> Data</h2>
 <ul>
-<li>Structure and representation of data determines what you can and can’t do with it</li>
-<li>Data is expected to be in a “tidy” format (also known as long format data)</li>
+<li>Structure and representation of data determines what you <em>can</em> and <em>can’t</em> do with it</li>
+<li>Data is expected to be in a “tidy” format (a.k.a. long format data)</li>
 </ul>
 </section>
 <section class="slide level4">
 
-<p>A few definitions (from <a href="https://r4ds.hadley.nz/data-visualize">Ch. 2 of R for Data Science</a>):</p>
+<p>A few definitions:</p>
 <ul>
-<li>variable: a quantity, quality, or property that you can measure.</li>
-<li>value: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</li>
-<li>observation: a set of measurements made under similar conditions</li>
-<li>tabular data: a set of values, each associated with a variable and an observation.</li>
+<li><strong>variable</strong>: a quantity, quality, or property that you can measure.</li>
+<li><strong>value</strong>: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</li>
+<li><strong>observation</strong>: a set of measurements made under similar conditions</li>
+<li><strong>tabular data</strong>: a set of values, each associated with a variable and an observation.</li>
 </ul>
-</section>
+
+<aside><div>
+<p>Excerpted from <a href="https://r4ds.hadley.nz/data-visualize">Ch. 2 of R for Data Science</a>.</p>
+</div></aside></section>
 <section class="slide level4">
 
 <p>What works best with the grammar of graphics is <strong>tidy data</strong>:</p>
@@ -362,17 +720,51 @@
 <li>each variable in its own column, and</li>
 <li>each observation in its own row.</li>
 </ul>
+<!--
+Use `ggplot()` to set `data` for a plot:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(data = us_states)
+```
+
+::: {.cell-output-display}
+![](data-visualization_files/figure-revealjs/unnamed-chunk-5-1.png){width=576}
+:::
+:::
+
+-->
 </section>
 
 <section id="mapping" class="title-slide slide level2 center" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Mapping</h2>
 <ul>
-<li><p>Allow data to be understood by the graphics system through:</p>
+<li><p>Mapping allows data to be understood by the graphics system</p>
 <ul>
-<li>Aesthetic mapping: variables -&gt; graphical properties in the geometry</li>
-<li>Facet mapping: variables -&gt; panels in layout</li>
+<li><strong>Aesthetic mapping</strong>: variables -&gt; graphical properties in the geometry</li>
+<li><strong>Facet mapping</strong>: variables -&gt; panels in layout</li>
 </ul></li>
 </ul>
+<!--
+
+Use the `aes()` function to define an aesthetic mapping for a plot:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(data = us_states, aes(fill = total_pop_15))
+```
+
+::: {.cell-output-display}
+![](data-visualization_files/figure-revealjs/unnamed-chunk-6-1.png){width=576}
+:::
+:::
+
+
+-->
 </section>
 
 <section id="statistics" class="title-slide slide level2 center" data-number="2.3">
@@ -435,7 +827,7 @@
 <section id="theme" class="title-slide slide level2 center" data-number="2.8">
 <h2><span class="header-section-number">2.8</span> Theme</h2>
 <ul>
-<li><p>Every part of the graphic that <em>isn’t</em> linked to the data:</p>
+<li><p>Every other part of the graphic that <em>isn’t</em> linked to the data:</p>
 <ul>
 <li>Fonts</li>
 <li>Spacing</li>
@@ -500,84 +892,62 @@
 <section id="setup" class="title-slide slide level2 center" data-number="3.3">
 <h2><span class="header-section-number">3.3</span> Setup</h2>
 <p>For this session, we are going to use the <code>{ggplot2}</code> and <code>{dplyr}</code> packages along with <code>{sf}</code> and <code>{rnaturalearth}</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-3"><a></a><span class="fu">library</span>(sf)</span>
-<span id="cb5-4"><a></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb5-5"><a></a><span class="co">#&gt; Error in `library()`:</span></span>
-<span id="cb5-6"><a></a><span class="co">#&gt; ! there is no package called 'rnaturalearth'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-3"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb4-4"><a></a><span class="fu">library</span>(rnaturalearth)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 
 <section id="setup-data" class="title-slide slide level2 center" data-number="3.4">
 <h2><span class="header-section-number">3.4</span> Setup data</h2>
-<p>We are also going to use the <code>storms</code> data included with <code>{dplyr}</code>.</p>
+<p>Next, we are going to use the <code>storms</code> data included with <code>{dplyr}</code>.</p>
 <p>Take a quick look at <code>storms</code> using <code>glimpse()</code>:</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">glimpse</span>(storms)</span>
-<span id="cb6-2"><a></a><span class="co">#&gt; Rows: 19,537</span></span>
-<span id="cb6-3"><a></a><span class="co">#&gt; Columns: 13</span></span>
-<span id="cb6-4"><a></a><span class="co">#&gt; $ name                         &lt;chr&gt; "Amy", "Amy", "Amy", "Amy", "Amy", "Am…</span></span>
-<span id="cb6-5"><a></a><span class="co">#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…</span></span>
-<span id="cb6-6"><a></a><span class="co">#&gt; $ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…</span></span>
-<span id="cb6-7"><a></a><span class="co">#&gt; $ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29…</span></span>
-<span id="cb6-8"><a></a><span class="co">#&gt; $ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, …</span></span>
-<span id="cb6-9"><a></a><span class="co">#&gt; $ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33…</span></span>
-<span id="cb6-10"><a></a><span class="co">#&gt; $ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78…</span></span>
-<span id="cb6-11"><a></a><span class="co">#&gt; $ status                       &lt;fct&gt; tropical depression, tropical depressi…</span></span>
-<span id="cb6-12"><a></a><span class="co">#&gt; $ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span id="cb6-13"><a></a><span class="co">#&gt; $ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40…</span></span>
-<span id="cb6-14"><a></a><span class="co">#&gt; $ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 10…</span></span>
-<span id="cb6-15"><a></a><span class="co">#&gt; $ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
-<span id="cb6-16"><a></a><span class="co">#&gt; $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-<div class="cell fragment">
-
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(storms)</span>
+<span id="cb5-2"><a></a><span class="co">#&gt; Rows: 19,537</span></span>
+<span id="cb5-3"><a></a><span class="co">#&gt; Columns: 13</span></span>
+<span id="cb5-4"><a></a><span class="co">#&gt; $ name                         &lt;chr&gt; "Amy", "Amy", "Amy", "Amy", "Amy", "Am…</span></span>
+<span id="cb5-5"><a></a><span class="co">#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…</span></span>
+<span id="cb5-6"><a></a><span class="co">#&gt; $ month                        &lt;dbl&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,…</span></span>
+<span id="cb5-7"><a></a><span class="co">#&gt; $ day                          &lt;int&gt; 27, 27, 27, 27, 28, 28, 28, 28, 29, 29…</span></span>
+<span id="cb5-8"><a></a><span class="co">#&gt; $ hour                         &lt;dbl&gt; 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, …</span></span>
+<span id="cb5-9"><a></a><span class="co">#&gt; $ lat                          &lt;dbl&gt; 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33…</span></span>
+<span id="cb5-10"><a></a><span class="co">#&gt; $ long                         &lt;dbl&gt; -79.0, -79.0, -79.0, -79.0, -78.8, -78…</span></span>
+<span id="cb5-11"><a></a><span class="co">#&gt; $ status                       &lt;fct&gt; tropical depression, tropical depressi…</span></span>
+<span id="cb5-12"><a></a><span class="co">#&gt; $ category                     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span id="cb5-13"><a></a><span class="co">#&gt; $ wind                         &lt;int&gt; 25, 25, 25, 25, 25, 25, 25, 30, 35, 40…</span></span>
+<span id="cb5-14"><a></a><span class="co">#&gt; $ pressure                     &lt;int&gt; 1013, 1013, 1013, 1013, 1012, 1012, 10…</span></span>
+<span id="cb5-15"><a></a><span class="co">#&gt; $ tropicalstorm_force_diameter &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span id="cb5-16"><a></a><span class="co">#&gt; $ hurricane_force_diameter     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="footer">
-<p>Remember that each row is an <strong>observation</strong> of a storm, not a individual storm.</p>
+<p>Remember! Each row is an *(observation** of a storm, not a individual storm.</p>
 </div>
 </section>
 <section class="slide level4">
 
-
-<img data-src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif" class="r-stretch"><div class="footer">
-<p><code>storms</code> is a subset of a larger <a href="https://www.nhc.noaa.gov/data/#hurdat">Atlantic hurricane database (HURDAT2)</a> with data from 1851 to 2022. Since 1974, NOAA’s <a href="https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite">Geostationary Operational Environmental Satellite</a> program has played a key role in tracking storms and monitoring weather around the world.</p>
-</div>
+<p><code>storms</code> is a subset of a larger <a href="https://www.nhc.noaa.gov/data/#hurdat">Atlantic hurricane database (HURDAT2)</a> with data from 1851 to 2022.</p>
+<div class="columns">
+<div class="column">
+<p><img data-src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif"></p>
+</div><div class="column">
+<p>Since 1974, NOAA’s <a href="https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite">Geostationary Operational Environmental Satellite</a> program has played a key role in tracking storms and monitoring weather around the world.</p>
+</div></div>
+<!-- end columns -->
 </section>
 
 <section id="create-a-ggplot" class="title-slide slide level2 center" data-number="3.5">
-<h2><span class="header-section-number">3.5</span> Create a ggplot</h2>
+<h2><span class="header-section-number">3.5</span> Create a <code>ggplot</code></h2>
 <p>We can start by using the function <code>ggplot()</code> to define a plot object. Set <code>storm</code> as the input data for <code>ggplot()</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-6-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-<p>…</p>
-<div class="smaller">
-<p>Well, that doesn’t look like much. 🤔</p>
-<p>This is the first step in creating a plot that we can add layers to. Parameters set with <code>ggplot()</code> can be “inherited” by layers added later.</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-9-1.png" width="576" class="r-stretch"><p>Well, that doesn’t look like much. 🤔</p>
+<div class="footer">
+<p>This is the first step in creating a plot that we can add layers to. Parameters set with <code>ggplot()</code> are <em>inherited</em> by layers added later.</p>
 </div>
 </section>
 
@@ -588,28 +958,17 @@
 <section id="set-mapping-with-aes" class="title-slide slide level3 center">
 <h3>Set mapping with <code>aes()</code></h3>
 <p>Next, we can set the mapping using the <code>aes()</code> function. We can start by mapping <code>long</code> (longitude) to <code>x</code> and <code>lat</code> (latitude) to <code>y</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb8-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb8-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb8-4"><a></a>    <span class="at">x =</span> long,</span>
-<span id="cb8-5"><a></a>    <span class="at">y =</span> lat</span>
-<span id="cb8-6"><a></a>  )</span>
-<span id="cb8-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-7-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb7-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb7-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb7-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb7-5"><a></a>    <span class="at">y =</span> lat</span>
+<span id="cb7-6"><a></a>  )</span>
+<span id="cb7-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-<p>Before we can see any data, we need to tell <code>ggplot()</code> how we want to represent the data using layers.</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" width="576" class="r-stretch"><p>Before we can see any data, we need to tell <code>ggplot()</code> how we want to represent the data using layers.</p>
 <aside class="notes">
 <p>The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.</p>
 <p>Note that the storms data is <em>not</em> spatial at this point.</p>
@@ -629,117 +988,78 @@
 
 <p>Layers in <code>{ggplot2}</code> are most often added using “geoms” (short for geometry) functions like <code>geom_point()</code>, <code>geom_col()</code>, or <code>geom_histogram()</code>.</p>
 <p>Let’s give it a try using <code>geom_point()</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb9-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb9-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb9-4"><a></a>    <span class="at">x =</span> long,</span>
-<span id="cb9-5"><a></a>    <span class="at">y =</span> lat</span>
-<span id="cb9-6"><a></a>  )</span>
-<span id="cb9-7"><a></a>) <span class="sc">+</span></span>
-<span id="cb9-8"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-8-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb8-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb8-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb8-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb8-5"><a></a>    <span class="at">y =</span> lat</span>
+<span id="cb8-6"><a></a>  )</span>
+<span id="cb8-7"><a></a>) <span class="sc">+</span></span>
+<span id="cb8-8"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-</section>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>You can define the <code>data</code> and <code>mapping</code> parameters globally using <code>ggplot()</code> or locally for a single geom function. This code does the exact same thing as the prior block:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb10-3"><a></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb10-4"><a></a>      <span class="at">x =</span> long,</span>
-<span id="cb10-5"><a></a>      <span class="at">y =</span> lat</span>
-<span id="cb10-6"><a></a>    ),</span>
-<span id="cb10-7"><a></a>    <span class="at">data =</span> storms</span>
-<span id="cb10-8"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-9-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb9-3"><a></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb9-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb9-5"><a></a>      <span class="at">y =</span> lat</span>
+<span id="cb9-6"><a></a>    ),</span>
+<span id="cb9-7"><a></a>    <span class="at">data =</span> storms</span>
+<span id="cb9-8"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-</section>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 </section>
 
 <section id="what-is-this-operator" class="title-slide slide level3 center">
 <h3>What is this <code>+</code> operator?</h3>
-<p>Notice that we are combining the <code>ggplot()</code> and <code>geom_point()</code> functions using the <code>+</code> operator. This is a style of function or operator known as an <a href="https://en.wikipedia.org/wiki/Infix_notation">infix operator</a>.</p>
-<p>Next week, we will introduce a similar function known as a pipe, <code>%&gt;%</code> or <code>|&gt;</code> that works to pass the output from one function (or line of code) into the next line as the first parameter in a function.</p>
+<p>Notice that we are combining the <code>ggplot()</code> and <code>geom_point()</code> functions using the <code>+</code> operator.</p>
+<p>This is a style of function or operator known as an <a href="https://en.wikipedia.org/wiki/Infix_notation">infix operator</a>.</p>
+<p>This operator works is similar to the pipe operator, <code>%&gt;%</code> or <code>|&gt;</code> that passes the output from one function (or line of code) to the next line as the first parameter in a following function.</p>
 </section>
 <section class="slide level4">
 
 <p>For example, see how we can use a series of pipes to operate on the storms data:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">distinct</span>(name)</span>
-<span id="cb11-3"><a></a><span class="co">#&gt; # A tibble: 260 × 1</span></span>
-<span id="cb11-4"><a></a><span class="co">#&gt;   name    </span></span>
-<span id="cb11-5"><a></a><span class="co">#&gt;   &lt;chr&gt;   </span></span>
-<span id="cb11-6"><a></a><span class="co">#&gt; 1 Amy     </span></span>
-<span id="cb11-7"><a></a><span class="co">#&gt; 2 Blanche </span></span>
-<span id="cb11-8"><a></a><span class="co">#&gt; 3 Caroline</span></span>
-<span id="cb11-9"><a></a><span class="co">#&gt; 4 Doris   </span></span>
-<span id="cb11-10"><a></a><span class="co">#&gt; 5 Eloise  </span></span>
-<span id="cb11-11"><a></a><span class="co">#&gt; 6 Faye    </span></span>
-<span id="cb11-12"><a></a><span class="co">#&gt; # ℹ 254 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">distinct</span>(name)</span>
+<span id="cb10-3"><a></a><span class="co">#&gt; # A tibble: 260 × 1</span></span>
+<span id="cb10-4"><a></a><span class="co">#&gt;   name    </span></span>
+<span id="cb10-5"><a></a><span class="co">#&gt;   &lt;chr&gt;   </span></span>
+<span id="cb10-6"><a></a><span class="co">#&gt; 1 Amy     </span></span>
+<span id="cb10-7"><a></a><span class="co">#&gt; 2 Blanche </span></span>
+<span id="cb10-8"><a></a><span class="co">#&gt; 3 Caroline</span></span>
+<span id="cb10-9"><a></a><span class="co">#&gt; 4 Doris   </span></span>
+<span id="cb10-10"><a></a><span class="co">#&gt; 5 Eloise  </span></span>
+<span id="cb10-11"><a></a><span class="co">#&gt; 6 Faye    </span></span>
+<span id="cb10-12"><a></a><span class="co">#&gt; # ℹ 254 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section class="slide level4">
 
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>storms <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">distinct</span>(name) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a></a>  <span class="fu">nrow</span>()</span>
-<span id="cb12-4"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>storms <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">distinct</span>(name) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">nrow</span>()</span>
+<span id="cb11-4"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section class="slide level4">
 
 <p>The prior block is the same as the following block:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>storm_names <span class="ot">&lt;-</span> <span class="fu">distinct</span>(storms, name)</span>
-<span id="cb13-2"><a></a><span class="fu">nrow</span>(storm_names)</span>
-<span id="cb13-3"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>storm_names <span class="ot">&lt;-</span> <span class="fu">distinct</span>(storms, name)</span>
+<span id="cb12-2"><a></a><span class="fu">nrow</span>(storm_names)</span>
+<span id="cb12-3"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="footer">
 <p>Using pipes can help avoid the need for intermediate objects like <code>storm_names</code> that might only exist to move the output of one function to the input for another function.</p>
 </div>
@@ -747,98 +1067,31 @@
 <section class="slide level4">
 
 <p>The first parameter for <code>ggplot()</code> is <code>data</code> and the first parameter for all geom functions is <code>mapping</code> so you often see these passed as unnnamed parameters:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb14-3"><a></a>    <span class="fu">aes</span>(</span>
-<span id="cb14-4"><a></a>      <span class="at">x =</span> long,</span>
-<span id="cb14-5"><a></a>      <span class="at">y =</span> lat</span>
-<span id="cb14-6"><a></a>    )</span>
-<span id="cb14-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-13-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb13-3"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb13-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb13-5"><a></a>      <span class="at">y =</span> lat</span>
+<span id="cb13-6"><a></a>    )</span>
+<span id="cb13-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</div></div>
-</section>
-<section class="slide level4">
 
-<p>You can even leave off the x and y parameter names:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-14-1.png" width="576"></p>
-</figure>
-</div>
-</div>
-</div></div>
+<aside class="notes">
+<p>See how the plot is now showing axis labels.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section class="slide level4">
-
-</section>
-
-</section>
-<section>
-<section id="mapping-variables-are-not-strings" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> Mapping variables are not strings!</h1>
-<p>The variables passed to <code>aes()</code> don’t have quotes around them! This is because <code>aes()</code> is a data-masking (also known as a quoting function) where the inputs are evaluated in the context of the data.</p>
-<p>TLDR: only put quotes around your aesthetic mappings when you want to pass a literal string.</p>
-</section>
-<section class="slide level4">
-
-<p>Next we can map one of the variables (<code>status</code> or storm classification) to an aesthetic (<code>color</code>):</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat, <span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-15-1.png" width="576"></p>
-</figure>
-</div>
-</div>
-</div></div>
-<p>Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a “positional aesthetic” we can’t easily interpret the meaning of the graphic without a legend, labels, or annotations.</p>
-</section>
-<section class="slide level4">
-
-<p>In addition to having mapped aesthetics, we can also have “fixed” aesthetics (fixed because the same value is used for every observation in the plot). When you have a lot of overlapping features (known as overplotting), you may want to reduce the <code>alpha</code> (or transparency) of the features:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb17-3"><a></a>    <span class="fu">aes</span>(</span>
-<span id="cb17-4"><a></a>      <span class="at">x =</span> long,</span>
-<span id="cb17-5"><a></a>      <span class="at">y =</span> lat,</span>
-<span id="cb17-6"><a></a>      <span class="at">color =</span> status</span>
-<span id="cb17-7"><a></a>    ),</span>
-<span id="cb17-8"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span></span>
-<span id="cb17-9"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -846,27 +1099,19 @@
 </figure>
 </div>
 </div>
-</div></div>
-<p>Fixed aesthetics should be defined for each geom—they are ignored if you pass them to <code>ggplot()</code>.</p>
-</section>
-<section class="slide level4">
+</div></section><section class="slide level4">
 
-<p>Aesthetics can also be defined using a function. In this example, we are using the boolean operator <code>==</code> to compare the values from “status” to the string “hurricane”:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb18-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb18-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb18-4"><a></a>    <span class="at">x =</span> long,</span>
-<span id="cb18-5"><a></a>    <span class="at">y =</span> lat,</span>
-<span id="cb18-6"><a></a>    <span class="at">color =</span> status <span class="sc">==</span> <span class="st">"hurricane"</span></span>
-<span id="cb18-7"><a></a>  )</span>
-<span id="cb18-8"><a></a>) <span class="sc">+</span></span>
-<span id="cb18-9"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<p>You can even leave off the x and y parameter names:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+
+<aside><div>
+<p>Function parameters can be specified by <em>position</em> as well as <em>name</em>.</p>
+</div></aside></section>
+<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -874,26 +1119,34 @@
 </figure>
 </div>
 </div>
-</div></div>
-</section>
-<section id="visualizing-distributions" class="title-slide slide level2 center" data-number="4.1">
-<h2><span class="header-section-number">4.1</span> Visualizing distributions</h2>
+</div></section><section class="slide level4">
 
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Mapping variables are not strings!</strong></p>
+</div>
+<div class="callout-content">
+<p>The variables passed to <code>aes()</code> don’t have quotes around them! This is because <code>aes()</code> is a data-masking (also known as a quoting function) where the inputs are evaluated in the context of the data.</p>
+<p>TLDR: only put quotes around your aesthetic mappings when you want to pass a literal string.</p>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level4">
 
-<section id="distribution-of-one-numeric-variable" class="title-slide slide level2 center" data-number="4.2">
-<h2><span class="header-section-number">4.2</span> Distribution of one numeric variable</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb19-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb19-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> lat)</span>
-<span id="cb19-4"><a></a>) <span class="sc">+</span></span>
-<span id="cb19-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">90</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<p>Next we can map one of the variables (<code>status</code> or storm classification) to an aesthetic (<code>color</code>):</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat, <span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<p>Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a “positional aesthetic” we can’t easily interpret the meaning of the graphic without a legend, labels, or annotations.</p>
+</section>
+<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -901,22 +1154,28 @@
 </figure>
 </div>
 </div>
-</div></div>
-</section>
+</div></section><section class="slide level4">
 
-<section id="distribution-of-one-numeric-variable-1" class="title-slide slide level2 center" data-number="4.3">
-<h2><span class="header-section-number">4.3</span> Distribution of one numeric variable</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb20-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb20-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lat)</span>
-<span id="cb20-4"><a></a>) <span class="sc">+</span></span>
-<span id="cb20-5"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<p>In addition mapped aesthetics, we can set “fixed” aesthetics (called fixed because the same value is used for every observation in the plot).</p>
+</section>
+<section class="slide level4">
+
+<p>When you have a lot of overlapping features (known as <em>overplotting</em>), you may want to reduce the <code>alpha</code> (or transparency) of the features:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb16-3"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb16-4"><a></a>      <span class="at">x =</span> long,</span>
+<span id="cb16-5"><a></a>      <span class="at">y =</span> lat,</span>
+<span id="cb16-6"><a></a>      <span class="at">color =</span> status</span>
+<span id="cb16-7"><a></a>    ),</span>
+<span id="cb16-8"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span></span>
+<span id="cb16-9"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<p>Fixed aesthetics should be defined for each geom—they are ignored if you pass them to <code>ggplot()</code>.</p>
+</section>
+<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -924,22 +1183,25 @@
 </figure>
 </div>
 </div>
-</div></div>
+</div></section><section class="slide level4">
+
+<p>Aesthetics can also be defined using a function. In this example, we are using the boolean operator <code>==</code> to compare the values from “status” to the string “hurricane”:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb17-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb17-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb17-4"><a></a>    <span class="at">x =</span> long,</span>
+<span id="cb17-5"><a></a>    <span class="at">y =</span> lat,</span>
+<span id="cb17-6"><a></a>    <span class="at">color =</span> status <span class="sc">==</span> <span class="st">"hurricane"</span></span>
+<span id="cb17-7"><a></a>  )</span>
+<span id="cb17-8"><a></a>) <span class="sc">+</span></span>
+<span id="cb17-9"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
 </section>
 
-<section id="distribution-of-one-categorical-variable" class="title-slide slide level2 center" data-number="4.4">
-<h2><span class="header-section-number">4.4</span> Distribution of one categorical variable</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb21-2"><a></a>  <span class="at">data =</span> storms,</span>
-<span id="cb21-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> category)</span>
-<span id="cb21-4"><a></a>) <span class="sc">+</span></span>
-<span id="cb21-5"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+
+<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -947,26 +1209,58 @@
 </figure>
 </div>
 </div>
-</div></div>
+</div></section><section id="visualizing-distributions" class="title-slide slide level2 center" data-number="3.7">
+<h2><span class="header-section-number">3.7</span> Visualizing distributions</h2>
+
 </section>
+
+<section id="distribution-of-one-numeric-variable" class="title-slide slide level2 center" data-number="3.8">
+<h2><span class="header-section-number">3.8</span> Distribution of one numeric variable</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb18-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb18-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> lat)</span>
+<span id="cb18-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">90</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-21-1.png" width="576" class="r-stretch"></section>
+
+<section id="distribution-of-one-numeric-variable-1" class="title-slide slide level2 center" data-number="3.9">
+<h2><span class="header-section-number">3.9</span> Distribution of one numeric variable</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb19-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb19-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lat)</span>
+<span id="cb19-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb19-5"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-22-1.png" width="576" class="r-stretch"></section>
+
+<section id="distribution-of-one-categorical-variable" class="title-slide slide level2 center" data-number="3.10">
+<h2><span class="header-section-number">3.10</span> Distribution of one categorical variable</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb20-2"><a></a>  <span class="at">data =</span> storms,</span>
+<span id="cb20-3"><a></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> category)</span>
+<span id="cb20-4"><a></a>) <span class="sc">+</span></span>
+<span id="cb20-5"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-23-1.png" width="576" class="r-stretch"></section>
 </section>
 <section>
-<section id="visualize-spatial-data" class="title-slide slide level1 center" data-number="5">
-<h1><span class="header-section-number">5</span> Visualize spatial data</h1>
+<section id="visualize-spatial-data" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Visualize spatial data</h1>
 <p>To start, let’s convert our storms data set from a data frame into a sf object using <code>sf::st_as_sf()</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(</span>
-<span id="cb22-2"><a></a>  storms,</span>
-<span id="cb22-3"><a></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
-<span id="cb22-4"><a></a>  <span class="at">crs =</span> <span class="dv">4326</span></span>
-<span id="cb22-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(</span>
+<span id="cb21-2"><a></a>  storms,</span>
+<span id="cb21-3"><a></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb21-4"><a></a>  <span class="at">crs =</span> <span class="dv">4326</span></span>
+<span id="cb21-5"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -984,202 +1278,121 @@
 <section class="slide level4">
 
 <p>Finally, we can look at these observations on a map:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-22-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
+<span id="cb22-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-</section>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-25-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>That first map may not look much different.</p>
 <p>But converting the data to a <code>sf</code> object allows us to use <code>coord_sf()</code> to transform the coorindate reference system on the fly:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
-<span id="cb24-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
-<span id="cb24-3"><a></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"EPSG:3035"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-23-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"EPSG:3035"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-</section>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-26-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>This is equivalent to converting the coordinate reference system in advance using <code>st_transform()</code>:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a></a>  <span class="fu">st_transform</span>(<span class="dv">2804</span>) <span class="sc">|&gt;</span></span>
-<span id="cb25-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb25-4"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-24-1.png" width="576"></p>
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">st_transform</span>(<span class="dv">2804</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb24-4"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
-</div>
-</div></div>
-<p>Note, that this is another example of how we can use the pipe (<code>|&gt;</code>) to move data between functions in R.</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-27-1.png" width="576" class="r-stretch"><p>Note, that this is another example of how we can use the pipe (<code>|&gt;</code>) to move data between functions in R.</p>
 </section>
 <section class="slide level4">
 
 <p>However, to really show the potential, we need some more data. Install and load the <code>{rnaturalearth}</code> package and then load data for the coastline and countries:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))</span></span>
-<span id="cb26-2"><a></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb26-3"><a></a><span class="co">#&gt; Error in `library()`:</span></span>
-<span id="cb26-4"><a></a><span class="co">#&gt; ! there is no package called 'rnaturalearth'</span></span>
-<span id="cb26-5"><a></a></span>
-<span id="cb26-6"><a></a>coastline <span class="ot">&lt;-</span> <span class="fu">ne_coastline</span>()</span>
-<span id="cb26-7"><a></a><span class="co">#&gt; Error in `ne_coastline()`:</span></span>
-<span id="cb26-8"><a></a><span class="co">#&gt; ! could not find function "ne_coastline"</span></span>
-<span id="cb26-9"><a></a></span>
-<span id="cb26-10"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>()</span>
-<span id="cb26-11"><a></a><span class="co">#&gt; Error in `ne_countries()`:</span></span>
-<span id="cb26-12"><a></a><span class="co">#&gt; ! could not find function "ne_countries"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
-
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))</span></span>
+<span id="cb25-2"><a></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a>coastline <span class="ot">&lt;-</span> <span class="fu">ne_coastline</span>()</span>
+<span id="cb25-5"><a></a></span>
+<span id="cb25-6"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section class="slide level4">
 
 <p>Put them together and we are starting to get somehwere:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
-<span id="cb27-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"white"</span>)</span>
-<span id="cb27-4"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb27-5"><a></a><span class="co">#&gt; ! object 'coastline' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
+<span id="cb26-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div></div>
-</section>
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-29-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of <code>coord_sf()</code> to “zoom” in on a smaller area:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>storms_bbox <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:3035"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb28-3"><a></a>  <span class="fu">st_bbox</span>()</span>
-<span id="cb28-4"><a></a></span>
-<span id="cb28-5"><a></a>storms_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb28-6"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> countries, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb28-7"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb28-8"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb28-9"><a></a>  <span class="fu">coord_sf</span>(</span>
-<span id="cb28-10"><a></a>    <span class="at">xlim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>xmin, storms_bbox<span class="sc">$</span>xmax),</span>
-<span id="cb28-11"><a></a>    <span class="at">ylim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>ymin, storms_bbox<span class="sc">$</span>ymax),</span>
-<span id="cb28-12"><a></a>    <span class="at">crs =</span> <span class="st">"EPSG:3035"</span></span>
-<span id="cb28-13"><a></a>  )</span>
-<span id="cb28-14"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb28-15"><a></a><span class="co">#&gt; ! object 'countries' not found</span></span>
-<span id="cb28-16"><a></a></span>
-<span id="cb28-17"><a></a>storms_map</span>
-<span id="cb28-18"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb28-19"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>storms_bbox <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:3035"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a></a>  <span class="fu">st_bbox</span>()</span>
+<span id="cb27-4"><a></a></span>
+<span id="cb27-5"><a></a>storms_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb27-6"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> countries, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb27-8"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb27-9"><a></a>  <span class="fu">coord_sf</span>(</span>
+<span id="cb27-10"><a></a>    <span class="at">xlim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>xmin, storms_bbox<span class="sc">$</span>xmax),</span>
+<span id="cb27-11"><a></a>    <span class="at">ylim =</span> <span class="fu">c</span>(storms_bbox<span class="sc">$</span>ymin, storms_bbox<span class="sc">$</span>ymax),</span>
+<span id="cb27-12"><a></a>    <span class="at">crs =</span> <span class="st">"EPSG:3035"</span></span>
+<span id="cb27-13"><a></a>  )</span>
+<span id="cb27-14"><a></a></span>
+<span id="cb27-15"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div></div>
-</section>
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-30-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>Try adding a scale:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">scale_color_distiller</span>(<span class="at">type =</span> <span class="st">"seq"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">palette =</span> <span class="st">"YlOrRd"</span>, <span class="at">na.value =</span> <span class="st">"gray60"</span>)</span>
-<span id="cb29-3"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb29-4"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span>
-<span id="cb29-5"><a></a></span>
-<span id="cb29-6"><a></a>storms_map</span>
-<span id="cb29-7"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb29-8"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">scale_color_distiller</span>(</span>
+<span id="cb28-3"><a></a>    <span class="at">type =</span> <span class="st">"seq"</span>,</span>
+<span id="cb28-4"><a></a>    <span class="at">direction =</span> <span class="dv">1</span>,</span>
+<span id="cb28-5"><a></a>    <span class="at">palette =</span> <span class="st">"YlOrRd"</span>,</span>
+<span id="cb28-6"><a></a>    <span class="at">na.value =</span> <span class="st">"gray60"</span></span>
+<span id="cb28-7"><a></a>  )</span>
+<span id="cb28-8"><a></a></span>
+<span id="cb28-9"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div></div>
-</section>
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-31-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>Now try adding some labels:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb30-3"><a></a>    <span class="at">title =</span> <span class="st">"Atlantic hurricanes by category, 1975-2021"</span>,</span>
-<span id="cb30-4"><a></a>    <span class="at">caption =</span> <span class="st">"Data: NOAA Atlantic hurricane database best track data via the {dplyr package}"</span></span>
-<span id="cb30-5"><a></a>  )</span>
-<span id="cb30-6"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb30-7"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span>
-<span id="cb30-8"><a></a></span>
-<span id="cb30-9"><a></a>storms_map</span>
-<span id="cb30-10"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb30-11"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-3"><a></a>    <span class="at">title =</span> <span class="st">"Atlantic hurricanes by category, 1975-2021"</span>,</span>
+<span id="cb29-4"><a></a>    <span class="at">caption =</span> <span class="st">"Data: NOAA Atlantic hurricane database best track data via the {dplyr package}"</span></span>
+<span id="cb29-5"><a></a>  )</span>
+<span id="cb29-6"><a></a></span>
+<span id="cb29-7"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div></div>
-</section>
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-32-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <p>Lastly, we can adjust the theme:</p>
-<div class="cell columns column-output-location">
-<div class="column">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>storms_map <span class="sc">+</span></span>
-<span id="cb31-2"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb31-3"><a></a>  <span class="fu">theme</span>(</span>
-<span id="cb31-4"><a></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb31-5"><a></a>  )</span>
-<span id="cb31-6"><a></a><span class="co">#&gt; Error:</span></span>
-<span id="cb31-7"><a></a><span class="co">#&gt; ! object 'storms_map' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div><div class="column fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>storms_map <span class="sc">+</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb30-4"><a></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb30-5"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-</div></div>
-</section>
+</div>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-33-1.png" width="576" class="r-stretch"></section>
 <section class="slide level4">
 
 <div class="columns">
