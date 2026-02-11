@@ -1,0 +1,71 @@
+---
+title: "Spring 2026 Weekly Updates"
+editor: visual
+number-sections: false
+scrollable: true
+---
+
+```{r}
+#| echo: false
+library(sf, quietly = TRUE)
+library(tidyverse, quietly = TRUE)
+library(spData)
+```
+
+## Week 3
+
+- Week 3 Questions
+- [Session 2 Quiz](https://docs.google.com/forms/d/e/1FAIpQLScFfOG6aFaMv-pogR2wZHoSYnfhmaemRwHyytWCZPpSJV6dog/viewform?usp=header)
+- [Visualizing spatial data with {ggplot2}](/slides/data-visualization.qmd)
+
+### Questions
+
+What are some effective ways to familiarize yourself with the language of different packages without rote memorization of their functions? —Brian
+
+- [Cheatsheets](https://posit.co/resources/cheatsheets/), e.g. [RStudio](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html), [ggplot2](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+- Community resources, e.g. [ggplot2 Theme Elements Reference Sheet](https://isabella-b.com/blog/ggplot2-theme-elements-reference/)
+- Naming conventions, e.g. `geom_<type of geometry to show on plot>`
+
+----
+
+Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
+
+```{r}
+summary(spData::us_states_df)
+```
+
+----
+
+Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
+
+```{r}
+skimr::skim(spData::us_states_df)
+```
+
+----
+
+Why are some CRS values `NA` while some are specific datum (WGS84, etc)? —Nhi
+
+```{r}
+x <- st_point(c(1, 0))
+
+st_crs(x)
+
+st_crs(spData::us_states)
+```
+
+----
+
+Why do some of the exercises start with the library function and not have you initially install a library? —Kyle
+
+```{r}
+# install.packages("tidyverse")
+```
+
+----
+
+What actually is an observation and how is it different than a variable? —Dillon
+
+A variable is something you can *measure*. An observation is a set of *measurements*.
+
+----
