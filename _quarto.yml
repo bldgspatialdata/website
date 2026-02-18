@@ -62,8 +62,10 @@ website:
             text: Slides
       - section: "Weeks 🗓️"
         contents:
-          # - href: slides/fall-2023.qmd
-          #   text: Weekly Updates
+          - href: slides/spring-2026.qmd
+            text: Weekly Updates
+          - href: https://docs.google.com/forms/d/e/1FAIpQLSdPMcsIDx_ZuSg_qIQB5VYFpd8Jjx9ZTMPaKgTkCTRnVA3o6w/viewform
+            text: Weekly Check-in
           - href: weeks/week_01.qmd
           - href: weeks/week_02.qmd
           - href: weeks/week_03.qmd
