@@ -117,6 +117,18 @@ ggplot() +
   geom_sf(us_states, aes(fill = total_pop_15))
 ```
 
+### Finish review
+
+Download the example script to review:
+
+```{r}
+#| eval: false
+usethis::use_github_file(
+  repo = "bldgspatialdata/website",
+  path = "examples/data-visualization.R"
+)
+```
+
 ## Week 3
 
 - Week 3 Questions
