@@ -1,4 +1,4 @@
-# pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))
+# pak::pak(c("rnaturalearth", "rnaturalearthdata"))
 # install.packages(c("rnaturalearth", "rnaturalearthdata"))
 
 library(tidyverse)
