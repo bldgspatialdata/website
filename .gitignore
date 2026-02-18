@@ -7,5 +7,7 @@ _site
 /.quarto/
 dev/
 docs/
-
+/Excalidraw/
+*.base
+Untitled*.md
 **/*.quarto_ipynb
