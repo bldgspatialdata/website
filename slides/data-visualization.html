@@ -6,17 +6,20 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
-
-  <meta name="dcterms.date" content="2023-09-06">
-  <title>GES 668 - Spring 2026 – Visualizing spatial data with ggplot2</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3512cbed9e2527d986e9b0b56d261405.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.20">
+<meta name="dcterms.date" content="2023-09-06">
+<title>GES 668 - Spring 2026 – Visualizing spatial data with ggplot2</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +98,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ad6cac6167ca8ec72cd8488dbce3747.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -199,98 +202,75 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Visualizing spatial data with ggplot2</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Visualizing spatial data with ggplot2</h1>
   <p class="subtitle">Session 2</p>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-09-06</p>
-</section>
-<section class="slide level4">
-
-<div class="cell">
+</section><section class="slide level4"><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tinytable)</span>
 <span id="cb1-3"><a></a><span class="fu">library</span>(spData)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section>
-<section id="overview" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Overview</h1>
+</section><section><section id="overview" class="title-slide slide level1 center" data-number="1"><h1>
+<span class="header-section-number">1</span> Overview</h1>
 <ul>
 <li>Why and how do we visualize spatial data?</li>
 <li>What is the “grammar of graphics”?</li>
-<li>How to use <code>{ggplot2}</code> to
+<li>How to use <a href="https://ggplot2.tidyverse.org">ggplot2</a> to
 <ul>
 <li>build layered data visualizations</li>
 <li>visualize spatial data</li>
-</ul></li>
 </ul>
-</section>
-<section id="why-and-how-do-we-visualize-spatial-data" class="title-slide slide level2 center" data-number="1.1">
-<h2><span class="header-section-number">1.1</span> Why and how do we visualize spatial data?</h2>
+</li>
+</ul></section><section id="why-and-how-do-we-visualize-spatial-data" class="title-slide slide level2 center" data-number="1.1"><h2>
+<span class="header-section-number">1.1</span> Why and how do we visualize spatial data?</h2>
 
-</section>
-<section id="why-do-we-visualize-spatial-data" class="title-slide slide level3 center">
-<h3>Why do we visualize spatial data?</h3>
+</section><section id="why-do-we-visualize-spatial-data" class="title-slide slide level3 center"><h3>Why do we visualize spatial data?</h3>
 <ul>
 <li>Validation</li>
 <li>Exploration</li>
 <li>Communication</li>
-</ul>
-</section>
-
-<section id="why-do-we-visualize-data" class="title-slide slide level3 center">
-<h3>Why do we visualize data?</h3>
+</ul></section><section id="why-do-we-visualize-data" class="title-slide slide level3 center"><h3>Why do we visualize data?</h3>
 <ul>
 <li>Validation</li>
 <li>Exploration</li>
 <li>Communication</li>
-</ul>
-</section>
-
-<section id="anscombes-quartet" class="title-slide slide level3 center">
-<h3>Anscombe’s quartet</h3>
+</ul></section><section id="anscombes-quartet" class="title-slide slide level3 center"><h3>Anscombe’s quartet</h3>
 <div class="cell">
 <div class="cell-output-display">
 <!-- preamble start -->
 
-    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
-
-    <script>
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script><script>
       // Create table-specific functions using external factory
-      const tableFns_jutj2bbujsh7dama65ci = TinyTable.createTableFunctions("tinytable_jutj2bbujsh7dama65ci");
+      const tableFns_vki6pst7hgn2brml3cfq = TinyTable.createTableFunctions("tinytable_vki6pst7hgn2brml3cfq");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 }, { i: '11', j: 4 }, { i: '11', j: 5 }, { i: '11', j: 6 }, { i: '11', j: 7 }, { i: '11', j: 8 }, { i: '11', j: 9 }, { i: '11', j: 10 }, { i: '11', j: 11 }, { i: '11', j: 12 } ], css_id: 'tinytable_css_no7e3g4d6g0141iejj7u',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 }, { i: '0', j: 10 }, { i: '0', j: 11 }, { i: '0', j: 12 } ], css_id: 'tinytable_css_d4qs43aq0irds585nnun',}, 
+          { positions: [ { i: '11', j: 1 }, { i: '11', j: 2 }, { i: '11', j: 3 }, { i: '11', j: 4 }, { i: '11', j: 5 }, { i: '11', j: 6 }, { i: '11', j: 7 }, { i: '11', j: 8 }, { i: '11', j: 9 }, { i: '11', j: 10 }, { i: '11', j: 11 }, { i: '11', j: 12 } ], css_id: 'tinytable_css_9bc5tjuv44ju458jb0oy',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 }, { i: '0', j: 7 }, { i: '0', j: 8 }, { i: '0', j: 9 }, { i: '0', j: 10 }, { i: '0', j: 11 }, { i: '0', j: 12 } ], css_id: 'tinytable_css_o32f1ims1uz94k1xkufx',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_jutj2bbujsh7dama65ci.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_vki6pst7hgn2brml3cfq.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
-    </script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
-    <style>
+    </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+<style>
     /* tinytable css entries after */
-    #tinytable_jutj2bbujsh7dama65ci td.tinytable_css_no7e3g4d6g0141iejj7u, #tinytable_jutj2bbujsh7dama65ci th.tinytable_css_no7e3g4d6g0141iejj7u {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_jutj2bbujsh7dama65ci td.tinytable_css_d4qs43aq0irds585nnun, #tinytable_jutj2bbujsh7dama65ci th.tinytable_css_d4qs43aq0irds585nnun {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    #tinytable_vki6pst7hgn2brml3cfq td.tinytable_css_9bc5tjuv44ju458jb0oy, #tinytable_vki6pst7hgn2brml3cfq th.tinytable_css_9bc5tjuv44ju458jb0oy {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_vki6pst7hgn2brml3cfq td.tinytable_css_o32f1ims1uz94k1xkufx, #tinytable_vki6pst7hgn2brml3cfq th.tinytable_css_o32f1ims1uz94k1xkufx {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
     </style>
-    <div class="container">
-      <table class="tinytable" id="tinytable_jutj2bbujsh7dama65ci" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">set</th>
+<div class="container">
+      <table class="tinytable" id="tinytable_vki6pst7hgn2brml3cfq" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col" data-row="0" data-col="1">set</th>
                 <th scope="col" data-row="0" data-col="2">x</th>
                 <th scope="col" data-row="0" data-col="3">y</th>
                 <th scope="col" data-row="0" data-col="4">set</th>
@@ -302,12 +282,10 @@
                 <th scope="col" data-row="0" data-col="10">set</th>
                 <th scope="col" data-row="0" data-col="11">x</th>
                 <th scope="col" data-row="0" data-col="12">y</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">I</td>
+              </tr></thead>
+<tbody>
+<tr>
+<td data-row="1" data-col="1">I</td>
                   <td data-row="1" data-col="2">10</td>
                   <td data-row="1" data-col="3">8.04</td>
                   <td data-row="1" data-col="4">II</td>
@@ -320,8 +298,8 @@
                   <td data-row="1" data-col="11">8</td>
                   <td data-row="1" data-col="12">6.58</td>
                 </tr>
-                <tr>
-                  <td data-row="2" data-col="1">I</td>
+<tr>
+<td data-row="2" data-col="1">I</td>
                   <td data-row="2" data-col="2">8</td>
                   <td data-row="2" data-col="3">6.95</td>
                   <td data-row="2" data-col="4">II</td>
@@ -334,8 +312,8 @@
                   <td data-row="2" data-col="11">8</td>
                   <td data-row="2" data-col="12">5.76</td>
                 </tr>
-                <tr>
-                  <td data-row="3" data-col="1">I</td>
+<tr>
+<td data-row="3" data-col="1">I</td>
                   <td data-row="3" data-col="2">13</td>
                   <td data-row="3" data-col="3">7.58</td>
                   <td data-row="3" data-col="4">II</td>
@@ -348,8 +326,8 @@
                   <td data-row="3" data-col="11">8</td>
                   <td data-row="3" data-col="12">7.71</td>
                 </tr>
-                <tr>
-                  <td data-row="4" data-col="1">I</td>
+<tr>
+<td data-row="4" data-col="1">I</td>
                   <td data-row="4" data-col="2">9</td>
                   <td data-row="4" data-col="3">8.81</td>
                   <td data-row="4" data-col="4">II</td>
@@ -362,8 +340,8 @@
                   <td data-row="4" data-col="11">8</td>
                   <td data-row="4" data-col="12">8.84</td>
                 </tr>
-                <tr>
-                  <td data-row="5" data-col="1">I</td>
+<tr>
+<td data-row="5" data-col="1">I</td>
                   <td data-row="5" data-col="2">11</td>
                   <td data-row="5" data-col="3">8.33</td>
                   <td data-row="5" data-col="4">II</td>
@@ -376,8 +354,8 @@
                   <td data-row="5" data-col="11">8</td>
                   <td data-row="5" data-col="12">8.47</td>
                 </tr>
-                <tr>
-                  <td data-row="6" data-col="1">I</td>
+<tr>
+<td data-row="6" data-col="1">I</td>
                   <td data-row="6" data-col="2">14</td>
                   <td data-row="6" data-col="3">9.96</td>
                   <td data-row="6" data-col="4">II</td>
@@ -390,8 +368,8 @@
                   <td data-row="6" data-col="11">8</td>
                   <td data-row="6" data-col="12">7.04</td>
                 </tr>
-                <tr>
-                  <td data-row="7" data-col="1">I</td>
+<tr>
+<td data-row="7" data-col="1">I</td>
                   <td data-row="7" data-col="2">6</td>
                   <td data-row="7" data-col="3">7.24</td>
                   <td data-row="7" data-col="4">II</td>
@@ -404,8 +382,8 @@
                   <td data-row="7" data-col="11">8</td>
                   <td data-row="7" data-col="12">5.25</td>
                 </tr>
-                <tr>
-                  <td data-row="8" data-col="1">I</td>
+<tr>
+<td data-row="8" data-col="1">I</td>
                   <td data-row="8" data-col="2">4</td>
                   <td data-row="8" data-col="3">4.26</td>
                   <td data-row="8" data-col="4">II</td>
@@ -418,8 +396,8 @@
                   <td data-row="8" data-col="11">19</td>
                   <td data-row="8" data-col="12">12.50</td>
                 </tr>
-                <tr>
-                  <td data-row="9" data-col="1">I</td>
+<tr>
+<td data-row="9" data-col="1">I</td>
                   <td data-row="9" data-col="2">12</td>
                   <td data-row="9" data-col="3">10.84</td>
                   <td data-row="9" data-col="4">II</td>
@@ -432,8 +410,8 @@
                   <td data-row="9" data-col="11">8</td>
                   <td data-row="9" data-col="12">5.56</td>
                 </tr>
-                <tr>
-                  <td data-row="10" data-col="1">I</td>
+<tr>
+<td data-row="10" data-col="1">I</td>
                   <td data-row="10" data-col="2">7</td>
                   <td data-row="10" data-col="3">4.82</td>
                   <td data-row="10" data-col="4">II</td>
@@ -446,8 +424,8 @@
                   <td data-row="10" data-col="11">8</td>
                   <td data-row="10" data-col="12">7.91</td>
                 </tr>
-                <tr>
-                  <td data-row="11" data-col="1">I</td>
+<tr>
+<td data-row="11" data-col="1">I</td>
                   <td data-row="11" data-col="2">5</td>
                   <td data-row="11" data-col="3">5.68</td>
                   <td data-row="11" data-col="4">II</td>
@@ -460,15 +438,14 @@
                   <td data-row="11" data-col="11">8</td>
                   <td data-row="11" data-col="12">6.89</td>
                 </tr>
-        </tbody>
-      </table>
-    </div>
+</tbody>
+</table>
+</div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 <p>A little hard to read!</p>
-<aside class="notes">
-<p>To understand how visualization supports validation, we can take at the Anscombe’s Quartet data from the <code>{Tmisc}</code>.</p>
+<aside class="notes"><p>To understand how visualization supports validation, we can take at the Anscombe’s Quartet data from the <a href="https://github.com/stephenturner/Tmisc">Tmisc</a>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -479,11 +456,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level4">
-
-<p>Take a look at the data using some summary statistics:</p>
+      }</style></aside></section><section class="slide level4"><p>Take a look at the data using some summary statistics:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>Tmisc<span class="sc">::</span>quartet <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a></a>  <span class="fu">summarise</span>(</span>
@@ -498,89 +471,80 @@
 <div class="cell-output-display">
 <!-- preamble start -->
 
-    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
-
-    <script>
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script><script>
       // Create table-specific functions using external factory
-      const tableFns_e36d2eh9ptqj4wczgwqj = TinyTable.createTableFunctions("tinytable_e36d2eh9ptqj4wczgwqj");
+      const tableFns_om5bxv4jwdlg7pb6roty = TinyTable.createTableFunctions("tinytable_om5bxv4jwdlg7pb6roty");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 } ], css_id: 'tinytable_css_xu7v9eukclqqc1x58lzn',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 } ], css_id: 'tinytable_css_b2pvpgqf5uco2p6ruspq',}, 
+          { positions: [ { i: '4', j: 1 }, { i: '4', j: 2 }, { i: '4', j: 3 }, { i: '4', j: 4 }, { i: '4', j: 5 }, { i: '4', j: 6 } ], css_id: 'tinytable_css_sikcdrbezpgbt37d7rb5',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 }, { i: '0', j: 6 } ], css_id: 'tinytable_css_walwzmy9kohsigkhk84u',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_e36d2eh9ptqj4wczgwqj.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_om5bxv4jwdlg7pb6roty.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
-    </script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
-    <style>
+    </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+<style>
     /* tinytable css entries after */
-    #tinytable_e36d2eh9ptqj4wczgwqj td.tinytable_css_xu7v9eukclqqc1x58lzn, #tinytable_e36d2eh9ptqj4wczgwqj th.tinytable_css_xu7v9eukclqqc1x58lzn {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
-    #tinytable_e36d2eh9ptqj4wczgwqj td.tinytable_css_b2pvpgqf5uco2p6ruspq, #tinytable_e36d2eh9ptqj4wczgwqj th.tinytable_css_b2pvpgqf5uco2p6ruspq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
+    #tinytable_om5bxv4jwdlg7pb6roty td.tinytable_css_sikcdrbezpgbt37d7rb5, #tinytable_om5bxv4jwdlg7pb6roty th.tinytable_css_sikcdrbezpgbt37d7rb5 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_om5bxv4jwdlg7pb6roty td.tinytable_css_walwzmy9kohsigkhk84u, #tinytable_om5bxv4jwdlg7pb6roty th.tinytable_css_walwzmy9kohsigkhk84u {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; font-weight: bold }
     </style>
-    <div class="container">
-      <table class="tinytable" id="tinytable_e36d2eh9ptqj4wczgwqj" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1">set</th>
+<div class="container">
+      <table class="tinytable" id="tinytable_om5bxv4jwdlg7pb6roty" style="table-layout: fixed; width: 90% !important; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col" data-row="0" data-col="1">set</th>
                 <th scope="col" data-row="0" data-col="2">x_mean</th>
                 <th scope="col" data-row="0" data-col="3">y_mean</th>
                 <th scope="col" data-row="0" data-col="4">x_sd</th>
                 <th scope="col" data-row="0" data-col="5">y_sd</th>
                 <th scope="col" data-row="0" data-col="6">r</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">I</td>
+              </tr></thead>
+<tbody>
+<tr>
+<td data-row="1" data-col="1">I</td>
                   <td data-row="1" data-col="2">9</td>
                   <td data-row="1" data-col="3">7.5</td>
                   <td data-row="1" data-col="4">3.3</td>
                   <td data-row="1" data-col="5">2</td>
                   <td data-row="1" data-col="6">0.82</td>
                 </tr>
-                <tr>
-                  <td data-row="2" data-col="1">II</td>
+<tr>
+<td data-row="2" data-col="1">II</td>
                   <td data-row="2" data-col="2">9</td>
                   <td data-row="2" data-col="3">7.5</td>
                   <td data-row="2" data-col="4">3.3</td>
                   <td data-row="2" data-col="5">2</td>
                   <td data-row="2" data-col="6">0.82</td>
                 </tr>
-                <tr>
-                  <td data-row="3" data-col="1">III</td>
+<tr>
+<td data-row="3" data-col="1">III</td>
                   <td data-row="3" data-col="2">9</td>
                   <td data-row="3" data-col="3">7.5</td>
                   <td data-row="3" data-col="4">3.3</td>
                   <td data-row="3" data-col="5">2</td>
                   <td data-row="3" data-col="6">0.82</td>
                 </tr>
-                <tr>
-                  <td data-row="4" data-col="1">IV</td>
+<tr>
+<td data-row="4" data-col="1">IV</td>
                   <td data-row="4" data-col="2">9</td>
                   <td data-row="4" data-col="3">7.5</td>
                   <td data-row="4" data-col="4">3.3</td>
                   <td data-row="4" data-col="5">2</td>
                   <td data-row="4" data-col="6">0.82</td>
                 </tr>
-        </tbody>
-      </table>
-    </div>
+</tbody>
+</table>
+</div>
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
-<aside class="notes">
-<p>Get the mean, standard deviation, and Pearson correlation coefficient for x and y.</p>
+<aside class="notes"><p>Get the mean, standard deviation, and Pearson correlation coefficient for x and y.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -591,11 +555,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level4">
-
-<p>Now, take another look using a plot:</p>
+      }</style></aside></section><section class="slide level4"><p>Now, take another look using a plot:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>Tmisc<span class="sc">::</span>quartet <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> set)) <span class="sc">+</span></span>
@@ -610,8 +570,7 @@
 <span id="cb3-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-4-1.png" width="576" class="r-stretch"><aside class="notes">
-<p>What do you <em>see</em>?</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-4-1.png" width="576" class="r-stretch"><aside class="notes"><p>What do you <em>see</em>?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -622,46 +581,31 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-
-<section id="how-do-we-visualize-spatial-data" class="title-slide slide level2 center" data-number="1.2">
-<h2><span class="header-section-number">1.2</span> How do we visualize spatial data?</h2>
+      }</style></aside></section><section id="how-do-we-visualize-spatial-data" class="title-slide slide level2 center" data-number="1.2"><h2>
+<span class="header-section-number">1.2</span> How do we visualize spatial data?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>A <strong>map</strong> is a special type of data visualization for spatial data but it isn’t the only one.</p>
 <p><strong>Plots</strong> and <strong>tables</strong> are other common ways to visualize spatial data.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.loc.gov/static/collections/sanborn-maps/images/sankey_in2.jpg"></p>
-<figcaption>Key for interpreting Sanborn fire insurance maps courtesy <a href="https://www.loc.gov/collections/sanborn-maps/about-this-collection/">Library of Congress</a></figcaption>
-</figure>
+<figure><p><img data-src="https://www.loc.gov/static/collections/sanborn-maps/images/sankey_in2.jpg"></p>
+<figcaption>Key for interpreting Sanborn fire insurance maps courtesy <a href="https://www.loc.gov/collections/sanborn-maps/about-this-collection/">Library of Congress</a></figcaption></figure>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="columns">
+</section><section class="slide level4"><div class="columns">
 <div class="column" style="width:40%;">
 <p>Visuals can be further transformed using <strong>animation</strong> and <strong>interactivity</strong>.</p>
 <p>Maps, graphics, and tables also vary in <strong>format</strong>: print, web, mobile, etc.</p>
 </div><div class="column" style="width:60%;">
 <p><img data-src="https://media.giphy.com/media/xUA7aUs09Brz1ZED72/giphy.gif"></p>
 </div></div>
-</section>
-</section>
-<section>
-<section id="what-is-the-grammar-of-graphics" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> What is the “grammar of graphics”?</h1>
+</section></section><section><section id="what-is-the-grammar-of-graphics" class="title-slide slide level1 center" data-number="2"><h1>
+<span class="header-section-number">2</span> What is the “grammar of graphics”?</h1>
 
-</section>
-<section id="grammar-of-graphics" class="title-slide slide level2 unnumbered center">
-<h2>Grammar of graphics</h2>
+</section><section id="grammar-of-graphics" class="title-slide slide level2 unnumbered center"><h2>Grammar of graphics</h2>
 
-<img data-src="images/qcbis_workshop03_gglayers-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">From The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series.</p><aside class="notes">
-<p>Concept from <em>Grammar of Graphics</em> book (1999), from Leland Wilkinson.</p>
+<img data-src="images/qcbis_workshop03_gglayers-graphic.png" class="r-stretch quarto-figure-center"><p class="caption">From The Grammar of Graphics for Introduction to data visualisation with ggplot2 QCBS R Workshop Series.</p><aside class="notes"><p>Concept from <em>Grammar of Graphics</em> book (1999), from Leland Wilkinson.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -672,11 +616,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="grammar-of-graphics-1" class="title-slide slide level2 unnumbered center">
-<h2>Grammar of graphics</h2>
+      }</style></aside></section><section id="grammar-of-graphics-1" class="title-slide slide level2 unnumbered center"><h2>Grammar of graphics</h2>
 <ul>
 <li>Data</li>
 <li>Mapping</li>
@@ -690,31 +630,26 @@
 <div class="footer">
 <p>Introduction to the “grammar of graphics” adapted from a 2020 ggplot2 workshop (<a href="https://www.youtube.com/watch?v=h29g21z0a68">part 1</a>) by Thomas Lin Pedersen.</p>
 </div>
-</section>
-
-<section id="data" class="title-slide slide level2 center" data-number="2.1">
-<h2><span class="header-section-number">2.1</span> Data</h2>
+</section><section id="data" class="title-slide slide level2 center" data-number="2.1"><h2>
+<span class="header-section-number">2.1</span> Data</h2>
 <ul>
 <li>Structure and representation of data determines what you <em>can</em> and <em>can’t</em> do with it</li>
 <li>Data is expected to be in a “tidy” format (a.k.a. long format data)</li>
-</ul>
-</section>
-<section class="slide level4">
-
-<p>A few definitions:</p>
+</ul></section><section class="slide level4"><p>A few definitions:</p>
 <ul>
-<li><strong>variable</strong>: a quantity, quality, or property that you can measure.</li>
-<li><strong>value</strong>: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</li>
-<li><strong>observation</strong>: a set of measurements made under similar conditions</li>
-<li><strong>tabular data</strong>: a set of values, each associated with a variable and an observation.</li>
+<li>
+<strong>variable</strong>: a quantity, quality, or property that you can measure.</li>
+<li>
+<strong>value</strong>: the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</li>
+<li>
+<strong>observation</strong>: a set of measurements made under similar conditions</li>
+<li>
+<strong>tabular data</strong>: a set of values, each associated with a variable and an observation.</li>
 </ul>
 
 <aside><div>
 <p>Excerpted from <a href="https://r4ds.hadley.nz/data-visualize">Ch. 2 of R for Data Science</a>.</p>
-</div></aside></section>
-<section class="slide level4">
-
-<p>What works best with the grammar of graphics is <strong>tidy data</strong>:</p>
+</div></aside></section><section class="slide level4"><p>What works best with the grammar of graphics is <strong>tidy data</strong>:</p>
 <ul>
 <li>each value is placed in its own “cell”,</li>
 <li>each variable in its own column, and</li>
@@ -735,17 +670,18 @@ ggplot(data = us_states)
 :::
 :::
 
--->
-</section>
-
-<section id="mapping" class="title-slide slide level2 center" data-number="2.2">
-<h2><span class="header-section-number">2.2</span> Mapping</h2>
+--></section><section id="mapping" class="title-slide slide level2 center" data-number="2.2"><h2>
+<span class="header-section-number">2.2</span> Mapping</h2>
 <ul>
-<li><p>Mapping allows data to be understood by the graphics system</p>
+<li>
+<p>Mapping allows data to be understood by the graphics system</p>
 <ul>
-<li><strong>Aesthetic mapping</strong>: variables -&gt; graphical properties in the geometry</li>
-<li><strong>Facet mapping</strong>: variables -&gt; panels in layout</li>
-</ul></li>
+<li>
+<strong>Aesthetic mapping</strong>: variables -&gt; graphical properties in the geometry</li>
+<li>
+<strong>Facet mapping</strong>: variables -&gt; panels in layout</li>
+</ul>
+</li>
 </ul>
 <!--
 
@@ -764,57 +700,48 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 :::
 
 
--->
-</section>
-
-<section id="statistics" class="title-slide slide level2 center" data-number="2.3">
-<h2><span class="header-section-number">2.3</span> Statistics</h2>
+--></section><section id="statistics" class="title-slide slide level2 center" data-number="2.3"><h2>
+<span class="header-section-number">2.3</span> Statistics</h2>
 <ul>
 <li><p>Data may not represent the displayed values</p></li>
-<li><p>Statistics transform input variables into displayed values, e.g.</p>
+<li>
+<p>Statistics transform input variables into displayed values, e.g.</p>
 <ul>
 <li>Counting the number of observations by category</li>
 <li>Calculating summary statistics for a boxplot</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <div class="footer">
 <p>Statistics can be used prior to plotting data or used by a plotting function directly.</p>
 </div>
-</section>
-
-<section id="scales" class="title-slide slide level2 center" data-number="2.4">
-<h2><span class="header-section-number">2.4</span> Scales</h2>
+</section><section id="scales" class="title-slide slide level2 center" data-number="2.4"><h2>
+<span class="header-section-number">2.4</span> Scales</h2>
 <ul>
-<li><p>Scales translate between value ranges and graphical properties, e.g.</p>
+<li>
+<p>Scales translate between value ranges and graphical properties, e.g.</p>
 <ul>
 <li>Categories -&gt; Colors</li>
 <li>Numbers -&gt; Position</li>
-</ul></li>
+</ul>
+</li>
 <li><p>Scales use a specific type of interpolation, e.g.&nbsp;discrete, continuous, etc., so not all scales work with all variables.</p></li>
 </ul>
 <div class="footer">
 <p>In the not too common case where data directly represents a graphical property, e.g.&nbsp;a “color” column, you can use a special type of scale called an “identity” scale.</p>
 </div>
-</section>
-
-<section id="geometries" class="title-slide slide level2 center" data-number="2.5">
-<h2><span class="header-section-number">2.5</span> Geometries</h2>
+</section><section id="geometries" class="title-slide slide level2 center" data-number="2.5"><h2>
+<span class="header-section-number">2.5</span> Geometries</h2>
 <ul>
 <li><p>How translate aesthetics into graphical representations</p></li>
 <li><p>Basic geometries (e.g.&nbsp;points, lines, polygons) can be combined into more complex geometries (e.g.&nbsp;box plot, map)</p></li>
 <li><p>Typically, the geometries are the same as the “type” of plot</p></li>
-</ul>
-</section>
-
-<section id="facets" class="title-slide slide level2 center" data-number="2.6">
-<h2><span class="header-section-number">2.6</span> Facets</h2>
+</ul></section><section id="facets" class="title-slide slide level2 center" data-number="2.6"><h2>
+<span class="header-section-number">2.6</span> Facets</h2>
 <ul>
 <li>Defines how data is split across multiple panels</li>
-</ul>
-</section>
-
-<section id="coordinates" class="title-slide slide level2 center" data-number="2.7">
-<h2><span class="header-section-number">2.7</span> Coordinates</h2>
+</ul></section><section id="coordinates" class="title-slide slide level2 center" data-number="2.7"><h2>
+<span class="header-section-number">2.7</span> Coordinates</h2>
 <ul>
 <li><p>Positional aesthetics must be interpreted by a coordinate system</p></li>
 <li><p>Defines the physical mapping of aesthetics to the paper</p></li>
@@ -822,31 +749,26 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <div class="footer">
 <p>We usually think about the <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">cartesian coordinate system</a>—but there are a lot of different kinds of coordinate systems.</p>
 </div>
-</section>
-
-<section id="theme" class="title-slide slide level2 center" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Theme</h2>
+</section><section id="theme" class="title-slide slide level2 center" data-number="2.8"><h2>
+<span class="header-section-number">2.8</span> Theme</h2>
 <ul>
-<li><p>Every other part of the graphic that <em>isn’t</em> linked to the data:</p>
+<li>
+<p>Every other part of the graphic that <em>isn’t</em> linked to the data:</p>
 <ul>
 <li>Fonts</li>
 <li>Spacing</li>
 <li>Colors</li>
 <li>Weights</li>
 <li>etc.</li>
-</ul></li>
 </ul>
-</section>
-</section>
-<section>
-<section id="how-to-to-use-ggplot2-to" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> How to to use <code>{ggplot2}</code> to…</h1>
+</li>
+</ul></section></section><section><section id="how-to-to-use-ggplot2-to" class="title-slide slide level1 center" data-number="3"><h1>
+<span class="header-section-number">3</span> How to to use <code>{ggplot2}</code> to…</h1>
 <ul>
 <li>build layered data visualizations</li>
 <li>visualize spatial data</li>
 </ul>
-<aside class="notes">
-<p>considerations when visualizing spatial data with ggplot2:</p>
+<aside class="notes"><p>considerations when visualizing spatial data with ggplot2:</p>
 <ul>
 <li>feature geometry and aesthetics are related</li>
 <li>spatial data benefits from reference geography</li>
@@ -854,18 +776,23 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 </ul>
 <p>how to visualize spatial data with ggplot2:</p>
 <ul>
-<li>make a map with <code>geom_sf</code></li>
-<li>change CRS with <code>coord_sf</code></li>
-<li>“zoom” to an area with <code>st_bbox</code> and <code>coord_sf</code></li>
-<li>modify geometry type <code>st_centroid</code></li>
+<li>make a map with <code>geom_sf</code>
+</li>
+<li>change CRS with <code>coord_sf</code>
+</li>
+<li>“zoom” to an area with <code>st_bbox</code> and <code>coord_sf</code>
+</li>
+<li>modify geometry type <code>st_centroid</code>
+</li>
 </ul>
 <p>how to visualize spatial data with mapview:</p>
 <ul>
-<li>make a map with <code>mapview</code></li>
+<li>make a map with <code>mapview</code>
+</li>
 <li>make a color-coded map with the <code>zcol</code> argument</li>
-<li>make a map with multiple layers by passing a list to <code>mapview</code></li>
-</ul>
-<style type="text/css">
+<li>make a map with multiple layers by passing a list to <code>mapview</code>
+</li>
+</ul><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -875,38 +802,29 @@ ggplot(data = us_states, aes(fill = total_pop_15))
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-<section id="cheatsheets" class="title-slide slide level2 center" data-number="3.1">
-<h2><span class="header-section-number">3.1</span> Cheatsheets</h2>
+      }</style></aside></section><section id="cheatsheets" class="title-slide slide level2 center" data-number="3.1"><h2>
+<span class="header-section-number">3.1</span> Cheatsheets</h2>
 <ul>
 <li><a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2 data visualization cheatsheet</a></li>
-</ul>
-</section>
+</ul></section><section id="build-layered-data-visualizations" class="title-slide slide level2 center" data-number="3.2"><h2>
+<span class="header-section-number">3.2</span> Build layered data visualizations</h2>
 
-<section id="build-layered-data-visualizations" class="title-slide slide level2 center" data-number="3.2">
-<h2><span class="header-section-number">3.2</span> Build layered data visualizations</h2>
-
-</section>
-
-<section id="setup" class="title-slide slide level2 center" data-number="3.3">
-<h2><span class="header-section-number">3.3</span> Setup</h2>
-<p>For this session, we are going to use the <code>{ggplot2}</code> and <code>{dplyr}</code> packages along with <code>{sf}</code> and <code>{rnaturalearth}</code>:</p>
+</section><section id="setup" class="title-slide slide level2 center" data-number="3.3"><h2>
+<span class="header-section-number">3.3</span> Setup</h2>
+<p>For this session, we are going to use the <a href="https://ggplot2.tidyverse.org">ggplot2</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> packages along with <a href="https://r-spatial.github.io/sf/">sf</a> and <a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-2"><a></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb4-3"><a></a><span class="fu">library</span>(sf)</span>
 <span id="cb4-4"><a></a><span class="fu">library</span>(rnaturalearth)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-
-<section id="setup-data" class="title-slide slide level2 center" data-number="3.4">
-<h2><span class="header-section-number">3.4</span> Setup data</h2>
-<p>Next, we are going to use the <code>storms</code> data included with <code>{dplyr}</code>.</p>
+</section><section id="setup-data" class="title-slide slide level2 center" data-number="3.4"><h2>
+<span class="header-section-number">3.4</span> Setup data</h2>
+<p>Next, we are going to use the <code>storms</code> data included with <a href="https://dplyr.tidyverse.org">dplyr</a>.</p>
 <p>Take a quick look at <code>storms</code> using <code>glimpse()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">glimpse</span>(storms)</span>
-<span id="cb5-2"><a></a><span class="co">#&gt; Rows: 19,537</span></span>
+<span id="cb5-2"><a></a><span class="co">#&gt; Rows: 20,778</span></span>
 <span id="cb5-3"><a></a><span class="co">#&gt; Columns: 13</span></span>
 <span id="cb5-4"><a></a><span class="co">#&gt; $ name                         &lt;chr&gt; "Amy", "Amy", "Amy", "Amy", "Amy", "Am…</span></span>
 <span id="cb5-5"><a></a><span class="co">#&gt; $ year                         &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 19…</span></span>
@@ -925,10 +843,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <div class="footer">
 <p>Remember! Each row is an *(observation** of a storm, not a individual storm.</p>
 </div>
-</section>
-<section class="slide level4">
-
-<p><code>storms</code> is a subset of a larger <a href="https://www.nhc.noaa.gov/data/#hurdat">Atlantic hurricane database (HURDAT2)</a> with data from 1851 to 2022.</p>
+</section><section class="slide level4"><p><code>storms</code> is a subset of a larger <a href="https://www.nhc.noaa.gov/data/#hurdat">Atlantic hurricane database (HURDAT2)</a> with data from 1851 to 2022.</p>
 <div class="columns">
 <div class="column">
 <p><img data-src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtjY2dycDRzZ2djNHQ4MDh6Nm50dGYzbWF4ZHNkNGdkc3N2azB3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j0i4tSogPfq9rDxsB/giphy.gif"></p>
@@ -936,10 +851,9 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <p>Since 1974, NOAA’s <a href="https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite">Geostationary Operational Environmental Satellite</a> program has played a key role in tracking storms and monitoring weather around the world.</p>
 </div></div>
 <!-- end columns -->
-</section>
-
-<section id="create-a-ggplot" class="title-slide slide level2 center" data-number="3.5">
-<h2><span class="header-section-number">3.5</span> Create a <code>ggplot</code></h2>
+</section><section id="create-a-ggplot" class="title-slide slide level2 center" data-number="3.5"><h2>
+<span class="header-section-number">3.5</span> Create a <code>ggplot</code>
+</h2>
 <p>We can start by using the function <code>ggplot()</code> to define a plot object. Set <code>storm</code> as the input data for <code>ggplot()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -949,14 +863,11 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <div class="footer">
 <p>This is the first step in creating a plot that we can add layers to. Parameters set with <code>ggplot()</code> are <em>inherited</em> by layers added later.</p>
 </div>
-</section>
+</section><section id="add-aesthetics-and-layers" class="title-slide slide level2 center" data-number="3.6"><h2>
+<span class="header-section-number">3.6</span> Add aesthetics and layers</h2>
 
-<section id="add-aesthetics-and-layers" class="title-slide slide level2 center" data-number="3.6">
-<h2><span class="header-section-number">3.6</span> Add aesthetics and layers</h2>
-
-</section>
-<section id="set-mapping-with-aes" class="title-slide slide level3 center">
-<h3>Set mapping with <code>aes()</code></h3>
+</section><section id="set-mapping-with-aes" class="title-slide slide level3 center"><h3>Set mapping with <code>aes()</code>
+</h3>
 <p>Next, we can set the mapping using the <code>aes()</code> function. We can start by mapping <code>long</code> (longitude) to <code>x</code> and <code>lat</code> (latitude) to <code>y</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(</span>
@@ -969,8 +880,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 
 </div>
 <img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-10-1.png" width="576" class="r-stretch"><p>Before we can see any data, we need to tell <code>ggplot()</code> how we want to represent the data using layers.</p>
-<aside class="notes">
-<p>The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.</p>
+<aside class="notes"><p>The mapping argument of the ggplot() function defines how variables in your dataset are mapped to visual properties (aesthetics) of your plot.</p>
 <p>Note that the storms data is <em>not</em> spatial at this point.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -982,11 +892,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level4">
-
-<p>Layers in <code>{ggplot2}</code> are most often added using “geoms” (short for geometry) functions like <code>geom_point()</code>, <code>geom_col()</code>, or <code>geom_histogram()</code>.</p>
+      }</style></aside></section><section class="slide level4"><p>Layers in <a href="https://ggplot2.tidyverse.org">ggplot2</a> are most often added using “geoms” (short for geometry) functions like <code>geom_point()</code>, <code>geom_col()</code>, or <code>geom_histogram()</code>.</p>
 <p>Let’s give it a try using <code>geom_point()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(</span>
@@ -999,10 +905,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb8-8"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>You can define the <code>data</code> and <code>mapping</code> parameters globally using <code>ggplot()</code> or locally for a single geom function. This code does the exact same thing as the prior block:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-11-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>You can define the <code>data</code> and <code>mapping</code> parameters globally using <code>ggplot()</code> or locally for a single geom function. This code does the exact same thing as the prior block:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb9-2"><a></a>  <span class="fu">geom_point</span>(</span>
@@ -1014,24 +917,15 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb9-8"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-</section>
-
-<section id="what-is-this-operator" class="title-slide slide level3 center">
-<h3>What is this <code>+</code> operator?</h3>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-12-1.png" width="576" class="r-stretch"></section><section class="slide level4"></section><section id="what-is-this-operator" class="title-slide slide level3 center"><h3>What is this <code>+</code> operator?</h3>
 <p>Notice that we are combining the <code>ggplot()</code> and <code>geom_point()</code> functions using the <code>+</code> operator.</p>
 <p>This is a style of function or operator known as an <a href="https://en.wikipedia.org/wiki/Infix_notation">infix operator</a>.</p>
 <p>This operator works is similar to the pipe operator, <code>%&gt;%</code> or <code>|&gt;</code> that passes the output from one function (or line of code) to the next line as the first parameter in a following function.</p>
-</section>
-<section class="slide level4">
-
-<p>For example, see how we can use a series of pipes to operate on the storms data:</p>
+</section><section class="slide level4"><p>For example, see how we can use a series of pipes to operate on the storms data:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>storms <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a></a>  <span class="fu">distinct</span>(name)</span>
-<span id="cb10-3"><a></a><span class="co">#&gt; # A tibble: 260 × 1</span></span>
+<span id="cb10-3"><a></a><span class="co">#&gt; # A tibble: 268 × 1</span></span>
 <span id="cb10-4"><a></a><span class="co">#&gt;   name    </span></span>
 <span id="cb10-5"><a></a><span class="co">#&gt;   &lt;chr&gt;   </span></span>
 <span id="cb10-6"><a></a><span class="co">#&gt; 1 Amy     </span></span>
@@ -1040,33 +934,24 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb10-9"><a></a><span class="co">#&gt; 4 Doris   </span></span>
 <span id="cb10-10"><a></a><span class="co">#&gt; 5 Eloise  </span></span>
 <span id="cb10-11"><a></a><span class="co">#&gt; 6 Faye    </span></span>
-<span id="cb10-12"><a></a><span class="co">#&gt; # ℹ 254 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-12"><a></a><span class="co">#&gt; # ℹ 262 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section class="slide level4">
-
-<div class="cell">
+</section><section class="slide level4"><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>storms <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a></a>  <span class="fu">distinct</span>(name) <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a></a>  <span class="fu">nrow</span>()</span>
-<span id="cb11-4"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-4"><a></a><span class="co">#&gt; [1] 268</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>The prior block is the same as the following block:</p>
+</section><section class="slide level4"><p>The prior block is the same as the following block:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>storm_names <span class="ot">&lt;-</span> <span class="fu">distinct</span>(storms, name)</span>
 <span id="cb12-2"><a></a><span class="fu">nrow</span>(storm_names)</span>
-<span id="cb12-3"><a></a><span class="co">#&gt; [1] 260</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a></a><span class="co">#&gt; [1] 268</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="footer">
 <p>Using pipes can help avoid the need for intermediate objects like <code>storm_names</code> that might only exist to move the output of one function to the input for another function.</p>
 </div>
-</section>
-<section class="slide level4">
-
-<p>The first parameter for <code>ggplot()</code> is <code>data</code> and the first parameter for all geom functions is <code>mapping</code> so you often see these passed as unnnamed parameters:</p>
+</section><section class="slide level4"><p>The first parameter for <code>ggplot()</code> is <code>data</code> and the first parameter for all geom functions is <code>mapping</code> so you often see these passed as unnnamed parameters:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
 <span id="cb13-2"><a></a>  <span class="fu">geom_point</span>(</span>
@@ -1077,8 +962,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb13-7"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
-<aside class="notes">
-<p>See how the plot is now showing axis labels.</p>
+<aside class="notes"><p>See how the plot is now showing axis labels.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1089,19 +973,14 @@ ggplot(data = us_states, aes(fill = total_pop_15))
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
+      }</style></aside></section><section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-16-1.png" width="576"></p>
+<figure><p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-16-1.png" width="576"></p>
 </figure>
 </div>
 </div>
-</div></section><section class="slide level4">
-
-<p>You can even leave off the x and y parameter names:</p>
+</div></section><section class="slide level4"><p>You can even leave off the x and y parameter names:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
 <span id="cb14-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1110,18 +989,14 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 
 <aside><div>
 <p>Function parameters can be specified by <em>position</em> as well as <em>name</em>.</p>
-</div></aside></section>
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
+</div></aside></section><section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-17-1.png" width="576"></p>
+<figure><p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-17-1.png" width="576"></p>
 </figure>
 </div>
 </div>
-</div></section><section class="slide level4">
-
-<div class="callout callout-tip callout-titled callout-style-default">
+</div></section><section class="slide level4"><div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -1135,32 +1010,22 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 </div>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Next we can map one of the variables (<code>status</code> or storm classification) to an aesthetic (<code>color</code>):</p>
+</section><section class="slide level4"><p>Next we can map one of the variables (<code>status</code> or storm classification) to an aesthetic (<code>color</code>):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
 <span id="cb15-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(long, lat, <span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <p>Note that we now have a legend, added automatically when we defined a mapping to color. Since color is not a “positional aesthetic” we can’t easily interpret the meaning of the graphic without a legend, labels, or annotations.</p>
-</section>
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
+</section><section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-18-1.png" width="576"></p>
+<figure><p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-18-1.png" width="576"></p>
 </figure>
 </div>
 </div>
-</div></section><section class="slide level4">
-
-<p>In addition mapped aesthetics, we can set “fixed” aesthetics (called fixed because the same value is used for every observation in the plot).</p>
-</section>
-<section class="slide level4">
-
-<p>When you have a lot of overlapping features (known as <em>overplotting</em>), you may want to reduce the <code>alpha</code> (or transparency) of the features:</p>
+</div></section><section class="slide level4"><p>In addition mapped aesthetics, we can set “fixed” aesthetics (called fixed because the same value is used for every observation in the plot).</p>
+</section><section class="slide level4"><p>When you have a lot of overlapping features (known as <em>overplotting</em>), you may want to reduce the <code>alpha</code> (or transparency) of the features:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(storms) <span class="sc">+</span></span>
 <span id="cb16-2"><a></a>  <span class="fu">geom_point</span>(</span>
@@ -1174,18 +1039,14 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 </div>
 
 <p>Fixed aesthetics should be defined for each geom—they are ignored if you pass them to <code>ggplot()</code>.</p>
-</section>
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
+</section><section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-19-1.png" width="576"></p>
+<figure><p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-19-1.png" width="576"></p>
 </figure>
 </div>
 </div>
-</div></section><section class="slide level4">
-
-<p>Aesthetics can also be defined using a function. In this example, we are using the boolean operator <code>==</code> to compare the values from “status” to the string “hurricane”:</p>
+</div></section><section class="slide level4"><p>Aesthetics can also be defined using a function. In this example, we are using the boolean operator <code>==</code> to compare the values from “status” to the string “hurricane”:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb17-2"><a></a>  <span class="at">data =</span> storms,</span>
@@ -1198,24 +1059,18 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb17-9"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
-</section>
-
-
-<section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
+</section><section id="" class="slide level4 output-location-slide"><div class="cell output-location-slide">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-20-1.png" width="576"></p>
+<figure><p><img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-20-1.png" width="576"></p>
 </figure>
 </div>
 </div>
-</div></section><section id="visualizing-distributions" class="title-slide slide level2 center" data-number="3.7">
-<h2><span class="header-section-number">3.7</span> Visualizing distributions</h2>
+</div></section><section id="visualizing-distributions" class="title-slide slide level2 center" data-number="3.7"><h2>
+<span class="header-section-number">3.7</span> Visualizing distributions</h2>
 
-</section>
-
-<section id="distribution-of-one-numeric-variable" class="title-slide slide level2 center" data-number="3.8">
-<h2><span class="header-section-number">3.8</span> Distribution of one numeric variable</h2>
+</section><section id="distribution-of-one-numeric-variable" class="title-slide slide level2 center" data-number="3.8"><h2>
+<span class="header-section-number">3.8</span> Distribution of one numeric variable</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb18-2"><a></a>  <span class="at">data =</span> storms,</span>
@@ -1224,10 +1079,8 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb18-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">90</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-21-1.png" width="576" class="r-stretch"></section>
-
-<section id="distribution-of-one-numeric-variable-1" class="title-slide slide level2 center" data-number="3.9">
-<h2><span class="header-section-number">3.9</span> Distribution of one numeric variable</h2>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-21-1.png" width="576" class="r-stretch"></section><section id="distribution-of-one-numeric-variable-1" class="title-slide slide level2 center" data-number="3.9"><h2>
+<span class="header-section-number">3.9</span> Distribution of one numeric variable</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb19-2"><a></a>  <span class="at">data =</span> storms,</span>
@@ -1236,10 +1089,8 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb19-5"><a></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-22-1.png" width="576" class="r-stretch"></section>
-
-<section id="distribution-of-one-categorical-variable" class="title-slide slide level2 center" data-number="3.10">
-<h2><span class="header-section-number">3.10</span> Distribution of one categorical variable</h2>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-22-1.png" width="576" class="r-stretch"></section><section id="distribution-of-one-categorical-variable" class="title-slide slide level2 center" data-number="3.10"><h2>
+<span class="header-section-number">3.10</span> Distribution of one categorical variable</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb20-2"><a></a>  <span class="at">data =</span> storms,</span>
@@ -1248,12 +1099,9 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb20-5"><a></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-23-1.png" width="576" class="r-stretch"></section>
-</section>
-<section>
-<section id="visualize-spatial-data" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> Visualize spatial data</h1>
-<p>To start, let’s convert our storms data set from a data frame into a sf object using <code>sf::st_as_sf()</code>:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-23-1.png" width="576" class="r-stretch"></section></section><section><section id="visualize-spatial-data" class="title-slide slide level1 center" data-number="4"><h1>
+<span class="header-section-number">4</span> Visualize spatial data</h1>
+<p>To start, let’s convert our storms data set from a data frame into a sf object using <code><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">sf::st_as_sf()</a></code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(</span>
 <span id="cb21-2"><a></a>  storms,</span>
@@ -1270,23 +1118,17 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <p><strong>Always supply coordinates with longitude before latitude!</strong></p>
 </div>
 <div class="callout-content">
-<p><code>sf::st_as_sf()</code> requires that you supply coordinates in lon lat order. This is also the standard order for GeoJSON files, Shapefiles, and KML files. Check out <a href="https://macwright.com/lonlat/">lon lat lat lon by Tom MacWright</a> for more information.</p>
+<p><code><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">sf::st_as_sf()</a></code> requires that you supply coordinates in lon lat order. This is also the standard order for GeoJSON files, Shapefiles, and KML files. Check out <a href="https://macwright.com/lonlat/">lon lat lat lon by Tom MacWright</a> for more information.</p>
 </div>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Finally, we can look at these observations on a map:</p>
+</section><section class="slide level4"><p>Finally, we can look at these observations on a map:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
 <span id="cb22-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> status))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-25-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>That first map may not look much different.</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-25-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>That first map may not look much different.</p>
 <p>But converting the data to a <code>sf</code> object allows us to use <code>coord_sf()</code> to transform the coorindate reference system on the fly:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> storms_sf) <span class="sc">+</span></span>
@@ -1294,10 +1136,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb23-3"><a></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"EPSG:3035"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-26-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>This is equivalent to converting the coordinate reference system in advance using <code>st_transform()</code>:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-26-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>This is equivalent to converting the coordinate reference system in advance using <code>st_transform()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>storms_sf <span class="sc">|&gt;</span></span>
 <span id="cb24-2"><a></a>  <span class="fu">st_transform</span>(<span class="dv">2804</span>) <span class="sc">|&gt;</span></span>
@@ -1306,10 +1145,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 
 </div>
 <img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-27-1.png" width="576" class="r-stretch"><p>Note, that this is another example of how we can use the pipe (<code>|&gt;</code>) to move data between functions in R.</p>
-</section>
-<section class="slide level4">
-
-<p>However, to really show the potential, we need some more data. Install and load the <code>{rnaturalearth}</code> package and then load data for the coastline and countries:</p>
+</section><section class="slide level4"><p>However, to really show the potential, we need some more data. Install and load the <a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a> package and then load data for the coastline and countries:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># pak::pkg_install(c("rnaturalearth", "rnaturalearthdata"))</span></span>
 <span id="cb25-2"><a></a><span class="fu">library</span>(rnaturalearth)</span>
@@ -1318,20 +1154,14 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb25-5"><a></a></span>
 <span id="cb25-6"><a></a>countries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Put them together and we are starting to get somehwere:</p>
+</section><section class="slide level4"><p>Put them together and we are starting to get somehwere:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb26-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> storms_sf, <span class="fu">aes</span>(<span class="at">color =</span> status)) <span class="sc">+</span></span>
 <span id="cb26-3"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastline, <span class="at">color =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-29-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of <code>coord_sf()</code> to “zoom” in on a smaller area:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-29-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>But the map is zoomed out to show the whole world—not just the north Atlantic storm observations. We can use the xlim and ylim parameters of <code>coord_sf()</code> to “zoom” in on a smaller area:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>storms_bbox <span class="ot">&lt;-</span> storms_sf <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:3035"</span>) <span class="sc">|&gt;</span></span>
@@ -1350,10 +1180,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb27-15"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-30-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>Try adding a scale:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-30-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>Try adding a scale:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
 <span id="cb28-2"><a></a>  <span class="fu">scale_color_distiller</span>(</span>
@@ -1366,10 +1193,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb28-9"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-31-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>Now try adding some labels:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-31-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>Now try adding some labels:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>storms_map <span class="ot">&lt;-</span> storms_map <span class="sc">+</span></span>
 <span id="cb29-2"><a></a>  <span class="fu">labs</span>(</span>
@@ -1380,10 +1204,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb29-7"><a></a>storms_map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-32-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<p>Lastly, we can adjust the theme:</p>
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-32-1.png" width="576" class="r-stretch"></section><section class="slide level4"><p>Lastly, we can adjust the theme:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>storms_map <span class="sc">+</span></span>
 <span id="cb30-2"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -1392,50 +1213,29 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 <span id="cb30-5"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-33-1.png" width="576" class="r-stretch"></section>
-<section class="slide level4">
-
-<div class="columns">
+<img data-src="data-visualization_files/figure-revealjs/unnamed-chunk-33-1.png" width="576" class="r-stretch"></section><section class="slide level4"><div class="columns">
 <div class="column" style="width:40%;">
 <p><img data-src="https://images.routledge.com/common/jackets/amazon/978036749/9780367494759.jpg"></p>
 </div><div class="column" style="width:60%;">
 <p>“It’s true that there are better and worse ways to make a map but <strong>no one way to make an excellent map</strong>.”</p>
 <p>Gretchen N. Peterson in GIS Cartography: A Guide to Effective Map Design</p>
 </div></div>
-</section>
-<section id="what-makes-a-bad-map-bad" class="title-slide slide level3 center">
-<h3>What makes a bad map <em>bad</em>?</h3>
+</section><section id="what-makes-a-bad-map-bad" class="title-slide slide level3 center"><h3>What makes a bad map <em>bad</em>?</h3>
 <p>For new map makers who might not know any better, it is often:</p>
 <ul>
 <li>Confusing or distracting layout</li>
 <li>Not enough color contrast for features</li>
 <li>Cluttered labels, legends, or features</li>
-</ul>
-</section>
-
-<section id="what-makes-a-fine-map-just-fine" class="title-slide slide level3 center">
-<h3>What makes a fine map <em>just</em> fine?</h3>
-<p>For more experienced map makers who might be in a hurry:</p>
-<ul>
-<li>Not enough thought on font sizes and styling</li>
-<li>No feature generalization (simplifying geometry where appropriate for the map scale or subject)</li>
-<li>Inappropriate color scales</li>
-</ul>
-</section>
-
-<section id="other-related-considerations" class="title-slide slide level3 center">
-<h3>Other related considerations</h3>
+</ul></section><section id="what-makes-a-fine-map-just-fine" class="title-slide slide level3 center"><h3>What makes a fine map <em>just</em> fine?</h3>
+<p>For more experienced map makers who might be in a hurry: - Not enough thought on font sizes and styling - No feature generalization (simplifying geometry where appropriate for the map scale or subject) - Inappropriate color scales</p>
+</section><section id="other-related-considerations" class="title-slide slide level3 center"><h3>Other related considerations</h3>
 <p>There are many cartographic considerations that also apply to other all types of data visualization:</p>
 <ul>
 <li>Layout</li>
 <li>Fonts (Typography)</li>
 <li>Colors</li>
 <li>Output formats</li>
-</ul>
-</section>
-
-<section id="other-cartography-considerations" class="title-slide slide level3 center">
-<h3>Other cartography considerations</h3>
+</ul></section><section id="other-cartography-considerations" class="title-slide slide level3 center"><h3>Other cartography considerations</h3>
 <p>But there are also some cartographic considerations that apply to maps in special and important ways:</p>
 <ul>
 <li>Feature geometry (and cartographic conventions)</li>
@@ -1444,9 +1244,8 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 </ul>
 
 
-</section>
-</section>
-    </div>
+</section></section>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1454,23 +1253,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1661,9 +1444,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1698,9 +1479,7 @@ ggplot(data = us_states, aes(fill = total_pop_15))
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1868,6 +1647,6 @@ ggplot(data = us_states, aes(fill = total_pop_15))
         }
       });
       </script>
-    
+
 
 </body></html>

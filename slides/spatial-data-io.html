@@ -6,17 +6,20 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
-
-  <meta name="dcterms.date" content="2026-02-11">
-  <title>GES 668 - Spring 2026 – Reading and writing spatial data</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3512cbed9e2527d986e9b0b56d261405.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.20">
+<meta name="dcterms.date" content="2024-11-06">
+<title>GES 668 - Spring 2026 – Reading and writing spatial data</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +98,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ad6cac6167ca8ec72cd8488dbce3747.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -188,16 +191,11 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-  <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-  <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-  <script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
-  <link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-  <script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
-  <script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-  <link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-  <script src="../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-1.3.1/leaflet.js"></script><link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../site_libs/proj4-2.6.2/proj4.min.js"></script><script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
 <meta property="og:title" content="Reading and writing spatial data – GES 668 - Spring 2026">
 <meta property="og:description" content="Session 11">
 <meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/2016-11-29_openeo_gdal-diagram.png">
@@ -209,72 +207,47 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reading and writing spatial data</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Reading and writing spatial data</h1>
   <p class="subtitle">Session 11</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2026-02-11</p>
-</section>
-<section id="overview" class="title-slide slide level2 center">
-<h2>Overview</h2>
+  <p class="date">2024-11-06</p>
+</section><section id="overview" class="title-slide slide level2 center"><h2>Overview</h2>
 <ul>
 <li>Spatial data is everywhere</li>
 <li>Navigating specifications, file formats, and services</li>
 <li>Working with common spatial file formats</li>
 <li>Working with popular spatial web services</li>
-</ul>
-</section>
-
-<section id="spatial-data-is-everywhere" class="title-slide slide level2 center">
-<h2>Spatial data is everywhere</h2>
+</ul></section><section id="spatial-data-is-everywhere" class="title-slide slide level2 center"><h2>Spatial data is everywhere</h2>
 <ul>
 <li>Shapefiles, GeoJSON files, and other spatial data files</li>
 <li>Spatial data editing and hosting services, e.g.&nbsp;<a href="https://www.esri.com/en-us/arcgis/products/arcgis-online/overview">ArcGIS Online</a> or <a href="https://felt.com/maps/recent">Felt</a>)</li>
-<li>Open data portals serving spatial and non-spatial data, e.g.&nbsp;<a href="https://data.gov/">data.gov</a></li>
-</ul>
-</section>
-
-<section id="spatial-data-is-everywhere-1" class="title-slide slide level2 center">
-<h2>Spatial data is everywhere</h2>
+<li>Open data portals serving spatial and non-spatial data, e.g.&nbsp;<a href="https://data.gov/">data.gov</a>
+</li>
+</ul></section><section id="spatial-data-is-everywhere-1" class="title-slide slide level2 center"><h2>Spatial data is everywhere</h2>
 <ul>
 <li>Google Maps, Apple Maps, Waze, and navigation apps (on your phone or <a href="https://support.google.com/googleappsincar/answer/9941814?hl=en">in your vehicle</a>)</li>
 <li>Biking and running apps (Strava publishes a <a href="https://www.strava.com/heatmap#11.21/-76.64618/39.34348/hot/all">global user activity heatmap</a>)</li>
 <li>Web browsers on your phone and desktop application</li>
-</ul>
-</section>
-
-<section id="spatial-data-is-everywhere-2" class="title-slide slide level2 center">
-<h2>Spatial data is everywhere</h2>
+</ul></section><section id="spatial-data-is-everywhere-2" class="title-slide slide level2 center"><h2>Spatial data is everywhere</h2>
 <ul>
 <li>Phone camera photos (stored in the EXIF metadata)</li>
 <li>Calendars (<a href="https://en.wikipedia.org/wiki/ICalendar">iCal</a>), contacts (<a href="https://en.wikipedia.org/wiki/VCard">vCard</a>), and emails (using <a href="https://en.wikipedia.org/wiki/Internet_geolocation">IP address</a> locations)</li>
-</ul>
-</section>
-
-<section id="creating-spatial-data-is-easy" class="title-slide slide level2 center">
-<h2>Creating spatial data is “easy”</h2>
+</ul></section><section id="creating-spatial-data-is-easy" class="title-slide slide level2 center"><h2>Creating spatial data is “easy”</h2>
 <ul>
-<li>GIS Desktop applications, e.g.&nbsp;<a href="https://qgis.org/">QGIS</a></li>
+<li>GIS Desktop applications, e.g.&nbsp;<a href="https://qgis.org/">QGIS</a>
+</li>
 <li>Web mapping applications (e.g.&nbsp;<a href="https://geojson.io/#map=2/0/20">geojson.io</a>, <a href="https://felt.com/">Felt</a>)</li>
 <li>Spreadsheet applications (e.g.&nbsp;<a href="https://sheets.google.com/">Google Sheets</a>)</li>
 <li>Low-code data tools (e.g.&nbsp;<a href="https://airtable.com/">Airtable</a> or <a href="https://support.microsoft.com/en-us/office/introduction-to-lists-0a1c3ace-def0-44af-b225-cfa8d92c52d7">Microsoft Lists</a>)</li>
-</ul>
-</section>
-
-<section id="what-can-we-do-with-it-all" class="title-slide slide level2 center">
-<h2>What can we do with it all?</h2>
+</ul></section><section id="what-can-we-do-with-it-all" class="title-slide slide level2 center"><h2>What can we do with it all?</h2>
 <ul>
 <li>Read and write spatial data files</li>
 <li>Read and write related data files</li>
 <li>Read from and write to web services</li>
-</ul>
-</section>
-
-<section id="standards-and-specifications" class="title-slide slide level2 center">
-<h2>Standards and specifications</h2>
+</ul></section><section id="standards-and-specifications" class="title-slide slide level2 center"><h2>Standards and specifications</h2>
 <p><a href="https://www.ogc.org/publications/">Open Geospatial Consortium (OGC) Standards</a> are organized into categories:</p>
 <ul>
 <li>APIs (e.g.&nbsp;<a href="https://www.ogc.org/publications/standard/ogc-api-moving-features/">Moving Features API</a>)</li>
@@ -282,9 +255,7 @@
 <li>Data Models and Encodings (e.g.&nbsp;<a href="https://www.ogc.org/publications/standard/geotiff/">GeoTIFF</a>)</li>
 <li>and more (Sensors, Publish-Subscribe, Syndication &amp; Context, Discovery, Containers, Abstract Specifications)</li>
 </ul>
-<aside class="notes">
-
-<style type="text/css">
+<aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -294,16 +265,10 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="standards-and-specifications-1" class="title-slide slide level2 center">
-<h2>Standards and specifications</h2>
+      }</style></aside></section><section id="standards-and-specifications-1" class="title-slide slide level2 center"><h2>Standards and specifications</h2>
 
 <img data-src="https://imgs.xkcd.com/comics/standards.png" class="r-stretch"><p>Source: <a href="https://xkcd.com/927/">xkcd: Standards</a> (CC BY-NC 2.5)</p>
-<aside class="notes">
-
-<style type="text/css">
+<aside class="notes"><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -313,11 +278,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="common-spatial-file-formats" class="title-slide slide level2 center">
-<h2>Common spatial file formats</h2>
+      }</style></aside></section><section id="common-spatial-file-formats" class="title-slide slide level2 center"><h2>Common spatial file formats</h2>
 <ul>
 <li>Shapefile (<code>.shp</code>)</li>
 <li>GeoJSON (<code>.json</code>, <code>.geojson</code>)</li>
@@ -326,13 +287,11 @@
 <li>Esri File Geodatabase (<code>.gdb</code>)</li>
 <li>GPX - GPS Exchange Format (<code>.gpx</code>)</li>
 </ul>
-<aside class="notes">
-<ul>
+<aside class="notes"><ul>
 <li>Vector spatial: Shapefile, <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a>, KML</li>
 <li>Raster spatial: <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a>,</li>
 <li>Tabular data with geometry: CSV, Microsoft Excel, delimited text with coordinates or WKT (well known text)</li>
-</ul>
-<style type="text/css">
+</ul><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -342,11 +301,7 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="common-spatial-file-formats-1" class="title-slide slide level2 center">
-<h2>Common spatial file formats</h2>
+      }</style></aside></section><section id="common-spatial-file-formats-1" class="title-slide slide level2 center"><h2>Common spatial file formats</h2>
 <p>These file formats vary in:</p>
 <ul>
 <li>How geometry is stored</li>
@@ -355,47 +310,57 @@
 <li>Compatibility with tools/systems</li>
 <li>Other constraints or limits</li>
 <li>And more!</li>
-</ul>
-</section>
-
-<section id="specialized-spatial-file-formats" class="title-slide slide level2 center">
-<h2>Specialized spatial file formats</h2>
+</ul></section><section id="specialized-spatial-file-formats" class="title-slide slide level2 center"><h2>Specialized spatial file formats</h2>
 <ul>
 <li>Raster data
 <ul>
 <li>Digital Elevation Model (DEM)</li>
 <li><a href="https://www.ogc.org/publications/standard/geotiff/">GeoTIFF</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Map tiles
 <ul>
 <li><a href="https://github.com/mapbox/mbtiles-spec">MBTiles</a></li>
 <li><a href="https://docs.protomaps.com/pmtiles/">PMTiles</a></li>
-</ul></li>
 </ul>
-</section>
-
-<section id="specialized-spatial-file-formats-1" class="title-slide slide level2 center">
-<h2>Specialized spatial file formats</h2>
+</li>
+</ul></section><section id="specialized-spatial-file-formats-1" class="title-slide slide level2 center"><h2>Specialized spatial file formats</h2>
 <ul>
 <li>Columnar data formats
 <ul>
 <li><a href="https://geoparquet.org/">GeoParquet</a></li>
 <li><a href="https://geoarrow.org/">GeoArrow</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Databases
 <ul>
 <li><a href="https://postgis.net/">PostGIS</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Other
 <ul>
 <li><a href="https://flatgeobuf.org/">FlatGeobuf</a></li>
-</ul></li>
 </ul>
-<aside class="notes">
-<ul>
+</li>
+</ul>
+<aside class="notes"><ul>
 <li>DEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications</li>
 <li>Mapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/</li>
-</ul>
+</ul><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside><!-- ## Examples --><!-- ![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg) --><!-- ::: notes --><!-- Census data --><!-- ::: --><!-- --- --><!-- ![](https://i0.wp.com/transportgeography.org/wp-content/uploads/esri_shapefile_model.png?w=1800&ssl=1) --><!-- ::: notes --><!-- Shapefile model --><!-- ::: --><!-- ---- --><!-- ![](https://developers.google.com/static/kml/documentation/images/classTree52.gif) --><!-- ::: notes --><!-- KML --><!-- Source: https://developers.google.com/kml/documentation/kmlreference --><!-- ::: --><!-- ---- --><!-- ![](https://wiki.openstreetmap.org/w/images/thumb/1/10/ERD_of_OSM_DB.svg/1280px-ERD_of_OSM_DB.svg.png){.lightbox} --><!-- ::: notes --><!-- Open Street Map --><!-- SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg --><!-- ::: --></section><section id="historically-many-tools-and-formats-did-not-work-together" class="title-slide slide level2 center"><h2>Historically, many tools and formats did not work together</h2>
+
+<img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section><section id="now-gdal-supports-translation-between-many-different-formats" class="title-slide slide level2 center"><h2>Now, GDAL supports translation between <em>many</em> different formats</h2>
+
+<img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"><aside class="notes"><p>GDAL is a translator library for raster and vector geospatial data formats.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -406,117 +371,50 @@
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-<!-- ## Examples -->
-<!-- ![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg) -->
-<!-- ::: notes -->
-<!-- Census data -->
-<!-- ::: -->
-<!-- --- -->
-<!-- ![](https://i0.wp.com/transportgeography.org/wp-content/uploads/esri_shapefile_model.png?w=1800&ssl=1) -->
-<!-- ::: notes -->
-<!-- Shapefile model -->
-<!-- ::: -->
-<!-- ---- -->
-<!-- ![](https://developers.google.com/static/kml/documentation/images/classTree52.gif) -->
-<!-- ::: notes -->
-<!-- KML -->
-<!-- Source: https://developers.google.com/kml/documentation/kmlreference -->
-<!-- ::: -->
-<!-- ---- -->
-<!-- ![](https://wiki.openstreetmap.org/w/images/thumb/1/10/ERD_of_OSM_DB.svg/1280px-ERD_of_OSM_DB.svg.png){.lightbox} -->
-<!-- ::: notes -->
-<!-- Open Street Map -->
-<!-- SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg -->
-<!-- ::: -->
-</section>
-
-<section id="historically-many-tools-and-formats-did-not-work-together" class="title-slide slide level2 center">
-<h2>Historically, many tools and formats did not work together</h2>
-
-<img data-src="https://r-spatial.org/images/gis2.png" class="r-stretch"></section>
-
-<section id="now-gdal-supports-translation-between-many-different-formats" class="title-slide slide level2 center">
-<h2>Now, GDAL supports translation between <em>many</em> different formats</h2>
-
-<img data-src="https://r-spatial.org/images/gis3.png" class="r-stretch"><aside class="notes">
-<p>GDAL is a translator library for raster and vector geospatial data formats.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="read-spatial-data-files-with-r" class="title-slide slide level2 center">
-<h2>Read spatial data files with R</h2>
-<p>The <code>dsn</code> or data source name for <code>sf::read_sf()</code> can include:</p>
+      }</style></aside></section><section id="read-spatial-data-files-with-r" class="title-slide slide level2 center"><h2>Read spatial data files with R</h2>
+<p>The <code>dsn</code> or data source name for <code><a href="https://r-spatial.github.io/sf/reference/st_read.html">sf::read_sf()</a></code> can include:</p>
 <ul>
 <li>a file name</li>
 <li>a URL</li>
 <li>a folder</li>
 <li>the name and access credentials of a database</li>
 <li>a character string with the contents of a GeoJSON file</li>
-</ul>
-</section>
-
-<section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center">
-<h2>Read spatial data files with R</h2>
-<p>You can use the <code>query</code> parameter of <code>sf::read_sf()</code> to use a SQL query to select records from a file (or select a specific geographical extent).</p>
-</section>
-
-<section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center">
-<h2>Many file formats <em>can</em> include spatial data</h2>
+</ul></section><section id="read-spatial-data-files-with-r-1" class="title-slide slide level2 center"><h2>Read spatial data files with R</h2>
+<p>You can use the <code>query</code> parameter of <code><a href="https://r-spatial.github.io/sf/reference/st_read.html">sf::read_sf()</a></code> to use a SQL query to select records from a file (or select a specific geographical extent).</p>
+</section><section id="many-file-formats-can-include-spatial-data" class="title-slide slide level2 center"><h2>Many file formats <em>can</em> include spatial data</h2>
 <p>Non-spatial files can still be used to store Well Known Text (WKT) strings, coordinate values, or addresses (convertible to spatial data):</p>
 <ul>
 <li>Excel files (<code>xlsx</code> or <code>xls</code>)</li>
 <li>vCard or VCF (Virtual Contact File)</li>
 <li>EXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file</li>
-</ul>
-</section>
-
-<section id="reading-data-into-r" class="title-slide slide level2 center">
-<h2>Reading data into R</h2>
+</ul></section><section id="reading-data-into-r" class="title-slide slide level2 center"><h2>Reading data into R</h2>
 <ul>
-<li>Read data using <code>{sf}</code></li>
+<li>Read data using <a href="https://r-spatial.github.io/sf/">sf</a>
+</li>
 <li>Read data using a package that returns a <code>sf</code> object</li>
-<li>Read data and use <code>{sf}</code> to convert to a <code>sf</code> object</li>
-</ul>
-</section>
-
-<section id="writing-data-from-r" class="title-slide slide level2 center">
-<h2>Writing data from R</h2>
+<li>Read data and use <a href="https://r-spatial.github.io/sf/">sf</a> to convert to a <code>sf</code> object</li>
+</ul></section><section id="writing-data-from-r" class="title-slide slide level2 center"><h2>Writing data from R</h2>
 <ul>
-<li>Write data to a spatial file using <code>{sf}</code></li>
+<li>Write data to a spatial file using <a href="https://r-spatial.github.io/sf/">sf</a>
+</li>
 <li>Write data a a non-spatial file using a different package</li>
 </ul>
 <p>When you write spatial data to a non-spatial format, you should drop the geometry or convert the geometry to coordinates or well-known text.</p>
-</section>
-
-<section id="read-data-using-sf" class="title-slide slide level2 center">
-<h2>Read data using <code>{sf}</code></h2>
-<p>First load <code>{sf}</code>:</p>
+</section><section id="read-data-using-sf" class="title-slide slide level2 center"><h2>Read data using <code>{sf}</code>
+</h2>
+<p>First load <a href="https://r-spatial.github.io/sf/">sf</a>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(sf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-
-<section id="read-data-using-sf-1" class="title-slide slide level2 center">
-<h2>Read data using <code>{sf}</code></h2>
-<p><code>{sf}</code> can use any available drivers to read data:</p>
+</section><section id="read-data-using-sf-1" class="title-slide slide level2 center"><h2>Read data using <code>{sf}</code>
+</h2>
+<p><a href="https://r-spatial.github.io/sf/">sf</a> can use any available drivers to read data:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>drivers <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_drivers</span>()</span>
 <span id="cb2-2"><a></a></span>
 <span id="cb2-3"><a></a>drivers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                         name
-ESRIC                   ESRIC
 PCIDSK                 PCIDSK
 netCDF                 netCDF
 PDS4                     PDS4
@@ -583,12 +481,14 @@ VDV                       VDV
 MVT                       MVT
 NGW                       NGW
 MapML                   MapML
+GTFS                     GTFS
+PMTiles               PMTiles
+JSONFG                 JSONFG
 TIGER                   TIGER
 AVCBin                 AVCBin
 AVCE00                 AVCE00
 HTTP                     HTTP
                                                           long_name write  copy
-ESRIC                                            Esri Compact Cache FALSE FALSE
 PCIDSK                                         PCIDSK Database File  TRUE FALSE
 netCDF                                   Network Common Data Format  TRUE  TRUE
 PDS4                                   NASA Planetary Data System 4  TRUE  TRUE
@@ -624,7 +524,7 @@ WAsP                                               WAsP .map format  TRUE FALSE
 PGeo                                      ESRI Personal GeoDatabase FALSE FALSE
 MSSQLSpatial                  Microsoft SQL Server Spatial Database  TRUE FALSE
 PostgreSQL                                       PostgreSQL/PostGIS  TRUE FALSE
-OpenFileGDB                                            ESRI FileGDB FALSE FALSE
+OpenFileGDB                                            ESRI FileGDB  TRUE FALSE
 DXF                                                     AutoCAD DXF  TRUE FALSE
 CAD                                                  AutoCAD Driver FALSE FALSE
 FlatGeobuf                                               FlatGeobuf  TRUE FALSE
@@ -655,12 +555,14 @@ VDV                             VDV-451/VDV-452/INTREST Data Format  TRUE FALSE
 MVT                                             Mapbox Vector Tiles  TRUE FALSE
 NGW                                                     NextGIS Web  TRUE  TRUE
 MapML                                                         MapML  TRUE FALSE
+GTFS                             General Transit Feed Specification FALSE FALSE
+PMTiles                                              ProtoMap Tiles  TRUE FALSE
+JSONFG                             OGC Features and Geometries JSON  TRUE FALSE
 TIGER                                        U.S. Census TIGER/Line FALSE FALSE
 AVCBin                                     Arc/Info Binary Coverage FALSE FALSE
 AVCE00                                Arc/Info E00 (ASCII) Coverage FALSE FALSE
 HTTP                                          HTTP Fetching Wrapper FALSE FALSE
                is_raster is_vector   vsi
-ESRIC               TRUE      TRUE  TRUE
 PCIDSK              TRUE      TRUE  TRUE
 netCDF              TRUE      TRUE FALSE
 PDS4                TRUE      TRUE  TRUE
@@ -696,7 +598,7 @@ WAsP               FALSE      TRUE  TRUE
 PGeo               FALSE      TRUE FALSE
 MSSQLSpatial       FALSE      TRUE FALSE
 PostgreSQL         FALSE      TRUE FALSE
-OpenFileGDB        FALSE      TRUE  TRUE
+OpenFileGDB         TRUE      TRUE  TRUE
 DXF                FALSE      TRUE  TRUE
 CAD                 TRUE      TRUE  TRUE
 FlatGeobuf         FALSE      TRUE  TRUE
@@ -727,17 +629,17 @@ VDV                FALSE      TRUE  TRUE
 MVT                FALSE      TRUE  TRUE
 NGW                 TRUE      TRUE FALSE
 MapML              FALSE      TRUE  TRUE
+GTFS               FALSE      TRUE  TRUE
+PMTiles            FALSE      TRUE  TRUE
+JSONFG             FALSE      TRUE  TRUE
 TIGER              FALSE      TRUE  TRUE
 AVCBin             FALSE      TRUE  TRUE
 AVCE00             FALSE      TRUE  TRUE
 HTTP                TRUE      TRUE FALSE</code></pre>
 </div>
 </div>
-</section>
-
-<section>
-<section id="read-data-from-a-url-using-sf" class="title-slide slide level2 center">
-<h2>Read data from a URL using <code>{sf}</code></h2>
+</section><section><section id="read-data-from-a-url-using-sf" class="title-slide slide level2 center"><h2>Read data from a URL using <code>{sf}</code>
+</h2>
 <p><code>read_sf()</code> works well with a direct link to a spatial data file.</p>
 <p>Read a GeoJSON file:</p>
 <div class="cell">
@@ -757,10 +659,7 @@ Geodetic CRS:  WGS 84
 #   geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Read a KML file:</p>
+</section><section class="slide level4"><p>Read a KML file:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Keyhole Markup Language (kml)</span></span>
 <span id="cb6-2"><a></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -786,10 +685,7 @@ Geodetic CRS:  WGS 84
 # ℹ 151 more rows</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Read a GeoPackage file:</p>
+</section><section class="slide level4"><p>Read a GeoPackage file:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># GeoPackage (gpkg)</span></span>
 <span id="cb8-2"><a></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/gpkg/nc.gpkg"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -817,10 +713,7 @@ Geodetic CRS:  NAD27
 #   geom &lt;MULTIPOLYGON [°]&gt;</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>Even non-spatial data works if the data includes a well-known text column:</p>
+</section><section class="slide level4"><p>Even non-spatial data works if the data includes a well-known text column:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Comma-separated values (csv)</span></span>
 <span id="cb10-2"><a></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/csv/pt.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -838,10 +731,7 @@ CRS:           NA
 3 3     ""           ""    POINT(0 0)      (0 0)</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>If the non-spatial data does not include a well-known text column, <code>read_sf()</code> still returns a data frame:</p>
+</section><section class="slide level4"><p>If the non-spatial data does not include a well-known text column, <code>read_sf()</code> still returns a data frame:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enrollment_By_Grade_2023.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -862,18 +752,16 @@ CRS:           NA
 # ℹ 1 more variable: `Create Date` &lt;chr&gt;</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level4">
-
-<p>A multifile format like a shapefile does <em>not</em> work as a URL:</p>
+</section><section class="slide level4"><p>A multifile format like a shapefile does <em>not</em> work as a URL:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Shapefile (shp)</span></span>
 <span id="cb14-2"><a></a><span class="fu">read_sf</span>(<span class="st">"https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: Cannot open "https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp"; The file doesn't seem to exist.</code></pre>
+<pre><code>Error:
+! Cannot open "https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp"; The file doesn't seem to exist.</code></pre>
 </div>
 </div>
-<p>But it <em>does</em> work if you provide a local file path (<code>system.file()</code> returns a file path in this case):</p>
+<p>But it <em>does</em> work if you provide a local file path (<code><a href="https://rdrr.io/r/base/system.file.html">system.file()</a></code> returns a file path in this case):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">read_sf</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -900,35 +788,26 @@ Geodetic CRS:  NAD27
 #   geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
 </div>
 </div>
-</section></section>
-<section id="working-with-web-services" class="title-slide slide level2 center">
-<h2>Working with web services</h2>
+</section></section><section id="working-with-web-services" class="title-slide slide level2 center"><h2>Working with web services</h2>
 <p>Examples of common web services for working with spatial data include:</p>
 <ul>
 <li>Spatial data sharing and discovery</li>
 <li>Spatial data visualization</li>
 <li>Routing</li>
 <li>Geocoding</li>
-</ul>
-</section>
-
-<section id="considerations-when-working-with-web-services" class="title-slide slide level2 center">
-<h2>Considerations when working with web services</h2>
+</ul></section><section id="considerations-when-working-with-web-services" class="title-slide slide level2 center"><h2>Considerations when working with web services</h2>
 <p>Using a web service often requires:</p>
 <ul>
 <li>Creating an account for authentication and billing</li>
 <li>Dedicating funding for usage</li>
 <li>Understanding data privacy implications</li>
-</ul>
-</section>
-
-<section id="example-feature-services" class="title-slide slide level2 center">
-<h2>Example: Feature Services</h2>
+</ul></section><section id="example-feature-services" class="title-slide slide level2 center"><h2>Example: Feature Services</h2>
 <p>An ArcGIS FeatureServer URL does <em>not</em> work:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">read_sf</span>(<span class="st">"https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: Cannot open "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"; The file doesn't seem to exist.</code></pre>
+<pre><code>Error:
+! Cannot open "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"; The file doesn't seem to exist.</code></pre>
 </div>
 </div>
 <p>But a FeatureServer URL that includes the output format <em>does</em> work:</p>
@@ -960,7 +839,7 @@ Geodetic CRS:  WGS 84
 #   COUNTY_ALLCAPS &lt;chr&gt;, Region &lt;chr&gt;, geometry &lt;POLYGON [°]&gt;</code></pre>
 </div>
 </div>
-<p>There are a wide variety of packages that you can use to supplement <code>{sf}</code>.</p>
+<p>There are a wide variety of packages that you can use to supplement <a href="https://r-spatial.github.io/sf/">sf</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(arcgislayers)</span>
 <span id="cb22-2"><a></a></span>
@@ -1020,11 +899,9 @@ First 10 features:
 10 POLYGON ((1213130 747989.9,...</code></pre>
 </div>
 </div>
-<aside class="notes">
-<ul>
+<aside class="notes"><ul>
 <li>Practice writing a query with arc_select</li>
-</ul>
-<style type="text/css">
+</ul><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -1034,12 +911,8 @@ First 10 features:
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="example-mapbox-api" class="title-slide slide level2 center">
-<h2>Example: Mapbox API</h2>
-<p><code>mapboxapi::mb_isochrone()</code> allows access to the <a href="https://docs.mapbox.com/api/navigation/isochrone/">Mapbox Isochrone API</a>:</p>
+      }</style></aside></section><section id="example-mapbox-api" class="title-slide slide level2 center"><h2>Example: Mapbox API</h2>
+<p><code><a href="https://walker-data.com/mapboxapi/reference/mb_isochrone.html">mapboxapi::mb_isochrone()</a></code> allows access to the <a href="https://docs.mapbox.com/api/navigation/isochrone/">Mapbox Isochrone API</a>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">library</span>(mapboxapi)</span>
 <span id="cb24-2"><a></a></span>
@@ -1054,19 +927,16 @@ First 10 features:
 <pre><code>Simple feature collection with 1 feature and 1 field
 Geometry type: POLYGON
 Dimension:     XY
-Bounding box:  xmin: -76.61453 ymin: 39.28688 xmax: -76.6056 ymax: 39.29477
+Bounding box:  xmin: -76.6145 ymin: 39.28679 xmax: -76.60575 ymax: 39.29468
 Geodetic CRS:  WGS 84
 # A tibble: 1 × 2
    time                                                                 geometry
   &lt;int&gt;                                                            &lt;POLYGON [°]&gt;
-1     5 ((-76.60768 39.29392, -76.60868 39.2939, -76.6098 39.29477, -76.6115 39…</code></pre>
+1     5 ((-76.60763 39.29389, -76.60863 39.29388, -76.60987 39.29465, -76.61143…</code></pre>
 </div>
 </div>
-</section>
-
-<section id="example-mapbox-api-1" class="title-slide slide level2 center">
-<h2>Example: Mapbox API</h2>
-<p><code>mapboxapi::addMapboxTiles()</code> provides easy access to the <a href="https://docs.mapbox.com/api/maps/static-tiles/">Mapbox Static Tiles API</a>:</p>
+</section><section id="example-mapbox-api-1" class="title-slide slide level2 center"><h2>Example: Mapbox API</h2>
+<p><code><a href="https://walker-data.com/mapboxapi/reference/addMapboxTiles.html">mapboxapi::addMapboxTiles()</a></code> provides easy access to the <a href="https://docs.mapbox.com/api/maps/static-tiles/">Mapbox Static Tiles API</a>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(leaflet)</span>
 <span id="cb26-2"><a></a></span>
@@ -1075,14 +945,11 @@ Geodetic CRS:  WGS 84
 <span id="cb26-5"><a></a>                 <span class="at">username =</span> <span class="st">"mapbox"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb26-6"><a></a>  <span class="fu">addPolygons</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-440854a1184fce46c660" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-440854a1184fce46c660">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxpcG91c3Nvbi1iYWx0aW1vcmVjaXR5IiwiYSI6ImNsNHI5ZHpkZzBhZzkza21uMHd3NGRxMjEifQ.5BGEL2VMq5WHWp7H3Ih_iQ",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://www.mapbox.com/about/maps/\">Mapbox<\/a> &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap<\/a> <strong><a href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map<\/a><\/strong>"}]},{"method":"addPolygons","args":[[[[{"lng":[-76.60768400000001,-76.608684,-76.609797,-76.611502,-76.613395,-76.614526,-76.61430300000001,-76.612684,-76.61068400000001,-76.609616,-76.605842,-76.605602,-76.606883,-76.60768400000001],"lat":[39.293922,39.293897,39.294771,39.294702,39.292884,39.290884,39.289884,39.28811,39.286972,39.286884,39.290042,39.290884,39.291685,39.293922]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[39.286884,39.294771],"lng":[-76.614526,-76.605602]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-884f332a48c0a987cf81" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-884f332a48c0a987cf81">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxpcG91c3Nvbi1iYWx0aW1vcmVjaXR5IiwiYSI6ImNsNHI5ZHpkZzBhZzkza21uMHd3NGRxMjEifQ.5BGEL2VMq5WHWp7H3Ih_iQ",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://www.mapbox.com/about/maps/\">Mapbox<\/a> &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap<\/a> <strong><a href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map<\/a><\/strong>"}]},{"method":"addPolygons","args":[[[[{"lng":[-76.60763300000001,-76.608633,-76.60987299999999,-76.61143,-76.613489,-76.614502,-76.614205,-76.612633,-76.61063300000001,-76.609503,-76.605886,-76.60575300000001,-76.606842,-76.60763300000001],"lat":[39.293893,39.293883,39.294645,39.294682,39.292885,39.290885,39.289885,39.288103,39.286787,39.286885,39.290138,39.290885,39.291676,39.293893]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[39.286787,39.294682],"lng":[-76.614502,-76.60575300000001]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-</section>
-
-<section id="storing-and-organizing-spatial-data-takes-planning" class="title-slide slide level2 center">
-<h2>Storing and organizing spatial data takes planning</h2>
+</section><section id="storing-and-organizing-spatial-data-takes-planning" class="title-slide slide level2 center"><h2>Storing and organizing spatial data takes planning</h2>
 <p>Planning for the structure and organization of your data can be supported using a variety of tools:</p>
 <ul>
 <li>Diagram drawing applications (e.g.&nbsp;<a href="https://www.drawio.com/">draw.io</a>)</li>
@@ -1092,7 +959,7 @@ Geodetic CRS:  WGS 84
 
 
 </section>
-    </div>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1100,23 +967,7 @@ Geodetic CRS:  WGS 84
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1307,9 +1158,7 @@ Geodetic CRS:  WGS 84
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1344,9 +1193,7 @@ Geodetic CRS:  WGS 84
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1514,6 +1361,6 @@ Geodetic CRS:  WGS 84
         }
       });
       </script>
-    
+
 
 </body></html>

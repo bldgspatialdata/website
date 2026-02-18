@@ -6,17 +6,20 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
-
-  <meta name="dcterms.date" content="2023-09-27">
-  <title>GES 668 - Spring 2026 – Working with spatial and geometric operations in {sf}</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3512cbed9e2527d986e9b0b56d261405.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.20">
+<meta name="dcterms.date" content="2023-09-27">
+<title>GES 668 - Spring 2026 – Working with spatial and geometric operations in {sf}</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +98,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-90490990d524317d7d72a3103e8bd8a3.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ad6cac6167ca8ec72cd8488dbce3747.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -188,7 +191,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Working with spatial and geometric operations in {sf} – GES 668 - Spring 2026">
+<meta property="og:title" content="Working with spatial and geometric operations in sf – GES 668 - Spring 2026">
 <meta property="og:description" content="Session 5">
 <meta property="og:image" content="https://bldgspatialdata.github.io/website/slides/images/st_intersects_postgis-intro.png">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
@@ -199,18 +202,16 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Working with spatial and geometric operations in <code>{sf}</code></h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Working with spatial and geometric operations in <code>{sf}</code>
+</h1>
   <p class="subtitle">Session 5</p>
 
 <div class="quarto-title-authors">
 </div>
 
   <p class="date">2023-09-27</p>
-</section>
-<section>
-<section id="getting-started" class="title-slide slide level2 center" data-number="1">
-<h2><span class="header-section-number">1</span> Getting started</h2>
+</section><section><section id="getting-started" class="title-slide slide level2 center" data-number="1"><h2>
+<span class="header-section-number">1</span> Getting started</h2>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
@@ -220,10 +221,7 @@
 </div><div class="column fragment">
 
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="st">"tigris_use_cache"</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-2"><a></a>us_states <span class="ot">&lt;-</span> <span class="fu">states</span>()</span>
@@ -245,15 +243,10 @@
 </div><div class="column fragment">
 
 </div></div>
-</section></section>
-<section>
-<section id="converting-objects-between-types" class="title-slide slide level2 center" data-number="2">
-<h2><span class="header-section-number">2</span> Converting objects between types</h2>
+</section></section><section><section id="converting-objects-between-types" class="title-slide slide level2 center" data-number="2"><h2>
+<span class="header-section-number">2</span> Converting objects between types</h2>
 
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>sfg <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">76.712838</span>, <span class="fl">39.253383</span>))</span>
 <span id="cb3-2"><a></a></span>
@@ -261,10 +254,7 @@
 </div><div class="column fragment">
 
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
@@ -276,10 +266,7 @@ Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
 CRS:           NA</code></pre>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sfc <span class="ot">&lt;-</span> <span class="fu">st_as_sfc</span>(<span class="fu">list</span>(sfg), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb6-2"><a></a></span>
@@ -293,10 +280,7 @@ Bounding box:  xmin: -76.71284 ymin: 39.25338 xmax: -76.71284 ymax: 39.25338
 Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">st_as_sf</span>(sfc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
@@ -310,10 +294,7 @@ Geodetic CRS:  WGS 84
 1 POINT (-76.71284 39.25338)</code></pre>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>sf_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb10-2"><a></a>  <span class="at">name =</span> <span class="st">"Example data frame"</span>,</span>
@@ -339,18 +320,13 @@ Geodetic CRS:  WGS 84
 1 Example data frame POINT (-76.71284 39.25338)</code></pre>
 </div>
 </div></div>
-</section></section>
-<section>
-<section id="types-of-spatial-operations" class="title-slide slide level2 center" data-number="3">
-<h2><span class="header-section-number">3</span> Types of spatial operations</h2>
+</section></section><section><section id="types-of-spatial-operations" class="title-slide slide level2 center" data-number="3"><h2>
+<span class="header-section-number">3</span> Types of spatial operations</h2>
 <ul>
 <li>Spatial filtering and topological relations</li>
 <li>Spatial joins and non-overlapping joins</li>
 <li>Spatial aggregation</li>
-</ul>
-</section>
-<section id="spatial-filtering-and-topological-relations" class="title-slide slide level3 center">
-<h3>Spatial filtering and topological relations</h3>
+</ul></section><section id="spatial-filtering-and-topological-relations" class="title-slide slide level3 center"><h3>Spatial filtering and topological relations</h3>
 <p><code>st_filter()</code> defaults to intersecting geometries:</p>
 <div class="cell columns column-output-location">
 <div class="column">
@@ -388,10 +364,7 @@ Geodetic CRS:  NAD83
 6 -077.0165167 MULTIPOLYGON (((-77.11975 3...</code></pre>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<p><code>st_filter()</code> can also support alternate topological relations:</p>
+</section><section class="slide level4"><p><code>st_filter()</code> can also support alternate topological relations:</p>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">st_filter</span>(</span>
@@ -442,14 +415,8 @@ First 10 features:
 10 MULTIPOLYGON (((-103.0647 3...</code></pre>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-
-<img data-src="https://r.geocompx.org/figures/relations-1.png" class="r-stretch"></section>
-
-<section id="spatial-joins" class="title-slide slide level3 center">
-<h3>Spatial joins</h3>
+</section><section class="slide level4">
+<img data-src="https://r.geocompx.org/figures/relations-1.png" class="r-stretch"></section><section id="spatial-joins" class="title-slide slide level3 center"><h3>Spatial joins</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">st_join</span>(maryland, us_highways)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -496,10 +463,7 @@ First 10 features:
 1.9 1102166635559 Salisbury Byp     M   S1100 MULTIPOLYGON (((-75.756 39....</code></pre>
 </div>
 </div></div>
-</section>
-
-<section id="non-overlapping-joins" class="title-slide slide level3 center">
-<h3>Non-overlapping joins</h3>
+</section><section id="non-overlapping-joins" class="title-slide slide level3 center"><h3>Non-overlapping joins</h3>
 <p><code>st_is_within_distance()</code> is an example of a non-overlapping join:</p>
 <div class="cell columns column-output-location">
 <div class="column">
@@ -521,10 +485,7 @@ first 10 elements:
  10: (empty)</code></pre>
 </div>
 </div></div>
-</section>
-
-<section id="filtering-with-spatial-joins" class="title-slide slide level3 center">
-<h3>Filtering with spatial joins</h3>
+</section><section id="filtering-with-spatial-joins" class="title-slide slide level3 center"><h3>Filtering with spatial joins</h3>
 <p>You can use these joins for spatial filters using the base R syntax:</p>
 <div class="cell columns column-output-location">
 <div class="column">
@@ -556,11 +517,8 @@ First 10 features:
 247  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
 </div>
 </div></div>
-</section>
-
-<section id="filtering-with-spatial-joins-1" class="title-slide slide level3 center">
-<h3>Filtering with spatial joins</h3>
-<p>Or using <code>filter()</code> if you use the name of the geomtery column (and convert the matrix output into a logical vector):</p>
+</section><section id="filtering-with-spatial-joins-1" class="title-slide slide level3 center"><h3>Filtering with spatial joins</h3>
+<p>Or using <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> if you use the name of the geomtery column (and convert the matrix output into a logical vector):</p>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">filter</span>(</span>
@@ -593,10 +551,7 @@ First 10 features:
 10  1108296538091 State Rte 129     S S1100 LINESTRING (-74.7224 40.183...</code></pre>
 </div>
 </div></div>
-</section>
-
-<section id="spatial-aggregation" class="title-slide slide level3 center">
-<h3>Spatial aggregation</h3>
+</section><section id="spatial-aggregation" class="title-slide slide level3 center"><h3>Spatial aggregation</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>us_states_combine <span class="ot">&lt;-</span> us_states <span class="sc">|&gt;</span></span>
@@ -609,17 +564,13 @@ First 10 features:
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-</section>
-<section>
-<section id="types-of-geometric-operations" class="title-slide slide level2 center" data-number="4">
-<h2><span class="header-section-number">4</span> Types of geometric operations</h2>
+</section></section><section><section id="types-of-geometric-operations" class="title-slide slide level2 center" data-number="4"><h2>
+<span class="header-section-number">4</span> Types of geometric operations</h2>
 <ul>
 <li>Simplification</li>
 <li>Centroids</li>
@@ -627,10 +578,7 @@ First 10 features:
 <li>Clipping (with or without subsetting)</li>
 <li>Unions</li>
 <li>Type transformations</li>
-</ul>
-</section>
-<section id="simplification" class="title-slide slide level3 center">
-<h3>Simplification</h3>
+</ul></section><section id="simplification" class="title-slide slide level3 center"><h3>Simplification</h3>
 <div class="cell columns column-output-location" data-execure="false">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">st_simplify</span>(lower48, <span class="at">dTolerance =</span> <span class="dv">100000</span>)[, <span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -656,73 +604,54 @@ First 10 features:
 </div>
 </div></div>
 
-<img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
-
-<section id="centroids" class="title-slide slide level3 center">
-<h3>Centroids</h3>
+<img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section><section id="centroids" class="title-slide slide level3 center"><h3>Centroids</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">plot</span>(<span class="fu">st_centroid</span>(lower48)[, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-
-<section id="buffers" class="title-slide slide level3 center">
-<h3>Buffers</h3>
+</section><section id="buffers" class="title-slide slide level3 center"><h3>Buffers</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> <span class="dv">100</span>)[, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-<section class="slide level4">
-
-<div class="cell columns column-output-location">
+</section><section class="slide level4"><div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">plot</span>(<span class="fu">st_buffer</span>(lower48, <span class="at">dist =</span> units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">100</span>, <span class="st">"mi"</span>))[, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-
-<section id="clipping-with-or-without-subsetting" class="title-slide slide level3 center">
-<h3>Clipping (with or without subsetting)</h3>
+</section><section id="clipping-with-or-without-subsetting" class="title-slide slide level3 center"><h3>Clipping (with or without subsetting)</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">plot</span>(<span class="fu">st_intersection</span>(us_highways, maryland)[, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-
-<section id="unions" class="title-slide slide level3 center">
-<h3>Unions</h3>
+</section><section id="unions" class="title-slide slide level3 center"><h3>Unions</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>us_highways_union <span class="ot">&lt;-</span> us_highways <span class="sc">|&gt;</span></span>
@@ -735,33 +664,27 @@ First 10 features:
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section>
-
-<section id="type-transformations" class="title-slide slide level3 center">
-<h3>Type transformations</h3>
+</section><section id="type-transformations" class="title-slide slide level3 center"><h3>Type transformations</h3>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">plot</span>(<span class="fu">st_cast</span>(us_highways[<span class="dv">1</span>, ], <span class="at">to =</span> <span class="st">"POINT"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+<figure><p><img data-src="feature-geometry_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
 
 
-</section>
-</section>
-    </div>
+</section></section>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -769,23 +692,7 @@ First 10 features:
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -976,9 +883,7 @@ First 10 features:
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1013,9 +918,7 @@ First 10 features:
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1183,6 +1086,6 @@ First 10 features:
         }
       });
       </script>
-    
+
 
 </body></html>
