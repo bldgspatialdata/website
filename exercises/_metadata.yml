@@ -9,5 +9,5 @@ execute:
   eval: false
   echo: true
 
-filters:
-  - linkrot
+# filters:
+#   - linkrot

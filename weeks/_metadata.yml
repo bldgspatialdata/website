@@ -12,5 +12,5 @@ link-citations: false
 
 # include-after-body: files/after-body.html
 
-filters:
-  - linkrot
+# filters:
+#   - linkrot
