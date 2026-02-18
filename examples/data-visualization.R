@@ -1,3 +1,7 @@
+## Install and load required packages ----
+
+# Use `pak::pak()` or `install.packages()` to install required packages
+
 # pak::pak(c("rnaturalearth", "rnaturalearthdata"))
 # install.packages(c("rnaturalearth", "rnaturalearthdata"))
 
@@ -5,11 +9,14 @@ library(tidyverse)
 library(sf)
 library(rnaturalearth)
 
-coastline <- ne_coastline()
+# Get data with rnaturalearth
+coastline <- ne_coastline() |>
+  st_transform(4326)
 
-countries <- ne_countries()
+countries <- ne_countries() |>
+  st_transform(4326)
 
-# One variable visualizations
+## One variable visualizations ----
 
 # continuous numeric
 ggplot(storms, aes(wind)) +
@@ -23,7 +30,7 @@ ggplot(storms, aes(year)) +
 ggplot(storms, aes(status)) +
   geom_bar()
 
-# locate text in y axis and count in x axis
+# fix readability issue by mapping status to y
 ggplot(storms, aes(y = status)) +
   geom_bar()
 
@@ -38,7 +45,7 @@ ggplot(storms, aes(lat)) +
   geom_text(x = 39.2904 - 2, y = 500, angle = 90, label = "Baltimore City, MD")
 # https://stackoverflow.com/questions/18091721/align-geom-text-to-a-geom-vline-in-ggplot2
 
-# Two variable visualization
+## Two variable visualizations  ----
 ggplot(storms, aes(wind, pressure)) +
   geom_point()
 
@@ -64,6 +71,9 @@ ggplot(storms, aes(long, lat)) +
 ggplot(storms, aes(long, lat)) +
   geom_point(aes(color = status == "hurricane"))
 
+## Mapping with sf objects ----
+
+# geom_sf requires a sf object
 ggplot(storms) +
   geom_sf()
 
@@ -78,19 +88,15 @@ storms_sf <- storms |>
 ggplot(storms_sf) +
   geom_sf()
 
-# geom_sf doesn't work if geometry is not specified
-ggplot(storms) +
-  geom_sf()
-
 # points support color
 ggplot(data = storms_sf) +
   geom_sf(aes(color = status))
 
-# points don't support fill
+# but points don't support fill
 ggplot(data = storms_sf) +
   geom_sf(aes(fill = status))
 
-# points support size
+# points do support size
 ggplot(data = storms_sf) +
   geom_sf(aes(size = tropicalstorm_force_diameter), alpha = 0.15)
 
@@ -99,9 +105,9 @@ ggplot(data = storms_sf) +
   geom_sf(aes(color = status)) +
   geom_sf(data = coastline, color = "black")
 
-# NOTE: view defaults to max extent
+# View defaults to max extent - can we change that?
 
-# coords_sf can be used to "zoom" map
+# coords_sf can be used to "zoom" map by specifying limits
 storms_bbox <- st_bbox(storms_sf)
 
 ggplot(data = storms_sf) +
@@ -112,63 +118,74 @@ ggplot(data = storms_sf) +
     ylim = storms_bbox[c("ymin", "ymax")]
   )
 
-# use appropriate scales
+# use custom scales for different types of variables
 ggplot(data = storms_sf) +
-  geom_sf(aes(color = status)) +
+  geom_sf(aes(color = wind)) +
   geom_sf(data = coastline, color = "black") +
   coord_sf(
     xlim = storms_bbox[c("xmin", "xmax")],
     ylim = storms_bbox[c("ymin", "ymax")]
   ) +
-  scale_color_brewer()
+  scale_color_distiller(
+    palette = "YlOrRd",
+    direction = 1
+  )
 
-# order of layers matters (countries last)
+# order of layers matters (putting countries last blocks observations)
 ggplot(data = storms_sf) +
-  geom_sf(aes(color = status)) +
+  geom_sf(aes(color = wind)) +
   geom_sf(data = coastline, color = "black") +
   geom_sf(data = countries, fill = "white") +
   coord_sf(
     xlim = storms_bbox[c("xmin", "xmax")],
     ylim = storms_bbox[c("ymin", "ymax")]
   ) +
-  scale_color_brewer()
+  scale_color_distiller(
+    palette = "YlOrRd",
+    direction = 1
+  )
 
 # order of layers matters (countries first)
 ggplot(data = storms_sf) +
   geom_sf(data = countries, fill = "white") +
   geom_sf(data = coastline, color = "black") +
-  # Note: countries supports a fill attribute
-  geom_sf(aes(color = status)) +
+  # NOTE: countries supports a fill attribute but coastline does not
+  geom_sf(aes(color = wind)) +
   coord_sf(
-    xlim = st_bbox(storms_sf)[c("xmin", "xmax")],
-    ylim = st_bbox(storms_sf)[c("ymin", "ymax")]
+    xlim = storms_bbox[c("xmin", "xmax")],
+    ylim = storms_bbox[c("ymin", "ymax")]
   ) +
-  scale_color_brewer()
+  scale_color_distiller(
+    palette = "YlOrRd",
+    direction = 1
+  )
 
-
-storms_bbox_lambert <- storms_bbox |>
-  st_as_sfc() |>
+# bounding box is specific to the CRS set by coord_sf (defaults to inherited CRS)
+storms_bbox_lambert <- storms_sf |>
   st_transform("EPSG:3035") |>
   st_bbox()
 
 ggplot(data = storms_sf) +
   geom_sf(data = countries, fill = "white") +
-  geom_sf(aes(color = status)) +
+  geom_sf(aes(color = wind)) +
   geom_sf(data = coastline, color = "black") +
   coord_sf(
     xlim = storms_bbox_lambert[c("xmin", "xmax")],
     ylim = storms_bbox_lambert[c("ymin", "ymax")],
     crs = "EPSG:3035"
   ) +
-  scale_color_brewer()
+  scale_color_distiller(
+    palette = "YlOrRd",
+    direction = 1
+  )
 
 # convert from points to lines
 storm_tracks <- storms_sf |>
   summarise(
     category = if_else(
-      !all(is.na(category)),
-      max(category, na.rm = TRUE),
-      NA
+      all(is.na(category)),
+      NA,
+      max(category, na.rm = TRUE)
     ),
     # combine geometry by year and name
     geometry = st_union(geometry),
@@ -178,9 +195,12 @@ storm_tracks <- storms_sf |>
   st_cast("LINESTRING")
 
 ggplot(storm_tracks) +
-  geom_sf()
+  geom_sf(alpha = 0.25)
 
 ggplot(storm_tracks) +
+  geom_sf(
+    data = st_crop(coastline, storms_bbox)
+  ) +
   geom_sf(
     data = \(x) {
       filter(x, !is.na(category))
@@ -193,15 +213,18 @@ ggplot(data = storms_sf) +
   geom_sf(data = storm_tracks) +
   geom_sf(aes(color = status), alpha = 0.1)
 
+# transform the CRS using coord_sf
 ggplot(data = storms_sf) +
   geom_sf(aes(color = status)) +
   coord_sf(crs = "EPSG:3035")
 
+# or transform the data before using it with ggplot()
 storms_sf |>
   st_transform(2804) |>
   ggplot() +
   geom_sf(aes(color = status))
 
+## More complex mapping example ----
 storms_bbox <- storms_sf |>
   st_transform("EPSG:3035") |>
   st_bbox()
@@ -221,7 +244,7 @@ storms_map <- storms_map +
     type = "seq",
     direction = 1,
     palette = "YlOrRd",
-    na.value = "gray60"
+    na.value = "gray70"
   )
 
 storms_map <- storms_map +
@@ -231,7 +254,4 @@ storms_map <- storms_map +
   )
 
 storms_map +
-  theme_minimal() +
-  theme(
-    legend.position = "bottom"
-  )
+  theme_minimal()
