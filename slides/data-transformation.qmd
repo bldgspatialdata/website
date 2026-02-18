@@ -1,14 +1,13 @@
 ---
 order: 3
-title: "Transforming data with `{dplyr}` and `{tidyr}`"
+title: "Transforming data with `{dplyr}`"
 subtitle: "Session {{< meta order >}}"
-date: 2023-09-13
 image: "images/whole-game.png"
-execute: 
+execute:
   eval: false
 ---
 
-These slides are adapted from [Ch. 4 Data transformation](https://r4ds.hadley.nz/) in R for Data Science (2e).
+These slides are adapted from [Ch. 3 Data transformation](https://r4ds.hadley.nz/data-transform.html) in R for Data Science (2e).
 
 # Overview
 
@@ -20,9 +19,9 @@ library(dplyr)
 
 ## How can you transform your data using `{dplyr}`?
 
--   Manipulate cases (rows)
--   Manipulate variables (columns)
--   Manipulate groups
+- Manipulate cases (rows)
+- Manipulate variables (columns)
+- Manipulate groups
 
 ## Manipulate cases
 
@@ -39,9 +38,9 @@ library(dplyr)
 
 ## Manipulate groups
 
--   `group_by()`,
--   `summarize()`, and
--   the `slice_()` family of functions.
+- `group_by()`,
+- `summarize()`, and
+- the `slice_()` family of functions.
 
 ------------------------------------------------------------------------
 
@@ -49,11 +48,11 @@ library(dplyr)
 
 . . .
 
-### |>
+### \|\>
 
 The base pipe was added as a base R function with version 4.1.0 released in 2021. For simple uses, the base pipe is identical to the pipe from the magrittr package.
 
-### %>%
+### %\>%
 
 The `%>%` pipe is part of the magrittr package which is loaded as part of the tidyverse. This operator has some additional features but they are less frequently used.
 
@@ -90,7 +89,10 @@ select(storms, year:hour)
 Use helper functions from `{tidyselect}`:
 
 ```{r}
-select(storms, any_of(c("lat", "latitude", "y", "lon", "long", "longitude", "x")))
+select(
+  storms,
+  any_of(c("lat", "latitude", "y", "lon", "long", "longitude", "x"))
+)
 ```
 
 ------------------------------------------------------------------------
@@ -113,7 +115,7 @@ select(storms, wnd)
 
 ------------------------------------------------------------------------
 
-Your turn: use select to subset the variables for wind, pressure, tropical storm force diameter, and hurricane force dimeter.
+Your turn: use select to subset the variables for wind, pressure, tropical storm force diameter, and hurricane force diameter.
 
 ## Take a minute ⏰
 
@@ -122,7 +124,13 @@ Your turn: use select to subset the variables for wind, pressure, tropical storm
 OK. Here is one answer:
 
 ```{r}
-select(storms, wind, pressure, tropicalstorm_force_diameter, hurricane_force_diameter)
+select(
+  storms,
+  wind,
+  pressure,
+  tropicalstorm_force_diameter,
+  hurricane_force_diameter
+)
 ```
 
 ------------------------------------------------------------------------
@@ -191,12 +199,35 @@ filter(
 
 ------------------------------------------------------------------------
 
-But it may be easier to use write the condition using a different operator:
+But it may be easier to use write the condition using the `%in%` operator:
 
 ```{r}
 filter(
-  storms, name %in% c("Eloise", "Evelyn"),
+  storms,
+  name %in% c("Eloise", "Evelyn"),
   day == 13
+)
+```
+
+------------------------------------------------------------------------
+
+You can use a negated logical vector to filter out values:
+
+```{r}
+filter(
+  storms,
+  !(name %in% c("Eloise", "Evelyn"))
+)
+```
+
+------------------------------------------------------------------------
+
+Or you can use the new `dplyr::filter_out()` function:
+
+```{r}
+filter_out(
+  storms,
+  name %in% c("Eloise", "Evelyn")
 )
 ```
 
@@ -204,7 +235,9 @@ filter(
 
 ![](https://media.npr.org/assets/img/2023/09/13/hurricane-lee-satellite-forecast-8d2596727e2cdc48cc53502417079144cffe96c7-s1600-c85.webp)
 
-Your turn: Hurricane Lee has **hurricane-force winds** extending up to 115 miles from its center and **tropical storm-force winds** extending for some 240 miles. Can you use filter to find the name and year of a hurricane with observed wind speeds that are the same or greater?
+Your turn: Hurricane Lee has **hurricane-force winds** extending up to 115 miles from its center and **tropical storm-force winds** extending for some 240 miles.
+
+Can you use filter to find the name and year of a hurricane with observed wind speeds that are the same or greater?
 
 ## Take a minute ⏰
 
@@ -277,11 +310,11 @@ mutate(
 
 ### Types of vectorized functions to use with `mutate()`
 
--   Offset, e.g. `lag()`
--   Cumulative aggregate, e.g. `cumsum()`
--   Ranking, e.g. `ntile()`
--   Math, e.g. `between()`
--   Other, e.g. `case_when()` (one of the best!)
+- Offset, e.g. `lag()`
+- Cumulative aggregate, e.g. `cumsum()`
+- Ranking, e.g. `ntile()`
+- Math, e.g. `between()`
+- Other, e.g. `case_when()` (one of the best!)
 
 ------------------------------------------------------------------------
 
@@ -314,7 +347,7 @@ mutate(
 
 # `summarise()`, `group_by()`, and `slice_()`
 
-## `summarise()` 
+## `summarise()`
 
 `summarise()` creates a new data frame with:
 
@@ -338,16 +371,16 @@ summarise(
 
 ### Types of analysis functions to use with `summarize()`
 
--   Count
--   Position
--   Logical
--   Order
--   Rank
--   Spread
+- Count
+- Position
+- Logical
+- Order
+- Rank
+- Spread
 
 ------------------------------------------------------------------------
 
-Most often you will want to use `summarise()` in combination with `group_by()`: 
+Most often you will want to use `summarise()` in combination with `group_by()`:
 
 ```{r}
 storms |>
@@ -393,7 +426,6 @@ summarise(
   )
 )
 ```
-
 
 ------------------------------------------------------------------------
 
@@ -472,7 +504,7 @@ storms_usa |>
 
 ## Using summarise with `sf` objects
 
-You can use summarise to combine geometry by grouping variables: 
+You can use summarise to combine geometry by grouping variables:
 
 ```{r}
 storms_categories <- storms_sf |>
