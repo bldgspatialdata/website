@@ -12,6 +12,111 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+## Week 4
+
+- Updates and reminders
+  - Common issues with syntax
+  - Exercise how-to with Quarto
+  - Exercises 2 and 3 due Friday, 2/27 and Wednesday 2/4 (links coming soon)
+  - Office Hours on Friday, 2/20 at 12:00 pm
+- Week 4 Questions
+- Finish review of data visualization example with ggplot2
+- [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
+
+### Questions
+
+When subseting with the `[` operator, why do you need a comma and space at the end? e.g. `world[world$area_km2 < 10000, ]` —Chase
+
+Use `?[` to take a look at the documentation. When using the `[` operator to subset a data frame (or an `sf` object), the first value is the row index and the second is the column index.
+
+----
+
+```{r}
+# Select second row
+us_states[2, ]
+
+# Select second column
+us_states[, 2]
+```
+
+----
+
+Do you always use `sf` objects when working with spatial data? Or do you switch between spatial and non-spatial formats? —Liam
+
+Yes. Always drop the geometry using `sf::st_drop_geometry()` if you don't need it in your output!
+
+```{r}
+#| code-fold: true
+#| code-summary: "Summarising a data frame vs. sf object with `bench::mark`"
+
+storms_sf <- sf::st_as_sf(storms, coords = c("long", "lat"), crs = 4326)
+
+comparison <- bench::mark(
+  df = storms |>
+    dplyr::summarise(
+      mean_wind = mean(wind),
+      .by = year
+    ),
+  sf = storms_sf |>
+    dplyr::group_by(year) |>
+    dplyr::summarise(
+      mean_wind = mean(wind)
+    ),
+  check = FALSE
+)
+```
+
+----
+
+```{r}
+#| echo: false
+plot(comparison)
+```
+
+----
+
+
+Does it matter the order that you specify parameters for a `ggplot`? —Lauren
+
+Consistent [code style](https://r4ds.hadley.nz/workflow-style.html) improves the readability of your code and reduces risk of errors *but* `{ggplot2}` supports a flexible approach.
+
+----
+
+This works...
+
+```{r}
+ggplot(data = us_states) +
+  geom_sf(aes(fill = total_pop_15))
+```
+
+----
+
+...and this works...
+
+```{r}
+ggplot(data = us_states) +
+  aes(fill = total_pop_15) +
+  geom_sf()
+```
+
+----
+
+...and this works!
+
+```{r}
+ggplot() +
+  geom_sf(data = us_states, aes(fill = total_pop_15))
+```
+
+----
+
+But... this does not work! Do you know why?
+
+```{r}
+ggplot() +
+  geom_sf(us_states, aes(fill = total_pop_15))
+```
+
 ## Week 3
 
 - Week 3 Questions
