@@ -12,12 +12,44 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+
+## Week 5
+
+- Reminder
+  - Exercises 2 due Friday, 2/27
+  - Exercise 3 due Wednesday 3/4
+  - Exercise 4 coming soon
+- Interesting and Difficult Things!
+- Week 5 Questions
+- Finish review of [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
+- [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.qmd)
+
+### Interesting Things
+
+- "honestly was just surprised how easy it is to perform geometry operations"
+- "we can use distance based joins on two datasets that are meaningfully related even when they don’t intersect"
+
+### Difficult Things
+
+- "learning how to do the same thing in multiple different ways"
+- "understanding the different binary operators...
+st_intersects and st_disjoint were intuitive but others like st_covered_by were less clear"
+- "finding the time to do the readings"
+
+### Questions
+
+"Have you ever had to use DE-9IM strings, will I ever have to use them, can they be practically effectively used by people who are not deep into the lore??" - Lauren
+
+----
+
+"Do unary and binary geometry operations change the input file or allow you to create a unique output file" - Connor
+
 ## Week 4
 
 - Updates and reminders
   - Common issues with syntax
   - Exercise how-to with Quarto
-  - Exercises 2 and 3 due Friday, 2/27 and Wednesday 2/4 (links coming soon)
+  - Exercises 2 and 3 due Friday, 2/27 and Wednesday 3/4 (links coming soon)
   - Office Hours on Friday, 2/20 at 12:00 pm
 - Week 4 Questions
 - Finish review of data visualization example with ggplot2
