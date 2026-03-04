@@ -20,11 +20,11 @@ Campus closed for inclement weather.
 
 ## Week 6
 
-{{< include weeks/_readings_tidy-data.qmd >}}
+{{< include weeks/_readings_geometry-operations.qmd >}}
 
 ## Week 7
 
-{{< include weeks/_readings_geometry-operations.qmd >}}
+{{< include weeks/_readings_tidy-data.qmd >}}
 
 ## Week 8
 
