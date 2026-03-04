@@ -91,9 +91,9 @@ sf
 
 ## Types of spatial operations
 
--   Spatial filtering and topological relations
--   Spatial joins and non-overlapping joins
--   Spatial aggregation
+- Spatial filtering and topological relations
+- Spatial joins and non-overlapping joins
+- Spatial aggregation
 
 ### Spatial filtering and topological relations
 
@@ -180,12 +180,12 @@ plot(us_states_combine[, 1])
 
 ## Types of geometric operations
 
--   Simplification
--   Centroids
--   Buffers
--   Clipping (with or without subsetting)
--   Unions
--   Type transformations
+- Simplification
+- Centroids
+- Buffers
+- Clipping (with or without subsetting)
+- Unions
+- Type transformations
 
 ### Simplification
 

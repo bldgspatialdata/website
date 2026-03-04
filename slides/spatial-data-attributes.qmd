@@ -1,7 +1,6 @@
 ---
 order: 4
 title: "Creating and manipulating attributes for spatial data"
-date: 2023-09-20
 ---
 
 ```{r}
@@ -53,8 +52,8 @@ compare_sf <- function(x, y, colors = c("orange", "purple")) {
 
 ## Things to remember about spatial data
 
--   Fields
--   Objects
+- Fields
+- Objects
 
 Check out the [Wikipedia article on data models in GIS](https://en.wikipedia.org/wiki/Data_model_(GIS)) for more background on this topic.
 
@@ -68,8 +67,8 @@ us_states$geometry
 
 ## Things to remember about `sf` and `sfc` objects
 
--   a `sf` object is a data frame with a `sfc` list-column
--   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+- a `sf` object is a data frame with a `sfc` list-column
+- a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
 
 ------------------------------------------------------------------------
 
@@ -79,9 +78,9 @@ attributes(us_states)
 
 ## Things to remember about `sf` and `sfc` objects
 
--   a `sf` object is a data frame with a `sfc` list-column
--   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
--   `sf` and `sfc` objects use a coordinate reference system
+- a `sf` object is a data frame with a `sfc` list-column
+- a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+- `sf` and `sfc` objects use a coordinate reference system
 
 ------------------------------------------------------------------------
 
@@ -93,10 +92,10 @@ st_crs(us_states$geometry)
 
 ## Things to remember about `sf` and `sfc` objects
 
--   a `sf` object is a data frame with a `sfc` list-column
--   a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
--   `sf` and `sfc` objects use a coordinate reference system
--   working with `sf` objects is *slower* than working with data frames---so drop the geometry if you don't need it
+- a `sf` object is a data frame with a `sfc` list-column
+- a `sf` object has a `sf_column` attribute (it isn't always named geometry---use `attributes()` to take a look)
+- `sf` and `sfc` objects use a coordinate reference system
+- working with `sf` objects is *slower* than working with data frames---so drop the geometry if you don't need it
 
 ------------------------------------------------------------------------
 
@@ -106,11 +105,11 @@ st_drop_geometry(us_states)
 
 ## Things to remember about coordinate reference systems
 
--   objects *must* share the same coordinate reference system if you are using them together
--   coordinate reference systems are stored as attributes for `sfc` and `sf` objects (`sfg` objects don't have a CRS)
--   coordinate reference systems have *units*
--   geographic and projected coordinate reference systems are *not* the same
--   coordinate reference systems can be missing and they can be wrong
+- objects *must* share the same coordinate reference system if you are using them together
+- coordinate reference systems are stored as attributes for `sfc` and `sf` objects (`sfg` objects don't have a CRS)
+- coordinate reference systems have *units*
+- geographic and projected coordinate reference systems are *not* the same
+- coordinate reference systems can be missing and they can be wrong
 
 ------------------------------------------------------------------------
 
@@ -135,9 +134,9 @@ us_highways <- st_transform(us_highways, crs = 3857)
 
 ## Things to think about
 
--   `sf` objects are *not* the only way to represent spatial data in R
+- `sf` objects are *not* the only way to represent spatial data in R
 
--   If you are working with more than one `sf` or `sfc`, the objects must use the *same* coordinate reference system to use them together.
+- If you are working with more than one `sf` or `sfc`, the objects must use the *same* coordinate reference system to use them together.
 
 ```{r}
 # state
@@ -152,9 +151,9 @@ When we talk about tidy data frames, an attribute is equivalent to a **variable*
 ::: notes
 https://support.esri.com/en-us/gis-dictionary/attribute
 
--   \[data models\] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.
--   \[data models\] In raster datasets, information associated with each unique value of a raster cell.
--   \[graphics (map display)\] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling.
+- \[data models\] Nonspatial information about a geographic feature in a GIS, usually stored in a table and linked to the feature by a unique identifier. For example, attributes of a river might include its name, length, and sediment load at a gauging station.
+- \[data models\] In raster datasets, information associated with each unique value of a raster cell.
+- \[graphics (map display)\] Information that specifies how features are displayed and labeled on a map; for example, the graphic attributes of a river might include line thickness, line length, color, and font for labeling.
 :::
 
 ------------------------------------------------------------------------
@@ -171,9 +170,9 @@ A single `sfc` object (or list-column) can contain more than one feature (shapef
 
 So (to recap) an *attribute* in GIS can also be called a...
 
--   ...**field** in a desktop GIS application
--   ...**variable** in tidy data
--   ...**column** in a data frame
+- ...**field** in a desktop GIS application
+- ...**variable** in tidy data
+- ...**column** in a data frame
 
 ## What types of attributes exist?
 
@@ -193,15 +192,15 @@ FIXME: Add missing source for quoted text on this slide
 
 Attributes can have:
 
--   **point support:** the value applies to every point *individually*, or
--   **block support:** the value is a summary for *all* points in the geometry
+- **point support:** the value applies to every point *individually*, or
+- **block support:** the value is a summary for *all* points in the geometry
 
 ------------------------------------------------------------------------
 
 The relationship between attributes and geometry can be described as:
 
--   **constant:** the value is valid everywhere in or over the geometry
--   **aggregate:** the value is associated with the entire geometry
+- **constant:** the value is valid everywhere in or over the geometry
+- **aggregate:** the value is associated with the entire geometry
 
 ------------------------------------------------------------------------
 
@@ -214,9 +213,9 @@ glimpse(us_states)
 ::: notes
 FIXME: Turn this into a quiz
 
--   NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
--   ALAND: No - this is an aggregate value
--   INTPTLAT: No - this is a summary value
+- NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
+- ALAND: No - this is an aggregate value
+- INTPTLAT: No - this is a summary value
 :::
 
 ------------------------------------------------------------------------
@@ -228,9 +227,9 @@ glimpse(us_states)
 ```
 
 ::: notes
--   NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
--   ALAND or AWATER: Yes - this is an aggregate value - if the shape of the state changed, the land area would change
--   INTPTLAT or INTPTLON: Yes - this is a summary value - if the shape of the state changed, the interior latitude/longitude point would change
+- NAME, REGION, or DIVISION: Yes - every part of a state can still use the same state name
+- ALAND or AWATER: Yes - this is an aggregate value - if the shape of the state changed, the land area would change
+- INTPTLAT or INTPTLON: Yes - this is a summary value - if the shape of the state changed, the interior latitude/longitude point would change
 
 Illustrates the point: "A typical property of such variables is that associated geometries come for instance from legislation, observation devices or analysis choices, but not intrinsically from the observed variable."
 :::
@@ -239,22 +238,22 @@ Illustrates the point: "A typical property of such variables is that associated 
 
 Attributes can be:
 
--   extensive: corresponding to amounts, associated with a physical size (length, area, volume, counts of items)
--   intensive: FIXME: fill in missing definition.
+- extensive: corresponding to amounts, associated with a physical size (length, area, volume, counts of items)
+- intensive: correspond to an attribute for a feature that does not depend on feature geometry.
 
 ## What is an "attribute domain"?
 
 ::: notes
--   \[data structures\] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes.
+- \[data structures\] In a geodatabase, a mechanism for enforcing data integrity. Attribute domains define what values are allowed in a field in a feature class or nonspatial attribute table. If the features or nonspatial objects have been grouped into subtypes, different attribute domains can be assigned to each of the subtypes.
 :::
 
 ## What are we working with?
 
 When we do data analysis using `{dplyr}`, there are three types of functions we use most often:
 
--   Boolean operators or predicates
--   Window or vector functions
--   Summary or analysis functions
+- Boolean operators or predicates
+- Window or vector functions
+- Summary or analysis functions
 
 There are similar groups of functions in `{sf}`:
 
@@ -262,9 +261,9 @@ There are similar groups of functions in `{sf}`:
 
 `{sf}` includes "vectorized" logical operators or tests that work with a geometry list (`sf` or `sfc`) or a single geometry (`sfg`) including:
 
--   `st_is`
--   `st_is_valid`
--   `st_is_empty`
+- `st_is`
+- `st_is_valid`
+- `st_is_empty`
 
 ------------------------------------------------------------------------
 
@@ -278,11 +277,11 @@ st_is(us_states, "MULTIPOLYGON")
 
 `{sf}` also includes more than a dozen predicate functions for working with *pairs* of simple geometries including:
 
--   `st_intersects`
--   `st_disjoint`
--   `st_contains`
--   `st_covers`
--   `st_is_within_distance`
+- `st_intersects`
+- `st_disjoint`
+- `st_contains`
+- `st_covers`
+- `st_is_within_distance`
 
 ## Using predicate functions for spatial joins and filters
 
@@ -304,9 +303,9 @@ st_filter(us_states, maryland, .predicate = st_disjoint)
 
 ## Creating new variables with geometry
 
--   Measuring feature geometries
--   Comparing feature geometries
--   Joining data based on feature geometries
+- Measuring feature geometries
+- Comparing feature geometries
+- Joining data based on feature geometries
 
 ```{r}
 maryland <- filter(us_states, NAME == "Maryland")
@@ -316,9 +315,9 @@ maryland <- filter(us_states, NAME == "Maryland")
 
 `{sf}` includes a few different functions for measuring geometries:
 
--   `st_area()` (only works with POLYGON and MULTIPOLYGON geometries)
--   `st_length()` (only wrks with LINESTRING and MULTILINSTRING geometries)
--   `st_distance()` (requires a pair of objects)
+- `st_area()` (only works with POLYGON and MULTIPOLYGON geometries)
+- `st_length()` (only wrks with LINESTRING and MULTILINSTRING geometries)
+- `st_distance()` (requires a pair of objects)
 
 ## Measuring geometries with `{sf}`
 
@@ -423,17 +422,17 @@ us_states |>
 
 Not all functions work with all geometry types!
 
--   `st_area()` only works with POLYGON and MULTIPOLYGON geometries
--   `st_length()` only works with LINESTRING and MULTILINSTRING geometries
+- `st_area()` only works with POLYGON and MULTIPOLYGON geometries
+- `st_length()` only works with LINESTRING and MULTILINSTRING geometries
 
 ## Measuring geometries with `{sf}`
 
--   `st_distance()` requires at least two objects
+- `st_distance()` requires at least two objects
 
 ## Measuring geometries with `{lwgeom}` and `{geosphere}`
 
--   `lwgeom::st_perimeter()`
--   `geosphere::bearing()`
+- `lwgeom::st_perimeter()`
+- `geosphere::bearing()`
 
 ------------------------------------------------------------------------
 
