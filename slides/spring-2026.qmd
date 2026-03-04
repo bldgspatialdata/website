@@ -12,48 +12,121 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+## Week 6
+
+-   Reminder
+    -   Exercise 4 is available - due Wednesday, 3/11
+    -   Exercise 5 coming soon
+-   Final Project
+    -   Project proposal - due Wednesday, 3/25
+    -   Final project presentations - due Monday, 5/4
+    -   Final project repository - due Friday, 5/15
+-   Questions
+-   Lecture: [Working with spatial and geometric operations in {sf}](/slides/spatial-data-attributes.qmd)
+-   Review [two-table verbs](https://dplyr.tidyverse.org/articles/two-table.html) with dplyr
+
+### Questions
+
+How do you decide the “right” structure for a dataset when it can be organized in more than one tidy way?
+
+Typically, whatever format allows you to efficiently complete the necessary analysis and produce the expected outputs is the "right" structure.
+
+----
+
+How much does it matter when making the decision on what function to use when smoothing?
+
+Check out the [smoothr](https://strimas.com/smoothr/) documentation for more details.
+
+You can also use `sf::st_simplify()` or `rmapshaper::ms_simplify()` for make less "smooth" lines and polygons.
+
+----
+
+Which carrier has the worst average delays? Check [R for Data Science (2e) - Solutions to Exercises](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/) for tips.
+
+```{r}
+nycflights13::flights |>
+  group_by(carrier) |>
+  summarise(avg_delay = mean(arr_delay, na.rm = TRUE)) |>
+  slice_max(order_by = avg_delay, n = 1)
+```
+
+::: footer
+There are also solutions available for [Geocomputation with R](https://r.geocompx.org/solutions/).
+:::
+
+----
+
+Can you disentangle the effects of bad airports vs. bad carriers? (via [Solutions Manual: R for Data Science (2e)](https://aditya-dahiya.github.io/RfDS2solutions/))
+
+```{r}
+nycflights13::flights |>
+  group_by(dest, carrier) |>
+  summarise(avg_delay = mean(arr_delay, na.rm = TRUE)) |>
+  # taking the highest average delay flight at each airport
+  slice_max(order_by = avg_delay, n = 1) |>
+  ungroup() |>
+  # for each airline, summarize the number of airports where it is
+  # the most delayed airline
+  summarise(n = n(), .by = carrier) |>
+  slice_head(n = 5) |>
+  arrange(desc(n)) |>
+  rename(Carrier = carrier, `Number of Airports` = n) |>
+  gt::gt()
+```
+
+----
+
+How do you choose when to use `st_intersection()` vs. `st_join()` when looking at relationships between layers?
+
+```{r}
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+
+nc_points <- st_as_sf(st_sample(nc, 250))
+
+st_join(nc_points, nc[1, ])
+
+st_intersection(nc_points, nc[1, ])
+```
 
 ## Week 5
 
-- Reminder
-  - Exercises 2 due Friday, 2/27
-  - Exercise 3 due Wednesday 3/4
-  - Exercise 4 coming soon
-- Interesting and Difficult Things!
-- Week 5 Questions
-- Finish review of [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
-- [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.qmd)
+-   Reminder
+    -   Exercises 2 due Friday, 2/27
+    -   Exercise 3 due Wednesday 3/4
+-   Interesting and Difficult Things!
+-   Week 5 Questions
+-   Finish review of [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
+-   [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.qmd)
 
 ### Interesting Things
 
-- "honestly was just surprised how easy it is to perform geometry operations"
-- "we can use distance based joins on two datasets that are meaningfully related even when they don’t intersect"
+-   "honestly was just surprised how easy it is to perform geometry operations"
+-   "we can use distance based joins on two datasets that are meaningfully related even when they don’t intersect"
 
 ### Difficult Things
 
-- "learning how to do the same thing in multiple different ways"
-- "understanding the different binary operators...
-st_intersects and st_disjoint were intuitive but others like st_covered_by were less clear"
-- "finding the time to do the readings"
+-   "learning how to do the same thing in multiple different ways"
+-   "understanding the different binary operators... st_intersects and st_disjoint were intuitive but others like st_covered_by were less clear"
+-   "finding the time to do the readings"
 
 ### Questions
 
 "Have you ever had to use DE-9IM strings, will I ever have to use them, can they be practically effectively used by people who are not deep into the lore??" - Lauren
 
-----
+------------------------------------------------------------------------
 
 "Do unary and binary geometry operations change the input file or allow you to create a unique output file" - Connor
 
 ## Week 4
 
-- Updates and reminders
-  - Common issues with syntax
-  - Exercise how-to with Quarto
-  - Exercises 2 and 3 due Friday, 2/27 and Wednesday 3/4 (links coming soon)
-  - Office Hours on Friday, 2/20 at 12:00 pm
-- Week 4 Questions
-- Finish review of data visualization example with ggplot2
-- [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
+-   Updates and reminders
+    -   Common issues with syntax
+    -   Exercise how-to with Quarto
+    -   Exercises 2 and 3 due Friday, 2/27 and Wednesday 3/4 (links coming soon)
+    -   Office Hours on Friday, 2/20 at 12:00 pm
+-   Week 4 Questions
+-   Finish review of data visualization example with ggplot2
+-   [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
 
 ### Questions
 
@@ -61,7 +134,7 @@ When subseting with the `[` operator, why do you need a comma and space at the e
 
 Use `?[` to take a look at the documentation. When using the `[` operator to subset a data frame (or an `sf` object), the first value is the row index and the second is the column index.
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 # Select second row
@@ -71,7 +144,7 @@ us_states[2, ]
 us_states[, 2]
 ```
 
-----
+------------------------------------------------------------------------
 
 Do you always use `sf` objects when working with spatial data? Or do you switch between spatial and non-spatial formats? —Liam
 
@@ -98,21 +171,20 @@ comparison <- bench::mark(
 )
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 #| echo: false
 plot(comparison)
 ```
 
-----
-
+------------------------------------------------------------------------
 
 Does it matter the order that you specify parameters for a `ggplot`? —Lauren
 
 Consistent [code style](https://r4ds.hadley.nz/workflow-style.html) improves the readability of your code and reduces risk of errors *but* `{ggplot2}` supports a flexible approach.
 
-----
+------------------------------------------------------------------------
 
 This works...
 
@@ -121,7 +193,7 @@ ggplot(data = us_states) +
   geom_sf(aes(fill = total_pop_15))
 ```
 
-----
+------------------------------------------------------------------------
 
 ...and this works...
 
@@ -131,7 +203,7 @@ ggplot(data = us_states) +
   geom_sf()
 ```
 
-----
+------------------------------------------------------------------------
 
 ...and this works!
 
@@ -140,7 +212,7 @@ ggplot() +
   geom_sf(data = us_states, aes(fill = total_pop_15))
 ```
 
-----
+------------------------------------------------------------------------
 
 But... this does not work! Do you know why?
 
@@ -163,19 +235,19 @@ usethis::use_github_file(
 
 ## Week 3
 
-- Week 3 Questions
-- [Session 2 Quiz](https://docs.google.com/forms/d/e/1FAIpQLScFfOG6aFaMv-pogR2wZHoSYnfhmaemRwHyytWCZPpSJV6dog/viewform?usp=header)
-- [Visualizing spatial data with {ggplot2}](/slides/data-visualization.qmd)
+-   Week 3 Questions
+-   [Session 2 Quiz](https://docs.google.com/forms/d/e/1FAIpQLScFfOG6aFaMv-pogR2wZHoSYnfhmaemRwHyytWCZPpSJV6dog/viewform?usp=header)
+-   [Visualizing spatial data with {ggplot2}](/slides/data-visualization.qmd)
 
 ### Questions
 
 What are some effective ways to familiarize yourself with the language of different packages without rote memorization of their functions? —Brian
 
-- [Cheatsheets](https://posit.co/resources/cheatsheets/), e.g. [RStudio](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html), [ggplot2](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
-- Community resources, e.g. [ggplot2 Theme Elements Reference Sheet](https://isabella-b.com/blog/ggplot2-theme-elements-reference/)
-- Naming conventions, e.g. `geom_<type of geometry to show on plot>`
+-   [Cheatsheets](https://posit.co/resources/cheatsheets/), e.g. [RStudio](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html), [ggplot2](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+-   Community resources, e.g. [ggplot2 Theme Elements Reference Sheet](https://isabella-b.com/blog/ggplot2-theme-elements-reference/)
+-   Naming conventions, e.g. `geom_<type of geometry to show on plot>`
 
-----
+------------------------------------------------------------------------
 
 Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
 
@@ -183,7 +255,7 @@ Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
 summary(spData::us_states_df)
 ```
 
-----
+------------------------------------------------------------------------
 
 Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
 
@@ -191,7 +263,7 @@ Is there an easy way to plot summary statistics (e.g. mean, min, max)? —Lauren
 skimr::skim(spData::us_states_df)
 ```
 
-----
+------------------------------------------------------------------------
 
 Why are some CRS values `NA` while some are specific datum (WGS84, etc)? —Nhi
 
@@ -203,7 +275,7 @@ st_crs(x)
 st_crs(spData::us_states)
 ```
 
-----
+------------------------------------------------------------------------
 
 Why do some of the exercises start with the library function and not have you initially install a library? —Kyle
 
@@ -211,10 +283,10 @@ Why do some of the exercises start with the library function and not have you in
 # install.packages("tidyverse")
 ```
 
-----
+------------------------------------------------------------------------
 
 What actually is an observation and how is it different than a variable? —Dillon
 
 A variable is something you can *measure*. An observation is a set of *measurements*.
 
-----
+------------------------------------------------------------------------
