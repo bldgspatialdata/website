@@ -14,26 +14,30 @@ library(spData)
 
 ## Week 6
 
--   Reminder
-    -   Exercise 4 is available - due Wednesday, 3/11
+-   Schedule adjustment for 4/1
+-   Reminders
+    -   Exercise 3 due today
+    -   Exercise 4 due Wednesday, 3/11
     -   Exercise 5 coming soon
--   Final Project
+    -   Exercise 1, 2, or 3 questions?
+-   Final Project Timeline
     -   Project proposal - due Wednesday, 3/25
     -   Final project presentations - due Monday, 5/4
     -   Final project repository - due Friday, 5/15
 -   Questions
+-   Recap: [Creating and manipulating attributes for spatial data](/slides/spatial-data-attributes.qmd)
 -   Lecture: [Working with spatial and geometric operations in {sf}](/slides/spatial-data-attributes.qmd)
 -   Review [two-table verbs](https://dplyr.tidyverse.org/articles/two-table.html) with dplyr
 
 ### Questions
 
-How do you decide the “right” structure for a dataset when it can be organized in more than one tidy way?
+How do you decide the “right” structure for a dataset when it can be organized in more than one tidy way? - Vrinda
 
 Typically, whatever format allows you to efficiently complete the necessary analysis and produce the expected outputs is the "right" structure.
 
 ----
 
-How much does it matter when making the decision on what function to use when smoothing?
+How much does it matter when making the decision on what function to use when smoothing? - Dillon
 
 Check out the [smoothr](https://strimas.com/smoothr/) documentation for more details.
 
@@ -76,7 +80,7 @@ nycflights13::flights |>
 
 ----
 
-How do you choose when to use `st_intersection()` vs. `st_join()` when looking at relationships between layers?
+How do you choose when to use `st_intersection()` vs. `st_join()` when looking at relationships between layers? - Liam
 
 ```{r}
 nc <- st_read(system.file("shape/nc.shp", package = "sf"))
@@ -92,7 +96,7 @@ st_intersection(nc_points, nc[1, ])
 
 -   Reminder
     -   Exercises 2 due Friday, 2/27
-    -   Exercise 3 due Wednesday 3/4
+    -   Exercise 3 due Wednesday, 3/4
 -   Interesting and Difficult Things!
 -   Week 5 Questions
 -   Finish review of [Transforming data with `{dplyr}`](/slides/data-transformation.qmd)
