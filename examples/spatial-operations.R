@@ -2,6 +2,8 @@ library(sf)
 library(tigris)
 library(tidyverse)
 
+options("tigris_use_cache" = TRUE)
+
 us_states <- states()
 
 storms_sf <- storms |>
