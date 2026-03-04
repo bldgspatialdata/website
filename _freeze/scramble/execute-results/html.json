@@ -1,0 +1,17 @@
+{
+  "hash": "b9a1e9c05237a68e9251200f44f3fcf1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Review\"\neditor: visual\n---\n\n\n::: {.cell}\n\n```{.r .cell-code  code-line-numbers=\"true\"}\nstorms |>\n) |>\nsummarise(\nn_gales = n_distinct(name)\ngroup_by(year) |>\nfilter(\n)\nbetween(wind, 40, 63)\n```\n:::\n\n",
+    "supporting": [
+      "scramble_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
