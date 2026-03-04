@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eli Pousson">
-<meta name="dcterms.date" content="2026-03-18">
+<meta name="dcterms.date" content="2026-03-11">
 
-<title>Week 8 – GES 668 - Spring 2026</title>
+<title>Week 7 – GES 668 - Spring 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +34,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week_09.html" rel="next">
-<link href="../weeks/week_07.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,9 +74,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Week 8 – GES 668 - Spring 2026">
-<meta property="og:description" content="🏝️ Spring Break 🏝️">
+<meta property="og:title" content="Week 7 – GES 668 - Spring 2026">
+<meta property="og:description" content="This week we are learning to use {dplyr} and {tidyr} to join tables and switching data between a wide and long format.">
+<meta property="og:image" content="https://bldgspatialdata.github.io/website//slides/images/st_intersects_postgis-intro.png">
 <meta property="og:site_name" content="GES 668 - Spring 2026">
+<meta property="og:image:height" content="550">
+<meta property="og:image:width" content="500">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -102,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/spring-2026.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_08.html">Week 8</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 7</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -171,13 +172,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Weeks 🗓️</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../slides/spring-2026.html" class="sidebar-item-text sidebar-link">
@@ -228,13 +229,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week_07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week_08.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week_08.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
@@ -369,16 +364,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
+  </ul></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a>
+  <ul class="collapse">
+  <li><a href="#required-readings" id="toc-required-readings" class="nav-link" data-scroll-target="#required-readings">Required readings</a></li>
+  <li><a href="#optional-readings" id="toc-optional-readings" class="nav-link" data-scroll-target="#optional-readings">Optional readings</a></li>
+  </ul></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07_.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_07_.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../slides/spring-2026.html">Weeks 🗓️</a></li><li class="breadcrumb-item"><a href="../weeks/week_08.html">Week 8</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 8</h1>
-<p class="subtitle lead">🏝️ Spring Break 🏝️</p>
+<h1 class="title">Week 7</h1>
+<p class="subtitle lead">Tidying and joining spatial data</p>
   <div class="quarto-categories">
     <div class="quarto-category">weeks</div>
   </div>
@@ -392,33 +403,63 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 18, 2026</p>
+      <p class="date">March 11, 2026</p>
     </div>
   </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Summary</div>
+    This week we are learning to use <code>{dplyr}</code> and <code>{tidyr}</code> to join tables and switching data between a wide and long format.
+  </div>
+</div>
 
 
 </header>
 
 
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Spring break is March 14-22, 2026
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No class during UMBC Spring Break.</p>
-</div>
-</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="key-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<ul>
+<li>Practice joining tables by attribute with <code>{dplyr}</code></li>
+<li>Practice converting between wide and long data formats with <code>dplyr::pivot_longer()</code> and <code>dplyr::pivot_wider()</code></li>
+<li>Practice recoding categorical attribute data using the <a href="https://forcats.tidyverse.org/">{forcats}</a> package</li>
+</ul>
+</section>
+</section>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<section id="required-readings" class="level3">
+<h3 class="anchored" data-anchor-id="required-readings">Required readings</h3>
+<ul>
+<li><a href="https://r4ds.hadley.nz/data-tidy.html">Ch. 6 Data tidying</a> in <span class="citation" data-cites="wickhamDataScienceImport2023">Hadley Wickham, Garrett Grolemund, and Mine Çetinkaya-Rundel <em>R for <span>Data Science</span>: <span>Import</span>, <span>Tidy</span>, <span>Transform</span>, <span>Visualize</span>, and <span>Model Data</span></em>, 2nd edition. (Sebastopol, CA: O’Reilly Media, 2023), <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.</span></li>
+<li><a href="https://datamgmtinedresearch.com/clean">Ch. 14 Data cleaning</a> in <span class="citation" data-cites="lewisDataManagementLargeScale2024">Crystal Lewis <em>Data <span>Management</span> in <span>Large-Scale Education Research</span></em>, 1st ed. (Chapman &amp; Hall, 2024), <a href="https://datamgmtinedresearch.com/">https://datamgmtinedresearch.com/</a>.</span></li>
+<li><span class="citation" data-cites="bromanDataOrganizationSpreadsheets2018">Karl W. Broman and Kara H. Woo <span>“Data <span>Organization</span> in <span>Spreadsheets</span>,”</span> <em>The American Statistician</em> 72, no. 1 (January 2, 2018): 2–10, doi:<a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a>.</span></li>
+</ul>
+<!-- -   [Ch. 1 Local Origins](https://direct.mit.edu/books/oa-monograph/4323/chapter/181048/LOCAL-ORIGINS), [Ch. 2 A Place for Plant Data](https://direct.mit.edu/books/oa-monograph/4323/chapter/181049/A-PLACE-FOR-PLANT-DATA), and [Ch. 3 Collecting Infrastructures](https://direct.mit.edu/books/oa-monograph/4323/chapter/181052/MARKET-PLACE-INTERFACE) in @loukissasAllDataAre2019 -->
+</section>
+<section id="optional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="optional-readings">Optional readings</h3>
+<ul>
+<li><span class="citation" data-cites="dignazioWhoCollectsData2021">Catherine D’Ignazio and Lauren Klein <span>“Who <span>Collects</span> the <span>Data</span>? <span>A Tale</span> of <span>Three Maps</span>,”</span> <em>MIT Case Studies in Social and Ethical Responsibilities of Computing</em> (February 5, 2021), doi:<a href="https://doi.org/10.21428/2c646de5.fc6a97cc">10.21428/2c646de5.fc6a97cc</a>.</span></li>
+</ul>
+</section>
+</section>
+<section id="participate" class="level2">
+<h2 class="anchored" data-anchor-id="participate">Participate</h2>
+<p>🖥️ <a href="../slides/tidy-data.html">Tidying and joining data</a></p>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>🛠️️ <a href="../exercises/exercise_05.html">Exercise 05</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -805,21 +846,9 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week_07.html" class="pagination-link" aria-label="Week 7">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 7</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../weeks/week_09.html" class="pagination-link" aria-label="Week 9">
-        <span class="nav-page-text">Week 9</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_08.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bldgspatialdata/website/edit/main/weeks/week_07_.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bldgspatialdata/website/blob/main/weeks/week_07_.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
