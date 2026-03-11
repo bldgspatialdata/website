@@ -8,15 +8,70 @@ format:
 image: images/r4ds_tidy-1.png
 ---
 
-------------------------------------------------------------------------
+## Overview
 
-Categories of functions in `{tidyr}`:
+### Why tidy your data?
 
-1.  **Pivoting**
-2.  **Rectangling**
-3.  **Nesting and unnesting**
-4.  **Splitting and combining character columns**
-5.  **Handling missing values**
+- Make it accessible for analysis
+- Make it easier to visualize
+- Make it easier to document and share
+- Combine data from a variety of sources
+- Use data with some other service (e.g. geocoding)
+
+### Where does untidy data come from?
+
+- Software (e.g. Excel issues with auto-formatting of dates)
+- Intentional and unintentional choices by users (e.g. color-coding to encode status or spelling errors)
+- Policy changes (e.g. adding or removing categories in a scale)
+
+
+## What is involved in tidying messy datasets?
+
+-   Column headers are values, not variable names
+-   Multiple variables stored in one column
+-   Variables are stored in both rows and columns
+-   Multiple types in one table
+-   One type in multiple tables
+
+See [Tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html) vignette or the [Tidy data paper](https://vita.had.co.nz/papers/tidy-data.html) by Hadley Wickham (2014) for more details.
+
+::: notes
+from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html
+:::
+
+### How can we use the tidyverse for tidying?
+
+Tidying data often requires you to use packages focused on different types of data:
+
+- [stringr](https://stringr.tidyverse.org/) for [strings](https://r4ds.hadley.nz/strings.html) (and [regular expressions](https://r4ds.hadley.nz/regexps.html))
+- [forcats](https://forcats.tidyverse.org/) for [factors](https://r4ds.hadley.nz/factors.html) (aka categorical variables)
+- [lubridate](https://lubridate.tidyverse.org/) for [date and times](https://r4ds.hadley.nz/datetimes.html)
+
+### What else can we use for tidying?
+
+There are also specialized packages that can help:
+
+- [janitor](https://sfirke.github.io/janitor/index.html) for "examining and cleaning dirty data"
+- [naniar](https://naniar.njtierney.com/) to help "summarise, visualise, and manipulate missing data"
+- [tidylog](https://github.com/elbersb/tidylog) provides "feedback about dplyr and tidyr operations" (useful for interactive coding especially as a beginner)
+
+### What else can we use for tidying?
+
+There are also non-R tools that can be helpful:
+
+- [Tabula](https://tabula.technology/) for extracting tables from PDFs
+- [OpenRefine](https://openrefine.org/) for reproducibly cleaning messy data
+- [Airtable](https://www.airtable.com/) for integrating tables into databases
+
+## Using tidyr
+
+Categories of `{tidyr}` functions:
+
+1.  Pivoting
+2.  Rectangling**
+3.  Nesting and unnesting
+4.  Splitting and combining character columns
+5.  Handling missing values
 
 ::: notes
 From https://tidyr.tidyverse.org/#getting-started
@@ -30,18 +85,6 @@ Nesting converts grouped data to a form where each group becomes a single row co
 Splitting and combining character columns. Use separate() and extract() to pull a single character column into multiple columns; use unite() to combine multiple columns into a single character column.
 
 Make implicit missing values explicit with complete(); make explicit missing values implicit with drop_na(); replace missing values with next/previous value with fill(), or a known value with replace_na().
-:::
-
-## What is involved in tidying messy datasets?
-
--   Column headers are values, not variable names
--   Multiple variables stored in one column
--   Variables are stored in both rows and columns
--   Multiple types in one table
--   One type in multiple tables
-
-::: notes
-from Tidy data vignette https://tidyr.tidyverse.org/articles/tidy-data.html
 :::
 
 ## Pivoting
@@ -105,8 +148,6 @@ pivot_longer(
 
 ...
 
-------------------------------------------------------------------------
-
 ## Data organization in spreadsheets
 
 ### What are the benefits of careful data organization in spreadsheets?
@@ -122,6 +163,9 @@ pivot_longer(
 4.  put just one thing in a cell,
 5.  organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row),
 6.  create a data dictionary,
+
+### What are the practical approaches for data organization in spreadsheets?
+
 7.  do not include calculations in the raw data files,
 8.  do not use font color or highlighting as data,
 9.  choose good names for things,
