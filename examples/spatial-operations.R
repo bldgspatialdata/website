@@ -14,9 +14,29 @@ storms_sf <- storms |>
 
 storms_sf <- st_transform(storms_sf, crs = st_crs(us_states))
 
+us_highways <- primary_roads()
+
+maryland <- filter(us_states, NAME == "Maryland")
+
+lower48 <- filter(
+  us_states,
+  !(NAME %in%
+      c(
+        "United States Virgin Islands",
+        "Commonwealth of the Northern Mariana Islands",
+        "Guam",
+        "Alaska",
+        "American Samoa",
+        "Puerto Rico",
+        "Hawaii"
+      ))
+)
+
 storms_sf |>
   st_filter(us_states) |>
   plot()
+
+st_join(maryland, us_highways)
 
 storms_sf |>
   st_join(us_states) |>
@@ -82,3 +102,98 @@ storms_sf |>
     .predicate = st_covered_by
   ) |>
   mapview::mapview()
+
+
+c(-76.712838, 39.253383)
+
+sfg <- st_point(c(-76.712838, 39.253383))
+
+sfg
+
+st_as_sfc(sfg)
+
+sfc <- st_as_sfc(list(sfg), crs = 4326)
+
+st_as_sf(sfc) |>
+  mutate(
+    name = "The point I made in GES668"
+  )
+
+sfc |>
+  mutate(
+    name = "This won't work"
+  )
+
+st_filter(
+  us_states,
+  maryland,
+  .predicate = st_disjoint
+)
+
+us_highways |>
+  mapview::mapview()
+
+st_filter(
+  us_highways,
+  maryland
+)
+
+us_highways_joined <- st_join(
+  us_highways,
+  us_states,
+  largest = TRUE
+)
+
+mapview::mapview(us_highways_joined, zcol = "NAME")
+
+storms_sf_states <- st_join(
+  storms_sf,
+  us_states
+)
+
+storms_sf_states |>
+  ggplot() +
+  geom_sf(aes(color = NAME), size = 0.02)
+
+st_filter(
+  storms_sf,
+  us_states
+) |>
+  ggplot() +
+  geom_sf(size = 0.02)
+
+st_is_within_distance(us_highways, maryland, dist = units::set_units(100, "mi"))
+
+maryland_with_dist <- st_join(
+  us_highways,
+  maryland,
+  join = st_is_within_distance,
+  dist = units::set_units(100, "mi")
+)
+
+maryland_with_dist |>
+  mapview::mapview(
+    zcol = "NAME"
+  )
+
+st_centroid(
+  us_states
+) |>
+  mapview::mapview()
+
+st_point_on_surface(
+  us_states
+) |>
+  mapview::mapview()
+
+storms_buffered <- storms_sf |>
+  slice_head(
+    n = 1000
+  ) |>
+  st_buffer(
+    dist = units::set_units(100, "km")
+  )
+
+storms_buffered |>
+  mapview::mapview()
+
