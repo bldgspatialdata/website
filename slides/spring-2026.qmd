@@ -12,6 +12,24 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+## Week 9
+
+-   Questions
+-   Geocoding with [tidygeocoder](https://jessecambon.github.io/tidygeocoder/) or [arcgisgeocode](https://r.esri.com/arcgisgeocode/)
+-   Writing functions in R
+-   Creating projects with Quarto
+-   Exploratory data analysis
+
+### Questions
+
+- What does the "loess" method mean in the `[geom_smooth](https://ggplot2.tidyverse.org/reference/geom_smooth.html)` function? "loess" is for LOESS (locally estimated scatterplot smoothing) - a [local regression](https://en.wikipedia.org/wiki/Local_regression) method.
+
+----
+
+- Is there a rule of thumb of when to create a function or is it mostly just "you know you need one when you think you do"?
+- How do I decide when it’s worth turning code into a function instead of just keeping it in-line?
+- In data science workflows, how do we best balance the Don't Repeat Yourself principle and the use of existing packages with the educational value of writing algorithms from first principles?
+
 ## Week 6
 
 -   Schedule adjustment for 4/1
@@ -35,7 +53,7 @@ How do you decide the “right” structure for a dataset when it can be organiz
 
 Typically, whatever format allows you to efficiently complete the necessary analysis and produce the expected outputs is the "right" structure.
 
-----
+------------------------------------------------------------------------
 
 How much does it matter when making the decision on what function to use when smoothing? - Dillon
 
@@ -43,7 +61,7 @@ Check out the [smoothr](https://strimas.com/smoothr/) documentation for more det
 
 You can also use `sf::st_simplify()` or `rmapshaper::ms_simplify()` for make less "smooth" lines and polygons.
 
-----
+------------------------------------------------------------------------
 
 Which carrier has the worst average delays? Check [R for Data Science (2e) - Solutions to Exercises](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/) for tips.
 
@@ -58,7 +76,7 @@ nycflights13::flights |>
 There are also solutions available for [Geocomputation with R](https://r.geocompx.org/solutions/).
 :::
 
-----
+------------------------------------------------------------------------
 
 Can you disentangle the effects of bad airports vs. bad carriers? (via [Solutions Manual: R for Data Science (2e)](https://aditya-dahiya.github.io/RfDS2solutions/))
 
@@ -78,7 +96,7 @@ nycflights13::flights |>
   gt::gt()
 ```
 
-----
+------------------------------------------------------------------------
 
 How do you choose when to use `st_intersection()` vs. `st_join()` when looking at relationships between layers? - Liam
 
