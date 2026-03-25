@@ -207,6 +207,32 @@
   <p class="date">2026-03-25</p>
 </section>
 <section>
+<section id="week-9" class="title-slide slide level2 center">
+<h2>Week 9</h2>
+<ul>
+<li>Questions</li>
+<li>Geocoding with <a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a> or <a href="https://r.esri.com/arcgisgeocode/">arcgisgeocode</a></li>
+<li>Writing functions in R</li>
+<li>Creating projects with Quarto</li>
+<li>Exploratory data analysis</li>
+</ul>
+</section>
+<section id="questions" class="title-slide slide level3 center">
+<h3>Questions</h3>
+<ul>
+<li>What does the “loess” method mean in the <code>[geom_smooth](https://ggplot2.tidyverse.org/reference/geom_smooth.html)</code> function? “loess” is for LOESS (locally estimated scatterplot smoothing) - a <a href="https://en.wikipedia.org/wiki/Local_regression">local regression</a> method.</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<ul>
+<li>Is there a rule of thumb of when to create a function or is it mostly just “you know you need one when you think you do”?</li>
+<li>How do I decide when it’s worth turning code into a function instead of just keeping it in-line?</li>
+<li>In data science workflows, how do we best balance the Don’t Repeat Yourself principle and the use of existing packages with the educational value of writing algorithms from first principles?</li>
+</ul>
+</section>
+</section>
+<section>
 <section id="week-6" class="title-slide slide level2 center">
 <h2>Week 6</h2>
 <ul>
@@ -230,7 +256,7 @@
 <li>Review <a href="https://dplyr.tidyverse.org/articles/two-table.html">two-table verbs</a> with dplyr</li>
 </ul>
 </section>
-<section id="questions" class="title-slide slide level3 center">
+<section id="questions-1" class="title-slide slide level3 center">
 <h3>Questions</h3>
 <p>How do you decide the “right” structure for a dataset when it can be organized in more than one tidy way? - Vrinda</p>
 <p>Typically, whatever format allows you to efficiently complete the necessary analysis and produce the expected outputs is the “right” structure.</p>
@@ -278,23 +304,23 @@
 <span id="cb3-12"><a></a>  <span class="fu">rename</span>(<span class="at">Carrier =</span> carrier, <span class="st">`</span><span class="at">Number of Airports</span><span class="st">`</span> <span class="ot">=</span> n) <span class="sc">|&gt;</span></span>
 <span id="cb3-13"><a></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="efniqcmdwi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#efniqcmdwi table {
+<div id="rhvimhyvsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rhvimhyvsj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#efniqcmdwi thead, #efniqcmdwi tbody, #efniqcmdwi tfoot, #efniqcmdwi tr, #efniqcmdwi td, #efniqcmdwi th {
+#rhvimhyvsj thead, #rhvimhyvsj tbody, #rhvimhyvsj tfoot, #rhvimhyvsj tr, #rhvimhyvsj td, #rhvimhyvsj th {
   border-style: none;
 }
 
-#efniqcmdwi p {
+#rhvimhyvsj p {
   margin: 0;
   padding: 0;
 }
 
-#efniqcmdwi .gt_table {
+#rhvimhyvsj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -320,12 +346,12 @@
   border-left-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_caption {
+#rhvimhyvsj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#efniqcmdwi .gt_title {
+#rhvimhyvsj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -337,7 +363,7 @@
   border-bottom-width: 0;
 }
 
-#efniqcmdwi .gt_subtitle {
+#rhvimhyvsj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -349,7 +375,7 @@
   border-top-width: 0;
 }
 
-#efniqcmdwi .gt_heading {
+#rhvimhyvsj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -361,13 +387,13 @@
   border-right-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_bottom_border {
+#rhvimhyvsj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_col_headings {
+#rhvimhyvsj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +408,7 @@
   border-right-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_col_heading {
+#rhvimhyvsj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -402,7 +428,7 @@
   overflow-x: hidden;
 }
 
-#efniqcmdwi .gt_column_spanner_outer {
+#rhvimhyvsj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -414,15 +440,15 @@
   padding-right: 4px;
 }
 
-#efniqcmdwi .gt_column_spanner_outer:first-child {
+#rhvimhyvsj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#efniqcmdwi .gt_column_spanner_outer:last-child {
+#rhvimhyvsj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#efniqcmdwi .gt_column_spanner {
+#rhvimhyvsj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -434,11 +460,11 @@
   width: 100%;
 }
 
-#efniqcmdwi .gt_spanner_row {
+#rhvimhyvsj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#efniqcmdwi .gt_group_heading {
+#rhvimhyvsj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -464,7 +490,7 @@
   text-align: left;
 }
 
-#efniqcmdwi .gt_empty_group_heading {
+#rhvimhyvsj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -479,15 +505,15 @@
   vertical-align: middle;
 }
 
-#efniqcmdwi .gt_from_md > :first-child {
+#rhvimhyvsj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#efniqcmdwi .gt_from_md > :last-child {
+#rhvimhyvsj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#efniqcmdwi .gt_row {
+#rhvimhyvsj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +532,7 @@
   overflow-x: hidden;
 }
 
-#efniqcmdwi .gt_stub {
+#rhvimhyvsj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -519,7 +545,7 @@
   padding-right: 5px;
 }
 
-#efniqcmdwi .gt_stub_row_group {
+#rhvimhyvsj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -533,15 +559,15 @@
   vertical-align: top;
 }
 
-#efniqcmdwi .gt_row_group_first td {
+#rhvimhyvsj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#efniqcmdwi .gt_row_group_first th {
+#rhvimhyvsj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#efniqcmdwi .gt_summary_row {
+#rhvimhyvsj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -551,16 +577,16 @@
   padding-right: 5px;
 }
 
-#efniqcmdwi .gt_first_summary_row {
+#rhvimhyvsj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_first_summary_row.thick {
+#rhvimhyvsj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#efniqcmdwi .gt_last_summary_row {
+#rhvimhyvsj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -570,7 +596,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_grand_summary_row {
+#rhvimhyvsj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -580,7 +606,7 @@
   padding-right: 5px;
 }
 
-#efniqcmdwi .gt_first_grand_summary_row {
+#rhvimhyvsj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -590,7 +616,7 @@
   border-top-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_last_grand_summary_row_top {
+#rhvimhyvsj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,11 +626,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_striped {
+#rhvimhyvsj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#efniqcmdwi .gt_table_body {
+#rhvimhyvsj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -613,7 +639,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_footnotes {
+#rhvimhyvsj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -627,7 +653,7 @@
   border-right-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_footnote {
+#rhvimhyvsj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -636,7 +662,7 @@
   padding-right: 5px;
 }
 
-#efniqcmdwi .gt_sourcenotes {
+#rhvimhyvsj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -650,7 +676,7 @@
   border-right-color: #D3D3D3;
 }
 
-#efniqcmdwi .gt_sourcenote {
+#rhvimhyvsj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -658,72 +684,72 @@
   padding-right: 5px;
 }
 
-#efniqcmdwi .gt_left {
+#rhvimhyvsj .gt_left {
   text-align: left;
 }
 
-#efniqcmdwi .gt_center {
+#rhvimhyvsj .gt_center {
   text-align: center;
 }
 
-#efniqcmdwi .gt_right {
+#rhvimhyvsj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#efniqcmdwi .gt_font_normal {
+#rhvimhyvsj .gt_font_normal {
   font-weight: normal;
 }
 
-#efniqcmdwi .gt_font_bold {
+#rhvimhyvsj .gt_font_bold {
   font-weight: bold;
 }
 
-#efniqcmdwi .gt_font_italic {
+#rhvimhyvsj .gt_font_italic {
   font-style: italic;
 }
 
-#efniqcmdwi .gt_super {
+#rhvimhyvsj .gt_super {
   font-size: 65%;
 }
 
-#efniqcmdwi .gt_footnote_marks {
+#rhvimhyvsj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#efniqcmdwi .gt_asterisk {
+#rhvimhyvsj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#efniqcmdwi .gt_indent_1 {
+#rhvimhyvsj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#efniqcmdwi .gt_indent_2 {
+#rhvimhyvsj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#efniqcmdwi .gt_indent_3 {
+#rhvimhyvsj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#efniqcmdwi .gt_indent_4 {
+#rhvimhyvsj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#efniqcmdwi .gt_indent_5 {
+#rhvimhyvsj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#efniqcmdwi .katex-display {
+#rhvimhyvsj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#efniqcmdwi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rhvimhyvsj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -770,7 +796,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading layer `nc' from data source 
-  `/Users/elipousson/Library/R/arm64/4.5/library/sf/shape/nc.shp' 
+  `/Users/bldgspatialdata/Library/R/arm64/4.5/library/sf/shape/nc.shp' 
   using driver `ESRI Shapefile'
 Simple feature collection with 100 features and 14 fields
 Geometry type: MULTIPOLYGON
@@ -785,7 +811,7 @@ Geodetic CRS:  NAD27</code></pre>
 <pre><code>Simple feature collection with 250 features and 14 fields
 Geometry type: POINT
 Dimension:     XY
-Bounding box:  xmin: -84.26401 ymin: 33.93658 xmax: -75.77537 ymax: 36.53586
+Bounding box:  xmin: -83.79858 ymin: 33.94363 xmax: -75.81023 ymax: 36.55101
 Geodetic CRS:  NAD27
 First 10 features:
    AREA PERIMETER CNTY_ CNTY_ID NAME FIPS FIPSNO CRESS_ID BIR74 SID74 NWBIR74
@@ -800,30 +826,32 @@ First 10 features:
 9    NA        NA    NA      NA &lt;NA&gt; &lt;NA&gt;     NA       NA    NA    NA      NA
 10   NA        NA    NA      NA &lt;NA&gt; &lt;NA&gt;     NA       NA    NA    NA      NA
    BIR79 SID79 NWBIR79                          x
-1     NA    NA      NA POINT (-82.90721 35.53124)
-2     NA    NA      NA POINT (-78.92745 36.33369)
-3     NA    NA      NA POINT (-78.65419 34.06061)
-4     NA    NA      NA POINT (-80.84429 35.85385)
-5     NA    NA      NA   POINT (-83.5026 35.3741)
-6     NA    NA      NA POINT (-83.60592 35.08453)
-7     NA    NA      NA POINT (-79.60867 35.79175)
-8     NA    NA      NA POINT (-79.85598 35.07446)
-9     NA    NA      NA POINT (-77.17474 35.73376)
-10    NA    NA      NA POINT (-82.22685 35.21618)</code></pre>
+1     NA    NA      NA POINT (-80.61342 35.71325)
+2     NA    NA      NA POINT (-80.36994 36.23018)
+3     NA    NA      NA POINT (-77.25844 35.57634)
+4     NA    NA      NA POINT (-82.28387 35.51869)
+5     NA    NA      NA POINT (-82.65556 35.36123)
+6     NA    NA      NA POINT (-80.26309 35.21218)
+7     NA    NA      NA POINT (-78.07407 35.92356)
+8     NA    NA      NA POINT (-78.62108 35.53373)
+9     NA    NA      NA POINT (-77.27727 36.50931)
+10    NA    NA      NA POINT (-79.74154 34.90924)</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">st_intersection</span>(nc_points, nc[<span class="dv">1</span>, ])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 2 features and 14 fields
+<pre><code>Simple feature collection with 3 features and 14 fields
 Geometry type: POINT
 Dimension:     XY
-Bounding box:  xmin: -81.43978 ymin: 36.50571 xmax: -81.41405 ymax: 36.53586
+Bounding box:  xmin: -81.65456 ymin: 36.27143 xmax: -81.41815 ymax: 36.44493
 Geodetic CRS:  NAD27
    AREA PERIMETER CNTY_ CNTY_ID NAME  FIPS FIPSNO CRESS_ID BIR74 SID74 NWBIR74
 1 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
 2 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
+3 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
   BIR79 SID79 NWBIR79                          x
-1  1364     0      19 POINT (-81.43978 36.53586)
-2  1364     0      19 POINT (-81.41405 36.50571)</code></pre>
+1  1364     0      19 POINT (-81.41815 36.27143)
+2  1364     0      19 POINT (-81.63161 36.41221)
+3  1364     0      19 POINT (-81.65456 36.44493)</code></pre>
 </div>
 </div>
 </section>
@@ -860,7 +888,7 @@ Geodetic CRS:  NAD27
 </ul>
 </section>
 
-<section id="questions-1" class="title-slide slide level3 center">
+<section id="questions-2" class="title-slide slide level3 center">
 <h3>Questions</h3>
 <p>“Have you ever had to use DE-9IM strings, will I ever have to use them, can they be practically effectively used by people who are not deep into the lore??” - Lauren</p>
 </section>
@@ -885,7 +913,7 @@ Geodetic CRS:  NAD27
 <li><a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code></a></li>
 </ul>
 </section>
-<section id="questions-2" class="title-slide slide level3 center">
+<section id="questions-3" class="title-slide slide level3 center">
 <h3>Questions</h3>
 <p>When subseting with the <code>[</code> operator, why do you need a comma and space at the end? e.g.&nbsp;<code>world[world$area_km2 &lt; 10000, ]</code> —Chase</p>
 <p>Use <code>?[</code> to take a look at the documentation. When using the <code>[</code> operator to subset a data frame (or an <code>sf</code> object), the first value is the row index and the second is the column index.</p>
@@ -956,8 +984,13 @@ First 10 features:
 </section>
 <section class="slide level4">
 
-
-<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in `ggplot2::autoplot()`:
+! The package "ggbeeswarm" is required to use `type = "beeswarm".</code></pre>
+</div>
+</div>
+</section>
 <section class="slide level4">
 
 <p>Does it matter the order that you specify parameters for a <code>ggplot</code>? —Lauren</p>
@@ -967,8 +1000,8 @@ First 10 features:
 
 <p>This works…</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
@@ -976,9 +1009,9 @@ First 10 features:
 
 <p>…and this works…</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15) <span class="sc">+</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">geom_sf</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15) <span class="sc">+</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">geom_sf</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
@@ -986,8 +1019,8 @@ First 10 features:
 
 <p>…and this works!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
@@ -995,8 +1028,8 @@ First 10 features:
 
 <p>But… this does not work! Do you know why?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_sf</span>(us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">geom_sf</span>(us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `layer_sf()`:
 ! `mapping` must be created by `aes()`.
@@ -1009,10 +1042,10 @@ First 10 features:
 <h3>Finish review</h3>
 <p>Download the example script to review:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github_file</span>(</span>
-<span id="cb20-2"><a></a>  <span class="at">repo =</span> <span class="st">"bldgspatialdata/website"</span>,</span>
-<span id="cb20-3"><a></a>  <span class="at">path =</span> <span class="st">"examples/data-visualization.R"</span></span>
-<span id="cb20-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github_file</span>(</span>
+<span id="cb21-2"><a></a>  <span class="at">repo =</span> <span class="st">"bldgspatialdata/website"</span>,</span>
+<span id="cb21-3"><a></a>  <span class="at">path =</span> <span class="st">"examples/data-visualization.R"</span></span>
+<span id="cb21-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -1025,7 +1058,7 @@ First 10 features:
 <li><a href="../slides/data-visualization.html">Visualizing spatial data with {ggplot2}</a></li>
 </ul>
 </section>
-<section id="questions-3" class="title-slide slide level3 center">
+<section id="questions-4" class="title-slide slide level3 center">
 <h3>Questions</h3>
 <p>What are some effective ways to familiarize yourself with the language of different packages without rote memorization of their functions? —Brian</p>
 <ul>
@@ -1038,7 +1071,7 @@ First 10 features:
 
 <p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">summary</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">summary</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    state           median_income_10 median_income_15 poverty_level_10 
  Length:51          Min.   :20019    Min.   :21438    Min.   :  52297  
@@ -1061,7 +1094,7 @@ First 10 features:
 
 <p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>skimr<span class="sc">::</span><span class="fu">skim</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>skimr<span class="sc">::</span><span class="fu">skim</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <caption>Data summary</caption>
@@ -1233,13 +1266,13 @@ First 10 features:
 
 <p>Why are some CRS values <code>NA</code> while some are specific datum (WGS84, etc)? —Nhi</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb24-2"><a></a></span>
-<span id="cb24-3"><a></a><span class="fu">st_crs</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb25-2"><a></a></span>
+<span id="cb25-3"><a></a><span class="fu">st_crs</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System: NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">st_crs</span>(spData<span class="sc">::</span>us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">st_crs</span>(spData<span class="sc">::</span>us_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
   User input: EPSG:4269 
@@ -1262,7 +1295,7 @@ GEOGCS["NAD83",
 
 <p>Why do some of the exercises start with the library function and not have you initially install a library? —Kyle</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># install.packages("tidyverse")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># install.packages("tidyverse")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level4">
