@@ -30,6 +30,30 @@ fav_restaurants <- googlesheets4::read_sheet(
 fav_restaurants_geocoded <- fav_restaurants |>
   geocode(`Address or Neighborhood`, method = "osm", lat = latitude, long = longitude)
 
+fav_restaurants_geocoded_census <- fav_restaurants |>
+  geocode(`Address or Neighborhood`, method = "census", lat = latitude, long = longitude)
+
+fav_restaurants_geocoded |>
+  dplyr::filter(
+    is.na(latitude)
+  ) |>
+  View()
+
+fav_restaurants_geocoded_census |>
+  dplyr::filter(
+    is.na(latitude)
+  )
+
+fav_restaurants_geocoded_census |>
+  dplyr::filter(
+    !is.na(latitude)
+  ) |>
+  sf::st_as_sf(
+    coords = c("longitude", "latitude"),
+    crs = 4326
+  ) |>
+  mapview::mapview()
+
 egis_geocoder_url <- "https://egis.baltimorecity.gov/egis/rest/services/Locator/EGISCompositeLocator/GeocodeServer"
 
 egis_geocoder <- geocode_server(
@@ -46,4 +70,20 @@ fav_restaurants_addr_xwalk <- googlesheets4::read_sheet(
   sheet = "Crosswalk"
 )
 
+fav_restaurants_egis_ready <- fav_restaurants |>
+  mutate(
+    city_address = recode_values(
+      `Address or Neighborhood`,
+      from = fav_restaurants_addr_xwalk$`Address or Neighborhood`,
+      to = fav_restaurants_addr_xwalk$CorrectedAddress
+    )
+  ) |>
+  filter(
+    !is.na(city_address)
+  )
+
+fav_resturants_egis_geocoded <- geocode_addresses(
+  single_line = fav_restaurants_egis_ready$city_address,
+  geocoder = egis_geocoder
+)
 
