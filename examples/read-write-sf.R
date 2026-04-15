@@ -99,10 +99,11 @@ write_xlsx(data_with_coords)
 #' Combined with prior section of "non-working" examples on 2024-10-22.
 
 library(sf)
+library(tidyverse)
 
 drivers <- st_drivers()
 
-st_read()
+?st_read()
 
 california <- st_read(
   "https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson"
@@ -117,6 +118,8 @@ url <- "https://github.com/r-spatial/sf/raw/main/inst/gpkg/nc.gpkg"
 st_read(url)
 
 url <- "https://github.com/r-spatial/sf/raw/main/inst/csv/pt.csv"
+
+readr::read_csv(url)
 
 pt <- st_read(url)
 

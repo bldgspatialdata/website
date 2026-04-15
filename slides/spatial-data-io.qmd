@@ -3,8 +3,8 @@ title: "Reading and writing spatial data"
 subtitle: "Session {{< meta order >}}"
 order: 11
 image: images/2016-11-29_openeo_gdal-diagram.png
-format: 
-  revealjs: 
+format:
+  revealjs:
     number-sections: false
 ---
 
@@ -29,7 +29,7 @@ format:
 
 ## Spatial data is everywhere
 
-- Phone camera photos (stored in the EXIF metadata)
+- Phone camera photos (stored in the EXIF metadata accessible [via exiftoolr](https://joshobrien.github.io/exiftoolr/index.html))
 - Calendars ([iCal](https://en.wikipedia.org/wiki/ICalendar)), contacts ([vCard](https://en.wikipedia.org/wiki/VCard)), and emails (using [IP address](https://en.wikipedia.org/wiki/Internet_geolocation) locations)
 
 ## Creating spatial data is "easy"
@@ -47,16 +47,14 @@ format:
 
 ## Standards and specifications
 
-[Open Geospatial Consortium (OGC) Standards](https://www.ogc.org/publications/) are organized into categories:
+[Open Geospatial Consortium (OGC) Standards](https://www.ogc.org/standards-overview/) are organized into categories:
 
-- APIs (e.g. [Moving Features API](https://www.ogc.org/publications/standard/ogc-api-moving-features/))
-- Web Services (e.g. [Web Feature Service](https://www.ogc.org/publications/standard/wfs/))
+- APIs (e.g. [Moving Features API](https://www.ogc.org/standards/ogc-api-moving-features/))
+- Web Services (e.g. [Web Feature Service](https://www.ogc.org/standards/wfs/))
 - Data Models and Encodings (e.g. [GeoTIFF](https://www.ogc.org/publications/standard/geotiff/))
 - and more (Sensors, Publish-Subscribe, Syndication & Context, Discovery, Containers, Abstract Specifications)
 
 ::: notes
-
-
 :::
 
 ## Standards and specifications
@@ -66,7 +64,6 @@ format:
 Source: [xkcd: Standards](https://xkcd.com/927/) (CC BY-NC 2.5)
 
 ::: notes
-
 :::
 
 ## Common spatial file formats
@@ -79,11 +76,9 @@ Source: [xkcd: Standards](https://xkcd.com/927/) (CC BY-NC 2.5)
 - GPX - GPS Exchange Format (`.gpx`)
 
 ::: notes
-
 - Vector spatial: Shapefile, [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), KML
-- Raster spatial: [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF), 
+- Raster spatial: [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF),
 - Tabular data with geometry: CSV, Microsoft Excel, delimited text with coordinates or WKT (well known text)
-
 :::
 
 ## Common spatial file formats
@@ -97,25 +92,37 @@ These file formats vary in:
 - Other constraints or limits
 - And more!
 
+## Why are shapefiles bad?
+
+- Difficult to manage multiple files
+
+- Single geometry type per file
+
+- Attribute names can't exceed 10 characters
+
+[And more...](http://switchfromshapefile.org/#shapefileisbad)
+
 ## Specialized spatial file formats
 
 - Raster data
-  - Digital Elevation Model (DEM)
+  - [Digital Elevation Model](https://en.wikipedia.org/wiki/Digital_elevation_model) (DEM)
   - [GeoTIFF](https://www.ogc.org/publications/standard/geotiff/)
 - Map tiles
   - [MBTiles](https://github.com/mapbox/mbtiles-spec)
   - [PMTiles](https://docs.protomaps.com/pmtiles/)
-  
+
 ## Specialized spatial file formats
 
 - Columnar data formats
   - [GeoParquet](https://geoparquet.org/)
-  - [GeoArrow](https://geoarrow.org/)
-- Databases
-  - [PostGIS](https://postgis.net/)
-- Other
+- Row oriented
   - [FlatGeobuf](https://flatgeobuf.org/)
-  
+- Database services
+  - [PostGIS](https://postgis.net/)
+- Local file databases
+  - [GeoPackage](https://www.geopackage.org/)
+  - [duckdb](https://duckdb.org/) (see [duckspatial R package](https://cidree.github.io/duckspatial/))
+
 ::: notes
 - DEM Standards from USGS - https://www.usgs.gov/3d-elevation-program-standards-and-specifications
 - Mapbox glossary - https://docs.mapbox.com/help/glossary/mbtiles/
@@ -126,6 +133,7 @@ These file formats vary in:
 <!-- ![](https://www.census.gov/content/dam/Census/newsroom/blogs/2016/04/understanding-census-bureau-address-ranges/Orris-figure.jpg) -->
 
 <!-- ::: notes -->
+
 <!-- Census data -->
 
 <!-- ::: -->
@@ -137,6 +145,7 @@ These file formats vary in:
 <!-- ::: notes -->
 
 <!-- Shapefile model -->
+
 <!-- ::: -->
 
 <!-- ---- -->
@@ -148,6 +157,7 @@ These file formats vary in:
 <!-- KML -->
 
 <!-- Source: https://developers.google.com/kml/documentation/kmlreference -->
+
 <!-- ::: -->
 
 <!-- ---- -->
@@ -159,6 +169,7 @@ These file formats vary in:
 <!-- Open Street Map -->
 
 <!-- SVG: https://wiki.openstreetmap.org/wiki/File:ERD_of_OSM_DB.svg -->
+
 <!-- ::: -->
 
 ## Historically, many tools and formats did not work together
@@ -186,7 +197,7 @@ The `dsn` or data source name for `sf::read_sf()` can include:
 ## Read spatial data files with R
 
 You can use the `query` parameter of `sf::read_sf()` to use a SQL query to select records from a file (or select a specific geographical extent).
-  
+
 ## Many file formats *can* include spatial data
 
 Non-spatial files can still be used to store Well Known Text (WKT) strings, coordinate values, or addresses (convertible to spatial data):
@@ -196,7 +207,7 @@ Non-spatial files can still be used to store Well Known Text (WKT) strings, coor
 - EXIF metadata in a JPEG, HEIC, PNG, TIFF or other media file
 
 ## Reading data into R
-  
+
 - Read data using `{sf}`
 - Read data using a package that returns a `sf` object
 - Read data and use `{sf}` to convert to a `sf` object
@@ -234,19 +245,23 @@ Read a GeoJSON file:
 
 ```{r}
 # GeoJSON (geojson)
-read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson")
+read_sf(
+  "https://github.com/ropensci/geojsonio/raw/main/inst/examples/california.geojson"
+)
 ```
 
-----
+------------------------------------------------------------------------
 
 Read a KML file:
 
 ```{r}
 # Keyhole Markup Language (kml)
-read_sf("https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml")
+read_sf(
+  "https://github.com/ropensci/geojsonio/raw/main/inst/examples/poa_annua.kml"
+)
 ```
 
-----
+------------------------------------------------------------------------
 
 Read a GeoPackage file:
 
@@ -255,7 +270,7 @@ Read a GeoPackage file:
 read_sf("https://github.com/r-spatial/sf/raw/main/inst/gpkg/nc.gpkg")
 ```
 
-----
+------------------------------------------------------------------------
 
 Even non-spatial data works if the data includes a well-known text column:
 
@@ -264,15 +279,17 @@ Even non-spatial data works if the data includes a well-known text column:
 read_sf("https://github.com/r-spatial/sf/raw/main/inst/csv/pt.csv")
 ```
 
-----
+------------------------------------------------------------------------
 
 If the non-spatial data does not include a well-known text column, `read_sf()` still returns a data frame:
 
 ```{r}
-read_sf("https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enrollment_By_Grade_2023.csv")
+read_sf(
+  "https://github.com/elipousson/marylandedu/raw/main/data-raw/extdata/Enrollment_By_Grade_2023.csv"
+)
 ```
 
-----
+------------------------------------------------------------------------
 
 A multifile format like a shapefile does *not* work as a URL:
 
@@ -284,7 +301,18 @@ read_sf("https://github.com/r-spatial/sf/raw/main/inst/shape/nc.shp")
 But it *does* work if you provide a local file path (`system.file()` returns a file path in this case):
 
 ```{r}
-read_sf(system.file("shape/nc.shp", package = "sf"))
+nc <- read_sf(system.file("shape/nc.shp", package = "sf"))
+```
+
+## Practice: Use a spatial query in `wkt_filter`
+
+```{r}
+wkt_filter <- st_as_text(nc[1, ]$geometry)
+
+read_sf(
+  system.file("shape/nc.shp", package = "sf"),
+  wkt_filter = wkt_filter
+)
 ```
 
 ## Working with web services
@@ -304,35 +332,67 @@ Using a web service often requires:
 - Dedicating funding for usage
 - Understanding data privacy implications
 
-## Example: Feature Services
+## Example: ArcGIS Feature Services with `read_sf`
 
 An ArcGIS FeatureServer URL does *not* work:
 
 ```{r}
-read_sf("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0")
+read_sf(
+  "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"
+)
 ```
 
 But a FeatureServer URL that includes the output format *does* work:
 
 ```{r}
-read_sf("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
+read_sf(
+  "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+)
 ```
 
-There are a wide variety of packages that you can use to supplement  `{sf}`.
+## Example: ArcGIS Feature Services with `arc_select`
+
+For ArcGIS Feature Services, the `{arcgislayers}` package is the recommended way to access data:
 
 ```{r}
 library(arcgislayers)
 
-feature_layer <- arc_open("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0")
+feature_url <- arc_open(
+  "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0"
+)
 
-arc_select(feature_layer)
+arc_select(feature_url)
 ```
 
-::: notes
+## Example: ArcGIS Portal Items with `arc_open`
 
-- Practice writing a query with arc_select
+`{arcgislayers}` also has support for getting data on "portal items" like web maps and applications:
 
-:::
+```{r}
+app <- arc_open(
+  "https://maryland.maps.arcgis.com/apps/webappviewer/index.html?id=e4f351766e614b7195525b49b8be112e"
+)
+
+app
+```
+
+## Practice: Write a SQL expression to query a FeatureLayer
+
+Use the format "{Field_name} {Operator} {Value or String}" to build a query and filter data before loading it to your computer.
+
+Check out the [SQL reference for ArcGIS query expressions](https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/sql-reference-for-elements-used-in-query-expressions.htm) for more information.
+
+```{r}
+url <- "https://services1.arcgis.com/UWYHeuuJISiGmgXx/arcgis/rest/services/311_Customer_Service_Requests_2024/FeatureServer/0"
+
+layer <- arc_open(url)
+
+arc_select(
+  layer,
+  where = "CloseDate > date '2024-01-01' AND CloseDate < date '2024-01-06'",
+  n_max = 10
+)
+```
 
 ## Example: Mapbox API
 
@@ -352,16 +412,17 @@ walk_5min
 
 ## Example: Mapbox API
 
-`mapboxapi::addMapboxTiles()` provides easy access to the [Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/static-tiles/): 
+`mapboxapi::addMapboxTiles()` provides easy access to the [Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/static-tiles/):
 
 ```{r}
 library(leaflet)
 
 leaflet(walk_5min) %>%
-  addMapboxTiles(style_id = "streets-v11",
-                 username = "mapbox") %>%
+  addMapboxTiles(style_id = "streets-v11", username = "mapbox") %>%
   addPolygons()
 ```
+
+`mapgl::mapboxgl()` is now a recommended alternative to `addMapboxTiles()`.
 
 ## Storing and organizing spatial data takes planning
 
@@ -369,4 +430,4 @@ Planning for the structure and organization of your data can be supported using 
 
 - Diagram drawing applications (e.g. [draw.io](https://www.drawio.com/))
 - Entity-relationship diagram tools (e.g. [drawDB](https://www.drawdb.app/))
-- Low-code, visual database applications (e.g. [Airtable](https://airtable.com/)) 
+- Low-code, visual database applications (e.g. [Airtable](https://airtable.com/))
