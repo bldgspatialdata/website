@@ -82,6 +82,7 @@ Adapted from [the tidyverse style guide](https://style.tidyverse.org/functions.h
 Strive to use verbs for function names:
 
 ```{r}
+#| eval: false
 # Good
 add_row()
 permute()
