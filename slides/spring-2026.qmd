@@ -12,6 +12,54 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+## Week 12
+
+- **Discuss**: What to do with week 14?
+
+- Final project
+
+  - **Proposal:** due 4/11
+
+  - **Presentation**: due 5/4
+
+  - **Final repository**: due 5/15
+
+- Questions
+
+- [Reading and writing spatial data](/slides/spatial-data-io.qmd) (and using web services)
+
+### Questions
+
+**Are the cartographic boundary version of tiger data less accurate? Why would someone not use them?**
+
+[Cartographic boundary files](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html) are designed for *display* purposes. More detail may not be legible for a larger scale map—so cartographic files are scale-specific ("500k", "5m", or "20m"). [Natural Earth](https://www.naturalearthdata.com/) data is also provided at multiple scales for cartographic purposes.
+
+------------------------------------------------------------------------
+
+**Is it better to clean data in Excel/Sheets first or bring messy data into R and clean it there?**
+
+It is OK to use a spreadsheet when you are getting started—but switching to a R *only* workflow has advantages. "Cleaning" the data is a *transformative* process so always make sure to make a copy before modifying a source file.
+
+------------------------------------------------------------------------
+
+**Since using Excel or CSV for spatial data is risky in professional workflows. Since these formats are so commonplace in the work place what can we to help prevent issues like loss of CRS, missing metadata, and data errors?**
+
+Using `{openxlsx2}` you can set up Excel workbooks with protected sheets or ranges (see how-to in [Excel](https://support.microsoft.com/en-au/office/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) or [Sheets](https://support.google.com/docs/answer/1218656?hl=en&co=GENIE.Platform%3DDesktop)) or validation. You can use `{labelled}` to create a data dictionary and include it with your workbook or sheet.
+
+Read more on [Data Organization in Spreadsheets](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989).
+
+------------------------------------------------------------------------
+
+**What is stopping ERSI Shapefile from being improved so that the file size can be larger and column names can be less restricted?**
+
+Systems and software are designed to support specific file format standards. Standards can change—adding or removing options for people building tools around the standard—but then software must also change to support it.
+
+------------------------------------------------------------------------
+
+What does "driver" mean in the context of `sf::st_drivers()`?
+
+GDAL [defines a driver](https://gdal.org/en/stable/glossary.html#term-Driver) as: "A software component that enables reading, writing, and processing of specific raster or vector data formats."
+
 ## Week 11
 
 ### Questions
@@ -32,7 +80,7 @@ Check out the [tibble vignette](https://tibble.tidyverse.org/articles/tibble.htm
 
 **Is it possible to prepare a complete thesis using Quarto and generate the final document in PDF or Word format with all required sections and formatting?**
 
-Yes! For one example see, [How I’m Writing My Dissertation in Quarto](https://carlcolglazier.com/notes/disseration-quarto/) by Carl Colglazier. With version 1.9, Quarto added support for [Typst format book projects](https://quarto.org/docs/blog/posts/2026-03-31-typst-books-and-more/#typst-books) including options to have chapters and appendices.
+Yes! Quarto extensions include [specific journal formats](https://quarto.org/docs/journals/formats.html) and, with version 1.9, Quarto added support for [Typst format book projects](https://quarto.org/docs/blog/posts/2026-03-31-typst-books-and-more/#typst-books) including options to have chapters and appendices. For one example see [How I’m Writing My Dissertation in Quarto](https://carlcolglazier.com/notes/disseration-quarto/) by Carl Colglazier.
 
 ------------------------------------------------------------------------
 
@@ -56,7 +104,7 @@ Yes! For one example see, [How I’m Writing My Dissertation in Quarto](https://
 
 ### Questions
 
-- What does the "loess" method mean in the `[geom_smooth](https://ggplot2.tidyverse.org/reference/geom_smooth.html)` function? "loess" is for LOESS (locally estimated scatterplot smoothing) - a [local regression](https://en.wikipedia.org/wiki/Local_regression) method.
+- What does the "loess" method mean in the [`geom_smooth`](https://ggplot2.tidyverse.org/reference/geom_smooth.html) function? "loess" is for LOESS (locally estimated scatterplot smoothing) - a [local regression](https://en.wikipedia.org/wiki/Local_regression) method.
 
 ------------------------------------------------------------------------
 
