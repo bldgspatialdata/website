@@ -6,17 +6,17 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-076ecbd647e1f0418c5051713cd9b730.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.23">
-<meta name="dcterms.date" content="2026-03-25">
-<title>GES 668 - Spring 2026 – Spring 2026 Weekly Updates</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="dcterms.date" content="2026-04-15">
+  <title>GES 668 - Spring 2026 – Spring 2026 Weekly Updates</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
@@ -98,12 +98,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ad6cac6167ca8ec72cd8488dbce3747.css">
-<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8ad6cac6167ca8ec72cd8488dbce3747.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -198,28 +198,117 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Spring 2026 Weekly Updates</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Spring 2026 Weekly Updates</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2026-03-25</p>
-</section><section><section id="week-9" class="title-slide slide level2 center"><h2>Week 9</h2>
+  <p class="date">2026-04-15</p>
+</section>
+<section>
+<section id="week-12" class="title-slide slide level2 center">
+<h2>Week 12</h2>
+<ul>
+<li><p><strong>Discuss</strong>: What to do with week 14?</p></li>
+<li><p>Final project</p>
+<ul>
+<li><p><strong>Proposal:</strong> due 4/11</p></li>
+<li><p><strong>Presentation</strong>: due 5/4</p></li>
+<li><p><strong>Final repository</strong>: due 5/15</p></li>
+</ul></li>
+<li><p>Questions</p></li>
+<li><p><a href="../slides/spatial-data-io.html">Reading and writing spatial data</a> (and using web services)</p></li>
+</ul>
+</section>
+<section id="questions" class="title-slide slide level3 center">
+<h3>Questions</h3>
+<p><strong>Are the cartographic boundary version of tiger data less accurate? Why would someone not use them?</strong></p>
+<p><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html">Cartographic boundary files</a> are designed for <em>display</em> purposes. More detail may not be legible for a larger scale map—so cartographic files are scale-specific (“500k”, “5m”, or “20m”). <a href="https://www.naturalearthdata.com/">Natural Earth</a> data is also provided at multiple scales for cartographic purposes.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>Is it better to clean data in Excel/Sheets first or bring messy data into R and clean it there?</strong></p>
+<p>It is OK to use a spreadsheet when you are getting started—but switching to a R <em>only</em> workflow has advantages. “Cleaning” the data is a <em>transformative</em> process so always make sure to make a copy before modifying a source file.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>Since using Excel or CSV for spatial data is risky in professional workflows. Since these formats are so commonplace in the work place what can we to help prevent issues like loss of CRS, missing metadata, and data errors?</strong></p>
+<p>Using <code>{openxlsx2}</code> you can set up Excel workbooks with protected sheets or ranges (see how-to in <a href="https://support.microsoft.com/en-au/office/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6">Excel</a> or <a href="https://support.google.com/docs/answer/1218656?hl=en&amp;co=GENIE.Platform%3DDesktop">Sheets</a>) or validation. You can use <code>{labelled}</code> to create a data dictionary and include it with your workbook or sheet.</p>
+<p>Read more on <a href="https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989">Data Organization in Spreadsheets</a>.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>What is stopping ERSI Shapefile from being improved so that the file size can be larger and column names can be less restricted?</strong></p>
+<p>Systems and software are designed to support specific file format standards. Standards can change—adding or removing options for people building tools around the standard—but then software must also change to support it.</p>
+</section>
+<section class="slide level4">
+
+<p>What does “driver” mean in the context of <code>sf::st_drivers()</code>?</p>
+<p>GDAL <a href="https://gdal.org/en/stable/glossary.html#term-Driver">defines a driver</a> as: “A software component that enables reading, writing, and processing of specific raster or vector data formats.”</p>
+</section>
+</section>
+<section>
+<section id="week-11" class="title-slide slide level2 center">
+<h2>Week 11</h2>
+
+</section>
+<section id="questions-1" class="title-slide slide level3 center">
+<h3>Questions</h3>
+<p><strong>When using OSM how can we be sure that we are using data that is accurate and up to date?</strong></p>
+<p>Comparing to a reference data or using metadata from OSM itself are two common approaches.</p>
+<p>A <a href="https://www.sciencedirect.com/science/article/pii/S1195103624005573">2021 study</a> found significant associations between road network completeness, positional accuracy, and attribute accuracy and a set of five indicators: “population, average income, density of OSM roads, density of OSM buildings, and number of points of interest (POI).”</p>
+</section>
+<section class="slide level4">
+
+<p><strong>When writing functions that take a dataset as input, should we assume it will be a tibble or a data frame? Does it affect how we write the function? When should we use them (tibble vs df)?</strong></p>
+<p>Check out the <a href="https://tibble.tidyverse.org/articles/tibble.html">tibble vignette</a> for more details. Key differences for tibbles include not allowing partial matching of column names, using stricter rules for column names, and not allowing row names.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>Is it possible to prepare a complete thesis using Quarto and generate the final document in PDF or Word format with all required sections and formatting?</strong></p>
+<p>Yes! Quarto extensions include <a href="https://quarto.org/docs/journals/formats.html">specific journal formats</a> and, with version 1.9, Quarto added support for <a href="https://quarto.org/docs/blog/posts/2026-03-31-typst-books-and-more/#typst-books">Typst format book projects</a> including options to have chapters and appendices. For one example see <a href="https://carlcolglazier.com/notes/disseration-quarto/">How I’m Writing My Dissertation in Quarto</a> by Carl Colglazier.</p>
+</section>
+<section class="slide level4">
+
+<p><strong>tigris and tidycensus questions</strong></p>
+<ul>
+<li><p>Is there any reason for the specific years available in tigris? A lot of functions such as divisions(), places(), or pumas() range from 2013-, 2012-, or 2011-. Why do so many go back to specifically the early 2010s?</p></li>
+<li><p>How do you know which geographic level (tract vs.&nbsp;block group vs.&nbsp;county) is the best to use for an analysis? Does it really change your results that much?</p></li>
+<li><p>How does areal interpolation work to account for disparate zonal configurations across years?</p></li>
+<li><p>In my job I often produce maps using data from the ACS. Given that these maps often have large margins of error how should I go about creating choropleth maps that will be used by other professionals with little to no understanding of field GIS?</p></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="week-9" class="title-slide slide level2 center">
+<h2>Week 9</h2>
 <ul>
 <li>Questions</li>
-<li>Geocoding with <a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a> or <a href="https://r.esri.com/arcgisgeocode/">arcgisgeocode</a>
-</li>
+<li>Geocoding with <a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a> or <a href="https://r.esri.com/arcgisgeocode/">arcgisgeocode</a></li>
 <li>Writing functions in R</li>
 <li>Creating projects with Quarto</li>
 <li>Exploratory data analysis</li>
-</ul></section><section id="questions" class="title-slide slide level3 center"><h3>Questions</h3>
+</ul>
+</section>
+<section id="questions-2" class="title-slide slide level3 center">
+<h3>Questions</h3>
 <ul>
-<li>What does the “loess” method mean in the <code>[geom_smooth](https://ggplot2.tidyverse.org/reference/geom_smooth.html)</code> function? “loess” is for LOESS (locally estimated scatterplot smoothing) - a <a href="https://en.wikipedia.org/wiki/Local_regression">local regression</a> method.</li>
-</ul></section><section class="slide level4"><ul>
+<li>What does the “loess” method mean in the <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html"><code>geom_smooth</code></a> function? “loess” is for LOESS (locally estimated scatterplot smoothing) - a <a href="https://en.wikipedia.org/wiki/Local_regression">local regression</a> method.</li>
+</ul>
+</section>
+<section class="slide level4">
+
+<ul>
 <li>Is there a rule of thumb of when to create a function or is it mostly just “you know you need one when you think you do”?</li>
 <li>How do I decide when it’s worth turning code into a function instead of just keeping it in-line?</li>
 <li>In data science workflows, how do we best balance the Don’t Repeat Yourself principle and the use of existing packages with the educational value of writing algorithms from first principles?</li>
-</ul></section></section><section><section id="week-6" class="title-slide slide level2 center"><h2>Week 6</h2>
+</ul>
+</section>
+</section>
+<section>
+<section id="week-6" class="title-slide slide level2 center">
+<h2>Week 6</h2>
 <ul>
 <li>Schedule adjustment for 4/1</li>
 <li>Reminders
@@ -228,28 +317,33 @@
 <li>Exercise 4 due Wednesday, 3/11</li>
 <li>Exercise 5 coming soon</li>
 <li>Exercise 1, 2, or 3 questions?</li>
-</ul>
-</li>
+</ul></li>
 <li>Final Project Timeline
 <ul>
 <li>Project proposal - due Wednesday, 3/25</li>
 <li>Final project presentations - due Monday, 5/4</li>
 <li>Final project repository - due Friday, 5/15</li>
-</ul>
-</li>
+</ul></li>
 <li>Questions</li>
-<li>Recap: <a href="../slides/spatial-data-attributes.html">Creating and manipulating attributes for spatial data</a>
-</li>
-<li>Lecture: <a href="../slides/spatial-data-attributes.html">Working with spatial and geometric operations in {sf}</a>
-</li>
+<li>Recap: <a href="../slides/spatial-data-attributes.html">Creating and manipulating attributes for spatial data</a></li>
+<li>Lecture: <a href="../slides/spatial-data-attributes.html">Working with spatial and geometric operations in {sf}</a></li>
 <li>Review <a href="https://dplyr.tidyverse.org/articles/two-table.html">two-table verbs</a> with dplyr</li>
-</ul></section><section id="questions-1" class="title-slide slide level3 center"><h3>Questions</h3>
+</ul>
+</section>
+<section id="questions-3" class="title-slide slide level3 center">
+<h3>Questions</h3>
 <p>How do you decide the “right” structure for a dataset when it can be organized in more than one tidy way? - Vrinda</p>
 <p>Typically, whatever format allows you to efficiently complete the necessary analysis and produce the expected outputs is the “right” structure.</p>
-</section><section class="slide level4"><p>How much does it matter when making the decision on what function to use when smoothing? - Dillon</p>
+</section>
+<section class="slide level4">
+
+<p>How much does it matter when making the decision on what function to use when smoothing? - Dillon</p>
 <p>Check out the <a href="https://strimas.com/smoothr/">smoothr</a> documentation for more details.</p>
-<p>You can also use <code><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">sf::st_simplify()</a></code> or <code><a href="http://andyteucher.ca/rmapshaper/reference/ms_simplify.html">rmapshaper::ms_simplify()</a></code> for make less “smooth” lines and polygons.</p>
-</section><section class="slide level4"><p>Which carrier has the worst average delays? Check <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/">R for Data Science (2e) - Solutions to Exercises</a> for tips.</p>
+<p>You can also use <code>sf::st_simplify()</code> or <code>rmapshaper::ms_simplify()</code> for make less “smooth” lines and polygons.</p>
+</section>
+<section class="slide level4">
+
+<p>Which carrier has the worst average delays? Check <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/">R for Data Science (2e) - Solutions to Exercises</a> for tips.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>nycflights13<span class="sc">::</span>flights <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span></span>
@@ -265,7 +359,10 @@
 <div class="footer">
 <p>There are also solutions available for <a href="https://r.geocompx.org/solutions/">Geocomputation with R</a>.</p>
 </div>
-</section><section class="slide level4"><p>Can you disentangle the effects of bad airports vs.&nbsp;bad carriers? (via <a href="https://aditya-dahiya.github.io/RfDS2solutions/">Solutions Manual: R for Data Science (2e)</a>)</p>
+</section>
+<section class="slide level4">
+
+<p>Can you disentangle the effects of bad airports vs.&nbsp;bad carriers? (via <a href="https://aditya-dahiya.github.io/RfDS2solutions/">Solutions Manual: R for Data Science (2e)</a>)</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>nycflights13<span class="sc">::</span>flights <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">group_by</span>(dest, carrier) <span class="sc">|&gt;</span></span>
@@ -281,23 +378,23 @@
 <span id="cb3-12"><a></a>  <span class="fu">rename</span>(<span class="at">Carrier =</span> carrier, <span class="st">`</span><span class="at">Number of Airports</span><span class="st">`</span> <span class="ot">=</span> n) <span class="sc">|&gt;</span></span>
 <span id="cb3-13"><a></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="rhvimhyvsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rhvimhyvsj table {
+<div id="apsuddresf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#apsuddresf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rhvimhyvsj thead, #rhvimhyvsj tbody, #rhvimhyvsj tfoot, #rhvimhyvsj tr, #rhvimhyvsj td, #rhvimhyvsj th {
+#apsuddresf thead, #apsuddresf tbody, #apsuddresf tfoot, #apsuddresf tr, #apsuddresf td, #apsuddresf th {
   border-style: none;
 }
 
-#rhvimhyvsj p {
+#apsuddresf p {
   margin: 0;
   padding: 0;
 }
 
-#rhvimhyvsj .gt_table {
+#apsuddresf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -323,12 +420,12 @@
   border-left-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_caption {
+#apsuddresf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rhvimhyvsj .gt_title {
+#apsuddresf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -340,7 +437,7 @@
   border-bottom-width: 0;
 }
 
-#rhvimhyvsj .gt_subtitle {
+#apsuddresf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -352,7 +449,7 @@
   border-top-width: 0;
 }
 
-#rhvimhyvsj .gt_heading {
+#apsuddresf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -364,13 +461,13 @@
   border-right-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_bottom_border {
+#apsuddresf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_col_headings {
+#apsuddresf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -385,7 +482,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_col_heading {
+#apsuddresf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -405,7 +502,7 @@
   overflow-x: hidden;
 }
 
-#rhvimhyvsj .gt_column_spanner_outer {
+#apsuddresf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -417,15 +514,15 @@
   padding-right: 4px;
 }
 
-#rhvimhyvsj .gt_column_spanner_outer:first-child {
+#apsuddresf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rhvimhyvsj .gt_column_spanner_outer:last-child {
+#apsuddresf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rhvimhyvsj .gt_column_spanner {
+#apsuddresf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -437,11 +534,11 @@
   width: 100%;
 }
 
-#rhvimhyvsj .gt_spanner_row {
+#apsuddresf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rhvimhyvsj .gt_group_heading {
+#apsuddresf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -467,7 +564,7 @@
   text-align: left;
 }
 
-#rhvimhyvsj .gt_empty_group_heading {
+#apsuddresf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -482,15 +579,15 @@
   vertical-align: middle;
 }
 
-#rhvimhyvsj .gt_from_md > :first-child {
+#apsuddresf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rhvimhyvsj .gt_from_md > :last-child {
+#apsuddresf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rhvimhyvsj .gt_row {
+#apsuddresf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -509,7 +606,7 @@
   overflow-x: hidden;
 }
 
-#rhvimhyvsj .gt_stub {
+#apsuddresf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -522,7 +619,7 @@
   padding-right: 5px;
 }
 
-#rhvimhyvsj .gt_stub_row_group {
+#apsuddresf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -536,15 +633,15 @@
   vertical-align: top;
 }
 
-#rhvimhyvsj .gt_row_group_first td {
+#apsuddresf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rhvimhyvsj .gt_row_group_first th {
+#apsuddresf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rhvimhyvsj .gt_summary_row {
+#apsuddresf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -554,16 +651,16 @@
   padding-right: 5px;
 }
 
-#rhvimhyvsj .gt_first_summary_row {
+#apsuddresf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_first_summary_row.thick {
+#apsuddresf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rhvimhyvsj .gt_last_summary_row {
+#apsuddresf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -573,7 +670,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_grand_summary_row {
+#apsuddresf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -583,7 +680,7 @@
   padding-right: 5px;
 }
 
-#rhvimhyvsj .gt_first_grand_summary_row {
+#apsuddresf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -593,7 +690,7 @@
   border-top-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_last_grand_summary_row_top {
+#apsuddresf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -603,11 +700,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_striped {
+#apsuddresf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rhvimhyvsj .gt_table_body {
+#apsuddresf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -616,7 +713,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_footnotes {
+#apsuddresf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -630,7 +727,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_footnote {
+#apsuddresf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -639,7 +736,7 @@
   padding-right: 5px;
 }
 
-#rhvimhyvsj .gt_sourcenotes {
+#apsuddresf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -653,7 +750,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rhvimhyvsj .gt_sourcenote {
+#apsuddresf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -661,80 +758,83 @@
   padding-right: 5px;
 }
 
-#rhvimhyvsj .gt_left {
+#apsuddresf .gt_left {
   text-align: left;
 }
 
-#rhvimhyvsj .gt_center {
+#apsuddresf .gt_center {
   text-align: center;
 }
 
-#rhvimhyvsj .gt_right {
+#apsuddresf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rhvimhyvsj .gt_font_normal {
+#apsuddresf .gt_font_normal {
   font-weight: normal;
 }
 
-#rhvimhyvsj .gt_font_bold {
+#apsuddresf .gt_font_bold {
   font-weight: bold;
 }
 
-#rhvimhyvsj .gt_font_italic {
+#apsuddresf .gt_font_italic {
   font-style: italic;
 }
 
-#rhvimhyvsj .gt_super {
+#apsuddresf .gt_super {
   font-size: 65%;
 }
 
-#rhvimhyvsj .gt_footnote_marks {
+#apsuddresf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rhvimhyvsj .gt_asterisk {
+#apsuddresf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rhvimhyvsj .gt_indent_1 {
+#apsuddresf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rhvimhyvsj .gt_indent_2 {
+#apsuddresf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rhvimhyvsj .gt_indent_3 {
+#apsuddresf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rhvimhyvsj .gt_indent_4 {
+#apsuddresf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rhvimhyvsj .gt_indent_5 {
+#apsuddresf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rhvimhyvsj .katex-display {
+#apsuddresf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rhvimhyvsj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#apsuddresf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
+
 <table class="gt_table caption-top" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
+<thead>
+<tr class="gt_col_headings header">
 <th id="Carrier" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Carrier</th>
 <th id="Number-of-Airports" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Number of Airports</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Carrier">EV</td>
@@ -758,10 +858,14 @@
 </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 </div>
-</section><section class="slide level4"><p>How do you choose when to use <code>st_intersection()</code> vs.&nbsp;<code>st_join()</code> when looking at relationships between layers? - Liam</p>
+</section>
+<section class="slide level4">
+
+<p>How do you choose when to use <code>st_intersection()</code> vs.&nbsp;<code>st_join()</code> when looking at relationships between layers? - Liam</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="fu">system.file</span>(<span class="st">"shape/nc.shp"</span>, <span class="at">package =</span> <span class="st">"sf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -781,7 +885,7 @@ Geodetic CRS:  NAD27</code></pre>
 <pre><code>Simple feature collection with 250 features and 14 fields
 Geometry type: POINT
 Dimension:     XY
-Bounding box:  xmin: -83.79858 ymin: 33.94363 xmax: -75.81023 ymax: 36.55101
+Bounding box:  xmin: -83.95432 ymin: 33.95729 xmax: -75.74 ymax: 36.52117
 Geodetic CRS:  NAD27
 First 10 features:
    AREA PERIMETER CNTY_ CNTY_ID NAME FIPS FIPSNO CRESS_ID BIR74 SID74 NWBIR74
@@ -796,60 +900,75 @@ First 10 features:
 9    NA        NA    NA      NA &lt;NA&gt; &lt;NA&gt;     NA       NA    NA    NA      NA
 10   NA        NA    NA      NA &lt;NA&gt; &lt;NA&gt;     NA       NA    NA    NA      NA
    BIR79 SID79 NWBIR79                          x
-1     NA    NA      NA POINT (-80.61342 35.71325)
-2     NA    NA      NA POINT (-80.36994 36.23018)
-3     NA    NA      NA POINT (-77.25844 35.57634)
-4     NA    NA      NA POINT (-82.28387 35.51869)
-5     NA    NA      NA POINT (-82.65556 35.36123)
-6     NA    NA      NA POINT (-80.26309 35.21218)
-7     NA    NA      NA POINT (-78.07407 35.92356)
-8     NA    NA      NA POINT (-78.62108 35.53373)
-9     NA    NA      NA POINT (-77.27727 36.50931)
-10    NA    NA      NA POINT (-79.74154 34.90924)</code></pre>
+1     NA    NA      NA POINT (-77.88262 36.46326)
+2     NA    NA      NA  POINT (-79.5286 35.80675)
+3     NA    NA      NA  POINT (-78.22523 34.1304)
+4     NA    NA      NA POINT (-76.47626 36.47915)
+5     NA    NA      NA POINT (-76.67369 35.52544)
+6     NA    NA      NA POINT (-81.67119 35.95259)
+7     NA    NA      NA  POINT (-78.04981 34.6797)
+8     NA    NA      NA POINT (-77.80825 34.68794)
+9     NA    NA      NA POINT (-83.87562 35.27735)
+10    NA    NA      NA POINT (-76.46029 35.74718)</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">st_intersection</span>(nc_points, nc[<span class="dv">1</span>, ])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 3 features and 14 fields
-Geometry type: POINT
-Dimension:     XY
-Bounding box:  xmin: -81.65456 ymin: 36.27143 xmax: -81.41815 ymax: 36.44493
+<pre><code>Simple feature collection with 0 features and 14 fields
+Geometry type: GEOMETRYCOLLECTION
+Bounding box:  xmin: NA ymin: NA xmax: NA ymax: NA
 Geodetic CRS:  NAD27
-   AREA PERIMETER CNTY_ CNTY_ID NAME  FIPS FIPSNO CRESS_ID BIR74 SID74 NWBIR74
-1 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
-2 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
-3 0.114     1.442  1825    1825 Ashe 37009  37009        5  1091     1      10
-  BIR79 SID79 NWBIR79                          x
-1  1364     0      19 POINT (-81.41815 36.27143)
-2  1364     0      19 POINT (-81.63161 36.41221)
-3  1364     0      19 POINT (-81.65456 36.44493)</code></pre>
+ [1] AREA      PERIMETER CNTY_     CNTY_ID   NAME      FIPS      FIPSNO   
+ [8] CRESS_ID  BIR74     SID74     NWBIR74   BIR79     SID79     NWBIR79  
+[15] x        
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
 </div>
 </div>
-</section></section><section><section id="week-5" class="title-slide slide level2 center"><h2>Week 5</h2>
+</section>
+</section>
+<section>
+<section id="week-5" class="title-slide slide level2 center">
+<h2>Week 5</h2>
 <ul>
 <li>Reminder
 <ul>
 <li>Exercises 2 due Friday, 2/27</li>
 <li>Exercise 3 due Wednesday, 3/4</li>
-</ul>
-</li>
+</ul></li>
 <li>Interesting and Difficult Things!</li>
 <li>Week 5 Questions</li>
-<li>Finish review of <a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code></a>
-</li>
+<li>Finish review of <a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code></a></li>
 <li><a href="../slides/spatial-data-attributes.html">Creating and manipulating attributes for spatial data</a></li>
-</ul></section><section id="interesting-things" class="title-slide slide level3 center"><h3>Interesting Things</h3>
+</ul>
+</section>
+<section id="interesting-things" class="title-slide slide level3 center">
+<h3>Interesting Things</h3>
 <ul>
 <li>“honestly was just surprised how easy it is to perform geometry operations”</li>
 <li>“we can use distance based joins on two datasets that are meaningfully related even when they don’t intersect”</li>
-</ul></section><section id="difficult-things" class="title-slide slide level3 center"><h3>Difficult Things</h3>
+</ul>
+</section>
+
+<section id="difficult-things" class="title-slide slide level3 center">
+<h3>Difficult Things</h3>
 <ul>
 <li>“learning how to do the same thing in multiple different ways”</li>
 <li>“understanding the different binary operators… st_intersects and st_disjoint were intuitive but others like st_covered_by were less clear”</li>
 <li>“finding the time to do the readings”</li>
-</ul></section><section id="questions-2" class="title-slide slide level3 center"><h3>Questions</h3>
+</ul>
+</section>
+
+<section id="questions-4" class="title-slide slide level3 center">
+<h3>Questions</h3>
 <p>“Have you ever had to use DE-9IM strings, will I ever have to use them, can they be practically effectively used by people who are not deep into the lore??” - Lauren</p>
-</section><section class="slide level4"><p>“Do unary and binary geometry operations change the input file or allow you to create a unique output file” - Connor</p>
-</section></section><section><section id="week-4" class="title-slide slide level2 center"><h2>Week 4</h2>
+</section>
+<section class="slide level4">
+
+<p>“Do unary and binary geometry operations change the input file or allow you to create a unique output file” - Connor</p>
+</section>
+</section>
+<section>
+<section id="week-4" class="title-slide slide level2 center">
+<h2>Week 4</h2>
 <ul>
 <li>Updates and reminders
 <ul>
@@ -857,15 +976,20 @@ Geodetic CRS:  NAD27
 <li>Exercise how-to with Quarto</li>
 <li>Exercises 2 and 3 due Friday, 2/27 and Wednesday 3/4 (links coming soon)</li>
 <li>Office Hours on Friday, 2/20 at 12:00 pm</li>
-</ul>
-</li>
+</ul></li>
 <li>Week 4 Questions</li>
 <li>Finish review of data visualization example with ggplot2</li>
 <li><a href="../slides/data-transformation.html">Transforming data with <code>{dplyr}</code></a></li>
-</ul></section><section id="questions-3" class="title-slide slide level3 center"><h3>Questions</h3>
+</ul>
+</section>
+<section id="questions-5" class="title-slide slide level3 center">
+<h3>Questions</h3>
 <p>When subseting with the <code>[</code> operator, why do you need a comma and space at the end? e.g.&nbsp;<code>world[world$area_km2 &lt; 10000, ]</code> —Chase</p>
 <p>Use <code>?[</code> to take a look at the documentation. When using the <code>[</code> operator to subset a data frame (or an <code>sf</code> object), the first value is the row index and the second is the column index.</p>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Select second row</span></span>
 <span id="cb10-2"><a></a>us_states[<span class="dv">2</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -901,10 +1025,15 @@ First 10 features:
 10   Louisiana MULTIPOLYGON (((-92.01783 2...</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Do you always use <code>sf</code> objects when working with spatial data? Or do you switch between spatial and non-spatial formats? —Liam</p>
-<p>Yes. Always drop the geometry using <code><a href="https://r-spatial.github.io/sf/reference/st_geometry.html">sf::st_drop_geometry()</a></code> if you don’t need it in your output!</p>
+</section>
+<section class="slide level4">
+
+<p>Do you always use <code>sf</code> objects when working with spatial data? Or do you switch between spatial and non-spatial formats? —Liam</p>
+<p>Yes. Always drop the geometry using <code>sf::st_drop_geometry()</code> if you don’t need it in your output!</p>
 <div class="cell">
-<details class="code-fold"><summary>Summarising a data frame vs.&nbsp;sf object with <code>bench::mark</code></summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<details class="code-fold">
+<summary>Summarising a data frame vs.&nbsp;sf object with <code>bench::mark</code></summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>storms_sf <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(storms, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a>comparison <span class="ot">&lt;-</span> bench<span class="sc">::</span><span class="fu">mark</span>(</span>
 <span id="cb14-4"><a></a>  <span class="at">df =</span> storms <span class="sc">|&gt;</span></span>
@@ -921,34 +1050,52 @@ First 10 features:
 <span id="cb14-15"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-</section><section class="slide level4"><div class="cell">
+</section>
+<section class="slide level4">
+
+<div class="cell">
 <div class="cell-output cell-output-error">
 <pre><code>Error in `ggplot2::autoplot()`:
 ! The package "ggbeeswarm" is required to use `type = "beeswarm".</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Does it matter the order that you specify parameters for a <code>ggplot</code>? —Lauren</p>
-<p>Consistent <a href="https://r4ds.hadley.nz/workflow-style.html">code style</a> improves the readability of your code and reduces risk of errors <em>but</em> <a href="https://ggplot2.tidyverse.org">ggplot2</a> supports a flexible approach.</p>
-</section><section class="slide level4"><p>This works…</p>
+</section>
+<section class="slide level4">
+
+<p>Does it matter the order that you specify parameters for a <code>ggplot</code>? —Lauren</p>
+<p>Consistent <a href="https://r4ds.hadley.nz/workflow-style.html">code style</a> improves the readability of your code and reduces risk of errors <em>but</em> <code>{ggplot2}</code> supports a flexible approach.</p>
+</section>
+<section class="slide level4">
+
+<p>This works…</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
 <span id="cb16-2"><a></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section class="slide level4"><p>…and this works…</p>
+<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section class="slide level4">
+
+<p>…and this works…</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> us_states) <span class="sc">+</span></span>
 <span id="cb17-2"><a></a>  <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15) <span class="sc">+</span></span>
 <span id="cb17-3"><a></a>  <span class="fu">geom_sf</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section class="slide level4"><p>…and this works!</p>
+<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section class="slide level4">
+
+<p>…and this works!</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb18-2"><a></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
-<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section class="slide level4"><p>But… this does not work! Do you know why?</p>
+<img data-src="spring-2026_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section class="slide level4">
+
+<p>But… this does not work! Do you know why?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb19-2"><a></a>  <span class="fu">geom_sf</span>(us_states, <span class="fu">aes</span>(<span class="at">fill =</span> total_pop_15))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -958,7 +1105,10 @@ First 10 features:
 ✖ You've supplied a &lt;sf&gt; object.</code></pre>
 </div>
 </div>
-</section><section id="finish-review" class="title-slide slide level3 center"><h3>Finish review</h3>
+</section>
+
+<section id="finish-review" class="title-slide slide level3 center">
+<h3>Finish review</h3>
 <p>Download the example script to review:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github_file</span>(</span>
@@ -966,22 +1116,29 @@ First 10 features:
 <span id="cb21-3"><a></a>  <span class="at">path =</span> <span class="st">"examples/data-visualization.R"</span></span>
 <span id="cb21-4"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section><section id="week-3" class="title-slide slide level2 center"><h2>Week 3</h2>
+</section>
+</section>
+<section>
+<section id="week-3" class="title-slide slide level2 center">
+<h2>Week 3</h2>
 <ul>
 <li>Week 3 Questions</li>
 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScFfOG6aFaMv-pogR2wZHoSYnfhmaemRwHyytWCZPpSJV6dog/viewform?usp=header">Session 2 Quiz</a></li>
 <li><a href="../slides/data-visualization.html">Visualizing spatial data with {ggplot2}</a></li>
-</ul></section><section id="questions-4" class="title-slide slide level3 center"><h3>Questions</h3>
+</ul>
+</section>
+<section id="questions-6" class="title-slide slide level3 center">
+<h3>Questions</h3>
 <p>What are some effective ways to familiarize yourself with the language of different packages without rote memorization of their functions? —Brian</p>
 <ul>
-<li>
-<a href="https://posit.co/resources/cheatsheets/">Cheatsheets</a>, e.g.&nbsp;<a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html">RStudio</a>, <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2</a>
-</li>
-<li>Community resources, e.g.&nbsp;<a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference/">ggplot2 Theme Elements Reference Sheet</a>
-</li>
-<li>Naming conventions, e.g.&nbsp;<code>geom_&lt;type of geometry to show on plot&gt;</code>
-</li>
-</ul></section><section class="slide level4"><p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
+<li><a href="https://posit.co/resources/cheatsheets/">Cheatsheets</a>, e.g.&nbsp;<a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html">RStudio</a>, <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2</a></li>
+<li>Community resources, e.g.&nbsp;<a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference/">ggplot2 Theme Elements Reference Sheet</a></li>
+<li>Naming conventions, e.g.&nbsp;<code>geom_&lt;type of geometry to show on plot&gt;</code></li>
+</ul>
+</section>
+<section class="slide level4">
+
+<p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">summary</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1001,7 +1158,10 @@ First 10 features:
  Max.   :6135142  </code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
+</section>
+<section class="slide level4">
+
+<p>Is there an easy way to plot summary statistics (e.g.&nbsp;mean, min, max)? —Lauren</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>skimr<span class="sc">::</span><span class="fu">skim</span>(spData<span class="sc">::</span>us_states_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -1058,7 +1218,8 @@ First 10 features:
 <col style="width: 12%">
 <col style="width: 15%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">skim_variable</th>
 <th style="text-align: right;">n_missing</th>
 <th style="text-align: right;">complete_rate</th>
@@ -1067,8 +1228,10 @@ First 10 features:
 <th style="text-align: right;">empty</th>
 <th style="text-align: right;">n_unique</th>
 <th style="text-align: right;">whitespace</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: left;">state</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
@@ -1077,7 +1240,8 @@ First 10 features:
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">51</td>
 <td style="text-align: right;">0</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
 <table class="caption-top">
@@ -1094,7 +1258,8 @@ First 10 features:
 <col style="width: 7%">
 <col style="width: 5%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">skim_variable</th>
 <th style="text-align: right;">n_missing</th>
 <th style="text-align: right;">complete_rate</th>
@@ -1106,7 +1271,8 @@ First 10 features:
 <th style="text-align: right;">p75</th>
 <th style="text-align: right;">p100</th>
 <th style="text-align: left;">hist</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">median_income_10</td>
@@ -1164,7 +1330,10 @@ First 10 features:
 </table>
 </div>
 </div>
-</section><section class="slide level4"><p>Why are some CRS values <code>NA</code> while some are specific datum (WGS84, etc)? —Nhi</p>
+</section>
+<section class="slide level4">
+
+<p>Why are some CRS values <code>NA</code> while some are specific datum (WGS84, etc)? —Nhi</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">st_point</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span>
 <span id="cb25-2"><a></a></span>
@@ -1190,16 +1359,26 @@ GEOGCS["NAD83",
     AUTHORITY["EPSG","4269"]]</code></pre>
 </div>
 </div>
-</section><section class="slide level4"><p>Why do some of the exercises start with the library function and not have you initially install a library? —Kyle</p>
+</section>
+<section class="slide level4">
+
+<p>Why do some of the exercises start with the library function and not have you initially install a library? —Kyle</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># install.packages("tidyverse")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section class="slide level4"><p>What actually is an observation and how is it different than a variable? —Dillon</p>
-<p>A variable is something you can <em>measure</em>. An observation is a set of <em>measurements</em>.</p>
-</section><section class="slide level4">
+</section>
+<section class="slide level4">
 
-</section></section>
-</div>
+<p>What actually is an observation and how is it different than a variable? —Dillon</p>
+<p>A variable is something you can <em>measure</em>. An observation is a set of <em>measurements</em>.</p>
+</section>
+<section class="slide level4">
+
+
+
+</section>
+</section>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1207,7 +1386,23 @@ GEOGCS["NAD83",
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1398,7 +1593,9 @@ GEOGCS["NAD83",
           RevealZoom
         ]
       });
-    </script><script>
+    </script>
+    
+    <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1433,7 +1630,9 @@ GEOGCS["NAD83",
         }
 
       })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1601,6 +1800,6 @@ GEOGCS["NAD83",
         }
       });
       </script>
-
+    
 
 </body></html>
