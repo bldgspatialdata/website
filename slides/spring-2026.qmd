@@ -12,6 +12,47 @@ library(tidyverse, quietly = TRUE)
 library(spData)
 ```
 
+## Week 13
+
+- Final Project Feedback
+- Reminders
+
+  - **Exercises 1-5:** due ASAP
+  - **Presentation**: due 5/4
+  - **Final repository**: due 5/15
+
+- Questions
+
+### Final Project Feedback
+
+- Define your terms
+- Tidy up your documents
+- Put your work in context
+
+### Questions
+
+**With longer code I usually break things into separate files but that doesn't seem like something that is done here?**
+
+You can use `source()` to read script files into other scripts or into Quarto documents.
+
+For Quarto documents, you can use the ["include" shortcode](https://quarto.org/docs/authoring/includes.html) to re-use content across documents.
+
+You can also use the [`file` parameter](https://quarto.org/docs/reference/cells/cells-knitr.html#include) for code cells to include code from a separate file in a Quarto document.
+
+------------------------------------------------------------------------
+
+**Is it possible to construct a yearly time series for census variables at the tract level, given that ACS data are primarily available as 5-year estimates?**
+
+Yes! You can compare non-overlapping estimates for the 3-year and 5-year estimates. For example, 2020-2024 5-year data can be compared to 2017-2019 5-year data. Census guidance on comparisons is available for each year ([see 2024](https://www.census.gov/programs-surveys/acs/guidance/comparing-acs-data/2024.html)) with more information on variables or tables that may have changed. The time-series tables from the [National Historical Geographic Information System (NHGIS)](https://www.nhgis.org/) is another source for Census data that you can compare over time.
+
+------------------------------------------------------------------------
+
+**Documentation Questions**
+
+- Are data standards typically consistent across different workplaces?
+- Are variable labels actually a commonly used thing or is this a "be the change you want to see in the world" situation?
+- How much documentation is enough for a dataset to be understandable and reusable by someone else?
+
 ## Week 12
 
 - **Discuss**: What to do with week 14?
@@ -257,7 +298,6 @@ Yes. Always drop the geometry using `sf::st_drop_geometry()` if you don't need i
 ```{r}
 #| code-fold: true
 #| code-summary: "Summarising a data frame vs. sf object with `bench::mark`"
-
 storms_sf <- sf::st_as_sf(storms, coords = c("long", "lat"), crs = 4326)
 
 comparison <- bench::mark(
